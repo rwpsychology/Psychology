@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  
+  <LetterLabelCliques>Круги, образующие</LetterLabelCliques>
+  <CliquesFormed>{0} и {1} отделяют колонию в кликами над их соперничества. Они и их друзья могут начать бои друг с другом!</CliquesFormed>
+  
+  <LetterLabelHomesick>Колонист тоска по дому</LetterLabelHomesick>
+  <ColonistHomesick>{0} чувствует себя довольно тоскующим по дому, и могут распространяться чувство другим, что HE говорит.</ColonistHomesick>
+  
+  <LetterLabelQuarrel>Колонисты ссора</LetterLabelQuarrel>
+  <ColonistsQuarrel>{0} и {1} сформировали обиды из-за разногласий.</ColonistsQuarrel>
+  
+  <LetterLabelSabotage>саботаж</LetterLabelSabotage>
+  <SaboteurRevealedFaction>{0} была выявлена как лазутчика из {1}! HECAP был саботировать вашу колонию в секрете, делая вид, чтобы быть вашим союзником.</SaboteurRevealedFaction>
+  <SaboteurRevealed>{0} была выявлена как лазутчика от вражеской фракции! HECAP был саботировать вашу колонию в секрете, делая вид, чтобы быть вашим союзником.</SaboteurRevealed>
+  
+  <LetterLabelThief>воровка</LetterLabelThief>
+  <ThiefRevealed>{0} увидел вора из {1} пытается проникнуть в колонию! HECAP атакует теперь HE ловится.</ThiefRevealed>
+  
+</LanguageData>

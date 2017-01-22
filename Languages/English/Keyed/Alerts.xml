@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<Individuality>Matching outfits</Individuality>
+	<IndividualityDesc>These colonists are wearing the exact same apparel, which is making them sad:\n\n{0}\nGive them at least one thing to wear that isn't the same type, material, and color as the rest, or take something off them.</IndividualityDesc>
+	
+	<ColonistsHomesickAlert>Colonists homesick</ColonistsHomesickAlert>
+	<ColonistHomesickAlert>Colonist homesick</ColonistHomesickAlert>
+	<HomesickDesc>These colonists are homesick:\n\n{0}\nThey will be sad about it until the feeling passes, and they can spread it to other colonists they have deep talks with depending on their social impact.</HomesickDesc>
+	
+	<CliqueMembers>Cliques present</CliqueMembers>
+	<CliqueMembersDesc>The following rival cliques are present in your colony:\n\n{0}As long as their leaders are alive and on the same map, rival clique members may start fights with each other if they like each other less than the clique leader. Colonists who are members of both cliques will still be perceived as rivals, except by other members of both cliques. Cliques will eventually dissolve after a few seasons.</CliqueMembersDesc>
+	
+</LanguageData>

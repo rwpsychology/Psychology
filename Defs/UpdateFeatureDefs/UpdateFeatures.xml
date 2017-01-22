@@ -1,0 +1,33 @@
+<Defs>
+	<HugsLib.UpdateFeatureDef Abstract="true" Name="UpdateFeatureBase">
+		<defName>UpdateFeature</defName>
+		<modNameReadable>Psychology</modNameReadable>
+		<modIdentifier>Psychology</modIdentifier>
+		<linkUrl>https://ludeon.com/forums/index.php?topic=17218</linkUrl>
+	</HugsLib.UpdateFeatureDef>
+	
+	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+		<assemblyVersion>17.1.2</assemblyVersion>
+		<content>-- RECEIVING GALAXY-WIDE TRANSMISSION -- | This just in: an alliance of major urbworlds have recently suspended their educational campaign involving repeatedly exposing small children to horror films to "toughen them up." | This has been confirmed to have resulted in a massive decrease in the severity and prevalence of anxiety across known space. | -- TRANSMISSION ENDS--</content>
+	</HugsLib.UpdateFeatureDef>
+	
+	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+		<assemblyVersion>17.1.4</assemblyVersion>
+		<content>-- RECEIVING GALAXY-WIDE TRANSMISSION -- | A number of colonists on distant rimworlds have complained about their doors being locked open seemingly at random. Many assumed this was a fault in the door mechanism, and sought to repair them. | However, it appears that the doors were intentionally left open by malefactors. In response to the great annoyance of other colonists who were not expecting this behavior, they have agreed to stop sabotaging bases unless the option is enabled under Options -> Mod Settings. | -- TRANSMISSION ENDS--</content>
+	</HugsLib.UpdateFeatureDef>
+	
+	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+		<assemblyVersion>17.1.6</assemblyVersion>
+		<content>-- RECEIVING GALAXY-WIDE TRANSMISSION -- | A human behavior research team has just published a study showing that people are more receptive to arrest when the officer has high Social skill. | In other news, a shocking new psychological treatment for Pyromaniacs has become available to the general public. It involves initial diagnosis and therapy followed by a medical regimen. | Experts on the human psyche have announced the existence of 8 mental breaks not previously acknowledged: Sadism, Self-harm, Tantrum, Abuse, Compulsion, Antisocial, Apathy, and Histrionic. They say a person's traits may have an effect on some of these breaks. | -- TRANSMISSION ENDS--</content>
+	</HugsLib.UpdateFeatureDef>
+	
+	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+		<assemblyVersion>17.1.7</assemblyVersion>
+		<content>-- RECEIVING GALAXY-WIDE TRANSMISSION -- | Colony founders please be aware: All planet-dwelling humanoids are required to publicly disclose their sexuality on their registration forms along with the rest of the information you are accustomed to viewing, under the Social tab. | -- TRANSMISSION ENDS--</content>
+	</HugsLib.UpdateFeatureDef>
+	
+	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+		<assemblyVersion>17.1.10</assemblyVersion>
+		<content>-- RECEIVING GALAXY-WIDE TRANSMISSION -- | Reports of burglary have broken out on the rimworlds. Colonists should be on the lookout for thieves attempting to gain access to stockpiles and escape with valuables. If caught by a colonist or a pet, they may resort to violence. | -- TRANSMISSION ENDS--</content>
+	</HugsLib.UpdateFeatureDef>
+</Defs>

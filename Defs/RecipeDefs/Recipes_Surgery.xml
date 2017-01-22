@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RecipeDefs>
+
+  <RecipeDef Abstract="True" Name="Treatment">
+    <workSpeedStat>MedicalOperationSpeed</workSpeedStat>
+    <workSkill>Medicine</workSkill>
+    <workSkillLearnFactor>16</workSkillLearnFactor>
+  </RecipeDef>
+
+  <RecipeDef ParentName="Treatment">
+		<defName>TreatPyromania</defName>
+		<label>treat pyromania</label>
+		<description>Helps a pyromaniac recover.</description>
+		<workerClass>Psychology.Recipe_TreatPyromaniac</workerClass>
+		<jobString>Treating pyromaniac.</jobString>
+		<workAmount>4500</workAmount>
+		<targetsBodyPart>true</targetsBodyPart>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<anesthesize>false</anesthesize>
+		<skillRequirements>
+			<li>
+				<skill>Medicine</skill>
+				<minLevel>3</minLevel>
+			</li>
+			<li>
+				<skill>Social</skill>
+				<minLevel>6</minLevel>
+			</li>
+		</skillRequirements>
+  </RecipeDef>
+  	
+</RecipeDefs>

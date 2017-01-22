@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<EmpathyChangesTitle>Разрешить изменения эмпатии</EmpathyChangesTitle>
+	<EmpathyChangesTooltip>Включите эту опцию для восстановления реакции колонистов плохих вещей происходит с другими людьми в нормальное русло. Это увеличит трудности; Сочувствующая пешки не будут затронуты. Перезапустите игру после того, как отключение этой.</EmpathyChangesTooltip>
+	
+	<SexualityChangesTitle>Разрешить изменения сексуальности</SexualityChangesTitle>
+	<SexualityChangesTooltip>Отключите эту опцию, чтобы отключить Кинси масштабирование пешек и повторно включить Gay черту. Вы можете перезапустить игру после того, как переключая это.</SexualityChangesTooltip>
+	
+	<KinseyModeTitle>Шкала Кинси формула</KinseyModeTitle>
+	<KinseyModeTooltip>Этот параметр определяет, какая формула используется для веса шкалы Кинси, когда пешки генерируются.</KinseyModeTooltip>
+	<KinseyMode_Realistic>По умолчанию</KinseyMode_Realistic>
+	<KinseyMode_Invisible>середина</KinseyMode_Invisible>
+	<KinseyMode_Gaypocalypse>обратный</KinseyMode_Gaypocalypse>
+	
+	<SabotageIncidentTitle>Включить саботажа инцидент</SabotageIncidentTitle>
+	<SabotageIncidentTooltip>Многие люди ошибочно этот случай за ошибку в первый раз, когда они сталкиваются с ней. В результате, вы должны выбрать в случайное событие, так что вы знаете, почему это происходит.</SabotageIncidentTooltip>
+	
+	<IndividualityTitle>Включить Индивидуальность мысли</IndividualityTitle>
+	<IndividualityTooltip>Включите эту опцию, чтобы отключить негативные мысли ваши колонисты будут получать, если они одеты прекрасно сочетающегося одежду с другими колонистами. Эта мысль добавляет дополнительные трудности, так что это не обязательно, но рекомендуется.</IndividualityTooltip>
+  
+</LanguageData>

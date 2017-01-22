@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef>
+    <defName>Saboteur</defName>
+    <hediffClass>Psychology.Hediff_Saboteur</hediffClass>
+    <initialSeverity>1</initialSeverity>
+    <label>saboteur</label>
+    <stages>
+      <li>
+        <label>hidden</label>
+        <everVisible>false</everVisible>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>Thief</defName>
+    <hediffClass>Psychology.Hediff_Thief</hediffClass>
+    <initialSeverity>1</initialSeverity>
+    <label>thief</label>
+    <stages>
+      <li>
+        <label>hidden</label>
+        <everVisible>false</everVisible>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

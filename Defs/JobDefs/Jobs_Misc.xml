@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<JobDefs>
+
+  <JobDef>
+    <defName>Sabotage</defName>
+    <driverClass>Psychology.JobDriver_Sabotage</driverClass>
+    <reportString>replacing broken components in TargetA.</reportString>
+  </JobDef>
+  
+  <JobDef>
+    <defName>Abuse</defName>
+    <driverClass>Psychology.JobDriver_Abuse</driverClass>
+    <reportString>verbally abusing TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+  <JobDef>
+    <defName>MakeAdvance</defName>
+    <driverClass>Psychology.JobDriver_MakeAdvance</driverClass>
+    <reportString>flirting with TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+</JobDefs>

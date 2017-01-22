@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TaleDef>
+    <defName>TreatedPyromania</defName>
+    <label>treated pyromaniac</label>
+    <taleClass>Tale_DoublePawn</taleClass>
+    <type>Volatile</type>
+    <firstPawnSymbol>psychologist</firstPawnSymbol>
+    <secondPawnSymbol>patient</secondPawnSymbol>
+    <baseInterest>2.5</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[patient_nameShortDef]'s treatment for pyromania</li>
+        <li>image->[psychologist_nameFull] sitting on the edge of [patient_nameFull]'s bed [circumstance_group]</li>
+        <li>image->[psychologist_nameFull] nodding while [patient_nameFull] talks [circumstance_group]</li>
+        <li>image->[psychologist_nameFull] discussing [patient_nameFull]'s urges [circumstance_group]</li>
+        <li>circumstance_phrase->as [patient_pronoun] smiles</li>
+        <li>circumstance_phrase->as [psychologist_nameShortDef] takes notes</li>
+        <li>circumstance_phrase->as a path to recovery is laid out</li>
+        <li>circumstance_phrase->while seeming very understanding</li>
+        <li>desc_sentence->[psychologist_nameShortDef] has a knowledgeable look on [psychologist_possessive] face.</li>
+        <li>desc_sentence->[psychologist_nameShortDef] looks incredibly focused on the task.</li>
+        <li>desc_sentence->[psychologist_nameShortDef] has a serious but kind demeanour.</li>
+        <li>desc_sentence->[patient_nameShortDef] is smiling.</li>
+        <li>desc_sentence->[patient_nameShortDef] looks like a new person.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+  
+
+  <TaleDef>
+    <defName>MentalStateTantrum</defName>
+    <label>destructive rage</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>4</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[pawn_nameShortDef] throwing a tantrum</li>
+        <li>image->[pawn_nameFull] flying into a destructive rage [circumstance_group]</li>
+		<li>image->[pawn_nameFull] taking [pawn_possessive] anger out on furniture [circumstance_group]</li>
+        <li>image->[pawn_nameFull] stumbling into furniture with a psychotic look on [pawn_possessive] face [circumstance_group]</li>
+        <li>circumstance_phrase->while violently cursing</li>
+        <li>circumstance_phrase->seemingly without reason</li>
+        <li>circumstance_phrase->as others cower in fear</li>
+        <li>circumstance_phrase->as others watch in horror</li>
+        <li>circumstance_phrase->because of the stress</li>
+        <li>circumstance_phrase->while screaming</li>
+        <li>circumstance_phrase->while trembling with rage</li>
+        <li>desc_sentence->[pawn_pronoun] is shaking with ungovernable rage.</li>
+        <li>desc_sentence->[pawn_possessive] teeth are bared in a deadly snarl.</li>
+        <li>desc_sentence->[pawn_possessive] eyes are dead pools of madness.</li>
+        <li>desc_sentence->[pawn_pronoun] has bruised [pawn_possessive] fists.</li>
+        <li>desc_sentence->[pawn_pronoun] is grimacing in misery.</li>
+        <li>desc_sentence->[pawn_pronoun] is holding a chair over [pawn_possessive] head.</li>
+        <li>desc_sentence->[pawn_possessive] entire body is trembling with hatred.</li>
+        <li>desc_sentence->A single tear rolls down [pawn_possessive] face.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+  
+  <TaleDef>
+    <defName>MentalStateSelfHarm</defName>
+    <label>deep depression</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>4</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[pawn_nameShortDef] hurting [pawn_pronoun]self</li>
+        <li>image->[pawn_nameFull] cutting [pawn_possessive] wrists [circumstance_group]</li>
+		<li>image->[pawn_nameFull] sitting in a pool of [pawn_possessive] blood [circumstance_group]</li>
+        <li>image->[pawn_nameFull] staring off into the distance [circumstance_group]</li>
+        <li>circumstance_phrase->while whimpering</li>
+        <li>circumstance_phrase->while cowering in [pawn_possessive] room</li>
+        <li>circumstance_phrase->without speaking a word</li>
+        <li>circumstance_phrase->while crying</li>
+        <li>desc_sentence->[pawn_pronoun] looks pale and sickly.</li>
+        <li>desc_sentence->[pawn_possessive] arms are limp.</li>
+		<li>desc_sentence->[pawn_possessive] clothes are stained with blood.</li>
+        <li>desc_sentence->[pawn_pronoun] is sitting on the floor, rocking back and forth.</li>
+        <li>desc_sentence->[pawn_pronoun] has a blank look on [pawn_possessive] face.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+  
+  <TaleDef>
+    <defName>MentalStateApathy</defName>
+    <label>apathy</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>4</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[pawn_nameShortDef] wandering around apathetically</li>
+        <li>image->[pawn_nameFull] wandering around the colony apathetically [circumstance_group]</li>
+		<li>image->[pawn_nameFull] sitting around lethargically [circumstance_group]</li>
+        <li>image->[pawn_nameFull] avoiding doing [pawn_possessive] chores [circumstance_group]</li>
+		<li>image->[pawn_nameFull] reluctantly doing [pawn_possessive] chores [circumstance_group]</li>
+		<li>image->[pawn_nameFull] slacking off [circumstance_group]</li>
+        <li>circumstance_phrase->with an annoyed look on [pawn_possessive] face</li>
+        <li>circumstance_phrase->while pouting</li>
+        <li>circumstance_phrase->while grumbling</li>
+        <li>circumstance_phrase->with half-closed eyes</li>
+		<li>desc_sentence->[pawn_pronoun] looks exhausted.</li>
+        <li>desc_sentence->[pawn_possessive] arms are crossed.</li>
+        <li>desc_sentence->[pawn_pronoun] looks like [pawn_pronoun] couldn't care less.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+  
+  <TaleDef>
+    <defName>MentalStateSadism</defName>
+    <label>sadism</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>4</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[pawn_nameShortDef] laughing sadistically</li>
+        <li>image->[pawn_nameFull] brandishing [pawn_possessive] weapon [circumstance_group]</li>
+		<li>image->[pawn_nameFull] mumbling under their breath [circumstance_group]</li>
+        <li>image->[pawn_nameFull] looking for a victim to brutalize [circumstance_group]</li>
+        <li>circumstance_phrase->while wandering around</li>
+        <li>circumstance_phrase->while smiling cruelly</li>
+		<li>circumstance_phrase->while grinning menacingly</li>
+        <li>desc_sentence->[pawn_pronoun] looks like [pawn_pronoun] has lost [pawn_possessive] mind.</li>
+        <li>desc_sentence->[pawn_possessive] left eye is twitching.</li>
+		<li>desc_sentence->[pawn_possessive] hands are shaking.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+  
+  <TaleDef>
+    <defName>MentalStateCompulsion</defName>
+    <label>compulsion</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>4</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[pawn_nameShortDef] neurotically cleaning</li>
+        <li>image->[pawn_nameFull] obsessively organizing resources [circumstance_group]</li>
+		<li>image->[pawn_nameFull] covered in dirt and grime [circumstance_group]</li>
+        <li>image->[pawn_nameFull] scrubbing the floors obsessively [circumstance_group]</li>
+        <li>circumstance_phrase->while mumbling under [pawn_possessive] breath</li>
+        <li>circumstance_phrase->while sweating profusely</li>
+		<li>circumstance_phrase->while struggling to stay awake</li>
+        <li>desc_sentence->[pawn_pronoun] looks like [pawn_pronoun] hasn't slept in days.</li>
+		<li>desc_sentence->[pawn_pronoun] looks malnourished and hungry.</li>
+		<li>desc_sentence->[pawn_pronoun] looks determined and wild-eyed.</li>
+		<li>desc_sentence->[pawn_possessive] hands are trembling.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+  
+  <TaleDef>
+    <defName>MentalStateAbuse</defName>
+    <label>verbal abuse</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>4</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[pawn_nameShortDef] screaming angrily</li>
+        <li>image->[pawn_nameFull] pacing back and forth [circumstance_group]</li>
+		<li>image->[pawn_nameFull] stomping around [circumstance_group]</li>
+		<li>image->[pawn_nameFull] looking for somebody to start an argument with [circumstance_group]</li>
+        <li>image->[pawn_nameFull] looking for somebody to yell at [circumstance_group]</li>
+        <li>circumstance_phrase->while others watch disapprovingly</li>
+        <li>circumstance_phrase->while others shake their heads in disapproval</li>
+		<li>circumstance_phrase->while others avoid making eye contact</li>
+		<li>circumstance_phrase->while others flinch away from [pawn_pronoun]</li>
+		<li>circumstance_phrase->with narrowed eyes and clenched teeth</li>
+		<li>desc_sentence->Spittle is flying from [pawn_possessive] mouth.</li>
+        <li>desc_sentence->[pawn_possessive] face is bright red.</li>		
+		<li>desc_sentence->[pawn_possessive] entire body is trembling with fury.</li>
+		<li>desc_sentence->[pawn_possessive] eyes are filled with rage.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+  
+  <TaleDef>
+    <defName>MentalStateAntisocial</defName>
+    <label>antisocial</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>4</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[pawn_nameShortDef] leaving the colony</li>
+        <li>image->[pawn_nameFull] distancing [pawn_possessive]self from the colony [circumstance_group]</li>
+		<li>image->[pawn_nameFull] avoiding interaction with other colonists [circumstance_group]</li>
+		<li>image->[pawn_nameFull] walking away [circumstance_group]</li>
+		<li>image->[pawn_nameFull] running away [circumstance_group]</li>
+		<li>image->[pawn_nameFull] walking into the wilderness [circumstance_group]</li>
+		<li>image->[pawn_nameFull] running into the wilderness [circumstance_group]</li>
+        <li>circumstance_phrase->due to stress</li>
+        <li>circumstance_phrase->with an emotionless look on [pawn_possessive] face</li>
+		<li>circumstance_phrase->with a paranoid look on [pawn_possessive] face</li>
+		<li>desc_sentence->[pawn_pronoun] looks tired and weary.</li>
+        <li>desc_sentence->[pawn_possessive] face is pale.</li>		
+		<li>desc_sentence->[pawn_possessive] head is hung low.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+  
+  <TaleDef>
+    <defName>MentalStateHistrionic</defName>
+    <label>histrionic</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>4</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[pawn_nameShortDef] desperately seeking attention</li>
+        <li>image->[pawn_nameFull] chasing someone down [circumstance_group]</li>
+		<li>image->[pawn_nameFull] proposing awkwardly to another colonist [circumstance_group]</li>
+		<li>image->[pawn_nameFull] making a scene [circumstance_group]</li>
+		<li>image->[pawn_nameFull] looking for someone to talk to [circumstance_group]</li>
+        <li>circumstance_phrase->with a manic look on [pawn_possessive] face</li>
+        <li>circumstance_phrase->with a pleading look on [pawn_possessive] face</li>
+		<li>circumstance_phrase->while others look on with concern</li>
+		<li>circumstance_phrase->with a complete lack of self-control</li>
+		<li>circumstance_phrase->with overly-dramatic flair</li>
+		<li>desc_sentence->Everyone is avoiding [pawn_pronoun].</li>
+        <li>desc_sentence->[pawn_pronoun] is wringing [pawn_possessive] hands.</li>		
+		<li>desc_sentence->[pawn_pronoun] seems impatient.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <TaleDef>
+    <defName>MentalStateFellPlotting</defName>
+    <label>fell plotting</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>4</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[pawn_nameShortDef] hatching a fell plot</li>
+        <li>image->[pawn_nameFull] scheming in [pawn_possessive] room [circumstance_group]</li>
+        <li>image->[pawn_nameFull] hunched over a writing surface [circumstance_group]</li>
+		<li>image->[pawn_nameFull] pacing back and forth [circumstance_group]</li>
+		<li>image->[pawn_nameFull] scribbling on sheets of paper [circumstance_group]</li>
+		<li>image->[pawn_nameFull] skulking through the halls with a weapon [circumstance_group]</li>
+		<li>image->[pawn_nameFull] standing in the background behind another colonist</li>
+        <li>circumstance_phrase->while muttering under [pawn_possessive] breath</li>
+        <li>circumstance_phrase->with a paranoid look on [pawn_possessive] face</li>
+		<li>circumstance_phrase->with a wild-eyed look on [pawn_possessive] face</li>
+		<li>circumstance_phrase->with a grim look on [pawn_possessive] face</li>
+		<li>circumstance_phrase->while gibbering incoherently</li>
+		<li>circumstance_phrase->while whispering furiously</li>
+		<li>circumstance_phrase->while talking to [pawn_possessive]self</li>
+		<li>desc_sentence->[pawn_pronoun] is holding a stolen weapon.</li>
+        <li>desc_sentence->[pawn_pronoun] is tightening [pawn_possessive] grip on [pawn_possessive] weapon.</li>		
+		<li>desc_sentence->[pawn_pronoun] has a gaze filled with malice.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <TaleDef>
+    <defName>MentalStateParanoia</defName>
+    <label>paranoia</label>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>Volatile</type>
+    <baseInterest>4</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[pawn_nameShortDef] becoming consumed by paranoia</li>
+        <li>image->[pawn_nameFull] absorbed by paranoid babbling [circumstance_group]</li>
+        <li>image->[pawn_nameFull] berating another colonist [circumstance_group]</li>
+		<li>image->[pawn_nameFull] wandering senselessly around the colony [circumstance_group]</li>
+		<li>image->[pawn_nameFull] shouting warnings at passersby [circumstance_group]</li>
+		<li>image->[pawn_nameFull] rocking back and forth on the floor [circumstance_group]</li>
+        <li>circumstance_phrase->with a maddened look on [pawn_possessive] face</li>
+        <li>circumstance_phrase->with a mindless look on [pawn_possessive] face</li>
+		<li>circumstance_phrase->with a terrified look on [pawn_possessive] face</li>
+		<li>circumstance_phrase->and waving [pawn_possessive] arms wildly</li>
+		<li>circumstance_phrase->and gesticulating furiously</li>
+		<li>circumstance_phrase->and arguing with [pawn_possessive]self</li>
+		<li>desc_sentence->[pawn_pronoun] is screaming and sobbing.</li>
+        <li>desc_sentence->[pawn_pronoun]'s head darts back and forth fearfully.</li>		
+		<li>desc_sentence->[pawn_pronoun] has an empty-eyed stare.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+</Defs>

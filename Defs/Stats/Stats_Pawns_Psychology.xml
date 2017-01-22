@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <StatDef>
+    <defName>ArrestPeacefullyChance</defName>
+    <label>peaceful arrest chance</label>
+    <description>Base chance this person can convince an arrestee to go quietly.</description>
+    <category>PawnSocial</category>
+    <defaultBaseValue>1</defaultBaseValue>
+    <minValue>0.01</minValue>
+    <toStringStyle>PercentTwo</toStringStyle>
+    <skillNeedFactors>
+      <li Class="SkillNeed_BaseBonus">
+        <skill>Social</skill>
+        <baseFactor>0.02</baseFactor>
+        <bonusFactor>0.05</bonusFactor>
+      </li>
+    </skillNeedFactors>
+    <capacityFactors>
+      <li>
+        <capacity>Talking</capacity>
+        <weight>0.9</weight>
+      </li>
+    </capacityFactors>
+  </StatDef>
+
+</Defs>
