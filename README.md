@@ -26,16 +26,6 @@ Psychology does not require a new save game.
 - Imprisonment: They may be willing to join your colony, but pawns you've captured and recruited will be resentful and awkward with the people that imprisoned them, until they get used to their new life.
 - Individuality: Pawns don't like looking the same as everybody else. They will get a gradually worsening mood penalty depending on how many other colony members are wearing a perfectly matching outfit.
 
-**New Incidents** 
-- Quarrel: Two pawns friendly towards each other have their relationship damaged by an argument until they make up.
-- Homesick: One of your pawns is feeling homesick. They may spread it to other pawns through conversation.
-- Cliques: Two pawns who dislike each other separate the colony into cliques of their friends. Members of each clique may come to blows.
-- Sabotage: Strange things are happening in your base. Someone has to be to blame. But who? (You must enable this incident in the Mod Settings.)
-- Thief: Colonists and pets may spot thieves attempting to sneak into your base and steal valuables, who won't leave without a fight!
-
-**New Illnesses**
-- Anxiety: Pawns with this illness can have panic attacks, more frequent the worse their anxiety is. Severe anxiety also increases a pawn's mental break threshold, makes it more difficult for them to talk, and causes them to sleep more often. Long-term treatment can reduce anxiety to a level where it does not interfere with a pawn's daily routine. The younger the pawn, the more likely they are to develop anxiety and the more severe it is likely to be. Pawns can also develop anxiety after having a mental break.
-
 **New Mental Breaks**
 - Berserk (extreme): The same mental break you know and love, but its frequency is greatly reduced. Bloodlust pawns now have the greatest chance to go berserk, followed by psychopaths, then brawlers. (idea credit twoski)
 - Sadism (extreme): The pawn will go after the colony's prisoners and pets, as well as wild animals, and brutalize them. Psychopaths have the greatest chance to become sadistic, followed by bloodlust pawns, then brawlers. (idea credit twoski)
@@ -49,13 +39,23 @@ Psychology does not require a new save game.
 - Apathy (minor): The pawn becomes lethargic and will frequently wander around instead of working. They cannot be manually assigned to tasks or drafted while apathetic. (idea credit twoski)
 - Histrionic (minor): The pawn desperately seeks attention and validation, wandering around the colony trying to talk to people. Occasionally, they will flirt with someone or propose to their partner. Socialite pawns have the greatest chance to break this way, followed by Lechers.
 
+**New Illnesses**
+- Anxiety: Pawns with this illness can have panic attacks, more frequent the worse their anxiety is. Severe anxiety also increases a pawn's mental break threshold, makes it more difficult for them to talk, and causes them to sleep more often. Long-term treatment can reduce anxiety to a level where it does not interfere with a pawn's daily routine. The younger the pawn, the more likely they are to develop anxiety and the more severe it is likely to be. Pawns can also develop anxiety after having a mental break.
+
+**New Treatments**
+- Some traits can be treated by assigning them a bill through the Operations screen. If successful, they will gain a status effect that nullifies the trait, at the cost of being a little more on edge. It must be maintained through use of good medicine, or they may lapse.
+- Pyromaniac: Will no longer go on fire-starting sprees.
+- Chemical interest/fascination: Will no longer go on drug binges.
+
+**New Drugs**
+- Methadone: An opioid used to treat drug addiction. Barely addictive itself, it is useful for keeping colonists functional while they are suffering from withdrawal. Cheap and easy to manufacture.
+
 **Miscellaneous**
 - Kinsey scale: Instead of using up trait slots for sexualities, pawns are assigned a rating on the Kinsey scale which governs their romantic interactions. They'll also remember the sexualities of people they've attempted to romance, and avoid it in the future if they are incompatible.
 - Empathy: Non-Bleeding Heart pawns incur slightly smaller mood penalties for thoughts that Bleeding Heart pawns get more upset about.
 - Romance: Non-Lecher pawns will not attempt to romance pawns who are in a good relationship, and the likelihood of non-Lecher pawns in a relationship to attempt to romance other pawns is influenced by the strength of their relationship.
 - Social Traits: Pawns will not be affected by social traits relating to appearance if they can't see, or by social traits relating to talking if they can't hear. Pawns whose social traits involve talking also won't affect others with them if they can't talk.
 - Arresting: Pawns now have a "peaceful arrest chance" stat based on their Social skill, which is used when determining whether someone refuses arrest.
-- Pyromaniacs: Pyromaniacs can now be treated by assigning them a bill through the Operations screen. If successful, they will gain the "recovering pyromaniac" status effect, during which they will not go on fire-starting sprees, at the cost of being a little more on edge. It must be maintained through use of good medicine, or they may lapse.
 
 **COMPATIBILITY**
 - Place Psychology as low in your load order as possible, and it will disable its features for compatibility with other mods.
