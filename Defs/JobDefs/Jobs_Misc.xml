@@ -1,11 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <JobDefs>
-
-  <JobDef>
-    <defName>Sabotage</defName>
-    <driverClass>Psychology.JobDriver_Sabotage</driverClass>
-    <reportString>replacing broken components in TargetA.</reportString>
-  </JobDef>
   
   <JobDef>
     <defName>Abuse</defName>

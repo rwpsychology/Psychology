@@ -118,47 +118,4 @@
       </li>
     </stages>
   </ThoughtDef>
-  
-  <ThoughtDef>
-    <defName>Quarrel</defName>
-    <thoughtClass>Thought_MemorySocial</thoughtClass>
-    <durationDays>30.0</durationDays>
-    <stackLimit>300</stackLimit>
-    <stackLimitPerPawn>5</stackLimitPerPawn>
-    <stackedEffectMultiplier>0.4</stackedEffectMultiplier>
-    <stages>
-      <li>
-        <label>holding a grudge</label>
-        <baseOpinionOffset>-80</baseOpinionOffset>
-      </li>
-    </stages>
-  </ThoughtDef>
-  
-  <ThoughtDef>
-    <defName>Clique</defName>
-    <thoughtClass>Thought_MemorySocial</thoughtClass>
-    <durationDays>30.0</durationDays>
-    <stackLimit>300</stackLimit>
-    <stackLimitPerPawn>1</stackLimitPerPawn>
-    <stages>
-      <li>
-        <label>enemy of my clique</label>
-        <baseOpinionOffset>-20</baseOpinionOffset>
-      </li>
-    </stages>
-  </ThoughtDef>
-  
-  <ThoughtDef>
-    <defName>CliqueFollower</defName>
-    <thoughtClass>Thought_MemorySocial</thoughtClass>
-    <durationDays>2.0</durationDays>
-    <stackLimit>300</stackLimit>
-    <stackLimitPerPawn>1</stackLimitPerPawn>
-    <stages>
-      <li>
-        <label>enemy of my clique</label>
-        <baseOpinionOffset>-10</baseOpinionOffset>
-      </li>
-    </stages>
-  </ThoughtDef>
 </ThoughtDefs>

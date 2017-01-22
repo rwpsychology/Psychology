@@ -222,19 +222,49 @@
       </li>
     </stages>
   </ThoughtDef>
-
+  
   <ThoughtDef>
-    <defName>Homesickness</defName>
-    <durationDays>6</durationDays>
-    <stackLimit>1</stackLimit>
+    <defName>TreatmentFailed</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>20</stackLimit>
+		<showBubble>true</showBubble>
+    <stackedEffectMultiplier>0.4</stackedEffectMultiplier>
     <stages>
-	  <li>
-        <label>feeling homesick</label>
-        <description>I miss my home so much... I hate being here. I wonder if anyone else feels the same.</description>
-        <baseMoodEffect>-10</baseMoodEffect>
+      <li>
+        <label>treatment failed</label>
+        <description>The doctor failed to treat my mental illness... it just felt like he didn't understand me.</description>
+        <baseMoodEffect>-6</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>
+
+	<ThoughtDef>
+		<defName>SuccessfulPlot</defName>
+		<durationDays>7</durationDays>
+		<stackLimit>5</stackLimit>
+		<stackedEffectMultiplier>1.0</stackedEffectMultiplier>
+		<stages>
+			<li>
+				<label>fell plot succeeded</label>
+				<description>I destroyed the plague on this place. We are safe now.</description>
+				<baseMoodEffect>30</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>HeardParanoia</defName>
+		<durationDays>2</durationDays>
+		<stackLimit>5</stackLimit>
+		<stackedEffectMultiplier>0.4</stackedEffectMultiplier>
+		<stages>
+			<li>
+				<label>exposed to paranoid rambling</label>
+				<description>The things I heard... they can't be true. Can they?</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
   
   <!-- Abandoning pawns -->
 
@@ -291,48 +321,5 @@
       </li>
     </stages>
   </ThoughtDef>
-  
-  <ThoughtDef>
-    <defName>TreatmentFailed</defName>
-    <durationDays>2</durationDays>
-    <stackLimit>20</stackLimit>
-		<showBubble>true</showBubble>
-    <stackedEffectMultiplier>0.4</stackedEffectMultiplier>
-    <stages>
-      <li>
-        <label>treatment failed</label>
-        <description>The doctor failed to treat my mental illness... it just felt like he didn't understand me.</description>
-        <baseMoodEffect>-6</baseMoodEffect>
-      </li>
-    </stages>
-  </ThoughtDef>
-
-	<ThoughtDef>
-		<defName>SuccessfulPlot</defName>
-		<durationDays>7</durationDays>
-		<stackLimit>5</stackLimit>
-		<stackedEffectMultiplier>1.0</stackedEffectMultiplier>
-		<stages>
-			<li>
-				<label>fell plot succeeded</label>
-				<description>I destroyed the plague on this place. We are safe now.</description>
-				<baseMoodEffect>30</baseMoodEffect>
-			</li>
-		</stages>
-	</ThoughtDef>
-
-	<ThoughtDef>
-		<defName>HeardParanoia</defName>
-		<durationDays>2</durationDays>
-		<stackLimit>5</stackLimit>
-		<stackedEffectMultiplier>0.4</stackedEffectMultiplier>
-		<stages>
-			<li>
-				<label>exposed to paranoid rambling</label>
-				<description>The things I heard... they can't be true. Can they?</description>
-				<baseMoodEffect>-5</baseMoodEffect>
-			</li>
-		</stages>
-	</ThoughtDef>
   
 </ThoughtDefs>

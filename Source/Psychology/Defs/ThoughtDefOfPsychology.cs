@@ -38,12 +38,6 @@ namespace Psychology
         public static ThoughtDef RebuffedMyRomanceAttemptLecher;
         public static ThoughtDef PanicAttack;
 
-        /* Incident-related thoughts */
-        public static ThoughtDef Quarrel;
-        public static ThoughtDef Homesickness;
-        public static ThoughtDef Clique;
-        public static ThoughtDef CliqueFollower;
-
         /* Miscellaneous thoughts */
         public static ThoughtDef KilledHumanlikeEnemy;
         public static ThoughtDef DreamGood;

@@ -52,24 +52,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Detour\_Tradeable_Pawn.cs" />
     <Compile Include="Detour\_VoluntarilyJoinableLordsStarter.cs" />
-    <Compile Include="Incidents\Alert_Homesick.cs" />
-    <Compile Include="Incidents\Alert_CliqueMembers.cs" />
     <Compile Include="Main\Alert_Individuality.cs" />
-    <Compile Include="Detour\_Building_Door.cs" />
-    <Compile Include="Detour\_PawnUIOverlay.cs" />
     <Compile Include="Detour\_SocialCardUtility.cs" />
-    <Compile Include="Detour\_ThingSelectionUtility.cs" />
     <Compile Include="MentalStates\Jobs\JobGiver_ArmSelf.cs" />
     <Compile Include="MentalStates\Jobs\JobGiver_EnactPlot.cs" />
     <Compile Include="MentalStates\MentalState_Paranoia.cs" />
     <Compile Include="MentalStates\MentalState_FellPlotting.cs" />
     <Compile Include="MentalStates\Workers\MentalStateWorker_FellPlotting.cs" />
-    <Compile Include="Util\Graphic_Invisible.cs" />
     <Compile Include="Treatments\Hediff_RecoveringPyromaniac.cs" />
-    <Compile Include="Incidents\Hediff_Thief.cs" />
-    <Compile Include="Incidents\Workers\IncidentWorker_RaidEnemy.cs" />
-    <Compile Include="Detour\_InteractionWorker.cs" />
     <Compile Include="Detour\_InteractionWorker_RecruitAttempt.cs" />
     <Compile Include="Detour\_Building_Grave.cs" />
     <Compile Include="Detour\_MentalBreaker.cs" />
@@ -85,7 +77,6 @@
     <Compile Include="Detour\_PawnRelationWorker_Sibling.cs" />
     <Compile Include="Detour\_Pawn_JobTracker.cs" />
     <Compile Include="Detour\_PawnDiedOrDownedThoughtsUtility.cs" />
-    <Compile Include="Incidents\Workers\IncidentWorker_Thief.cs" />
     <Compile Include="MentalStates\Jobs\JobDriver_MakeAdvance.cs" />
     <Compile Include="MentalStates\Jobs\JobDriver_Abuse.cs" />
     <Compile Include="MentalStates\Jobs\JobGiver_MakeAdvance.cs" />
@@ -106,7 +97,6 @@
     <Compile Include="MentalStates\MentalState_Apathy.cs" />
     <Compile Include="MentalStates\MentalState_Antisocial.cs" />
     <Compile Include="MentalStates\MentalState_Abuse.cs" />
-    <Compile Include="Util\PawnGraphicSet_Invisible.cs" />
     <Compile Include="Defs\TaleDefOfPsychology.cs" />
     <Compile Include="Defs\RecipeDefOfPsychology.cs" />
     <Compile Include="Treatments\Recipe_TreatPyromaniac.cs" />
@@ -118,19 +108,12 @@
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Disfigured.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_CabinFever.cs" />
     <Compile Include="Defs\JobDefOfPsychology.cs" />
-    <Compile Include="Incidents\Hediff_Saboteur.cs" />
-    <Compile Include="Incidents\Workers\IncidentWorker_Homesick.cs" />
-    <Compile Include="Incidents\Workers\IncidentWorker_CliquesForm.cs" />
-    <Compile Include="Incidents\Workers\IncidentWorker_Sabotage.cs" />
-    <Compile Include="Incidents\Workers\IncidentWorker_Quarrel.cs" />
-    <Compile Include="Incidents\JobDriver_Sabotage.cs" />
     <Compile Include="Main\Pawn_SexualityTracker.cs" />
     <Compile Include="Main\PsychologyPawn.cs" />
     <Compile Include="Defs\HediffDefOfPsychology.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Individuality.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_PanicAttack.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Polygamous.cs" />
-    <Compile Include="Incidents\Toils_Sabotage.cs" />
     <Compile Include="_PsychologyBase.cs" />
     <Compile Include="Detour\_RecordsUtility.cs" />
     <Compile Include="Detour\_Need_Rest.cs" />
@@ -156,7 +139,6 @@
     <Compile Include="Main\Hediff_Anxiety.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_RandomMoodBipolar.cs" />
     <Compile Include="Defs\TraitDefOfPsychology.cs" />
-    <Compile Include="Detour\_Tradeable_Pawn.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

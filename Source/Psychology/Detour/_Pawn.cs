@@ -14,28 +14,13 @@ namespace Psychology.Detour
 {
     internal static class _Pawn
     {
-        internal static FieldInfo _factionInt;
-
-        internal static Faction GetFactionInt(this Pawn _this)
-        {
-            if (_factionInt == null)
-            {
-                _factionInt = typeof(Pawn).GetField("factionInt", BindingFlags.Instance | BindingFlags.NonPublic);
-                if (_factionInt== null)
-                {
-                    Log.ErrorOnce("Unable to reflect Pawn_JobTracker.factionInt!", 0x12348765);
-                }
-            }
-            return (Faction)_factionInt.GetValue(_this);
-        }
-
-        //Gee, sure wish I could override this.
         [DetourMethod(typeof(Pawn),"CheckAcceptArrest")]
         internal static bool _CheckAcceptArrest(this Pawn _this, Pawn arrester)
         {
-            if (_this.health.hediffSet.HasHediff(HediffDefOfPsychology.Saboteur))
+            HediffDef saboteur = DefDatabase<HediffDef>.GetNamedSilentFail("Saboteur");
+            if (saboteur != null && _this.health.hediffSet.HasHediff(saboteur))
             {
-                _this.health.hediffSet.hediffs.RemoveAll(h => h.def == HediffDefOfPsychology.Saboteur);
+                _this.health.hediffSet.hediffs.RemoveAll(h => h.def == saboteur);
                 Faction faction = Find.FactionManager.RandomEnemyFaction();
                 _this.SetFaction(faction);
                 List<Pawn> thisPawn = new List<Pawn>();
@@ -63,7 +48,7 @@ namespace Psychology.Detour
             {
                 return true;
             }
-            if (_this.Faction != null && _this.Faction != arrester.GetFactionInt())
+            if (_this.Faction != null && _this.Faction != arrester.Faction)
             {
                 _this.Faction.Notify_MemberCaptured(_this, arrester.Faction);
             }
@@ -80,13 +65,6 @@ namespace Psychology.Detour
                 _this.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk, null, false, false, null);
             }
             return false;
-        }
-
-        //This too.
-        [DetourMethod(typeof(Pawn),"ThreatDisabled")]
-        internal static bool ThreatDisabled(this Pawn _this)
-        {
-            return !_this.Spawned || (!_this.InMentalState && _this.GetTraderCaravanRole() == TraderCaravanRole.Carrier && !(_this.jobs.curDriver is JobDriver_AttackMelee)) || _this.Position.Fogged(_this.Map) || _this.Downed || _this.health.hediffSet.HasHediff(HediffDefOfPsychology.Thief);
         }
     }
 }
