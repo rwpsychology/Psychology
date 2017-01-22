@@ -11,6 +11,7 @@ namespace Psychology
     public static class _PsychologyBase
     {
         internal static FieldInfo _commonality;
+        internal static FieldInfo _wantSwitchOn;
 
         public static void SetCommonality(this TraitDef _this, float newValue)
         {
@@ -24,8 +25,6 @@ namespace Psychology
             }
             _commonality.SetValue(_this, newValue);
         }
-
-        internal static FieldInfo _wantSwitchOn;
 
         internal static void WantSwitchOn(this CompFlickable _this, bool newValue)
         {

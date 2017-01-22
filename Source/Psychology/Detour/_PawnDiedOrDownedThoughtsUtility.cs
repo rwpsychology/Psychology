@@ -16,7 +16,6 @@ namespace Psychology.Detour
 {
     internal static class _PawnDiedOrDownedThoughtsUtility
     {
-        // Token: 0x06000D35 RID: 3381 RVA: 0x00041134 File Offset: 0x0003F334
         [DetourMethod(typeof(PawnDiedOrDownedThoughtsUtility), "AppendThoughts_Humanlike")]
         private static void _AppendThoughts_Humanlike(Pawn victim, DamageInfo? dinfo, Hediff hediff, PawnDiedOrDownedThoughtsKind thoughtsKind, List<IndividualThoughtToAdd> outIndividualThoughts, List<ThoughtDef> outAllColonistsThoughts)
         {

@@ -1,10 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: RimWorld.ThoughtUtility
-// Assembly: Assembly-CSharp, Version=0.14.6054.28275, Culture=neutral, PublicKeyToken=null
-// MVID: 1AEB3542-500E-442F-87BE-1A3452AE432F
-// Assembly location: D:\Steam\steamapps\common\RimWorld\RimWorldWin_Data\Managed\Assembly-CSharp.dll
-
-using RimWorld;
+﻿using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -96,22 +90,6 @@ namespace Psychology.Detour
                     current.needs.mood.thoughts.memories.TryGainMemoryThought(thoughtDef2, null);
                 }
             }
-        }
-
-        /** This function searches for a thought in a pawn's memories, caused by another pawn, if applicable. **/
-        public static bool FindThoughtInMemories(Pawn pawn, ThoughtDef thought, Pawn cause = null)
-        {
-            foreach (Thought_Memory memory in pawn.needs.mood.thoughts.memories.Memories)
-            {
-                if (memory.def == thought)
-                {
-                    if (memory.otherPawn == cause || cause == null)
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
         }
     }
 }

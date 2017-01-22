@@ -9,10 +9,8 @@ using HugsLib;
 
 namespace Psychology.Detour
 {
-    // Token: 0x0200031F RID: 799
     internal static class _ChildRelationUtility
     {
-        // Token: 0x06000C59 RID: 3161 RVA: 0x0003C700 File Offset: 0x0003A900
         [DetourMethod(typeof(ChildRelationUtility),"ChanceOfBecomingChildOf")]
         internal static float _ChanceOfBecomingChildOf(Pawn child, Pawn father, Pawn mother, PawnGenerationRequest? childGenerationRequest, PawnGenerationRequest? fatherGenerationRequest, PawnGenerationRequest? motherGenerationRequest)
         {
@@ -72,57 +70,58 @@ namespace Psychology.Detour
 			{
 				return 0f;
 			}
-			float num = 1f;
-			float num2 = 1f;
-			float num3 = 1f;
-			float num4 = 1f;
+			float maleAgeFactor = 1f;
+			float femaleAgeFactor = 1f;
+			float existingChildrenFactor = 1f;
+			float maleSexualityFactor = 1f;
+            float femaleSexualityFactor = 1f;
             if (father != null && child.GetFather() == null)
             {
                 PsychologyPawn realFather = father as PsychologyPawn;
-                num = (float)GetParentAgeFactor.Invoke(typeof(ChildRelationUtility), new object[] { father, child, 14f, 30f, 50f });
-				if (num == 0f)
+                maleAgeFactor = (float)GetParentAgeFactor.Invoke(typeof(ChildRelationUtility), new object[] { father, child, 14f, 30f, 50f });
+				if (maleAgeFactor == 0f)
 				{
 					return 0f;
                 }
                 if (PsychologyBase.ActivateKinsey() && realFather != null)
                 {
-                    num4 = Mathf.InverseLerp(6f, 0f, realFather.sexuality.kinseyRating);
+                    maleSexualityFactor = Mathf.InverseLerp(6f, 0f, realFather.sexuality.kinseyRating);
                 }
                 else if (father.story.traits.HasTrait(TraitDefOf.Gay))
 				{
-					num4 = 0.1f;
+                    maleSexualityFactor = 0.1f;
 				}
             }
             if (mother != null && child.GetMother() == null)
             {
                 PsychologyPawn realMother = mother as PsychologyPawn;
-                num2 = (float)GetParentAgeFactor.Invoke(typeof(ChildRelationUtility), new object[] { mother, child, 16f, 27f, 45f });
-				if (num2 == 0f)
+                femaleAgeFactor = (float)GetParentAgeFactor.Invoke(typeof(ChildRelationUtility), new object[] { mother, child, 16f, 27f, 45f });
+				if (femaleAgeFactor == 0f)
 				{
 					return 0f;
                 }
-                int num5 = (int)NumberOfChildrenFemaleWantsEver.Invoke(typeof(ChildRelationUtility), new object[] { mother });
-				if (mother.relations.ChildrenCount >= num5)
+                int desiredChildrenFactor = (int)NumberOfChildrenFemaleWantsEver.Invoke(typeof(ChildRelationUtility), new object[] { mother });
+				if (mother.relations.ChildrenCount >= desiredChildrenFactor)
 				{
 					return 0f;
 				}
-				num3 = 1f - (float)mother.relations.ChildrenCount / (float)num5;
+				existingChildrenFactor = 1f - (float)mother.relations.ChildrenCount / (float)desiredChildrenFactor;
                 if (PsychologyBase.ActivateKinsey() && realMother != null)
                 {
-                    num4 = Mathf.InverseLerp(6f, 0f, realMother.sexuality.kinseyRating);
+                    femaleSexualityFactor = Mathf.InverseLerp(6f, 0f, realMother.sexuality.kinseyRating);
                 }
                 else if (mother.story.traits.HasTrait(TraitDefOf.Gay))
 				{
-					num4 = 0.1f;
+					femaleSexualityFactor = 0.1f;
 				}
             }
-            float num6 = 1f;
+            float relationshipFactor = 1f;
 			if (mother != null)
 			{
 				Pawn firstDirectRelationPawn = mother.relations.GetFirstDirectRelationPawn(PawnRelationDefOf.Spouse, null);
 				if (firstDirectRelationPawn != null && firstDirectRelationPawn != father)
 				{
-					num6 *= 0.15f;
+					relationshipFactor *= 0.15f;
 				}
 			}
 			if (father != null)
@@ -130,10 +129,10 @@ namespace Psychology.Detour
 				Pawn firstDirectRelationPawn2 = father.relations.GetFirstDirectRelationPawn(PawnRelationDefOf.Spouse, null);
 				if (firstDirectRelationPawn2 != null && firstDirectRelationPawn2 != mother)
 				{
-					num6 *= 0.15f;
+					relationshipFactor *= 0.15f;
 				}
 			}
-			return skinColorFactor * num * num2 * num3 * num6 * num4;
+			return skinColorFactor * maleAgeFactor * maleSexualityFactor * femaleSexualityFactor * femaleAgeFactor * existingChildrenFactor * relationshipFactor;
         }
     }
 }

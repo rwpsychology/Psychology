@@ -89,6 +89,15 @@ namespace Psychology
             return thought;
         }
 
+        private static ThoughtDef ModifyThoughtStages(ThoughtDef thought, int[] stages)
+        {
+            for(int stage = 0; stage < thought.stages.Count; stage++)
+            {
+                thought.stages[stage].baseMoodEffect = stages[stage];
+            }
+            return thought;
+        }
+
         private static ThoughtDef ReplaceThoughtWorker(String name, Type newWorker)
         {
             ThoughtDef thought = ThoughtDef.Named(name);
@@ -97,16 +106,6 @@ namespace Psychology
                 thought.workerClass = newWorker;
             }
             return thought;
-        }
-
-        private static IncidentDef ReplaceIncidentWorker(String name, Type newWorker)
-        {
-            IncidentDef incident = IncidentDef.Named(name);
-            if (incident != null && incident.workerClass != null)
-            {
-                incident.workerClass = newWorker;
-            }
-            return incident;
         }
 
         private static void RemoveTrait(Pawn pawn, TraitDef trait)
@@ -125,6 +124,8 @@ namespace Psychology
         {
             if (ModIsActive)
             {
+                /* Mod settings */
+
                 toggleEmpathy = Settings.GetHandle<bool>("EnableEmpathy", "EmpathyChangesTitle".Translate(), "EmpathyChangesTooltip".Translate(), true);
                 toggleKinsey = Settings.GetHandle<bool>("EnableSexuality", "SexualityChangesTitle".Translate(), "SexualityChangesTooltip".Translate(), true);
                 kinseyMode = Settings.GetHandle<KinseyMode>("KinseyMode", "KinseyModeTitle".Translate(), "KinseyModeTooltip".Translate(), KinseyMode.Realistic, null, "KinseyMode_");
@@ -132,22 +133,13 @@ namespace Psychology
                 
                 notBabyMode = toggleIndividuality.Value;
 
+                /* Mod conflict detection */
+
                 if (!detoursMedical)
                 {
                     Logger.Warning("MedicalDetourDisable".Translate());
                 }
 
-                //Vanilla Defs will be edited at load to improve compatibility with other mods.
-                AddConflictingTraits("Nudist", new TraitDef[] { TraitDefOfPsychology.Prude });
-                AddConflictingTraits("Bloodlust", new TraitDef[] { TraitDefOfPsychology.BleedingHeart, TraitDefOfPsychology.Desensitized });
-                AddConflictingTraits("Psychopath", new TraitDef[] { TraitDefOfPsychology.BleedingHeart, TraitDefOfPsychology.Desensitized, TraitDefOfPsychology.OpenMinded });
-                AddConflictingTraits("Cannibal", new TraitDef[] { TraitDefOfPsychology.BleedingHeart, TraitDefOfPsychology.Gourmet });
-                AddConflictingTraits("Ascetic", new TraitDef[] { TraitDefOfPsychology.Gourmet });
-                AddConflictingTraits("Neurotic", new TraitDef[] { TraitDefOfPsychology.HeavySleeper });
-                AddConflictingTraits("DislikesMen", new TraitDef[] { TraitDefOfPsychology.OpenMinded });
-                AddConflictingTraits("DislikesWomen", new TraitDef[] { TraitDefOfPsychology.OpenMinded });
-                AddConflictingTraits("Prosthophobe", new TraitDef[] { TraitDefOfPsychology.OpenMinded });
-                
                 TraitDef bisexual = DefDatabase<TraitDef>.GetNamedSilentFail("Bisexual");
                 TraitDef asexual = DefDatabase<TraitDef>.GetNamedSilentFail("Asexual");
                 if (bisexual != null || asexual != null || !toggleKinsey || !detoursSexual)
@@ -155,7 +147,7 @@ namespace Psychology
                     if (toggleKinsey)
                     {
                         Logger.Message("KinseyDisable".Translate());
-                        if(!detoursSexual)
+                        if (!detoursSexual)
                         {
                             Logger.Warning("KinseyDetourDisable".Translate());
                             TraitDefOfPsychology.Codependent.SetCommonality(0f);
@@ -184,6 +176,17 @@ namespace Psychology
                     }
                 }
                 
+                /* Vanilla Def edits */
+                AddConflictingTraits("Nudist", new TraitDef[] { TraitDefOfPsychology.Prude });
+                AddConflictingTraits("Bloodlust", new TraitDef[] { TraitDefOfPsychology.BleedingHeart, TraitDefOfPsychology.Desensitized });
+                AddConflictingTraits("Psychopath", new TraitDef[] { TraitDefOfPsychology.BleedingHeart, TraitDefOfPsychology.Desensitized, TraitDefOfPsychology.OpenMinded });
+                AddConflictingTraits("Cannibal", new TraitDef[] { TraitDefOfPsychology.BleedingHeart, TraitDefOfPsychology.Gourmet });
+                AddConflictingTraits("Ascetic", new TraitDef[] { TraitDefOfPsychology.Gourmet });
+                AddConflictingTraits("Neurotic", new TraitDef[] { TraitDefOfPsychology.HeavySleeper });
+                AddConflictingTraits("DislikesMen", new TraitDef[] { TraitDefOfPsychology.OpenMinded });
+                AddConflictingTraits("DislikesWomen", new TraitDef[] { TraitDefOfPsychology.OpenMinded });
+                AddConflictingTraits("Prosthophobe", new TraitDef[] { TraitDefOfPsychology.OpenMinded });
+                
                 AddNullifyingTraits("AteLavishMeal", new TraitDef[] { TraitDefOfPsychology.Gourmet });
                 AddNullifyingTraits("AteFineMeal", new TraitDef[] { TraitDefOfPsychology.Gourmet });
                 AddNullifyingTraits("AteAwfulMeal", new TraitDef[] { TraitDefOfPsychology.Gourmet });
@@ -211,115 +214,61 @@ namespace Psychology
                 ThoughtDef knowGuestExecuted = AddNullifyingTraits("KnowGuestExecuted", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (knowGuestExecuted != null && toggleEmpathy)
                 {
-                    if (knowGuestExecuted.stages.Count >= 1) //We can't assume that other mods won't remove stages from this thought, so we'll try to avoid OutOfBounds exceptions.
-                    {
-                        knowGuestExecuted.stages[0].baseMoodEffect = -1;
-                    }
-                    if (knowGuestExecuted.stages.Count >= 2)
-                    {
-                        knowGuestExecuted.stages[1].baseMoodEffect = -2;
-                    }
-                    if (knowGuestExecuted.stages.Count >= 3)
-                    {
-                        knowGuestExecuted.stages[2].baseMoodEffect = -4;
-                    }
-                    if (knowGuestExecuted.stages.Count >= 4)
-                    {
-                        knowGuestExecuted.stages[3].baseMoodEffect = -5;
-                    }
+                    knowGuestExecuted = ModifyThoughtStages(knowGuestExecuted, new int[] { -1, -2, -4, -5 });
                 }
 
                 ThoughtDef knowColonistExecuted = AddNullifyingTraits("KnowColonistExecuted", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (knowColonistExecuted != null && toggleEmpathy)
                 {
-                    if (knowColonistExecuted.stages.Count >= 1)
-                    {
-                        knowColonistExecuted.stages[0].baseMoodEffect = -1;
-                    }
-                    if (knowColonistExecuted.stages.Count >= 2)
-                    {
-                        knowColonistExecuted.stages[1].baseMoodEffect = -2;
-                    }
-                    if (knowColonistExecuted.stages.Count >= 3)
-                    {
-                        knowColonistExecuted.stages[2].baseMoodEffect = -4;
-                    }
-                    if (knowColonistExecuted.stages.Count >= 4)
-                    {
-                        knowColonistExecuted.stages[3].baseMoodEffect = -5;
-                    }
+                    knowColonistExecuted = ModifyThoughtStages(knowColonistExecuted, new int[] { -1, -2, -4, -5 });
                 }
 
                 ThoughtDef knowPrisonerDiedInnocent = AddNullifyingTraits("KnowPrisonerDiedInnocent", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (knowPrisonerDiedInnocent != null && toggleEmpathy)
                 {
-                    if (knowPrisonerDiedInnocent.stages.Count >= 1)
-                    {
-                        knowPrisonerDiedInnocent.stages[0].baseMoodEffect = -4;
-                    }
+                    knowPrisonerDiedInnocent = ModifyThoughtStages(knowPrisonerDiedInnocent, new int[] { -4 });
                 }
 
                 ThoughtDef knowColonistDied = AddNullifyingTraits("KnowColonistDied", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (knowColonistDied != null && toggleEmpathy)
                 {
-                    if (knowColonistDied.stages.Count >= 1)
-                    {
-                        knowColonistDied.stages[0].baseMoodEffect = -2;
-                    }
+                    knowColonistDied = ModifyThoughtStages(knowColonistDied, new int[] { -2 });
                 }
 
                 ThoughtDef colonistAbandoned = AddNullifyingTraits("ColonistAbandoned", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (colonistAbandoned != null && toggleEmpathy)
                 {
-                    if (colonistAbandoned.stages.Count >= 1)
-                    {
-                        colonistAbandoned.stages[0].baseMoodEffect = -2;
-                    }
+                    colonistAbandoned = ModifyThoughtStages(colonistAbandoned, new int[] { -2 });
                 }
 
                 ThoughtDef colonistAbandonedToDie = AddNullifyingTraits("ColonistAbandonedToDie", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (colonistAbandonedToDie != null && toggleEmpathy)
                 {
-                    if (colonistAbandonedToDie.stages.Count >= 1)
-                    {
-                        colonistAbandonedToDie.stages[0].baseMoodEffect = -4;
-                    }
+                    colonistAbandonedToDie = ModifyThoughtStages(colonistAbandonedToDie, new int[] { -4 });
                 }
 
                 ThoughtDef prisonerAbandonedToDie = AddNullifyingTraits("PrisonerAbandonedToDie", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (prisonerAbandonedToDie != null && toggleEmpathy)
                 {
-                    if (prisonerAbandonedToDie.stages.Count >= 1)
-                    {
-                        prisonerAbandonedToDie.stages[0].baseMoodEffect = -3;
-                    }
+                    prisonerAbandonedToDie = ModifyThoughtStages(prisonerAbandonedToDie, new int[] { -3 });
                 }
 
                 ThoughtDef knowPrisonerSold = AddNullifyingTraits("KnowPrisonerSold", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (knowPrisonerSold != null && toggleEmpathy)
                 {
-                    if (knowPrisonerSold.stages.Count >= 1)
-                    {
-                        knowPrisonerSold.stages[0].baseMoodEffect = -4;
-                    }
+                    knowPrisonerSold = ModifyThoughtStages(knowPrisonerSold, new int[] { -4 });
                 }
 
                 ThoughtDef knowGuestOrganHarvested = AddNullifyingTraits("KnowGuestOrganHarvested", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (knowGuestOrganHarvested != null && toggleEmpathy)
                 {
-                    if (knowGuestOrganHarvested.stages.Count >= 1)
-                    {
-                        knowGuestOrganHarvested.stages[0].baseMoodEffect = -4;
-                    }
+                    knowGuestOrganHarvested = ModifyThoughtStages(knowGuestOrganHarvested, new int[] { -4 });
                 }
 
                 ThoughtDef knowColonistOrganHarvested = AddNullifyingTraits("KnowColonistOrganHarvested", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (knowColonistOrganHarvested != null && toggleEmpathy)
                 {
-                    if (knowColonistOrganHarvested.stages.Count >= 1)
-                    {
-                        knowColonistOrganHarvested.stages[0].baseMoodEffect = -4;
-                    }
+                    knowColonistOrganHarvested = ModifyThoughtStages(knowColonistOrganHarvested, new int[] { -4 });
                 }
 
                 ReplaceThoughtWorker("CabinFever", typeof(ThoughtWorker_CabinFever));
@@ -328,9 +277,14 @@ namespace Psychology
                 ReplaceThoughtWorker("AnnoyingVoice", typeof(ThoughtWorker_AnnoyingVoice));
                 ReplaceThoughtWorker("CreepyBreathing", typeof(ThoughtWorker_CreepyBreathing));
                 ReplaceThoughtWorker("Pretty", typeof(ThoughtWorker_Pretty));
-                ReplaceIncidentWorker("RaidEnemy", typeof(IncidentWorker_RaidEnemy));
 
-                // Credit to FluffierThanThou for the code.
+                MentalBreakDef berserk = DefDatabase<MentalBreakDef>.GetNamed("Berserk");
+                berserk.baseCommonality = 0f;
+                MentalStateDef fireStartingSpree = DefDatabase<MentalStateDef>.GetNamed("FireStartingSpree");
+                fireStartingSpree.workerClass = typeof(MentalStateWorker_FireStartingSpree);
+
+                /* New HediffGiverSets
+                 * Code adapted from code by FluffierThanThou */
                 var livingRaces = DefDatabase<ThingDef>
                     .AllDefsListForReading
                     .Where(t => !t.race?.hediffGiverSets?.NullOrEmpty() ?? false);
@@ -343,11 +297,6 @@ namespace Psychology
                         alive.recipes.Add(RecipeDefOfPsychology.TreatPyromania);
                     }
                 }
-
-                MentalBreakDef berserk = DefDatabase<MentalBreakDef>.GetNamed("Berserk");
-                berserk.baseCommonality = 0f;
-                MentalStateDef fireStartingSpree = DefDatabase<MentalStateDef>.GetNamed("FireStartingSpree");
-                fireStartingSpree.workerClass = typeof(MentalStateWorker_FireStartingSpree);
 
                 /*
                  * Now to enjoy the benefits of having made a popular mod!
@@ -424,12 +373,13 @@ namespace Psychology
         {
             if (ModIsActive && PsychologyBase.ActivateKinsey())
             {
+                /* Remove Gay trait from pawns if Kinsey scale is enabled */
                 List<Pawn> gayPawns = (from p in map.mapPawns.AllPawns
                                        where p.RaceProps.Humanlike && p.story.traits.HasTrait(TraitDefOf.Gay)
                                        select p).ToList();
                 foreach (Pawn pawn in gayPawns)
                 {
-                    PsychologyBase.RemoveTrait(pawn, TraitDefOf.Gay);
+                    RemoveTrait(pawn, TraitDefOf.Gay);
                     PsychologyPawn realPawn = pawn as PsychologyPawn;
                     if (realPawn != null && realPawn.sexuality.kinseyRating < 5)
                     {

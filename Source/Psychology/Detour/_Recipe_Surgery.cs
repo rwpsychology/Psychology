@@ -1,10 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: RimWorld.Recipe_MedicalOperation
-// Assembly: Assembly-CSharp, Version=0.14.6054.28275, Culture=neutral, PublicKeyToken=null
-// MVID: 1AEB3542-500E-442F-87BE-1A3452AE432F
-// Assembly location: D:\Steam\steamapps\common\RimWorld\RimWorldWin_Data\Managed\Assembly-CSharp.dll
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
@@ -19,28 +13,28 @@ namespace Psychology.Detour
         [DetourMethod(typeof(Recipe_Surgery), "CheckSurgeryFail")]
         internal static bool _CheckSurgeryFail(this Recipe_Surgery s, Pawn surgeon, Pawn patient, List<Thing> ingredients, BodyPartRecord part)
         {
-            float num = 1f;
-            float num2 = surgeon.GetStatValue(StatDefOf.SurgerySuccessChance, true);
-            if (num2 < 1f)
+            float successChance = 1f;
+            float surgeonSkillFactor = surgeon.GetStatValue(StatDefOf.SurgerySuccessChance, true);
+            if (surgeonSkillFactor < 1f)
             {
-                num2 = Mathf.Pow(num2, s.recipe.surgeonSurgerySuccessChanceExponent);
+                surgeonSkillFactor = Mathf.Pow(surgeonSkillFactor, s.recipe.surgeonSurgerySuccessChanceExponent);
             }
-            num *= num2;
+            successChance *= surgeonSkillFactor;
             Room room = surgeon.GetRoom();
             if (room != null)
             {
-                float num3 = room.GetStat(RoomStatDefOf.SurgerySuccessChanceFactor);
-                if (num3 < 1f)
+                float roomFactor = room.GetStat(RoomStatDefOf.SurgerySuccessChanceFactor);
+                if (roomFactor < 1f)
                 {
-                    num3 = Mathf.Pow(num3, s.recipe.roomSurgerySuccessChanceFactorExponent);
+                    roomFactor = Mathf.Pow(roomFactor, s.recipe.roomSurgerySuccessChanceFactorExponent);
                 }
-                num *= num3;
+                successChance *= roomFactor;
             }
             var GetAverageMedicalPotency = typeof(Recipe_Surgery).GetMethod("GetAverageMedicalPotency", BindingFlags.Instance | BindingFlags.NonPublic);
             if (GetAverageMedicalPotency != null)
-                num *= (float)GetAverageMedicalPotency.Invoke(s, new object[] { ingredients });
-            num *= s.recipe.surgerySuccessChanceFactor;
-            if (Rand.Value > num)
+                successChance *= (float)GetAverageMedicalPotency.Invoke(s, new object[] { ingredients });
+            successChance *= s.recipe.surgerySuccessChanceFactor;
+            if (Rand.Value > successChance)
             {
                 if (Rand.Value < s.recipe.deathOnFailedSurgeryChance)
                 {

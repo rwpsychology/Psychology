@@ -24,8 +24,7 @@ namespace Psychology.Detour
                 Widgets.Label(rect2, kinsey);
             }
         }
-
-        // Token: 0x06002003 RID: 8195 RVA: 0x000A9504 File Offset: 0x000A7704
+        
         [DetourMethod(typeof(SocialCardUtility),"DrawSocialCard")]
         public static void DrawSocialCard(Rect rect, Pawn pawn)
         {

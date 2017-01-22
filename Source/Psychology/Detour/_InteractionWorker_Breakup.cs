@@ -8,10 +8,8 @@ using System.Reflection;
 
 namespace Psychology.Detour
 {
-    // Token: 0x02000320 RID: 800
     internal static class _InteractionWorker_Breakup
     {
-        // Token: 0x06000C67 RID: 3175 RVA: 0x0003CEEC File Offset: 0x0003B0EC
         [DetourMethod(typeof(InteractionWorker_Breakup),"Interacted")]
         internal static void _Interacted(this InteractionWorker_Breakup _this, Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks)
         {
@@ -53,8 +51,7 @@ namespace Psychology.Detour
 				}), LetterType.BadNonUrgent, initiator, null);
 			}
         }
-
-        // Token: 0x06000C66 RID: 3174 RVA: 0x0003CE84 File Offset: 0x0003B084
+        
         [DetourMethod(typeof(InteractionWorker_Breakup), "RandomSelectionWeight")]
         internal static float _RandomSelectionWeight(this InteractionWorker_Breakup _this, Pawn initiator, Pawn recipient)
         {

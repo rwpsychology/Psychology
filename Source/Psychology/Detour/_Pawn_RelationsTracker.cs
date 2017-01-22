@@ -49,9 +49,8 @@ namespace Psychology.Detour
             Rand.Seed = pawn.HashOffset();
             bool flag = Rand.Value < 0.015f;
             Rand.PopSeed();
-            float num = 1f;
-            float num2 = 1f;
-            float num9 = 1f;
+            float ageFactor = 1f;
+            float sexualityFactor = 1f;
             float ageBiologicalYearsFloat = pawn.ageTracker.AgeBiologicalYearsFloat;
             float ageBiologicalYearsFloat2 = otherPawn.ageTracker.AgeBiologicalYearsFloat;
             PsychologyPawn realPawn = pawn as PsychologyPawn;
@@ -60,7 +59,7 @@ namespace Psychology.Detour
                 flag = true;
                 float kinsey = 3 - realPawn.sexuality.kinseyRating;
                 float homo = (pawn.gender == otherPawn.gender) ? 1f : -1f;
-                num9 = Mathf.InverseLerp(3f, 0f, kinsey * homo);
+                sexualityFactor = Mathf.InverseLerp(3f, 0f, kinsey * homo);
             }
             if (pawn.gender == Gender.Male)
             {
@@ -78,11 +77,7 @@ namespace Psychology.Detour
                         return 0f;
                     }
                 }
-                num2 = GenMath.FlatHill(0f, 16f, 20f, ageBiologicalYearsFloat, ageBiologicalYearsFloat + 15f, 0.07f, ageBiologicalYearsFloat2);
-                if (pawn.RaceProps.Humanlike && pawn.story.traits.HasTrait(TraitDefOfPsychology.OpenMinded))
-                {
-                    num2 = 1f;
-                }
+                ageFactor = GenMath.FlatHill(0f, 16f, 20f, ageBiologicalYearsFloat, ageBiologicalYearsFloat + 15f, 0.07f, ageBiologicalYearsFloat2);
             }
             else if (pawn.gender == Gender.Female)
             {
@@ -97,7 +92,7 @@ namespace Psychology.Detour
                     }
                     else if (otherPawn.gender == Gender.Female)
                     {
-                        num = 0f;
+                        return 0f;
                     }
                 }
                 if ((ageBiologicalYearsFloat2 < ageBiologicalYearsFloat - 10f) && (pawn.story.traits.HasTrait(TraitDefOfPsychology.OpenMinded)))
@@ -106,51 +101,48 @@ namespace Psychology.Detour
                 }
                 if (ageBiologicalYearsFloat2 < ageBiologicalYearsFloat - 3f)
                 {
-                    num2 = Mathf.InverseLerp(ageBiologicalYearsFloat - 10f, ageBiologicalYearsFloat - 3f, ageBiologicalYearsFloat2) * 0.2f;
+                    ageFactor = Mathf.InverseLerp(ageBiologicalYearsFloat - 10f, ageBiologicalYearsFloat - 3f, ageBiologicalYearsFloat2) * 0.2f;
                 }
                 else
                 {
-                    num2 = GenMath.FlatHill(0.2f, ageBiologicalYearsFloat - 3f, ageBiologicalYearsFloat, ageBiologicalYearsFloat + 10f, ageBiologicalYearsFloat + 30f, 0.1f, ageBiologicalYearsFloat2);
-                }
-                if (pawn.RaceProps.Humanlike && pawn.story.traits.HasTrait(TraitDefOfPsychology.OpenMinded))
-                {
-                    num2 = 1f;
+                    ageFactor = GenMath.FlatHill(0.2f, ageBiologicalYearsFloat - 3f, ageBiologicalYearsFloat, ageBiologicalYearsFloat + 10f, ageBiologicalYearsFloat + 30f, 0.1f, ageBiologicalYearsFloat2);
                 }
             }
-            float num3 = 1f;
-            num3 *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Talking));
-            num3 *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Manipulation));
-            num3 *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Moving));
+            float disabilityFactor = 1f;
+            disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Talking));
+            disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Manipulation));
+            disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Moving));
             if (pawn.RaceProps.Humanlike && pawn.story.traits.HasTrait(TraitDefOfPsychology.OpenMinded))
             {
-                num3 = 1f;
+                ageFactor = 1f;
+                disabilityFactor = 1f;
             }
-            float num4 = 1f;
+            float relationFactor = 1f;
             foreach (PawnRelationDef current in pawn.GetRelations(otherPawn))
             {
-                num4 *= current.attractionFactor;
+                relationFactor *= current.attractionFactor;
             }
-            int num5 = 0;
+            int beauty = 0;
             if (otherPawn.RaceProps.Humanlike)
             {
-                num5 = otherPawn.story.traits.DegreeOfTrait(TraitDefOf.Beauty);
+                beauty = otherPawn.story.traits.DegreeOfTrait(TraitDefOf.Beauty);
             }
             if (pawn.RaceProps.Humanlike && pawn.story.traits.HasTrait(TraitDefOfPsychology.OpenMinded) || pawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Sight) == 0f)
             {
-                num5 = 0;
+                beauty = 0;
             }
-            float num6 = 1f;
-            if (num5 < 0)
+            float beautyFactor = 1f;
+            if (beauty < 0)
             {
-                num6 = 0.3f;
+                beautyFactor = 0.3f;
             }
-            else if (num5 > 0)
+            else if (beauty > 0)
             {
-                num6 = 2.3f;
+                beautyFactor = 2.3f;
             }
-            float num7 = Mathf.InverseLerp(15f, 18f, ageBiologicalYearsFloat);
-            float num8 = Mathf.InverseLerp(15f, 18f, ageBiologicalYearsFloat2);
-            return num * num2 * num3 * num4 * num7 * num8 * num6 * num9;
+            float initiatorYouthFactor = Mathf.InverseLerp(15f, 18f, ageBiologicalYearsFloat);
+            float recipientYouthFactor = Mathf.InverseLerp(15f, 18f, ageBiologicalYearsFloat2);
+            return 1f * sexualityFactor * ageFactor * disabilityFactor * relationFactor * beautyFactor * initiatorYouthFactor * recipientYouthFactor;
         }
 
         [DetourFallback("_SecondaryRomanceChanceFactor")]

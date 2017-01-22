@@ -11,10 +11,8 @@ using Psychology.Detour;
 
 namespace Psychology
 {
-    // Token: 0x0200032A RID: 810
     internal static class _LovePartnerRelationUtility
     {
-        // Token: 0x06000C9A RID: 3226 RVA: 0x0003EAD8 File Offset: 0x0003CCD8
         [DetourMethod(typeof(LovePartnerRelationUtility), "LovePartnerRelationGenerationChance")]
         internal static float _LovePartnerRelationGenerationChance(Pawn generated, Pawn other, PawnGenerationRequest request, bool ex)
         {
@@ -41,25 +39,25 @@ namespace Psychology
             {
                 return 0f;
             }
-            float num = 1f;
+            float existingExLoverFactor = 1f;
             if (ex)
             {
-                int num2 = 0;
+                int exLovers = 0;
                 List<DirectPawnRelation> directRelations = other.relations.DirectRelations;
                 for (int i = 0; i < directRelations.Count; i++)
                 {
                     if (LovePartnerRelationUtility.IsExLovePartnerRelation(directRelations[i].def))
                     {
-                        num2++;
+                        exLovers++;
                     }
                 }
-                num = Mathf.Pow(0.2f, (float)num2);
+                existingExLoverFactor = Mathf.Pow(0.2f, (float)exLovers);
             }
             else if (LovePartnerRelationUtility.HasAnyLovePartner(other))
             {
                 return 0f;
             }
-            float num3 = 1f;
+            float sexualityFactor = 1f;
             PsychologyPawn realGenerated = generated as PsychologyPawn;
             PsychologyPawn realOther = other as PsychologyPawn;
             if (PsychologyBase.ActivateKinsey() && realGenerated != null && realOther != null)
@@ -67,36 +65,35 @@ namespace Psychology
                 float kinsey = 3 - realGenerated.sexuality.kinseyRating;
                 float kinsey2 = 3 - realOther.sexuality.kinseyRating;
                 float homo = (generated.gender == other.gender) ? 1f : -1f;
-                num3 *= Mathf.InverseLerp(3f, 0f, kinsey * homo);
-                num3 *= Mathf.InverseLerp(3f, 0f, kinsey2 * homo);
+                sexualityFactor *= Mathf.InverseLerp(3f, 0f, kinsey * homo);
+                sexualityFactor *= Mathf.InverseLerp(3f, 0f, kinsey2 * homo);
             }
             else
             {
-                num3 = (generated.gender != other.gender) ? 1f : 0.01f;
+                sexualityFactor = (generated.gender != other.gender) ? 1f : 0.01f;
             }
             var GetGenerationChanceAgeFactor = typeof(LovePartnerRelationUtility).GetMethod("GetGenerationChanceAgeFactor", BindingFlags.Static | BindingFlags.NonPublic);
             var GetGenerationChanceAgeGapFactor = typeof(LovePartnerRelationUtility).GetMethod("GetGenerationChanceAgeGapFactor", BindingFlags.Static | BindingFlags.NonPublic);
             float generationChanceAgeFactor = (float)GetGenerationChanceAgeFactor.Invoke(null, new object[] { generated });
             float generationChanceAgeFactor2 = (float)GetGenerationChanceAgeFactor.Invoke(null, new object[] { other });
             float generationChanceAgeGapFactor = (float)GetGenerationChanceAgeGapFactor.Invoke(null, new object[] { generated, other, ex });
-            float num4 = 1f;
+            float incestFactor = 1f;
             if (generated.GetRelations(other).Any((PawnRelationDef x) => x.familyByBloodRelation))
             {
-                num4 = 0.01f;
+                incestFactor = 0.01f;
             }
-            float num5;
+            float melaninFactor;
             if (request.FixedMelanin.HasValue)
             {
-                num5 = ChildRelationUtility.GetMelaninSimilarityFactor(request.FixedMelanin.Value, other.story.melanin);
+                melaninFactor = ChildRelationUtility.GetMelaninSimilarityFactor(request.FixedMelanin.Value, other.story.melanin);
             }
             else
             {
-                num5 = PawnSkinColors.GetMelaninCommonalityFactor(other.story.melanin);
+                melaninFactor = PawnSkinColors.GetMelaninCommonalityFactor(other.story.melanin);
             }
-            return num * generationChanceAgeFactor * generationChanceAgeFactor2 * generationChanceAgeGapFactor * num3 * num5 * num4;
+            return existingExLoverFactor * sexualityFactor * generationChanceAgeFactor * generationChanceAgeFactor2 * generationChanceAgeGapFactor * incestFactor * melaninFactor;
         }
-
-        // Token: 0x06000E62 RID: 3682 RVA: 0x0004A000 File Offset: 0x00048200
+        
         [DetourMethod(typeof(LovePartnerRelationUtility),"ChangeSpouseRelationsToExSpouse")]
         internal static void _ChangeSpouseRelationsToExSpouse(Pawn pawn)
         {

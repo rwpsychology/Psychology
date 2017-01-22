@@ -10,7 +10,6 @@ namespace Psychology.Detour
 {
     internal static class _FoodUtility
     {
-        // Token: 0x06000037 RID: 55 RVA: 0x00003978 File Offset: 0x00001B78
         [DetourMethod(typeof(FoodUtility),"ThoughtsFromIngesting")]
         internal static List<ThoughtDef> _ThoughtsFromIngesting(Pawn ingester, Thing t)
         {

@@ -11,7 +11,6 @@ namespace Psychology.Detour
 {
     internal static class _InteractionWorker_RecruitAttempt
     {
-        // Token: 0x06000E3F RID: 3647 RVA: 0x00048A20 File Offset: 0x00046C20
         [DetourMethod(typeof(InteractionWorker_RecruitAttempt),"DoRecruit")]
         internal static void _DoRecruit(Pawn recruiter, Pawn recruitee, float recruitChance, bool useAudiovisualEffects = true)
         {
@@ -82,8 +81,8 @@ namespace Psychology.Detour
                 }
                 recruiter.records.Increment(RecordDefOf.AnimalsTamed);
                 RelationsUtility.TryDevelopBondRelation(recruiter, recruitee, 0.01f);
-                float num = Mathf.Lerp(0.02f, 1f, recruitee.RaceProps.wildness);
-                if (Rand.Value < num)
+                float taleChance = Mathf.Lerp(0.02f, 1f, recruitee.RaceProps.wildness);
+                if (Rand.Value < taleChance)
                 {
                     TaleRecorder.RecordTale(TaleDefOf.TamedAnimal, new object[]
                     {

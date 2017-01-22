@@ -12,7 +12,6 @@ namespace Psychology.Detour
 {
     internal static class _PawnComponentsUtility
     {
-        // Token: 0x06000D28 RID: 3368 RVA: 0x000409B0 File Offset: 0x0003EBB0
         [DetourMethod(typeof(PawnComponentsUtility),"CreateInitialComponents")]
         internal static void _CreateInitialComponents(Pawn pawn)
         {

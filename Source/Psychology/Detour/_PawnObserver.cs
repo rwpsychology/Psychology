@@ -24,8 +24,7 @@ namespace Psychology.Detour
             }
             return (Pawn)_pawn.GetValue(_this);
         }
-
-        // Token: 0x06000DC4 RID: 3524 RVA: 0x000456A8 File Offset: 0x000438A8
+        
         [DetourMethod(typeof(PawnObserver), "ObserveSurroundingThings")]
         internal static void _ObserveSurroundingThings(this PawnObserver _this)
         {

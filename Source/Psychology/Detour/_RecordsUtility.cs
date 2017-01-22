@@ -8,10 +8,8 @@ using HugsLib.Source.Detour;
 
 namespace Psychology.Detour
 {
-    // Token: 0x0200031E RID: 798
     internal static class _RecordsUtility
     {
-        // Token: 0x06000C57 RID: 3159 RVA: 0x0003C614 File Offset: 0x0003A814
         [DetourMethod(typeof(RecordsUtility),"Notify_BillDone")]
         internal static void _Notify_BillDone(Pawn billDoer, List<Thing> products)
         {

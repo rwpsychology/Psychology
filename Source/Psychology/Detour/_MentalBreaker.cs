@@ -56,8 +56,7 @@ namespace Psychology.Detour
             }
             return (IEnumerable<MentalBreakDef>)_currentPossibleMoodBreaks.GetValue(_this, null);
         }
-
-        // Token: 0x06002938 RID: 10552 RVA: 0x000E5844 File Offset: 0x000E3A44
+        
         [DetourMethod(typeof(MentalBreaker), "TryDoRandomMoodCausedMentalBreak")]
         internal static bool _TryDoRandomMoodCausedMentalBreak(this MentalBreaker _this)
         {

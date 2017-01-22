@@ -9,10 +9,8 @@ using HugsLib.Source.Detour;
 
 namespace Psychology.Detour
 {
-    // Token: 0x02000341 RID: 833
     internal static class _PawnRelationWorker_Sibling
     {
-        // Token: 0x06000CF2 RID: 3314 RVA: 0x00040A6C File Offset: 0x0003EC6C
         [DetourMethod(typeof(PawnRelationWorker_Sibling), "GenerateParent")]
         internal static Pawn _GenerateParent(Pawn generatedChild, Pawn existingChild, Gender genderToGenerate, PawnGenerationRequest childRequest, bool newlyGeneratedParentsWillBeSpousesIfNotGay)
         {

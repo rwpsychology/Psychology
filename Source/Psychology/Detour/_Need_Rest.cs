@@ -8,7 +8,6 @@ using HugsLib.Source.Detour;
 
 namespace Psychology
 {
-    // Token: 0x02000368 RID: 872
     internal static class _Need_Rest
     {
         internal static FieldInfo _ticksAtZero;
@@ -72,8 +71,7 @@ namespace Psychology
         {
            return Find.TickManager.TicksGame < r.GetLastRestTick() + 2;
         }
-
-        // Token: 0x06000DBA RID: 3514 RVA: 0x00045330 File Offset: 0x00043530
+        
         [DetourMethod(typeof(Need_Rest), "NeedInterval")]
         internal static void _NeedInterval(this Need_Rest r)
         {
