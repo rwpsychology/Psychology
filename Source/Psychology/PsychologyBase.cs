@@ -17,14 +17,12 @@ namespace Psychology
     {
         private static bool kinsey = true;
         private static KinseyMode mode = KinseyMode.Realistic;
-        private static bool sabotabby = false;
         public static bool detoursMedical = true;
         public static bool detoursSexual = true;
         public static bool notBabyMode = true;
         private SettingHandle<bool> toggleKinsey;
         private SettingHandle<bool> toggleEmpathy;
         private SettingHandle<KinseyMode> kinseyMode;
-        private SettingHandle<bool> toggleSabotage;
         private SettingHandle<bool> toggleIndividuality;
 
         public enum KinseyMode
@@ -42,11 +40,6 @@ namespace Psychology
         static public KinseyMode KinseyFormula()
         {
             return mode;
-        }
-
-        static public bool SabotageOn()
-        {
-            return sabotabby;
         }
 
         static public bool IndividualityOn()
@@ -125,7 +118,6 @@ namespace Psychology
         {
             kinsey = toggleKinsey.Value;
             mode = kinseyMode.Value;
-            sabotabby = toggleSabotage.Value;
             notBabyMode = toggleIndividuality.Value;
         }
 
@@ -136,10 +128,8 @@ namespace Psychology
                 toggleEmpathy = Settings.GetHandle<bool>("EnableEmpathy", "EmpathyChangesTitle".Translate(), "EmpathyChangesTooltip".Translate(), true);
                 toggleKinsey = Settings.GetHandle<bool>("EnableSexuality", "SexualityChangesTitle".Translate(), "SexualityChangesTooltip".Translate(), true);
                 kinseyMode = Settings.GetHandle<KinseyMode>("KinseyMode", "KinseyModeTitle".Translate(), "KinseyModeTooltip".Translate(), KinseyMode.Realistic, null, "KinseyMode_");
-                toggleSabotage = Settings.GetHandle<bool>("EnableSabotage", "SabotageIncidentTitle".Translate(), "SabotageIncidentTooltip".Translate(), false);
                 toggleIndividuality = Settings.GetHandle<bool>("EnableIndividuality", "IndividualityTitle".Translate(), "IndividualityTooltip".Translate(), true);
-
-                sabotabby = toggleSabotage.Value;
+                
                 notBabyMode = toggleIndividuality.Value;
 
                 if (!detoursMedical)

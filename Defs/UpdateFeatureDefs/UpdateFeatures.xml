@@ -30,4 +30,9 @@
 		<assemblyVersion>17.1.10</assemblyVersion>
 		<content>-- RECEIVING GALAXY-WIDE TRANSMISSION -- | Reports of burglary have broken out on the rimworlds. Colonists should be on the lookout for thieves attempting to gain access to stockpiles and escape with valuables. If caught by a colonist or a pet, they may resort to violence. | -- TRANSMISSION ENDS--</content>
 	</HugsLib.UpdateFeatureDef>
+	
+	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+		<assemblyVersion>17.1.21</assemblyVersion>
+		<content>-- RECEIVING GALAXY-WIDE TRANSMISSION -- | Colony overseers may notice errors in their equipment when they load old saves. Several incidents have been removed and moved to a separate mod, Expanded Incidents. You may download this mod to continue using the incidents, or simply ignore the errors. | -- TRANSMISSION ENDS--</content>
+	</HugsLib.UpdateFeatureDef>
 </Defs>

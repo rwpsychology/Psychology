@@ -13,9 +13,6 @@
 	<KinseyMode_Invisible>Center</KinseyMode_Invisible>
 	<KinseyMode_Gaypocalypse>Inverse</KinseyMode_Gaypocalypse>
 	
-	<SabotageIncidentTitle>Enable Sabotage incident</SabotageIncidentTitle>
-	<SabotageIncidentTooltip>Many people mistake this incident for a bug the first time they encounter it. As a result, you must opt into the random event, so you know why it's happening.</SabotageIncidentTooltip>
-	
 	<IndividualityTitle>Enable Individuality thoughts</IndividualityTitle>
 	<IndividualityTooltip>Turn this off to disable the negative thought your colonists will get if they are wearing perfectly matching outfits with other colonists. This thought adds extra difficulty, so it's optional, but recommended.</IndividualityTooltip>
   

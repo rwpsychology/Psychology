@@ -58,8 +58,8 @@
     <Compile Include="Detour\_SocialCardUtility.cs" />
     <Compile Include="MentalStates\Jobs\JobGiver_ArmSelf.cs" />
     <Compile Include="MentalStates\Jobs\JobGiver_EnactPlot.cs" />
-    <Compile Include="MentalStates\MentalState_Paranoia.cs" />
     <Compile Include="MentalStates\MentalState_FellPlotting.cs" />
+    <Compile Include="MentalStates\MentalState_Paranoia.cs" />
     <Compile Include="MentalStates\Workers\MentalStateWorker_FellPlotting.cs" />
     <Compile Include="Treatments\Hediff_RecoveringPyromaniac.cs" />
     <Compile Include="Detour\_InteractionWorker_RecruitAttempt.cs" />
