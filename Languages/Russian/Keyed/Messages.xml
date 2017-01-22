@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-	<TreatedPyromaniac>{0} пиромания был успешно вылечен.</TreatedPyromaniac>
+	<TreatedTrait>{0}'s {1} успешно лечится.</TreatedTrait>
 	
 </LanguageData>

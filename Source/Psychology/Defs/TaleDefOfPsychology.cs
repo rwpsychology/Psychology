@@ -11,5 +11,6 @@ namespace Psychology
     public static class TaleDefOfPsychology
     {
         public static TaleDef TreatedPyromania;
+        public static TaleDef TreatedDrugDesire;
     }
 }

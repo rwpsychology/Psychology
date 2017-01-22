@@ -82,7 +82,7 @@ namespace Psychology.Detour
             }
             else if(Rand.Value <= (0.6f-(0.25f*intensity)))
             {
-                hediff = HediffMaker.MakeHediff(HediffDefOfPsychology.Anxiety, _this.GetPawn(), null);
+                hediff = HediffMaker.MakeHediff(HediffDefOfPsychology.Anxiety, _this.GetPawn(), _this.GetPawn().health.hediffSet.GetBrain());
                 hediff.Severity = 0.75f-(intensity*0.25f);
                 _this.GetPawn().health.AddHediff(hediff, null, null);
             }

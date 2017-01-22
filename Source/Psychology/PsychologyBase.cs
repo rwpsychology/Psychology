@@ -210,61 +210,51 @@ namespace Psychology
                 AddNullifyingTraits("Pretty", new TraitDef[] { TraitDefOfPsychology.OpenMinded });
                 AddNullifyingTraits("Ugly", new TraitDef[] { TraitDefOfPsychology.OpenMinded });
                 AddNullifyingTraits("SleptOutside", new TraitDef[] { TraitDefOfPsychology.Outdoorsy });
-
                 ThoughtDef knowGuestExecuted = AddNullifyingTraits("KnowGuestExecuted", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (knowGuestExecuted != null && toggleEmpathy)
                 {
                     knowGuestExecuted = ModifyThoughtStages(knowGuestExecuted, new int[] { -1, -2, -4, -5 });
                 }
-
                 ThoughtDef knowColonistExecuted = AddNullifyingTraits("KnowColonistExecuted", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (knowColonistExecuted != null && toggleEmpathy)
                 {
                     knowColonistExecuted = ModifyThoughtStages(knowColonistExecuted, new int[] { -1, -2, -4, -5 });
                 }
-
                 ThoughtDef knowPrisonerDiedInnocent = AddNullifyingTraits("KnowPrisonerDiedInnocent", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (knowPrisonerDiedInnocent != null && toggleEmpathy)
                 {
                     knowPrisonerDiedInnocent = ModifyThoughtStages(knowPrisonerDiedInnocent, new int[] { -4 });
                 }
-
                 ThoughtDef knowColonistDied = AddNullifyingTraits("KnowColonistDied", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (knowColonistDied != null && toggleEmpathy)
                 {
                     knowColonistDied = ModifyThoughtStages(knowColonistDied, new int[] { -2 });
                 }
-
                 ThoughtDef colonistAbandoned = AddNullifyingTraits("ColonistAbandoned", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (colonistAbandoned != null && toggleEmpathy)
                 {
                     colonistAbandoned = ModifyThoughtStages(colonistAbandoned, new int[] { -2 });
                 }
-
                 ThoughtDef colonistAbandonedToDie = AddNullifyingTraits("ColonistAbandonedToDie", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (colonistAbandonedToDie != null && toggleEmpathy)
                 {
                     colonistAbandonedToDie = ModifyThoughtStages(colonistAbandonedToDie, new int[] { -4 });
                 }
-
                 ThoughtDef prisonerAbandonedToDie = AddNullifyingTraits("PrisonerAbandonedToDie", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (prisonerAbandonedToDie != null && toggleEmpathy)
                 {
                     prisonerAbandonedToDie = ModifyThoughtStages(prisonerAbandonedToDie, new int[] { -3 });
                 }
-
                 ThoughtDef knowPrisonerSold = AddNullifyingTraits("KnowPrisonerSold", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (knowPrisonerSold != null && toggleEmpathy)
                 {
                     knowPrisonerSold = ModifyThoughtStages(knowPrisonerSold, new int[] { -4 });
                 }
-
                 ThoughtDef knowGuestOrganHarvested = AddNullifyingTraits("KnowGuestOrganHarvested", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (knowGuestOrganHarvested != null && toggleEmpathy)
                 {
                     knowGuestOrganHarvested = ModifyThoughtStages(knowGuestOrganHarvested, new int[] { -4 });
                 }
-
                 ThoughtDef knowColonistOrganHarvested = AddNullifyingTraits("KnowColonistOrganHarvested", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (knowColonistOrganHarvested != null && toggleEmpathy)
                 {
@@ -279,9 +269,22 @@ namespace Psychology
                 ReplaceThoughtWorker("Pretty", typeof(ThoughtWorker_Pretty));
 
                 MentalBreakDef berserk = DefDatabase<MentalBreakDef>.GetNamed("Berserk");
-                berserk.baseCommonality = 0f;
+                if(berserk != null)
+                {
+                    berserk.baseCommonality = 0f;
+                }
                 MentalStateDef fireStartingSpree = DefDatabase<MentalStateDef>.GetNamed("FireStartingSpree");
-                fireStartingSpree.workerClass = typeof(MentalStateWorker_FireStartingSpree);
+                if(fireStartingSpree != null)
+                {
+                    fireStartingSpree.workerClass = typeof(MentalStateWorker_FireStartingSpree);
+                }
+                IEnumerable<MentalStateDef> drugBinges = (from def in DefDatabase<MentalStateDef>.AllDefsListForReading
+                                                          where def.workerClass == typeof(MentalStateWorker_BingingDrug)
+                                                          select def);
+                foreach (MentalStateDef binge in drugBinges)
+                {
+                    binge.workerClass = typeof(MentalStateWorker_BingingDrugPsychology);
+                }
 
                 /* New HediffGiverSets
                  * Code adapted from code by FluffierThanThou */
@@ -295,6 +298,8 @@ namespace Psychology
                     {
                         alive.race.hediffGiverSets.Add(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicPsychology"));
                         alive.recipes.Add(RecipeDefOfPsychology.TreatPyromania);
+                        alive.recipes.Add(RecipeDefOfPsychology.TreatChemicalInterest);
+                        alive.recipes.Add(RecipeDefOfPsychology.TreatChemicalFascination);
                     }
                 }
 
@@ -384,6 +389,18 @@ namespace Psychology
                     if (realPawn != null && realPawn.sexuality.kinseyRating < 5)
                     {
                         realPawn.sexuality.kinseyRating = Rand.RangeInclusive(5, 6);
+                    }
+                }
+                /* Fix Anxiety not being located in the brain */
+                List<Pawn> anxiousPawns = (from p in map.mapPawns.AllPawns
+                                       where p.health.hediffSet.HasHediff(HediffDefOfPsychology.Anxiety)
+                                       select p).ToList();
+                foreach (Pawn pawn in anxiousPawns)
+                {
+                    Hediff anxiety = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Anxiety);
+                    if(anxiety.Part != pawn.health.hediffSet.GetBrain())
+                    {
+                        anxiety.Part = pawn.health.hediffSet.GetBrain();
                     }
                 }
             }

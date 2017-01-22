@@ -1,6 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
+  
+  <HediffDef Name="DiseaseBase" Abstract="True">
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>0.001</initialSeverity>
+  </HediffDef>
+  
+  <HediffDef Name="TreatmentBase" Abstract="True">
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.1, 0.66, 0.1)</defaultLabelColor>
+    <initialSeverity>1</initialSeverity>
+	<maxSeverity>1</maxSeverity>
+	<tendable>true</tendable>
+    <stages>
+      <li>
+        <statOffsets>
+          <MentalBreakThreshold>0.02</MentalBreakThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_TendDuration">
+        <tendDuration>240000</tendDuration>
+        <severityPerDayTended>0.12</severityPerDayTended>
+      </li>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.1</severityPerDay>
+      </li>
+    </comps>
+  </HediffDef>
+  
   <HediffDef ParentName="DiseaseBase">
     <defName>Anxiety</defName>
     <hediffClass>Psychology.Hediff_Anxiety</hediffClass>
@@ -103,28 +133,14 @@
     </comps>
   </HediffDef>
 
-  <HediffDef ParentName="DiseaseBase">
+  <HediffDef ParentName="TreatmentBase">
     <defName>RecoveringPyromaniac</defName>
     <label>recovering pyromaniac</label>
-    <initialSeverity>1</initialSeverity>
-	<maxSeverity>1</maxSeverity>
-	<tendable>true</tendable>
-    <stages>
-      <li>
-        <statOffsets>
-          <MentalBreakThreshold>0.02</MentalBreakThreshold>
-        </statOffsets>
-      </li>
-    </stages>
-    <comps>
-      <li Class="HediffCompProperties_TendDuration">
-        <tendDuration>240000</tendDuration>
-        <severityPerDayTended>0.12</severityPerDayTended>
-      </li>
-      <li Class="HediffCompProperties_SeverityPerDay">
-        <severityPerDay>-0.1</severityPerDay>
-      </li>
-    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="TreatmentBase">
+    <defName>DrugFree</defName>
+    <label>drug free</label>
   </HediffDef>
   
 </Defs>

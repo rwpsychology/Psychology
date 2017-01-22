@@ -11,5 +11,7 @@ namespace Psychology
     public static class RecipeDefOfPsychology
     {
         public static RecipeDef TreatPyromania;
+        public static RecipeDef TreatChemicalInterest;
+        public static RecipeDef TreatChemicalFascination;
     }
 }
