@@ -18,8 +18,13 @@ namespace Psychology
             {
                 this
             });
+            Scribe_Deep.LookDeep<Pawn_PsycheTracker>(ref this.psyche, "psyche", new object[]
+            {
+                this
+            });
         }
 
         public Pawn_SexualityTracker sexuality;
+        public Pawn_PsycheTracker psyche;
     }
 }

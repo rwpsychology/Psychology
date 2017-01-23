@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<Psychology.PersonalityNodeDef>
+		<defName>Confident</defName>
+		<label>confident</label>
+		<description>A confident person has high self-assurance and self-esteem.</description>
+	</Psychology.PersonalityNodeDef>
+
+	<Psychology.PersonalityNodeDef>
+		<defName>Experimental</defName>
+		<label>experimental</label>
+		<description>Someone experimental is likely to try everything once, enjoy surprises, and be more experienced.</description>
+	</Psychology.PersonalityNodeDef>
+
+	<Psychology.PersonalityNodeDef>
+		<defName>Intelligent</defName>
+		<label>intelligent</label>
+		<description>An intelligent person possesses a lot of raw brain-power.</description>
+	</Psychology.PersonalityNodeDef>
+
+	<Psychology.PersonalityNodeDef>
+		<defName>Extroverted</defName>
+		<label>extroverted</label>
+		<description>Extroverted people enjoy getting out, meeting people, and being in groups.</description>
+	</Psychology.PersonalityNodeDef>
+
+	<Psychology.PersonalityNodeDef>
+		<defName>Emotional</defName>
+		<label>emotional</label>
+		<description>Someone emotional has a lot of raw capacity for feeling emotion.</description>
+	</Psychology.PersonalityNodeDef>
+
+	<Psychology.PersonalityNodeDef>
+		<defName>Independent</defName>
+		<label>independent</label>
+		<description>An independent person is perfectly happy being on their own and doesn't rely on others.</description>
+		<conversationTopic>being alone</conversationTopic>
+		<controversiality>1</controversiality>
+		<parents>
+			<li>
+				<node>Confident</node>
+			</li>
+		</parents>
+		<traitModifiers>
+			<li>
+				<trait>Codependent</trait>
+				<modifier>-1</modifier>
+			</li>
+		</traitModifiers>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Aggressive</defName>
+		<label>aggressive</label>
+		<description>An aggressive person is straightforward, blunt, and usually combative when they don't get what they want.</description>
+		<conversationTopic>how to get what they want</conversationTopic>
+		<controversiality>1.8</controversiality>
+		<femaleModifier>0.5</femaleModifier>
+		<parents>
+			<li>
+				<node>Confident</node>
+			</li>
+		</parents>
+		<traitModifiers>
+			<li>
+				<trait>Abrasive</trait>
+				<modifier>0.25</modifier>
+			</li>
+		</traitModifiers>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Adventurous</defName>
+		<label>adventurous</label>
+		<description>Someone who is adventurous feels more fulfilled when they try new things, expand their horizons, and go new places.</description>
+		<controversiality>0.1</controversiality>
+		<conversationTopic>their bucket lists</conversationTopic>
+		<parents>
+			<li>
+				<node>Confident</node>
+			</li>
+			<li>
+				<node>Experimental</node>
+			</li>
+			<li>
+				<node>Extroverted</node>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>DrugFriendly</defName>
+		<label>drug-friendly</label>
+		<description>A drug-friendly person sees nothing wrong with drugs and makes no effort to avoid them.</description>
+		<conversationTopic>drugs</conversationTopic>
+		<controversiality>1.8</controversiality>
+		<parents>
+			<li>
+				<node>Experimental</node>
+			</li>
+		</parents>
+		<traitModifiers>
+			<li>
+				<trait>DrugDesire</trait>
+				<degree>-1</degree>
+				<modifier>-1</modifier>
+			</li>
+			<li>
+				<trait>DrugDesire</trait>
+				<degree>1</degree>
+				<modifier>0.5</modifier>
+			</li>
+			<li>
+				<trait>DrugDesire</trait>
+				<degree>2</degree>
+				<modifier>1</modifier>
+			</li>
+		</traitModifiers>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Spontaneous</defName>
+		<label>spontaneous</label>
+		<description>A spontaneous person tends to be impulsive and enjoy surprising others.</description>
+		<conversationTopic>practical jokes</conversationTopic>
+		<controversiality>1.2</controversiality>
+		<parents>
+			<li>
+				<node>Experimental</node>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Rational</defName>
+		<label>rational</label>
+		<description>The more rational someone is, the more capable they are thinking about things from a factual, objective standpoint.</description>
+		<conversationTopic>philosophy</conversationTopic>
+		<controversiality>1.25</controversiality>
+		<parents>
+			<li>
+				<node>Intelligent</node>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Logical</defName>
+		<label>logical</label>
+		<description>A logical person is highly capable of connecting cause and effect, and predicting the consequences of actions.</description>
+		<conversationTopic>inventing things</conversationTopic>
+		<controversiality>1.1</controversiality>
+		<parents>
+			<li>
+				<node>Intelligent</node>
+			</li>
+		</parents>
+		<skillModifiers>
+			<li>
+				<skill>Research</skill>
+			</li>
+		</skillModifiers>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Creative</defName>
+		<label>creative</label>
+		<description>Creative people can imagine things in vivid detail, whether they ever existed or not.</description>
+		<conversationTopic>writing and drawing</conversationTopic>
+		<controversiality>0.8</controversiality>
+		<parents>
+			<li>
+				<node>Intelligent</node>
+			</li>
+		</parents>
+		<skillModifiers>
+			<li>
+				<skill>Artistic</skill>
+			</li>
+		</skillModifiers>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Passionate</defName>
+		<label>passionate</label>
+		<description>People who are passionate feel very strongly about things and tend to express themselves emphatically.</description>
+		<conversationTopic>their likes and dislikes</conversationTopic>
+		<controversiality>1.4</controversiality>
+		<parents>
+			<li>
+				<node>Emotional</node>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Nostalgic</defName>
+		<label>nostalgic</label>
+		<description>Someone nostalgic has a very strong connection to their past and anything that evokes those memories.</description>
+		<conversationTopic>the old days</conversationTopic>
+		<controversiality>0.5</controversiality>
+		<parents>
+			<li>
+				<node>Emotional</node>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Empathetic</defName>
+		<label>empathetic</label>
+		<description>An empathetic person is able to put themselves into the shoes of others and understand their feelings.</description>
+		<conversationTopic>their lives</conversationTopic>
+		<controversiality>2</controversiality>
+		<femaleModifier>1.25</femaleModifier>
+		<parents>
+			<li>
+				<node>Emotional</node>
+			</li>
+		</parents>
+		<traitModifiers>
+			<li>
+				<trait>Psychopath</trait>
+				<modifier>-1</modifier>
+			</li>
+			<li>
+				<trait>Cannibal</trait>
+				<modifier>-1</modifier>
+			</li>
+			<li>
+				<trait>Bloodlust</trait>
+				<modifier>-0.5</modifier>
+			</li>
+			<li>
+				<trait>Desensitized</trait>
+				<modifier>-0.25</modifier>
+			</li>
+			<li>
+				<trait>Kind</trait>
+				<modifier>0.25</modifier>
+			</li>
+			<li>
+				<trait>BleedingHeart</trait>
+				<modifier>0.75</modifier>
+			</li>
+		</traitModifiers>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Competitive</defName>
+		<label>competitive</label>
+		<description>For a competitive person, it's not enough that they succeed, others must fail.</description>
+		<conversationTopic>success</conversationTopic>
+		<controversiality>1.2</controversiality>
+		<parents>
+			<li>
+				<node>Aggressive</node>
+			</li>
+		</parents>
+		<traitModifiers>
+			<li>
+				<trait>Jealous</trait>
+				<modifier>0.6</modifier>
+			</li>
+		</traitModifiers>
+	</Psychology.PersonalityNodeDef>
+
+	<Psychology.PersonalityNodeDef>
+		<defName>Polite</defName>
+		<label>polite</label>
+		<description>A polite person is well-mannered and makes an effort not to offend other people.</description>
+		<conversationTopic>manners</conversationTopic>
+		<controversiality>1.75</controversiality>
+		<parents>
+			<li>
+				<node>Aggressive</node>
+				<modifier>1</modifier>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Cool</defName>
+		<label>cool</label>
+		<description>Someone who's cool is edgy, unique, and interesting, and people tend to like them more.</description>
+		<conversationTopic>glitterworld trends</conversationTopic>
+		<controversiality>1.75</controversiality>
+		<parents>
+			<li>
+				<node>DrugFriendly</node>
+			</li>
+			<li>
+				<node>LaidBack</node>
+			</li>
+			<li>
+				<node>Geeky</node>
+				<modifier>1</modifier>
+			</li>
+		</parents>
+		<traitModifiers>
+			<li>
+				<trait>Beauty</trait>
+				<degree>2</degree>
+				<modifier>0.75</modifier>
+			</li>
+			<li>
+				<trait>Beauty</trait>
+				<degree>1</degree>
+				<modifier>0.3</modifier>
+			</li>
+			<li>
+				<trait>Beauty</trait>
+				<degree>-1</degree>
+				<modifier>-0.3</modifier>
+			</li>
+			<li>
+				<trait>Beauty</trait>
+				<degree>-2</degree>
+				<modifier>-0.8</modifier>
+			</li>
+		</traitModifiers>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Romantic</defName>
+		<label>romantic</label>
+		<description>Someone romantic likes long-term, meaningful relationships, commitment, and intimate gestures.</description>
+		<conversationTopic>romance</conversationTopic>
+		<controversiality>1.5</controversiality>
+		<parents>
+			<li>
+				<node>Passionate</node>
+			</li>
+			<li>
+				<node>Spontaneous</node>
+				<modifier>1</modifier>
+			</li>
+		</parents>
+		<traitModifiers>
+			<li>
+				<trait>Codependent</trait>
+				<modifier>0.8</modifier>
+			</li>
+		</traitModifiers>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Thoughtful</defName>
+		<label>thoughtful</label>
+		<description>Thoughtful people are introspective and critical, and tend to plan ahead.</description>
+		<conversationTopic>the future</conversationTopic>
+		<controversiality>0.5</controversiality>
+		<parents>
+			<li>
+				<node>Rational</node>
+			</li>
+			<li>
+				<node>Logical</node>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Geeky</defName>
+		<label>geeky</label>
+		<description>Someone who is geeky is intellectual, eccentric, and frequently socially awkward.</description>
+		<conversationTopic>their hobbies</conversationTopic>
+		<controversiality>0.6</controversiality>
+		<parents>
+			<li>
+				<node>Logical</node>
+			</li>
+			<li>
+				<node>Creative</node>
+			</li>
+			<li>
+				<node>Extroverted</node>
+				<modifier>1</modifier>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Cultured</defName>
+		<label>cultured</label>
+		<description>A cultured person is well-read, well-educated, and refined.</description>
+		<conversationTopic>arts and literature</conversationTopic>
+		<controversiality>0.4</controversiality>
+		<parents>
+			<li>
+				<node>Creative</node>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Organized</defName>
+		<label>organized</label>
+		<description>An organized person keeps everything tidy, neat, and minimalistic.</description>
+		<conversationTopic>cleanliness</conversationTopic>
+		<controversiality>0.1</controversiality>
+		<parents>
+			<li>
+				<node>Nostalgic</node>
+				<modifier>1</modifier>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Naive</defName>
+		<label>naive</label>
+		<description>Someone naive is inexperienced, guileless, and innocent.</description>
+		<conversationTopic>idealism</conversationTopic>
+		<controversiality>1.6</controversiality>
+		<parents>
+			<li>
+				<node>Empathetic</node>
+			</li>
+			<li>
+				<node>Experimental</node>
+				<modifier>1</modifier>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Upbeat</defName>
+		<label>upbeat</label>
+		<description>Upbeat people are happy, warm, and pleasant to be around.</description>
+		<conversationTopic>life</conversationTopic>
+		<controversiality>2</controversiality>
+		<parents>
+			<li>
+				<node>Empathetic</node>
+			</li>
+		</parents>
+		<traitModifiers>
+			<li>
+				<trait>NaturalMood</trait>
+				<degree>2</degree>
+				<modifier>1</modifier>
+			</li>
+			<li>
+				<trait>NaturalMood</trait>
+				<degree>1</degree>
+				<modifier>0.5</modifier>
+			</li>
+			<li>
+				<trait>NaturalMood</trait>
+				<degree>-1</degree>
+				<modifier>-0.5</modifier>
+			</li>
+			<li>
+				<trait>NaturalMood</trait>
+				<degree>-2</degree>
+				<modifier>-1</modifier>
+			</li>
+		</traitModifiers>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Outspoken</defName>
+		<label>outspoken</label>
+		<description>An outspoken person has a lot of strong opinions and doesn't hesitate to share them.</description>
+		<conversationTopic>politics</conversationTopic>
+		<controversiality>2.5</controversiality>
+		<parents>
+			<li>
+				<node>Competitive</node>
+			</li>
+			<li>
+				<node>Extroverted</node>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Ambitious</defName>
+		<label>ambitious</label>
+		<description>Someone ambitious sets large, difficult goals for themselves and wants to be successful.</description>
+		<conversationTopic>their hopes and dreams</conversationTopic>
+		<controversiality>0.25</controversiality>
+		<parents>
+			<li>
+				<node>Competitive</node>
+			</li>
+		</parents>
+		<traitModifiers>
+			<li>
+				<trait>Industriousness</trait>
+				<degree>2</degree>
+				<modifier>0.2</modifier>
+			</li>
+			<li>
+				<trait>Industriousness</trait>
+				<degree>1</degree>
+				<modifier>0.1</modifier>
+			</li>
+			<li>
+				<trait>Industriousness</trait>
+				<degree>-1</degree>
+				<modifier>-0.1</modifier>
+			</li>
+			<li>
+				<trait>Industriousness</trait>
+				<degree>-2</degree>
+				<modifier>-0.4</modifier>
+			</li>
+			<li>
+				<trait>Neurotic</trait>
+				<degree>2</degree>
+				<modifier>0.25</modifier>
+			</li>
+			<li>
+				<trait>Neurotic</trait>
+				<degree>1</degree>
+				<modifier>0.1</modifier>
+			</li>
+		</traitModifiers>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>LaidBack</defName>
+		<label>laid-back</label>
+		<description>Laid-back people don't get stressed out about things very easily and tend not to worry.</description>
+		<conversationTopic>hardship</conversationTopic>
+		<controversiality>1</controversiality>
+		<parents>
+			<li>
+				<node>Competitive</node>
+				<modifier>1</modifier>
+			</li>
+			<li>
+				<node>Upbeat</node>
+			</li>
+		</parents>
+		<traitModifiers>
+			<li>
+				<trait>Nerves</trait>
+				<degree>2</degree>
+				<modifier>0.6</modifier>
+			</li>
+			<li>
+				<trait>Nerves</trait>
+				<degree>1</degree>
+				<modifier>0.3</modifier>
+			</li>
+			<li>
+				<trait>Nerves</trait>
+				<degree>-1</degree>
+				<modifier>-0.2</modifier>
+			</li>
+			<li>
+				<trait>Nerves</trait>
+				<degree>-2</degree>
+				<modifier>-0.4</modifier>
+			</li>
+			<li>
+				<trait>Neurotic</trait>
+				<degree>2</degree>
+				<modifier>-0.35</modifier>
+			</li>
+			<li>
+				<trait>Neurotic</trait>
+				<degree>1</degree>
+				<modifier>-0.2</modifier>
+			</li>
+		</traitModifiers>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Pure</defName>
+		<label>pure</label>
+		<description>People who are pure try to be chaste, traditional, and wholesome.</description>
+		<conversationTopic>religion and spirituality</conversationTopic>
+		<controversiality>2.25</controversiality>
+		<parents>
+			<li>
+				<node>Naive</node>
+			</li>
+			<li>
+				<node>Romantic</node>
+			</li>
+		</parents>
+		<traitModifiers>
+			<li>
+				<trait>Nudist</trait>
+				<modifier>-1</modifier>
+			</li>
+			<li>
+				<trait>Prude</trait>
+				<modifier>0.6</modifier>
+			</li>
+		</traitModifiers>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Moralistic</defName>
+		<label>moralistic</label>
+		<description>Someone who is moralistic adheres to traditional ideas of morality.</description>
+		<conversationTopic>ethics</conversationTopic>
+		<controversiality>2</controversiality>
+		<parents>
+			<li>
+				<node>Naive</node>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Trusting</defName>
+		<label>trusting</label>
+		<description>Someone who is trusting tends to take people at their word and see the good in people.</description>
+		<conversationTopic>human nature</conversationTopic>
+		<controversiality>2</controversiality>
+		<parents>
+			<li>
+				<node>Naive</node>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Judgmental</defName>
+		<label>judgmental</label>
+		<description>A judgmental person tends to form their opinions of people quickly and superficially, and is affected more by the actions of others.</description>
+		<conversationTopic>the latest gossip</conversationTopic>
+		<controversiality>1.8</controversiality>
+		<parents>
+			<li>
+				<node>Naive</node>
+			</li>
+			<li>
+				<node>LaidBack</node>
+				<modifier>-1</modifier>
+			</li>
+		</parents>
+		<traitModifiers>
+			<li>
+				<trait>Prosthophobe</trait>
+				<modifier>0.2</modifier>
+			</li>
+			<li>
+				<trait>Prude</trait>
+				<modifier>0.5</modifier>
+			</li>
+			<li>
+				<trait>OpenMinded</trait>
+				<modifier>-0.5</modifier>
+			</li>
+		</traitModifiers>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Judgmental</defName>
+		<label>judgmental</label>
+		<description>A judgmental person tends to form their opinions of people quickly and superficially, and is affected more by the actions of others.</description>
+		<conversationTopic>the latest gossip</conversationTopic>
+		<controversiality>1.8</controversiality>
+		<parents>
+			<li>
+				<node>Naive</node>
+			</li>
+			<li>
+				<node>LaidBack</node>
+				<modifier>-1</modifier>
+			</li>
+		</parents>
+		<traitModifiers>
+			<li>
+				<trait>Prosthophobe</trait>
+				<modifier>0.2</modifier>
+			</li>
+			<li>
+				<trait>Prude</trait>
+				<modifier>0.5</modifier>
+			</li>
+			<li>
+				<trait>OpenMinded</trait>
+				<modifier>-0.5</modifier>
+			</li>
+		</traitModifiers>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Friendly</defName>
+		<label>friendly</label>
+		<description>Someone friendly is kind, tolerant, and inviting to talk to.</description>
+		<conversationTopic>each other</conversationTopic>
+		<controversiality>1.5</controversiality>
+		<parents>
+			<li>
+				<node>Upbeat</node>
+			</li>
+			<li>
+				<node>Judgmental</node>
+				<modifier>2</modifier>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Optimistic</defName>
+		<label>optimistic</label>
+		<description>Someone who is optimistic looks on the bright side of life.</description>
+		<conversationTopic>their feelings</conversationTopic>
+		<controversiality>1.25</controversiality>
+		<parents>
+			<li>
+				<node>Upbeat</node>
+				<modifier>-2</modifier>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Compassionate</defName>
+		<label>compassionate</label>
+		<description>Compassionate people are concerned about other people's struggles and try to help them.</description>
+		<conversationTopic>the less fortunate</conversationTopic>
+		<controversiality>1.5</controversiality>
+		<parents>
+			<li>
+				<node>Upbeat</node>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+	<Psychology.PersonalityNodeDef>
+		<defName>Generous</defName>
+		<label>generous</label>
+		<description>Generous people care less about having things and are more likely to give them to others.</description>
+		<conversationTopic>charity</conversationTopic>
+		<controversiality>2</controversiality>
+		<parents>
+			<li>
+				<node>Upbeat</node>
+			</li>
+			<li>
+				<node>Moralistic</node>
+			</li>
+		</parents>
+	</Psychology.PersonalityNodeDef>
+	
+</Defs>

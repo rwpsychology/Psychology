@@ -296,6 +296,21 @@ namespace Psychology
                 {
                     if (alive.race.hediffGiverSets.Contains(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicStandard")))
                     {
+                        alive.inspectorTabs.Add(typeof(ITab_Pawn_Psyche));
+                        try
+                        {
+                            alive.inspectorTabsResolved.Add(InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Psyche)));
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.Error(string.Concat(new object[]
+                            {
+                            "Could not instantiate inspector tab of type ",
+                            typeof(ITab_Pawn_Psyche),
+                            ": ",
+                            ex
+                            }));
+                        }
                         alive.race.hediffGiverSets.Add(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicPsychology"));
                         alive.recipes.Add(RecipeDefOfPsychology.TreatPyromania);
                         alive.recipes.Add(RecipeDefOfPsychology.TreatChemicalInterest);
@@ -402,6 +417,15 @@ namespace Psychology
                     {
                         anxiety.Part = pawn.health.hediffSet.GetBrain();
                     }
+                }
+                /* Give all old Psychology pawns the new Psyche system. */
+                List<PsychologyPawn> psychelessPawns = (from p in map.mapPawns.AllPawns
+                                                        where p.RaceProps.Humanlike && p is PsychologyPawn && ((PsychologyPawn)p).psyche == null
+                                                        select p as PsychologyPawn).ToList();
+                foreach (PsychologyPawn pawn in psychelessPawns)
+                {
+                    pawn.psyche = new Pawn_PsycheTracker(pawn);
+                    pawn.psyche.Initialize();
                 }
             }
         }

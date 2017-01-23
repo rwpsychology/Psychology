@@ -52,9 +52,9 @@ namespace Psychology.Detour
                 }
             }
             int num = Rand.RangeInclusive(2, 3);
+            PsychologyPawn newPawn = pawn as PsychologyPawn;
             if (PsychologyBase.ActivateKinsey())
             {
-                PsychologyPawn newPawn = pawn as PsychologyPawn;
                 if (newPawn != null)
                 {
                     _PawnGenerator.GenerateSexuality(newPawn);
@@ -83,6 +83,10 @@ namespace Psychology.Detour
                 {
                     Log.Warning("Could not cast Pawn to PsychologyPawn.");
                 }
+            }
+            if (newPawn != null)
+            {
+                newPawn.psyche.Initialize();
             }
             if (allowGay && (LovePartnerRelationUtility.HasAnyLovePartnerOfTheSameGender(pawn) || LovePartnerRelationUtility.HasAnyExLovePartnerOfTheSameGender(pawn)))
             {

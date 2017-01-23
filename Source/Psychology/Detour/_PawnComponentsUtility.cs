@@ -37,13 +37,17 @@ namespace Psychology.Detour
                 pawn.guest = new Pawn_GuestTracker(pawn);
                 pawn.guilt = new Pawn_GuiltTracker();
                 pawn.workSettings = new Pawn_WorkSettings(pawn);
-                if(PsychologyBase.ActivateKinsey())
+                PsychologyPawn realPawn = pawn as PsychologyPawn;
+                if (PsychologyBase.ActivateKinsey())
                 {
-                    PsychologyPawn realPawn = pawn as PsychologyPawn;
-                    if(realPawn != null)
+                    if (realPawn != null)
                     {
                         realPawn.sexuality = new Pawn_SexualityTracker(realPawn);
                     }
+                }
+                if (realPawn != null)
+                {
+                    realPawn.psyche = new Pawn_PsycheTracker(realPawn);
                 }
             }
             if (pawn.RaceProps.IsFlesh)

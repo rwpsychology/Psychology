@@ -1,0 +1,138 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using RimWorld;
+using Verse;
+using Verse.AI;
+using UnityEngine;
+
+namespace Psychology
+{
+    public class PersonalityNode : IExposable
+    {
+        public PersonalityNode(PsychologyPawn pawn)
+        {
+            this.pawn = pawn;
+        }
+
+        public void Initialize()
+        {
+            int defSeed = 0;
+            this.def.defName.ToList().ForEach((char c) => defSeed += c);
+            if (this.Core)
+            {
+                /* "Core" nodes are seeded based on a pawn's upbringing, separating pawns into 16 categories, similar to the Meyers-Brigg test.
+                 * Two pawns with the same upbringing will always have the same core personality ratings.
+                 * Pawns will never have conversations about core nodes, they exist only to influence child nodes.
+                 */
+                Rand.PushSeed();
+                Rand.Seed = this.pawn.psyche.upbringing+defSeed;
+                this.rawRating = Rand.Value;
+                Rand.PopSeed();
+            }
+            else
+            {
+                this.rawRating = Rand.Value;
+            }
+        }
+
+        public void ExposeData()
+        {
+            Scribe_Defs.LookDef(ref this.def, "def");
+            Scribe_Values.LookValue(ref this.rawRating, "rawRating", -1f, false);
+            if (this.rawRating < 0)
+            {
+                Initialize();
+            }
+        }
+
+        public float AdjustForParents(float rating)
+        {
+            foreach (PersonalityNode parent in this.ParentNodes)
+            {
+                rating = (rating + Mathf.InverseLerp(1f * this.def.GetModifier(parent.def), 1f - this.def.GetModifier(parent.def), parent.AdjustedRating) * 2) / 3;
+            }
+            return Mathf.Clamp01(rating);
+        }
+
+        public float AdjustForSkillsAndTraits(float rating)
+        {
+            if(!this.def.skillModifiers.NullOrEmpty())
+            {
+                int totalLearning = 0;
+                this.pawn.skills.skills.ForEach((SkillRecord s) => totalLearning += s.Level);
+                int skillWeight = 0;
+                this.def.skillModifiers.ForEach((PersonalityNodeSkillModifier skillMod) => skillWeight += this.pawn.skills.GetSkill(skillMod.skill).Level);
+                float totalWeight = skillWeight / totalLearning;
+                rating += Mathf.InverseLerp(.1f, .5f, totalWeight);
+                rating = Mathf.Clamp01(rating);
+            }
+            if(!this.def.traitModifiers.NullOrEmpty())
+            {
+                foreach (PersonalityNodeTraitModifier traitMod in this.def.traitModifiers)
+                {
+                    if (this.pawn.story.traits.HasTrait(traitMod.trait) && this.pawn.story.traits.DegreeOfTrait(traitMod.trait) == traitMod.degree)
+                    {
+                        rating += traitMod.modifier;
+                    }
+                }
+                rating = Mathf.Clamp01(rating);
+            }
+            return rating;
+        }
+
+        public bool Core
+        {
+            get
+            {
+                return this.def.ParentNodes.NullOrEmpty();
+            }
+        }
+
+        public List<PersonalityNode> ParentNodes
+        {
+            get
+            {
+                if(this.parents == null || this.pawn.IsHashIntervalTick(500))
+                {
+                    this.parents = new List<PersonalityNode>();
+                    if(!this.def.ParentNodes.NullOrEmpty())
+                    {
+                        this.parents = (from p in this.pawn.psyche.PersonalityNodes
+                                        where this.def.ParentNodes.Contains(p.def)
+                                        select p).ToList();
+                    }
+                }
+                return this.parents;
+            }
+        }
+
+        public float AdjustedRating
+        {
+            get
+            {
+                if(cachedRating < 0f || this.pawn.IsHashIntervalTick(100))
+                {
+
+                    float adjustedRating = AdjustForSkillsAndTraits(AdjustForParents(this.rawRating));
+                    if (this.def.femaleModifier > 0f && this.pawn.gender == Gender.Female)
+                    {
+                        Rand.PushSeed();
+                        Rand.Seed = this.pawn.HashOffset();
+                        adjustedRating = (Rand.Value < 0.8f ? adjustedRating * Mathf.Lerp(this.def.femaleModifier, 1f, (this.pawn.sexuality.kinseyRating / 6)) : adjustedRating);
+                        Rand.PopSeed();
+                    }
+                    cachedRating = Mathf.Clamp01(adjustedRating);
+                }
+                return cachedRating;
+            }
+        }
+
+        public PsychologyPawn pawn;
+        public PersonalityNodeDef def;
+        public float rawRating;
+        public float cachedRating = -1f;
+        private List<PersonalityNode> parents;
+    }
+}
