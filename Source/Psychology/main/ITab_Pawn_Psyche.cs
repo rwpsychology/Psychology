@@ -12,7 +12,7 @@ namespace Psychology
     {
         public ITab_Pawn_Psyche()
         {
-            this.size = CharacterCardUtility.PawnCardSize + new Vector2(17f, 17f) * 2f;
+            this.size = new Vector2(500f, 470f);;
             this.labelKey = "TabPsyche";
             this.tutorTag = "Psyche";
         }
@@ -29,7 +29,6 @@ namespace Psychology
                 return this.PawnToShowInfoAbout is PsychologyPawn && ((PsychologyPawn)this.PawnToShowInfoAbout).psyche != null;
             }
         }
-
         
         private Pawn PawnToShowInfoAbout
         {

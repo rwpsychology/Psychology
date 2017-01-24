@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using Verse;
 using RimWorld;
@@ -41,7 +41,7 @@ namespace Psychology.Detour
                 }
             }
         }
-        
+
         [DetourMethod(typeof(InteractionWorker_RomanceAttempt), "RandomSelectionWeight")]
         internal static float _RandomSelectionWeight(this InteractionWorker_RomanceAttempt _this, Pawn initiator, Pawn recipient)
         {
@@ -73,6 +73,17 @@ namespace Psychology.Detour
             {
                 return 0f;
             }
+            float romanceChance = 1.15f;
+            if(realInitiator == null)
+            {
+                //Straight women are 15% as likely to romance anyone.
+                romanceChance = (!initiator.story.traits.HasTrait(TraitDefOf.Gay)) ? ((initiator.gender != Gender.Female) ? romanceChance : romanceChance*0.15f) : romanceChance;
+            }
+            else
+            {
+                //A pawn's likelihood to romance is based on how Aggressive and Romantic they are.
+                romanceChance = 0.2f + realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive) + (1f - realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
+            }
             //A pawn with +50 or more opinion of their lover will not hit on other pawns unless they are lecherous or polygamous (and their lover is also polygamous).
             float existingLovePartnerFactor = 1f;
             Pawn pawn = LovePartnerRelationUtility.ExistingMostLikedLovePartner(initiator, false);
@@ -81,12 +92,10 @@ namespace Psychology.Detour
                 float value = (float)initiator.relations.OpinionOf(pawn);
                 existingLovePartnerFactor = Mathf.InverseLerp(50f, -50f, value);
             }
-            //Straight women are 15% as likely to romance anyone.
-            float genderFactor = (!initiator.story.traits.HasTrait(TraitDefOf.Gay)) ? ((initiator.gender != Gender.Female) ? 1f : 0.15f) : 1f;
             float attractivenessFactor = Mathf.InverseLerp(0.25f, 1f, attractiveness);
             float opinionFactor = Mathf.InverseLerp(5f, 100f, (float)opinion);
             //People who have hit on someone in the past and been rejected because of their sexuality will rarely attempt to hit on them again.
-            float knownSexualityFactor = (realInitiator != null && realInitiator.sexuality.IncompatibleSexualityKnown(recipient)) ? 0.05f : 1f;
+            float knownSexualityFactor = (realInitiator != null && realInitiator.sexuality.IncompatibleSexualityKnown(recipient) && !realInitiator.story.traits.HasTrait(TraitDefOfPsychology.Lecher)) ? 0.05f : 1f;
             //Only lechers will try to romance someone in a stable relationship.
             float recipientLovePartnerFactor = 1f;
             Pawn pawn2 = LovePartnerRelationUtility.ExistingMostLikedLovePartner(recipient, false);
@@ -95,7 +104,7 @@ namespace Psychology.Detour
                 int value = recipient.relations.OpinionOf(pawn2);
                 recipientLovePartnerFactor = Mathf.InverseLerp(5f, -100f, (float)value);
             }
-            return 1.15f * existingLovePartnerFactor * genderFactor * attractivenessFactor * opinionFactor * knownSexualityFactor * recipientLovePartnerFactor;
+            return romanceChance * existingLovePartnerFactor * attractivenessFactor * opinionFactor * knownSexualityFactor * recipientLovePartnerFactor;
         }
         
         [DetourMethod(typeof(InteractionWorker_RomanceAttempt), "Interacted")]
@@ -125,6 +134,12 @@ namespace Psychology.Detour
                     _TryAddCheaterThought(_this, list2[j], recipient);
                 }
                 initiator.relations.TryRemoveDirectRelation(PawnRelationDefOf.ExLover, recipient);
+                foreach (PawnRelationDef d in (from rel in initiator.relations.DirectRelations
+                                               where rel.def.defName.Contains("ExLover")
+                                               select rel.def))
+                {
+                    initiator.relations.TryRemoveDirectRelation(d, recipient);
+                }
                 initiator.relations.AddDirectRelation(PawnRelationDefOf.Lover, recipient);
                 TaleRecorder.RecordTale(TaleDefOf.BecameLover, new object[]
                 {
@@ -133,6 +148,18 @@ namespace Psychology.Detour
                 });
                 initiator.needs.mood.thoughts.memories.RemoveMemoryThoughtsOfDefWhereOtherPawnIs(ThoughtDefOf.BrokeUpWithMe, recipient);
                 recipient.needs.mood.thoughts.memories.RemoveMemoryThoughtsOfDefWhereOtherPawnIs(ThoughtDefOf.BrokeUpWithMe, initiator);
+                foreach (ThoughtDef d in (from tgt in initiator.needs.mood.thoughts.memories.Memories
+                                               where tgt.def.defName.Contains("BrokeUpWithMe")
+                                               select tgt.def))
+                {
+                    initiator.needs.mood.thoughts.memories.RemoveMemoryThoughtsOfDefWhereOtherPawnIs(d, recipient);
+                }
+                foreach (ThoughtDef d in (from tgt in recipient.needs.mood.thoughts.memories.Memories
+                                          where tgt.def.defName.Contains("BrokeUpWithMe")
+                                          select tgt.def))
+                {
+                    recipient.needs.mood.thoughts.memories.RemoveMemoryThoughtsOfDefWhereOtherPawnIs(d, initiator);
+                }
                 initiator.needs.mood.thoughts.memories.RemoveMemoryThoughtsOfDefWhereOtherPawnIs(ThoughtDefOfPsychology.BrokeUpWithMeCodependent, recipient);
                 recipient.needs.mood.thoughts.memories.RemoveMemoryThoughtsOfDefWhereOtherPawnIs(ThoughtDefOfPsychology.BrokeUpWithMeCodependent, initiator);
                 initiator.needs.mood.thoughts.memories.RemoveMemoryThoughtsOfDefWhereOtherPawnIs(ThoughtDefOf.FailedRomanceAttemptOnMe, recipient);
@@ -167,9 +194,16 @@ namespace Psychology.Detour
         [DetourMethod(typeof(InteractionWorker_RomanceAttempt), "SuccessChance")]
         internal static float _SuccessChance(this InteractionWorker_RomanceAttempt _this, Pawn initiator, Pawn recipient)
         {
+
             float successChance = 0.6f;
+            PsychologyPawn realRecipient = recipient as PsychologyPawn;
+            if(realRecipient != null)
+            {
+                //The recipient is less likely to accept the more romantic they are, which means they will need to like the person more.
+                successChance = 0.25f + (1f - realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
+            }
             successChance *= recipient.relations.SecondaryRomanceChanceFactor(initiator);
-            successChance *= Mathf.InverseLerp(5f, 100f, (float)recipient.relations.OpinionOf(initiator));
+            successChance *= 2f*Mathf.InverseLerp(5f, 100f, (float)recipient.relations.OpinionOf(initiator));
             float existingLovePartnerFactor = 1f;
             if (!recipient.story.traits.HasTrait(TraitDefOfPsychology.Polygamous))
             {

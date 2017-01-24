@@ -52,16 +52,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Defs\InteractionDefOfPsychology.cs" />
+    <Compile Include="Defs\PersonalityNodeDefOf.cs" />
+    <Compile Include="Detour\_InteractionWorker_DeepTalk.cs" />
+    <Compile Include="Detour\_Pawn_InteractionsTracker.cs" />
+    <Compile Include="Main\Hediff_Conversation.cs" />
+    <Compile Include="Main\InteractionWorker_Conversation.cs" />
+    <Compile Include="Detour\_InteractionWorker_MarriageProposal.cs" />
+    <Compile Include="Detour\_JobGiver_DoLovin.cs" />
     <Compile Include="Detour\_Tradeable_Pawn.cs" />
     <Compile Include="Detour\_VoluntarilyJoinableLordsStarter.cs" />
     <Compile Include="Main\Alert_Individuality.cs" />
-    <Compile Include="Detour\_SocialCardUtility.cs" />
     <Compile Include="Main\ITab_Pawn_Psyche.cs" />
     <Compile Include="Main\Pawn_PsycheTracker.cs" />
     <Compile Include="Main\Personality\PersonalityNode.cs" />
     <Compile Include="Main\Personality\PersonalityNodeMaker.cs" />
     <Compile Include="Main\Personality\PersonalityNodeParent.cs" />
     <Compile Include="Main\Personality\PersonalityNodeSkillModifier.cs" />
+    <Compile Include="Main\Personality\PersonalityNodeIncapableModifier.cs" />
     <Compile Include="Main\Personality\PersonalityNodeTraitModifier.cs" />
     <Compile Include="Main\Personality\PersonalityNodeDef.cs" />
     <Compile Include="Main\PsycheCardUtility.cs" />

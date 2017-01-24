@@ -53,6 +53,8 @@ namespace Psychology
         public List<PersonalityNodeSkillModifier> skillModifiers;
         //A list of the traits that modify this node.
         public List<PersonalityNodeTraitModifier> traitModifiers;
+        //A list of the work types that being incapable of modify this node.
+        public List<PersonalityNodeIncapableModifier> incapableModifiers;
         //How much a difference (or similarity) in this node affects what pawns think of each other after a conversation.
         public float controversiality;
         //A list of the actual parent Defs of this node.

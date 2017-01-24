@@ -18,8 +18,6 @@ namespace Psychology
 
         public void Initialize()
         {
-            int defSeed = 0;
-            this.def.defName.ToList().ForEach((char c) => defSeed += c);
             if (this.Core)
             {
                 /* "Core" nodes are seeded based on a pawn's upbringing, separating pawns into 16 categories, similar to the Meyers-Brigg test.
@@ -27,7 +25,9 @@ namespace Psychology
                  * Pawns will never have conversations about core nodes, they exist only to influence child nodes.
                  */
                 Rand.PushSeed();
-                Rand.Seed = this.pawn.psyche.upbringing+defSeed;
+                int defSeed = 0;
+                this.def.defName.ToList().ForEach((char c) => defSeed += c);
+                Rand.Seed = this.pawn.psyche.upbringing+defSeed+Find.World.info.Seed;
                 this.rawRating = Rand.Value;
                 Rand.PopSeed();
             }
@@ -65,7 +65,7 @@ namespace Psychology
                 int skillWeight = 0;
                 this.def.skillModifiers.ForEach((PersonalityNodeSkillModifier skillMod) => skillWeight += this.pawn.skills.GetSkill(skillMod.skill).Level);
                 float totalWeight = skillWeight / totalLearning;
-                rating += Mathf.InverseLerp(.1f, .5f, totalWeight);
+                rating += Mathf.InverseLerp(.05f, .4f, totalWeight);
                 rating = Mathf.Clamp01(rating);
             }
             if(!this.def.traitModifiers.NullOrEmpty())
@@ -78,6 +78,21 @@ namespace Psychology
                     }
                 }
                 rating = Mathf.Clamp01(rating);
+            }
+            if (!this.def.incapableModifiers.NullOrEmpty())
+            {
+                foreach (PersonalityNodeIncapableModifier incapableMod in this.def.incapableModifiers)
+                {
+                    if (this.pawn.story.WorkTypeIsDisabled(incapableMod.type))
+                    {
+                        rating += incapableMod.modifier;
+                    }
+                }
+                rating = Mathf.Clamp01(rating);
+            }
+            if(this.def.defName == "Romantic" && PsychologyBase.ActivateKinsey())
+            {
+                rating = Mathf.Clamp01(rating * this.pawn.sexuality.AdjustedRomanticDrive);
             }
             return rating;
         }

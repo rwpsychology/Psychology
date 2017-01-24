@@ -39,8 +39,10 @@ namespace Psychology
 
         public void ExposeData()
         {
-            Scribe_Values.LookValue<int>(ref this.kinseyRating, "kinseyRating", 0, false);
-            Scribe_Collections.LookDictionary<Pawn,int>(ref this.knownSexualities, "knownSexualities", LookMode.Reference, LookMode.Value, ref this.knownSexualitiesWorkingKeys, ref this.knownSexualitiesWorkingValues);
+            Scribe_Values.LookValue(ref this.kinseyRating, "kinseyRating", 0, false);
+            Scribe_Values.LookValue(ref this.sexDrive, "sexDrive", 1, false);
+            Scribe_Values.LookValue(ref this.romanticDrive, "romanticDrive", 1, false);
+            Scribe_Collections.LookDictionary(ref this.knownSexualities, "knownSexualities", LookMode.Reference, LookMode.Value, ref this.knownSexualitiesWorkingKeys, ref this.knownSexualitiesWorkingValues);
         }
 
         /*
@@ -77,7 +79,25 @@ namespace Psychology
             throw new NotImplementedException();
         }
 
+        public float AdjustedSexDrive
+        {
+            get
+            {
+                return Mathf.InverseLerp(0f, 0.5f, this.sexDrive);
+            }
+        }
+
+        public float AdjustedRomanticDrive
+        {
+            get
+            {
+                return Mathf.InverseLerp(0f, 0.5f, this.romanticDrive);
+            }
+        }
+
         public int kinseyRating;
+        public float sexDrive;
+        public float romanticDrive;
         private List<Pawn> knownSexualitiesWorkingKeys;
         private List<int> knownSexualitiesWorkingValues;
         private Dictionary<Pawn, int> knownSexualities = new Dictionary<Pawn, int>();

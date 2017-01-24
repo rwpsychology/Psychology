@@ -15,6 +15,28 @@
         <li>logentry->Saw [other_nameShortIndef] in the nude.</li>
       </rulesStrings>
     </logRulesInitiator>
+    <logRulesRecipient>
+      <rulesStrings>
+        <li>logentry->[other_nameShortIndef] saw me in the nude.</li>
+      </rulesStrings>
+    </logRulesRecipient>
+  </InteractionDef>
+  
+  <InteractionDef>
+    <defName>Conversation</defName>
+    <label>conversation</label>
+    <workerClass>Psychology.InteractionWorker_Conversation</workerClass>
+    <symbol>Things/Mote/SpeechSymbols/Chitchat</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>logentry->Struck up a conversation with [other_nameShortIndef].</li>
+      </rulesStrings>
+    </logRulesInitiator>
+    <logRulesRecipient>
+      <rulesStrings>
+        <li>logentry->[other_nameShortIndef] started a conversation with me.</li>
+      </rulesStrings>
+    </logRulesRecipient>
   </InteractionDef>
   
 </InteractionDefs>

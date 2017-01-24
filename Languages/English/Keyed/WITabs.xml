@@ -3,5 +3,14 @@
 
   <!-- WITab titles -->
   <TabPsyche>Psyche</TabPsyche>
+  
+  <!-- WITab text -->
+  <SexualityDisabledWarning>Psychology's sexuality system is disabled, either by you or by the presence of a conflicting mod on your mod list. Please disable any other mods that alter colonist sexuality or interaction.</SexualityDisabledWarning>
+  <Sexuality>Sexuality</Sexuality>
+  <KinseyRating>Kinsey rating:</KinseyRating>
+  <Asexual>Asexual</Asexual>
+  <AsexualDescription>This pawn has a very low sex drive. They don't experience much sexual attraction and are unlikely to engage in anything intimate.</AsexualDescription>
+  <Aromantic>Aromantic</Aromantic>
+  <AromanticDescription>This pawn has a very low romantic drive. They are unlikely to make romance attempts or accept marriage proposals, but may still take lovers.</AromanticDescription>
 
 </LanguageData>

@@ -112,6 +112,11 @@ namespace Psychology.Detour
             disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Talking));
             disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Manipulation));
             disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Moving));
+            if (realPawn != null)
+            {
+                disabilityFactor = Mathf.Lerp(ageFactor, 1f, realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
+                ageFactor = Mathf.Lerp(ageFactor, 1f, realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
+            }
             if (pawn.RaceProps.Humanlike && pawn.story.traits.HasTrait(TraitDefOfPsychology.OpenMinded))
             {
                 ageFactor = 1f;
@@ -139,6 +144,12 @@ namespace Psychology.Detour
             else if (beauty > 0)
             {
                 beautyFactor = 2.3f;
+            }
+            if(realPawn != null && PsychologyBase.ActivateKinsey() && realPawn.sexuality.AdjustedSexDrive < 1f)
+            {
+                beautyFactor = Mathf.Pow(beautyFactor, realPawn.sexuality.AdjustedSexDrive);
+                ageFactor = Mathf.Pow(ageFactor, realPawn.sexuality.AdjustedSexDrive);
+                disabilityFactor = Mathf.Pow(disabilityFactor, realPawn.sexuality.AdjustedSexDrive);
             }
             float initiatorYouthFactor = Mathf.InverseLerp(15f, 18f, ageBiologicalYearsFloat);
             float recipientYouthFactor = Mathf.InverseLerp(15f, 18f, ageBiologicalYearsFloat2);

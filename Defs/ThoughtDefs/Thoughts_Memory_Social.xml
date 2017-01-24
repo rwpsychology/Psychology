@@ -21,6 +21,22 @@
   </ThoughtDef>
 
   <ThoughtDef>
+    <defName>Conversation</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>60</durationDays>
+    <stackLimit>300</stackLimit>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>conversation</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
     <defName>BrokeUpWithMeCodependent</defName>
     <thoughtClass>Thought_MemorySocial</thoughtClass>
     <durationDays>80.0</durationDays>

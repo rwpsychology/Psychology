@@ -22,7 +22,7 @@
 	<Psychology.PersonalityNodeDef>
 		<defName>Extroverted</defName>
 		<label>extroverted</label>
-		<description>Extroverted people enjoy getting out, meeting people, and being in groups.</description>
+		<description>Extroverted people enjoy getting out, experiencing things, and being active.</description>
 	</Psychology.PersonalityNodeDef>
 
 	<Psychology.PersonalityNodeDef>
@@ -35,7 +35,7 @@
 		<defName>Independent</defName>
 		<label>independent</label>
 		<description>An independent person is perfectly happy being on their own and doesn't rely on others.</description>
-		<conversationTopic>being alone</conversationTopic>
+		<conversationTopic>solitude</conversationTopic>
 		<controversiality>1</controversiality>
 		<parents>
 			<li>
@@ -54,7 +54,7 @@
 		<defName>Aggressive</defName>
 		<label>aggressive</label>
 		<description>An aggressive person is straightforward, blunt, and usually combative when they don't get what they want.</description>
-		<conversationTopic>how to get what they want</conversationTopic>
+		<conversationTopic>a disagreement between them</conversationTopic>
 		<controversiality>1.8</controversiality>
 		<femaleModifier>0.5</femaleModifier>
 		<parents>
@@ -68,6 +68,12 @@
 				<modifier>0.25</modifier>
 			</li>
 		</traitModifiers>
+		<incapableModifiers>
+			<li>
+				<type>Hunting</type>
+				<modifier>-0.6</modifier>
+			</li>
+		</incapableModifiers>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -161,6 +167,12 @@
 				<skill>Research</skill>
 			</li>
 		</skillModifiers>
+		<incapableModifiers>
+			<li>
+				<type>Research</type>
+				<modifier>-0.6</modifier>
+			</li>
+		</incapableModifiers>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -179,6 +191,12 @@
 				<skill>Artistic</skill>
 			</li>
 		</skillModifiers>
+		<incapableModifiers>
+			<li>
+				<type>Art</type>
+				<modifier>-0.6</modifier>
+			</li>
+		</incapableModifiers>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -278,6 +296,17 @@
 				<modifier>1</modifier>
 			</li>
 		</parents>
+		<skillModifiers>
+			<li>
+				<skill>Social</skill>
+			</li>
+		</skillModifiers>
+		<incapableModifiers>
+			<li>
+				<type>Warden</type>
+				<modifier>-0.6</modifier>
+			</li>
+		</incapableModifiers>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -327,14 +356,14 @@
 		<label>romantic</label>
 		<description>Someone romantic likes long-term, meaningful relationships, commitment, and intimate gestures.</description>
 		<conversationTopic>romance</conversationTopic>
-		<controversiality>1.5</controversiality>
+		<controversiality>1.8</controversiality>
 		<parents>
 			<li>
 				<node>Passionate</node>
 			</li>
 			<li>
 				<node>Spontaneous</node>
-				<modifier>1</modifier>
+				<modifier>2</modifier>
 			</li>
 		</parents>
 		<traitModifiers>
@@ -406,6 +435,16 @@
 				<modifier>1</modifier>
 			</li>
 		</parents>
+		<incapableModifiers>
+			<li>
+				<type>Cleaning</type>
+				<modifier>-0.5</modifier>
+			</li>
+			<li>
+				<type>Hauling</type>
+				<modifier>-0.5</modifier>
+			</li>
+		</incapableModifiers>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -726,6 +765,12 @@
 				<node>Upbeat</node>
 			</li>
 		</parents>
+		<incapableModifiers>
+			<li>
+				<type>Doctor</type>
+				<modifier>-0.6</modifier>
+			</li>
+		</incapableModifiers>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>

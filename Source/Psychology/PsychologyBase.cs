@@ -286,7 +286,7 @@ namespace Psychology
                     binge.workerClass = typeof(MentalStateWorker_BingingDrugPsychology);
                 }
 
-                /* New HediffGiverSets
+                /* New race-specific options
                  * Code adapted from code by FluffierThanThou */
                 var livingRaces = DefDatabase<ThingDef>
                     .AllDefsListForReading

@@ -49,5 +49,6 @@ namespace Psychology
         public static ThoughtDef TreatmentFailed;
         public static ThoughtDef SuccessfulPlot;
         public static ThoughtDef HeardParanoia;
+        public static ThoughtDef Conversation;
     }
 }

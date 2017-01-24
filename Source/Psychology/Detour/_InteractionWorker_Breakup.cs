@@ -25,12 +25,25 @@ namespace Psychology.Detour
 				recipient.needs.mood.thoughts.memories.RemoveMemoryThoughtsOfDefWhereOtherPawnIs(ThoughtDefOf.HoneymoonPhase, initiator);
 			}
 			else
-			{
-				initiator.relations.TryRemoveDirectRelation(PawnRelationDefOf.Lover, recipient);
-				initiator.relations.TryRemoveDirectRelation(PawnRelationDefOf.Fiance, recipient);
-				initiator.relations.AddDirectRelation(PawnRelationDefOf.ExLover, recipient);
-				recipient.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOf.BrokeUpWithMe, initiator);
-                recipient.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOfPsychology.BrokeUpWithMeCodependent, initiator);
+            {
+                initiator.relations.TryRemoveDirectRelation(PawnRelationDefOf.Lover, recipient);
+                initiator.relations.TryRemoveDirectRelation(PawnRelationDefOf.Fiance, recipient);
+                PsychologyPawn realRecipient = recipient as PsychologyPawn;
+                PsychologyPawn realInitiator = initiator as PsychologyPawn;
+                if (realRecipient != null && realInitiator != null)
+                {
+                    AddExLover(realInitiator, realRecipient);
+                    AddExLover(realRecipient, realInitiator);
+                    AddBrokeUpOpinion(realRecipient, realInitiator);
+                    AddBrokeUpMood(realRecipient, realInitiator);
+                    AddBrokeUpMood(realInitiator, realRecipient);
+                }
+                else
+                {
+                    initiator.relations.AddDirectRelation(PawnRelationDefOf.ExLover, recipient);
+                    recipient.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOf.BrokeUpWithMe, initiator);
+                    recipient.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOfPsychology.BrokeUpWithMeCodependent, initiator);
+                }
             }
 			if (initiator.ownership.OwnedBed != null && initiator.ownership.OwnedBed == recipient.ownership.OwnedBed)
 			{
@@ -63,19 +76,73 @@ namespace Psychology.Detour
             {
                 return 0f;
             }
-            float num = Mathf.InverseLerp(100f, -100f, (float)initiator.relations.OpinionOf(recipient));
-            float num2 = 1f;
+            float chance = 0.02f;
+            float romanticFactor = 1f;
+            PsychologyPawn realInitiator = initiator as PsychologyPawn;
+            if(realInitiator != null)
+            {
+                chance = 0.1f;
+                romanticFactor = Mathf.InverseLerp(1.1f, -1f, realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
+            }
+            float opinionFactor = Mathf.InverseLerp(100f, -100f, (float)initiator.relations.OpinionOf(recipient));
+            float spouseFactor = 1f;
             if (initiator.relations.DirectRelationExists(PawnRelationDefOf.Spouse, recipient))
             {
-                num2 = 0.4f;
+                spouseFactor = 0.4f;
             }
-            return 0.02f * num * num2;
+            return chance * romanticFactor * opinionFactor * spouseFactor;
         }
 
         [DetourFallback(new string[] { "_RandomSelectionWeight", "_Interacted" })]
         public static void DetourFallbackHandler(MemberInfo attemptedDestination, MethodInfo existingDestination, Exception detourException)
         {
             PsychologyBase.detoursSexual = false;
+        }
+
+        private static void AddExLover(PsychologyPawn lover, PsychologyPawn ex)
+        {
+            PawnRelationDef exLover= new PawnRelationDef();
+            exLover.defName = "ExLover" + lover.LabelShort + Find.TickManager.TicksGame;
+            exLover.label = "ex-lover";
+            exLover.opinionOffset = Mathf.RoundToInt(-15f * lover.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
+            exLover.importance = 125f;
+            exLover.implied = false;
+            exLover.reflexive = false;
+            lover.relations.AddDirectRelation(exLover, ex);
+        }
+
+        private static void AddBrokeUpOpinion(PsychologyPawn lover, PsychologyPawn ex)
+        {
+            ThoughtDef brokeUpDef = new ThoughtDef();
+            brokeUpDef.defName = "BrokeUpWithMe" + lover.LabelShort + Find.TickManager.TicksGame;
+            brokeUpDef.durationDays = 40f;
+            brokeUpDef.thoughtClass = typeof(Thought_MemorySocial);
+            ThoughtStage brokeUpStage = new ThoughtStage();
+            brokeUpStage.label = "broke up with me";
+            brokeUpStage.baseOpinionOffset = Mathf.RoundToInt(-50f * lover.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic) * Mathf.InverseLerp(5f, 100f, lover.relations.OpinionOf(ex)));
+            brokeUpDef.stages.Add(brokeUpStage);
+            lover.needs.mood.thoughts.memories.TryGainMemoryThought(brokeUpDef, ex);
+        }
+
+        private static void AddBrokeUpMood(PsychologyPawn lover, PsychologyPawn ex)
+        {
+            ThoughtDef brokeUpMoodDef = new ThoughtDef();
+            brokeUpMoodDef.defName = "BrokeUpWithMeMood" + lover.LabelShort + Find.TickManager.TicksGame;
+            brokeUpMoodDef.durationDays = 25f;
+            brokeUpMoodDef.thoughtClass = typeof(Thought_Memory);
+            ThoughtStage brokeUpStage = new ThoughtStage();
+            brokeUpStage.label = "going through break-up with {0}";
+            brokeUpStage.baseMoodEffect = Mathf.RoundToInt(-15f * Mathf.InverseLerp(0.25f, 0.75f, lover.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic)) * Mathf.InverseLerp(-20f, 100f, lover.relations.OpinionOf(ex)));
+            if(brokeUpStage.baseMoodEffect < -5f)
+            {
+                brokeUpStage.description = "My lover and I parted ways amicably, but it's still a little sad.";
+            }
+            else
+            {
+                brokeUpStage.description = "I'm going through a bad break-up right now.";
+            }
+            brokeUpMoodDef.stages.Add(brokeUpStage);
+            lover.needs.mood.thoughts.memories.TryGainMemoryThought(brokeUpMoodDef, ex);
         }
     }
 }

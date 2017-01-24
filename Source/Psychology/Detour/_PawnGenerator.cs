@@ -109,6 +109,13 @@ namespace Psychology.Detour
                             continue;
                         }
                     }
+                    else if (newTraitDef == TraitDefOfPsychology.Codependent)
+                    {
+                        if (newPawn != null && PsychologyBase.ActivateKinsey() && newPawn.sexuality.romanticDrive < 0.5f)
+                        {
+                            continue;
+                        }
+                    }
                     if (!pawn.story.traits.allTraits.Any((Trait tr) => newTraitDef.ConflictsWith(tr)) && (newTraitDef.conflictingTraits == null || !newTraitDef.conflictingTraits.Any((TraitDef tr) => pawn.story.traits.HasTrait(tr))))
                     {
                         if (newTraitDef.requiredWorkTypes == null || !pawn.story.OneOfWorkTypesIsDisabled(newTraitDef.requiredWorkTypes))
@@ -134,6 +141,8 @@ namespace Psychology.Detour
         internal static void GenerateSexuality(PsychologyPawn pawn)
         {
             pawn.sexuality.kinseyRating = pawn.sexuality.RandKinsey();
+            pawn.sexuality.sexDrive = Mathf.Clamp01(Rand.GaussianAsymmetric(2f, 2f, 1.2f));
+            pawn.sexuality.romanticDrive = Mathf.Clamp01(Rand.GaussianAsymmetric(2f, 2f, 1.2f));
         }
 
         [DetourFallback(new string[] { "_GenerateTraits" })]

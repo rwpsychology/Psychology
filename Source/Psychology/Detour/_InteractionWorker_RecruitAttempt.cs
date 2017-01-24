@@ -43,8 +43,8 @@ namespace Psychology.Detour
                 recruiter.records.Increment(RecordDefOf.PrisonersRecruited);
                 recruitee.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOf.RecruitedMe, recruiter);
                 recruitee.needs.mood.thoughts.memories.RemoveMemoryThoughtsOfDef(ThoughtDefOf.RapportBuilt);
-                List<Pawn> allFactionPawns = Find.Maps.SelectMany(m => from p in m.mapPawns.PawnsInFaction(recruiter.Faction)
-                                                                  where p != recruitee && p.RaceProps.Humanlike
+                List<Pawn> allFactionPawns = Find.Maps.SelectMany(m => from p in m.mapPawns.FreeColonistsSpawned
+                                                                  where p != recruitee
                                                                   select p).ToList<Pawn>();
                 foreach (Pawn pawn in allFactionPawns)
                 {

@@ -91,5 +91,21 @@ namespace Psychology.Detour
                 }
             }
         }
+
+        /** This function searches for a thought in a pawn's memories, caused by another pawn, if applicable. **/
+        public static bool FindThoughtInMemories(Pawn pawn, ThoughtDef thought, Pawn cause = null)
+        {
+            foreach (Thought_Memory memory in pawn.needs.mood.thoughts.memories.Memories)
+            {
+                if (memory.def == thought)
+                {
+                    if (memory.otherPawn == cause || cause == null)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
     }
 }

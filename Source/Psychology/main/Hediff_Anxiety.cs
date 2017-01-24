@@ -5,7 +5,6 @@ using RimWorld;
 
 namespace Psychology
 {
-    // Token: 0x02000188 RID: 392
     public class Hediff_Anxiety : HediffWithComps
     {
         public override void Tick()

@@ -10,5 +10,6 @@ namespace Psychology
         public static HediffDef MethadoneHigh;
         public static HediffDef RecoveringPyromaniac;
         public static HediffDef DrugFree;
+        public static HediffDef HoldingConversation;
     }
 }
