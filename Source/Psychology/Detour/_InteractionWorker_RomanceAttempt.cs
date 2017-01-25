@@ -179,7 +179,7 @@ namespace Psychology.Detour
             }
             else
             {
-                if(!initiator.story.traits.HasTrait(TraitDefOfPsychology.Lecher))
+                if(initiator.story.traits.HasTrait(TraitDefOfPsychology.Lecher))
                     initiator.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOfPsychology.RebuffedMyRomanceAttemptLecher, recipient);
                 else
                     initiator.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOf.RebuffedMyRomanceAttempt, recipient);

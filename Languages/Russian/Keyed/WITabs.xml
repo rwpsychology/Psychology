@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- WITab titles -->
+  <TabPsyche>душа</TabPsyche>
+  
+  <!-- WITab text -->
+  <SexualityDisabledWarning>Система сексуальность психологии отключена, либо вами, либо наличием противоречивой мод на свой мод список. Пожалуйста, отключите все другие моды, которые изменяют колонистов сексуальность или взаимодействие.</SexualityDisabledWarning>
+  <Sexuality>Сексуальность</Sexuality>
+  <KinseyRating>Кинси рейтинг:</KinseyRating>
+  <Asexual>Aсексуальный</Asexual>
+  <AsexualDescription>Эта пешка имеет очень низкий сексуальный двигатель. Они не испытывают большого полового влечения и вряд ли будут участвовать в чем-нибудь интимного.</AsexualDescription>
+  <Aromantic>Aромантик</Aromantic>
+  <AromanticDescription>Эта пешка имеет очень низкий романтический диск. Они вряд ли будут делать попытки романских или принимать предложения о браке, но все еще может принять любителей.</AromanticDescription>
+
+</LanguageData>

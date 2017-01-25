@@ -116,6 +116,13 @@ namespace Psychology.Detour
                             continue;
                         }
                     }
+                    else if (newTraitDef == TraitDefOfPsychology.Lecher)
+                    {
+                        if (newPawn != null && PsychologyBase.ActivateKinsey() && newPawn.sexuality.sexDrive < 0.5f)
+                        {
+                            continue;
+                        }
+                    }
                     if (!pawn.story.traits.allTraits.Any((Trait tr) => newTraitDef.ConflictsWith(tr)) && (newTraitDef.conflictingTraits == null || !newTraitDef.conflictingTraits.Any((TraitDef tr) => pawn.story.traits.HasTrait(tr))))
                     {
                         if (newTraitDef.requiredWorkTypes == null || !pawn.story.OneOfWorkTypesIsDisabled(newTraitDef.requiredWorkTypes))

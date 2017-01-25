@@ -20,6 +20,10 @@ namespace Psychology.Detour
             if(realRecipient != null)
             {
                 num *= Mathf.InverseLerp(0f, 0.75f, realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
+                if (PsychologyBase.ActivateKinsey())
+                {
+                    num *= realRecipient.sexuality.AdjustedRomanticDrive;
+                }
             }
             num *= Mathf.Clamp01(GenMath.LerpDouble(-20f, 60f, 0f, 1f, (float)recipient.relations.OpinionOf(initiator)));
             return Mathf.Clamp01(num);
@@ -138,6 +142,10 @@ namespace Psychology.Detour
             if (realInitiator != null)
             {
                 num *= 0.1f + realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive) + realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic);
+                if(PsychologyBase.ActivateKinsey())
+                {
+                    num *= realInitiator.sexuality.AdjustedRomanticDrive;
+                }
             }
             else if(initiator.gender == Gender.Female)
             {
