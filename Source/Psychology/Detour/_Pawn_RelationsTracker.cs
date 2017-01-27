@@ -95,7 +95,7 @@ namespace Psychology.Detour
                         return 0f;
                     }
                 }
-                if ((ageBiologicalYearsFloat2 < ageBiologicalYearsFloat - 10f) && (pawn.story.traits.HasTrait(TraitDefOfPsychology.OpenMinded)))
+                if ((ageBiologicalYearsFloat2 < ageBiologicalYearsFloat - 10f) && (!pawn.story.traits.HasTrait(TraitDefOfPsychology.OpenMinded)))
                 {
                     return 0f;
                 }
@@ -112,10 +112,10 @@ namespace Psychology.Detour
             disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Talking));
             disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Manipulation));
             disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Moving));
-            if (realPawn != null)
+            if (realPawn != null && realPawn.psyche != null)
             {
-                disabilityFactor = Mathf.Lerp(ageFactor, 1f, realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
-                ageFactor = Mathf.Lerp(ageFactor, 1f, realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
+                disabilityFactor = Mathf.Lerp(ageFactor, 1f+ageFactor, realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
+                ageFactor = Mathf.Lerp(ageFactor, 1f+ageFactor, realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
             }
             if (pawn.RaceProps.Humanlike && pawn.story.traits.HasTrait(TraitDefOfPsychology.OpenMinded))
             {
@@ -145,7 +145,7 @@ namespace Psychology.Detour
             {
                 beautyFactor = 2.3f;
             }
-            if(realPawn != null && PsychologyBase.ActivateKinsey() && realPawn.sexuality.AdjustedSexDrive < 1f)
+            if (realPawn != null && PsychologyBase.ActivateKinsey() && realPawn.sexuality.AdjustedSexDrive < 1f)
             {
                 beautyFactor = Mathf.Pow(beautyFactor, realPawn.sexuality.AdjustedSexDrive);
                 ageFactor = Mathf.Pow(ageFactor, realPawn.sexuality.AdjustedSexDrive);

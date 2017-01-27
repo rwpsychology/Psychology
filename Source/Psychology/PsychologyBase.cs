@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using RimWorld;
-using Verse;
-using HugsLib;
 using System.Reflection;
-using HugsLib.Utils;
+using RimWorld;
+using RimWorld.Planet;
+using Verse;
+using Verse.AI.Group;
+using Verse.Grammar;
 using HugsLib.Settings;
-using HugsLib.Source.Detour;
-using Psychology.Detour;
+using UnityEngine;
 
 namespace Psychology
 {
@@ -267,6 +267,23 @@ namespace Psychology
                 ReplaceThoughtWorker("AnnoyingVoice", typeof(ThoughtWorker_AnnoyingVoice));
                 ReplaceThoughtWorker("CreepyBreathing", typeof(ThoughtWorker_CreepyBreathing));
                 ReplaceThoughtWorker("Pretty", typeof(ThoughtWorker_Pretty));
+                ThoughtDef depressive = ReplaceThoughtWorker("MoodOffsetDepressive", typeof(ThoughtWorker_AlwaysActiveDepression));
+                ThoughtStage treated = new ThoughtStage();
+                treated.label = "depressive";
+                treated.description = "Natural penalty from Depressive trait.";
+                treated.baseMoodEffect = -6f;
+                depressive.stages.Add(treated);
+
+                InteractionDef chitChat = InteractionDefOf.Chitchat;
+                if(chitChat != null)
+                {
+                    FieldInfo RuleStrings = typeof(RulePack).GetField("rulesStrings", BindingFlags.Instance | BindingFlags.NonPublic);
+                    RulePack rulePack = new RulePack();
+                    List<string> strings = new List<string>();
+                    strings.Add("logentry->Exchanged pleasantries with [other_nameShortIndef].");
+                    RuleStrings.SetValue(rulePack, strings);
+                    chitChat.logRulesInitiator = rulePack;
+                }
 
                 MentalBreakDef berserk = DefDatabase<MentalBreakDef>.GetNamed("Berserk");
                 if(berserk != null)
@@ -315,6 +332,7 @@ namespace Psychology
                         alive.recipes.Add(RecipeDefOfPsychology.TreatPyromania);
                         alive.recipes.Add(RecipeDefOfPsychology.TreatChemicalInterest);
                         alive.recipes.Add(RecipeDefOfPsychology.TreatChemicalFascination);
+                        alive.recipes.Add(RecipeDefOfPsychology.TreatDepression);
                     }
                 }
 
@@ -426,6 +444,88 @@ namespace Psychology
                 {
                     pawn.psyche = new Pawn_PsycheTracker(pawn);
                     pawn.psyche.Initialize();
+                }
+            }
+        }
+
+        public override void Tick(int currentTick)
+        {
+            //Constituent tick
+            if (currentTick % 3500 == 0)
+            {
+                Map playerFactionMap = Find.WorldObjects.FactionBases.Find(b => b.Faction.IsPlayer).Map;
+                Pawn potentialConstituent = (from p in playerFactionMap.mapPawns.FreeColonistsSpawned
+                                             where !p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor)
+                                             select p).ToList().RandomElementByWeight(p => Mathf.Pow(Mathf.Abs(0.6f - p.needs.mood.CurLevel),2));
+                List<Pawn> activeMayors = (from m in playerFactionMap.mapPawns.FreeColonistsSpawned
+                                           where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == potentialConstituent.Map.Tile && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).yearElected == GenLocalDate.Year(potentialConstituent.Map.Tile)
+                                           select m).ToList();
+                if (potentialConstituent != null && activeMayors.Count > 0)
+                {
+                    Pawn mayor = activeMayors.RandomElement(); //There should only be one.
+                    PsychologyPawn psychologyConstituent = potentialConstituent as PsychologyPawn;
+                    IntVec3 gather = default(IntVec3);
+                    if(mayor.ownership != null && mayor.ownership.OwnedBed != null)
+                    {
+                        gather = mayor.ownership.OwnedBed.Position;
+                    }
+                    if((psychologyConstituent == null || Rand.Value > psychologyConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent)) && (gather != default(IntVec3) || RCellFinder.TryFindPartySpot(mayor, out gather)))
+                    {
+                        List<Pawn> pawns = new List<Pawn>();
+                        pawns.Add(mayor);
+                        pawns.Add(potentialConstituent);
+                        LordMaker.MakeNewLord(mayor.Faction, new LordJob_VisitMayor(gather, potentialConstituent, mayor, (potentialConstituent.needs.mood.CurLevel < 0.4f)), mayor.Map, null);
+                    }
+                }
+            }
+            //Election tick
+            if (currentTick % 15000 == 0)
+            {
+                foreach (FactionBase factionBase in Find.WorldObjects.FactionBases)
+                {
+                    //If the base isn't owned or named by the player, no election can be held.
+                    if (!factionBase.Faction.IsPlayer || !factionBase.namedByPlayer)
+                    {
+                        continue;
+                    }
+                    //If the base is not at least a year old, no election will be held.
+                    if ((Find.TickManager.TicksGame - factionBase.creationGameTicks) / (60000f * 60f) < 1)
+                    {
+                        continue;
+                    }
+                    //A base must have at least 7 people in it to hold an election.
+                    if (factionBase.Map.mapPawns.FreeColonistsSpawnedCount < 7)
+                    {
+                        continue;
+                    }
+                    //If an election is already being held, don't start a new one.
+                    if (factionBase.Map.mapConditionManager.ConditionIsActive(MapConditionDefOfPsychology.Election) || factionBase.Map.lordManager.lords.Find(l => l.LordJob is LordJob_Joinable_Election) != null)
+                    {
+                        continue;
+                    }
+                    //Elections are held in the fall and during the day.
+                    if (GenLocalDate.Season(factionBase.Map) != Season.Fall || (GenLocalDate.HourOfDay(factionBase.Map) < 7 || GenLocalDate.HourOfDay(factionBase.Map) > 20))
+                    {
+                        continue;
+                    }
+                    //If an election has already been completed this year, don't start a new one.
+                    List<Pawn> activeMayors = (from m in factionBase.Map.mapPawns.FreeColonistsSpawned
+                                               where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == factionBase.Map.Tile && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).yearElected == GenLocalDate.Year(factionBase.Map.Tile)
+                                               select m).ToList();
+                    if (activeMayors.Count > 0)
+                    {
+                        continue;
+                    }
+                    //Try to space out the elections so they don't all proc at once.
+                    if (Rand.RangeInclusive(1, 15 - GenLocalDate.DayOfSeason(factionBase.Map.Tile)) > 1)
+                    {
+                        continue;
+                    }
+                    IncidentParms parms = new IncidentParms();
+                    parms.target = factionBase.Map;
+                    parms.faction = factionBase.Faction;
+                    FiringIncident fi = new FiringIncident(IncidentDefOfPsychology.Election, null, parms);
+                    Find.Storyteller.TryFire(fi);
                 }
             }
         }

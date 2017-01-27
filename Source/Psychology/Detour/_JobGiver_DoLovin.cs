@@ -13,7 +13,7 @@ namespace Psychology.Detour
     internal static class _JobGiver_DoLovin
     {
         [DetourMethod(typeof(JobGiver_DoLovin),"TryGiveJob")]
-        internal static Job _TryGiveJob(Pawn pawn)
+        internal static Job _TryGiveJob(this JobGiver_DoLovin _this, Pawn pawn)
         {
             if (Find.TickManager.TicksGame < pawn.mindState.canLovinTick)
             {
@@ -33,13 +33,14 @@ namespace Psychology.Detour
                 return null;
             }
             PsychologyPawn realPawn = pawn as PsychologyPawn;
-            if(realPawn != null && PsychologyBase.ActivateKinsey())
+            PsychologyPawn realPartner = partnerInMyBed as PsychologyPawn;
+            if(realPawn != null && realPartner != null && PsychologyBase.ActivateKinsey())
             {
                 Rand.PushSeed();
-                Rand.Seed = (pawn.GetHashCode() ^ (GenLocalDate.DayOfYear(pawn) + GenLocalDate.Year(pawn) + (int)(GenLocalDate.DayPercent(pawn) * 5) * 60) * 391);
+                Rand.Seed = (pawn.GetHashCode() ^ (GenLocalDate.DayOfYear(pawn) + GenLocalDate.Year(pawn) + (int)(GenLocalDate.DayPercent(pawn) * 2) * 60) * 391);
                 float random = Rand.Value;
                 Rand.PopSeed();
-                if (random > realPawn.sexuality.AdjustedSexDrive)
+                if (random > realPawn.sexuality.AdjustedSexDrive && random > realPartner.sexuality.AdjustedSexDrive)
                 {
                     return null;
                 }

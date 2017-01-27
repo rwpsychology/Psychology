@@ -14,4 +14,17 @@
     </stages>
   </HediffDef>
 
+  <HediffDef>
+    <defName>Mayor</defName>
+    <hediffClass>Psychology.Hediff_Mayor</hediffClass>
+    <initialSeverity>1</initialSeverity>
+    <label>mayor</label>
+    <stages>
+      <li>
+        <label>hidden</label>
+        <everVisible>false</everVisible>
+      </li>
+    </stages>
+  </HediffDef>
+
 </Defs>

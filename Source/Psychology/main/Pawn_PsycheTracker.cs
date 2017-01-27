@@ -42,6 +42,11 @@ namespace Psychology
             return nodes.Find((PersonalityNode n) => n.def == def).AdjustedRating;
         }
 
+        public PersonalityNode GetPersonalityNodeOfDef(PersonalityNodeDef def)
+        {
+            return nodes.Find((PersonalityNode n) => n.def == def);
+        }
+
         public List<PersonalityNode> PersonalityNodes
         {
             get

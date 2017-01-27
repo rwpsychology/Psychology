@@ -9,11 +9,18 @@ namespace Psychology
     [DefOf]
     public static class PersonalityNodeDefOf
     {
-        public static PersonalityNodeDef Experimental;
         public static PersonalityNodeDef Aggressive;
-        public static PersonalityNodeDef Romantic;
+        public static PersonalityNodeDef Cool;
+        public static PersonalityNodeDef Empathetic;
+        public static PersonalityNodeDef Experimental;
+        public static PersonalityNodeDef Extroverted;
         public static PersonalityNodeDef Friendly;
-        public static PersonalityNodeDef Polite;
+        public static PersonalityNodeDef Independent;
         public static PersonalityNodeDef Judgmental;
+        public static PersonalityNodeDef LaidBack;
+        public static PersonalityNodeDef Outspoken;
+        public static PersonalityNodeDef Passionate;
+        public static PersonalityNodeDef Polite;
+        public static PersonalityNodeDef Romantic;
     }
 }

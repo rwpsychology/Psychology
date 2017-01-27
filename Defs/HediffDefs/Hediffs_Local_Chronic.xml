@@ -143,4 +143,8 @@
     <label>drug free</label>
   </HediffDef>
   
+  <HediffDef ParentName="TreatmentBase">
+    <defName>Antidepressants</defName>
+    <label>antidepressants</label>
+  </HediffDef>
 </Defs>

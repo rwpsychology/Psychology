@@ -49,6 +49,10 @@ namespace Psychology
         public List<PersonalityNodeParent> parents;
         //What pawns talk about when they talk about this node.
         public string conversationTopic;
+        //What pawns with a high rating in this node use as a platform issue.
+        public string platformIssueHigh;
+        //What pawns with a low rating in this node use as a platform issue.
+        public string platformIssueLow;
         //A list of the skills that modify this node.
         public List<PersonalityNodeSkillModifier> skillModifiers;
         //A list of the traits that modify this node.

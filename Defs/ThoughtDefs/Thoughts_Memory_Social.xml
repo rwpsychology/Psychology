@@ -31,7 +31,7 @@
     <stages>
       <li>
         <label>conversation</label>
-        <baseOpinionOffset>10</baseOpinionOffset>
+        <baseOpinionOffset>5</baseOpinionOffset>
       </li>
     </stages>
   </ThoughtDef>

@@ -44,5 +44,13 @@
 		<workerClass>Psychology.Recipe_TreatChemicalFascination</workerClass>
 		<jobString>Treating chemical fascination.</jobString>
 	</RecipeDef>
+
+	<RecipeDef ParentName="Treatment">
+		<defName>TreatDepression</defName>
+		<label>treat depression</label>
+		<description>Helps someone with depression manage their mood.</description>
+		<workerClass>Psychology.Recipe_TreatDepression</workerClass>
+		<jobString>Treating depression.</jobString>
+	</RecipeDef>
   	
 </RecipeDefs>

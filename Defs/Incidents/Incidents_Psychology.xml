@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <IncidentDef>
+    <defName>Election</defName>
+    <label>election</label>
+    <targetType>BaseMap</targetType>
+    <mapCondition>Election</mapCondition>
+    <workerClass>Psychology.IncidentWorker_Election</workerClass>
+    <baseChance>0</baseChance> <!-- Manual fire only -->
+    <minRefireDays>45</minRefireDays>
+    <durationDays>
+      <min>5</min>
+      <max>7.5</max>
+    </durationDays>
+  </IncidentDef>
+  
+</Defs>

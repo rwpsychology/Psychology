@@ -23,6 +23,26 @@ namespace Psychology
                 this
             });
         }
+        
+        public override string LabelNoCount
+        {
+            get
+            {
+                if (this.Name == null)
+                {
+                    return this.KindLabel;
+                }
+                if (this.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor))
+                {
+                    return this.Name.ToStringShort + ", Mayor";
+                }
+                if (this.story == null || (this.story.adulthood == null && this.story.childhood == null))
+                {
+                    return this.Name.ToStringShort;
+                }
+                return this.Name.ToStringShort + ", " + this.story.TitleShort;
+            }
+        }
 
         public Pawn_SexualityTracker sexuality;
         public Pawn_PsycheTracker psyche;

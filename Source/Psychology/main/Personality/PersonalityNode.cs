@@ -56,7 +56,7 @@ namespace Psychology
             return Mathf.Clamp01(rating);
         }
 
-        public float AdjustForSkillsAndTraits(float rating)
+        public float AdjustForCircumstance(float rating)
         {
             if(!this.def.skillModifiers.NullOrEmpty())
             {
@@ -94,6 +94,10 @@ namespace Psychology
             {
                 rating = Mathf.Clamp01(rating * this.pawn.sexuality.AdjustedRomanticDrive);
             }
+            if (this.def.defName == "Outspoken")
+            {
+                rating += (this.pawn.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) ? 0.1f : 0f);
+            }
             return rating;
         }
 
@@ -123,6 +127,21 @@ namespace Psychology
             }
         }
 
+        public string PlatformIssue
+        {
+            get
+            {
+                if(this.AdjustedRating >= 0.5f)
+                {
+                    return this.def.platformIssueHigh;
+                }
+                else
+                {
+                    return this.def.platformIssueLow;
+                }
+            }
+        }
+
         public float AdjustedRating
         {
             get
@@ -130,7 +149,7 @@ namespace Psychology
                 if(cachedRating < 0f || this.pawn.IsHashIntervalTick(100))
                 {
 
-                    float adjustedRating = AdjustForSkillsAndTraits(AdjustForParents(this.rawRating));
+                    float adjustedRating = AdjustForCircumstance(AdjustForParents(this.rawRating));
                     if (this.def.femaleModifier > 0f && this.pawn.gender == Gender.Female)
                     {
                         Rand.PushSeed();

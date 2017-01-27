@@ -52,17 +52,32 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Defs\DutyDefOfPsychology.cs" />
+    <Compile Include="Defs\IncidentDefOfPsychology.cs" />
+    <Compile Include="Defs\MapConditionDefOfPsychology.cs" />
     <Compile Include="Defs\InteractionDefOfPsychology.cs" />
     <Compile Include="Defs\PersonalityNodeDefOf.cs" />
+    <Compile Include="Detour\_InteractionUtility.cs" />
     <Compile Include="Detour\_InteractionWorker_DeepTalk.cs" />
-    <Compile Include="Detour\_Pawn_InteractionsTracker.cs" />
-    <Compile Include="Main\Hediff_Conversation.cs" />
-    <Compile Include="Main\InteractionWorker_Conversation.cs" />
+    <Compile Include="Detour\_NegativeInteractionUtility.cs" />
+    <Compile Include="Main\Conversations\PlayLogEntry_InteractionConversation.cs" />
+    <Compile Include="Main\Elections\Candidate.cs" />
+    <Compile Include="Main\Elections\Hediff_Mayor.cs" />
+    <Compile Include="Main\Elections\JobGiver_Vote.cs" />
+    <Compile Include="Main\Elections\LordJob_VisitMayor.cs" />
+    <Compile Include="Main\Elections\LordJob_Joinable_Election.cs" />
+    <Compile Include="Main\Elections\LordToil_Meeting.cs" />
+    <Compile Include="Main\Elections\LordToil_Election.cs" />
+    <Compile Include="Main\Conversations\Hediff_Conversation.cs" />
+    <Compile Include="Main\Elections\IncidentWorker_Election.cs" />
+    <Compile Include="Main\Elections\MapCondition_Election.cs" />
+    <Compile Include="Main\Conversations\InteractionWorker_Conversation.cs" />
     <Compile Include="Detour\_InteractionWorker_MarriageProposal.cs" />
     <Compile Include="Detour\_JobGiver_DoLovin.cs" />
     <Compile Include="Detour\_Tradeable_Pawn.cs" />
     <Compile Include="Detour\_VoluntarilyJoinableLordsStarter.cs" />
-    <Compile Include="Main\Alert_Individuality.cs" />
+    <Compile Include="Main\Alerts\Alert_Individuality.cs" />
+    <Compile Include="Main\Elections\Thought_MemoryDynamic.cs" />
     <Compile Include="Main\ITab_Pawn_Psyche.cs" />
     <Compile Include="Main\Pawn_PsycheTracker.cs" />
     <Compile Include="Main\Personality\PersonalityNode.cs" />
@@ -74,14 +89,17 @@
     <Compile Include="Main\Personality\PersonalityNodeDef.cs" />
     <Compile Include="Main\PsycheCardUtility.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Hediff.cs" />
+    <Compile Include="Main\Conversations\Thought_MemorySocialConversation.cs" />
+    <Compile Include="Main\Medical\Treatments\Recipe_TreatDepression.cs" />
+    <Compile Include="Main\Medical\Treatments\ThoughtWorker_AlwaysActiveDepression.cs" />
     <Compile Include="MentalStates\Jobs\JobGiver_ArmSelf.cs" />
     <Compile Include="MentalStates\Jobs\JobGiver_EnactPlot.cs" />
     <Compile Include="MentalStates\MentalState_FellPlotting.cs" />
     <Compile Include="MentalStates\MentalState_Paranoia.cs" />
     <Compile Include="MentalStates\Workers\MentalStateWorker_FellPlotting.cs" />
     <Compile Include="MentalStates\Workers\MentalStateWorker_BingingDrugPsychology.cs" />
-    <Compile Include="Main\Treatments\Hediff_DrugFree.cs" />
-    <Compile Include="Main\Treatments\Hediff_RecoveringPyromaniac.cs" />
+    <Compile Include="Main\Medical\Treatments\Hediff_DrugFree.cs" />
+    <Compile Include="Main\Medical\Treatments\Hediff_RecoveringPyromaniac.cs" />
     <Compile Include="Detour\_InteractionWorker_RecruitAttempt.cs" />
     <Compile Include="Detour\_Building_Grave.cs" />
     <Compile Include="Detour\_MentalBreaker.cs" />
@@ -119,10 +137,10 @@
     <Compile Include="MentalStates\MentalState_Abuse.cs" />
     <Compile Include="Defs\TaleDefOfPsychology.cs" />
     <Compile Include="Defs\RecipeDefOfPsychology.cs" />
-    <Compile Include="Main\Treatments\Recipe_TreatChemicalFascination.cs" />
-    <Compile Include="Main\Treatments\Recipe_Treatment.cs" />
-    <Compile Include="Main\Treatments\Recipe_TreatChemicalInterest.cs" />
-    <Compile Include="Main\Treatments\Recipe_TreatPyromaniac.cs" />
+    <Compile Include="Main\Medical\Treatments\Recipe_TreatChemicalFascination.cs" />
+    <Compile Include="Main\Medical\Treatments\Recipe_Treatment.cs" />
+    <Compile Include="Main\Medical\Treatments\Recipe_TreatChemicalInterest.cs" />
+    <Compile Include="Main\Medical\Treatments\Recipe_TreatPyromaniac.cs" />
     <Compile Include="Defs\StatDefOfPsychology.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_CreepyBreathing.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_AnnoyingVoice.cs" />
@@ -147,7 +165,7 @@
     <Compile Include="Detour\_Recipe_InstallNaturalBodyPart.cs" />
     <Compile Include="Detour\_Recipe_Surgery.cs" />
     <Compile Include="Detour\_TendUtility.cs" />
-    <Compile Include="Main\InteractionWorker_PrudeSeen.cs" />
+    <Compile Include="Main\InteractionWorkers\InteractionWorker_PrudeSeen.cs" />
     <Compile Include="PsychologyBase.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_BleedingHeartVsPsychopath.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Light.cs" />
@@ -159,7 +177,7 @@
     <Compile Include="Defs\ThoughtDefOfPsychology.cs" />
     <Compile Include="Detour\_ThoughtUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Main\Hediff_Anxiety.cs" />
+    <Compile Include="Main\Medical\Hediff_Anxiety.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_RandomMoodBipolar.cs" />
     <Compile Include="Defs\TraitDefOfPsychology.cs" />
   </ItemGroup>

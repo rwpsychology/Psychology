@@ -148,8 +148,8 @@ namespace Psychology.Detour
         internal static void GenerateSexuality(PsychologyPawn pawn)
         {
             pawn.sexuality.kinseyRating = pawn.sexuality.RandKinsey();
-            pawn.sexuality.sexDrive = Mathf.Clamp01(Rand.GaussianAsymmetric(2f, 2f, 1.2f));
-            pawn.sexuality.romanticDrive = Mathf.Clamp01(Rand.GaussianAsymmetric(2f, 2f, 1.2f));
+            pawn.sexuality.sexDrive = Mathf.Clamp01(Rand.Gaussian(1.1f, 0.26f));
+            pawn.sexuality.romanticDrive = Mathf.Clamp01(Rand.Gaussian(1.1f, 0.26f));
         }
 
         [DetourFallback(new string[] { "_GenerateTraits" })]

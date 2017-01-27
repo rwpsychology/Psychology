@@ -11,12 +11,12 @@
     <baseInterest>2.5</baseInterest>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->[patient_nameShortDef]'s treatment for pyromania</li>
+        <li>tale_noun->[patient_nameShortDef]'s counseling for pyromania</li>
         <li>image->[psychologist_nameFull] sitting on the edge of [patient_nameFull]'s bed [circumstance_group]</li>
         <li>image->[psychologist_nameFull] nodding while [patient_nameFull] talks [circumstance_group]</li>
         <li>image->[psychologist_nameFull] discussing [patient_nameFull]'s urges [circumstance_group]</li>
-        <li>circumstance_phrase->as [patient_pronoun] smiles</li>
         <li>circumstance_phrase->as [psychologist_nameShortDef] takes notes</li>
+        <li>circumstance_phrase->as [psychologist_nameShortDef] writes a prescription</li>
         <li>circumstance_phrase->as a path to recovery is laid out</li>
         <li>circumstance_phrase->while seeming very understanding</li>
         <li>desc_sentence->[psychologist_nameShortDef] has a knowledgeable look on [psychologist_possessive] face.</li>
@@ -42,8 +42,8 @@
         <li>image->[psychologist_nameFull] sitting on the edge of [patient_nameFull]'s bed [circumstance_group]</li>
         <li>image->[psychologist_nameFull] nodding while [patient_nameFull] talks [circumstance_group]</li>
         <li>image->[psychologist_nameFull] discussing [patient_nameFull]'s urges [circumstance_group]</li>
-        <li>circumstance_phrase->as [patient_pronoun] smiles</li>
         <li>circumstance_phrase->as [psychologist_nameShortDef] takes notes</li>
+        <li>circumstance_phrase->as [psychologist_nameShortDef] writes a prescription</li>
         <li>circumstance_phrase->as a path to recovery is laid out</li>
         <li>circumstance_phrase->while seeming very understanding</li>
         <li>desc_sentence->[psychologist_nameShortDef] has a knowledgeable look on [psychologist_possessive] face.</li>
@@ -51,6 +51,33 @@
         <li>desc_sentence->[psychologist_nameShortDef] has a serious but kind demeanour.</li>
         <li>desc_sentence->[patient_nameShortDef] is smiling.</li>
         <li>desc_sentence->[patient_nameShortDef] looks like a new person.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+  
+  <TaleDef>
+    <defName>TreatedDepression</defName>
+    <label>treated depression</label>
+    <taleClass>Tale_DoublePawn</taleClass>
+    <type>Volatile</type>
+    <firstPawnSymbol>psychologist</firstPawnSymbol>
+    <secondPawnSymbol>patient</secondPawnSymbol>
+    <baseInterest>2.5</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[patient_nameShortDef]'s psychotherapy for depression</li>
+        <li>image->[psychologist_nameFull] sitting on the edge of [patient_nameFull]'s bed [circumstance_group]</li>
+        <li>image->[psychologist_nameFull] nodding while [patient_nameFull] talks [circumstance_group]</li>
+        <li>image->[psychologist_nameFull] discussing [patient_nameFull]'s urges [circumstance_group]</li>
+        <li>circumstance_phrase->as [psychologist_nameShortDef] takes notes</li>
+        <li>circumstance_phrase->as [psychologist_nameShortDef] writes a prescription</li>
+        <li>circumstance_phrase->as a path to normalcy is laid out</li>
+        <li>circumstance_phrase->while seeming very understanding</li>
+        <li>desc_sentence->[psychologist_nameShortDef] has a knowledgeable look on [psychologist_possessive] face.</li>
+        <li>desc_sentence->[psychologist_nameShortDef] looks incredibly focused on the task.</li>
+        <li>desc_sentence->[psychologist_nameShortDef] has a serious but kind demeanour.</li>
+        <li>desc_sentence->[patient_nameShortDef] is smiling faintly.</li>
+        <li>desc_sentence->[patient_nameShortDef] looks a little happier.</li>
       </rulesStrings>
     </rulePack>
   </TaleDef>

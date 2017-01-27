@@ -39,4 +39,21 @@
     </logRulesRecipient>
   </InteractionDef>
   
+  <InteractionDef>
+    <defName>EndConversation</defName>
+    <label>ended conversation</label>
+    <workerClass>InteractionWorker_DeepTalk</workerClass> <!-- This will prevent them from actually doing it.-->
+    <symbol>Things/Mote/SpeechSymbols/DeepTalk</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>logentry->Ended a conversation with [other_nameShortIndef].</li>
+      </rulesStrings>
+    </logRulesInitiator>
+    <logRulesRecipient>
+      <rulesStrings>
+        <li>logentry->Ended a conversation with [other_nameShortIndef].</li>
+      </rulesStrings>
+    </logRulesRecipient>
+  </InteractionDef>
+  
 </InteractionDefs>

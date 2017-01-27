@@ -2,6 +2,31 @@
 <ThoughtDefs>
 
   <ThoughtDef>
+    <defName>Dynamic</defName>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>dynamic thought</label>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>MayorNoBedroom</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>no mayoral bedroom</label>
+        <description>I had to schedule a meeting with a constituent at a gathering spot. I need a bedroom so I can conduct these meetings in private.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
     <defName>KilledHumanlikeEnemy</defName>
     <durationDays>0.2</durationDays>
     <stackLimit>3</stackLimit>

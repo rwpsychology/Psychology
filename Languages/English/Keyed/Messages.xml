@@ -2,5 +2,6 @@
 <LanguageData>
 
 	<TreatedTrait>{0}'s {1} has been successfully treated.</TreatedTrait>
+	<MessageElectionCalledOff>The election at {0} has been called off because of conditions at the polling place.</MessageElectionCalledOff>
 	
 </LanguageData>

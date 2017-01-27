@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<LetterLabelNewElection>Election being held in {0}</LetterLabelNewElection>
+	<LetterNewElection>A mayoral election is being held in {0}. Some colonists there have announced their candidacy.</LetterNewElection>
+	<LetterLabelElectionHeld>Election underway in {0}</LetterLabelElectionHeld>
+	<LetterElectionHeld>The election in {0} is now underway. The colony has selected a polling place from the available gathering spots, and colonists will go there to vote.</LetterElectionHeld>
+	<LetterLabelElectionCandidate>Candidate: {0}</LetterLabelElectionCandidate>
+	<LetterElectionCandidate>{0} is running for mayor of {1}. This is HIS platform:\n{2}</LetterElectionCandidate>
+	<LetterLabelElectionWon>Election won by {0}</LetterLabelElectionWon>
+	<LetterElectionWon>{0} won the mayoral election at {1}. HECAP received {2} votes.\n\nAs a reminder, this was HIS platform:\n{3}\n\nHE will now receive visits from HIS constituents in HIS bedroom. If they have complaints, they will likely feel better after talking to HIM if HE is good at talking to people and understanding their feelings. Having a beautiful room to meet them in won't hurt either.\n\nKeep a close eye on HIM; HE has no one to complain to and bearing the burdens of an entire colony can be hard, especially if things are going badly.</LetterElectionWon>
+	
+</LanguageData>

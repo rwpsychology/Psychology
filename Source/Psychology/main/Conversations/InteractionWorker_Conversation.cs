@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using RimWorld;
 using Verse;
+using UnityEngine;
 
 namespace Psychology
 {
@@ -12,11 +13,12 @@ namespace Psychology
         public override float RandomSelectionWeight(Pawn initiator, Pawn recipient)
         {
             PsychologyPawn realRecipient = recipient as PsychologyPawn;
-            if(realRecipient == null || recipient.health.hediffSet.HasHediff(HediffDefOfPsychology.HoldingConversation))
+            PsychologyPawn realInitiator = initiator as PsychologyPawn;
+            if (realRecipient == null || realInitiator == null || realRecipient.psyche == null || realInitiator.psyche == null || recipient.health.hediffSet.HasHediff(HediffDefOfPsychology.HoldingConversation))
             {
                 return 0f;
             }
-            return 0.75f * realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly);
+            return Mathf.Max(0f, 0.3f + (0.5f-realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly)) + (0.5f-realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Extroverted)));
         }
 
         public override void Interacted(Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks)
@@ -28,12 +30,12 @@ namespace Psychology
                 PersonalityNode topic = realInitiator.psyche.PersonalityNodes.Where(node => !node.Core).RandomElement();
                 Hediff_Conversation initiatorHediff = (Hediff_Conversation)HediffMaker.MakeHediff(HediffDefOfPsychology.HoldingConversation, realInitiator);
                 initiatorHediff.otherPawn = realRecipient;
-                initiatorHediff.topic = topic;
+                initiatorHediff.topic = topic.def;
                 initiatorHediff.waveGoodbye = true;
                 initiator.health.AddHediff(initiatorHediff);
                 Hediff_Conversation recipientHediff = (Hediff_Conversation)HediffMaker.MakeHediff(HediffDefOfPsychology.HoldingConversation, realRecipient);
                 recipientHediff.otherPawn = realInitiator;
-                recipientHediff.topic = topic;
+                recipientHediff.topic = topic.def;
                 recipientHediff.waveGoodbye = false;
                 recipient.health.AddHediff(recipientHediff);
             }
