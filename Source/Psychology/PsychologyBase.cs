@@ -451,16 +451,16 @@ namespace Psychology
         public override void Tick(int currentTick)
         {
             //Constituent tick
-            if (currentTick % 3500 == 0)
+            if (currentTick % 6400 == 0)
             {
                 Map playerFactionMap = Find.WorldObjects.FactionBases.Find(b => b.Faction.IsPlayer).Map;
                 Pawn potentialConstituent = (from p in playerFactionMap.mapPawns.FreeColonistsSpawned
                                              where !p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor)
                                              select p).ToList().RandomElementByWeight(p => Mathf.Pow(Mathf.Abs(0.6f - p.needs.mood.CurLevel),2));
                 List<Pawn> activeMayors = (from m in playerFactionMap.mapPawns.FreeColonistsSpawned
-                                           where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == potentialConstituent.Map.Tile && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).yearElected == GenLocalDate.Year(potentialConstituent.Map.Tile)
+                                           where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == potentialConstituent.Map.Tile
                                            select m).ToList();
-                if (potentialConstituent != null && activeMayors.Count > 0)
+                if (potentialConstituent != null && potentialConstituent.Awake() && activeMayors.Count > 0)
                 {
                     Pawn mayor = activeMayors.RandomElement(); //There should only be one.
                     PsychologyPawn psychologyConstituent = potentialConstituent as PsychologyPawn;
@@ -469,12 +469,13 @@ namespace Psychology
                     {
                         gather = mayor.ownership.OwnedBed.Position;
                     }
-                    if((psychologyConstituent == null || Rand.Value > psychologyConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent)) && (gather != default(IntVec3) || RCellFinder.TryFindPartySpot(mayor, out gather)))
+                    if(potentialConstituent.GetTimeAssignment() != TimeAssignmentDefOf.Work && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Work && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && mayor.GetLord() == null && (psychologyConstituent == null || Rand.Value > psychologyConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent)*1.5f) && (gather != default(IntVec3) || RCellFinder.TryFindPartySpot(mayor, out gather)))
                     {
                         List<Pawn> pawns = new List<Pawn>();
                         pawns.Add(mayor);
                         pawns.Add(potentialConstituent);
-                        LordMaker.MakeNewLord(mayor.Faction, new LordJob_VisitMayor(gather, potentialConstituent, mayor, (potentialConstituent.needs.mood.CurLevel < 0.4f)), mayor.Map, null);
+                        LordMaker.MakeNewLord(mayor.Faction, new LordJob_VisitMayor(gather, potentialConstituent, mayor, (potentialConstituent.needs.mood.CurLevel < 0.4f)), mayor.Map, pawns);
+
                     }
                 }
             }

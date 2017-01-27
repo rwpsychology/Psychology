@@ -27,6 +27,19 @@
   </ThoughtDef>
   
   <ThoughtDef>
+    <defName>WonElection</defName>
+    <durationDays>10</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>won an election</label>
+        <description>I did it! I'm the mayor now! I'm so thankful to everyone who voted for me.</description>
+        <baseMoodEffect>10</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
     <defName>KilledHumanlikeEnemy</defName>
     <durationDays>0.2</durationDays>
     <stackLimit>3</stackLimit>

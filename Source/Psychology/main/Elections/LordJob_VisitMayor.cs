@@ -93,7 +93,7 @@ namespace Psychology
                 ThoughtStage stage = new ThoughtStage();
                 float mood = 3f;
                 mood *= this.ticksInSameRoom / 5000f;
-                mood *= (complaint ? -1f : 0.25f);
+                mood *= (complaint ? -1f-(1f-this.constituent.needs.mood.CurLevel) : 0.25f+Mathf.Max(0f, 0.2f-this.constituent.needs.mood.CurLevel));
                 mood *= (mood < 0f ? 0.5f + (1f - realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
                 mood *= 0.5f + realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.LaidBack);
                 stage.label = "visited by constituent";
@@ -101,34 +101,37 @@ namespace Psychology
                 stage.baseMoodEffect = Mathf.RoundToInt(mood);
                 visitDef.stages.Add(stage);
                 this.mayor.needs.mood.thoughts.memories.TryGainMemoryThought(visitDef, this.constituent);
-                InteractionDef endConversation = new InteractionDef();
-                endConversation.defName = "EndConversation";
-                FieldInfo RuleStrings = typeof(RulePack).GetField("rulesStrings", BindingFlags.Instance | BindingFlags.NonPublic);
-                RulePack goodbyeTextInit = new RulePack();
-                List<string> text = new List<string>(1);
-                if(complaint)
+                if(this.ticksInSameRoom > 0)
                 {
-                    text.Add("logentry->Complained to the mayor.");
+                    InteractionDef endConversation = new InteractionDef();
+                    endConversation.defName = "EndConversation";
+                    FieldInfo RuleStrings = typeof(RulePack).GetField("rulesStrings", BindingFlags.Instance | BindingFlags.NonPublic);
+                    RulePack goodbyeTextInit = new RulePack();
+                    List<string> text = new List<string>(1);
+                    if (complaint)
+                    {
+                        text.Add("logentry->Complained to the mayor.");
+                    }
+                    else
+                    {
+                        text.Add("logentry->Voiced my support to the mayor.");
+                    }
+                    RuleStrings.SetValue(goodbyeTextInit, text);
+                    RulePack goodbyeTextRecip = new RulePack();
+                    text = new List<string>(1);
+                    if (complaint)
+                    {
+                        text.Add("logentry->Had a meeting with a constituent, [other_nameShortIndef].");
+                    }
+                    RuleStrings.SetValue(goodbyeTextRecip, text);
+                    endConversation.logRulesInitiator = goodbyeTextInit;
+                    endConversation.logRulesRecipient = goodbyeTextRecip;
+                    FieldInfo Symbol = typeof(InteractionDef).GetField("symbol", BindingFlags.Instance | BindingFlags.NonPublic);
+                    Symbol.SetValue(endConversation, Symbol.GetValue(InteractionDefOf.DeepTalk));
+                    PlayLogEntry_InteractionConversation log = new PlayLogEntry_InteractionConversation(endConversation, this.mayor, this.constituent, new List<RulePackDef>());
+                    Find.PlayLog.Add(log);
+                    MoteMaker.MakeInteractionBubble(this.mayor, this.constituent, InteractionDefOf.Chitchat.interactionMote, InteractionDefOf.Chitchat.Symbol);
                 }
-                else
-                {
-                    text.Add("logentry->Voiced my support to the mayor.");
-                }
-                RuleStrings.SetValue(goodbyeTextInit, text);
-                RulePack goodbyeTextRecip = new RulePack();
-                text = new List<string>(1);
-                if (complaint)
-                {
-                    text.Add("logentry->Had a meeting with a constituent, [other_nameShortIndef].");
-                }
-                RuleStrings.SetValue(goodbyeTextRecip, text);
-                endConversation.logRulesInitiator = goodbyeTextInit;
-                endConversation.logRulesRecipient = goodbyeTextRecip;
-                FieldInfo Symbol = typeof(InteractionDef).GetField("symbol", BindingFlags.Instance | BindingFlags.NonPublic);
-                Symbol.SetValue(endConversation, Symbol.GetValue(InteractionDefOf.DeepTalk));
-                PlayLogEntry_InteractionConversation log = new PlayLogEntry_InteractionConversation(endConversation, this.mayor, this.constituent, new List<RulePackDef>());
-                Find.PlayLog.Add(log);
-                MoteMaker.MakeInteractionBubble(this.mayor, this.constituent, InteractionDefOf.Chitchat.interactionMote, InteractionDefOf.Chitchat.Symbol);
             }
         }
         
@@ -149,8 +152,8 @@ namespace Psychology
         
         private IntVec3 spot;
         private Trigger_TicksPassed timeoutTrigger;
-        private Pawn constituent;
-        private Pawn mayor;
+        public Pawn constituent;
+        public Pawn mayor;
         private bool complaint;
         public int ticksInSameRoom;
     }
