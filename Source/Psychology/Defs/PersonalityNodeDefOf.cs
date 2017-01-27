@@ -10,6 +10,7 @@ namespace Psychology
     public static class PersonalityNodeDefOf
     {
         public static PersonalityNodeDef Aggressive;
+        public static PersonalityNodeDef Competitive;
         public static PersonalityNodeDef Cool;
         public static PersonalityNodeDef Empathetic;
         public static PersonalityNodeDef Experimental;

@@ -69,7 +69,9 @@ namespace Psychology
                                            select v).ToList();
                 voteTally.Add(new Pair<PsychologyPawn, int>(candidate.pawn, votesForMe.Count));
             }
-            voteTally = voteTally.OrderByDescending(pair => pair.Second).ToList();
+            //If there ends up being a tie, we'll just assume the least competitive candidates drop out.
+            //The chances of there being a tie after that are exceedingly slim, but the result will be essentially random.
+            voteTally = voteTally.OrderByDescending(pair => pair.Second).ThenByDescending(pair => pair.First.psyche.GetPersonalityRating(PersonalityNodeDefOf.Competitive)).ToList();
             voteTally.ForEach(t => Log.Message(t.First + ": "+ t.Second));
             Pair<PsychologyPawn, int> winningCandidate = voteTally[0];
             StringBuilder issuesString = new StringBuilder();

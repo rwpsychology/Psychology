@@ -53,7 +53,7 @@ namespace Psychology
                     this.pawn.health.RemoveHediff(this);
                     return;
                 }
-                else if (Rand.Value < 0.1f)
+                else if (Rand.Value < 0.2f)
                 {
                     MoteMaker.MakeInteractionBubble(this.pawn, otherPawn, InteractionDefOf.DeepTalk.interactionMote, InteractionDefOf.DeepTalk.Symbol);
                 }

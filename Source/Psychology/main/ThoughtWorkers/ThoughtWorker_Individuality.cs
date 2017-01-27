@@ -20,7 +20,7 @@ namespace Psychology
                 return ThoughtState.Inactive;
             if (p.apparel.PsychologicallyNude)
                 return ThoughtState.Inactive;
-            if (GenDate.MonthsPassed < 2)
+            if (GenDate.MonthsPassed <= 6)
                 return ThoughtState.Inactive;
             if (!PsychologyBase.IndividualityOn())
                 return ThoughtState.Inactive;

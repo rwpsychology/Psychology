@@ -66,43 +66,43 @@ namespace Psychology
             PsychologyPawn realConstituent = constituent as PsychologyPawn;
             if(realMayor != null & realConstituent != null)
             {
-                if (this.complaint)
+                if (this.ticksInSameRoom > 0)
                 {
-                    ThoughtDef complaintDef = new ThoughtDef();
-                    complaintDef.defName = this.constituent.GetHashCode() + "MayorComplaint" + Find.TickManager.TicksGame;
-                    complaintDef.label = "MayorComplaint";
-                    complaintDef.durationDays = 1f + 4f * this.mayor.GetStatValue(StatDefOf.SocialImpact);
-                    complaintDef.thoughtClass = typeof(Thought_MemoryDynamic);
-                    ThoughtStage complaintStage = new ThoughtStage();
-                    float complaintMood = 10f * (realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Empathetic) - 0.25f);
-                    complaintMood += (BeautyUtility.AverageBeautyPerceptible(this.constituent.Position, this.constituent.Map) / 3f);
-                    complaintMood *= this.ticksInSameRoom / 5000f;
-                    complaintMood *= (complaintMood < 0f ? 0.5f + (1f - realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
-                    complaintMood *= 0.5f + realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Judgmental);
-                    complaintStage.label = "complained to the mayor";
-                    complaintStage.description = "Complaining to the mayor made me feel this way.";
-                    complaintStage.baseMoodEffect = Mathf.RoundToInt(complaintMood);
-                    complaintDef.stages.Add(complaintStage);
-                    this.constituent.needs.mood.thoughts.memories.TryGainMemoryThought(complaintDef, this.mayor);
-                }
-                ThoughtDef visitDef = new ThoughtDef();
-                visitDef.defName = this.constituent.GetHashCode() + "MayorComplaint" + Find.TickManager.TicksGame;
-                visitDef.label = "MayorComplaint";
-                visitDef.durationDays = 0.75f + 2f * (1f - realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent));
-                visitDef.thoughtClass = typeof(Thought_MemoryDynamic);
-                ThoughtStage stage = new ThoughtStage();
-                float mood = 3f;
-                mood *= this.ticksInSameRoom / 5000f;
-                mood *= (complaint ? -1f-(1f-this.constituent.needs.mood.CurLevel) : 0.25f+Mathf.Max(0f, 0.2f-this.constituent.needs.mood.CurLevel));
-                mood *= (mood < 0f ? 0.5f + (1f - realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
-                mood *= 0.5f + realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.LaidBack);
-                stage.label = "visited by constituent";
-                stage.description = "A visit from a constituent made me feel this way.";
-                stage.baseMoodEffect = Mathf.RoundToInt(mood);
-                visitDef.stages.Add(stage);
-                this.mayor.needs.mood.thoughts.memories.TryGainMemoryThought(visitDef, this.constituent);
-                if(this.ticksInSameRoom > 0)
-                {
+                    if (this.complaint)
+                    {
+                        ThoughtDef complaintDef = new ThoughtDef();
+                        complaintDef.defName = this.constituent.GetHashCode() + "MayorComplaint" + Find.TickManager.TicksGame;
+                        complaintDef.label = "MayorComplaint";
+                        complaintDef.durationDays = 1f + 4f * this.mayor.GetStatValue(StatDefOf.SocialImpact);
+                        complaintDef.thoughtClass = typeof(Thought_MemoryDynamic);
+                        ThoughtStage complaintStage = new ThoughtStage();
+                        float complaintMood = 10f * (realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Empathetic) - 0.25f);
+                        complaintMood += (BeautyUtility.AverageBeautyPerceptible(this.constituent.Position, this.constituent.Map) / 3f);
+                        complaintMood *= this.ticksInSameRoom / 5000f;
+                        complaintMood *= (complaintMood < 0f ? 0.5f + (1f - realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
+                        complaintMood *= 0.5f + realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Judgmental);
+                        complaintStage.label = "complained to the mayor";
+                        complaintStage.description = "Complaining to the mayor made me feel this way.";
+                        complaintStage.baseMoodEffect = Mathf.RoundToInt(complaintMood);
+                        complaintDef.stages.Add(complaintStage);
+                        this.constituent.needs.mood.thoughts.memories.TryGainMemoryThought(complaintDef, this.mayor);
+                    }
+                    ThoughtDef visitDef = new ThoughtDef();
+                    visitDef.defName = this.constituent.GetHashCode() + "MayorVisited" + Find.TickManager.TicksGame;
+                    visitDef.label = "MayorVisited";
+                    visitDef.durationDays = 0.75f + 2f * (1f - realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent));
+                    visitDef.thoughtClass = typeof(Thought_MemoryDynamic);
+                    ThoughtStage stage = new ThoughtStage();
+                    float mood = 4f;
+                    mood *= this.ticksInSameRoom / 5000f;
+                    mood *= (complaint ? -1f-(1f-this.constituent.needs.mood.CurLevel) : 0.25f+Mathf.Max(0f, 0.2f-this.constituent.needs.mood.CurLevel));
+                    mood *= (mood < 0f ? 0.5f + (1f - realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
+                    mood *= 0.5f + realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.LaidBack);
+                    stage.label = "visited by constituent";
+                    stage.description = "A visit from a constituent made me feel this way.";
+                    stage.baseMoodEffect = Mathf.RoundToInt(mood);
+                    visitDef.stages.Add(stage);
+                    this.mayor.needs.mood.thoughts.memories.TryGainMemoryThought(visitDef, this.constituent);
                     InteractionDef endConversation = new InteractionDef();
                     endConversation.defName = "EndConversation";
                     FieldInfo RuleStrings = typeof(RulePack).GetField("rulesStrings", BindingFlags.Instance | BindingFlags.NonPublic);
@@ -118,17 +118,14 @@ namespace Psychology
                     }
                     RuleStrings.SetValue(goodbyeTextInit, text);
                     RulePack goodbyeTextRecip = new RulePack();
-                    text = new List<string>(1);
-                    if (complaint)
-                    {
-                        text.Add("logentry->Had a meeting with a constituent, [other_nameShortIndef].");
-                    }
-                    RuleStrings.SetValue(goodbyeTextRecip, text);
+                    List<String> text2 = new List<string>(1);
+                    text2.Add("logentry->Had a meeting with a constituent, [other_nameShortIndef].");
+                    RuleStrings.SetValue(goodbyeTextRecip, text2);
                     endConversation.logRulesInitiator = goodbyeTextInit;
                     endConversation.logRulesRecipient = goodbyeTextRecip;
                     FieldInfo Symbol = typeof(InteractionDef).GetField("symbol", BindingFlags.Instance | BindingFlags.NonPublic);
                     Symbol.SetValue(endConversation, Symbol.GetValue(InteractionDefOf.DeepTalk));
-                    PlayLogEntry_InteractionConversation log = new PlayLogEntry_InteractionConversation(endConversation, this.mayor, this.constituent, new List<RulePackDef>());
+                    PlayLogEntry_InteractionConversation log = new PlayLogEntry_InteractionConversation(endConversation, this.constituent, this.mayor, new List<RulePackDef>());
                     Find.PlayLog.Add(log);
                     MoteMaker.MakeInteractionBubble(this.mayor, this.constituent, InteractionDefOf.Chitchat.interactionMote, InteractionDefOf.Chitchat.Symbol);
                 }

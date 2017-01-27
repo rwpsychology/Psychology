@@ -13,7 +13,7 @@ namespace Psychology.Detour
         [DetourMethod(typeof(InteractionUtility),"CanReceiveRandomInteraction")]
         internal static bool _CanReceiveRandomInteraction(Pawn p)
         {
-            return InteractionUtility.CanReceiveInteraction(p) && p.RaceProps.Humanlike && !p.Downed && !p.InAggroMentalState && !p.health.hediffSet.HasHediff(HediffDefOfPsychology.HoldingConversation);
+            return InteractionUtility.CanReceiveInteraction(p) && p.RaceProps.Humanlike && !p.Downed && !p.InAggroMentalState && !p.health.hediffSet.HasHediff(HediffDefOfPsychology.HoldingConversation) && (p.Map.lordManager.lords.Find(l => l.LordJob is LordJob_VisitMayor) == null || !p.Map.lordManager.lords.Find(l => l.LordJob is LordJob_VisitMayor).ownedPawns.Contains(p));
         }
     }
 }

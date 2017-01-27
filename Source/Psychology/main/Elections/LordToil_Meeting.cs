@@ -39,9 +39,9 @@ namespace Psychology
             if (meeting != null)
             {
                 meeting.ticksInSameRoom += 1;
-                if(meeting.ticksInSameRoom % 200 == 0)
+                if(meeting.ticksInSameRoom % 200 == 0 && Rand.Value < 0.2f)
                 {
-                    MoteMaker.MakeInteractionBubble(meeting.mayor, meeting.constituent, InteractionDefOf.DeepTalk.interactionMote, InteractionDefOf.DeepTalk.Symbol);
+                    MoteMaker.MakeInteractionBubble(meeting.constituent, meeting.mayor, InteractionDefOf.DeepTalk.interactionMote, InteractionDefOf.DeepTalk.Symbol);
                 }
             }
         }

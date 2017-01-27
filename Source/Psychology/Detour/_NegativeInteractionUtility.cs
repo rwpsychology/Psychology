@@ -17,17 +17,18 @@ namespace Psychology.Detour
             float num = 1f;
             if (realInitiator == null)
             {
+                num = 4f;
                 num *= OpinionFactorCurve.Evaluate((float)initiator.relations.OpinionOf(recipient));
                 num *= CompatibilityFactorCurve.Evaluate(initiator.relations.CompatibilityWith(recipient));
-                if (initiator.story.traits.HasTrait(TraitDefOf.Abrasive))
-                {
-                    num *= 2.3f;
-                }
             }
             else
             {
-                num *= OpinionFactorCurve.Evaluate((float)initiator.relations.OpinionOf(recipient));
                 num *= 2f * realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive);
+                num *= OpinionFactorCurve.Evaluate((float)initiator.relations.OpinionOf(recipient));
+            }
+            if (initiator.story.traits.HasTrait(TraitDefOf.Abrasive))
+            {
+                num *= 2.3f;
             }
             return num;
         }

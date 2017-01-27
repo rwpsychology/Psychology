@@ -469,13 +469,12 @@ namespace Psychology
                     {
                         gather = mayor.ownership.OwnedBed.Position;
                     }
-                    if(potentialConstituent.GetTimeAssignment() != TimeAssignmentDefOf.Work && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Work && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && mayor.GetLord() == null && (psychologyConstituent == null || Rand.Value > psychologyConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent)*1.5f) && (gather != default(IntVec3) || RCellFinder.TryFindPartySpot(mayor, out gather)))
+                    if(potentialConstituent.GetTimeAssignment() != TimeAssignmentDefOf.Work && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Work && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && mayor.GetLord() == null && (psychologyConstituent == null || Rand.Value < (1f-psychologyConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent))/50f) && (gather != default(IntVec3) || RCellFinder.TryFindPartySpot(mayor, out gather)))
                     {
                         List<Pawn> pawns = new List<Pawn>();
                         pawns.Add(mayor);
                         pawns.Add(potentialConstituent);
                         LordMaker.MakeNewLord(mayor.Faction, new LordJob_VisitMayor(gather, potentialConstituent, mayor, (potentialConstituent.needs.mood.CurLevel < 0.4f)), mayor.Map, pawns);
-
                     }
                 }
             }
