@@ -14,7 +14,7 @@ namespace Psychology
         {
             PsychologyPawn realRecipient = recipient as PsychologyPawn;
             PsychologyPawn realInitiator = initiator as PsychologyPawn;
-            if (realRecipient == null || realInitiator == null || recipient.health.hediffSet.HasHediff(HediffDefOfPsychology.HoldingConversation))
+            if (realRecipient == null || realInitiator == null)
             {
                 return 0f;
             }
@@ -25,20 +25,17 @@ namespace Psychology
         {
             PsychologyPawn realInitiator = initiator as PsychologyPawn;
             PsychologyPawn realRecipient = recipient as PsychologyPawn;
-            if(realInitiator != null && realRecipient != null)
-            {
-                PersonalityNode topic = realInitiator.psyche.PersonalityNodes.Where(node => !node.Core).RandomElement();
-                Hediff_Conversation initiatorHediff = (Hediff_Conversation)HediffMaker.MakeHediff(HediffDefOfPsychology.HoldingConversation, realInitiator);
-                initiatorHediff.otherPawn = realRecipient;
-                initiatorHediff.topic = topic.def;
-                initiatorHediff.waveGoodbye = true;
-                initiator.health.AddHediff(initiatorHediff);
-                Hediff_Conversation recipientHediff = (Hediff_Conversation)HediffMaker.MakeHediff(HediffDefOfPsychology.HoldingConversation, realRecipient);
-                recipientHediff.otherPawn = realInitiator;
-                recipientHediff.topic = topic.def;
-                recipientHediff.waveGoodbye = false;
-                recipient.health.AddHediff(recipientHediff);
-            }
+            PersonalityNode topic = realInitiator.psyche.PersonalityNodes.Where(node => !node.Core).RandomElement();
+            Hediff_Conversation initiatorHediff = (Hediff_Conversation)HediffMaker.MakeHediff(HediffDefOfPsychology.HoldingConversation, realInitiator);
+            initiatorHediff.otherPawn = realRecipient;
+            initiatorHediff.topic = topic.def;
+            initiatorHediff.waveGoodbye = true;
+            realInitiator.health.AddHediff(initiatorHediff);
+            Hediff_Conversation recipientHediff = (Hediff_Conversation)HediffMaker.MakeHediff(HediffDefOfPsychology.HoldingConversation, realRecipient);
+            recipientHediff.otherPawn = realInitiator;
+            recipientHediff.topic = topic.def;
+            recipientHediff.waveGoodbye = false;
+            realRecipient.health.AddHediff(recipientHediff);
         }
         
     }

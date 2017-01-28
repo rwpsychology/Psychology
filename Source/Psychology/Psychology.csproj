@@ -61,6 +61,7 @@
     <Compile Include="Detour\_InteractionUtility.cs" />
     <Compile Include="Detour\_InteractionWorker_DeepTalk.cs" />
     <Compile Include="Detour\_NegativeInteractionUtility.cs" />
+    <Compile Include="Detour\_PawnNeedsUIUtility.cs" />
     <Compile Include="Main\Conversations\PlayLogEntry_InteractionConversation.cs" />
     <Compile Include="Main\Elections\Candidate.cs" />
     <Compile Include="Main\Elections\Hediff_Mayor.cs" />

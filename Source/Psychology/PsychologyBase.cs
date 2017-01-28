@@ -445,15 +445,6 @@ namespace Psychology
                         anxiety.Part = pawn.health.hediffSet.GetBrain();
                     }
                 }
-                /* Give all old Psychology pawns the new Psyche system */
-                List<PsychologyPawn> psychelessPawns = (from p in map.mapPawns.AllPawns
-                                                        where p.RaceProps.Humanlike && p is PsychologyPawn && ((PsychologyPawn)p).psyche == null
-                                                        select p as PsychologyPawn).ToList();
-                foreach (PsychologyPawn pawn in psychelessPawns)
-                {
-                    pawn.psyche = new Pawn_PsycheTracker(pawn);
-                    pawn.psyche.Initialize();
-                }
             }
         }
 

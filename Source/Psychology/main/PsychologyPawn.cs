@@ -10,6 +10,18 @@ namespace Psychology
 {
     public class PsychologyPawn : Pawn
     {
+        public override void SpawnSetup(Map map)
+        {
+            base.SpawnSetup(map);
+            /* Adds psyche to PsychologyPawns on old saves
+             * Also a stopgap fix for pawns spawning without psyches
+             */
+            if(this.psyche == null && this.RaceProps.Humanlike)
+            {
+                this.psyche = new Pawn_PsycheTracker(this);
+                this.psyche.Initialize();
+            }
+        }
 
         public override void ExposeData()
         {

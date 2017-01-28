@@ -39,7 +39,7 @@ namespace Psychology
             transition.AddTrigger(new Trigger_PawnLostViolently());
             transition.AddPreAction(new TransitionAction_Message("MessageElectionCalledOff".Translate(this.baseName), MessageSound.Negative, new TargetInfo(this.spot, this.Map, false)));
             stateGraph.AddTransition(transition);
-            this.timeoutTrigger = new Trigger_TicksPassed(Rand.RangeInclusive(5000, 15000));
+            this.timeoutTrigger = new Trigger_TicksPassed(Rand.RangeInclusive(GenDate.TicksPerHour*4, GenDate.TicksPerHour * 8));
             Transition transition2 = new Transition(lordToil_Election, lordToil_End);
             transition2.AddTrigger(this.timeoutTrigger);
             transition2.AddPreAction(new TransitionAction_Custom((Action)delegate
@@ -74,7 +74,7 @@ namespace Psychology
             voteTally = voteTally.OrderByDescending(pair => pair.Second).ThenByDescending(pair => pair.First.psyche.GetPersonalityRating(PersonalityNodeDefOf.Competitive)).ToList();
             if (Prefs.DevMode && Prefs.LogVerbose)
             {
-                voteTally.ForEach(t => Log.Message("Votes for " + t.First + ": " + t.Second));
+                voteTally.ForEach(t => Log.Message("[Psychology] Votes for " + t.First + ": " + t.Second));
             }
             Pair<PsychologyPawn, int> winningCandidate = voteTally[0];
             StringBuilder issuesString = new StringBuilder();

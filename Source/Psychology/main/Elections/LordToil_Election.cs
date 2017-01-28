@@ -47,7 +47,7 @@ namespace Psychology
                         possibleVotes.Add(new Pair<PsychologyPawn, float>(candidate.pawn, issueWeighting+voter.relations.OpinionOf(candidate.pawn)));
                     }
                     possibleVotes = possibleVotes.OrderByDescending(vote => vote.Second).ToList();
-                    StringBuilder voteString = new StringBuilder("Vote weights for "+voter.LabelShort+": ");
+                    StringBuilder voteString = new StringBuilder("[Psychology] Vote weights for "+voter.LabelShort+": ");
                     possibleVotes.ForEach(v => voteString.Append(v.First.LabelShort + " " + v.Second + " "));
                     if (Prefs.DevMode && Prefs.LogVerbose)
                     {

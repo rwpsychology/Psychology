@@ -15,7 +15,6 @@ namespace Psychology.Detour
         [DetourMethod(typeof(PawnComponentsUtility),"CreateInitialComponents")]
         internal static void _CreateInitialComponents(Pawn pawn)
         {
-            Log.Message("Creating components for " + pawn.LabelShort);
             pawn.ageTracker = new Pawn_AgeTracker(pawn);
             pawn.health = new Pawn_HealthTracker(pawn);
             pawn.records = new Pawn_RecordsTracker(pawn);
@@ -49,7 +48,6 @@ namespace Psychology.Detour
                 if (realPawn != null)
                 {
                     realPawn.psyche = new Pawn_PsycheTracker(realPawn);
-                    Log.Message("Gave " + pawn.LabelShort + " a psyche.");
                 }
             }
             if (pawn.RaceProps.IsFlesh)
