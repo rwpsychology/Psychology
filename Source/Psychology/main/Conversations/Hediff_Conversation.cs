@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Verse;
 using Verse.AI;
 using RimWorld;
@@ -32,16 +33,26 @@ namespace Psychology
         public override void Tick()
         {
             base.Tick();
-            if (this.otherPawn == null)
+            if(this.realPawn == null)
             {
-                this.pawn.health.RemoveHediff(this);
+                this.realPawn = this.pawn as PsychologyPawn;
             }
-            if (!this.otherPawn.Spawned || !this.pawn.Spawned || (this.pawn.Position - this.otherPawn.Position).LengthHorizontalSquared >= 36f || !InteractionUtility.CanReceiveInteraction(this.pawn) || !InteractionUtility.CanReceiveInteraction(this.otherPawn) || !GenSight.LineOfSight(this.pawn.Position, this.otherPawn.Position, this.pawn.Map, true))
+            if (this.otherPawn == null)
             {
                 this.pawn.health.RemoveHediff(this);
                 return;
             }
-            if (this.pawn.Dead || this.pawn.Downed)
+            if (!this.otherPawn.Spawned || !this.pawn.Spawned || !InteractionUtility.CanReceiveInteraction(this.pawn) || !InteractionUtility.CanReceiveInteraction(this.otherPawn))
+            {
+                this.pawn.health.RemoveHediff(this);
+                return;
+            }
+            if ((this.pawn.Position - this.otherPawn.Position).LengthHorizontalSquared >= 54f || !GenSight.LineOfSight(this.pawn.Position, this.otherPawn.Position, this.pawn.Map, true))
+            {
+                this.pawn.health.RemoveHediff(this);
+                return;
+            }
+            if (this.otherPawn.Dead || this.otherPawn.Downed || this.otherPawn.InAggroMentalState)
             {
                 this.pawn.health.RemoveHediff(this);
                 return;
@@ -53,7 +64,7 @@ namespace Psychology
                     this.pawn.health.RemoveHediff(this);
                     return;
                 }
-                else if (Rand.Value < 0.2f)
+                else if (Rand.Value < 0.2f && this.pawn.Map != null)
                 {
                     MoteMaker.MakeInteractionBubble(this.pawn, otherPawn, InteractionDefOf.DeepTalk.interactionMote, InteractionDefOf.DeepTalk.Symbol);
                 }
@@ -63,9 +74,13 @@ namespace Psychology
         public override void PostRemoved()
         {
             base.PostRemoved();
-            if(this.realPawn != null)
+            if (this.realPawn == null)
             {
-                Hediff otherConvo = otherPawn.health.hediffSet.hediffs.Find(h => h.def.defName == "HoldingConversation" && ((Hediff_Conversation)h).otherPawn == this.realPawn);
+                this.realPawn = this.pawn as PsychologyPawn;
+            }
+            if (this.realPawn != null && this.otherPawn != null)
+            {
+                Hediff otherConvo = otherPawn.health.hediffSet.hediffs.Find(h => h is Hediff_Conversation && ((Hediff_Conversation)h).otherPawn == this.realPawn);
                 if(otherConvo != null)
                 {
                     this.otherPawn.health.RemoveHediff(otherConvo);
@@ -98,14 +113,16 @@ namespace Psychology
                 def.defName = this.pawn.GetHashCode() + "Conversation" + topic.defName + Find.TickManager.TicksGame;
                 def.label = topic.defName;
                 def.durationDays = 60f;
-                def.thoughtClass = typeof(Thought_MemorySocialConversation);
+                def.nullifyingTraits = new List<TraitDef>();
+                def.nullifyingTraits.Add(TraitDefOf.Psychopath);
+                def.thoughtClass = typeof(Thought_MemorySocialDynamic);
                 ThoughtStage stage = new ThoughtStage();
                 //Base opinion mod is 5 to the power of controversiality.
                 float opinionMod = Mathf.Pow(5f, topic.controversiality);
                 //Multiplied by difference between their personality ratings, on an exponential scale.
                 opinionMod *= Mathf.Lerp(-1.25f, 1.25f, Mathf.Pow(1f-Mathf.Abs((this.realPawn.psyche.GetPersonalityRating(topic) - this.otherPawn.psyche.GetPersonalityRating(topic))),3));
                 //Cool pawns are liked more.
-                opinionMod += Mathf.Pow(2f, topic.controversiality) * (0.5f - this.realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Cool));
+                opinionMod += Mathf.Pow(2f, topic.controversiality) * (0.5f - this.otherPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Cool));
                 //The length of the talk has a large impact on how much the pawn cares.
                 opinionMod *= talkModifiers[talkLength];
                 //If they had a bad experience, the more polite the pawn is, the less they're bothered by it.
@@ -119,7 +136,16 @@ namespace Psychology
                 stage.label = "conversation about " + topic.conversationTopic;
                 stage.baseOpinionOffset = Mathf.RoundToInt(opinionMod);
                 def.stages.Add(stage);
-                this.pawn.needs.mood.thoughts.memories.TryGainMemoryThought(def, this.otherPawn);
+                /* The more they know about someone, the less likely small thoughts are to have an impact on their opinion.
+                 * This helps declutter the Social card without preventing pawns from having conversations.
+                 * They just won't change their mind about the colonist as a result.
+                 */
+                float knownThoughtOpinion = 0f;
+                this.realPawn.needs.mood.thoughts.memories.Memories.Where(m => m.def.defName.Contains("Conversation") && m.otherPawn.ThingID == this.otherPawn.ThingID).ToList().ForEach(m => knownThoughtOpinion += m.CurStage.baseOpinionOffset);
+                if(Rand.Value < Mathf.InverseLerp(0f, knownThoughtOpinion, stage.baseOpinionOffset))
+                {
+                    this.pawn.needs.mood.thoughts.memories.TryGainMemoryThought(def, this.otherPawn);
+                }
                 if (this.waveGoodbye)
                 {
                     InteractionDef endConversation = new InteractionDef();
@@ -144,7 +170,14 @@ namespace Psychology
         {
             get
             {
-                return Mathf.Clamp01(this.pawn.Map.mapPawns.FreeColonistsCount / 8f);
+                if(this.pawn.IsColonist && this.pawn.Map != null)
+                {
+                    return Mathf.Clamp01(this.pawn.Map.mapPawns.FreeColonistsCount / 8f);
+                }
+                else
+                {
+                    return 1f;
+                }
             }
         }
 

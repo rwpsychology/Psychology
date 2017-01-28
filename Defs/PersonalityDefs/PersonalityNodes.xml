@@ -456,6 +456,14 @@
 				<trait>Socialite</trait>
 				<modifier>0.2</modifier>
 			</li>
+			<li>
+				<trait>CreepyBreathing</trait>
+				<modifier>-0.3</modifier>
+			</li>
+			<li>
+				<trait>AnnoyingVoice</trait>
+				<modifier>-0.3</modifier>
+			</li>
 		</traitModifiers>
 	</Psychology.PersonalityNodeDef>
 	

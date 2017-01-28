@@ -131,8 +131,8 @@ namespace Psychology.Detour
             brokeUpMoodDef.durationDays = 25f;
             brokeUpMoodDef.thoughtClass = typeof(Thought_MemoryDynamic);
             ThoughtStage brokeUpStage = new ThoughtStage();
-            brokeUpStage.label = "going through break-up with {0}";
-            brokeUpStage.baseMoodEffect = Mathf.RoundToInt(-15f * Mathf.InverseLerp(0.25f, 0.75f, lover.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic)) * Mathf.InverseLerp(-20f, 100f, lover.relations.OpinionOf(ex)));
+            brokeUpStage.label = "Broke up with {0}";
+            brokeUpStage.baseMoodEffect = Mathf.RoundToInt(-20f * Mathf.InverseLerp(0.25f, 0.75f, lover.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic)) * Mathf.InverseLerp(-20f, 100f, lover.relations.OpinionOf(ex)));
             if(brokeUpStage.baseMoodEffect < -5f)
             {
                 brokeUpStage.description = "My lover and I parted ways amicably, but it's still a little sad.";
@@ -142,7 +142,10 @@ namespace Psychology.Detour
                 brokeUpStage.description = "I'm going through a bad break-up right now.";
             }
             brokeUpMoodDef.stages.Add(brokeUpStage);
-            lover.needs.mood.thoughts.memories.TryGainMemoryThought(brokeUpMoodDef, ex);
+            if(brokeUpStage.baseMoodEffect > 0f)
+            {
+                lover.needs.mood.thoughts.memories.TryGainMemoryThought(brokeUpMoodDef, ex);
+            }
         }
     }
 }

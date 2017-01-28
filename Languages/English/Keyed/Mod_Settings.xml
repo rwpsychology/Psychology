@@ -15,5 +15,8 @@
 	
 	<IndividualityTitle>Enable Individuality thoughts</IndividualityTitle>
 	<IndividualityTooltip>Turn this off to disable the negative thought your colonists will get if they are wearing perfectly matching outfits with other colonists. This thought adds extra difficulty, so it's optional, but recommended.</IndividualityTooltip>
+	
+	<ElectionsTitle>Enable elections</ElectionsTitle>
+	<ElectionsTooltip>Turn this off to prevent your colonists from having yearly elections. It will not stop an election in progress, and any existing mayor will be reverted to a normal colonist. This will not affect compatibility with other mods.</ElectionsTooltip>
   
 </LanguageData>

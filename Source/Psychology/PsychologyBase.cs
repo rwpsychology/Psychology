@@ -20,10 +20,12 @@ namespace Psychology
         public static bool detoursMedical = true;
         public static bool detoursSexual = true;
         public static bool notBabyMode = true;
+        public static bool elections = true;
         private SettingHandle<bool> toggleKinsey;
         private SettingHandle<bool> toggleEmpathy;
         private SettingHandle<KinseyMode> kinseyMode;
         private SettingHandle<bool> toggleIndividuality;
+        private SettingHandle<bool> toggleElections;
 
         public enum KinseyMode
         {
@@ -45,6 +47,11 @@ namespace Psychology
         static public bool IndividualityOn()
         {
             return notBabyMode;
+        }
+
+        static public bool ActivateElections()
+        {
+            return elections;
         }
 
         public override string ModIdentifier
@@ -118,6 +125,7 @@ namespace Psychology
             kinsey = toggleKinsey.Value;
             mode = kinseyMode.Value;
             notBabyMode = toggleIndividuality.Value;
+            elections = toggleElections.Value;
         }
 
         public override void DefsLoaded()
@@ -130,8 +138,10 @@ namespace Psychology
                 toggleKinsey = Settings.GetHandle<bool>("EnableSexuality", "SexualityChangesTitle".Translate(), "SexualityChangesTooltip".Translate(), true);
                 kinseyMode = Settings.GetHandle<KinseyMode>("KinseyMode", "KinseyModeTitle".Translate(), "KinseyModeTooltip".Translate(), KinseyMode.Realistic, null, "KinseyMode_");
                 toggleIndividuality = Settings.GetHandle<bool>("EnableIndividuality", "IndividualityTitle".Translate(), "IndividualityTooltip".Translate(), true);
-                
+                toggleElections = Settings.GetHandle<bool>("EnableElections", "ElectionsTitle".Translate(), "ElectionsTooltip".Translate(), true);
+
                 notBabyMode = toggleIndividuality.Value;
+                elections = toggleElections.Value;
 
                 /* Mod conflict detection */
 
@@ -471,7 +481,7 @@ namespace Psychology
                         gather = mayor.ownership.OwnedBed.Position;
                         foundBed = true;
                     }
-                    if(potentialConstituent.GetTimeAssignment() != TimeAssignmentDefOf.Work && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Work && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && mayor.GetLord() == null && (psychologyConstituent == null || Rand.Value < (1f-psychologyConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent))/50f) && (foundBed || RCellFinder.TryFindPartySpot(mayor, out gather)))
+                    if(potentialConstituent.GetTimeAssignment() != TimeAssignmentDefOf.Work && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Work && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && mayor.GetLord() == null && (psychologyConstituent == null || Rand.Value < (1f-psychologyConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent))/5f) && (foundBed || RCellFinder.TryFindPartySpot(mayor, out gather)))
                     {
                         List<Pawn> pawns = new List<Pawn>();
                         pawns.Add(mayor);
@@ -491,6 +501,11 @@ namespace Psychology
                 {
                     //If the base isn't owned or named by the player, no election can be held.
                     if (!factionBase.Faction.IsPlayer || !factionBase.namedByPlayer)
+                    {
+                        continue;
+                    }
+                    //Self-explanatory.
+                    if (!PsychologyBase.ActivateElections())
                     {
                         continue;
                     }

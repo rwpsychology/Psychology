@@ -95,7 +95,7 @@ namespace Psychology
                     ThoughtStage stage = new ThoughtStage();
                     float mood = 4f;
                     mood *= this.ticksInSameRoom / 5000f;
-                    mood *= (complaint ? -1f-(1f-this.constituent.needs.mood.CurLevel) : 0.25f+Mathf.Max(0f, 0.2f-this.constituent.needs.mood.CurLevel));
+                    mood *= (complaint ? -1f-(1f-this.constituent.needs.mood.CurLevel) : 0.25f+Mathf.Max(0f, 0.25f-this.constituent.needs.mood.CurLevel));
                     mood *= (mood < 0f ? 0.5f + (1f - realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
                     mood *= 0.5f + realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.LaidBack);
                     stage.label = "visited by constituent";

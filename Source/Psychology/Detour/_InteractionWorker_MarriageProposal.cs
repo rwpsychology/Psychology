@@ -67,7 +67,7 @@ namespace Psychology.Detour
                     ThoughtDef rejectedProposalDef = new ThoughtDef();
                     rejectedProposalDef.defName = "RejectedMyProposal" + realInitiator.LabelShort + Find.TickManager.TicksGame;
                     rejectedProposalDef.durationDays = 40f;
-                    rejectedProposalDef.thoughtClass = typeof(Thought_MemorySocial);
+                    rejectedProposalDef.thoughtClass = typeof(Thought_MemorySocialDynamic);
                     ThoughtStage rejectedProposalStage = new ThoughtStage();
                     rejectedProposalStage.label = "rejected my proposal";
                     rejectedProposalStage.baseOpinionOffset = Mathf.RoundToInt(-30f * realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic) * Mathf.InverseLerp(100f, 5f, realInitiator.relations.OpinionOf(realRecipient)));
@@ -75,10 +75,10 @@ namespace Psychology.Detour
                     ThoughtDef rejectedProposalMoodDef = new ThoughtDef();
                     rejectedProposalMoodDef.defName = "RejectedMyProposalMood" + realInitiator.LabelShort + Find.TickManager.TicksGame;
                     rejectedProposalMoodDef.durationDays = 25f;
-                    rejectedProposalMoodDef.thoughtClass = typeof(Thought_Memory);
+                    rejectedProposalMoodDef.thoughtClass = typeof(Thought_MemoryDynamic);
                     ThoughtStage rejectedProposalMoodStage = new ThoughtStage();
-                    rejectedProposalMoodStage.label = "going through break-up with {0}";
-                    rejectedProposalMoodStage.baseMoodEffect = Mathf.RoundToInt(-18f * realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic) * Mathf.InverseLerp(100f, 5f, realInitiator.relations.OpinionOf(realRecipient)));
+                    rejectedProposalMoodStage.label = "proposal rejected by {0}";
+                    rejectedProposalMoodStage.baseMoodEffect = Mathf.RoundToInt(-25f * realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic) * Mathf.InverseLerp(100f, 5f, realInitiator.relations.OpinionOf(realRecipient)));
                     if (rejectedProposalMoodStage.baseMoodEffect < -5f)
                     {
                         rejectedProposalMoodStage.description = "My lover isn't ready for that kind of commitment right now, and I understand, but rejection is hard to take.";
@@ -88,7 +88,10 @@ namespace Psychology.Detour
                         rejectedProposalMoodStage.description = "I can't believe I got turned down. Maybe we're not meant to be together after all?";
                     }
                     rejectedProposalMoodDef.stages.Add(rejectedProposalMoodStage);
-                    realInitiator.needs.mood.thoughts.memories.TryGainMemoryThought(rejectedProposalMoodDef, realRecipient);
+                    if(rejectedProposalMoodStage.baseMoodEffect > 0)
+                    {
+                        realInitiator.needs.mood.thoughts.memories.TryGainMemoryThought(rejectedProposalMoodDef, realRecipient);
+                    }
                     realInitiator.needs.mood.thoughts.memories.TryGainMemoryThought(rejectedProposalDef, realRecipient);
                 }
                 else

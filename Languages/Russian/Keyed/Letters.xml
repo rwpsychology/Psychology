@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<LetterLabelNewElection>Выборы проводятся в {0}</LetterLabelNewElection>
+	<LetterNewElection>Мэры выборы проводятся в {0}. Некоторые колонисты там объявили о своей кандидатуре.</LetterNewElection>
+	<LetterLabelElectionHeld>Выборы в стадии реализации в {0}</LetterLabelElectionHeld>
+	<LetterElectionHeld>Выборы в {0} сейчас идет полным ходом. Колонии выбрал избирательный участок из доступных мест сбора, и колонисты идут туда, чтобы голосовать.</LetterElectionHeld>
+	<LetterLabelElectionCandidate>Кандидат: {0}</LetterLabelElectionCandidate>
+	<LetterElectionCandidate>{0} работает на пост мэра {1}. Это HIS Платформа:\n{2}</LetterElectionCandidate>
+	<LetterLabelElectionWon>Выборы выиграл {0}</LetterLabelElectionWon>
+	<LetterElectionWon>{0} выиграл выборы мэра в {1}. HECAP получил {2} голосов.\n\nAНапомним, что это была HIS платформа:\n{3}\n\nHECAP теперь будет встречаться с HIS составных частей в {} HIS комнате, если HE имеет один. Если у них есть жалобы, то они будут чувствовать себя лучше после разговора с HIM, если HE является хорошо говорить с людьми и понимать их чувства. Имея красивую комнату, чтобы встретиться с ними не помешают.\n\nДержите закрыть глаза на HIM; HE не имеет никого, чтобы жаловаться и неся бремя целой колонии может быть трудно, особенно если дела идут плохо.</LetterElectionWon>
+	
+</LanguageData>
