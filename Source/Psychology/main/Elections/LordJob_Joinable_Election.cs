@@ -72,7 +72,10 @@ namespace Psychology
             //If there ends up being a tie, we'll just assume the least competitive candidates drop out.
             //The chances of there being a tie after that are exceedingly slim, but the result will be essentially random.
             voteTally = voteTally.OrderByDescending(pair => pair.Second).ThenByDescending(pair => pair.First.psyche.GetPersonalityRating(PersonalityNodeDefOf.Competitive)).ToList();
-            voteTally.ForEach(t => Log.Message(t.First + ": "+ t.Second));
+            if (Prefs.DevMode && Prefs.LogVerbose)
+            {
+                voteTally.ForEach(t => Log.Message("Votes for " + t.First + ": " + t.Second));
+            }
             Pair<PsychologyPawn, int> winningCandidate = voteTally[0];
             StringBuilder issuesString = new StringBuilder();
             for (int i = 0; i < candidates.Find(c => c.pawn == winningCandidate.First).nodes.Count; i++)
@@ -81,6 +84,7 @@ namespace Psychology
             }
             Hediff mayor = HediffMaker.MakeHediff(HediffDefOfPsychology.Mayor, winningCandidate.First);
             winningCandidate.First.health.AddHediff(mayor);
+            winningCandidate.First.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOfPsychology.WonElection);
             Find.LetterStack.ReceiveLetter("LetterLabelElectionWon".Translate(winningCandidate.First.LabelShort), "LetterElectionWon".Translate(winningCandidate.First.LabelShort, this.baseName, winningCandidate.Second, issuesString.ToString()).AdjustedFor(winningCandidate.First), LetterType.Good, winningCandidate.First);
         }
         

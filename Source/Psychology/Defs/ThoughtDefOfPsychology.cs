@@ -38,6 +38,10 @@ namespace Psychology
         public static ThoughtDef RebuffedMyRomanceAttemptLecher;
         public static ThoughtDef PanicAttack;
 
+        /* Election related thoughts */
+        public static ThoughtDef WonElection;
+        public static ThoughtDef MayorNoBedroom;
+
         /* Miscellaneous thoughts */
         public static ThoughtDef KilledHumanlikeEnemy;
         public static ThoughtDef DreamGood;
@@ -49,6 +53,5 @@ namespace Psychology
         public static ThoughtDef TreatmentFailed;
         public static ThoughtDef SuccessfulPlot;
         public static ThoughtDef HeardParanoia;
-        public static ThoughtDef Conversation;
     }
 }

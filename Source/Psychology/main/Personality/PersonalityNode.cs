@@ -90,14 +90,6 @@ namespace Psychology
                 }
                 rating = Mathf.Clamp01(rating);
             }
-            if(this.def.defName == "Romantic" && PsychologyBase.ActivateKinsey())
-            {
-                rating = Mathf.Clamp01(rating * this.pawn.sexuality.AdjustedRomanticDrive);
-            }
-            if (this.def.defName == "Outspoken")
-            {
-                rating += (this.pawn.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) ? 0.1f : 0f);
-            }
             return rating;
         }
 
@@ -142,6 +134,12 @@ namespace Psychology
             }
         }
 
+        /* Hook for modding. */
+        public float AdjustHook(float rating)
+        {
+            return rating;
+        }
+
         public float AdjustedRating
         {
             get
@@ -149,7 +147,7 @@ namespace Psychology
                 if(cachedRating < 0f || this.pawn.IsHashIntervalTick(100))
                 {
 
-                    float adjustedRating = AdjustForCircumstance(AdjustForParents(this.rawRating));
+                    float adjustedRating = AdjustHook(AdjustForCircumstance(AdjustForParents(this.rawRating)));
                     if (this.def.femaleModifier > 0f && this.pawn.gender == Gender.Female)
                     {
                         Rand.PushSeed();

@@ -81,8 +81,8 @@ namespace Psychology.Detour
             PsychologyPawn realInitiator = initiator as PsychologyPawn;
             if(realInitiator != null)
             {
-                chance = 0.1f;
-                romanticFactor = Mathf.InverseLerp(1.1f, -1f, realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
+                chance = 0.05f;
+                romanticFactor = Mathf.InverseLerp(1.05f, 0f, realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
             }
             float opinionFactor = Mathf.InverseLerp(100f, -100f, (float)initiator.relations.OpinionOf(recipient));
             float spouseFactor = 1f;
@@ -116,7 +116,7 @@ namespace Psychology.Detour
             ThoughtDef brokeUpDef = new ThoughtDef();
             brokeUpDef.defName = "BrokeUpWithMe" + lover.LabelShort + Find.TickManager.TicksGame;
             brokeUpDef.durationDays = 40f;
-            brokeUpDef.thoughtClass = typeof(Thought_MemorySocial);
+            brokeUpDef.thoughtClass = typeof(Thought_MemorySocialDynamic);
             ThoughtStage brokeUpStage = new ThoughtStage();
             brokeUpStage.label = "broke up with me";
             brokeUpStage.baseOpinionOffset = Mathf.RoundToInt(-50f * lover.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic) * Mathf.InverseLerp(5f, 100f, lover.relations.OpinionOf(ex)));
@@ -129,7 +129,7 @@ namespace Psychology.Detour
             ThoughtDef brokeUpMoodDef = new ThoughtDef();
             brokeUpMoodDef.defName = "BrokeUpWithMeMood" + lover.LabelShort + Find.TickManager.TicksGame;
             brokeUpMoodDef.durationDays = 25f;
-            brokeUpMoodDef.thoughtClass = typeof(Thought_Memory);
+            brokeUpMoodDef.thoughtClass = typeof(Thought_MemoryDynamic);
             ThoughtStage brokeUpStage = new ThoughtStage();
             brokeUpStage.label = "going through break-up with {0}";
             brokeUpStage.baseMoodEffect = Mathf.RoundToInt(-15f * Mathf.InverseLerp(0.25f, 0.75f, lover.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic)) * Mathf.InverseLerp(-20f, 100f, lover.relations.OpinionOf(ex)));

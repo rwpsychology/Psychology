@@ -84,13 +84,13 @@ namespace Psychology.Detour
                     socialiteMod++;
                 }
             }
-            if (Find.TickManager.TicksGame % 5000 == 0)
+            if (Find.TickManager.TicksGame % GenDate.TicksPerHour*2 == 0)
             {
-                if (Rand.MTBEventOccurs(40f, 60000f, (5000f*socialiteMod)))
+                if (Rand.MTBEventOccurs(40f, GenDate.TicksPerDay, (GenDate.TicksPerHour*2f*socialiteMod)))
                 {
                     _this.SetStartPartyASAP(true);
                 }
-                if (_this.GetStartPartyASAP() && Find.TickManager.TicksGame - _this.GetLastLordStartTick() >= (int)(600000 / socialiteMod) && PartyUtility.AcceptableMapConditionsToStartParty(_this.GetMap()))
+                if (_this.GetStartPartyASAP() && Find.TickManager.TicksGame - _this.GetLastLordStartTick() >= (int)(GenDate.TicksPerMonth*2 / socialiteMod) && PartyUtility.AcceptableMapConditionsToStartParty(_this.GetMap()))
                 {
                     _this.TryStartParty();
                 }

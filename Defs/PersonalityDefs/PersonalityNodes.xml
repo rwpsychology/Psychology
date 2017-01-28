@@ -129,7 +129,7 @@
 		<controversiality>1.8</controversiality>
 		<conversationTopic>a disagreement between them</conversationTopic>
 		<platformIssueHigh>We need greater support for free speech.</platformIssueHigh>
-		<platformIssueLow>We need more respect for each other.</platformIssueLow>
+		<platformIssueLow>We need to be more mindful of each other.</platformIssueLow>
 		<femaleModifier>0.5</femaleModifier>
 		<parents>
 			<li>
@@ -169,6 +169,12 @@
 				<node>Extroverted</node>
 			</li>
 		</parents>
+		<traitModifiers>
+			<li>
+				<trait>Outdoorsy</trait>
+				<modifier>0.1</modifier>
+			</li>
+		</traitModifiers>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -291,7 +297,7 @@
 		<description>People who are passionate feel very strongly about things and tend to express themselves emphatically.</description>
 		<controversiality>1.4</controversiality>
 		<conversationTopic>their likes and dislikes</conversationTopic>
-		<platformIssueHigh>I'm the best person for the job.</platformIssueHigh>
+		<platformIssueHigh>I'll put all my energy into the job.</platformIssueHigh>
 		<platformIssueLow>I'll do what needs to be done.</platformIssueLow>
 		<parents>
 			<li>
@@ -307,7 +313,7 @@
 		<controversiality>0.5</controversiality>
 		<conversationTopic>the old days</conversationTopic>
 		<platformIssueHigh>Things were better in the old days.</platformIssueHigh>
-		<platformIssueLow>We have a bright future ahead of us.</platformIssueLow>
+		<platformIssueLow>We can create a bright future.</platformIssueLow>
 		<parents>
 			<li>
 				<node>Emotional</node>
@@ -364,7 +370,7 @@
 		<description>For a competitive person, it's not enough that they succeed, others must fail.</description>
 		<conversationTopic>success</conversationTopic>
 		<platformIssueHigh>Our colony should reward innovators.</platformIssueHigh>
-		<platformIssueLow>Everyone in our colony succeeds together.</platformIssueLow>
+		<platformIssueLow>Everyone in our colony should be able to succeed.</platformIssueLow>
 		<parents>
 			<li>
 				<node>Aggressive</node>
@@ -446,6 +452,10 @@
 				<degree>-2</degree>
 				<modifier>-0.8</modifier>
 			</li>
+			<li>
+				<trait>Socialite</trait>
+				<modifier>0.2</modifier>
+			</li>
 		</traitModifiers>
 	</Psychology.PersonalityNodeDef>
 	
@@ -455,7 +465,7 @@
 		<description>Someone romantic likes long-term, meaningful relationships, commitment, and intimate gestures.</description>
 		<controversiality>1.8</controversiality>
 		<conversationTopic>romance</conversationTopic>
-		<platformIssueHigh>I will put all my energy into this job.</platformIssueHigh>
+		<platformIssueHigh>I will take the position seriously.</platformIssueHigh>
 		<platformIssueLow>This job won't go to my head.</platformIssueLow>
 		<parents>
 			<li>
@@ -470,6 +480,10 @@
 			<li>
 				<trait>Codependent</trait>
 				<modifier>0.8</modifier>
+			</li>
+			<li>
+				<trait>Lecher</trait>
+				<modifier>-0.8</modifier>
 			</li>
 		</traitModifiers>
 	</Psychology.PersonalityNodeDef>
@@ -498,7 +512,7 @@
 		<description>Someone who is geeky is intellectual, eccentric, and frequently socially awkward.</description>
 		<controversiality>0.6</controversiality>
 		<conversationTopic>their hobbies</conversationTopic>
-		<platformIssueHigh>We can create a better life for ourselves.</platformIssueHigh>
+		<platformIssueHigh>Think of the possibilities we can pursue.</platformIssueHigh>
 		<platformIssueLow>Let's focus on what's practical.</platformIssueLow>
 		<parents>
 			<li>
@@ -888,6 +902,10 @@
 			</li>
 			<li>
 				<node>Moralistic</node>
+			</li>
+			<li>
+				<node>Competitive</node>
+				<modifier>2</modifier>
 			</li>
 		</parents>
 	</Psychology.PersonalityNodeDef>

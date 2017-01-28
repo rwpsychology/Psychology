@@ -31,7 +31,7 @@ namespace Psychology
 
         public void LearnSexuality(PsychologyPawn p)
         {
-            if(!knownSexualities.Keys.Contains(p))
+            if(p != null && !knownSexualities.Keys.Contains(p))
             {
                 knownSexualities.Add(p, p.sexuality.kinseyRating);
             }

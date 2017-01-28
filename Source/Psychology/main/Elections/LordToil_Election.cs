@@ -47,7 +47,12 @@ namespace Psychology
                         possibleVotes.Add(new Pair<PsychologyPawn, float>(candidate.pawn, issueWeighting+voter.relations.OpinionOf(candidate.pawn)));
                     }
                     possibleVotes = possibleVotes.OrderByDescending(vote => vote.Second).ToList();
-                    possibleVotes.ForEach(v => Log.Message(voter.LabelShort +": "+v.First.LabelShort + " weight " + v.Second));
+                    StringBuilder voteString = new StringBuilder("Vote weights for "+voter.LabelShort+": ");
+                    possibleVotes.ForEach(v => voteString.Append(v.First.LabelShort + " " + v.Second + " "));
+                    if (Prefs.DevMode && Prefs.LogVerbose)
+                    {
+                        Log.Message(voteString.ToString());
+                    }
                     election.votes.Add(possibleVotes[0].First.LabelShort);
                 }
                 else

@@ -77,9 +77,9 @@ namespace Psychology
                         complaintDef.thoughtClass = typeof(Thought_MemoryDynamic);
                         ThoughtStage complaintStage = new ThoughtStage();
                         float complaintMood = 10f * (realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Empathetic) - 0.25f);
-                        complaintMood += (BeautyUtility.AverageBeautyPerceptible(this.constituent.Position, this.constituent.Map) / 3f);
                         complaintMood *= this.ticksInSameRoom / 5000f;
                         complaintMood *= (complaintMood < 0f ? 0.5f + (1f - realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
+                        complaintMood += (BeautyUtility.AverageBeautyPerceptible(this.constituent.Position, this.constituent.Map) / 5f);
                         complaintMood *= 0.5f + realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Judgmental);
                         complaintStage.label = "complained to the mayor";
                         complaintStage.description = "Complaining to the mayor made me feel this way.";
@@ -96,7 +96,7 @@ namespace Psychology
                     float mood = 4f;
                     mood *= this.ticksInSameRoom / 5000f;
                     mood *= (complaint ? -1f-(1f-this.constituent.needs.mood.CurLevel) : 0.25f+Mathf.Max(0f, 0.2f-this.constituent.needs.mood.CurLevel));
-                    mood *= (mood < 0f ? 0.5f + (1f - realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
+                    mood *= (mood < 0f ? 0.5f + (1f - realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
                     mood *= 0.5f + realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.LaidBack);
                     stage.label = "visited by constituent";
                     stage.description = "A visit from a constituent made me feel this way.";

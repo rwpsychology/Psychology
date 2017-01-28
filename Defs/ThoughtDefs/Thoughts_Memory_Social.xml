@@ -21,8 +21,8 @@
   </ThoughtDef>
 
   <ThoughtDef>
-    <defName>Conversation</defName>
-    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <defName>DynamicSocial</defName>
+    <thoughtClass>Psychology.Thought_MemorySocialDynamic</thoughtClass>
     <durationDays>60</durationDays>
     <stackLimit>300</stackLimit>
     <nullifyingTraits>

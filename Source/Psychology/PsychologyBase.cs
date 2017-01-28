@@ -167,15 +167,38 @@ namespace Psychology
                     {
                         gay.SetCommonality(0f);
                     }
-                    foreach (ThingDef t in DefDatabase<ThingDef>.AllDefsListForReading)
+                }
+                
+                foreach (ThingDef t in DefDatabase<ThingDef>.AllDefsListForReading)
+                {
+                    if (t.thingClass == typeof(Pawn))
                     {
-                        if (t.thingClass == typeof(Pawn))
+                        t.thingClass = typeof(PsychologyPawn);
+                        t.inspectorTabs.Add(typeof(ITab_Pawn_Psyche));
+                        try
                         {
-                            t.thingClass = typeof(PsychologyPawn);
+                            t.inspectorTabsResolved.Add(InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Psyche)));
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.Error(string.Concat(new object[]
+                            {
+                            "Could not instantiate inspector tab of type ",
+                            typeof(ITab_Pawn_Psyche),
+                            ": ",
+                            ex
+                            }));
+                        }
+                        if(t.race.intelligence == Intelligence.Humanlike)
+                        {
+                            t.recipes.Add(RecipeDefOfPsychology.TreatPyromania);
+                            t.recipes.Add(RecipeDefOfPsychology.TreatChemicalInterest);
+                            t.recipes.Add(RecipeDefOfPsychology.TreatChemicalFascination);
+                            t.recipes.Add(RecipeDefOfPsychology.TreatDepression);
                         }
                     }
                 }
-                
+
                 /* Vanilla Def edits */
                 AddConflictingTraits("Nudist", new TraitDef[] { TraitDefOfPsychology.Prude });
                 AddConflictingTraits("Bloodlust", new TraitDef[] { TraitDefOfPsychology.BleedingHeart, TraitDefOfPsychology.Desensitized });
@@ -260,6 +283,11 @@ namespace Psychology
                 {
                     knowColonistOrganHarvested = ModifyThoughtStages(knowColonistOrganHarvested, new int[] { -4 });
                 }
+                ThoughtDef beauty = AddNullifyingTraits("KnowColonistOrganHarvested", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
+                if (knowColonistOrganHarvested != null && toggleEmpathy)
+                {
+                    knowColonistOrganHarvested = ModifyThoughtStages(knowColonistOrganHarvested, new int[] { -4 });
+                }
 
                 ReplaceThoughtWorker("CabinFever", typeof(ThoughtWorker_CabinFever));
                 ReplaceThoughtWorker("Disfigured", typeof(ThoughtWorker_Disfigured));
@@ -313,26 +341,7 @@ namespace Psychology
                 {
                     if (alive.race.hediffGiverSets.Contains(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicStandard")))
                     {
-                        alive.inspectorTabs.Add(typeof(ITab_Pawn_Psyche));
-                        try
-                        {
-                            alive.inspectorTabsResolved.Add(InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Psyche)));
-                        }
-                        catch (Exception ex)
-                        {
-                            Log.Error(string.Concat(new object[]
-                            {
-                            "Could not instantiate inspector tab of type ",
-                            typeof(ITab_Pawn_Psyche),
-                            ": ",
-                            ex
-                            }));
-                        }
                         alive.race.hediffGiverSets.Add(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicPsychology"));
-                        alive.recipes.Add(RecipeDefOfPsychology.TreatPyromania);
-                        alive.recipes.Add(RecipeDefOfPsychology.TreatChemicalInterest);
-                        alive.recipes.Add(RecipeDefOfPsychology.TreatChemicalFascination);
-                        alive.recipes.Add(RecipeDefOfPsychology.TreatDepression);
                     }
                 }
 
@@ -436,7 +445,7 @@ namespace Psychology
                         anxiety.Part = pawn.health.hediffSet.GetBrain();
                     }
                 }
-                /* Give all old Psychology pawns the new Psyche system. */
+                /* Give all old Psychology pawns the new Psyche system */
                 List<PsychologyPawn> psychelessPawns = (from p in map.mapPawns.AllPawns
                                                         where p.RaceProps.Humanlike && p is PsychologyPawn && ((PsychologyPawn)p).psyche == null
                                                         select p as PsychologyPawn).ToList();
@@ -451,7 +460,7 @@ namespace Psychology
         public override void Tick(int currentTick)
         {
             //Constituent tick
-            if (currentTick % 6400 == 0)
+            if (currentTick % GenDate.TicksPerHour*3 == 0)
             {
                 Map playerFactionMap = Find.WorldObjects.FactionBases.Find(b => b.Faction.IsPlayer).Map;
                 Pawn potentialConstituent = (from p in playerFactionMap.mapPawns.FreeColonistsSpawned
@@ -465,21 +474,27 @@ namespace Psychology
                     Pawn mayor = activeMayors.RandomElement(); //There should only be one.
                     PsychologyPawn psychologyConstituent = potentialConstituent as PsychologyPawn;
                     IntVec3 gather = default(IntVec3);
+                    bool foundBed = false;
                     if(mayor.ownership != null && mayor.ownership.OwnedBed != null)
                     {
                         gather = mayor.ownership.OwnedBed.Position;
+                        foundBed = true;
                     }
-                    if(potentialConstituent.GetTimeAssignment() != TimeAssignmentDefOf.Work && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Work && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && mayor.GetLord() == null && (psychologyConstituent == null || Rand.Value < (1f-psychologyConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent))/50f) && (gather != default(IntVec3) || RCellFinder.TryFindPartySpot(mayor, out gather)))
+                    if(potentialConstituent.GetTimeAssignment() != TimeAssignmentDefOf.Work && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Work && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && mayor.GetLord() == null && (psychologyConstituent == null || Rand.Value < (1f-psychologyConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent))/50f) && (foundBed || RCellFinder.TryFindPartySpot(mayor, out gather)))
                     {
                         List<Pawn> pawns = new List<Pawn>();
                         pawns.Add(mayor);
                         pawns.Add(potentialConstituent);
                         LordMaker.MakeNewLord(mayor.Faction, new LordJob_VisitMayor(gather, potentialConstituent, mayor, (potentialConstituent.needs.mood.CurLevel < 0.4f)), mayor.Map, pawns);
+                        if(!foundBed)
+                        {
+                            mayor.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOfPsychology.MayorNoBedroom);
+                        }
                     }
                 }
             }
             //Election tick
-            if (currentTick % 15000 == 0)
+            if (currentTick % (GenDate.TicksPerDay/4f) == 0)
             {
                 foreach (FactionBase factionBase in Find.WorldObjects.FactionBases)
                 {
@@ -489,7 +504,7 @@ namespace Psychology
                         continue;
                     }
                     //If the base is not at least a year old, no election will be held.
-                    if ((Find.TickManager.TicksGame - factionBase.creationGameTicks) / (60000f * 60f) < 1)
+                    if ((Find.TickManager.TicksGame - factionBase.creationGameTicks) / GenDate.TicksPerYear < 1)
                     {
                         continue;
                     }

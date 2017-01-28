@@ -84,7 +84,7 @@ namespace Psychology
                     r.CurLevel += 0.005714286f * (lastRestEffectiveness / 3);
                     if (r.CurLevel > (Need_Rest.NaturalWakeThreshold / 4f))
                     {
-                        if (Rand.MTBEventOccurs((Need_Rest.NaturalWakeThreshold - r.CurLevel) / 4f, 60000f, 150f) && !pawn.Awake())
+                        if (Rand.MTBEventOccurs((Need_Rest.NaturalWakeThreshold - r.CurLevel) / 4f, GenDate.TicksPerDay, 150f) && !pawn.Awake())
                         {
                             pawn.jobs.curDriver.asleep = false;
                             pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
@@ -145,7 +145,7 @@ namespace Psychology
                 {
                     mtb = 0.0625f;
                 }
-                if (Rand.MTBEventOccurs(mtb, 60000f, 150f))
+                if (Rand.MTBEventOccurs(mtb, GenDate.TicksPerDay, 150f))
                 {
                     pawn.jobs.StartJob(new Job(JobDefOf.LayDown, pawn.Position), JobCondition.InterruptForced, null, false, true, null);
                     if (PawnUtility.ShouldSendNotificationAbout(pawn))

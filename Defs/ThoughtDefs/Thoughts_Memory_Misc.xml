@@ -3,6 +3,7 @@
 
   <ThoughtDef>
     <defName>Dynamic</defName>
+	<thoughtClass>Psychology.Thought_MemoryDynamic</thoughtClass>
     <durationDays>1</durationDays>
     <stages>
       <li>
@@ -28,13 +29,13 @@
   
   <ThoughtDef>
     <defName>WonElection</defName>
-    <durationDays>10</durationDays>
+    <durationDays>5</durationDays>
     <stackLimit>1</stackLimit>
     <stages>
       <li>
         <label>won an election</label>
         <description>I did it! I'm the mayor now! I'm so thankful to everyone who voted for me.</description>
-        <baseMoodEffect>10</baseMoodEffect>
+        <baseMoodEffect>20</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>

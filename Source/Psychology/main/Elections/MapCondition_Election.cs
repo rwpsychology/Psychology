@@ -14,34 +14,35 @@ namespace Psychology
     {
         public override void Init()
         {
+            base.Init();
             //Make sure the election occurs during the day if possible.
-            int plannedStart = GenLocalDate.HourOfDay(this.duration + Find.TickManager.TicksGame);
+            int plannedStart = GenDate.HourOfDay(this.duration + Find.TickManager.TicksGame, Find.WorldGrid.LongLatOf(this.Map.Tile).x);
             if(plannedStart < 7)
             {
-                this.duration += (7 - plannedStart) * 2500;
+                this.duration += (7 - plannedStart) * GenDate.TicksPerHour;
             }
             else if (plannedStart > 18)
             {
-                this.duration -= (plannedStart - 18) * 2500;
+                this.duration -= (plannedStart - 18) * GenDate.TicksPerHour;
             }
             List<PsychologyPawn> psychologyColonists = (from c in this.Map.mapPawns.FreeColonistsSpawned
                                                         where c is PsychologyPawn
                                                         select (PsychologyPawn)c).ToList();
-            int maxCandidatesThisColonySupports = Mathf.RoundToInt(psychologyColonists.Count() / 3f);
+            int maxCandidatesThisColonySupports = Mathf.RoundToInt(psychologyColonists.Count() * 0.3f);
             float totalOutspoken = 0f;
             psychologyColonists.ForEach(p => totalOutspoken += p.psyche.GetPersonalityRating(PersonalityNodeDefOf.Outspoken));
             int numCandidates = Rand.RangeInclusive(Mathf.Min(maxCandidatesThisColonySupports, 1 + Mathf.RoundToInt(totalOutspoken * 0.1f)), maxCandidatesThisColonySupports);
             int tries = 0;
             while (this.candidates.Count < numCandidates && tries < 500)
             {
-                PsychologyPawn candidate = psychologyColonists.RandomElementByWeight(p => p.psyche.GetPersonalityRating(PersonalityNodeDefOf.Outspoken)*2);
+                PsychologyPawn candidate = psychologyColonists.RandomElementByWeight(p => p.psyche.GetPersonalityRating(PersonalityNodeDefOf.Outspoken) * 2 + (p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) ? 0.5f - p.needs.mood.CurLevel : 0f));
                 List<PersonalityNodeDef> issues = new List<PersonalityNodeDef>();
                 int tries2 = 0;
                 while(issues.Count < 5 && tries2 < 500)
                 {
                     PersonalityNodeDef issue = (from node in candidate.psyche.PersonalityNodes
                                                 where !node.Core
-                                                select node.def).RandomElementByWeight(n => Mathf.Pow(Mathf.Abs(0.5f - candidate.psyche.GetPersonalityRating(n)),2) * Mathf.Pow(10, n.controversiality));
+                                                select node.def).RandomElementByWeight(n => Mathf.Pow(Mathf.Abs(0.5f - candidate.psyche.GetPersonalityRating(n)),2) * Mathf.Pow(2, n.controversiality));
                     if(!issues.Contains(issue))
                     {
                         issues.Add(issue);

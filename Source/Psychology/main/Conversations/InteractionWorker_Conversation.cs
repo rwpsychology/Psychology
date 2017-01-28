@@ -14,11 +14,11 @@ namespace Psychology
         {
             PsychologyPawn realRecipient = recipient as PsychologyPawn;
             PsychologyPawn realInitiator = initiator as PsychologyPawn;
-            if (realRecipient == null || realInitiator == null || realRecipient.psyche == null || realInitiator.psyche == null || recipient.health.hediffSet.HasHediff(HediffDefOfPsychology.HoldingConversation))
+            if (realRecipient == null || realInitiator == null || recipient.health.hediffSet.HasHediff(HediffDefOfPsychology.HoldingConversation))
             {
                 return 0f;
             }
-            return Mathf.Max(0f, 0.3f + (0.5f-realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly)) + (0.5f-realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Extroverted)));
+            return Mathf.Max(0f, 0.45f + (0.6f-realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly)) + (0.5f-realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Extroverted)));
         }
 
         public override void Interacted(Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks)

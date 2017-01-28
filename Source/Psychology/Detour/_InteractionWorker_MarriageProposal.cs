@@ -131,7 +131,7 @@ namespace Psychology.Detour
             }
             float num = 0.4f;
             int ticksGame = Find.TickManager.TicksGame;
-            float value = (float)(ticksGame - directRelation.startTicks) / 60000f;
+            float value = (float)(ticksGame - directRelation.startTicks) / GenDate.TicksPerDay;
             num *= Mathf.InverseLerp(0f, 60f, value);
             num *= Mathf.InverseLerp(0f, 60f, (float)initiator.relations.OpinionOf(recipient));
             if (recipient.relations.OpinionOf(initiator) < 0)

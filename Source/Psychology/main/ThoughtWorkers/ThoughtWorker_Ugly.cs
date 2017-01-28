@@ -19,7 +19,8 @@ namespace Psychology
             {
                 return false;
             }
-            int num = other.story.traits.DegreeOfTrait(TraitDefOf.Beauty);
+            //This is now handled by the Cool personality node.
+            /*int num = other.story.traits.DegreeOfTrait(TraitDefOf.Beauty);
             if (num == -1)
             {
                 return ThoughtState.ActiveAtStage(0);
@@ -27,7 +28,7 @@ namespace Psychology
             if (num == -2)
             {
                 return ThoughtState.ActiveAtStage(1);
-            }
+            }*/
             return false;
         }
     }

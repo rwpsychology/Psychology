@@ -112,7 +112,7 @@ namespace Psychology.Detour
             disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Talking));
             disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Manipulation));
             disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Moving));
-            if (realPawn != null && realPawn.psyche != null)
+            if (realPawn != null)
             {
                 disabilityFactor = Mathf.Lerp(ageFactor, 1f+ageFactor, realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
                 ageFactor = Mathf.Lerp(ageFactor, 1f+ageFactor, realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));

@@ -19,7 +19,7 @@ namespace Psychology
             {
                 return ThoughtState.Inactive;
             }
-            float num = (float)p.needs.mood.recentMemory.TicksSinceOutdoors / 60000f;
+            float num = (float)p.needs.mood.recentMemory.TicksSinceOutdoors / GenDate.TicksPerDay;
             if (num < 2.5f - (p.story.traits.HasTrait(TraitDefOfPsychology.Outdoorsy) ? 1f : 0f))
             {
                 return ThoughtState.Inactive;

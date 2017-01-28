@@ -15,7 +15,7 @@ namespace Psychology
         {
             Map map = (Map)parms.target;
             FactionBase factionBase = (FactionBase)Find.WorldObjects.ObjectsAt(map.Tile).ToList().Find(obj => obj is FactionBase);
-            int duration = Mathf.RoundToInt(this.def.durationDays.RandomInRange * 60000f);
+            int duration = Mathf.RoundToInt(this.def.durationDays.RandomInRange * GenDate.TicksPerDay);
             MapCondition cond = MapConditionMaker.MakeCondition(this.def.mapCondition, duration, 0);
             map.mapConditionManager.RegisterCondition(cond);
             Find.LetterStack.ReceiveLetter("LetterLabelNewElection".Translate(factionBase.Label), "LetterNewElection".Translate(factionBase.Label), LetterType.Good, new TargetInfo(map.Center, map, false), null);
