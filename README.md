@@ -1,6 +1,21 @@
-This mod expands the social and mood system by adding new traits, interactions, and thoughts. The stories that emerge from your pawns' quirks are the most fun part of RimWorld, and this mod aims to expand on that emergent storytelling by increasing variety.
+This mod is a complete overhaul of Rimworld's psychological and social systems. The stories that emerge from your pawns' quirks are the most fun part of RimWorld, and this mod aims to expand on that emergent storytelling by increasing the extent and complexity of its systems.
 	
 Psychology does not require a new save game.
+
+**Personality**
+- Everyone is generated with a random personality, summarized by many different attributes. This system is entirely separate from traits. The attributes are influenced not only by each other, but by everything else about that person. Every colonist has a unique and recognizable character archetype, giving them massively increased depth and charm.
+- A colonist's personality influences everything about how they interact with others. It's a complete, extensive revamp of the social system from the bottom up. Colonists' relationships with each other are now far more realistic, varied, and driven by their own personality.
+- Colonists will change their minds about each other after having conversations on topics relevant to a particular personality attribute. Instead of being arbitrarily assigned a compatibility with each other, they will naturally gravitate towards like-minded people and away from those they have strong disagreements with.
+
+**Sexuality and Romance**
+- Colonists' sexualities are graded on the Kinsey scale, from 0 to 6. The overwhelming colonists will be straight, but their sexual orientations can have much more variety and their romantic interest in each other will be adjusted accordingly. The sexuality curve can also be changed in the mod settings.
+- Depending on their personality, colonists may be more likely to have multiple "flings" rather than a single lover, and how they treat breakups is affected accordingly.
+- Colonists also have both sexual and romantic drives. If they are exceedingly low, it may affect their desire to do lovin' or commit to a long-term relationship, respectively. They may still take lovers, particularly if someone else romances them, but what they get out of it will be affected by those factors.
+
+**Mayors and Elections**
+- After a settlement's first year, elections will be held at some point every fall. A slate of colonists will announce their candidacy for mayor, and will present a platform to run on that is chosen based on their personality.
+- A few days later, a polling place will be chosen and colonists will go there to cast their votes. They will vote for the candidate whose positions best align with their personality, and their opinion of the candidates may also affect their vote.
+- The candidate with the plurality of votes becomes the mayor until the next election. They will receive visits from constituents in their room, particularly by people who are very unhappy or very content. Complaining colonists will get a happy thought from venting to the mayor, and the mayor will get a thought depending on their personality and what the colonist said to them.
 
 **New Traits**
 - Prude: This old-fashioned pawn hates the sight of nudity, and is mortified by the thought that others might be able to see their private areas. They are eternally disapproving of nudists and bothered by wearing ratty clothing.
@@ -46,21 +61,20 @@ Psychology does not require a new save game.
 - Some traits can be treated by assigning them a bill through the Operations screen. If successful, they will gain a status effect that nullifies the trait, at the cost of being a little more on edge. It must be maintained through use of good medicine, or they may lapse.
 - Pyromaniac: Will no longer go on fire-starting sprees.
 - Chemical interest/fascination: Will no longer go on drug binges.
+- Depression: Mood malus reduced to that of the Pessimist trait.
 
 **New Drugs**
 - Methadone: An opioid used to treat drug addiction. Barely addictive itself, it is useful for keeping colonists functional while they are suffering from withdrawal. Cheap and easy to manufacture.
 
 **Miscellaneous**
-- Kinsey scale: Instead of using up trait slots for sexualities, pawns are assigned a rating on the Kinsey scale which governs their romantic interactions. They'll also remember the sexualities of people they've attempted to romance, and avoid it in the future if they are incompatible.
-- Empathy: Non-Bleeding Heart pawns incur slightly smaller mood penalties for thoughts that Bleeding Heart pawns get more upset about.
-- Romance: Non-Lecher pawns will not attempt to romance pawns who are in a good relationship, and the likelihood of non-Lecher pawns in a relationship to attempt to romance other pawns is influenced by the strength of their relationship.
-- Social Traits: Pawns will not be affected by social traits relating to appearance if they can't see, or by social traits relating to talking if they can't hear. Pawns whose social traits involve talking also won't affect others with them if they can't talk.
 - Arresting: Pawns now have a "peaceful arrest chance" stat based on their Social skill, which is used when determining whether someone refuses arrest.
 
 **COMPATIBILITY**
-- Place Psychology as low in your load order as possible, and it will disable its features for compatibility with other mods.
-- Psychology adds new properties to pawns. Colonies with Psychology enabled on them may break if the mod is disabled. Colonies without Psychology enabled on them will only receive new functionality on new pawns. Disabling the Kinsey scale for old saves is recommended.
-- Psychology detours some of the game's functionality, so other mods which alter the game's code may not work properly if loaded after Psychology. Mods which only modify Defs are 100% compatible with Psychology, as Psychology does not override any core Defs.
+- By using this mod with other mods that perform the same functions, you are taking FULL responsibility for any problems that may arise. You are also accepting that even if Psychology is able to work with that mod, you may be limiting your enjoyment of this mod because the other mod will ignore or maybe even disable Psychology's systems. It is not recommended to use this mod with any other social interaction mods.
+- Mods which only modify Defs and not any of the game's code are 100% compatible with Psychology, though Psychology may override them with its own values.
+- Psychology should be placed as low in your mod order as possible, after Less Arbitrary Surgery, and before Expanded Incidents.
+- Psychology adds new properties to pawns. Colonies with Psychology enabled on them may break if the mod is disabled. Colonies without Psychology enabled on them will only receive new functionality on new pawns. Pawns which aren't Psychology-enabled should behave just like before.
+- No races using the Humanoid Alien Races libary will be Psychology-enabled, because it uses its own type of pawn, as does Psychology, and a pawn cannot be both. However, such mods are compatible.
 
 
 MOD AUTHORS: You can use the source code provided with the mod to build compatibility into your mod. Use reflection to access Psychology's traits and thoughts and check if the mod is loaded, then include the mod's functionality in any classes you detour. Then tell your users to load your mod before Psychology, so that it can perform both mods' work (or only yours, if they are not using Psychology). Example:
