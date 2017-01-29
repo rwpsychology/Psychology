@@ -33,7 +33,7 @@ namespace Psychology
             Scribe_Collections.LookList(ref this.nodes, "nodes", LookMode.Deep, new object[] { this.pawn });
             if (upbringing < 1)
             {
-                Initialize();
+                this.Initialize();
             }
         }
         

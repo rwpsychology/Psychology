@@ -29,11 +29,12 @@ namespace Psychology
             ThoughtDef def = new ThoughtDef();
             def.defName = this.topic;
             def.label = "dynamic thought";
+            def.description = this.description;
             def.durationDays = this.duration;
             def.thoughtClass = typeof(Thought_MemoryDynamic);
             ThoughtStage stage = new ThoughtStage();
             stage.label = this.label;
-            stage.baseOpinionOffset = this.baseMoodEffect;
+            stage.baseMoodEffect = this.baseMoodEffect;
             def.stages.Add(stage);
             this.def = def;
         }

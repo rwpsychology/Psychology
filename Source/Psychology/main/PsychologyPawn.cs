@@ -26,11 +26,11 @@ namespace Psychology
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Deep.LookDeep<Pawn_SexualityTracker>(ref this.sexuality, "sexuality", new object[]
+            Scribe_Deep.LookDeep(ref this.sexuality, "sexuality", new object[]
             {
                 this
             });
-            Scribe_Deep.LookDeep<Pawn_PsycheTracker>(ref this.psyche, "psyche", new object[]
+            Scribe_Deep.LookDeep(ref this.psyche, "psyche", new object[]
             {
                 this
             });

@@ -102,7 +102,10 @@ namespace Psychology
                     stage.description = "A visit from a constituent made me feel this way.";
                     stage.baseMoodEffect = Mathf.RoundToInt(mood);
                     visitDef.stages.Add(stage);
-                    this.mayor.needs.mood.thoughts.memories.TryGainMemoryThought(visitDef, this.constituent);
+                    if(mood > 0f)
+                    {
+                        this.mayor.needs.mood.thoughts.memories.TryGainMemoryThought(visitDef, this.constituent);
+                    }
                     InteractionDef endConversation = new InteractionDef();
                     endConversation.defName = "EndConversation";
                     FieldInfo RuleStrings = typeof(RulePack).GetField("rulesStrings", BindingFlags.Instance | BindingFlags.NonPublic);
