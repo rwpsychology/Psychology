@@ -79,7 +79,7 @@ namespace Psychology
                         float complaintMood = 10f * (realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Empathetic) - 0.25f);
                         complaintMood *= this.ticksInSameRoom / 5000f;
                         complaintMood *= (complaintMood < 0f ? 0.5f + (1f - realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
-                        complaintMood += (BeautyUtility.AverageBeautyPerceptible(this.constituent.Position, this.constituent.Map) / 5f);
+                        complaintMood += (BeautyUtility.AverageBeautyPerceptible(this.constituent.Position, this.constituent.Map) / 10f);
                         complaintMood *= 0.75f + (realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Judgmental)/2f);
                         complaintStage.label = "complained to the mayor";
                         complaintStage.description = "Complaining to the mayor made me feel this way.";
@@ -94,20 +94,17 @@ namespace Psychology
                     visitDef.thoughtClass = typeof(Thought_MemoryDynamic);
                     visitDef.stackedEffectMultiplier = 1f;
                     ThoughtStage stage = new ThoughtStage();
-                    float mood = 4f;
+                    float mood = 5f;
                     mood *= this.ticksInSameRoom / 5000f;
                     mood *= (complaint ? -1f-(1f-this.constituent.needs.mood.CurLevel) : 0.25f+Mathf.Max(0f, 0.25f-this.constituent.needs.mood.CurLevel));
                     mood *= (mood < 0f ? 0.5f + (1f - realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
-                    mood *= 0.5f + realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.LaidBack);
+                    mood *= 0.5f + (1f - realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.LaidBack));
                     stage.label = "visited by constituent";
                     stage.description = "A visit from a constituent made me feel this way.";
                     stage.baseMoodEffect = Mathf.RoundToInt(mood);
                     visitDef.defName = this.mayor.GetHashCode() + "MayorVisited" + stage.baseMoodEffect;
                     visitDef.stages.Add(stage);
-                    if(mood != 0f)
-                    {
-                        this.mayor.needs.mood.thoughts.memories.TryGainMemoryThought(visitDef, this.constituent);
-                    }
+                    this.mayor.needs.mood.thoughts.memories.TryGainMemoryThought(visitDef, this.constituent);
                     InteractionDef endConversation = new InteractionDef();
                     endConversation.defName = "EndConversation";
                     FieldInfo RuleStrings = typeof(RulePack).GetField("rulesStrings", BindingFlags.Instance | BindingFlags.NonPublic);

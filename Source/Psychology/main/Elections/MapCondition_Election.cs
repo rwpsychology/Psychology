@@ -35,7 +35,7 @@ namespace Psychology
             int tries = 0;
             while (this.candidates.Count < numCandidates && tries < 500)
             {
-                PsychologyPawn candidate = psychologyColonists.RandomElementByWeight(p => p.psyche.GetPersonalityRating(PersonalityNodeDefOf.Outspoken) * 2 + (p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) ? 0.5f - p.needs.mood.CurLevel : 0f));
+                PsychologyPawn candidate = psychologyColonists.RandomElementByWeight(p => p.psyche.GetPersonalityRating(PersonalityNodeDefOf.Outspoken) * 2 + (p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) ? p.needs.mood.CurLevel - 0.5f : 0f));
                 List<PersonalityNodeDef> issues = new List<PersonalityNodeDef>();
                 int tries2 = 0;
                 while(issues.Count < 5 && tries2 < 500)

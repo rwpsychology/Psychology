@@ -79,6 +79,7 @@
     <Compile Include="Detour\_Tradeable_Pawn.cs" />
     <Compile Include="Detour\_VoluntarilyJoinableLordsStarter.cs" />
     <Compile Include="Main\Alerts\Alert_Individuality.cs" />
+    <Compile Include="Main\ThoughtWorkers\ThoughtWorker_WantToSleepWithSpouseOrLover.cs" />
     <Compile Include="Main\Thought_MemoryDynamic.cs" />
     <Compile Include="Main\ITab_Pawn_Psyche.cs" />
     <Compile Include="Main\Pawn_PsycheTracker.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Main\Thought_MemorySocialDynamic.cs" />
     <Compile Include="Main\Medical\Treatments\Recipe_TreatDepression.cs" />
     <Compile Include="Main\Medical\Treatments\ThoughtWorker_AlwaysActiveDepression.cs" />
+    <Compile Include="Main\Thought_WantToSleepWithSpouseOrLoverPsychology.cs" />
     <Compile Include="MentalStates\Jobs\JobGiver_ArmSelf.cs" />
     <Compile Include="MentalStates\Jobs\JobGiver_EnactPlot.cs" />
     <Compile Include="MentalStates\MentalState_FellPlotting.cs" />

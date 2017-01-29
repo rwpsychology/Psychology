@@ -312,6 +312,11 @@ namespace Psychology
                 treated.description = "Natural penalty from Depressive trait.";
                 treated.baseMoodEffect = -6f;
                 depressive.stages.Add(treated);
+                ThoughtDef wantToSleepWithSpouseOrLover = ReplaceThoughtWorker("WantToSleepWithSpouseOrLover", typeof(ThoughtWorker_WantToSleepWithSpouseOrLover));
+                if(wantToSleepWithSpouseOrLover != null)
+                {
+                    wantToSleepWithSpouseOrLover.thoughtClass = typeof(Thought_WantToSleepWithSpouseOrLoverPsychology);
+                }
 
                 InteractionDef chitChat = InteractionDefOf.Chitchat;
                 if(chitChat != null)
@@ -465,33 +470,37 @@ namespace Psychology
             if (currentTick % GenDate.TicksPerHour*2 == 0)
             {
                 Map playerFactionMap = Find.WorldObjects.FactionBases.Find(b => b.Faction.IsPlayer).Map;
-                Pawn potentialConstituent = (from p in playerFactionMap.mapPawns.FreeColonistsSpawned
-                                             where !p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && p.GetTimeAssignment() != TimeAssignmentDefOf.Work && p.Awake()
-                                             select p).ToList().RandomElementByWeight(p => Mathf.Pow(Mathf.Abs(0.7f - p.needs.mood.CurLevel),2));
-                List<Pawn> activeMayors = (from m in playerFactionMap.mapPawns.FreeColonistsSpawned
-                                           where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == potentialConstituent.Map.Tile
-                                           && m.GetTimeAssignment() != TimeAssignmentDefOf.Work && m.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && m.GetLord() == null && m.Awake()
-                                           select m).ToList();
-                if (potentialConstituent != null && potentialConstituent.Awake() && activeMayors.Count > 0)
+                List<Pawn> constituents = (from p in playerFactionMap.mapPawns.FreeColonistsSpawned
+                                           where !p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && p.GetTimeAssignment() != TimeAssignmentDefOf.Work && p.Awake()
+                                           select p).ToList();
+                if(constituents.Count > 0)
                 {
-                    Pawn mayor = activeMayors.RandomElement(); //There should only be one.
-                    PsychologyPawn psychologyConstituent = potentialConstituent as PsychologyPawn;
-                    IntVec3 gather = default(IntVec3);
-                    bool foundBed = false;
-                    if(mayor.ownership != null && mayor.ownership.OwnedBed != null)
+                    Pawn potentialConstituent = constituents.RandomElementByWeight(p => 0.0001f + Mathf.Pow(Mathf.Abs(0.7f - p.needs.mood.CurLevel), 2));
+                    List<Pawn> activeMayors = (from m in playerFactionMap.mapPawns.FreeColonistsSpawned
+                                               where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == potentialConstituent.Map.Tile
+                                               && m.GetTimeAssignment() != TimeAssignmentDefOf.Work && m.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && m.GetLord() == null && m.Awake()
+                                               select m).ToList();
+                    if (potentialConstituent != null && activeMayors.Count > 0)
                     {
-                        gather = mayor.ownership.OwnedBed.Position;
-                        foundBed = true;
-                    }
-                    if((psychologyConstituent == null || Rand.Value < (1f-psychologyConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent))/5f) && (foundBed || RCellFinder.TryFindPartySpot(mayor, out gather)))
-                    {
-                        List<Pawn> pawns = new List<Pawn>();
-                        pawns.Add(mayor);
-                        pawns.Add(potentialConstituent);
-                        LordMaker.MakeNewLord(mayor.Faction, new LordJob_VisitMayor(gather, potentialConstituent, mayor, (potentialConstituent.needs.mood.CurLevel < 0.4f)), mayor.Map, pawns);
-                        if(!foundBed)
+                        Pawn mayor = activeMayors.RandomElement(); //There should only be one.
+                        PsychologyPawn psychologyConstituent = potentialConstituent as PsychologyPawn;
+                        IntVec3 gather = default(IntVec3);
+                        bool foundBed = false;
+                        if (mayor.ownership != null && mayor.ownership.OwnedBed != null)
                         {
-                            mayor.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOfPsychology.MayorNoBedroom);
+                            gather = mayor.ownership.OwnedBed.Position;
+                            foundBed = true;
+                        }
+                        if ((psychologyConstituent == null || Rand.Value < (1f - psychologyConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent)) / 5f) && (foundBed || RCellFinder.TryFindPartySpot(mayor, out gather)))
+                        {
+                            List<Pawn> pawns = new List<Pawn>();
+                            pawns.Add(mayor);
+                            pawns.Add(potentialConstituent);
+                            LordMaker.MakeNewLord(mayor.Faction, new LordJob_VisitMayor(gather, potentialConstituent, mayor, (potentialConstituent.needs.mood.CurLevel < 0.4f)), mayor.Map, pawns);
+                            if (!foundBed)
+                            {
+                                mayor.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOfPsychology.MayorNoBedroom);
+                            }
                         }
                     }
                 }
