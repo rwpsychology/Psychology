@@ -45,7 +45,7 @@ namespace Psychology
             this.duration = def.durationDays;
             this.label = def.stages[0].label;
             this.description = def.stages[0].description;
-            this.baseMoodEffect = def.stages[0].baseOpinionOffset;
+            this.baseMoodEffect = def.stages[0].baseMoodEffect;
             base.Init();
         }
 

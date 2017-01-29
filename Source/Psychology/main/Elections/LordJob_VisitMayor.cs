@@ -100,7 +100,7 @@ namespace Psychology
                     stage.label = "visited by constituent";
                     stage.description = "A visit from a constituent made me feel this way.";
                     stage.baseMoodEffect = Mathf.RoundToInt(mood);
-                    visitDef.defName = this.constituent.GetHashCode() + "MayorVisited" + stage.baseMoodEffect;
+                    visitDef.defName = this.mayor.GetHashCode() + "MayorVisited" + stage.baseMoodEffect;
                     visitDef.stages.Add(stage);
                     if(mood > 0f)
                     {
