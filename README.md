@@ -8,7 +8,7 @@ Psychology does not require a new save game.
 - Colonists will change their minds about each other after having conversations on topics relevant to a particular personality attribute. Instead of being arbitrarily assigned a compatibility with each other, they will naturally gravitate towards like-minded people and away from those they have strong disagreements with.
 
 **Sexuality and Romance**
-- Colonists' sexualities are graded on the Kinsey scale, from 0 to 6. The overwhelming colonists will be straight, but their sexual orientations can have much more variety and their romantic interest in each other will be adjusted accordingly. The sexuality curve can also be changed in the mod settings.
+- Colonists' sexualities are graded on the Kinsey scale, from 0 to 6. The overwhelming majority of colonists will be straight, but their sexual orientations can have much more variety and their romantic interest in each other will be adjusted accordingly. The sexuality curve can also be changed in the mod settings.
 - Depending on their personality, colonists may be more likely to have multiple "flings" rather than a single lover, and how they treat breakups is affected accordingly.
 - Colonists also have both sexual and romantic drives. If they are exceedingly low, it may affect their desire to do lovin' or commit to a long-term relationship, respectively. They may still take lovers, particularly if someone else romances them, but what they get out of it will be affected by those factors.
 
