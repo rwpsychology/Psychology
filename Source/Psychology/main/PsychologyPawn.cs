@@ -5,6 +5,7 @@ using System.Text;
 using RimWorld;
 using Verse;
 using Verse.AI;
+using Psychology.Detour;
 
 namespace Psychology
 {
@@ -20,6 +21,12 @@ namespace Psychology
             {
                 this.psyche = new Pawn_PsycheTracker(this);
                 this.psyche.Initialize();
+            }
+            /* Same for sexuality. */
+            if (this.sexuality == null && this.RaceProps.Humanlike)
+            {
+                this.sexuality = new Pawn_SexualityTracker(this);
+                _PawnGenerator.GenerateSexuality(this);
             }
         }
 

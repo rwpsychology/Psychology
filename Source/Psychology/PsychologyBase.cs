@@ -462,14 +462,15 @@ namespace Psychology
         public override void Tick(int currentTick)
         {
             //Constituent tick
-            if (currentTick % GenDate.TicksPerHour*3 == 0)
+            if (currentTick % GenDate.TicksPerHour*2 == 0)
             {
                 Map playerFactionMap = Find.WorldObjects.FactionBases.Find(b => b.Faction.IsPlayer).Map;
                 Pawn potentialConstituent = (from p in playerFactionMap.mapPawns.FreeColonistsSpawned
-                                             where !p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor)
+                                             where !p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && p.GetTimeAssignment() != TimeAssignmentDefOf.Work && p.Awake()
                                              select p).ToList().RandomElementByWeight(p => Mathf.Pow(Mathf.Abs(0.6f - p.needs.mood.CurLevel),2));
                 List<Pawn> activeMayors = (from m in playerFactionMap.mapPawns.FreeColonistsSpawned
                                            where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == potentialConstituent.Map.Tile
+                                           && m.GetTimeAssignment() != TimeAssignmentDefOf.Work && m.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && m.GetLord() == null && m.Awake()
                                            select m).ToList();
                 if (potentialConstituent != null && potentialConstituent.Awake() && activeMayors.Count > 0)
                 {
@@ -482,7 +483,7 @@ namespace Psychology
                         gather = mayor.ownership.OwnedBed.Position;
                         foundBed = true;
                     }
-                    if(potentialConstituent.GetTimeAssignment() != TimeAssignmentDefOf.Work && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Work && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && mayor.GetLord() == null && (psychologyConstituent == null || Rand.Value < (1f-psychologyConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent))/5f) && (foundBed || RCellFinder.TryFindPartySpot(mayor, out gather)))
+                    if((psychologyConstituent == null || Rand.Value < (1f-psychologyConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent))/5f) && (foundBed || RCellFinder.TryFindPartySpot(mayor, out gather)))
                     {
                         List<Pawn> pawns = new List<Pawn>();
                         pawns.Add(mayor);

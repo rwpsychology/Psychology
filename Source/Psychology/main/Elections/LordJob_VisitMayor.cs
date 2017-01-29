@@ -71,7 +71,6 @@ namespace Psychology
                     if (this.complaint)
                     {
                         ThoughtDef complaintDef = new ThoughtDef();
-                        complaintDef.defName = this.constituent.GetHashCode() + "MayorComplaint" + Find.TickManager.TicksGame;
                         complaintDef.label = "MayorComplaint";
                         complaintDef.durationDays = 1f + 4f * this.mayor.GetStatValue(StatDefOf.SocialImpact);
                         complaintDef.thoughtClass = typeof(Thought_MemoryDynamic);
@@ -84,11 +83,11 @@ namespace Psychology
                         complaintStage.label = "complained to the mayor";
                         complaintStage.description = "Complaining to the mayor made me feel this way.";
                         complaintStage.baseMoodEffect = Mathf.RoundToInt(complaintMood);
+                        complaintDef.defName = this.constituent.GetHashCode() + "MayorComplaint" + complaintStage.baseMoodEffect;
                         complaintDef.stages.Add(complaintStage);
                         this.constituent.needs.mood.thoughts.memories.TryGainMemoryThought(complaintDef, this.mayor);
                     }
                     ThoughtDef visitDef = new ThoughtDef();
-                    visitDef.defName = this.constituent.GetHashCode() + "MayorVisited" + Find.TickManager.TicksGame;
                     visitDef.label = "MayorVisited";
                     visitDef.durationDays = 0.75f + 2f * (1f - realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent));
                     visitDef.thoughtClass = typeof(Thought_MemoryDynamic);
@@ -101,6 +100,7 @@ namespace Psychology
                     stage.label = "visited by constituent";
                     stage.description = "A visit from a constituent made me feel this way.";
                     stage.baseMoodEffect = Mathf.RoundToInt(mood);
+                    visitDef.defName = this.constituent.GetHashCode() + "MayorVisited" + stage.baseMoodEffect;
                     visitDef.stages.Add(stage);
                     if(mood > 0f)
                     {

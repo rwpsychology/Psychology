@@ -141,8 +141,8 @@ namespace Psychology
                  * They just won't change their mind about the colonist as a result.
                  */
                 float knownThoughtOpinion = 0f;
-                this.realPawn.needs.mood.thoughts.memories.Memories.Where(m => m.def.defName.Contains("Conversation") && m.otherPawn.ThingID == this.otherPawn.ThingID).ToList().ForEach(m => knownThoughtOpinion += m.CurStage.baseOpinionOffset);
-                if(Rand.Value < Mathf.InverseLerp(0f, knownThoughtOpinion, stage.baseOpinionOffset))
+                this.realPawn.needs.mood.thoughts.memories.Memories.Where(m => m.def.defName.Contains("Conversation") && m.otherPawn.ThingID == this.otherPawn.ThingID).ToList().ForEach(m => knownThoughtOpinion += Mathf.Abs(m.CurStage.baseOpinionOffset));
+                if(Rand.Value < Mathf.InverseLerp(0f, knownThoughtOpinion+1, 250f+Mathf.Abs(stage.baseOpinionOffset)))
                 {
                     this.pawn.needs.mood.thoughts.memories.TryGainMemoryThought(def, this.otherPawn);
                 }
