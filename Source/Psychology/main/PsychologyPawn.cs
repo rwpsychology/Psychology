@@ -23,7 +23,7 @@ namespace Psychology
                 this.psyche.Initialize();
             }
             /* Same for sexuality. */
-            if (this.sexuality == null && this.RaceProps.Humanlike)
+            if (this.sexuality == null && this.RaceProps.Humanlike && PsychologyBase.ActivateKinsey())
             {
                 this.sexuality = new Pawn_SexualityTracker(this);
                 _PawnGenerator.GenerateSexuality(this);

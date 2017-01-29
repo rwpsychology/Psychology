@@ -146,7 +146,7 @@ namespace Psychology
                 {
                     this.pawn.needs.mood.thoughts.memories.TryGainMemoryThought(def, this.otherPawn);
                 }
-                if (this.waveGoodbye)
+                if (this.waveGoodbye && this.pawn.Map != null)
                 {
                     InteractionDef endConversation = new InteractionDef();
                     endConversation.defName = "EndConversation";

@@ -130,6 +130,7 @@ namespace Psychology.Detour
             brokeUpMoodDef.defName = "BrokeUpWithMeMood" + lover.LabelShort + Find.TickManager.TicksGame;
             brokeUpMoodDef.durationDays = 25f;
             brokeUpMoodDef.thoughtClass = typeof(Thought_MemoryDynamic);
+            brokeUpMoodDef.stackedEffectMultiplier = 1f;
             ThoughtStage brokeUpStage = new ThoughtStage();
             brokeUpStage.label = "Broke up with {0}";
             brokeUpStage.baseMoodEffect = Mathf.RoundToInt(-20f * Mathf.InverseLerp(0.25f, 0.75f, lover.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic)) * Mathf.InverseLerp(-20f, 100f, lover.relations.OpinionOf(ex)));

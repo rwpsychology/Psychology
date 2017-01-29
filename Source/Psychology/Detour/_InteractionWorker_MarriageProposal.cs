@@ -76,6 +76,7 @@ namespace Psychology.Detour
                     rejectedProposalMoodDef.defName = "RejectedMyProposalMood" + realInitiator.LabelShort + Find.TickManager.TicksGame;
                     rejectedProposalMoodDef.durationDays = 25f;
                     rejectedProposalMoodDef.thoughtClass = typeof(Thought_MemoryDynamic);
+                    rejectedProposalMoodDef.stackedEffectMultiplier = 1f;
                     ThoughtStage rejectedProposalMoodStage = new ThoughtStage();
                     rejectedProposalMoodStage.label = "proposal rejected by {0}";
                     rejectedProposalMoodStage.baseMoodEffect = Mathf.RoundToInt(-25f * realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic) * Mathf.InverseLerp(100f, 5f, realInitiator.relations.OpinionOf(realRecipient)));

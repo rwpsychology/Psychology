@@ -472,7 +472,7 @@
 		<label>romantic</label>
 		<description>Someone romantic likes long-term, meaningful relationships, commitment, and intimate gestures.</description>
 		<controversiality>1.8</controversiality>
-		<conversationTopic>romance</conversationTopic>
+		<conversationTopic>relationships</conversationTopic>
 		<platformIssueHigh>I will take the position seriously.</platformIssueHigh>
 		<platformIssueLow>This job won't go to my head.</platformIssueLow>
 		<parents>

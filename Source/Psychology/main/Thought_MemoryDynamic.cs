@@ -32,6 +32,7 @@ namespace Psychology
             def.description = this.description;
             def.durationDays = this.duration;
             def.thoughtClass = typeof(Thought_MemoryDynamic);
+            def.stackedEffectMultiplier = 1f;
             ThoughtStage stage = new ThoughtStage();
             stage.label = this.label;
             stage.baseMoodEffect = this.baseMoodEffect;
@@ -47,6 +48,12 @@ namespace Psychology
             this.description = def.stages[0].description;
             this.baseMoodEffect = def.stages[0].baseMoodEffect;
             base.Init();
+        }
+
+        public override bool GroupsWith(Thought other)
+        {
+            Thought_MemoryDynamic thought_MemoryDynamic = other as Thought_MemoryDynamic;
+            return thought_MemoryDynamic != null && this.LabelCap == thought_MemoryDynamic.LabelCap;
         }
 
         private string topic;

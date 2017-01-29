@@ -467,7 +467,7 @@ namespace Psychology
                 Map playerFactionMap = Find.WorldObjects.FactionBases.Find(b => b.Faction.IsPlayer).Map;
                 Pawn potentialConstituent = (from p in playerFactionMap.mapPawns.FreeColonistsSpawned
                                              where !p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && p.GetTimeAssignment() != TimeAssignmentDefOf.Work && p.Awake()
-                                             select p).ToList().RandomElementByWeight(p => Mathf.Pow(Mathf.Abs(0.6f - p.needs.mood.CurLevel),2));
+                                             select p).ToList().RandomElementByWeight(p => Mathf.Pow(Mathf.Abs(0.7f - p.needs.mood.CurLevel),2));
                 List<Pawn> activeMayors = (from m in playerFactionMap.mapPawns.FreeColonistsSpawned
                                            where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == potentialConstituent.Map.Tile
                                            && m.GetTimeAssignment() != TimeAssignmentDefOf.Work && m.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && m.GetLord() == null && m.Awake()
