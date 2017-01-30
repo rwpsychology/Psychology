@@ -39,6 +39,7 @@ namespace Psychology
             stateGraph.AddToil(lordToil_End);
             Transition transition = new Transition(lordToil_Meeting, lordToil_End);
             transition.AddTrigger(new Trigger_TickCondition(() => this.ShouldBeCalledOff()));
+            transition.AddTrigger(new Trigger_TickCondition(() => this.mayor.Drafted || this.constituent.Drafted));
             transition.AddTrigger(new Trigger_PawnLostViolently());
             stateGraph.AddTransition(transition);
             this.timeoutTrigger = new Trigger_TicksPassed(Rand.RangeInclusive(5000, 15000));

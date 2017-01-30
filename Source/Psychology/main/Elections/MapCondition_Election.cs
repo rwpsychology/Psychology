@@ -16,7 +16,7 @@ namespace Psychology
         {
             base.Init();
             //Make sure the election occurs during the day if possible.
-            int plannedStart = GenDate.HourOfDay(this.duration + Find.TickManager.TicksGame, Find.WorldGrid.LongLatOf(this.Map.Tile).x);
+            int plannedStart = GenDate.HourOfDay(this.duration + Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(this.Map.Tile).x);
             if(plannedStart < 7)
             {
                 this.duration += (7 - plannedStart) * GenDate.TicksPerHour;
