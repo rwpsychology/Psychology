@@ -26,8 +26,13 @@ namespace Psychology
                  */
                 Rand.PushSeed();
                 int defSeed = 0;
+                Log.Message(pawn.ToString());
+                Log.Message(pawn.psyche.ToString());
+                Log.Message(pawn.psyche.upbringing.ToString());
                 this.def.defName.ToList().ForEach((char c) => defSeed += c);
+                Log.Message("Compiled seed");
                 Rand.Seed = this.pawn.psyche.upbringing+defSeed+Find.World.info.Seed;
+                Log.Message("Done seeding");
                 this.rawRating = Rand.Value;
                 Rand.PopSeed();
             }
@@ -35,16 +40,13 @@ namespace Psychology
             {
                 this.rawRating = Rand.Value;
             }
+            Log.Message("Done initializing");
         }
 
         public void ExposeData()
         {
             Scribe_Defs.LookDef(ref this.def, "def");
             Scribe_Values.LookValue(ref this.rawRating, "rawRating", -1f, false);
-            if (this.rawRating < 0)
-            {
-                Initialize();
-            }
         }
 
         public float AdjustForParents(float rating)

@@ -14,19 +14,27 @@ namespace Psychology
         public override void SpawnSetup(Map map)
         {
             base.SpawnSetup(map);
-            /* Adds psyche to PsychologyPawns on old saves
-             * Also a stopgap fix for pawns spawning without psyches
-             */
-            if(this.psyche == null && this.RaceProps.Humanlike)
+            if(this.RaceProps.Humanlike)
             {
-                this.psyche = new Pawn_PsycheTracker(this);
-                this.psyche.Initialize();
-            }
-            /* Same for sexuality. */
-            if (this.sexuality == null && this.RaceProps.Humanlike && PsychologyBase.ActivateKinsey())
-            {
-                this.sexuality = new Pawn_SexualityTracker(this);
-                _PawnGenerator.GenerateSexuality(this);
+                /* Fixes any improperly-configured psychologies. */
+                if(this.psyche == null || this.psyche.PersonalityNodes == null)
+                {
+                    this.psyche = new Pawn_PsycheTracker(this);
+                    this.psyche.Initialize();
+                }
+                foreach (PersonalityNode node in this.psyche.PersonalityNodes)
+                {
+                    if (node.rawRating < 0)
+                    {
+                        node.Initialize();
+                    }
+                }
+                /* Same for sexuality. */
+                if (this.sexuality == null && PsychologyBase.ActivateKinsey())
+                {
+                    this.sexuality = new Pawn_SexualityTracker(this);
+                    _PawnGenerator.GenerateSexuality(this);
+                }
             }
         }
 

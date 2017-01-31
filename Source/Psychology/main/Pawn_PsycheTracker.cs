@@ -21,9 +21,9 @@ namespace Psychology
         {
             Rand.PushSeed();
             Rand.Seed = this.pawn.HashOffset();
-            upbringing = Rand.RangeInclusive(1, PersonalityCategories);
+            this.upbringing = Rand.RangeInclusive(1, PersonalityCategories);
             Rand.PopSeed();
-            nodes = new List<PersonalityNode>();
+            this.nodes = new List<PersonalityNode>();
             DefDatabase<PersonalityNodeDef>.AllDefsListForReading.ForEach((PersonalityNodeDef def) => nodes.Add(PersonalityNodeMaker.MakeNode(def, this.pawn)));
         }
 
@@ -31,10 +31,6 @@ namespace Psychology
         {
             Scribe_Values.LookValue(ref this.upbringing, "upbringing", 0, false);
             Scribe_Collections.LookList(ref this.nodes, "nodes", LookMode.Deep, new object[] { this.pawn });
-            if (upbringing < 1)
-            {
-                this.Initialize();
-            }
         }
         
         public float GetPersonalityRating(PersonalityNodeDef def)

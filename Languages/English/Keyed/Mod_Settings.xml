@@ -5,7 +5,7 @@
 	<EmpathyChangesTooltip>Turn this off to restore colonists' reactions to bad things happening to other people to normal. This will increase difficulty; Bleeding Heart pawns will be unaffected. Restart the game after disabling this.</EmpathyChangesTooltip>
 	
 	<SexualityChangesTitle>Enable sexuality changes</SexualityChangesTitle>
-	<SexualityChangesTooltip>Turn this off to disable Kinsey scaling of pawns and re-enable the Gay trait. You may want to restart the game after toggling this.</SexualityChangesTooltip>
+	<SexualityChangesTooltip>Turn this off to disable Kinsey scaling of pawns and re-enable the Gay trait. Do NOT change this during play, and restart the game after toggling this.</SexualityChangesTooltip>
 	
 	<KinseyModeTitle>Kinsey scale formula</KinseyModeTitle>
 	<KinseyModeTooltip>This setting determines what formula is used to weight the Kinsey scale when pawns are generated.</KinseyModeTooltip>
