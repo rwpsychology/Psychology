@@ -48,6 +48,7 @@ namespace Psychology
             /* Pawns will avoid controversial topics until they know someone better.
              * This isn't a perfect system, but the weights will be closer together the higher totalOpinionModifiers is.
              */
+            float weight = 10f/(Mathf.Lerp(1f+(4*def.controversiality), 1f + (def.controversiality/2), Mathf.Clamp01(this.TotalThoughtOpinion(otherPawn)/75) + this.GetPersonalityRating(PersonalityNodeDefOf.Aggressive)));
             /* Polite pawns will avoid topics they already know are contentious. */
             float knownDisagreements = 0f;
             foreach(Thought_MemorySocialDynamic memory in this.pawn.needs.mood.thoughts.memories.Memories.Where(m => m is Thought_MemorySocialDynamic && m.def.defName.Contains("Conversation")))
@@ -57,6 +58,7 @@ namespace Psychology
                     knownDisagreements += Mathf.Abs(memory.opinionOffset);
                 }
             }
+            weight *= Mathf.Clamp01(1f / (knownDisagreements / 50)) * Mathf.Lerp(0.25f, 1f, this.GetPersonalityRating(PersonalityNodeDefOf.Polite));
             return weight;
         }
 
