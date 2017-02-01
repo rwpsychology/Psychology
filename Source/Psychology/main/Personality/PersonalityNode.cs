@@ -86,6 +86,26 @@ namespace Psychology
                 }
                 rating = Mathf.Clamp01(rating);
             }
+            if (this.def == PersonalityNodeDefOf.Cool && RelationsUtility.IsDisfigured(this.pawn))
+            {
+                rating = Mathf.Clamp01(rating - 10);
+            }
+            return rating;
+        }
+
+        public float AdjustGender(float rating)
+        {
+            if (this.def.femaleModifier > 0f && this.pawn.gender == Gender.Female && this.pawn.sexuality != null && PsychologyBase.ActivateKinsey())
+            {
+                Rand.PushSeed();
+                Rand.Seed = this.pawn.HashOffset();
+                rating = (Rand.Value < 0.8f ? rating * Mathf.Lerp(this.def.femaleModifier, 1f, (this.pawn.sexuality.kinseyRating / 6)) : rating);
+                Rand.PopSeed();
+            }
+            else if(this.def.femaleModifier > 0f && this.pawn.gender == Gender.Female)
+            {
+                rating = (this.pawn.story.traits.HasTrait(TraitDefOf.Gay) ? rating : rating * this.def.femaleModifier);
+            }
             return rating;
         }
 
@@ -142,15 +162,10 @@ namespace Psychology
             {
                 if(cachedRating < 0f || this.pawn.IsHashIntervalTick(100))
                 {
-
-                    float adjustedRating = AdjustHook(AdjustForCircumstance(AdjustForParents(this.rawRating)));
-                    if (this.def.femaleModifier > 0f && this.pawn.gender == Gender.Female)
-                    {
-                        Rand.PushSeed();
-                        Rand.Seed = this.pawn.HashOffset();
-                        adjustedRating = (Rand.Value < 0.8f ? adjustedRating * Mathf.Lerp(this.def.femaleModifier, 1f, (this.pawn.sexuality.kinseyRating / 6)) : adjustedRating);
-                        Rand.PopSeed();
-                    }
+                    float adjustedRating = AdjustForParents(this.rawRating);
+                    adjustedRating = AdjustForCircumstance(adjustedRating);
+                    adjustedRating = AdjustHook(adjustedRating);
+                    adjustedRating = AdjustGender(adjustedRating);
                     cachedRating = Mathf.Clamp01(adjustedRating);
                 }
                 return cachedRating;

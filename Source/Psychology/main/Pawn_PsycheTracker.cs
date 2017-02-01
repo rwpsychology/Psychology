@@ -43,6 +43,30 @@ namespace Psychology
             return nodes.Find((PersonalityNode n) => n.def == def);
         }
 
+        public float GetConversationTopicWeight(PersonalityNodeDef def, PsychologyPawn otherPawn)
+        {
+            /* Pawns will avoid controversial topics until they know someone better.
+             * This isn't a perfect system, but the weights will be closer together the higher totalOpinionModifiers is.
+             */
+            /* Polite pawns will avoid topics they already know are contentious. */
+            float knownDisagreements = 0f;
+            foreach(Thought_MemorySocialDynamic memory in this.pawn.needs.mood.thoughts.memories.Memories.Where(m => m is Thought_MemorySocialDynamic && m.def.defName.Contains("Conversation")))
+            {
+                if(memory.CurStage.label == def.defName && memory.opinionOffset < 0f)
+                {
+                    knownDisagreements += Mathf.Abs(memory.opinionOffset);
+                }
+            }
+            return weight;
+        }
+
+        public float TotalThoughtOpinion(PsychologyPawn other)
+        {
+            float knownThoughtOpinion = 1f;
+            this.pawn.needs.mood.thoughts.memories.Memories.Where(m => m.def.defName.Contains("Conversation") && m.otherPawn.ThingID == other.ThingID).ToList().ForEach(m => knownThoughtOpinion += Mathf.Abs(m.CurStage.baseOpinionOffset));
+            return knownThoughtOpinion;
+        }
+
         public List<PersonalityNode> PersonalityNodes
         {
             get

@@ -27,6 +27,10 @@ namespace Psychology
             {
                 return false;
             }
+            if (pawn is PsychologyPawn)
+            {
+                return false;
+            }
             return true;
         }
     }

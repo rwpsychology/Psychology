@@ -86,31 +86,31 @@ namespace Psychology
                     this.otherPawn.health.RemoveHediff(otherConvo);
                 }
                 string talkDesc;
-                int talkLength;
+                //int talkLength;
                 if (this.ageTicks < 200)
                 {
                     talkDesc = shortTalkDescriptions.RandomElement();
-                    talkLength = 0;
+                    //talkLength = 0;
                 }
                 else if (this.ageTicks < 1500)
                 {
                     talkDesc = normalTalkDescriptions.RandomElement();
-                    talkLength = 1;
+                    //talkLength = 1;
                 }
                 else if (this.ageTicks < 5000)
                 {
                     talkDesc = longTalkDescriptions.RandomElement();
-                    talkLength = 2;
+                    //talkLength = 2;
                 }
                 else
                 {
                     talkDesc = epicTalkDescriptions.RandomElement();
-                    talkLength = 3;
+                    //talkLength = 3;
                 }
                 talkDesc = string.Format(talkDesc, topic.conversationTopic);
                 //We create a dynamic def to hold this thought so that the game won't worry about it being used anywhere else.
                 ThoughtDef def = new ThoughtDef();
-                def.defName = this.pawn.GetHashCode() + "Conversation" + topic.defName + Find.TickManager.TicksGame;
+                def.defName = this.pawn.GetHashCode() + "Conversation" + topic.defName;
                 def.label = topic.defName;
                 def.durationDays = 60f;
                 def.nullifyingTraits = new List<TraitDef>();
@@ -124,7 +124,7 @@ namespace Psychology
                 //Cool pawns are liked more.
                 opinionMod += Mathf.Pow(2f, topic.controversiality) * (0.5f - this.otherPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Cool));
                 //The length of the talk has a large impact on how much the pawn cares.
-                opinionMod *= talkModifiers[talkLength];
+                opinionMod *= Mathf.InverseLerp(0f, 5f, this.ageTicks/5000); //talkModifier[talkLength]
                 //If they had a bad experience, the more polite the pawn is, the less they're bothered by it.
                 opinionMod *= (opinionMod < 0f ? 0.5f + (1f - this.otherPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
                 //The more judgmental the pawn, the more they're affected by all conversations.
@@ -140,9 +140,7 @@ namespace Psychology
                  * This helps declutter the Social card without preventing pawns from having conversations.
                  * They just won't change their mind about the colonist as a result.
                  */
-                float knownThoughtOpinion = 0f;
-                this.realPawn.needs.mood.thoughts.memories.Memories.Where(m => m.def.defName.Contains("Conversation") && m.otherPawn.ThingID == this.otherPawn.ThingID).ToList().ForEach(m => knownThoughtOpinion += Mathf.Abs(m.CurStage.baseOpinionOffset));
-                if(Rand.Value < Mathf.InverseLerp(0f, knownThoughtOpinion+1, 250f+Mathf.Abs(stage.baseOpinionOffset)))
+                if (Rand.Value < Mathf.InverseLerp(0f, this.realPawn.psyche.TotalThoughtOpinion(this.otherPawn), 250f+Mathf.Abs(stage.baseOpinionOffset)))
                 {
                     this.pawn.needs.mood.thoughts.memories.TryGainMemoryThought(def, this.otherPawn);
                 }
