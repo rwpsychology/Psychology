@@ -90,5 +90,7 @@ if(kp != null)
     surgeon.needs.mood.thoughts.memories.TryGainMemoryThought(kp, patient);
 	
 This will try to give the pawn Psychology's Bleeding Heart thought, but ONLY if it detects that that thought actually exists (which means Psychology is loaded). Otherwise, it does nothing, because the user isn't using Psychology.
+
+Russian translation by AlexDeluxe.
 </description>
 </ModMetaData>

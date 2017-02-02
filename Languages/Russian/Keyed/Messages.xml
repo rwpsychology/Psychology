@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-	<TreatedTrait>{0}'s {1} успешно лечится.</TreatedTrait>
+	<TreatedTrait>{0} {1} успешно вылечен.</TreatedTrait>
+	<MessageElectionCalledOff>Выборы в {0} были отменены из-за условий на избирательном участке.</MessageElectionCalledOff>	
 	
 </LanguageData>
