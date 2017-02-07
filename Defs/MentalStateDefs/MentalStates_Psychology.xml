@@ -205,14 +205,14 @@
     <defName>Abuse</defName>
     <mentalState>Abuse</mentalState>
     <baseCommonality>1.0</baseCommonality>
-    <intensity>Extreme</intensity>
+    <intensity>Major</intensity>
   </MentalBreakDef>
   
   <MentalBreakDef>
     <defName>Abuse_Abrasive</defName>
     <mentalState>Abuse</mentalState>
     <baseCommonality>0.5</baseCommonality>
-    <intensity>Extreme</intensity>
+    <intensity>Major</intensity>
 	<requiredTrait>Abrasive</requiredTrait>
   </MentalBreakDef>
   
@@ -220,7 +220,7 @@
     <defName>Abuse_Unstable</defName>
     <mentalState>Abuse</mentalState>
     <baseCommonality>0.25</baseCommonality>
-    <intensity>Extreme</intensity>
+    <intensity>Major</intensity>
 	<requiredTrait>Unstable</requiredTrait>
   </MentalBreakDef>
   

@@ -47,7 +47,7 @@ namespace Psychology
         {
             foreach (PersonalityNode parent in this.ParentNodes)
             {
-                rating = (rating + Mathf.InverseLerp(1f * this.def.GetModifier(parent.def), 1f - this.def.GetModifier(parent.def), parent.AdjustedRating) * 2) / 3;
+                rating = ((rating * 2) + parent.AdjustedRating) / 3;
             }
             return Mathf.Clamp01(rating);
         }

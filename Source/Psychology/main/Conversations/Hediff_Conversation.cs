@@ -89,25 +89,28 @@ namespace Psychology
                 //int talkLength;
                 if (this.ageTicks < 200)
                 {
-                    talkDesc = shortTalkDescriptions.RandomElement();
+                    int numShortTalks = int.Parse("NumberOfShortTalks".Translate());
+                    talkDesc = "ShortTalk" + Rand.RangeInclusive(1, numShortTalks);
                     //talkLength = 0;
                 }
                 else if (this.ageTicks < 1500)
                 {
-                    talkDesc = normalTalkDescriptions.RandomElement();
+                    int numNormalTalks = int.Parse("NumberOfNormalTalks".Translate());
+                    talkDesc = "NormalTalk" + Rand.RangeInclusive(1, numNormalTalks);
                     //talkLength = 1;
                 }
                 else if (this.ageTicks < 5000)
                 {
-                    talkDesc = longTalkDescriptions.RandomElement();
+                    int numLongTalks = int.Parse("NumberOfLongTalks".Translate());
+                    talkDesc = "LongTalk" + Rand.RangeInclusive(1, numLongTalks);
                     //talkLength = 2;
                 }
                 else
                 {
-                    talkDesc = epicTalkDescriptions.RandomElement();
+                    int numEpicTalks = int.Parse("NumberOfEpicTalks".Translate());
+                    talkDesc = "EpicTalk" + Rand.RangeInclusive(1, numEpicTalks);
                     //talkLength = 3;
                 }
-                talkDesc = string.Format(talkDesc, topic.conversationTopic);
                 //We create a dynamic def to hold this thought so that the game won't worry about it being used anywhere else.
                 ThoughtDef def = new ThoughtDef();
                 def.defName = this.pawn.GetHashCode() + "Conversation" + topic.defName;
@@ -124,7 +127,7 @@ namespace Psychology
                 //Cool pawns are liked more.
                 opinionMod += Mathf.Pow(2f, topic.controversiality) * (0.5f - this.otherPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Cool));
                 //The length of the talk has a large impact on how much the pawn cares.
-                opinionMod *= Mathf.InverseLerp(0f, 5f, this.ageTicks/5000); //talkModifier[talkLength]
+                opinionMod *= Mathf.Lerp(0f, 5f, this.ageTicks/5000f); //talkModifier[talkLength]
                 //If they had a bad experience, the more polite the pawn is, the less they're bothered by it.
                 opinionMod *= (opinionMod < 0f ? 0.5f + (1f - this.otherPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
                 //The more judgmental the pawn, the more they're affected by all conversations.
@@ -151,7 +154,7 @@ namespace Psychology
                     RulePack goodbyeText = new RulePack();
                     FieldInfo RuleStrings = typeof(RulePack).GetField("rulesStrings", BindingFlags.Instance | BindingFlags.NonPublic);
                     List<string> text = new List<string>(1);
-                    text.Add("logentry->" + talkDesc);
+                    text.Add("logentry->" + talkDesc.Translate(topic.conversationTopic));
                     RuleStrings.SetValue(goodbyeText, text);
                     endConversation.logRulesInitiator = goodbyeText;
                     endConversation.logRulesRecipient = goodbyeText;
@@ -180,20 +183,6 @@ namespace Psychology
         }
 
         private float[] talkModifiers = { 0.1f, 1f, 2f, 5f };
-        private string[] shortTalkDescriptions = { "Had a brief chat with [other_nameShortIndef] about {0}.", "Had a short chat with [other_nameShortIndef] about {0}.", "Had a short talk with [other_nameShortIndef] about {0}.",
-            "Quickly discussed {0} with [other_nameShortIndef].", "Fleetingly chatted about {0} with [other_nameShortIndef].", "Talked about {0} with [other_nameShortIndef] in passing.",
-            "Commented pithily on {0} with [other_nameShortIndef].", "Remarked on {0} with [other_nameShortIndef].", "Exchanged words with [other_nameShortIndef] about {0} momentarily.",
-            "Had a brief exchange with [other_nameShortIndef] about {0}."};
-        private string[] normalTalkDescriptions = { "Talked about {0} with [other_nameShortIndef].", "Had a conversation about {0} with [other_nameShortIndef].", "Discussed {0} with [other_nameShortIndef].",
-            "Compared thoughts on {0} with [other_nameShortIndef].", "Conversed with [other_nameShortIndef] about {0}.", "Talked with [other_nameShortIndef] about {0}.", "Had a discussion with [other_nameShortIndef] about {0}.",
-            "Learned about [other_nameShortIndef]'s opinions on {0}.", "Shared thoughts on {0} with [other_nameShortIndef].", "Learned about [other_nameShortIndef]'s thoughts on {0}.", "Argued about {0} with [other_nameShortIndef].",
-            "Consulted with [other_nameShortIndef] about {0}."};
-        private string[] longTalkDescriptions = { "Discussed {0} at length with [other_nameShortIndef].", "Had a long conversation about {0} with [other_nameShortIndef].",
-            "Talked with [other_nameShortIndef] about {0} for some time.", "Thoroughly discussed {0} with [other_nameShortIndef].", "Consulted extensively about {0} with [other_nameShortIndef].",
-            "Learned a lot about how [other_nameShortIndef] feels about {0}.", "Shared deep thoughts on {0} with [other_nameShortIndef].", "Had a lengthy debate about {0} with [other_nameShortIndef]."};
-        private string[] epicTalkDescriptions = { "Conferred with [other_nameShortIndef] for hours about {0}.", "Talked endlessly with [other_nameShortIndef] about {0}.",
-            "Had an extremely long conversation about {0} with [other_nameShortIndef].", "Debated forever with [other_nameShortIndef] about {0}.",
-            "Had a very lengthy back-and-forth about {0} with [other_nameShortIndef].", "Vented about {0} with [other_nameShortIndef] for hours."};
         public PsychologyPawn realPawn;
         public PsychologyPawn otherPawn;
         public PersonalityNodeDef topic;

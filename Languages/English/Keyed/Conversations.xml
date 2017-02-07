@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<NumberOfShortTalks>10</NumberOfShortTalks>
+	<ShortTalk1>Had a brief chat with [other_nameShortIndef] about {0}.</ShortTalk1>
+	<ShortTalk2>Had a short chat with [other_nameShortIndef] about {0}.</ShortTalk2>
+	<ShortTalk3>Had a short talk with [other_nameShortIndef] about {0}.</ShortTalk3>
+	<ShortTalk4>Quickly discussed {0} with [other_nameShortIndef].</ShortTalk4>
+	<ShortTalk5>Fleetingly chatted about {0} with [other_nameShortIndef].</ShortTalk5>
+	<ShortTalk6>Talked about {0} with [other_nameShortIndef] in passing.</ShortTalk6>
+	<ShortTalk7>Commented pithily on {0} with [other_nameShortIndef].</ShortTalk7>
+	<ShortTalk8>Remarked on {0} with [other_nameShortIndef].</ShortTalk8>
+	<ShortTalk9>Exchanged words with [other_nameShortIndef] about {0} momentarily.</ShortTalk9>
+	<ShortTalk10>Had a brief exchange with [other_nameShortIndef] about {0}.</ShortTalk10>
+	
+	<NumberOfNormalTalks>12</NumberOfNormalTalks>
+	<NormalTalk1>Talked about {0} with [other_nameShortIndef].</NormalTalk1>
+	<NormalTalk2>Had a conversation about {0} with [other_nameShortIndef].</NormalTalk2>
+	<NormalTalk3>Discussed {0} with [other_nameShortIndef].</NormalTalk3>
+	<NormalTalk4>Compared thoughts on {0} with [other_nameShortIndef].</NormalTalk4>
+	<NormalTalk5>Conversed with [other_nameShortIndef] about {0}.</NormalTalk5>
+	<NormalTalk6>Talked with [other_nameShortIndef] about {0}.</NormalTalk6>
+	<NormalTalk7>Had a discussion with [other_nameShortIndef] about {0}.</NormalTalk7>
+	<NormalTalk8>Learned about [other_nameShortIndef]'s opinions on {0}.</NormalTalk8>
+	<NormalTalk9>Shared thoughts on {0} with [other_nameShortIndef].</NormalTalk9>
+	<NormalTalk10>Learned about [other_nameShortIndef]'s thoughts on {0}.</NormalTalk10>
+	<NormalTalk11>Argued about {0} with [other_nameShortIndef].</NormalTalk11>
+	<NormalTalk12>Consulted with [other_nameShortIndef] about {0}.</NormalTalk12>
+	
+	<NumberOfLongTalks>8</NumberOfLongTalks>
+	<LongTalk1>Discussed {0} at length with [other_nameShortIndef].</LongTalk1>
+	<LongTalk2>Had a long conversation about {0} with [other_nameShortIndef].</LongTalk2>
+	<LongTalk3>Talked with [other_nameShortIndef] about {0} for some time.</LongTalk3>
+	<LongTalk4>Thoroughly discussed {0} with [other_nameShortIndef].</LongTalk4>
+	<LongTalk5>Consulted extensively about {0} with [other_nameShortIndef].</LongTalk5>
+	<LongTalk6>Learned a lot about how [other_nameShortIndef] feels about {0}.</LongTalk6>
+	<LongTalk7>Shared deep thoughts on {0} with [other_nameShortIndef].</LongTalk7>
+	<LongTalk8>Had a lengthy debate about {0} with [other_nameShortIndef].</LongTalk8>
+
+	<NumberOfEpicTalks>6</NumberOfEpicTalks>
+	<EpicTalk1>Conferred with [other_nameShortIndef] for hours about {0}.</EpicTalk1>
+	<EpicTalk2>Talked endlessly with [other_nameShortIndef] about {0}.</EpicTalk2>
+	<EpicTalk3>Had an extremely long conversation about {0} with [other_nameShortIndef].</EpicTalk3>
+	<EpicTalk4>Debated forever with [other_nameShortIndef] about {0}.</EpicTalk4>
+	<EpicTalk5>Had a very lengthy back-and-forth about {0} with [other_nameShortIndef].</EpicTalk5>
+	<EpicTalk6>Vented about {0} with [other_nameShortIndef] for hours.</EpicTalk6>
+	
+</LanguageData>

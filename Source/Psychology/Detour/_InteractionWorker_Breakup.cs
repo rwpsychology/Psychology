@@ -101,7 +101,7 @@ namespace Psychology.Detour
 
         private static void AddExLover(PsychologyPawn lover, PsychologyPawn ex)
         {
-            PawnRelationDef exLover= new PawnRelationDef();
+            PawnRelationDef exLover = new PawnRelationDef();
             exLover.defName = "ExLover" + lover.LabelShort + Find.TickManager.TicksGame;
             exLover.label = "ex-lover";
             exLover.opinionOffset = Mathf.RoundToInt(-15f * lover.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
