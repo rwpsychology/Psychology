@@ -57,8 +57,12 @@ namespace Psychology
                 return;
             }
             ThoughtDef failure = ThoughtDefOfPsychology.TreatmentFailed;
-            failure.description = failure.description.Translate(new string[] { traitName });
             pawn.needs.mood.thoughts.memories.TryGainMemoryThought(failure);
+            Thought_Memory failureThought = pawn.needs.mood.thoughts.memories.Memories.Where(memory => memory.def.workerClass.Name == "Thought_TreatmentFailed").OrderBy(memory => memory.age).Last();
+            if(failureThought != null)
+            {
+                (failureThought as Thought_TreatmentFailed).traitName = this.traitName;
+            }
         }
 
         [DebuggerHidden]

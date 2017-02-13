@@ -12,11 +12,9 @@ namespace Psychology
         {
             if (!p.Spawned)
                 return ThoughtState.Inactive;
-            if (!p.RaceProps.Humanlike)
-                return ThoughtState.Inactive;
             if (p.Map == null)
                 return ThoughtState.Inactive;
-            if (!p.Faction.IsPlayer)
+            if (!p.IsColonist)
                 return ThoughtState.Inactive;
             if (p.apparel.PsychologicallyNude)
                 return ThoughtState.Inactive;
@@ -35,19 +33,19 @@ namespace Psychology
                     }
                     return false;
                 };
-                List<Pawn> colonists = (from c in p.Map.mapPawns.AllPawnsSpawned
-                                        where c.RaceProps.Humanlike && c.Faction.IsPlayer && c != p
-                                        select c).ToList<Pawn>();
+                List<Pawn> colonists = (from c in p.Map.mapPawns.FreeColonistsSpawned
+                                        where c != p
+                                        select c).ToList();
                 List<Pawn> sameClothes = (from c in colonists
                                           where (from a in c.apparel.WornApparel
                                                  where identical(a)
-                                                 select a).ToList<Apparel>().Count == p.apparel.WornApparelCount
-                                          select c).ToList<Pawn>();
-                if (sameClothes.Count == colonists.Count && colonists.Count > 3)
+                                                 select a).ToList().Count == p.apparel.WornApparelCount
+                                          select c).ToList();
+                if (sameClothes.Count == colonists.Count && colonists.Count > 5)
                 {
                     lastTick[p] = new int[] { Find.TickManager.TicksGame, 3 };
                 }
-                else if (sameClothes.Count >= (colonists.Count / 2) && colonists.Count > 3)
+                else if (sameClothes.Count >= (colonists.Count / 2) && colonists.Count > 5)
                 {
                     lastTick[p] = new int[] { Find.TickManager.TicksGame, 2 };
                 }

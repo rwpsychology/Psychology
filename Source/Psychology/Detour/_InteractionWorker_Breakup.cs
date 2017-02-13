@@ -109,6 +109,13 @@ namespace Psychology.Detour
             exLover.implied = false;
             exLover.reflexive = false;
             lover.relations.AddDirectRelation(exLover, ex);
+            /* Why do you make me do these things, Tynan? */
+            int startTicks = (Current.ProgramState != ProgramState.Playing) ? 0 : Find.TickManager.TicksGame;
+            lover.relations.DirectRelations.Add(new DirectPawnRelationDynamic(exLover, ex, startTicks));
+            (typeof(Pawn_RelationsTracker).GetField("pawnsWithDirectRelationsWithMe", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(ex) as HashSet<Pawn>).Add(lover);
+            var GainedOrLostDirectRelation = typeof(Pawn_RelationsTracker).GetMethod("GainedOrLostDirectRelation", BindingFlags.Instance | BindingFlags.NonPublic);
+            GainedOrLostDirectRelation.Invoke(lover, new object[] { });
+            GainedOrLostDirectRelation.Invoke(ex, new object[] { });
         }
 
         private static void AddBrokeUpOpinion(PsychologyPawn lover, PsychologyPawn ex)

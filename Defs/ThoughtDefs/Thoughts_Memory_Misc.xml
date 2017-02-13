@@ -270,8 +270,8 @@
     <stackedEffectMultiplier>0.4</stackedEffectMultiplier>
     <stages>
       <li>
-        <label>treatment failed</label>
-        <description>TreatmentFailed</description>
+        <label>{0} treatment failed</label>
+        <description>The doctor failed to treat my mental illness... it just felt like he didn't understand me.</description>
         <baseMoodEffect>-6</baseMoodEffect>
       </li>
     </stages>

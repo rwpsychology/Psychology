@@ -7,6 +7,7 @@ using Verse;
 using Verse.AI;
 using HugsLib.Source.Detour;
 using System.Reflection;
+using UnityEngine;
 
 namespace Psychology.Detour
 {
@@ -80,7 +81,11 @@ namespace Psychology.Detour
             {
                 hediff.Severity += 0.15f-(intensity*0.5f);
             }
-            else if(Rand.Value <= (0.6f-(0.25f*intensity)))
+            float PTSDChance = (0.25f - (0.075f * intensity));
+            if (_this.GetPawn() is PsychologyPawn)
+            {
+            }
+            else if (Rand.Value <= PTSDChance)
             {
                 hediff = HediffMaker.MakeHediff(HediffDefOfPsychology.Anxiety, _this.GetPawn(), _this.GetPawn().health.hediffSet.GetBrain());
                 hediff.Severity = 0.75f-(intensity*0.25f);

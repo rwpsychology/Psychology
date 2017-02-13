@@ -95,7 +95,7 @@ namespace Psychology
                 {
                     r.CurLevel += 0.005714286f * lastRestEffectiveness;
                 }
-                if(Rand.Value < 0.001f && pawn.RaceProps.Humanlike && pawn.jobs.curDriver.asleep)
+                if(Rand.Value < 0.001f && pawn.RaceProps.Humanlike && !pawn.Awake())
                 {
                     if(Rand.Value < 0.5f)
                     {
