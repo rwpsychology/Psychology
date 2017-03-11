@@ -99,7 +99,7 @@ namespace Psychology.Detour
             PsychologyBase.detoursSexual = false;
         }
 
-        private static void AddExLover(PsychologyPawn lover, PsychologyPawn ex)
+        public static void AddExLover(PsychologyPawn lover, PsychologyPawn ex)
         {
             PawnRelationDef exLover = new PawnRelationDef();
             exLover.defName = "ExLover" + lover.LabelShort + Find.TickManager.TicksGame;
@@ -118,7 +118,7 @@ namespace Psychology.Detour
             GainedOrLostDirectRelation.Invoke(ex, new object[] { });
         }
 
-        private static void AddBrokeUpOpinion(PsychologyPawn lover, PsychologyPawn ex)
+        public static void AddBrokeUpOpinion(PsychologyPawn lover, PsychologyPawn ex)
         {
             ThoughtDef brokeUpDef = new ThoughtDef();
             brokeUpDef.defName = "BrokeUpWithMe" + lover.LabelShort + Find.TickManager.TicksGame;
@@ -131,7 +131,7 @@ namespace Psychology.Detour
             lover.needs.mood.thoughts.memories.TryGainMemoryThought(brokeUpDef, ex);
         }
 
-        private static void AddBrokeUpMood(PsychologyPawn lover, PsychologyPawn ex)
+        public static void AddBrokeUpMood(PsychologyPawn lover, PsychologyPawn ex)
         {
             ThoughtDef brokeUpMoodDef = new ThoughtDef();
             brokeUpMoodDef.defName = "BrokeUpWithMeMood" + lover.LabelShort + Find.TickManager.TicksGame;

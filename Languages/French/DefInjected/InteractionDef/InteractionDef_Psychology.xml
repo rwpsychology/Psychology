@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<PrudeSeen.label>vu dénudé(e)</PrudeSeen.label>
+<PrudeSeen.logRulesInitiator.rulesStrings.0>logentry->Vu [other_nameShortIndef] nu(e).</PrudeSeen.logRulesInitiator.rulesStrings.0>
+<PrudeSeen.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef] m'a vu nu(e).</PrudeSeen.logRulesRecipient.rulesStrings.0>
+
+<Conversation.label>conversation</Conversation.label>
+<Conversation.logRulesInitiator.rulesStrings.0>logentry->Entame une conversation avec [other_nameShortIndef].</Conversation.logRulesInitiator.rulesStrings.0>
+<Conversation.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef] a commencé une conversation avec moi.</Conversation.logRulesRecipient.rulesStrings.0>
+
+<EndConversation.label>conversation terminée</EndConversation.label>
+<EndConversation.logRulesInitiator.rulesStrings.0>logentry->Termine une conversation avec [other_nameShortIndef].</EndConversation.logRulesInitiator.rulesStrings.0>
+<EndConversation.logRulesRecipient.rulesStrings.0>logentry->Termine une conversation avec [other_nameShortIndef].</EndConversation.logRulesRecipient.rulesStrings.0>
+
+</LanguageData>

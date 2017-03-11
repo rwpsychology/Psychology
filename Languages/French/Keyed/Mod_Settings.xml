@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<EmpathyChangesTitle>Activer les changements d'empathie</EmpathyChangesTitle>
+	<EmpathyChangesTooltip>Désactivez ceci pour restaurer, les réactions des colons à des choses mauvaises qui se passent à d'autres personnes, à la normale. Cela augmentera les difficultés; Les personnes sentimental ne seront pas affectés. Redémarrez le jeu après l'avoir désactivé.</EmpathyChangesTooltip>
+	
+	<SexualityChangesTitle>Activer les changements de sexualité</SexualityChangesTitle>
+	<SexualityChangesTooltip>Désactivez cette option pour désactiver la mise à l'échelle de Kinsey des personnes et réactiver le trait Homo. Ne changez PAS ceci pendant une partie, et redémarrez le jeu après l'avoir désactivé.</SexualityChangesTooltip>
+	
+	<KinseyModeTitle>Formule de l'échelle de Kinsey</KinseyModeTitle>
+	<KinseyModeTooltip>Ce paramètre détermine la formule utilisée pour pondérer l'échelle de Kinsey lorsque des personnes sont générés.</KinseyModeTooltip>
+	<KinseyMode_Realistic>Défaut</KinseyMode_Realistic>
+	<KinseyMode_Invisible>Centre</KinseyMode_Invisible>
+	<KinseyMode_Gaypocalypse>Inverse</KinseyMode_Gaypocalypse>
+	
+	<IndividualityTitle>Activer les pensées d'individualité</IndividualityTitle>
+	<IndividualityTooltip>Désactivez cette option pour désactiver la pensée négative que vos colons obtiendront s'ils portent des tenues parfaitement correspondantes avec d'autres colons. Cette pensée ajoute une difficulté supplémentaire, donc c'est facultatif, mais recommandé.</IndividualityTooltip>
+	
+	<ElectionsTitle>Activer les élections</ElectionsTitle>
+	<ElectionsTooltip>Désactivez cela pour empêcher vos colons d'avoir des élections annuelles. Cela n'empêchera pas les élections en cours et tout maire existant sera réintégré comme un colon normal. Cela n'affectera pas la compatibilité avec d'autres mods.</ElectionsTooltip>
+  
+</LanguageData>

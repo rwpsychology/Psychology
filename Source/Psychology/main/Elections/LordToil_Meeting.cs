@@ -46,6 +46,14 @@ namespace Psychology
             }
         }
 
+        public override bool AllowSatisfyLongNeeds
+        {
+            get
+            {
+                return true;
+            }
+        }
+
         private IntVec3 spot;
     }
 }

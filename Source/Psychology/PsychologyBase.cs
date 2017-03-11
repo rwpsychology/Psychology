@@ -496,7 +496,7 @@ namespace Psychology
                             List<Pawn> pawns = new List<Pawn>();
                             pawns.Add(mayor);
                             pawns.Add(potentialConstituent);
-                            LordMaker.MakeNewLord(mayor.Faction, new LordJob_VisitMayor(gather, potentialConstituent, mayor, (potentialConstituent.needs.mood.CurLevel < 0.4f)), mayor.Map, pawns);
+                            Lord meeting = LordMaker.MakeNewLord(mayor.Faction, new LordJob_VisitMayor(gather, potentialConstituent, mayor, (potentialConstituent.needs.mood.CurLevel < 0.4f)), mayor.Map, pawns);
                             if (!foundBed)
                             {
                                 mayor.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOfPsychology.MayorNoBedroom);

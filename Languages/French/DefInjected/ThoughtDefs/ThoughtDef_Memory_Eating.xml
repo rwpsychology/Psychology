@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<AteLavishMealPickyEater.Stages.0.label>mangé un repas exquis</AteLavishMealPickyEater.Stages.0.label>
+<AteLavishMealPickyEater.Stages.0.description>Ce repas somptueux était incroyable. C'est exactement ce que je veux manger tous les jours !</AteLavishMealPickyEater.Stages.0.description>
+
+<AteFineMealPickyEater.Stages.0.label>mangé un repas élaboré</AteFineMealPickyEater.Stages.0.label>
+<AteFineMealPickyEater.Stages.0.description>J'ai mangé un très bon repas,  délicieux. Juste comme je l'aime !</AteFineMealPickyEater.Stages.0.description>
+
+<AteAwfulMealPickyEater.Stages.0.label>mangé un repas affreux</AteAwfulMealPickyEater.Stages.0.label>
+<AteAwfulMealPickyEater.Stages.0.description>J'ai dû manger un repas dégoûtant, sans saveur. Inacceptable. Je m'attends à être nourri mieux que cela.</AteAwfulMealPickyEater.Stages.0.description>
+
+<AteRawFoodPickyEater.Stages.0.label>mangé des aliments crus</AteRawFoodPickyEater.Stages.0.label>
+<AteRawFoodPickyEater.Stages.0.description>J'ai dû manger des aliments crus. Je ne veux pas vivre ici si nous ne pouvons même pas avoir un chef.</AteRawFoodPickyEater.Stages.0.description>
+
+<AteNormalMealPickyEater.Stages.0.label>mangé repas simple</AteNormalMealPickyEater.Stages.0.label>
+<AteNormalMealPickyEater.Stages.0.description>Ce repas n'était vraiment pas à la hauteur de mes standards. Je ne l'ai mangé que parce qu'il n'y avait rien de mieux.</AteNormalMealPickyEater.Stages.0.description>
+
+<AteInsectMeatAsIngredientPickyEater.Stages.0.label>mangé de la viande d'insectes cuits</AteInsectMeatAsIngredientPickyEater.Stages.0.label>
+<AteInsectMeatAsIngredientPickyEater.Stages.0.description>J'ai mangé un repas gris, cuit à partir de viande d'insectes gluant. C'était une surprise profondément désagréable à mordre dedans.</AteInsectMeatAsIngredientPickyEater.Stages.0.description>
+
+<AteInsectMeatDirectPickyEater.Stages.0.label>mangé de la viande d'insectes</AteInsectMeatDirectPickyEater.Stages.0.label>
+<AteInsectMeatDirectPickyEater.Stages.0.description>J'ai mangé de la viande d'insecte grise et gluante. S'il vous plaît tuer moi maintenant.</AteInsectMeatDirectPickyEater.Stages.0.description>
+
+<AteRottenFoodPickyEater.Stages.0.label>mangé de la nourriture avariée</AteRottenFoodPickyEater.Stages.0.label>
+<AteRottenFoodPickyEater.Stages.0.description>J'ai mangé quelque chose de dégoûtant, de la nourriture putride. Je préférerais être mort que d'étre réduit à cela.</AteRottenFoodPickyEater.Stages.0.description>
+
+</LanguageData>

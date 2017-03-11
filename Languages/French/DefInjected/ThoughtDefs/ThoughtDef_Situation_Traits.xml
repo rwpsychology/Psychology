@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<FeelingRandomBipolar.Stages.0.label>Sentiment de surexcitation</FeelingRandomBipolar.Stages.0.label>
+<FeelingRandomBipolar.Stages.0.description>Sans raison apparente, je me sens absolument fantastique en ce moment !</FeelingRandomBipolar.Stages.0.description>
+
+<FeelingRandomBipolar.Stages.1.label>Sentiment de grandeur</FeelingRandomBipolar.Stages.1.label>
+<FeelingRandomBipolar.Stages.1.description>Sans raison apparente, je me sens tout simplement génial en ce moment.</FeelingRandomBipolar.Stages.1.description>
+
+<FeelingRandomBipolar.Stages.2.label>Sentiment de bien-être</FeelingRandomBipolar.Stages.2.label>
+<FeelingRandomBipolar.Stages.2.description>Sans raison apparente, je me sens tout simplement génial en ce moment.</FeelingRandomBipolar.Stages.2.description>
+
+<FeelingRandomBipolar.Stages.2.label>Sentiment de mal-être</FeelingRandomBipolar.Stages.2.label>
+<FeelingRandomBipolar.Stages.2.description>Sans raison apparente, je me sens mal en ce moment.</FeelingRandomBipolar.Stages.2.description>
+
+<FeelingRandomBipolar.Stages.3.label>Sentiment de nullité</FeelingRandomBipolar.Stages.3.label>
+<FeelingRandomBipolar.Stages.3.description>Sans raison apparente, je me sens terriblement mal en ce moment.</FeelingRandomBipolar.Stages.3.description>
+
+<FeelingRandomBipolar.Stages.4.label>Sentiment de dépression</FeelingRandomBipolar.Stages.4.label>
+<FeelingRandomBipolar.Stages.4.description>Sans raison apparente, je me sens tout à fait misérable en ce moment...</FeelingRandomBipolar.Stages.4.description>
+
+<Codependency.Stages.0.label>Sentiment de solitude</Codependency.Stages.0.label>
+<Codependency.Stages.0.description>Je suis si seul... J'ai besoin d'un(e) partenaire.</Codependency.Stages.0.description>
+
+<Codependency.Stages.1.label>dans une relation codépendent</Codependency.Stages.1.label>
+<Codependency.Stages.1.description>J'aime mon/ma partenaire. Je ne pourrais pas vivre sans.</Codependency.Stages.1.description>
+
+<Codependency.Stages.2.label>dans un mariage codépendent</Codependency.Stages.2.label>
+<Codependency.Stages.2.description>J'aime mon conjoint. Je mourrais sans.</Codependency.Stages.2.description>
+
+<Codependency.Stages.3.label>délaissé</Codependency.Stages.3.label>
+<Codependency.Stages.3.description>Mon/Ma partenaire est parti ... que vais-je faire maintenant ?</Codependency.Stages.3.description>
+
+<Outdoorsy.Stages.0.label>en plein air</Outdoorsy.Stages.0.label>
+<Outdoorsy.Stages.0.description>J'aime sentir le ciel au-dessus de moi.</Outdoorsy.Stages.0.description>
+
+<Outdoorsy.Stages.1.label>en plein air</Outdoorsy.Stages.1.label>
+<Outdoorsy.Stages.1.description>Ahhh, le grand air !</Outdoorsy.Stages.1.description>
+
+<Pluviophile.Stages.0.label>il pleut dehors</Pluviophile.Stages.0.label>
+<Pluviophile.Stages.0.description>J'aime le bruit de la pluie battant au-dessus de moi.</Pluviophile.Stages.0.description>
+
+<Pluviophile.Stages.0.label>sous la pluie</Pluviophile.Stages.0.label>
+<Pluviophile.Stages.0.description>La pluie est si relaxante. Ça ne me dérange pas de me mouiller.</Pluviophile.Stages.0.description>
+
+<PolygamousRelationship.Stages.0.label>dans une relation monogame</PolygamousRelationship.Stages.0.label>
+<PolygamousRelationship.Stages.0.description>Je souhaite que mon amour ne doive pas être limité à une seule personne.</PolygamousRelationship.Stages.0.description>
+
+<EnvironmentDarkLightSensitive.Stages.0.label>dans l'obscurité</EnvironmentDarkLightSensitive.Stages.0.label>
+<EnvironmentDarkLightSensitive.Stages.0.description>Ah ... le confort des ténèbres.</EnvironmentDarkLightSensitive.Stages.0.description>
+
+<EnvironmentDarkLightSensitive.Stages.1.label>dans la lumière</EnvironmentDarkLightSensitive.Stages.1.label>
+<EnvironmentDarkLightSensitive.Stages.1.description>Aïe ... ça pique un peu.</EnvironmentDarkLightSensitive.Stages.1.description>
+
+<EnvironmentDarkLightSensitive.Stages.2.label>dans la lumière vive</EnvironmentDarkLightSensitive.Stages.2.label>
+<EnvironmentDarkLightSensitive.Stages.2.description>Mes yeux ! Cela fait si mal !</EnvironmentDarkLightSensitive.Stages.2.description>
+
+</LanguageData>

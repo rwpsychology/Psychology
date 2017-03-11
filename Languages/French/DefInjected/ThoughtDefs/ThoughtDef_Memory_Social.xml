@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<PrudeSeen.Stages.0.label>témoin de formes corporelles</PrudeSeen.Stages.0.label>
+<PrudeSeen.Stages.0.description>Cette personne était-elle nue ? Est-ce qu'ils laissent simplement courir les gens sans vêtements ? Répugnant.</PrudeSeen.Stages.0.description>
+
+<DynamicSocial.Stages.0.label>conversation</DynamicSocial.Stages.0.label>
+
+<BrokeUpWithMeCodependent.Stages.0.label>codépend</BrokeUpWithMeCodependent.Stages.0.label>
+
+<BrokeUpWithMeCodependentMood.Stages.0.label>codépend de {0}</BrokeUpWithMeCodependentMood.Stages.0.label>
+<BrokeUpWithMeCodependentMood.Stages.0.description>Tu me manques... s'il te plaît reviens.</BrokeUpWithMeCodependentMood.Stages.0.description>
+
+<CheatedOnMeCodependent.Stages.0.label>on m'a trompé(e)</CheatedOnMeCodependent.Stages.0.label>
+
+<CheatedOnMeCodependentMood.Stages.0.label>trompé(e) avec {0}</CheatedOnMeCodependentMood.Stages.0.label>
+<CheatedOnMeCodependentMood.Stages.0.description>Je ne comprends pas ... Je dois avoir fait quelque chose de mal.</CheatedOnMeCodependentMood.Stages.0.description>
+
+<RebuffedMyRomanceAttemptLecher.Stages.0.label>m'a repoussé(e)</RebuffedMyRomanceAttemptLecher.Stages.0.label>
+
+<CapturedMe.Stages.0.label>une faction m'a emprisonné(e)</CapturedMe.Stages.0.label>
+
+</LanguageData>

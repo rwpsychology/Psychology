@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- WITab titles -->
+  <TabPsyche>Psyché</TabPsyche>
+  
+  <!-- WITab text -->
+  <SexualityDisabledWarning>Le système de sexualité de la psychologie est désactivé, soit par vous, soit par la présence d'un mod en conflit sur votre liste de mod. Veuillez désactiver tous les autres mods qui modifient la sexualité ou l'interaction des colons.</SexualityDisabledWarning>
+  <Sexuality>Sexualité</Sexuality>
+  <KinseyRating>Échelle de Kinsey :</KinseyRating>
+  <Asexual>Asexué</Asexual>
+  <AsexualDescription>Cette personne a une très faible libido. Ils n'éprouvent pas grand désir sexuel et sont peu enclins à s'engager dans quelque chose d'intime.</AsexualDescription>
+  <Aromantic>Aromantic</Aromantic>
+  <AromanticDescription>Cette personne a des pulsions romantique très faible. Ils sont peu susceptibles de faire des tentatives de romance ou d'accepter des propositions de mariage, mais peut encore prendre des amoureux.</AromanticDescription>
+
+</LanguageData>

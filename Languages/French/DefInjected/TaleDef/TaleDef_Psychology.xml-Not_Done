@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<TreatedPyromania.label>pyromanie traité</TreatedPyromania.label>
+<TreatedPyromania.rulePack.rulesStrings.0>tale_noun->[patient_nameShortDef]'s counseling for pyromania</TreatedPyromania.rulePack.rulesStrings.0>
+<TreatedPyromania.rulePack.rulesStrings.1>image->[psychologist_nameFull] sitting on the edge of [patient_nameFull]'s bed [circumstance_group]</TreatedPyromania.rulePack.rulesStrings.1>
+</LanguageData>

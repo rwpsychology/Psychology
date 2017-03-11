@@ -43,7 +43,8 @@ namespace Psychology
             transition.AddTrigger(new Trigger_TickCondition(() => this.mayor.Drafted || this.constituent.Drafted));
             transition.AddTrigger(new Trigger_PawnLostViolently());
             stateGraph.AddTransition(transition);
-            this.timeoutTrigger = new Trigger_TicksPassed(Rand.RangeInclusive(5000, 15000));
+            //Time of meeting is affected by the constituents' mood; meetings to complain can take longer than meetings to commend.
+            this.timeoutTrigger = new Trigger_TicksPassed(Rand.RangeInclusive(GenDate.TicksPerHour * 1, Mathf.RoundToInt(GenDate.TicksPerHour / Mathf.Lerp(0.2f, 1f, constituent.needs.mood.CurLevel))));
             Transition transition2 = new Transition(lordToil_Meeting, lordToil_End);
             transition2.AddTrigger(this.timeoutTrigger);
             transition2.AddPreAction(new TransitionAction_Custom((Action)delegate
@@ -148,7 +149,7 @@ namespace Psychology
         
         private bool ShouldBeCalledOff()
         {
-            return !PartyUtility.AcceptableMapConditionsToContinueParty(base.Map) || (!this.spot.Roofed(base.Map) && !JoyUtility.EnjoyableOutsideNow(base.Map, null));
+            return !PartyUtility.AcceptableMapConditionsToContinueParty(base.Map) || this.constituent.GetTimeAssignment() == TimeAssignmentDefOf.Work || this.mayor.GetTimeAssignment() == TimeAssignmentDefOf.Work || (!this.spot.Roofed(base.Map) && !JoyUtility.EnjoyableOutsideNow(base.Map, null));
         }
         
         private IntVec3 spot;

@@ -84,6 +84,7 @@ namespace Psychology.Detour
             float PTSDChance = (0.25f - (0.075f * intensity));
             if (_this.GetPawn() is PsychologyPawn)
             {
+                PTSDChance -= (_this.GetPawn() as PsychologyPawn).psyche.GetPersonalityRating(PersonalityNodeDefOf.LaidBack) / 10f;
             }
             else if (Rand.Value <= PTSDChance)
             {

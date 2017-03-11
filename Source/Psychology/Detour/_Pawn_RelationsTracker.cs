@@ -41,7 +41,7 @@ namespace Psychology.Detour
         internal static float _SecondaryRomanceChanceFactor(this Pawn_RelationsTracker t, Pawn otherPawn)
         {
             Pawn pawn = t.GetPawn();
-            if (pawn.def != otherPawn.def || pawn == otherPawn)
+            if (!otherPawn.RaceProps.Humanlike || pawn == otherPawn)
             {
                 return 0f;
             }
@@ -54,7 +54,7 @@ namespace Psychology.Detour
             float ageBiologicalYearsFloat = pawn.ageTracker.AgeBiologicalYearsFloat;
             float ageBiologicalYearsFloat2 = otherPawn.ageTracker.AgeBiologicalYearsFloat;
             PsychologyPawn realPawn = pawn as PsychologyPawn;
-            if (PsychologyBase.ActivateKinsey() && realPawn != null)
+            if (PsychologyBase.ActivateKinsey() && realPawn != null && realPawn.sexuality != null)
             {
                 flag = true;
                 float kinsey = 3 - realPawn.sexuality.kinseyRating;
@@ -145,7 +145,7 @@ namespace Psychology.Detour
             {
                 beautyFactor = 2.3f;
             }
-            if (realPawn != null && PsychologyBase.ActivateKinsey() && realPawn.sexuality.AdjustedSexDrive < 1f)
+            if (realPawn != null && PsychologyBase.ActivateKinsey() && realPawn.sexuality != null && realPawn.sexuality.AdjustedSexDrive < 1f)
             {
                 beautyFactor = Mathf.Pow(beautyFactor, realPawn.sexuality.AdjustedSexDrive);
                 ageFactor = Mathf.Pow(ageFactor, realPawn.sexuality.AdjustedSexDrive);

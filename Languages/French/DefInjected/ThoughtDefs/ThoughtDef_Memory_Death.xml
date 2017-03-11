@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<WitnessedDeathAllyBleedingHeart.Stages.0.label>a été témoin de la mort d'un allié</WitnessedDeathAllyBleedingHeart.Stages.0.label>
+<WitnessedDeathAllyBleedingHeart.Stages.0.description>J'ai vu mourir l'un des miens. Je ne peux pas croire qu'ils sont partis. Je ne leur parlerai plus jamais.</WitnessedDeathAllyBleedingHeart.Stages.0.description>
+
+<WitnessedDeathNonAllyBleedingHeart.Stages.0.label>a vu la mort d'un étranger</WitnessedDeathNonAllyBleedingHeart.Stages.0.label>
+<WitnessedDeathNonAllyBleedingHeart.Stages.0.description>J'ai vu quelqu'un mourir. J'ai vu la lumière dans leurs yeux s'éteinte quand ils sont tombés.</WitnessedDeathNonAllyBleedingHeart.Stages.0.description>
+
+<KnowGuestExecutedBleedingHeart.Stages.0.label>exécution justifiée</KnowGuestExecutedBleedingHeart.Stages.0.label>
+<KnowGuestExecutedBleedingHeart.Stages.0.description>Un prisonnier ou un invité coupable a été exécuté. C'était justifié, mais je ne peux toujours pas supporter la perte d'une vie.</KnowGuestExecutedBleedingHeart.Stages.0.description>
+
+<KnowGuestExecutedBleedingHeart.Stages.1.label>mort par euthanasie</KnowGuestExecutedBleedingHeart.Stages.1.label>
+<KnowGuestExecutedBleedingHeart.Stages.1.description>Un prisonnier ou un invité a été euthanasié. C'était humain, mais toujours déchirant.</KnowGuestExecutedBleedingHeart.Stages.1.description>
+
+<KnowGuestExecutedBleedingHeart.Stages.2.label>mort par exécution</KnowGuestExecutedBleedingHeart.Stages.2.label>
+<KnowGuestExecutedBleedingHeart.Stages.2.description>Un prisonnier ou un invité a été tué de sang froid. Je ne peux pas croire cela !</KnowGuestExecutedBleedingHeart.Stages.2.description>
+
+<KnowGuestExecutedBleedingHeart.Stages.3.label>mort par prélèvement d'organes</KnowGuestExecutedBleedingHeart.Stages.3.label>
+<KnowGuestExecutedBleedingHeart.Stages.3.description>Un prisonnier ou un invité est mort parce que la colonie a prélever des parties de son corps. Je suis livide !</KnowGuestExecutedBleedingHeart.Stages.3.description>
+
+<KnowColonistExecutedBleedingHeart.Stages.0.label>exécution justifiée de colon</KnowColonistExecutedBleedingHeart.Stages.0.label>
+<KnowColonistExecutedBleedingHeart.Stages.0.description>Un colon coupable a été exécuté. C'était justifié, mais je ne peux toujours pas supporter la perte d'une vie.</KnowColonistExecutedBleedingHeart.Stages.0.description>
+
+<KnowColonistExecutedBleedingHeart.Stages.1.label>Colon euthanasié</KnowColonistExecutedBleedingHeart.Stages.1.label>
+<KnowColonistExecutedBleedingHeart.Stages.1.description>Un colon a été euthanasié. C'était humain, mais toujours déchirant.</KnowColonistExecutedBleedingHeart.Stages.1.description>
+
+<KnowColonistExecutedBleedingHeart.Stages.2.label>Colon exécuté</KnowColonistExecutedBleedingHeart.Stages.2.label>
+<KnowColonistExecutedBleedingHeart.Stages.2.description>Un colon a été tué de sang froid. Je ne peux pas croire cela !</KnowColonistExecutedBleedingHeart.Stages.2.description>
+
+<KnowColonistExecutedBleedingHeart.Stages.3.label>Colon tué par prélèvement d'organes</KnowColonistExecutedBleedingHeart.Stages.3.label>
+<KnowColonistExecutedBleedingHeart.Stages.3.description>Un colon est mort parce que la colonie a prélever des parties de son corps. Je suis livide !</KnowColonistExecutedBleedingHeart.Stages.3.description>
+
+<KnowPrisonerDiedInnocentBleedingHeart.Stages.0.label>mort d'un prisonnier innocent</KnowPrisonerDiedInnocentBleedingHeart.Stages.0.label>
+<KnowPrisonerDiedInnocentBleedingHeart.Stages.0.description>Un de nos prisonniers est mort bien qu'il était inoffensif. Nous avons le devoir de prendre soin de nos prisonniers. Si nous voulions qu'il meurt, nous aurions pu au moins effectuer une exécution ordonnée plutôt que de permettre cette barbarie.</KnowPrisonerDiedInnocentBleedingHeart.Stages.0.description>
+
+<KnowColonistDiedBleedingHeart.Stages.0.label>mort d'un colon</KnowColonistDiedBleedingHeart.Stages.0.label>
+<KnowColonistDiedBleedingHeart.Stages.0.description>L'un des notres est mort. Si seulement nous avions fait les choses différemment ...</KnowColonistDiedBleedingHeart.Stages.0.description>
+
+</LanguageData>

@@ -39,7 +39,7 @@ namespace Psychology
             transition.AddTrigger(new Trigger_PawnLostViolently());
             transition.AddPreAction(new TransitionAction_Message("MessageElectionCalledOff".Translate(this.baseName), MessageSound.Negative, new TargetInfo(this.spot, this.Map, false)));
             stateGraph.AddTransition(transition);
-            this.timeoutTrigger = new Trigger_TicksPassed(Rand.RangeInclusive(GenDate.TicksPerHour*4, GenDate.TicksPerHour * 8));
+            this.timeoutTrigger = new Trigger_TicksPassed(Rand.RangeInclusive(GenDate.TicksPerHour * 4, GenDate.TicksPerHour * 8));
             Transition transition2 = new Transition(lordToil_Election, lordToil_End);
             transition2.AddTrigger(this.timeoutTrigger);
             transition2.AddPreAction(new TransitionAction_Custom((Action)delegate

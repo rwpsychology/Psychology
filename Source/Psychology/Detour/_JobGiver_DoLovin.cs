@@ -34,7 +34,7 @@ namespace Psychology.Detour
             }
             PsychologyPawn realPawn = pawn as PsychologyPawn;
             PsychologyPawn realPartner = partnerInMyBed as PsychologyPawn;
-            if(realPawn != null && realPartner != null && PsychologyBase.ActivateKinsey())
+            if(realPawn != null && realPartner != null && PsychologyBase.ActivateKinsey() && realPawn.sexuality != null && realPartner.sexuality != null)
             {
                 Rand.PushSeed();
                 Rand.Seed = (pawn.GetHashCode() ^ (GenLocalDate.DayOfYear(pawn) + GenLocalDate.Year(pawn) + (int)(GenLocalDate.DayPercent(pawn) * 2) * 60) * 391);

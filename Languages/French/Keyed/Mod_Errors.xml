@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<KinseyDisable>Désactivation de l'échelle de Kinsey due à la détection d'un mod de romance/sexualité.</KinseyDisable>
+	<KinseyDetourDisable>Le détournement des méthodes essentielles à la fonctionnalité de certains traits a été désactivé pour protéger la compatibilité. Définition commune de ces traits à zéro.</KinseyDetourDisable>
+	<MedicalDetourDisable>Désactivation du détournement des méthodes médicales due à la détection d'un mod d'assemblage médical/chirurgical. Cela supprimera certaines fonctionnalités des personnes sentimental.</MedicalDetourDisable>
+  
+</LanguageData>

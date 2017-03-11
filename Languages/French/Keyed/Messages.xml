@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<TreatedTrait>{0} a été traité avec succès de sa {1}.</TreatedTrait>
+	<MessageElectionCalledOff>L'élection à {0} a été annulée à cause des conditions dans le bureau de vote.</MessageElectionCalledOff>
+	
+</LanguageData>

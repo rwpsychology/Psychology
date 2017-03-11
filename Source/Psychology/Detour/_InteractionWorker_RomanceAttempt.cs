@@ -22,7 +22,20 @@ namespace Psychology.Detour
                 if (firstDirectRelationPawn != null && (!firstDirectRelationPawn.story.traits.HasTrait(TraitDefOfPsychology.Polygamous) || !pawn.story.traits.HasTrait(TraitDefOfPsychology.Polygamous)))
                 {
                     pawn.relations.RemoveDirectRelation(PawnRelationDefOf.Lover, firstDirectRelationPawn);
-                    pawn.relations.AddDirectRelation(PawnRelationDefOf.ExLover, firstDirectRelationPawn);
+                    PsychologyPawn realPawn = pawn as PsychologyPawn;
+                    PsychologyPawn realRecipient = firstDirectRelationPawn as PsychologyPawn;
+                    if(realPawn != null && realRecipient != null)
+                    {
+                        _InteractionWorker_Breakup.AddExLover(realPawn, realRecipient);
+                        _InteractionWorker_Breakup.AddExLover(realRecipient, realPawn);
+                        _InteractionWorker_Breakup.AddBrokeUpOpinion(realRecipient, realPawn);
+                        _InteractionWorker_Breakup.AddBrokeUpMood(realRecipient, realPawn);
+                        _InteractionWorker_Breakup.AddBrokeUpMood(realPawn, realRecipient);
+                    }
+                    else
+                    {
+                        pawn.relations.AddDirectRelation(PawnRelationDefOf.ExLover, firstDirectRelationPawn);
+                    }
                     oldLoversAndFiances.Add(firstDirectRelationPawn);
                 }
                 else
@@ -35,7 +48,20 @@ namespace Psychology.Detour
                     else if (!firstDirectRelationPawn2.story.traits.HasTrait(TraitDefOfPsychology.Polygamous) || !pawn.story.traits.HasTrait(TraitDefOfPsychology.Polygamous))
                     {
                         pawn.relations.RemoveDirectRelation(PawnRelationDefOf.Fiance, firstDirectRelationPawn2);
-                        pawn.relations.AddDirectRelation(PawnRelationDefOf.ExLover, firstDirectRelationPawn2);
+                        PsychologyPawn realPawn = pawn as PsychologyPawn;
+                        PsychologyPawn realRecipient2 = firstDirectRelationPawn2 as PsychologyPawn;
+                        if (realPawn != null && realRecipient2 != null)
+                        {
+                            _InteractionWorker_Breakup.AddExLover(realPawn, realRecipient2);
+                            _InteractionWorker_Breakup.AddExLover(realRecipient2, realPawn);
+                            _InteractionWorker_Breakup.AddBrokeUpOpinion(realRecipient2, realPawn);
+                            _InteractionWorker_Breakup.AddBrokeUpMood(realRecipient2, realPawn);
+                            _InteractionWorker_Breakup.AddBrokeUpMood(realPawn, realRecipient2);
+                        }
+                        else
+                        {
+                            pawn.relations.AddDirectRelation(PawnRelationDefOf.ExLover, firstDirectRelationPawn2);
+                        }
                         oldLoversAndFiances.Add(firstDirectRelationPawn2);
                     }
                 }
