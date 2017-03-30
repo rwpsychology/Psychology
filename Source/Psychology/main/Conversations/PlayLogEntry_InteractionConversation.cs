@@ -28,20 +28,20 @@ namespace Psychology
             {
                 if(i+1 > this.rulesInit.Count)
                 {
-                    this.rulesInit.Add("logentry->Ended a conversation with [other_nameShortIndef].");
+                    this.rulesInit.Add("logentry->"+"ConversationEnd".Translate()+" [other_nameShortIndef].");
                 }
                 string ruleText = this.rulesInit[i];
-                Scribe_Values.LookValue(ref ruleText, "rulesInit" + i, "logentry->Ended a conversation with [other_nameShortIndef].");
+                Scribe_Values.LookValue(ref ruleText, "rulesInit" + i, "logentry->" + "ConversationEnd".Translate() + " [other_nameShortIndef].");
                 this.rulesInit[i] = ruleText;
             }
             for (int i = 0; i < rulesRecip.Capacity; i++)
             {
                 if (i+1 > this.rulesRecip.Count)
                 {
-                    this.rulesRecip.Add("logentry->Ended a conversation with [other_nameShortIndef].");
+                    this.rulesRecip.Add("logentry->" + "ConversationEnd".Translate() + " [other_nameShortIndef].");
                 }
                 string ruleText = this.rulesRecip[i];
-                Scribe_Values.LookValue(ref ruleText, "rulesRecip" + i, "logentry->Ended a conversation with [other_nameShortIndef].");
+                Scribe_Values.LookValue(ref ruleText, "rulesRecip" + i, "logentry->" + "ConversationEnd".Translate() + " [other_nameShortIndef].");
                 this.rulesRecip[i] = ruleText;
             }
             FieldInfo IntDef = typeof(PlayLogEntry_Interaction).GetField("intDef", BindingFlags.Instance | BindingFlags.NonPublic);
@@ -49,7 +49,7 @@ namespace Psychology
             newIntDef.defName = "EndConversation";
             FieldInfo Symbol = typeof(InteractionDef).GetField("symbol", BindingFlags.Instance | BindingFlags.NonPublic);
             Symbol.SetValue(newIntDef, Symbol.GetValue(InteractionDefOf.DeepTalk));
-            newIntDef.label = "ended conversation";
+            newIntDef.label = "ConversationEnded".Translate();
             FieldInfo RuleStrings = typeof(RulePack).GetField("rulesStrings", BindingFlags.Instance | BindingFlags.NonPublic);
             RulePack initPack = new RulePack();
             RuleStrings.SetValue(initPack, this.rulesInit);

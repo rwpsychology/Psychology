@@ -5,4 +5,20 @@
 	<LordReportAttendingElection>Lieu de scrutin</LordReportAttendingElection>
 	<LordReportVisitingMayor>Assister à la réunion</LordReportVisitingMayor>
 
+<!-- Miscellaneous thought text -->
+	<ConversationStage>Conversation sur</ConversationStage>
+	<ConversationEnd>Terminé une conversation avec</ConversationEnd>
+	<ConversationEnded>conversation terminée</ConversationEnded>
+	<Complained>Se plaint au maire.</Complained>
+	<Supported>J'ai exprimé mon soutien au maire.</Supported>
+	<HadMeeting>A eu une réunion avec un</HadMeeting>
+	
+<!-- Node descriptions -->
+	<PsycheNot>Ne pas</PsycheNot>
+	<PsycheSlightly>Un peu</PsycheSlightly>
+	<PsycheLess>Moins</PsycheLess>
+	<PsycheMore>Plus</PsycheMore>
+	<PsycheVery>Très</PsycheVery>
+	<PsycheExtremely>Hautement</PsycheExtremely>
+
 </LanguageData>

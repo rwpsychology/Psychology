@@ -1,6 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-	<TreatmentFailed>Le médecin n'a pas réussi à traiter ma/mon {0}... HE avait l'impression de ne pas me comprendre.</TreatmentFailed>
+	<ComplaintLabel>пожаловался мэру</ComplaintLabel>
+	<ComplaintDesc>Жалость мэру заставила меня почувствовать это.</ComplaintDesc>
 	
+	<VisitLabel>посетил учредитель</VisitLabel>
+	<VisitDesc>Посещение от учредителя заставило меня почувствовать себя таким образом.</VisitDesc>
+
 </LanguageData>

@@ -35,7 +35,7 @@ namespace Psychology
                 int descString = Mathf.RoundToInt(6f*allNodes[i].AdjustedRating);
                 if (/*!allNodes[i].Core && */descString != 3)
                 {
-                    string text = NodeDescriptions[descString] + " " + allNodes[i].def.label.CapitalizeFirst();
+                    string text = (NodeDescriptions[descString] == "" ? "" : ("Psyche"+NodeDescriptions[descString]).Translate());
                     PsycheCardUtility.nodeStrings.Add(new Pair<string, int>(text, i));
                     num += Mathf.Max(26f, Text.CalcHeight(text, width));
                 }
@@ -47,16 +47,15 @@ namespace Psychology
             for (int j = 0; j < PsycheCardUtility.nodeStrings.Count; j++)
             {
                 string first = PsycheCardUtility.nodeStrings[j].First;
-                string[] display = first.Split(' ');
                 PersonalityNode node = allNodes[PsycheCardUtility.nodeStrings[j].Second];
                 float num4 = Mathf.Max(26f, Text.CalcHeight(first, width));
                 Rect rect2 = new Rect(10f, num3, width/3, num4);
                 Rect rect3 = new Rect(10f+width/3, num3, (2*width)/3, num4);
                 GUI.color = NodeColors[Mathf.RoundToInt(6f*allNodes[PsycheCardUtility.nodeStrings[j].Second].AdjustedRating)];
-                Widgets.Label(rect2, display[0]);
+                Widgets.Label(rect2, first.ToString());
                 GUI.color = Color.white;
                 Widgets.DrawHighlightIfMouseover(rect3);
-                Widgets.Label(rect3, display[1]);
+                Widgets.Label(rect3, node.def.label.CapitalizeFirst());
                 TooltipHandler.TipRegion(rect3, () => node.def.description, 613261 + j * 612);
                 num3 += num4;
             }
@@ -124,7 +123,7 @@ namespace Psychology
                 Rect rect3 = rect2.ContractedBy(10f);
                 Rect rect4 = rect3;
                 Rect rect5 = rect3;
-                rect4.width *= 0.55f;
+                rect4.width *= 0.6f;
                 rect5.x = rect4.xMax + 17f;
                 rect5.xMax = rect3.xMax;
                 GUI.color = new Color(1f, 1f, 1f, 0.5f);

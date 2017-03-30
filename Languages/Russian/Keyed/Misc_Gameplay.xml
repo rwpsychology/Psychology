@@ -5,4 +5,21 @@
 	<LordReportAttendingElection>Посещение избирательного участка</LordReportAttendingElection>
 	<LordReportVisitingMayor>Посещение встречи</LordReportVisitingMayor>
 
+<!-- Miscellaneous thought text -->
+	<ConversationStage>Разговор о</ConversationStage>
+	<ConversationEnd>Закончился разговор с</ConversationEnd>
+	<ConversationEnded>закончившийся разговор</ConversationEnded>
+	<Complained>Жаловался мэру.</Complained>
+	<Supported>Выразил мою поддержку мэру.</Supported>
+	<HadMeeting>Встреча с учредителем</HadMeeting>
+	
+<!-- Node descriptions -->
+	<PsycheNot>Не</PsycheNot>
+	<PsycheSlightly>Немного</PsycheSlightly>
+	<PsycheLess>Меньше</PsycheLess>
+	<PsycheMore>Больше</PsycheMore>
+	<PsycheVery>Очень</PsycheVery>
+	<PsycheExtremely>Чрезвычайно</PsycheExtremely>
+
+
 </LanguageData>

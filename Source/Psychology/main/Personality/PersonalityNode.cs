@@ -60,9 +60,12 @@ namespace Psychology
                 this.pawn.skills.skills.ForEach((SkillRecord s) => totalLearning += s.Level);
                 int skillWeight = 0;
                 this.def.skillModifiers.ForEach((PersonalityNodeSkillModifier skillMod) => skillWeight += this.pawn.skills.GetSkill(skillMod.skill).Level);
-                float totalWeight = skillWeight / totalLearning;
-                rating += Mathf.InverseLerp(.05f, .4f, totalWeight);
-                rating = Mathf.Clamp01(rating);
+                if(totalLearning > 0)
+                {
+                    float totalWeight = skillWeight / totalLearning;
+                    rating += Mathf.InverseLerp(.05f, .4f, totalWeight);
+                    rating = Mathf.Clamp01(rating);
+                }
             }
             if(!this.def.traitModifiers.NullOrEmpty())
             {

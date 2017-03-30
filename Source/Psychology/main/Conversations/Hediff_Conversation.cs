@@ -136,7 +136,7 @@ namespace Psychology
                 {
                     opinionMod *= PopulationModifier;
                 }
-                stage.label = "conversation about " + topic.conversationTopic;
+                stage.label = "ConversationStage".Translate() + " " + topic.conversationTopic;
                 stage.baseOpinionOffset = Mathf.RoundToInt(opinionMod);
                 def.stages.Add(stage);
                 /* The more they know about someone, the less likely small thoughts are to have an impact on their opinion.

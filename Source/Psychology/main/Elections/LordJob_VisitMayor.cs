@@ -76,16 +76,22 @@ namespace Psychology
                         ThoughtDef complaintDef = new ThoughtDef();
                         complaintDef.label = "MayorComplaint";
                         complaintDef.durationDays = 1f + 4f * this.mayor.GetStatValue(StatDefOf.SocialImpact);
+                        //Constituent thought duration affected by mayor's Social stat
                         complaintDef.thoughtClass = typeof(Thought_MemoryDynamic);
                         complaintDef.stackedEffectMultiplier = 1f;
                         ThoughtStage complaintStage = new ThoughtStage();
-                        float complaintMood = 10f * (realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Empathetic) - 0.25f);
-                        complaintMood *= this.ticksInSameRoom / 5000f;
-                        complaintMood *= (complaintMood < 0f ? 0.5f + (1f - realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
+                        float complaintMood = 12f * (realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Empathetic) - 0.33f);
+                        //Base complaint mood determined by mayor's Empathetic trait
+                        complaintMood *= this.ticksInSameRoom / GenDate.TicksPerHour*2;
+                        //Length of meeting also affects mood
+                        complaintMood *= (complaintMood < 0f ? Mathf.Lerp(1.25f, 0.75f, realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
+                        //Negative meeting thoughts (unempathetic mayors) mitigated by mayor's politeness
                         complaintMood += (BeautyUtility.AverageBeautyPerceptible(this.constituent.Position, this.constituent.Map) / 10f);
+                        //Beauty of the room has a net positive effect on the thought
                         complaintMood *= 0.75f + (realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Judgmental)/2f);
-                        complaintStage.label = "complained to the mayor";
-                        complaintStage.description = "Complaining to the mayor made me feel this way.";
+                        //Constituent's Judgmental trait changes how much the thought affects them
+                        complaintStage.label = "ComplaintLabel".Translate();
+                        complaintStage.description = "ComplaintDesc".Translate();
                         complaintStage.baseMoodEffect = Mathf.RoundToInt(complaintMood);
                         complaintDef.defName = this.constituent.GetHashCode() + "MayorComplaint" + complaintStage.baseMoodEffect;
                         complaintDef.stages.Add(complaintStage);
@@ -94,16 +100,20 @@ namespace Psychology
                     ThoughtDef visitDef = new ThoughtDef();
                     visitDef.label = "MayorVisited";
                     visitDef.durationDays = 0.75f + 2f * (1f - realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent));
+                    //Mayor thought duration affected by mayor's Independent trait
                     visitDef.thoughtClass = typeof(Thought_MemoryDynamic);
                     visitDef.stackedEffectMultiplier = 1f;
                     ThoughtStage stage = new ThoughtStage();
-                    float mood = 5f;
-                    mood *= this.ticksInSameRoom / 5000f;
-                    mood *= (complaint ? -1f-(1f-this.constituent.needs.mood.CurLevel) : 0.25f+Mathf.Max(0f, 0.25f-this.constituent.needs.mood.CurLevel));
-                    mood *= (mood < 0f ? 0.5f + (1f - realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
+                    float mood = 5f * (complaint ? -1f - (1f - this.constituent.needs.mood.CurLevel) : 0.25f + Mathf.Max(0f, 0.25f - this.constituent.needs.mood.CurLevel));
+                    //Base visit mood determined by the mood level of the constituent
+                    mood *= this.ticksInSameRoom / GenDate.TicksPerHour*2;
+                    //Length of meeting also affects mood
+                    mood *= (mood < 0f ? Mathf.Lerp(1.25f, 0.75f, realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
+                    //Negative meeting thoughts (unhappy constituents) mitigated by constituent's politeness
                     mood *= 0.5f + (1f - realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.LaidBack));
-                    stage.label = "visited by constituent";
-                    stage.description = "A visit from a constituent made me feel this way.";
+                    //Mayor's Laid-Back trait strongly impacts how much the thought affects them
+                    stage.label = "VisitLabel".Translate();
+                    stage.description = "VisitDesc".Translate();
                     stage.baseMoodEffect = Mathf.RoundToInt(mood);
                     visitDef.defName = this.mayor.GetHashCode() + "MayorVisited" + stage.baseMoodEffect;
                     visitDef.stages.Add(stage);
@@ -115,16 +125,16 @@ namespace Psychology
                     List<string> text = new List<string>(1);
                     if (complaint)
                     {
-                        text.Add("logentry->Complained to the mayor.");
+                        text.Add("logentry->"+"Complained".Translate());
                     }
                     else
                     {
-                        text.Add("logentry->Voiced my support to the mayor.");
+                        text.Add("logentry->"+"Supported".Translate());
                     }
                     RuleStrings.SetValue(goodbyeTextInit, text);
                     RulePack goodbyeTextRecip = new RulePack();
                     List<String> text2 = new List<string>(1);
-                    text2.Add("logentry->Had a meeting with a constituent, [other_nameShortIndef].");
+                    text2.Add("logentry->"+"HadMeeting".Translate()+", [other_nameShortIndef].");
                     RuleStrings.SetValue(goodbyeTextRecip, text2);
                     endConversation.logRulesInitiator = goodbyeTextInit;
                     endConversation.logRulesRecipient = goodbyeTextRecip;
