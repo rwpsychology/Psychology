@@ -18,10 +18,10 @@ namespace Psychology
             {
                 return null;
             }
-            if ((pawn.Position - friend.Position).LengthHorizontalSquared >= 42f)
+            /*if ((pawn.Position - friend.Position).LengthHorizontalSquared >= 42f)
             {
                 return new Job(JobDefOf.Goto, friend, 500, true);
-            }
+            }*/
             if (friend.needs.food.CurLevel < 0.33f)
             {
                 return null;
