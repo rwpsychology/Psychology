@@ -4,6 +4,8 @@
 <!-- Lord job reports -->
 	<LordReportAttendingElection>Visiting polling place</LordReportAttendingElection>
 	<LordReportVisitingMayor>Attending meeting</LordReportVisitingMayor>
+	<LordReportHangingOut>Hanging out with someone</LordReportHangingOut>
+	<LordReportDate>On a date</LordReportDate>
 
 <!-- Miscellaneous thought log text -->
 	<ConversationStage>conversation about</ConversationStage>

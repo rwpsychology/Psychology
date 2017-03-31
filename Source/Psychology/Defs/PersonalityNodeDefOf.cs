@@ -23,5 +23,6 @@ namespace Psychology
         public static PersonalityNodeDef Passionate;
         public static PersonalityNodeDef Polite;
         public static PersonalityNodeDef Romantic;
+        public static PersonalityNodeDef Trusting;
     }
 }

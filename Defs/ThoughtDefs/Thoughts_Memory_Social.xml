@@ -48,7 +48,7 @@
     <stages>
       <li>
         <label>codependent</label>
-        <baseOpinionOffset>100</baseOpinionOffset>
+        <baseOpinionOffset>150</baseOpinionOffset>
       </li>
     </stages>
     <thoughtToMake>BrokeUpWithMeCodependentMood</thoughtToMake>
@@ -131,6 +131,20 @@
       <li>
         <label>faction imprisoned me</label>
         <baseOpinionOffset>-40</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>WentOnDate</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>5.0</durationDays>
+    <stackLimit>300</stackLimit>
+    <stackLimitPerPawn>1</stackLimitPerPawn>
+    <stages>
+      <li>
+        <label>went on a date</label>
+        <baseOpinionOffset>10</baseOpinionOffset>
       </li>
     </stages>
   </ThoughtDef>

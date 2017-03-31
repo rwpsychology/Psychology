@@ -4,6 +4,8 @@
 <!-- Lord job reports -->
 	<LordReportAttendingElection>Посещение избирательного участка</LordReportAttendingElection>
 	<LordReportVisitingMayor>Посещение встречи</LordReportVisitingMayor>
+	<LordReportHangingOut>Пообщаться с кем-то</LordReportHangingOut>
+	<LordReportDate>На свидании</LordReportDate>
 
 <!-- Miscellaneous thought text -->
 	<ConversationStage>Разговор о</ConversationStage>

@@ -49,6 +49,7 @@ namespace Psychology
             {
                 rating = ((rating * 2) + parent.AdjustedRating) / 3;
             }
+            rating += (0.5f - this.rawRating) / 4f;
             return Mathf.Clamp01(rating);
         }
 
@@ -91,7 +92,7 @@ namespace Psychology
             }
             if (this.def == PersonalityNodeDefOf.Cool && RelationsUtility.IsDisfigured(this.pawn))
             {
-                rating = Mathf.Clamp01(rating - 10);
+                rating = Mathf.Clamp01(rating - 0.1f);
             }
             return rating;
         }

@@ -87,7 +87,7 @@ namespace Psychology
                 }
                 string talkDesc;
                 //int talkLength;
-                if (this.ageTicks < 200)
+                if (this.ageTicks < 500)
                 {
                     int numShortTalks = int.Parse("NumberOfShortTalks".Translate());
                     talkDesc = "ShortTalk" + Rand.RangeInclusive(1, numShortTalks);
@@ -123,16 +123,16 @@ namespace Psychology
                 //Base opinion mod is 5 to the power of controversiality.
                 float opinionMod = Mathf.Pow(5f, topic.controversiality);
                 //Multiplied by difference between their personality ratings, on an exponential scale.
-                opinionMod *= Mathf.Lerp(-1.25f, 1.25f, Mathf.Pow(1f-Mathf.Abs((this.realPawn.psyche.GetPersonalityRating(topic) - this.otherPawn.psyche.GetPersonalityRating(topic))),3));
+                opinionMod *= Mathf.Lerp(-1.25f, 1.25f, Mathf.Pow(1f-Mathf.Abs(this.realPawn.psyche.GetPersonalityRating(topic) - this.otherPawn.psyche.GetPersonalityRating(topic)),3));
                 //Cool pawns are liked more.
                 opinionMod += Mathf.Pow(2f, topic.controversiality) * (0.5f - this.otherPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Cool));
                 //The length of the talk has a large impact on how much the pawn cares.
-                opinionMod *= Mathf.Lerp(0f, 5f, this.ageTicks/5000f); //talkModifier[talkLength]
+                opinionMod *= 5f * (this.ageTicks / (GenDate.TicksPerHour * 2f)); //talkModifier[talkLength]
                 //If they had a bad experience, the more polite the pawn is, the less they're bothered by it.
                 opinionMod *= (opinionMod < 0f ? 0.5f + (1f - this.otherPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
                 //The more judgmental the pawn, the more they're affected by all conversations.
                 opinionMod *= 0.5f + this.realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Judgmental);
-                if(opinionMod < 0f)
+                if (opinionMod < 0f)
                 {
                     opinionMod *= PopulationModifier;
                 }
@@ -143,7 +143,7 @@ namespace Psychology
                  * This helps declutter the Social card without preventing pawns from having conversations.
                  * They just won't change their mind about the colonist as a result.
                  */
-                if (Rand.Value < Mathf.InverseLerp(0f, this.realPawn.psyche.TotalThoughtOpinion(this.otherPawn), 250f+Mathf.Abs(stage.baseOpinionOffset)))
+                if (Rand.Value < Mathf.InverseLerp(0f, this.realPawn.psyche.TotalThoughtOpinion(this.otherPawn), 250f+Mathf.Abs(stage.baseOpinionOffset)) && stage.baseOpinionOffset != 0)
                 {
                     this.pawn.needs.mood.thoughts.memories.TryGainMemoryThought(def, this.otherPawn);
                 }

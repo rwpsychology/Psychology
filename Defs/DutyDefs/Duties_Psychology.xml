@@ -86,5 +86,25 @@
       </subNodes>
     </thinkNode>
   </DutyDef>
+  
+  <DutyDef>
+    <defName>HangOut</defName>
+    <thinkNode Class="ThinkNode_Priority">
+		<subnodes>
+			<li Class="Psychology.JobGiver_SpendTimeTogether"/>
+			<li Class="ThinkNode_ConditionalStarving">
+				<subnodes>
+					<li Class="JobGiver_GetFood" />
+				</subnodes>
+			</li>
+			<li Class="JobGiver_StandAndBeSociallyActive">
+			  <ticksRange>
+				<min>50</min>
+				<max>200</max>
+			  </ticksRange>
+			</li>
+		</subnodes>
+    </thinkNode>
+  </DutyDef>
 
 </Defs>
