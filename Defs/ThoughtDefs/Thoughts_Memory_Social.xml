@@ -148,4 +148,18 @@
       </li>
     </stages>
   </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MissedDate</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>30.0</durationDays>
+    <stackLimit>300</stackLimit>
+    <stackLimitPerPawn>1</stackLimitPerPawn>
+    <stages>
+      <li>
+        <label>slept through our date</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
 </ThoughtDefs>

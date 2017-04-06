@@ -42,6 +42,11 @@ namespace Psychology
         public static ThoughtDef WonElection;
         public static ThoughtDef MayorNoBedroom;
 
+        /* Dating related thoughts */
+        public static ThoughtDef WentOnDate;
+        public static ThoughtDef MissedDate;
+        public static ThoughtDef DateCancelled;
+
         /* Miscellaneous thoughts */
         public static ThoughtDef KilledHumanlikeEnemy;
         public static ThoughtDef DreamGood;
@@ -53,6 +58,5 @@ namespace Psychology
         public static ThoughtDef TreatmentFailed;
         public static ThoughtDef SuccessfulPlot;
         public static ThoughtDef HeardParanoia;
-        public static ThoughtDef WentOnDate;
     }
 }

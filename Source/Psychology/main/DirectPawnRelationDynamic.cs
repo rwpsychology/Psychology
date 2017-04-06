@@ -27,9 +27,7 @@ namespace Psychology
             {
                 this.def.defName = "PawnRelationDynamic";
             }
-            Scribe_Defs.LookDef(ref this.def, "def");
-            Scribe_References.LookReference(ref this.otherPawn, "otherPawn", true);
-            Scribe_Values.LookValue(ref this.startTicks, "startTicks", 0, false);
+            base.ExposeData();
             Scribe_Values.LookValue(ref this.name, "trueName", "PawnRelationDynamic");
             Scribe_Values.LookValue(ref this.label, "label", "dynamic relation");
             Scribe_Values.LookValue(ref this.opinionOffset, "opinion", 0);
@@ -41,7 +39,6 @@ namespace Psychology
             def.importance = this.importance;
             def.implied = false;
             def.reflexive = false;
-            def.workerClass = typeof(DirectPawnRelationDynamic);
             this.def = def;
         }
         

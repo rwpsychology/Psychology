@@ -27,4 +27,17 @@
     </stages>
   </HediffDef>
 
+  <HediffDef>
+    <defName>PlannedDate</defName>
+    <hediffClass>Psychology.Hediff_PlannedDate</hediffClass>
+    <initialSeverity>1</initialSeverity>
+    <label>date</label>
+    <stages>
+      <li>
+        <label>hidden</label>
+        <everVisible>false</everVisible>
+      </li>
+    </stages>
+  </HediffDef>
+
 </Defs>

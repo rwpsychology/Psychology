@@ -305,6 +305,7 @@ namespace Psychology
                 ReplaceThoughtWorker("AnnoyingVoice", typeof(ThoughtWorker_AnnoyingVoice));
                 ReplaceThoughtWorker("CreepyBreathing", typeof(ThoughtWorker_CreepyBreathing));
                 ReplaceThoughtWorker("Pretty", typeof(ThoughtWorker_Pretty));
+                DefDatabase<ThoughtDef>.GetNamed("Chitchat").stages[0].label = "Smalltalk";
                 DefDatabase<ThoughtDef>.AllDefsListForReading.Where(def => def.workerClass == typeof(ThoughtWorker_Hediff)).ToList().ForEach(def => ReplaceThoughtWorker(def.defName, typeof(ThoughtWorker_HediffPsychology)));
                 ThoughtDef depressive = ReplaceThoughtWorker("MoodOffsetDepressive", typeof(ThoughtWorker_AlwaysActiveDepression));
                 ThoughtStage treated = new ThoughtStage();

@@ -61,6 +61,8 @@ namespace Psychology
         public List<PersonalityNodeIncapableModifier> incapableModifiers;
         //How much a difference (or similarity) in this node affects what pawns think of each other after a conversation.
         public float controversiality;
+        //The hours of the day that people with a high rating in this node will prefer to go on dates.
+        public List<int> preferredDateHours;
         //A list of the actual parent Defs of this node.
         [Unsaved]
         private List<PersonalityNodeDef> parentDefs;

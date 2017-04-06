@@ -44,7 +44,7 @@ namespace Psychology
             transition.AddTrigger(new Trigger_PawnLostViolently());
             stateGraph.AddTransition(transition);
             //Time of meeting is affected by the constituents' mood; meetings to complain can take longer than meetings to commend.
-            this.timeoutTrigger = new Trigger_TicksPassed(Rand.RangeInclusive(GenDate.TicksPerHour * 1, Mathf.RoundToInt(GenDate.TicksPerHour / Mathf.Lerp(0.2f, 1f, constituent.needs.mood.CurLevel))));
+            this.timeoutTrigger = new Trigger_TicksPassed(Rand.RangeInclusive(GenDate.TicksPerHour, Mathf.RoundToInt(GenDate.TicksPerHour / Mathf.Lerp(0.2f, 1f, constituent.needs.mood.CurLevel))));
             Transition transition2 = new Transition(lordToil_Meeting, lordToil_End);
             transition2.AddTrigger(this.timeoutTrigger);
             transition2.AddPreAction(new TransitionAction_Custom((Action)delegate
@@ -82,7 +82,7 @@ namespace Psychology
                         ThoughtStage complaintStage = new ThoughtStage();
                         float complaintMood = 12f * (realMayor.psyche.GetPersonalityRating(PersonalityNodeDefOf.Empathetic) - 0.33f);
                         //Base complaint mood determined by mayor's Empathetic trait
-                        complaintMood *= this.ticksInSameRoom / GenDate.TicksPerHour*2;
+                        complaintMood *= this.ticksInSameRoom / GenDate.TicksPerHour;
                         //Length of meeting also affects mood
                         complaintMood *= (complaintMood < 0f ? Mathf.Lerp(1.25f, 0.75f, realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
                         //Negative meeting thoughts (unempathetic mayors) mitigated by mayor's politeness
@@ -106,7 +106,7 @@ namespace Psychology
                     ThoughtStage stage = new ThoughtStage();
                     float mood = 5f * (complaint ? -1f - (1f - this.constituent.needs.mood.CurLevel) : 0.25f + Mathf.Max(0f, 0.25f - this.constituent.needs.mood.CurLevel));
                     //Base visit mood determined by the mood level of the constituent
-                    mood *= this.ticksInSameRoom / GenDate.TicksPerHour*2;
+                    mood *= this.ticksInSameRoom / GenDate.TicksPerHour;
                     //Length of meeting also affects mood
                     mood *= (mood < 0f ? Mathf.Lerp(1.25f, 0.75f, realConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
                     //Negative meeting thoughts (unhappy constituents) mitigated by constituent's politeness
@@ -150,11 +150,6 @@ namespace Psychology
         public override string GetReport()
         {
             return "LordReportVisitingMayor".Translate();
-        }
-        
-        private bool IsPartyAboutToEnd()
-        {
-            return this.timeoutTrigger.TicksLeft < 1200;
         }
         
         private bool ShouldBeCalledOff()

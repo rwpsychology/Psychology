@@ -86,30 +86,25 @@ namespace Psychology
                     this.otherPawn.health.RemoveHediff(otherConvo);
                 }
                 string talkDesc;
-                //int talkLength;
                 if (this.ageTicks < 500)
                 {
                     int numShortTalks = int.Parse("NumberOfShortTalks".Translate());
                     talkDesc = "ShortTalk" + Rand.RangeInclusive(1, numShortTalks);
-                    //talkLength = 0;
                 }
                 else if (this.ageTicks < 1500)
                 {
                     int numNormalTalks = int.Parse("NumberOfNormalTalks".Translate());
                     talkDesc = "NormalTalk" + Rand.RangeInclusive(1, numNormalTalks);
-                    //talkLength = 1;
                 }
                 else if (this.ageTicks < 5000)
                 {
                     int numLongTalks = int.Parse("NumberOfLongTalks".Translate());
                     talkDesc = "LongTalk" + Rand.RangeInclusive(1, numLongTalks);
-                    //talkLength = 2;
                 }
                 else
                 {
                     int numEpicTalks = int.Parse("NumberOfEpicTalks".Translate());
                     talkDesc = "EpicTalk" + Rand.RangeInclusive(1, numEpicTalks);
-                    //talkLength = 3;
                 }
                 //We create a dynamic def to hold this thought so that the game won't worry about it being used anywhere else.
                 ThoughtDef def = new ThoughtDef();
@@ -181,8 +176,7 @@ namespace Psychology
                 }
             }
         }
-
-        private float[] talkModifiers = { 0.1f, 1f, 2f, 5f };
+        
         public PsychologyPawn realPawn;
         public PsychologyPawn otherPawn;
         public PersonalityNodeDef topic;

@@ -68,7 +68,24 @@
     </logRulesInitiator>
     <logRulesRecipient>
       <rulesStrings>
-        <li>logentry->[other_nameShortIndef] asked if I wanted to hang out.</li>
+        <li>logentry->[other_nameShortIndef] asked me to hang out.</li>
+      </rulesStrings>
+    </logRulesRecipient>
+  </InteractionDef>
+  
+  <InteractionDef>
+    <defName>PlanDate</defName>
+    <label>planning a date</label>
+    <workerClass>Psychology.InteractionWorker_PlanDate</workerClass>
+    <symbol>Things/Mote/Heart</symbol>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>logentry->Planned a date with [other_nameShortIndef].</li>
+      </rulesStrings>
+    </logRulesInitiator>
+    <logRulesRecipient>
+      <rulesStrings>
+        <li>logentry->[other_nameShortIndef] planned a date with me.</li>
       </rulesStrings>
     </logRulesRecipient>
   </InteractionDef>

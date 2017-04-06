@@ -30,6 +30,7 @@ namespace Psychology
         public void ExposeData()
         {
             Scribe_Values.LookValue(ref this.upbringing, "upbringing", 0, false);
+            Scribe_Values.LookValue(ref this.lastDateTick, "lastDateTick", 0, false);
             Scribe_Collections.LookList(ref this.nodes, "nodes", LookMode.Deep, new object[] { this.pawn });
         }
         
@@ -82,6 +83,7 @@ namespace Psychology
         }
 
         public int upbringing;
+        public int lastDateTick = 0;
         private PsychologyPawn pawn;
         private List<PersonalityNode> nodes;
         private const int PersonalityCategories = 16;

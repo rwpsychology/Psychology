@@ -35,6 +35,6 @@ namespace Psychology
 
         public Pawn[] friends;
         public Job hangOut;
-        public int ticksSinceLastJoy = 0;
+        public int ticksToNextJoy = 0;
     }
 }

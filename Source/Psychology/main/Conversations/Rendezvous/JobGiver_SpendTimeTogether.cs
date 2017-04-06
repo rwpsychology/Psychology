@@ -18,10 +18,6 @@ namespace Psychology
             {
                 return null;
             }
-            /*if ((pawn.Position - friend.Position).LengthHorizontalSquared >= 42f)
-            {
-                return new Job(JobDefOf.Goto, friend, 500, true);
-            }*/
             if (friend.needs.food.CurLevel < 0.33f)
             {
                 return null;
@@ -30,19 +26,14 @@ namespace Psychology
             {
                 return new Job(JobDefOf.LayDown, pawn.ownership.OwnedBed);
             }
-            if(toil.hangOut == null || toil.ticksSinceLastJoy < Find.TickManager.TicksGame - GenDate.TicksPerHour)
+            if(toil.hangOut == null || toil.ticksToNextJoy < Find.TickManager.TicksGame)
             {
                 toil.hangOut = base.TryGiveJob(pawn);
-                toil.ticksSinceLastJoy = Find.TickManager.TicksGame;
+                toil.ticksToNextJoy = Find.TickManager.TicksGame + Rand.RangeInclusive(GenDate.TicksPerHour, GenDate.TicksPerHour * 3);
             }
             if(pawn.needs.joy.CurLevel < 0.8f)
             {
                 return toil.hangOut;
-            }
-            pawn.mindState.nextMoveOrderIsWait = !pawn.mindState.nextMoveOrderIsWait;
-            if (pawn.mindState.nextMoveOrderIsWait)
-            {
-                return null;
             }
             IntVec3 root = WanderUtility.BestCloseWanderRoot(toil.hangOut.targetA.Cell, pawn);
             Func<Pawn, IntVec3, bool> validator = delegate (Pawn wanderer, IntVec3 loc)
@@ -51,15 +42,20 @@ namespace Psychology
                 Room room = wanderRoot.GetRoom(pawn.Map);
                 return room == null || room.IsDoor || WanderUtility.InSameRoom(wanderRoot, loc, pawn.Map);
             };
+            pawn.mindState.nextMoveOrderIsWait = !pawn.mindState.nextMoveOrderIsWait;
             IntVec3 wanderDest = RCellFinder.RandomWanderDestFor(pawn, root, 5f, validator, PawnUtility.ResolveMaxDanger(pawn, Danger.Some));
-            if (!wanderDest.IsValid)
+            if (!wanderDest.IsValid || pawn.mindState.nextMoveOrderIsWait)
             {
+                if ((pawn.Position - friend.Position).LengthHorizontalSquared >= 42f && friend.jobs.curJob.def != JobDefOf.Goto)
+                {
+                    IntVec3 friendDest = RCellFinder.RandomWanderDestFor(pawn, friend.Position, 5f, validator, PawnUtility.ResolveMaxDanger(pawn, Danger.Some));
+                    pawn.Map.pawnDestinationManager.ReserveDestinationFor(pawn, friendDest);
+                    return new Job(JobDefOf.Goto, friendDest);
+                }
                 return null;
             }
             pawn.Map.pawnDestinationManager.ReserveDestinationFor(pawn, wanderDest);
             return new Job(JobDefOf.GotoWander, wanderDest);
         }
-        
-        private const float ReachDestDist = 50f;
     }
 }

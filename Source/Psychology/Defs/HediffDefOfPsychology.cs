@@ -18,5 +18,6 @@ namespace Psychology
         /* Miscellaneous non-health */
         public static HediffDef HoldingConversation;
         public static HediffDef Mayor;
+        public static HediffDef PlannedDate;
     }
 }

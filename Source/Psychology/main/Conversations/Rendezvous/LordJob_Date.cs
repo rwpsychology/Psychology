@@ -12,12 +12,12 @@ using UnityEngine;
 
 namespace Psychology
 {
-    class LordJob_HangOut : LordJob
+    class LordJob_Date : LordJob
     {
-        public LordJob_HangOut()
+        public LordJob_Date()
         { }
 
-        public LordJob_HangOut(Pawn initiator, Pawn recipient)
+        public LordJob_Date(Pawn initiator, Pawn recipient)
         {
             this.initiator = initiator;
             this.recipient = recipient;
@@ -36,8 +36,7 @@ namespace Psychology
             transition.AddTrigger(new Trigger_TickCondition(() => this.initiator.Drafted || this.recipient.Drafted));
             transition.AddTrigger(new Trigger_PawnLostViolently());
             stateGraph.AddTransition(transition);
-            //Time of meeting is affected by the constituents' mood; meetings to complain can take longer than meetings to commend.
-            this.timeoutTrigger = new Trigger_TicksPassed(Rand.RangeInclusive(GenDate.TicksPerHour *3, GenDate.TicksPerHour*5));
+            this.timeoutTrigger = new Trigger_TicksPassed(Rand.RangeInclusive(GenDate.TicksPerHour*4, GenDate.TicksPerHour*6));
             Transition transition2 = new Transition(lordToil_HangOut, lordToil_End);
             transition2.AddTrigger(this.timeoutTrigger);
             stateGraph.AddTransition(transition2);
@@ -52,12 +51,7 @@ namespace Psychology
         
         public override string GetReport()
         {
-            return "LordReportHangingOut".Translate();
-        }
-        
-        private bool IsPartyAboutToEnd()
-        {
-            return this.timeoutTrigger.TicksLeft < 1200;
+            return "LordReportDate".Translate();
         }
         
         private bool ShouldBeCalledOff()

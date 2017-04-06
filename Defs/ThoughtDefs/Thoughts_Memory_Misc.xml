@@ -360,5 +360,19 @@
       </li>
     </stages>
   </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DateCancelled</defName>
+    <durationDays>5</durationDays>
+    <stackLimit>4</stackLimit>
+    <stackedEffectMultiplier>0.25</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>had to cancel a date</label>
+		<description>I was supposed to go on a date with my partner, but something came up in the colony and we had to cancel. I was looking forward to it...</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
   
 </ThoughtDefs>

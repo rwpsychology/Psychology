@@ -237,6 +237,17 @@
 				<node>Intelligent</node>
 			</li>
 		</parents>
+		<preferredDateHours>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+			<li>13</li>
+			<li>14</li>
+			<li>15</li>
+			<li>16</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -304,6 +315,15 @@
 				<node>Emotional</node>
 			</li>
 		</parents>
+		<preferredDateHours>
+			<li>22</li>
+			<li>23</li>
+			<li>0</li>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
