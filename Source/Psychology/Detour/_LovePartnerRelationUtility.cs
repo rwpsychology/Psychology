@@ -60,7 +60,7 @@ namespace Psychology
             float sexualityFactor = 1f;
             PsychologyPawn realGenerated = generated as PsychologyPawn;
             PsychologyPawn realOther = other as PsychologyPawn;
-            if (PsychologyBase.ActivateKinsey() && realGenerated != null && realOther != null)
+            if (PsychologyBase.ActivateKinsey() && realGenerated != null && realOther != null && realGenerated.sexuality != null && realOther.sexuality != null)
             {
                 float kinsey = 3 - realGenerated.sexuality.kinseyRating;
                 float kinsey2 = 3 - realOther.sexuality.kinseyRating;

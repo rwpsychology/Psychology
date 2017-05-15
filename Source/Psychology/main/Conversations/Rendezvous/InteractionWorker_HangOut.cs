@@ -72,7 +72,6 @@ namespace Psychology
             initiator.jobs.StopAll();
             recipient.jobs.StopAll();
             Lord meeting = LordMaker.MakeNewLord(initiator.Faction, new LordJob_HangOut(initiator, recipient), initiator.Map, new Pawn[] { initiator, recipient });
-            Log.Message(initiator.LabelShort + " is hanging out with " + recipient.LabelShort);
         }
         
     }

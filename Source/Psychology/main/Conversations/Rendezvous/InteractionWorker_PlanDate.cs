@@ -43,7 +43,7 @@ namespace Psychology
             Dictionary<int, float> possibleHours = new Dictionary<int, float>();
             for(int i = 0; i < GenDate.HoursPerDay; i++)
             {
-                possibleHours[i] = 0f;
+                possibleHours.Add(i, 0f);
             }
             foreach(PersonalityNodeDef d in DefDatabase<PersonalityNodeDef>.AllDefsListForReading)
             {
@@ -52,7 +52,7 @@ namespace Psychology
                     possibleHours[h] += (Mathf.Pow(Mathf.Abs(0.5f - realInitiator.psyche.GetPersonalityRating(d)),2) / (1.3f - realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive)) + Mathf.Pow(Mathf.Abs(0.5f - realRecipient.psyche.GetPersonalityRating(d)), 2) / (1.3f - realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive)) / 2f);
                 }
             }
-            int hour = possibleHours.Keys.RandomElementByWeight(h => Mathf.Max(0f, possibleHours[h] * RendezvousUtility.TimeAssignmentFactor(initiator, h) * RendezvousUtility.TimeAssignmentFactor(recipient, h)));
+            int hour = possibleHours.Keys.RandomElementByWeight(h => possibleHours[h] * RendezvousUtility.TimeAssignmentFactor(initiator, h) * RendezvousUtility.TimeAssignmentFactor(recipient, h));
             //More Spontaneous couples will plan their dates sooner; possibly even immediately!
             int day = Find.TickManager.TicksGame + Mathf.RoundToInt(GenDate.TicksPerDay*5*(((1f-realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Spontaneous)) + (1f-realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Spontaneous)))/2f));
             Hediff_PlannedDate plannedDate = HediffMaker.MakeHediff(HediffDefOfPsychology.PlannedDate, initiator) as Hediff_PlannedDate;
@@ -62,7 +62,10 @@ namespace Psychology
             initiator.health.AddHediff(plannedDate);
             realInitiator.psyche.lastDateTick = day;
             realRecipient.psyche.lastDateTick = day;
-            Log.Message(initiator.LabelShort + " planned date with " + recipient.LabelShort + " for hour " + hour + " on date " + GenDate.DateFullStringAt(day, Find.WorldGrid.LongLatOf(initiator.Map.Tile)[0]));
+            if (Prefs.DevMode && Prefs.LogVerbose)
+            {
+                Log.Message(initiator.LabelShort + " planned date with " + recipient.LabelShort + " for hour " + hour + " on date " + GenDate.DateFullStringAt(day, Find.WorldGrid.LongLatOf(initiator.Map.Tile)[0]));
+            }
         }
     }
 }

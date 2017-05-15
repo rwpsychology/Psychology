@@ -161,5 +161,11 @@ namespace Psychology.Detour
         {
             PsychologyBase.detoursSexual = false;
         }
+
+        [DetourFallback("_Notify_RescuedBy")]
+        public static void DetourFallbackHandlerRescuedBy(MemberInfo attemptedDestination, MethodInfo existingDestination, Exception detourException)
+        {
+            Log.Warning("[Psychology] Unable to detour Notify_RescuedBy. This is intentional if you've loaded Hospitality before Psychology.");
+        }
     }
 }

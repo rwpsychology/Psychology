@@ -207,6 +207,15 @@
 				<modifier>1</modifier>
 			</li>
 		</traitModifiers>
+		<preferredDateHours>
+			<li>20</li>
+			<li>21</li>
+			<li>22</li>
+			<li>23</li>
+			<li>0</li>
+			<li>1</li>
+			<li>2</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -238,15 +247,12 @@
 			</li>
 		</parents>
 		<preferredDateHours>
-			<li>8</li>
 			<li>9</li>
 			<li>10</li>
 			<li>11</li>
 			<li>12</li>
 			<li>13</li>
 			<li>14</li>
-			<li>15</li>
-			<li>16</li>
 		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
@@ -274,6 +280,12 @@
 				<modifier>-0.6</modifier>
 			</li>
 		</incapableModifiers>
+		<preferredDateHours>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -300,6 +312,17 @@
 				<modifier>-0.6</modifier>
 			</li>
 		</incapableModifiers>
+		<preferredDateHours>
+			<li>16</li>
+			<li>17</li>
+			<li>18</li>
+			<li>19</li>
+			<li>20</li>
+			<li>21</li>
+			<li>22</li>
+			<li>23</li>
+			<li>0</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -316,13 +339,11 @@
 			</li>
 		</parents>
 		<preferredDateHours>
+			<li>18</li>
+			<li>19</li>
+			<li>20</li>
+			<li>21</li>
 			<li>22</li>
-			<li>23</li>
-			<li>0</li>
-			<li>1</li>
-			<li>2</li>
-			<li>3</li>
-			<li>4</li>
 		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
@@ -339,6 +360,15 @@
 				<node>Emotional</node>
 			</li>
 		</parents>
+		<preferredDateHours>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+			<li>13</li>
+			<li>14</li>
+			<li>15</li>
+			<li>16</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -381,6 +411,11 @@
 				<modifier>0.75</modifier>
 			</li>
 		</traitModifiers>
+		<preferredDateHours>
+			<li>16</li>
+			<li>17</li>
+			<li>18</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -402,6 +437,12 @@
 				<modifier>0.6</modifier>
 			</li>
 		</traitModifiers>
+		<preferredDateHours>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 
 	<Psychology.PersonalityNodeDef>
@@ -429,6 +470,13 @@
 				<modifier>-0.6</modifier>
 			</li>
 		</incapableModifiers>
+		<preferredDateHours>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+			<li>13</li>
+			<li>14</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -485,6 +533,17 @@
 				<modifier>-0.3</modifier>
 			</li>
 		</traitModifiers>
+		<preferredDateHours>
+			<li>18</li>
+			<li>19</li>
+			<li>20</li>
+			<li>21</li>
+			<li>22</li>
+			<li>23</li>
+			<li>0</li>
+			<li>1</li>
+			<li>2</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -514,6 +573,15 @@
 				<modifier>-0.8</modifier>
 			</li>
 		</traitModifiers>
+		<preferredDateHours>
+			<li>14</li>
+			<li>15</li>
+			<li>16</li>
+			<li>17</li>
+			<li>18</li>
+			<li>19</li>
+			<li>20</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -532,6 +600,13 @@
 				<node>Logical</node>
 			</li>
 		</parents>
+		<preferredDateHours>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -595,6 +670,12 @@
 				<modifier>-0.5</modifier>
 			</li>
 		</incapableModifiers>
+		<preferredDateHours>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -614,6 +695,12 @@
 				<modifier>1</modifier>
 			</li>
 		</parents>
+		<preferredDateHours>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -651,6 +738,13 @@
 				<modifier>-1</modifier>
 			</li>
 		</traitModifiers>
+		<preferredDateHours>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+			<li>13</li>
+			<li>14</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -716,6 +810,13 @@
 				<modifier>0.1</modifier>
 			</li>
 		</traitModifiers>
+		<preferredDateHours>
+			<li>18</li>
+			<li>19</li>
+			<li>20</li>
+			<li>21</li>
+			<li>22</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -767,6 +868,14 @@
 				<modifier>-0.2</modifier>
 			</li>
 		</traitModifiers>
+		<preferredDateHours>
+			<li>17</li>
+			<li>18</li>
+			<li>19</li>
+			<li>20</li>
+			<li>21</li>
+			<li>22</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -795,6 +904,12 @@
 				<modifier>0.6</modifier>
 			</li>
 		</traitModifiers>
+		<preferredDateHours>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+		</preferredDateHours>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>

@@ -33,7 +33,7 @@ namespace Psychology.Detour
                 if (realRecipient != null && realInitiator != null)
                 {
                     AddExLover(realInitiator, realRecipient);
-                    AddExLover(realRecipient, realInitiator);
+                    //AddExLover(realRecipient, realInitiator);
                     AddBrokeUpOpinion(realRecipient, realInitiator);
                     AddBrokeUpMood(realRecipient, realInitiator);
                     AddBrokeUpMood(realInitiator, realRecipient);
@@ -101,6 +101,8 @@ namespace Psychology.Detour
 
         public static void AddExLover(PsychologyPawn lover, PsychologyPawn ex)
         {
+            /*
+             * I don't have time for this
             PawnRelationDef exLover = new PawnRelationDef();
             exLover.defName = "ExLover" + lover.LabelShort + Find.TickManager.TicksGame;
             exLover.label = "ex-lover";
@@ -109,13 +111,14 @@ namespace Psychology.Detour
             exLover.implied = false;
             exLover.reflexive = false;
             lover.relations.AddDirectRelation(exLover, ex);
-            /* Why do you make me do these things, Tynan? */
             int startTicks = (Current.ProgramState != ProgramState.Playing) ? 0 : Find.TickManager.TicksGame;
             lover.relations.DirectRelations.Add(new DirectPawnRelationDynamic(exLover, ex, startTicks));
             (typeof(Pawn_RelationsTracker).GetField("pawnsWithDirectRelationsWithMe", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(ex.relations) as HashSet<Pawn>).Add(lover);
             var GainedOrLostDirectRelation = typeof(Pawn_RelationsTracker).GetMethod("GainedOrLostDirectRelation", BindingFlags.Instance | BindingFlags.NonPublic);
             GainedOrLostDirectRelation.Invoke(lover, new object[] { });
             GainedOrLostDirectRelation.Invoke(ex, new object[] { });
+             */
+            lover.relations.AddDirectRelation(PawnRelationDefOf.ExLover, ex);
         }
 
         public static void AddBrokeUpOpinion(PsychologyPawn lover, PsychologyPawn ex)
