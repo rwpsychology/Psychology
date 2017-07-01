@@ -9,16 +9,16 @@ using UnityEngine;
 
 namespace Psychology
 {
-    public class IncidentWorker_Election : IncidentWorker_MakeMapCondition
+    public class IncidentWorker_Election : IncidentWorker_MakeGameCondition
     {
         public override bool TryExecute(IncidentParms parms)
         {
             Map map = (Map)parms.target;
             FactionBase factionBase = (FactionBase)Find.WorldObjects.ObjectsAt(map.Tile).ToList().Find(obj => obj is FactionBase);
             int duration = Mathf.RoundToInt(this.def.durationDays.RandomInRange * GenDate.TicksPerDay);
-            MapCondition cond = MapConditionMaker.MakeCondition(this.def.mapCondition, duration, 0);
-            map.mapConditionManager.RegisterCondition(cond);
-            Find.LetterStack.ReceiveLetter("LetterLabelNewElection".Translate(factionBase.Label), "LetterNewElection".Translate(factionBase.Label), LetterType.Good, new TargetInfo(map.Center, map, false), null);
+            GameCondition cond = GameConditionMaker.MakeCondition(this.def.gameCondition, duration, 0);
+            map.gameConditionManager.RegisterCondition(cond);
+            Find.LetterStack.ReceiveLetter("LetterLabelNewElection".Translate(factionBase.Label), "LetterNewElection".Translate(factionBase.Label), LetterDefOf.Good, new TargetInfo(map.Center, map, false), null);
             return true;
         }
     }

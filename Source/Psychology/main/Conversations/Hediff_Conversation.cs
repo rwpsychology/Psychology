@@ -25,9 +25,9 @@ namespace Psychology
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_References.LookReference(ref this.otherPawn, "otherPawn");
-            Scribe_Defs.LookDef(ref this.topic, "topic");
-            Scribe_Values.LookValue(ref this.waveGoodbye, "waveGoodbye");
+            Scribe_References.Look(ref this.otherPawn, "otherPawn");
+            Scribe_Defs.Look(ref this.topic, "topic");
+            Scribe_Values.Look(ref this.waveGoodbye, "waveGoodbye");
         }
 
         public override void Tick()
@@ -140,7 +140,7 @@ namespace Psychology
                  */
                 if (Rand.Value < Mathf.InverseLerp(0f, this.realPawn.psyche.TotalThoughtOpinion(this.otherPawn), 250f+Mathf.Abs(stage.baseOpinionOffset)) && stage.baseOpinionOffset != 0)
                 {
-                    this.pawn.needs.mood.thoughts.memories.TryGainMemoryThought(def, this.otherPawn);
+                    this.pawn.needs.mood.thoughts.memories.TryGainMemory(def, this.otherPawn);
                 }
                 if (this.waveGoodbye && this.pawn.Map != null)
                 {

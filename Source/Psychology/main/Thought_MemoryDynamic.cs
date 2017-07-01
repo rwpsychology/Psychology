@@ -21,11 +21,11 @@ namespace Psychology
                 this.def.defName = "Dynamic";
             }
             base.ExposeData();
-            Scribe_Values.LookValue(ref this.topic, "topic", "Dynamic");
-            Scribe_Values.LookValue(ref this.label, "label", "dynamic thought");
-            Scribe_Values.LookValue(ref this.description, "description", "a dynamic thought.");
-            Scribe_Values.LookValue(ref this.duration, "duration", 5f);
-            Scribe_Values.LookValue(ref this.baseMoodEffect, "realMoodEffect", 5f);
+            Scribe_Values.Look(ref this.topic, "topic", "Dynamic");
+            Scribe_Values.Look(ref this.label, "label", "dynamic thought");
+            Scribe_Values.Look(ref this.description, "description", "a dynamic thought.");
+            Scribe_Values.Look(ref this.duration, "duration", 5f);
+            Scribe_Values.Look(ref this.baseMoodEffect, "realMoodEffect", 5f);
             ThoughtDef def = new ThoughtDef();
             def.defName = this.topic;
             def.label = "dynamic thought";

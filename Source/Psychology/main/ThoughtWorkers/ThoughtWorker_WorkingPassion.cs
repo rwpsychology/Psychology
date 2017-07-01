@@ -69,7 +69,7 @@ namespace Psychology
             else if (job == JobDefOf.Mine)
                 skill = SkillDefOf.Mining;
             else if (job == JobDefOf.Research)
-                skill = SkillDefOf.Research;
+                skill = SkillDefOf.Intellectual;
             else if (job == JobDefOf.Hunt)
                 skill = SkillDefOf.Shooting;
             else if (job == JobDefOf.AttackStatic) //no idea if this is right

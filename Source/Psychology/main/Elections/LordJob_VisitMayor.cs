@@ -57,10 +57,10 @@ namespace Psychology
         
         public override void ExposeData()
         {
-            Scribe_Values.LookValue(ref this.spot, "spot", default(IntVec3));
-            Scribe_References.LookReference(ref this.constituent, "constituent");
-            Scribe_References.LookReference(ref this.mayor, "mayor");
-            Scribe_Values.LookValue(ref this.complaint, "complaining");
+            Scribe_Values.Look(ref this.spot, "spot", default(IntVec3));
+            Scribe_References.Look(ref this.constituent, "constituent");
+            Scribe_References.Look(ref this.mayor, "mayor");
+            Scribe_Values.Look(ref this.complaint, "complaining");
         }
         
         private void Finished()
@@ -95,7 +95,7 @@ namespace Psychology
                         complaintStage.baseMoodEffect = Mathf.RoundToInt(complaintMood);
                         complaintDef.defName = this.constituent.GetHashCode() + "MayorComplaint" + complaintStage.baseMoodEffect;
                         complaintDef.stages.Add(complaintStage);
-                        this.constituent.needs.mood.thoughts.memories.TryGainMemoryThought(complaintDef, this.mayor);
+                        this.constituent.needs.mood.thoughts.memories.TryGainMemory(complaintDef, this.mayor);
                     }
                     ThoughtDef visitDef = new ThoughtDef();
                     visitDef.label = "MayorVisited";
@@ -117,7 +117,7 @@ namespace Psychology
                     stage.baseMoodEffect = Mathf.RoundToInt(mood);
                     visitDef.defName = this.mayor.GetHashCode() + "MayorVisited" + stage.baseMoodEffect;
                     visitDef.stages.Add(stage);
-                    this.mayor.needs.mood.thoughts.memories.TryGainMemoryThought(visitDef, this.constituent);
+                    this.mayor.needs.mood.thoughts.memories.TryGainMemory(visitDef, this.constituent);
                     InteractionDef endConversation = new InteractionDef();
                     endConversation.defName = "EndConversation";
                     FieldInfo RuleStrings = typeof(RulePack).GetField("rulesStrings", BindingFlags.Instance | BindingFlags.NonPublic);
@@ -154,7 +154,7 @@ namespace Psychology
         
         private bool ShouldBeCalledOff()
         {
-            return !PartyUtility.AcceptableMapConditionsToContinueParty(base.Map) || this.constituent.GetTimeAssignment() == TimeAssignmentDefOf.Work || this.mayor.GetTimeAssignment() == TimeAssignmentDefOf.Work || (!this.spot.Roofed(base.Map) && !JoyUtility.EnjoyableOutsideNow(base.Map, null));
+            return !PartyUtility.AcceptableGameConditionsToContinueParty(base.Map) || this.constituent.GetTimeAssignment() == TimeAssignmentDefOf.Work || this.mayor.GetTimeAssignment() == TimeAssignmentDefOf.Work || (!this.spot.Roofed(base.Map) && !JoyUtility.EnjoyableOutsideNow(base.Map, null));
         }
         
         private IntVec3 spot;

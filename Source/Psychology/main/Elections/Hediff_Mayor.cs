@@ -13,8 +13,8 @@ namespace Psychology
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.LookValue(ref this.yearElected, "yearElected", 0);
-            Scribe_Values.LookValue(ref this.worldTileElectedOn, "worldTileElectedOn", 0);
+            Scribe_Values.Look(ref this.yearElected, "yearElected", 0);
+            Scribe_Values.Look(ref this.worldTileElectedOn, "worldTileElectedOn", 0);
         }
 
         public override void PostMake()

@@ -19,11 +19,11 @@ namespace Psychology
             {
                 return false;
             }
-            if (pawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Hearing) == 0f)
+            if (pawn.health.capacities.GetLevel(PawnCapacityDefOf.Hearing) == 0f)
             {
                 return false;
             }
-            if (other.health.capacities.GetEfficiency(PawnCapacityDefOf.Talking) == 0f)
+            if (other.health.capacities.GetLevel(PawnCapacityDefOf.Talking) == 0f)
             {
                 return false;
             }

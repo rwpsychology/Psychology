@@ -23,7 +23,7 @@ namespace Psychology
                         }
                         else if (pawn.jobs.curDriver.asleep)
                         {
-                            pawn.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOfPsychology.DreamNightmare);
+                            pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.DreamNightmare);
                         }
                     }
                     break;

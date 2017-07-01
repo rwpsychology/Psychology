@@ -22,7 +22,7 @@ namespace Psychology
             {
                 return null;
             }
-            if(LovePartnerRelationUtility.LovePartnerRelationExists(pawn, friend) && !pawn.jobs.curDriver.layingDown && ((pawn.GetHashCode() + friend.GetHashCode()) ^ (GenLocalDate.DayOfYear(pawn) + GenLocalDate.Year(pawn) + (int)(GenLocalDate.DayPercent(pawn) * 5) * 60) * 391) % 24 == 0)
+            if(LovePartnerRelationUtility.LovePartnerRelationExists(pawn, friend) && pawn.jobs.curDriver.layingDown == LayingDownState.NotLaying && ((pawn.GetHashCode() + friend.GetHashCode()) ^ (GenLocalDate.DayOfYear(pawn) + GenLocalDate.Year(pawn) + (int)(GenLocalDate.DayPercent(pawn) * 5) * 60) * 391) % 24 == 0)
             {
                 return new Job(JobDefOf.LayDown, pawn.ownership.OwnedBed);
             }
@@ -40,7 +40,7 @@ namespace Psychology
             {
                 IntVec3 wanderRoot = root;
                 Room room = wanderRoot.GetRoom(pawn.Map);
-                return room == null || room.IsDoor || WanderUtility.InSameRoom(wanderRoot, loc, pawn.Map);
+                return room == null || WanderUtility.InSameRoom(wanderRoot, loc, pawn.Map);
             };
             pawn.mindState.nextMoveOrderIsWait = !pawn.mindState.nextMoveOrderIsWait;
             IntVec3 wanderDest = RCellFinder.RandomWanderDestFor(pawn, root, 5f, validator, PawnUtility.ResolveMaxDanger(pawn, Danger.Some));

@@ -99,7 +99,7 @@
     </comps>
 		<hediffGivers>
 			<li Class="HediffGiver_RandomDrugEffect">
-				<hediff>ChemicalDamageBrain</hediff>
+				<hediff>ChemicalDamageModerate</hediff>
 				<minSeverity>0.50</minSeverity>
 				<baseMtbDays>240</baseMtbDays>
 				<partsToAffect>

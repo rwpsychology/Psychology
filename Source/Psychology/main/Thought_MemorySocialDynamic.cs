@@ -21,9 +21,9 @@ namespace Psychology
                 this.def.defName = "DynamicSocial";
             }
             base.ExposeData();
-            Scribe_Values.LookValue(ref this.topic, "topic", "DynamicSocial");
-            Scribe_Values.LookValue(ref this.label, "label", "conversation");
-            Scribe_Values.LookValue(ref this.baseOpinionOffset, "realOpinionOffset", 5);
+            Scribe_Values.Look(ref this.topic, "topic", "DynamicSocial");
+            Scribe_Values.Look(ref this.label, "label", "conversation");
+            Scribe_Values.Look(ref this.baseOpinionOffset, "realOpinionOffset", 5);
             ThoughtDef def = new ThoughtDef();
             def.defName = this.topic;
             def.label = "conversation";

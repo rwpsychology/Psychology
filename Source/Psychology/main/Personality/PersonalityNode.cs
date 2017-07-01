@@ -24,12 +24,9 @@ namespace Psychology
                  * Two pawns with the same upbringing will always have the same core personality ratings.
                  * Pawns will never have conversations about core nodes, they exist only to influence child nodes.
                  */
-                Rand.PushSeed();
                 int defSeed = 0;
                 this.def.defName.ToList().ForEach((char c) => defSeed += c);
-                Rand.Seed = this.pawn.psyche.upbringing+defSeed+Find.World.info.Seed;
-                this.rawRating = Rand.Value;
-                Rand.PopSeed();
+                this.rawRating = Rand.ValueSeeded(this.pawn.psyche.upbringing + defSeed + Find.World.info.Seed);
             }
             else
             {
@@ -39,8 +36,8 @@ namespace Psychology
 
         public void ExposeData()
         {
-            Scribe_Defs.LookDef(ref this.def, "def");
-            Scribe_Values.LookValue(ref this.rawRating, "rawRating", -1f, false);
+            Scribe_Defs.Look(ref this.def, "def");
+            Scribe_Values.Look(ref this.rawRating, "rawRating", -1f, false);
         }
 
         public float AdjustForParents(float rating)
@@ -101,10 +98,7 @@ namespace Psychology
         {
             if (this.def.femaleModifier > 0f && this.pawn.gender == Gender.Female && this.pawn.sexuality != null && PsychologyBase.ActivateKinsey())
             {
-                Rand.PushSeed();
-                Rand.Seed = this.pawn.HashOffset();
-                rating = (Rand.Value < 0.8f ? rating * Mathf.Lerp(this.def.femaleModifier, 1f, (this.pawn.sexuality.kinseyRating / 6)) : rating);
-                Rand.PopSeed();
+                rating = (Rand.ValueSeeded(pawn.HashOffset()) < 0.8f ? rating * Mathf.Lerp(this.def.femaleModifier, 1f, (this.pawn.sexuality.kinseyRating / 6)) : rating);
             }
             else if(this.def.femaleModifier > 0f && this.pawn.gender == Gender.Female)
             {
@@ -166,10 +160,10 @@ namespace Psychology
             {
                 if(cachedRating < 0f || this.pawn.IsHashIntervalTick(100))
                 {
-                    float adjustedRating = AdjustForParents(this.rawRating);
-                    adjustedRating = AdjustForCircumstance(adjustedRating);
+                    float adjustedRating = AdjustForCircumstance(this.rawRating);
                     adjustedRating = AdjustHook(adjustedRating);
                     adjustedRating = AdjustGender(adjustedRating);
+                    adjustedRating = AdjustForParents(adjustedRating);
                     cachedRating = Mathf.Clamp01(adjustedRating);
                 }
                 return cachedRating;

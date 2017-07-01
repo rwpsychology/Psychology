@@ -5,7 +5,7 @@ using System.Text;
 using RimWorld;
 using Verse;
 using Verse.AI;
-using HugsLib.Source.Detour;
+using Harmony;
 using UnityEngine;
 
 namespace Psychology
@@ -19,19 +19,16 @@ namespace Psychology
 
         public void Initialize()
         {
-            Rand.PushSeed();
-            Rand.Seed = this.pawn.HashOffset();
-            this.upbringing = Rand.RangeInclusive(1, PersonalityCategories);
-            Rand.PopSeed();
+            this.upbringing = Mathf.RoundToInt(Rand.ValueSeeded(this.pawn.HashOffset()) * (PersonalityCategories-1))+1;
             this.nodes = new List<PersonalityNode>();
             DefDatabase<PersonalityNodeDef>.AllDefsListForReading.ForEach((PersonalityNodeDef def) => nodes.Add(PersonalityNodeMaker.MakeNode(def, this.pawn)));
         }
 
         public void ExposeData()
         {
-            Scribe_Values.LookValue(ref this.upbringing, "upbringing", 0, false);
-            Scribe_Values.LookValue(ref this.lastDateTick, "lastDateTick", 0, false);
-            Scribe_Collections.LookList(ref this.nodes, "nodes", LookMode.Deep, new object[] { this.pawn });
+            Scribe_Values.Look(ref this.upbringing, "upbringing", 0, false);
+            Scribe_Values.Look(ref this.lastDateTick, "lastDateTick", 0, false);
+            Scribe_Collections.Look(ref this.nodes, "nodes", LookMode.Deep, new object[] { this.pawn });
         }
         
         public float GetPersonalityRating(PersonalityNodeDef def)

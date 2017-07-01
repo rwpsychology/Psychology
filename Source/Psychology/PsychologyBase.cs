@@ -9,6 +9,7 @@ using Verse;
 using Verse.AI.Group;
 using Verse.Grammar;
 using HugsLib.Settings;
+using Harmony;
 using UnityEngine;
 
 namespace Psychology
@@ -160,10 +161,10 @@ namespace Psychology
                         if (!detoursSexual)
                         {
                             Logger.Warning("KinseyDetourDisable".Translate());
-                            TraitDefOfPsychology.Codependent.SetCommonality(0f);
-                            TraitDefOfPsychology.Lecher.SetCommonality(0f);
-                            TraitDefOfPsychology.OpenMinded.SetCommonality(0f);
-                            TraitDefOfPsychology.Polygamous.SetCommonality(0f);
+                            Traverse.Create(TraitDefOfPsychology.Codependent).Field("commonality").SetValue(0f);
+                            Traverse.Create(TraitDefOfPsychology.Lecher).Field("commonality").SetValue(0f);
+                            Traverse.Create(TraitDefOfPsychology.OpenMinded).Field("commonality").SetValue(0f);
+                            Traverse.Create(TraitDefOfPsychology.Polygamous).Field("commonality").SetValue(0f);
                         }
                     }
                     kinsey = false;
@@ -175,7 +176,7 @@ namespace Psychology
                     TraitDef gay = TraitDef.Named("Gay");
                     if (gay != null)
                     {
-                        gay.SetCommonality(0f);
+                        Traverse.Create(gay).Field("commonality").SetValue(0f);
                     }
                 }
                 
@@ -298,6 +299,7 @@ namespace Psychology
                 {
                     knowColonistOrganHarvested = ModifyThoughtStages(knowColonistOrganHarvested, new int[] { -4 });
                 }
+                AddNullifyingTraits("RebuffedMyRomanceAttempt", new TraitDef[] { TraitDefOfPsychology.Lecher });
 
                 ReplaceThoughtWorker("CabinFever", typeof(ThoughtWorker_CabinFever));
                 ReplaceThoughtWorker("Disfigured", typeof(ThoughtWorker_Disfigured));
@@ -500,7 +502,7 @@ namespace Psychology
                             Lord meeting = LordMaker.MakeNewLord(mayor.Faction, new LordJob_VisitMayor(gather, potentialConstituent, mayor, (potentialConstituent.needs.mood.CurLevel < 0.4f)), mayor.Map, pawns);
                             if (!foundBed)
                             {
-                                mayor.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOfPsychology.MayorNoBedroom);
+                                mayor.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.MayorNoBedroom);
                             }
                         }
                     }
@@ -532,7 +534,7 @@ namespace Psychology
                         continue;
                     }
                     //If an election is already being held, don't start a new one.
-                    if (factionBase.Map.mapConditionManager.ConditionIsActive(MapConditionDefOfPsychology.Election) || factionBase.Map.lordManager.lords.Find(l => l.LordJob is LordJob_Joinable_Election) != null)
+                    if (factionBase.Map.gameConditionManager.ConditionIsActive(GameConditionDefOfPsychology.Election) || factionBase.Map.lordManager.lords.Find(l => l.LordJob is LordJob_Joinable_Election) != null)
                     {
                         continue;
                     }

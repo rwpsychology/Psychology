@@ -31,7 +31,7 @@ namespace Psychology
                     this.rulesInit.Add("logentry->"+"ConversationEnd".Translate()+" [other_nameShortIndef].");
                 }
                 string ruleText = this.rulesInit[i];
-                Scribe_Values.LookValue(ref ruleText, "rulesInit" + i, "logentry->" + "ConversationEnd".Translate() + " [other_nameShortIndef].");
+                Scribe_Values.Look(ref ruleText, "rulesInit" + i, "logentry->" + "ConversationEnd".Translate() + " [other_nameShortIndef].");
                 this.rulesInit[i] = ruleText;
             }
             for (int i = 0; i < rulesRecip.Capacity; i++)
@@ -41,7 +41,7 @@ namespace Psychology
                     this.rulesRecip.Add("logentry->" + "ConversationEnd".Translate() + " [other_nameShortIndef].");
                 }
                 string ruleText = this.rulesRecip[i];
-                Scribe_Values.LookValue(ref ruleText, "rulesRecip" + i, "logentry->" + "ConversationEnd".Translate() + " [other_nameShortIndef].");
+                Scribe_Values.Look(ref ruleText, "rulesRecip" + i, "logentry->" + "ConversationEnd".Translate() + " [other_nameShortIndef].");
                 this.rulesRecip[i] = ruleText;
             }
             FieldInfo IntDef = typeof(PlayLogEntry_Interaction).GetField("intDef", BindingFlags.Instance | BindingFlags.NonPublic);

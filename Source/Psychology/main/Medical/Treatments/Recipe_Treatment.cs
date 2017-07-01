@@ -24,7 +24,7 @@ namespace Psychology
         private bool CheckTreatmentFail(Pawn surgeon, Pawn patient)
         {
             float num = 1f;
-            float num2 = surgeon.GetStatValue(StatDefOf.SurgerySuccessChance, true);
+            float num2 = surgeon.GetStatValue(StatDefOf.MedicalSurgerySuccessChance, true);
             num *= Mathf.Min(num2*2,1f);
             float num3 = surgeon.GetStatValue(StatDefOf.SocialImpact, true);
             num *= num3;
@@ -57,7 +57,7 @@ namespace Psychology
                 return;
             }
             ThoughtDef failure = ThoughtDefOfPsychology.TreatmentFailed;
-            pawn.needs.mood.thoughts.memories.TryGainMemoryThought(failure);
+            pawn.needs.mood.thoughts.memories.TryGainMemory(failure);
             Thought_Memory failureThought = pawn.needs.mood.thoughts.memories.Memories.Where(memory => memory.def.workerClass.Name == "Thought_TreatmentFailed").OrderBy(memory => memory.age).Last();
             if(failureThought != null)
             {

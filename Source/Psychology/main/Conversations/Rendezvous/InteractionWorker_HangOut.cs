@@ -27,7 +27,7 @@ namespace Psychology
             {
                 return 0f;
             }
-            if (!PartyUtility.AcceptableMapConditionsToStartParty(initiator.Map))
+            if (!PartyUtility.AcceptableGameConditionsToStartParty(initiator.Map))
             {
                 return 0f;
             }

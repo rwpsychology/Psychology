@@ -4,8 +4,9 @@
   <IncidentDef>
     <defName>Election</defName>
     <label>election</label>
-    <targetType>BaseMap</targetType>
-    <mapCondition>Election</mapCondition>
+	<category>Misc</category>
+    <targetType>MapPlayerHome</targetType>
+    <gameCondition>Election</gameCondition>
     <workerClass>Psychology.IncidentWorker_Election</workerClass>
     <baseChance>0</baseChance> <!-- Manual fire only -->
     <minRefireDays>45</minRefireDays>

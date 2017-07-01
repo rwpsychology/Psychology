@@ -5,15 +5,14 @@ using System.Text;
 using RimWorld;
 using Verse;
 using Verse.AI;
-using Psychology.Detour;
 
 namespace Psychology
 {
     public class PsychologyPawn : Pawn
     {
-        public override void SpawnSetup(Map map)
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
-            base.SpawnSetup(map);
+            base.SpawnSetup(map, respawningAfterLoad);
             if(this.RaceProps.Humanlike)
             {
                 /* Fixes any improperly-configured psychologies. */
@@ -33,7 +32,7 @@ namespace Psychology
                 if (this.sexuality == null && PsychologyBase.ActivateKinsey())
                 {
                     this.sexuality = new Pawn_SexualityTracker(this);
-                    _PawnGenerator.GenerateSexuality(this);
+                    this.sexuality.GenerateSexuality();
                 }
             }
         }
@@ -41,11 +40,11 @@ namespace Psychology
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Deep.LookDeep(ref this.sexuality, "sexuality", new object[]
+            Scribe_Deep.Look(ref this.sexuality, "sexuality", new object[]
             {
                 this
             });
-            Scribe_Deep.LookDeep(ref this.psyche, "psyche", new object[]
+            Scribe_Deep.Look(ref this.psyche, "psyche", new object[]
             {
                 this
             });

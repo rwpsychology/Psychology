@@ -14,9 +14,9 @@ namespace Psychology
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_References.LookReference(ref this.partner, "partner");
-            Scribe_Values.LookValue(ref this.hour, "hour", 0);
-            Scribe_Values.LookValue(ref this.day, "day", 0);
+            Scribe_References.Look(ref this.partner, "partner");
+            Scribe_Values.Look(ref this.hour, "hour", 0);
+            Scribe_Values.Look(ref this.day, "day", 0);
         }
 
         public override void Tick()
@@ -29,7 +29,7 @@ namespace Psychology
             else if(Find.TickManager.TicksGame >= this.day && GenLocalDate.HourOfDay(this.pawn) == this.hour)
             {
                 if(this.pawn.GetTimeAssignment() != TimeAssignmentDefOf.Work && this.partner.GetTimeAssignment() != TimeAssignmentDefOf.Work && !this.pawn.Drafted && !this.partner.Drafted
-                    && PartyUtility.AcceptableMapConditionsToStartParty(this.pawn.Map) && this.pawn.Map == this.partner.Map)
+                    && PartyUtility.AcceptableGameConditionsToStartParty(this.pawn.Map) && this.pawn.Map == this.partner.Map)
                 {
                     pawn.jobs.StopAll();
                     if (pawn.Awake() && partner.Awake())
@@ -38,17 +38,17 @@ namespace Psychology
                     }
                     else if(pawn.Awake())
                     {
-                        this.pawn.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOfPsychology.MissedDate, this.partner);
+                        this.pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.MissedDate, this.partner);
                     }
                     else
                     {
-                        this.partner.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOfPsychology.MissedDate, this.pawn);
+                        this.partner.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.MissedDate, this.pawn);
                     }
                 }
                 else
                 {
-                    this.pawn.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOfPsychology.DateCancelled);
-                    this.partner.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOfPsychology.DateCancelled);
+                    this.pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.DateCancelled);
+                    this.partner.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.DateCancelled);
                 }
                 this.pawn.health.RemoveHediff(this);
             }

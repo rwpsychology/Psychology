@@ -8,7 +8,7 @@
 		<workAmount>4500</workAmount>
 		<targetsBodyPart>true</targetsBodyPart>
 		<hideBodyPartNames>true</hideBodyPartNames>
-		<anesthesize>false</anesthesize>
+		<anesthetize>false</anesthetize>
 		<skillRequirements>
 			<li>
 				<skill>Medicine</skill>

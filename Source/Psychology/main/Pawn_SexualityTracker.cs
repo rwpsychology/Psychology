@@ -5,7 +5,6 @@ using System.Text;
 using RimWorld;
 using Verse;
 using Verse.AI;
-using HugsLib.Source.Detour;
 using UnityEngine;
 
 namespace Psychology
@@ -39,10 +38,18 @@ namespace Psychology
 
         public void ExposeData()
         {
-            Scribe_Values.LookValue(ref this.kinseyRating, "kinseyRating", 0, false);
-            Scribe_Values.LookValue(ref this.sexDrive, "sexDrive", 1, false);
-            Scribe_Values.LookValue(ref this.romanticDrive, "romanticDrive", 1, false);
-            Scribe_Collections.LookDictionary(ref this.knownSexualities, "knownSexualities", LookMode.Reference, LookMode.Value, ref this.knownSexualitiesWorkingKeys, ref this.knownSexualitiesWorkingValues);
+            Scribe_Values.Look(ref this.kinseyRating, "kinseyRating", 0, false);
+            Scribe_Values.Look(ref this.sexDrive, "sexDrive", 1, false);
+            Scribe_Values.Look(ref this.romanticDrive, "romanticDrive", 1, false);
+            Scribe_Collections.Look(ref this.knownSexualities, "knownSexualities", LookMode.Reference, LookMode.Value, ref this.knownSexualitiesWorkingKeys, ref this.knownSexualitiesWorkingValues);
+        }
+
+        public void GenerateSexuality()
+        {
+            Log.Message("Generating sexuality for " + pawn.LabelShort);
+            kinseyRating = RandKinsey();
+            sexDrive = Mathf.Clamp01(Rand.Gaussian(1.1f, 0.26f));
+            romanticDrive = Mathf.Clamp01(Rand.Gaussian(1.1f, 0.26f));
         }
 
         /*
@@ -83,9 +90,65 @@ namespace Psychology
         {
             get
             {
-                return Mathf.InverseLerp(0f, 0.5f, this.sexDrive);
+                float ageFactor = 1f;
+                if (pawn.gender == Gender.Male) {
+                    ageFactor = MaleSexDriveCurve.Evaluate(pawn.ageTracker.AgeBiologicalYears);
+                }
+                else if (pawn.gender == Gender.Female)
+                {
+                    ageFactor = FemaleSexDriveCurve.Evaluate(pawn.ageTracker.AgeBiologicalYears);
+                }
+                return Mathf.Clamp01(ageFactor * Mathf.InverseLerp(0f, 0.5f, this.sexDrive));
             }
         }
+
+        private static readonly SimpleCurve FemaleSexDriveCurve = new SimpleCurve
+        {
+            {
+                new CurvePoint(10, 0f),
+                true
+            },
+            {
+                new CurvePoint(30, 3f),
+                true
+            },
+            {
+                new CurvePoint(65, 1f),
+                true
+            },
+            {
+                new CurvePoint(80, 0.6f),
+                true
+            }
+        };
+
+        private static readonly SimpleCurve MaleSexDriveCurve = new SimpleCurve
+        {
+            {
+                new CurvePoint(12, 0f),
+                true
+            },
+            {
+                new CurvePoint(16, 3f),
+                true
+            },
+            {
+                new CurvePoint(21, 2f),
+                true
+            },
+            {
+                new CurvePoint(25, 1f),
+                true
+            },
+            {
+                new CurvePoint(40, 0.8f),
+                true
+            },
+            {
+                new CurvePoint(65, 0.6f),
+                true
+            }
+        };
 
         public float AdjustedRomanticDrive
         {

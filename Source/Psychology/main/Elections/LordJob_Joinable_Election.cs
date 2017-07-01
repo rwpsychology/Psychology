@@ -52,11 +52,11 @@ namespace Psychology
         
         public override void ExposeData()
         {
-            Scribe_Values.LookValue(ref this.spot, "spot", default(IntVec3));
-            Scribe_Values.LookValue(ref this.baseName, "settlementName", "a settlement");
-            Scribe_Collections.LookList(ref this.candidates, "candidates", LookMode.Deep, new object[0]);
-            Scribe_Collections.LookList(ref this.voters, "voters", LookMode.Reference, new object[0]);
-            Scribe_Collections.LookList(ref this.votes, "votes", LookMode.Value, new object[0]);
+            Scribe_Values.Look(ref this.spot, "spot", default(IntVec3));
+            Scribe_Values.Look(ref this.baseName, "settlementName", "a settlement");
+            Scribe_Collections.Look(ref this.candidates, "candidates", LookMode.Deep, new object[0]);
+            Scribe_Collections.Look(ref this.voters, "voters", LookMode.Reference, new object[0]);
+            Scribe_Collections.Look(ref this.votes, "votes", LookMode.Value, new object[0]);
         }
         
         private void Finished()
@@ -84,8 +84,8 @@ namespace Psychology
             }
             Hediff mayor = HediffMaker.MakeHediff(HediffDefOfPsychology.Mayor, winningCandidate.First);
             winningCandidate.First.health.AddHediff(mayor);
-            winningCandidate.First.needs.mood.thoughts.memories.TryGainMemoryThought(ThoughtDefOfPsychology.WonElection);
-            Find.LetterStack.ReceiveLetter("LetterLabelElectionWon".Translate(winningCandidate.First.LabelShort), "LetterElectionWon".Translate(winningCandidate.First.LabelShort, this.baseName, winningCandidate.Second, issuesString.ToString()).AdjustedFor(winningCandidate.First), LetterType.Good, winningCandidate.First);
+            winningCandidate.First.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.WonElection);
+            Find.LetterStack.ReceiveLetter("LetterLabelElectionWon".Translate(winningCandidate.First.LabelShort), "LetterElectionWon".Translate(winningCandidate.First.LabelShort, this.baseName, winningCandidate.Second, issuesString.ToString()).AdjustedFor(winningCandidate.First), LetterDefOf.Good, winningCandidate.First);
         }
         
         public override string GetReport()
@@ -105,7 +105,7 @@ namespace Psychology
         
         private bool ShouldBeCalledOff()
         {
-            return !PartyUtility.AcceptableMapConditionsToContinueParty(base.Map) || candidates.Count < 1;
+            return !PartyUtility.AcceptableGameConditionsToContinueParty(base.Map) || candidates.Count < 1;
         }
         
         private bool ShouldPawnKeepVoting(Pawn p)

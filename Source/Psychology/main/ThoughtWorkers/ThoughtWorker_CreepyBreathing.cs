@@ -19,7 +19,7 @@ namespace Psychology
             {
                 return false;
             }
-            if (pawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Hearing) == 0f && pawn.health.capacities.GetEfficiency(PawnCapacityDefOf.Sight) == 0f)
+            if (pawn.health.capacities.GetLevel(PawnCapacityDefOf.Hearing) == 0f && pawn.health.capacities.GetLevel(PawnCapacityDefOf.Sight) == 0f)
             {
                 return false;
             }

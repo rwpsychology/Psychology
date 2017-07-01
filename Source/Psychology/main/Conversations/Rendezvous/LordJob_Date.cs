@@ -45,8 +45,8 @@ namespace Psychology
         
         public override void ExposeData()
         {
-            Scribe_References.LookReference(ref this.initiator, "initiator");
-            Scribe_References.LookReference(ref this.recipient, "recipient");
+            Scribe_References.Look(ref this.initiator, "initiator");
+            Scribe_References.Look(ref this.recipient, "recipient");
         }
         
         public override string GetReport()
@@ -56,7 +56,7 @@ namespace Psychology
         
         private bool ShouldBeCalledOff()
         {
-            return !PartyUtility.AcceptableMapConditionsToContinueParty(base.Map) || this.initiator.GetTimeAssignment() == TimeAssignmentDefOf.Work || this.recipient.GetTimeAssignment() == TimeAssignmentDefOf.Work || this.initiator.needs.rest.CurLevel < 0.3f || this.recipient.needs.rest.CurLevel < 0.3f;
+            return !PartyUtility.AcceptableGameConditionsToContinueParty(base.Map) || this.initiator.GetTimeAssignment() == TimeAssignmentDefOf.Work || this.recipient.GetTimeAssignment() == TimeAssignmentDefOf.Work || this.initiator.needs.rest.CurLevel < 0.3f || this.recipient.needs.rest.CurLevel < 0.3f;
         }
         
         private Trigger_TicksPassed timeoutTrigger;

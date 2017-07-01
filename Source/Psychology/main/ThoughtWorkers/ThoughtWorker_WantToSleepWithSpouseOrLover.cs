@@ -29,7 +29,7 @@ namespace Psychology
             {
                 return false;
             }
-            if (p.ownership.OwnedBed != null && p.story.traits.HasTrait(TraitDefOfPsychology.Polygamous) && p.relations.PotentiallyRelatedPawns.Where(related => LovePartnerRelationUtility.LovePartnerRelationExists(p, related)).Count() > 1 && p.ownership.OwnedBed.GetRoom().AllContainedThings.Where(t => t is Building_Bed && (t as Building_Bed).AssignedPawns.ToList().Contains(directPawnRelation.otherPawn)).Count() > 0)
+            if (p.ownership.OwnedBed != null && p.story.traits.HasTrait(TraitDefOfPsychology.Polygamous) && p.relations.PotentiallyRelatedPawns.Where(related => LovePartnerRelationUtility.LovePartnerRelationExists(p, related)).Count() > 1 && p.ownership.OwnedBed.GetRoom().ContainedBeds.Where(t => t.AssignedPawns.ToList().Contains(directPawnRelation.otherPawn)).Count() > 0)
             {
                 return false;
             }

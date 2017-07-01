@@ -22,8 +22,8 @@ namespace Psychology
 
         public void ExposeData()
         {
-            Scribe_References.LookReference(ref this.pawn, "pawn");
-            Scribe_Collections.LookList(ref this.nodes, "nodes", LookMode.Def, new object[0]);
+            Scribe_References.Look(ref this.pawn, "pawn");
+            Scribe_Collections.Look(ref this.nodes, "nodes", LookMode.Def, new object[0]);
         }
 
         public PsychologyPawn pawn;
