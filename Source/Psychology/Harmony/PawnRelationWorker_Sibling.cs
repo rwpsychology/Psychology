@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using RimWorld.Planet;
@@ -27,9 +28,7 @@ namespace Psychology.Harmony
                 float maxChronologicalAge = num4 + (num2 - num);
                 float midChronologicalAge = num4 + (num3 - num);
                 var parameters = new object[] { num4, maxChronologicalAge, midChronologicalAge, num, generatedChild, existingChild, childRequest, null, null, null, null };
-                var _GenerateParentParams = typeof(PawnRelationWorker_Sibling).GetMethod("GenerateParentParams", BindingFlags.Static | BindingFlags.NonPublic);
-                _GenerateParentParams.Invoke(null, parameters);
-                //Traverse.Create(typeof(PawnRelationWorker_Sibling)).Method("GenerateParentParams", new Type[] { typeof(float), typeof(float), typeof(float), typeof(float), typeof(Pawn), typeof(Pawn), typeof(PawnGenerationRequest), typeof(float), typeof(float), typeof(float), typeof(string) }).GetValue(parameters);
+                Traverse.Create(typeof(PawnRelationWorker_Sibling)).Method("GenerateParentParams", new Type[] { typeof(float), typeof(float), typeof(float), typeof(float), typeof(Pawn), typeof(Pawn), typeof(PawnGenerationRequest), typeof(float).MakeByRefType(), typeof(float).MakeByRefType(), typeof(float).MakeByRefType(), typeof(string).MakeByRefType() }).GetValue(parameters);
                 float value = (float)parameters[7];
                 float value2 = (float)parameters[8];
                 float value3 = (float)parameters[9];

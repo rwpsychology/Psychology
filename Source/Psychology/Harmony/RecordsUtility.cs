@@ -18,7 +18,7 @@ namespace Psychology.Harmony
             {
                 if (products[i].def.IsNutritionGivingIngestible && products[i].def.ingestible.preferability >= FoodPreferability.MealAwful)
                 {
-                    if(billDoer.needs != null)
+                    if(billDoer.needs.mood != null)
                     {
                         billDoer.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.CookedMealBleedingHeart, (Pawn)null);
                     }

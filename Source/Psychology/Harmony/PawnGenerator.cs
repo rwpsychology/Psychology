@@ -23,7 +23,6 @@ namespace Psychology.Harmony
                 newPawn.psyche.Initialize();
                 if (PsychologyBase.ActivateKinsey())
                 {
-                    newPawn.sexuality.GenerateSexuality();
                     while (newPawn.sexuality.kinseyRating > 2 && !request.AllowGay)
                     {
                         newPawn.sexuality.GenerateSexuality();

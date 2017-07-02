@@ -14,6 +14,7 @@ namespace Psychology
         public Pawn_SexualityTracker(PsychologyPawn pawn)
         {
             this.pawn = pawn;
+            GenerateSexuality();
         }
 
         public bool IncompatibleSexualityKnown(Pawn recipient)
@@ -46,7 +47,6 @@ namespace Psychology
 
         public void GenerateSexuality()
         {
-            Log.Message("Generating sexuality for " + pawn.LabelShort);
             kinseyRating = RandKinsey();
             sexDrive = Mathf.Clamp01(Rand.Gaussian(1.1f, 0.26f));
             romanticDrive = Mathf.Clamp01(Rand.Gaussian(1.1f, 0.26f));
