@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <NumberOfShortTalks>10</NumberOfShortTalks>
+  <ShortTalk1>Hatte ein flüchtiges Plaudern mit [other_nameShortIndef] über {0}.</ShortTalk1>
+  <ShortTalk2>Hatte ein kurzes Plaudern mit [other_nameShortIndef] über {0}.</ShortTalk2>
+  <ShortTalk3>Hatte eine kurze Unterhaltung mit [other_nameShortIndef] über {0}.</ShortTalk3>
+  <ShortTalk4>Rasche Diskussion über {0} mit [other_nameShortIndef].</ShortTalk4>
+  <ShortTalk5>Flott geplaudert über {0} mit [other_nameShortIndef].</ShortTalk5>
+  <ShortTalk6>Sprach über {0} mit [other_nameShortIndef] im Vorbeigehen.</ShortTalk6>
+  <ShortTalk7>Kommentierte prägnant auf {0} mit [other_nameShortIndef].</ShortTalk7>
+  <ShortTalk8>Äußerte sich über {0} mit [other_nameShortIndef].</ShortTalk8>
+  <ShortTalk9>Tauschte sich für einen Moment aus mit [other_nameShortIndef] über {0}.</ShortTalk9>
+  <ShortTalk10>Hatte ein kurzes Schwätzchen mit [other_nameShortIndef] über {0}.</ShortTalk10>
+
+  <NumberOfNormalTalks>12</NumberOfNormalTalks>
+  <NormalTalk1>Sprach über {0} mit [other_nameShortIndef].</NormalTalk1>
+  <NormalTalk2>Hatte eine Konversation über {0} mit [other_nameShortIndef].</NormalTalk2>
+  <NormalTalk3>Diskutierte über {0} mit [other_nameShortIndef].</NormalTalk3>
+  <NormalTalk4>Verglich Gedanken über {0} mit [other_nameShortIndef].</NormalTalk4>
+  <NormalTalk5>Unterhielt sich mit [other_nameShortIndef] über {0}.</NormalTalk5>
+  <NormalTalk6>Redete mit [other_nameShortIndef] über {0}.</NormalTalk6>
+  <NormalTalk7>Hatte eine Diskussion mit [other_nameShortIndef] über {0}.</NormalTalk7>
+  <NormalTalk8>Lernte von [other_nameShortIndef]s Meinung über {0}.</NormalTalk8>
+  <NormalTalk9>Teilte Gedanken über {0} mit [other_nameShortIndef] aus.</NormalTalk9>
+  <NormalTalk10>Lernte von [other_nameShortIndef]s Gedanken über {0}.</NormalTalk10>
+  <NormalTalk11>Argumentierte über {0} mit [other_nameShortIndef].</NormalTalk11>
+  <NormalTalk12>Besprach mit [other_nameShortIndef] über {0}.</NormalTalk12>
+
+  <NumberOfLongTalks>8</NumberOfLongTalks>
+  <LongTalk1>Diskutierte eine Zeit lang über {0} mit [other_nameShortIndef].</LongTalk1>
+  <LongTalk2>Hatte eine lange Konversation über {0} mit [other_nameShortIndef].</LongTalk2>
+  <LongTalk3>sprach mit [other_nameShortIndef] über {0} für eine gewisse Zeit.</LongTalk3>
+  <LongTalk4>Diskutierte gründlich über {0} mit [other_nameShortIndef].</LongTalk4>
+  <LongTalk5>Sprach ausführlich über {0} mit [other_nameShortIndef].</LongTalk5>
+  <LongTalk6>Lernte viel darüber wie [other_nameShortIndef] über {0} denkt.</LongTalk6>
+  <LongTalk7>Teilte tiefe Gedanken über {0} mit [other_nameShortIndef] aus.</LongTalk7>
+  <LongTalk8>Hatte eine lange Debatte über {0} mit [other_nameShortIndef].</LongTalk8>
+
+  <NumberOfEpicTalks>6</NumberOfEpicTalks>
+  <EpicTalk1>Beriet sich einige Stunden lang mit [other_nameShortIndef] über {0}.</EpicTalk1>
+  <EpicTalk2>Sprach endlos mit [other_nameShortIndef] über {0}.</EpicTalk2>
+  <EpicTalk3>Hatte eine extrem lange Konversation über {0} mit [other_nameShortIndef].</EpicTalk3>
+  <EpicTalk4>Unterhielt sich ewig mit [other_nameShortIndef] über {0}.</EpicTalk4>
+  <EpicTalk5>Hatte ein langes Hin und Her über {0} mit [other_nameShortIndef].</EpicTalk5>
+  <EpicTalk6>Ließ über Stunden mit [other_nameShortIndef] seine Gedanken raus über {0}.</EpicTalk6>
+
+</LanguageData>
