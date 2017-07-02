@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ComplaintLabel>Beschwerte sich beim Bürgermeister</ComplaintLabel>
+  <ComplaintDesc>Dank der Beschwerde beim Bürgermeister fühle ich mich so.</ComplaintDesc>
+
+  <VisitLabel>Von einem Wähler besucht</VisitLabel>
+  <VisitDesc>Dank dem Besuch von einem Wähler fühle ich mich so.</VisitDesc>
+
+</LanguageData>
