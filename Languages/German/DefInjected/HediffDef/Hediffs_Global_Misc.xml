@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <HoldingConversation.label>Konversation</HoldingConversation.label>
+  <HoldingConversation.stages.0.label>versteckt</HoldingConversation.stages.0.label>
+
+  <Mayor.label>Bürgermeister</Mayor.label>
+  <Mayor.stages.0.label>versteckt</Mayor.stages.0.label>
+
+  <PlannedDate.label>Date</PlannedDate.label>
+  <PlannedDate.stages.0.label>versteckt</PlannedDate.stages.0.label>
+
+
+</LanguageData>
