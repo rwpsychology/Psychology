@@ -39,6 +39,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\Steam\steamapps\common\RimWorld\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="EdBPrepareCarefully">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\735106432\Assemblies\EdBPrepareCarefully.dll</HintPath>
+    </Reference>
     <Reference Include="HugsLib, Version=0.16.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\Steam\steamapps\workshop\content\294100\818773962\Assemblies\HugsLib.dll</HintPath>
@@ -64,6 +67,9 @@
     <Compile Include="Harmony\InteractionUtility.cs" />
     <Compile Include="Harmony\InteractionWorker_DeepTalk.cs" />
     <Compile Include="Harmony\NegativeInteractionUtility.cs" />
+    <Compile Include="Harmony\Optional\EdBPrepareCarefully.cs" />
+    <Compile Include="Harmony\Optional\PanelBackstory.cs" />
+    <Compile Include="Harmony\Page_ConfigureStartingPawns.cs" />
     <Compile Include="Harmony\TraitSet.cs" />
     <Compile Include="Main\Conversations\Rendezvous\Hediff_PlannedDate.cs" />
     <Compile Include="Main\Conversations\Rendezvous\InteractionWorker_PlanDate.cs" />
@@ -74,6 +80,7 @@
     <Compile Include="Main\Conversations\Rendezvous\LordToil_HangOut.cs" />
     <Compile Include="Main\Conversations\PlayLogEntry_InteractionConversation.cs" />
     <Compile Include="Main\Conversations\Rendezvous\RendezvousUtility.cs" />
+    <Compile Include="Main\Dialog_EditPsyche.cs" />
     <Compile Include="Main\Elections\Candidate.cs" />
     <Compile Include="Main\Elections\Hediff_Mayor.cs" />
     <Compile Include="Main\Elections\JobGiver_Vote.cs" />

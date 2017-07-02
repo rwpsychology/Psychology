@@ -90,16 +90,8 @@ namespace Psychology.Harmony
                 float attractiveness = initiator.relations.SecondaryRomanceChanceFactor(recipient);
                 int opinion = initiator.relations.OpinionOf(recipient);
                 float romanceChance = 1.15f;
-                if (realInitiator == null)
-                {
-                    //Straight women are 15% as likely to romance anyone.
-                    romanceChance = (!initiator.story.traits.HasTrait(TraitDefOf.Gay)) ? ((initiator.gender != Gender.Female) ? romanceChance : romanceChance * 0.15f) : romanceChance;
-                }
-                else
-                {
-                    //A pawn's likelihood to romance is based on how Aggressive and Romantic they are.
-                    romanceChance = 0.2f + realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive) + (1f - realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
-                }
+                //A pawn's likelihood to romance is based on how Aggressive and Romantic they are.
+                romanceChance = 0.2f + realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive) + (1f - realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
                 //A pawn with +50 or more opinion of their lover will not hit on other pawns unless they are lecherous or polygamous (and their lover is also polygamous).
                 float existingLovePartnerFactor = 1f;
                 Pawn pawn = LovePartnerRelationUtility.ExistingMostLikedLovePartner(initiator, false);

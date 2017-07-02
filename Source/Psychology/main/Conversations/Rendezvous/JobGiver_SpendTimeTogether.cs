@@ -22,7 +22,7 @@ namespace Psychology
             {
                 return null;
             }
-            if(LovePartnerRelationUtility.LovePartnerRelationExists(pawn, friend) && pawn.jobs.curDriver.layingDown == LayingDownState.NotLaying && ((pawn.GetHashCode() + friend.GetHashCode()) ^ (GenLocalDate.DayOfYear(pawn) + GenLocalDate.Year(pawn) + (int)(GenLocalDate.DayPercent(pawn) * 5) * 60) * 391) % 24 == 0)
+            if(LovePartnerRelationUtility.LovePartnerRelationExists(pawn, friend) && pawn.jobs.curDriver != null && pawn.jobs.curDriver.layingDown == LayingDownState.NotLaying && ((pawn.GetHashCode() + friend.GetHashCode()) ^ (GenLocalDate.DayOfYear(pawn) + GenLocalDate.Year(pawn) + (int)(GenLocalDate.DayPercent(pawn) * 5) * 60) * 391) % 24 == 0)
             {
                 return new Job(JobDefOf.LayDown, pawn.ownership.OwnedBed);
             }

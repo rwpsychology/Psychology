@@ -18,7 +18,7 @@ namespace Psychology
             {
                 return 0f;
             }
-            return Mathf.Max(0f, 0.45f + (0.6f-realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly)) + (0.5f-realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Extroverted)));
+            return Mathf.Max(0f, 0.45f + (realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly)-0.6f) + (realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Extroverted)-0.5f));
         }
 
         public override void Interacted(Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks)

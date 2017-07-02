@@ -45,6 +45,8 @@ I do not accept any form of financial support. If you want to support this mod, 
 	
 &lt;b&gt;Compatibility&lt;/b&gt;
 Thanks to HugsLib and Harmony, this mod should be compatible with practically everything. However, some features may be automatically disabled if you are using a mod which adds them in a different way. Romance Diversified is one example, which is almost entirely redundant when combined with Psychology. If you wish to use features from other mods instead, then it will not negatively impact your game, however you are encouraged to give all of Psychology's features a chance before disabling them.
+
+Not currently compatible with Zombie Apocalypse or Children and Pregnancy. Load after EdB Prepare Carefully.
 	
 &lt;b&gt;Credits&lt;/b&gt;
 ({x}) Disarray: Idea for passionate work mood bonus.
