@@ -12,7 +12,7 @@ namespace Psychology
     {
         protected override Job TryGiveJob(Pawn pawn)
         {
-            if (!pawn.story.WorkTagIsDisabled(WorkTags.Cleaning))
+            if (!pawn.story.WorkTagIsDisabled(WorkTags.Cleaning) && pawn.Map.listerFilthInHomeArea.FilthInHomeArea.Count > 0)
             {
                 Thing closestFilth = pawn.Map.listerFilthInHomeArea.FilthInHomeArea.RandomElement();
                 if (closestFilth != null && pawn.CanReserveAndReach(closestFilth, PathEndMode.Touch, Danger.Some))
@@ -20,7 +20,7 @@ namespace Psychology
                     return new Job(JobDefOf.Clean, closestFilth);
                 }
             }
-            if (!pawn.story.WorkTagIsDisabled(WorkTags.Hauling))
+            if (!pawn.story.WorkTagIsDisabled(WorkTags.Hauling) && pawn.Map.listerHaulables.ThingsPotentiallyNeedingHauling().Count > 0)
             {
                 Thing thing = pawn.Map.listerHaulables.ThingsPotentiallyNeedingHauling().RandomElement();
                 if (thing != null && HaulAIUtility.PawnCanAutomaticallyHaulFast(pawn, thing, true) && pawn.CanReserveAndReach(thing, PathEndMode.Touch, Danger.Some))
