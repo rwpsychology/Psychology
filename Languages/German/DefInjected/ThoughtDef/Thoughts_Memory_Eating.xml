@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Special nature thoughts -->
+
+  <AteLavishMealPickyEater.stages.0.label>ate lavish meal</AteLavishMealPickyEater.stages.0.label>
+  <AteLavishMealPickyEater.stages.0.description>That lavish meal was amazing. It's exactly what I want to eat every day!</AteLavishMealPickyEater.stages.0.description>
+
+  <AteFineMealPickyEater.stages.0.label>ate fine meal</AteFineMealPickyEater.stages.0.label>
+  <AteFineMealPickyEater.stages.0.description>I ate a really tasty fine meal. Just the way I like it!</AteFineMealPickyEater.stages.0.description>
+
+  <AteAwfulMealPickyEater.stages.0.label>ate awful meal</AteAwfulMealPickyEater.stages.0.label>
+  <AteAwfulMealPickyEater.stages.0.description>I had to eat a disgusting, tasteless meal. Unacceptable. I expect to be fed better than that.</AteAwfulMealPickyEater.stages.0.description>
+
+  <AteRawFoodPickyEater.stages.0.label>ate raw food</AteRawFoodPickyEater.stages.0.label>
+  <AteRawFoodPickyEater.stages.0.description>I had to eat raw food. I don't want to live here if we can't even have a chef.</AteRawFoodPickyEater.stages.0.description>
+
+  <AteNormalMealPickyEater.stages.0.label>ate plain meal</AteNormalMealPickyEater.stages.0.label>
+  <AteNormalMealPickyEater.stages.0.description>That meal wasn't really up to my standards. I only ate it because there was nothing better.</AteNormalMealPickyEater.stages.0.description>
+
+  <AteInsectMeatAsIngredientPickyEater.stages.0.label>ate cooked insect meat</AteInsectMeatAsIngredientPickyEater.stages.0.label>
+  <AteInsectMeatAsIngredientPickyEater.stages.0.description>I ate a meal cooked from gray, slimy insect meat. That was a deeply unpleasant surprise to bite into.</AteInsectMeatAsIngredientPickyEater.stages.0.description>
+
+  <AteInsectMeatDirectPickyEater.stages.0.label>ate insect meat</AteInsectMeatDirectPickyEater.stages.0.label>
+  <AteInsectMeatDirectPickyEater.stages.0.description>I ate some gray, slimy insect meat. Please kill me now.</AteInsectMeatDirectPickyEater.stages.0.description>
+
+  <AteRottenFoodPickyEater.stages.0.label>ate rotten food</AteRottenFoodPickyEater.stages.0.label>
+  <AteRottenFoodPickyEater.stages.0.description>I ate some disgusting, putrid food. I would rather be dead than reduced to this.</AteRottenFoodPickyEater.stages.0.description>
+
+
+</LanguageData>
