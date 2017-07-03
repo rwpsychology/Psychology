@@ -972,6 +972,10 @@
 				<trait>OpenMinded</trait>
 				<modifier>-0.5</modifier>
 			</li>
+			<li>
+				<trait>Kind</trait>
+				<modifier>-0.3</modifier>
+			</li>
 		</traitModifiers>
 	</Psychology.PersonalityNodeDef>
 	

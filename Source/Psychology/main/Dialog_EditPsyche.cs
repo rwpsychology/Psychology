@@ -21,6 +21,7 @@ namespace Psychology
             foreach (PersonalityNode node in this.pawn.psyche.PersonalityNodes)
             {
                 cachedList.Add(new Pair<string, float>(node.def.label.CapitalizeFirst(), node.rawRating));
+                descriptions.Add(node.def.label.CapitalizeFirst(), node.def.description);
             }
             cachedList.SortBy(n => n.First);
         }
@@ -70,7 +71,9 @@ namespace Psychology
                 float num4 = Mathf.Max(26f, Text.CalcHeight(label, viewRect.width));
                 Rect rect = new Rect(10f, num3, viewRect.width / 3, num4);
                 Rect rect2 = new Rect(10f + viewRect.width / 3, num3, ((2 * viewRect.width) / 3)-20f, num4);
+                Widgets.DrawHighlightIfMouseover(rect);
                 Widgets.Label(rect, label);
+                TooltipHandler.TipRegion(rect, () => descriptions[label], 436532 + Mathf.RoundToInt(num3));
                 float newVal = Widgets.HorizontalSlider(rect2, cachedList[i].Second, 0f, 1f, true);
                 cachedList[i] = new Pair<string, float>(cachedList[i].First, newVal);
                 num3 += num4;
@@ -117,6 +120,7 @@ namespace Psychology
 
         private static Vector2 nodeScrollPosition = Vector2.zero;
         private List<Pair<string, float>> cachedList = new List<Pair<string, float>>();
+        private Dictionary<string, string> descriptions = new Dictionary<string, string>();
         private int pawnKinseyRating = 0;
         private float pawnSexDrive = 0f;
         private float pawnRomanticDrive = 0f;

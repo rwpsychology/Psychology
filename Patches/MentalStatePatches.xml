@@ -1,0 +1,15 @@
+<Patch>
+	<Operation Class="PatchOperationReplace">
+			<xpath>*/MentalBreakDef[defName="Berserk"]/baseCommonality</xpath>
+			<value>
+				<baseCommonality>0</baseCommonality>
+			</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+			<xpath>*/MentalStateDef[defName="FireStartingSpree"]</xpath>
+			<value>
+				<workerClass>Psychology.MentalStateWorker_FireStartingSpree</workerClass>
+			</value>
+	</Operation>
+</Patch>

@@ -32,10 +32,10 @@ namespace Psychology
             float num = 0f;
             for (int i = 0; i < allNodes.Count; i++)
             {
-                int descString = Mathf.RoundToInt(6f*allNodes[i].AdjustedRating);
-                if (/*!allNodes[i].Core && */descString != 3)
+                int category = Mathf.RoundToInt(6f*Mathf.InverseLerp(0.16f, 0.83f, allNodes[i].AdjustedRating));
+                if (/*!allNodes[i].Core && */category != 3)
                 {
-                    string text = (NodeDescriptions[descString] == "" ? "" : ("Psyche"+NodeDescriptions[descString]).Translate());
+                    string text = (NodeDescriptions[category] == "" ? "" : ("Psyche"+NodeDescriptions[category]).Translate());
                     PsycheCardUtility.nodeStrings.Add(new Pair<string, int>(text, i));
                     num += Mathf.Max(26f, Text.CalcHeight(text, width));
                 }
@@ -51,7 +51,8 @@ namespace Psychology
                 float num4 = Mathf.Max(26f, Text.CalcHeight(first, width));
                 Rect rect2 = new Rect(10f, num3, width/3, num4);
                 Rect rect3 = new Rect(10f+width/3, num3, (2*width)/3, num4);
-                GUI.color = NodeColors[Mathf.RoundToInt(6f*allNodes[PsycheCardUtility.nodeStrings[j].Second].AdjustedRating)];
+                int category = Mathf.RoundToInt(6f*Mathf.InverseLerp(0.16f, 0.83f, allNodes[PsycheCardUtility.nodeStrings[j].Second].AdjustedRating));
+                GUI.color = NodeColors[category];
                 Widgets.Label(rect2, first.ToString());
                 GUI.color = Color.white;
                 Widgets.DrawHighlightIfMouseover(rect3);
