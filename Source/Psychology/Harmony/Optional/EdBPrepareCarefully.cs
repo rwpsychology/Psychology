@@ -22,7 +22,7 @@ namespace Psychology.Harmony.Optional
                     {
                         if (AccessTools.Method(typeof(EdB.PrepareCarefully.PrepareCarefully), nameof(EdB.PrepareCarefully.PrepareCarefully.Initialize)) != null)
                         {
-                            harmony.Patch(AccessTools.Method(typeof(EdB.PrepareCarefully.PanelBackstory), "DrawPanelContent"), null, new HarmonyMethod(typeof(PanelBackstory), "AddPsycheEditButton"));
+                            harmony.Patch(AccessTools.Method(typeof(EdB.PrepareCarefully.PanelBackstory), "DrawPanelContent"), null, new HarmonyMethod(typeof(PanelBackstoryPatch), "AddPsycheEditButton"));
                         }
                     }))();
                 }

@@ -18,7 +18,8 @@ namespace Psychology.Harmony
             if (__result)
             {
                 Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-                int intensity = (int)Traverse.Create(__instance).Property("CurrentDesiredMoodBreakIntensity").GetValue();
+                int intensity;
+                int.TryParse("" + (byte)Traverse.Create(__instance).Property("CurrentDesiredMoodBreakIntensity").GetValue<MentalBreakIntensity>(), out intensity);
                 Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Anxiety);
                 float PTSDChance = (0.25f - (0.075f * intensity));
                 if (pawn is PsychologyPawn)

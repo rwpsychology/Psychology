@@ -15,9 +15,12 @@ namespace Psychology
         public Dialog_EditPsyche(PsychologyPawn editFor)
         {
             pawn = editFor;
-            pawnKinseyRating = pawn.sexuality.kinseyRating;
-            pawnSexDrive = pawn.sexuality.sexDrive;
-            pawnRomanticDrive = pawn.sexuality.romanticDrive;
+            if(PsychologyBase.ActivateKinsey())
+            {
+                pawnKinseyRating = pawn.sexuality.kinseyRating;
+                pawnSexDrive = pawn.sexuality.sexDrive;
+                pawnRomanticDrive = pawn.sexuality.romanticDrive;
+            }
             foreach (PersonalityNode node in this.pawn.psyche.PersonalityNodes)
             {
                 cachedList.Add(new Pair<string, float>(node.def.label.CapitalizeFirst(), node.rawRating));
@@ -107,9 +110,12 @@ namespace Psychology
                 {
                     node.rawRating = cachedList.Where(n => n.First == node.def.label.CapitalizeFirst()).First().Second;
                 }
-                pawn.sexuality.sexDrive = pawnSexDrive;
-                pawn.sexuality.romanticDrive = pawnRomanticDrive;
-                pawn.sexuality.kinseyRating = pawnKinseyRating;
+                if(PsychologyBase.ActivateKinsey())
+                {
+                    pawn.sexuality.sexDrive = pawnSexDrive;
+                    pawn.sexuality.romanticDrive = pawnRomanticDrive;
+                    pawn.sexuality.kinseyRating = pawnKinseyRating;
+                }
                 this.Close(false);
             }
             if (Widgets.ButtonText(cancelRect, "CancelButton".Translate(), true, false, true) || flag2)

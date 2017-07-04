@@ -20,31 +20,38 @@ namespace Psychology.Harmony
                 float curLevel = pawn.needs.rest.CurLevel;
                 if (timeAssignmentDef == TimeAssignmentDefOf.Anything)
                 {
-                    if (curLevel < 0.3f)
+                    if (curLevel < 0.1f)
                     {
                         __result = 1f;
+                        return;
                     }
                     __result = 0f;
+                    return;
                 }
                 else if (timeAssignmentDef == TimeAssignmentDefOf.Work)
                 {
                     __result = 0f;
+                    return;
                 }
                 else if (timeAssignmentDef == TimeAssignmentDefOf.Joy)
                 {
-                    if (curLevel < 0.3f)
+                    if (curLevel < 0.1f)
                     {
                         __result = 3f;
+                        return;
                     }
                     __result = 0f;
+                    return;
                 }
                 else if (timeAssignmentDef == TimeAssignmentDefOf.Sleep)
                 {
-                    if (curLevel < 0.75f)
+                    if (curLevel < 0.5f)
                     {
                         __result = 3f;
+                        return;
                     }
                     __result = 0f;
+                    return;
                 }
                 else
                 {

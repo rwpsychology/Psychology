@@ -10,7 +10,7 @@ using Harmony;
 
 namespace Psychology.Harmony.Optional
 {
-    public static class PanelBackstory
+    public static class PanelBackstoryPatch
     {
         [HarmonyPostfix]
         public static void AddPsycheEditButton(EdB.PrepareCarefully.PanelBackstory __instance, EdB.PrepareCarefully.State state)
@@ -36,7 +36,7 @@ namespace Psychology.Harmony.Optional
                     pawn.sexuality = new Pawn_SexualityTracker(pawn);
                     pawn.sexuality.GenerateSexuality();
                 }
-                Rect rect = new Rect(panelRect.width - 64f, 9f, 22f, 22f);
+                Rect rect = new Rect(panelRect.width - 60f, 9f, 22f, 22f);
                 if (rect.Contains(Event.current.mousePosition))
                 {
                     GUI.color = new Color(0.97647f, 0.97647f, 0.97647f);

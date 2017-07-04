@@ -63,7 +63,7 @@ namespace Psychology
             GUI.EndScrollView();
         }
 
-        private static void DrawSexuality(Rect rect, PsychologyPawn pawn)
+        private static void DrawSexuality(Rect rect, PsychologyPawn pawn, bool notOnMenu)
         {
             float width = rect.width - 26f - 3f;
             GUI.color = Color.white;
@@ -103,7 +103,7 @@ namespace Psychology
                     TooltipHandler.TipRegion(rect5, () => "AromanticDescription".Translate(), 613261 + (int)(100 * pawn.sexuality.romanticDrive));
                 }
             }
-            else
+            else if(notOnMenu)
             {
                 GUI.color = Color.red;
                 string text = "SexualityDisabledWarning".Translate();
@@ -145,7 +145,7 @@ namespace Psychology
                     PsycheCardUtility.DrawDebugOptions(rect6, realPawn);
                 }
                 PsycheCardUtility.DrawPersonalityNodes(rect4, realPawn);
-                PsycheCardUtility.DrawSexuality(rect5, realPawn);
+                PsycheCardUtility.DrawSexuality(rect5, realPawn, true);
                 GUI.EndGroup();
             }
         }
@@ -168,7 +168,7 @@ namespace Psychology
                 Widgets.DrawLineVertical(rect4.xMax, 0f, rect.height);
                 GUI.color = Color.white;
                 PsycheCardUtility.DrawPersonalityNodes(rect4, realPawn);
-                PsycheCardUtility.DrawSexuality(rect5, realPawn);
+                PsycheCardUtility.DrawSexuality(rect5, realPawn, false);
                 GUI.EndGroup();
             }
         }
