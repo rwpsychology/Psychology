@@ -18,7 +18,9 @@ namespace Psychology
                 return ThoughtState.Inactive;
             if (p.apparel.PsychologicallyNude)
                 return ThoughtState.Inactive;
-            if (GenDate.TwelfthsPassed <= 6)
+            List<Thought> tmpThoughts = new List<Thought>();
+            p.needs.mood.thoughts.GetAllMoodThoughts(tmpThoughts);
+            if (tmpThoughts.Where(t => t.def.defName == "LowExpectations").Count() > 0)
                 return ThoughtState.Inactive;
             if (!PsychologyBase.IndividualityOn())
                 return ThoughtState.Inactive;
@@ -39,7 +41,7 @@ namespace Psychology
                 List<Pawn> sameClothes = (from c in colonists
                                           where (from a in c.apparel.WornApparel
                                                  where identical(a)
-                                                 select a).ToList().Count == p.apparel.WornApparelCount
+                                                 select a).ToList().Count == p.apparel.WornApparelCount && p.apparel.WornApparelCount == c.apparel.WornApparelCount
                                           select c).ToList();
                 if (sameClothes.Count == colonists.Count && colonists.Count > 5)
                 {

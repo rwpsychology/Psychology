@@ -11,6 +11,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(PawnObserver), "ObserveSurroundingThings")]
     public static class PawnObserver_ObserveSurroundingPatch
     {
+        //Transpiler?
         [HarmonyPostfix]
         public static void DesensitizeViaCorpse(PawnObserver __instance)
         {

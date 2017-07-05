@@ -114,7 +114,7 @@ namespace Psychology.Harmony
             float attractivenessFactor = Mathf.InverseLerp(0.25f, 1f, attractiveness);
             float opinionFactor = Mathf.InverseLerp(5f, 100f, (float)opinion);
             //People who have hit on someone in the past and been rejected because of their sexuality will rarely attempt to hit on them again.
-            float knownSexualityFactor = (realInitiator != null && realInitiator.sexuality.IncompatibleSexualityKnown(recipient) && !realInitiator.story.traits.HasTrait(TraitDefOfPsychology.Lecher)) ? 0.05f : (realInitiator == null ? (initiator.gender == recipient.gender ? (initiator.story.traits.HasTrait(TraitDefOf.Gay) && recipient.story.traits.HasTrait(TraitDefOf.Gay) ? 1f : 0.15f) : (!initiator.story.traits.HasTrait(TraitDefOf.Gay) && !recipient.story.traits.HasTrait(TraitDefOf.Gay) ? 1f : 0.15f)) : 1f);
+            float knownSexualityFactor = (realInitiator != null && PsychologyBase.ActivateKinsey() && realInitiator.sexuality.IncompatibleSexualityKnown(recipient) && !realInitiator.story.traits.HasTrait(TraitDefOfPsychology.Lecher)) ? 0.05f : (realInitiator == null ? (initiator.gender == recipient.gender ? (initiator.story.traits.HasTrait(TraitDefOf.Gay) && recipient.story.traits.HasTrait(TraitDefOf.Gay) ? 1f : 0.15f) : (!initiator.story.traits.HasTrait(TraitDefOf.Gay) && !recipient.story.traits.HasTrait(TraitDefOf.Gay) ? 1f : 0.15f)) : 1f);
             //Only lechers will try to romance someone in a stable relationship.
             float recipientLovePartnerFactor = 1f;
             Pawn pawn2 = LovePartnerRelationUtility.ExistingMostLikedLovePartner(recipient, false);

@@ -23,12 +23,12 @@ namespace Psychology.Harmony.Optional
                 {
                     pawn.psyche = new Pawn_PsycheTracker(pawn);
                     pawn.psyche.Initialize();
-                }
-                foreach (PersonalityNode node in pawn.psyche.PersonalityNodes)
-                {
-                    if (node.rawRating < 0)
+                    foreach (PersonalityNode node in pawn.psyche.PersonalityNodes)
                     {
-                        node.Initialize();
+                        if (node.rawRating < 0)
+                        {
+                            node.Initialize();
+                        }
                     }
                 }
                 if (pawn.sexuality == null && PsychologyBase.ActivateKinsey())

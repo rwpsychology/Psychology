@@ -11,6 +11,10 @@ namespace Psychology
 {
     public class PersonalityNode : IExposable
     {
+        public PersonalityNode()
+        {
+        }
+
         public PersonalityNode(PsychologyPawn pawn)
         {
             this.pawn = pawn;

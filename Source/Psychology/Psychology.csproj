@@ -67,8 +67,12 @@
     <Compile Include="Harmony\InteractionUtility.cs" />
     <Compile Include="Harmony\InteractionWorker_DeepTalk.cs" />
     <Compile Include="Harmony\NegativeInteractionUtility.cs" />
+    <Compile Include="Harmony\Optional\ColonistSaver.cs" />
     <Compile Include="Harmony\Optional\EdBPrepareCarefully.cs" />
     <Compile Include="Harmony\Optional\PanelBackstory.cs" />
+    <Compile Include="Harmony\Optional\PresetLoader.cs" />
+    <Compile Include="Harmony\Optional\PresetSaver.cs" />
+    <Compile Include="Harmony\Optional\SaveRecordPawnV3.cs" />
     <Compile Include="Harmony\Page_ConfigureStartingPawns.cs" />
     <Compile Include="Harmony\TraitSet.cs" />
     <Compile Include="Main\Conversations\Rendezvous\Hediff_PlannedDate.cs" />
@@ -97,6 +101,7 @@
     <Compile Include="Harmony\VoluntarilyJoinableLordsStarter.cs" />
     <Compile Include="Main\Alerts\Alert_Individuality.cs" />
     <Compile Include="Harmony\ThoughtWorker_WantToSleepWithSpouseOrLover.cs" />
+    <Compile Include="Main\PrepareCarefully\SaveRecordPsycheV3.cs" />
     <Compile Include="Main\Thought_MemoryDynamic.cs" />
     <Compile Include="Main\ITab_Pawn_Psyche.cs" />
     <Compile Include="Main\Pawn_PsycheTracker.cs" />

@@ -78,16 +78,15 @@ namespace Psychology.Harmony
                     }
                     if ((ageBiologicalYearsFloat2 < ageBiologicalYearsFloat - 10f) && (!pawn.story.traits.HasTrait(TraitDefOfPsychology.OpenMinded)))
                     {
-                        __result = 0.15f;
-                        return;
+                        ageFactor *= 0.15f;
                     }
                     if (ageBiologicalYearsFloat2 < ageBiologicalYearsFloat - 3f)
                     {
-                        ageFactor = Mathf.InverseLerp(ageBiologicalYearsFloat - 10f, ageBiologicalYearsFloat - 3f, ageBiologicalYearsFloat2) * 0.3f;
+                        ageFactor *= Mathf.InverseLerp(ageBiologicalYearsFloat - 10f, ageBiologicalYearsFloat - 3f, ageBiologicalYearsFloat2) * 0.3f;
                     }
                     else
                     {
-                        ageFactor = GenMath.FlatHill(0.3f, ageBiologicalYearsFloat - 3f, ageBiologicalYearsFloat, ageBiologicalYearsFloat + 10f, ageBiologicalYearsFloat + 30f, 0.15f, ageBiologicalYearsFloat2);
+                        ageFactor *= GenMath.FlatHill(0.3f, ageBiologicalYearsFloat - 3f, ageBiologicalYearsFloat, ageBiologicalYearsFloat + 10f, ageBiologicalYearsFloat + 30f, 0.15f, ageBiologicalYearsFloat2);
                     }
                 }
                 ageFactor = Mathf.Lerp(ageFactor, (1f - ageFactor), realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
