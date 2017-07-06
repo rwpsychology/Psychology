@@ -14,7 +14,6 @@ namespace Psychology.Harmony.Optional
         static EdBPrepareCarefully()
         {
             HarmonyInstance harmony = HarmonyInstance.Create("rimworld.psychology.prepare_carefully_patch");
-            HarmonyInstance.DEBUG = true;
             #region prepareCarefully
             {
                 try

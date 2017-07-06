@@ -31,6 +31,10 @@ namespace Psychology.Harmony.Optional
 
         public static void AddPsycheToDictionary(EdB.PrepareCarefully.CustomPawn pawn)
         {
+            if(SaveRecordPawnV3Patch.customPawns.ContainsKey(pawn.Id))
+            {
+                SaveRecordPawnV3Patch.customPawns.Remove(pawn.Id);
+            }
             SaveRecordPawnV3Patch.customPawns.Add(pawn.Id, pawn);
         }
     }
