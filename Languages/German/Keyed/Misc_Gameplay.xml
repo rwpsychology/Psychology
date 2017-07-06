@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Lord job reports -->
+  <LordReportAttendingElection>Besucht Wahllokal</LordReportAttendingElection>
+  <LordReportVisitingMayor>Nimmt am Treffen teil</LordReportVisitingMayor>
+  <LordReportHangingOut>Hängt mit jemanden ab</LordReportHangingOut>
+  <LordReportDate>Auf einem Date</LordReportDate>
+
+  <!-- Miscellaneous thought log text -->
+  <ConversationStage>Konversation über</ConversationStage>
+  <ConversationEnd>Beendete eine Konversation mit</ConversationEnd>
+  <ConversationEnded>Konversation beendet</ConversationEnded>
+  <Complained>Beschwerte sich beim Bürgermeister.</Complained>
+  <Supported>Habe meine Unterstützung dem Bürgermeister zugesprochen.</Supported>
+  <HadMeeting>Hatte ein Treffen mit einem Wähler</HadMeeting>
+
+  <!-- Node descriptions -->
+  <PsycheNot>Nicht</PsycheNot>
+  <PsycheSlightly>Kaum</PsycheSlightly>
+  <PsycheLess>Etwas</PsycheLess>
+  <PsycheMore>Mehr</PsycheMore>
+  <PsycheVery>Sehr</PsycheVery>
+  <PsycheExtremely>Äußerst</PsycheExtremely>
+
+</LanguageData>

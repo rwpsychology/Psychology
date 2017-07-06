@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FellPlotting.label>verrücktes intrigieren</FellPlotting.label>
+  <FellPlotting.beginLetter>{0} zieht sich zu HIS Zimmer zurück, um Pläne zu schmieden!</FellPlotting.beginLetter>
+  <FellPlotting.beginLetterLabel>Wahnsinniges Intrigieren</FellPlotting.beginLetterLabel>
+  <FellPlotting.recoveryMessage>{0}s intrigierendes Pläne Schmieden hat geendet.</FellPlotting.recoveryMessage>
+  <FellPlotting.baseInspectLine>Geisteszustand: Wahnsinniges Intrigieren</FellPlotting.baseInspectLine>
+
+  <Sadism.label>sadistisches Lachen</Sadism.label>
+  <Sadism.beginLetter>{0} schwingt HIS Waffe mit einem sadistischen Gesichtsausdruck.</Sadism.beginLetter>
+  <Sadism.beginLetterLabel>Sadismus</Sadism.beginLetterLabel>
+  <Sadism.recoveryMessage>{0}s grausame Raserei ist vorbei.</Sadism.recoveryMessage>
+  <Sadism.baseInspectLine>Geisteszustand: Sadismus</Sadism.baseInspectLine>
+
+  <SelfHarm.label>Selbstverletzung</SelfHarm.label>
+  <SelfHarm.beginLetter>{0} ritzte in HIS Handgelenk und versteckt sich in HIS Zimmer.</SelfHarm.beginLetter>
+  <SelfHarm.beginLetterLabel>selbstverletzen</SelfHarm.beginLetterLabel>
+  <SelfHarm.recoveryMessage>{0} hört auf, sich selbst zu verletzen.</SelfHarm.recoveryMessage>
+  <SelfHarm.baseInspectLine>Geisteszustand: Selbstverletzung</SelfHarm.baseInspectLine>
+
+  <Tantrum.label>Wutanfall</Tantrum.label>
+  <Tantrum.beginLetter>{0} lässt HIS Zorn, an in der Nähe befindliche Objekte, raus!</Tantrum.beginLetter>
+  <Tantrum.beginLetterLabel>Wutanfall</Tantrum.beginLetterLabel>
+  <Tantrum.recoveryMessage>{0}s zerstörerischer Wutanfall ist vorbei.</Tantrum.recoveryMessage>
+  <Tantrum.baseInspectLine>Geisteszustand: Wutanfall</Tantrum.baseInspectLine>
+
+  <Abuse.label>schreiend</Abuse.label>
+  <Abuse.beginLetter>{0} ist wütend geworden und beschimpft jeden in Sichtweite.</Abuse.beginLetter>
+  <Abuse.beginLetterLabel>verbales Beschimpfen</Abuse.beginLetterLabel>
+  <Abuse.recoveryMessage>{0} hat aufgehört, jeden zu beschimpfen.</Abuse.recoveryMessage>
+  <Abuse.baseInspectLine>Geisteszustand: Beleidigend</Abuse.baseInspectLine>
+
+  <Paranoia.label>plappern</Paranoia.label>
+  <Paranoia.beginLetter>{0} fängt an, nur rumzuplappern.</Paranoia.beginLetter>
+  <Paranoia.beginLetterLabel>paranoia</Paranoia.beginLetterLabel>
+  <Paranoia.recoveryMessage>{0} hat aufgehört, jedem HIS sinnloses Geschwafel anzutun.</Paranoia.recoveryMessage>
+  <Paranoia.baseInspectLine>Geisteszustand: Plappern</Paranoia.baseInspectLine>
+
+  <Compulsion.label>zwanghaftes Putzen</Compulsion.label>
+  <Compulsion.beginLetter>{0} putzt wie besessen HIS Umgebung.</Compulsion.beginLetter>
+  <Compulsion.beginLetterLabel>zwang</Compulsion.beginLetterLabel>
+  <Compulsion.recoveryMessage>{0} hat aufgehört, zwanghaft HIS Umgebung zu putzen.</Compulsion.recoveryMessage>
+  <Compulsion.baseInspectLine>Geisteszustand: Zwanghaftes Putzen</Compulsion.baseInspectLine>
+
+  <Antisocial.label>Vermeidet Menschen</Antisocial.label>
+  <Antisocial.beginLetter>{0} vermeidet HIS geselligen Kolonisten.</Antisocial.beginLetter>
+  <Antisocial.beginLetterLabel>antisozial</Antisocial.beginLetterLabel>
+  <Antisocial.recoveryMessage>{0} hat aufgehört, anderen Menschen aus dem Weg zu gehen.</Antisocial.recoveryMessage>
+  <Antisocial.baseInspectLine>Geisteszustand: Antisozial</Antisocial.baseInspectLine>
+
+  <Apathy.label>teilnahmslos</Apathy.label>
+  <Apathy.beginLetter>{0} ist apathetisch geworden und wird wahrscheinlich HIS Arbeit nicht nachgehen.</Apathy.beginLetter>
+  <Apathy.beginLetterLabel>Apathie</Apathy.beginLetterLabel>
+  <Apathy.recoveryMessage>{0} hat aufgehört apathetisch zu sein.</Apathy.recoveryMessage>
+  <Apathy.baseInspectLine>Geisteszustand: Apathie</Apathy.baseInspectLine>
+
+  <Histrionic.label>histrionisches Verhalten</Histrionic.label>
+  <Histrionic.beginLetter>{0} verhält sich histrionisch und versucht verzweifelt, Aufmerksamkeit zu erlangen.</Histrionic.beginLetter>
+  <Histrionic.beginLetterLabel>histrionisch</Histrionic.beginLetterLabel>
+  <Histrionic.recoveryMessage>{0} hat aufgehört, sich histrionisch zu verhalten.</Histrionic.recoveryMessage>
+  <Histrionic.baseInspectLine>Geisteszustand: Histrionisch</Histrionic.baseInspectLine>
+
+
+</LanguageData>

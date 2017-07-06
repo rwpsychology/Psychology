@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Random social interactions -->
+
+  <PrudeSeen.stages.0.label>witnessed the human form</PrudeSeen.stages.0.label>
+  <PrudeSeen.stages.0.description>Was that person naked? Do they just let people run around without clothes on here? Disgusting.</PrudeSeen.stages.0.description>
+
+  <DynamicSocial.stages.0.label>conversation</DynamicSocial.stages.0.label>
+  <BrokeUpWithMeCodependent.stages.0.label>codependent</BrokeUpWithMeCodependent.stages.0.label>
+
+  <BrokeUpWithMeCodependentMood.stages.0.label>codependent on {0}</BrokeUpWithMeCodependentMood.stages.0.label>
+  <BrokeUpWithMeCodependentMood.stages.0.description>I miss you... please come back.</BrokeUpWithMeCodependentMood.stages.0.description>
+
+  <CheatedOnMeCodependent.stages.0.label>cheated on me</CheatedOnMeCodependent.stages.0.label>
+
+  <CheatedOnMeCodependentMood.stages.0.label>cheated on by {0}</CheatedOnMeCodependentMood.stages.0.label>
+  <CheatedOnMeCodependentMood.stages.0.description>I don't understand... I must have done something wrong.</CheatedOnMeCodependentMood.stages.0.description>
+
+  <RebuffedMyRomanceAttemptLecher.stages.0.label>rebuffed me</RebuffedMyRomanceAttemptLecher.stages.0.label>
+  <CapturedMe.stages.0.label>faction imprisoned me</CapturedMe.stages.0.label>
+  <WentOnDate.stages.0.label>went on a date</WentOnDate.stages.0.label>
+  <MissedDate.stages.0.label>slept through our date</MissedDate.stages.0.label>
+
+
+</LanguageData>
