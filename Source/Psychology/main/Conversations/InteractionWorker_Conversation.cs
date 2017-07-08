@@ -25,7 +25,9 @@ namespace Psychology
         {
             PsychologyPawn realInitiator = initiator as PsychologyPawn;
             PsychologyPawn realRecipient = recipient as PsychologyPawn;
-            PersonalityNode topic = realInitiator.psyche.PersonalityNodes.Where(node => !node.Core).RandomElementByWeight(node => realInitiator.psyche.GetConversationTopicWeight(node.def, realRecipient));
+            PersonalityNode topic = (from node in realInitiator.psyche.PersonalityNodes
+                                     where !node.Core
+                                     select node).RandomElementByWeight(node => realInitiator.psyche.GetConversationTopicWeight(node.def, realRecipient));
             Hediff_Conversation initiatorHediff = (Hediff_Conversation)HediffMaker.MakeHediff(HediffDefOfPsychology.HoldingConversation, realInitiator);
             initiatorHediff.otherPawn = realRecipient;
             initiatorHediff.topic = topic.def;

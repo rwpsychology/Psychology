@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Methadone.label>메타돈</Methadone.label>
+  <Methadone.description>아편계 중독치료제. 루시페륨을 제외한 약물의 금단 부작용으로 인한 부정적인 효과를 예방합니다. 중독 시 능률이 떨어지며, 종종 약물남용을 유발합니다.\n\n매일 복용하십시오. 금단 부작용이 사라진 후 복용을 멈춰 주십시오.</Methadone.description>
+  <Methadone.ingestible.ingestCommandString>{0} 섭취</Methadone.ingestible.ingestCommandString>
+  <Methadone.ingestible.ingestReportString>{0} 섭취하는 중.</Methadone.ingestible.ingestReportString>
+
+
+</LanguageData>

@@ -20,7 +20,7 @@ namespace Psychology
                 return ThoughtState.Inactive;
             List<Thought> tmpThoughts = new List<Thought>();
             p.needs.mood.thoughts.GetAllMoodThoughts(tmpThoughts);
-            if (tmpThoughts.Where(t => t.def.defName == "LowExpectations").Count() > 0)
+            if (tmpThoughts.Find(t => t.def.defName == "LowExpectations") != null)
                 return ThoughtState.Inactive;
             if (!PsychologyBase.IndividualityOn())
                 return ThoughtState.Inactive;
@@ -35,27 +35,27 @@ namespace Psychology
                     }
                     return false;
                 };
-                List<Pawn> colonists = (from c in p.Map.mapPawns.FreeColonistsSpawned
-                                        where c != p
-                                        select c).ToList();
-                List<Pawn> sameClothes = (from c in colonists
-                                          where (from a in c.apparel.WornApparel
-                                                 where identical(a)
-                                                 select a).ToList().Count == p.apparel.WornApparelCount && p.apparel.WornApparelCount == c.apparel.WornApparelCount
-                                          select c).ToList();
-                if (sameClothes.Count == colonists.Count && colonists.Count > 5)
+                IEnumerable<Pawn> colonists = (from c in p.Map.mapPawns.FreeColonistsSpawned
+                                               where c != p
+                                               select c);
+                IEnumerable<Pawn> sameClothes = (from c in colonists
+                                                 where (from a in c.apparel.WornApparel
+                                                        where identical(a)
+                                                        select a).Count() == p.apparel.WornApparelCount && p.apparel.WornApparelCount == c.apparel.WornApparelCount
+                                                 select c);
+                if (sameClothes.Count() == colonists.Count() && colonists.Count() > 5)
                 {
                     lastTick[p] = new int[] { Find.TickManager.TicksGame, 3 };
                 }
-                else if (sameClothes.Count >= (colonists.Count / 2) && colonists.Count > 5)
+                else if (sameClothes.Count() >= (colonists.Count() / 2) && colonists.Count() > 5)
                 {
                     lastTick[p] = new int[] { Find.TickManager.TicksGame, 2 };
                 }
-                else if (sameClothes.Count > 1)
+                else if (sameClothes.Count() > 1)
                 {
                     lastTick[p] = new int[] { Find.TickManager.TicksGame, 1 };
                 }
-                else if (sameClothes.Count > 0)
+                else if (sameClothes.Count() > 0)
                 {
                     lastTick[p] = new int[] { Find.TickManager.TicksGame, 0 };
                 }

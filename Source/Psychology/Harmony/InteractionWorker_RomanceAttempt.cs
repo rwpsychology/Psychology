@@ -78,6 +78,18 @@ namespace Psychology.Harmony
         public static void PsychologyException(ref float __result, Pawn initiator, Pawn recipient)
         {
             PsychologyPawn realInitiator = initiator as PsychologyPawn;
+            //Don't hit on people in mental breaks... unless you're really freaky.
+            if (recipient.InMentalState && realInitiator != null && realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental) > 0.8f)
+            {
+                __result = 0f;
+                return;
+            }
+            //Pawns won't hit on their spouses.
+            if (LovePartnerRelationUtility.LovePartnerRelationExists(initiator, recipient))
+            {
+                __result = 0f;
+                return;
+            }
             //Codependents won't romance anyone if they are in a relationship
             if (LovePartnerRelationUtility.HasAnyLovePartner(initiator) && initiator.story.traits.HasTrait(TraitDefOfPsychology.Codependent))
             {
@@ -101,7 +113,7 @@ namespace Psychology.Harmony
             else
             {
                 //Psychology: A pawn's likelihood to romance is based on how Aggressive and Romantic they are.
-                romanceChance = 0.2f + realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive) + (1f - realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
+                romanceChance = Mathf.Pow(4f, realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive)) + Mathf.Pow(4f, (1f - realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic))) - 1.6f;
             }
             //A pawn with +50 or more opinion of their lover will not hit on other pawns unless they are lecherous or polygamous (and their lover is also polygamous).
             float existingLovePartnerFactor = 1f;
@@ -112,7 +124,7 @@ namespace Psychology.Harmony
                 existingLovePartnerFactor = Mathf.InverseLerp(50f, -50f, value);
             }
             float attractivenessFactor = Mathf.InverseLerp(0.25f, 1f, attractiveness);
-            float opinionFactor = Mathf.InverseLerp(5f, 100f, (float)opinion);
+            float opinionFactor = Mathf.InverseLerp(5f, 100f, (float)opinion)*2f;
             //People who have hit on someone in the past and been rejected because of their sexuality will rarely attempt to hit on them again.
             float knownSexualityFactor = (realInitiator != null && PsychologyBase.ActivateKinsey() && realInitiator.sexuality.IncompatibleSexualityKnown(recipient) && !realInitiator.story.traits.HasTrait(TraitDefOfPsychology.Lecher)) ? 0.05f : (realInitiator == null ? (initiator.gender == recipient.gender ? (initiator.story.traits.HasTrait(TraitDefOf.Gay) && recipient.story.traits.HasTrait(TraitDefOf.Gay) ? 1f : 0.15f) : (!initiator.story.traits.HasTrait(TraitDefOf.Gay) && !recipient.story.traits.HasTrait(TraitDefOf.Gay) ? 1f : 0.15f)) : 1f);
             //Only lechers will try to romance someone in a stable relationship.

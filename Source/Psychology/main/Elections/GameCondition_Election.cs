@@ -25,12 +25,13 @@ namespace Psychology
             {
                 this.duration -= (plannedStart - 18) * GenDate.TicksPerHour;
             }
-            List<PsychologyPawn> psychologyColonists = (from c in this.Map.mapPawns.FreeColonistsSpawned
-                                                        where c is PsychologyPawn
-                                                        select (PsychologyPawn)c).ToList();
+            IEnumerable<PsychologyPawn> psychologyColonists = this.Map.mapPawns.FreeColonistsSpawned.OfType<PsychologyPawn>();
             int maxCandidatesThisColonySupports = Mathf.RoundToInt(psychologyColonists.Count() * 0.3f);
             float totalOutspoken = 0f;
-            psychologyColonists.ForEach(p => totalOutspoken += p.psyche.GetPersonalityRating(PersonalityNodeDefOf.Outspoken));
+            foreach(PsychologyPawn p in psychologyColonists)
+            {
+                totalOutspoken += p.psyche.GetPersonalityRating(PersonalityNodeDefOf.Outspoken);
+            }
             int numCandidates = Rand.RangeInclusive(Mathf.Min(maxCandidatesThisColonySupports, 1 + Mathf.RoundToInt(totalOutspoken * 0.1f)), maxCandidatesThisColonySupports);
             int tries = 0;
             while (this.candidates.Count < numCandidates && tries < 500)
@@ -78,7 +79,7 @@ namespace Psychology
                 {
                     issuesString.AppendFormat("{0}) {1}{2}",i+1,candidate.pawn.psyche.GetPersonalityNodeOfDef(candidate.nodes[i]).PlatformIssue,(i != candidate.nodes.Count-1 ? "\n" : ""));
                 }
-                Find.LetterStack.ReceiveLetter("LetterLabelElectionCandidate".Translate(candidate.pawn.LabelShort), "LetterElectionCandidate".Translate(candidate.pawn.LabelShort, ((FactionBase)Find.WorldObjects.ObjectsAt(candidate.pawn.Map.Tile).ToList().Find(obj => obj is FactionBase)).Label, issuesString.ToString()).AdjustedFor(candidate.pawn), LetterDefOf.Good, candidate.pawn, null);
+                Find.LetterStack.ReceiveLetter("LetterLabelElectionCandidate".Translate(candidate.pawn.LabelShort), "LetterElectionCandidate".Translate(candidate.pawn.LabelShort, Find.WorldObjects.ObjectsAt(candidate.pawn.Map.Tile).OfType<FactionBase>().First().Label, issuesString.ToString()).AdjustedFor(candidate.pawn), LetterDefOf.Good, candidate.pawn, null);
             }
         }
 
@@ -109,7 +110,7 @@ namespace Psychology
             }
             IntVec3 intVec;
             PsychologyPawn organizer = candidates.RandomElement().pawn;
-            string baseName = ((FactionBase)Find.WorldObjects.ObjectsAt(organizer.Map.Tile).ToList().Find(obj => obj is FactionBase)).Label;
+            string baseName = Find.WorldObjects.ObjectsAt(organizer.Map.Tile).OfType<FactionBase>().First().Label;
             if (!RCellFinder.TryFindPartySpot(organizer, out intVec))
             {
                 return;

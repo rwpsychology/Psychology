@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <EmpathyChangesTitle>공감 기능 활성화</EmpathyChangesTitle>
+  <EmpathyChangesTooltip>이 옵션을 해제하여 부정적인 사건에 시달리는 정착민에 대한 반응을 초기화 합니다. 난이도가 상승합니다; "연민성애자" 정착민들은 영향을 받지 않습니다. 비활성화 후 반드시 게임을 재시작 해야 합니다!</EmpathyChangesTooltip>
+
+  <SexualityChangesTitle>성 정체성 기능 활성화</SexualityChangesTitle>
+  <SexualityChangesTooltip>이 옵션을 해제하여 킨제이 등급을 비활성화 하고 "동성애" 특성을 복원합니다. 절대로 플레이 도중 변경하지 마십시오! 변경사항이 있을 시 반드시 게임을 재시작 해야 합니다!</SexualityChangesTooltip>
+
+  <KinseyModeTitle>킨제이 등급 공식</KinseyModeTitle>
+  <KinseyModeTooltip>이 설정은 생성되는 정착민의 킨제이 등급에 영향을 미칩니다.</KinseyModeTooltip>
+  <KinseyMode_Realistic>기본</KinseyMode_Realistic>
+  <KinseyMode_Invisible>중심</KinseyMode_Invisible>
+  <KinseyMode_Gaypocalypse>역상</KinseyMode_Gaypocalypse>
+
+  <IndividualityTitle>복장 개성 활성화</IndividualityTitle>
+  <IndividualityTooltip>이 옵션을 해제하여 같은 복장을 하고있는 정착민들이 가지는 부정적인 영향을 비활성화 합니다. 난이도가 소폭 상승하지만, 추천되는 옵션입니다.</IndividualityTooltip>
+
+  <ElectionsTitle>선거 활성화</ElectionsTitle>
+  <ElectionsTooltip>이 옵션을 해제하여 해마다 열리는 선거 이벤트 및 지도자 기능을 비활성화 합니다. 이미 진행중인 선거는 멈추지 못하며, 기존 지도자는 일반 정착민으로 돌아갈 것 입니다. 해당 옵션은 타 모드 호환성에 영향일 끼치지 않습니다.</ElectionsTooltip>
+
+</LanguageData>

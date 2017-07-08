@@ -12,7 +12,10 @@ namespace Psychology
     {
         public override bool StateCanOccur(Pawn pawn)
         {
-            return base.StateCanOccur(pawn) && !pawn.story.WorkTagIsDisabled(WorkTags.Violent) && pawn.Map.mapPawns.FreeColonistsSpawned.ToList().Find((Pawn x) => pawn.relations.OpinionOf(x) < -20) != null;
+            IEnumerable<Pawn> rivals = (from x in pawn.Map.mapPawns.FreeColonistsSpawned
+                                        where pawn.relations.OpinionOf(x) < -20
+                                        select x);
+            return base.StateCanOccur(pawn) && !pawn.story.WorkTagIsDisabled(WorkTags.Violent) && rivals.Count() > 0;
         }
     }
 }

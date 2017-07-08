@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Anxiety.label>불안장애</Anxiety.label>
+  <Anxiety.stages.0.label>치료됨</Anxiety.stages.0.label>
+  <Anxiety.stages.1.label>가벼움</Anxiety.stages.1.label>
+  <Anxiety.stages.2.label>가벼움</Anxiety.stages.2.label>
+  <Anxiety.stages.3.label>심각함</Anxiety.stages.3.label>
+  <Anxiety.stages.4.label>심각함</Anxiety.stages.4.label>
+  <Anxiety.stages.5.label>극심함</Anxiety.stages.5.label>
+
+  <RecoveringPyromaniac.label>방화광 치료</RecoveringPyromaniac.label>
+  <DrugFree.label>약품없음</DrugFree.label>
+  <Antidepressants.label>항우울제</Antidepressants.label>
+
+
+</LanguageData>

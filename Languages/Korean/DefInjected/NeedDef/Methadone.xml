@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Methadone addiction -->
+
+  <Chemical_Methadone.label>메타돈</Chemical_Methadone.label>
+  <Chemical_Methadone.description>메타돈 중독으로 인한 금단 현상을 피하려면 주기적인 복용이 필요합니다.</Chemical_Methadone.description>
+
+
+</LanguageData>

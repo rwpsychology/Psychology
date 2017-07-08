@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TreatedTrait>{0}의 {1}(이)가 성공적으로 치료되었습니다.</TreatedTrait>
+  <MessageElectionCalledOff>{0}의 선거가 투표소의 이상으로 취소되었습니다.</MessageElectionCalledOff>
+
+</LanguageData>

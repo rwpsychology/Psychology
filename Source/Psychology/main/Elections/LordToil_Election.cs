@@ -34,9 +34,9 @@ namespace Psychology
         {
             LordJob_Joinable_Election election = pawn.GetLord().LordJob as LordJob_Joinable_Election;
             PsychologyPawn voter = pawn as PsychologyPawn;
-            if(election != null && voter != null && !election.voters.Contains(pawn))
+            if(election != null && voter != null && !election.voters.Contains(pawn.GetHashCode()))
             {
-                election.voters.Add(pawn);
+                election.voters.Add(pawn.GetHashCode());
                 if(election.candidates.Find(c => c.pawn == voter) == null)
                 {
                     List<Pair<PsychologyPawn, float>> possibleVotes = new List<Pair<PsychologyPawn, float>>();
@@ -46,14 +46,19 @@ namespace Psychology
                         candidate.nodes.ForEach(p => issueWeighting += Mathf.Pow((1f - Mathf.Abs(candidate.pawn.psyche.GetPersonalityRating(p) - voter.psyche.GetPersonalityRating(p))), 2) * Mathf.Pow(10, p.controversiality));
                         possibleVotes.Add(new Pair<PsychologyPawn, float>(candidate.pawn, issueWeighting+voter.relations.OpinionOf(candidate.pawn)));
                     }
-                    possibleVotes = possibleVotes.OrderByDescending(vote => vote.Second).ToList();
-                    StringBuilder voteString = new StringBuilder("[Psychology] Vote weights for "+voter.LabelShort+": ");
-                    possibleVotes.ForEach(v => voteString.Append(v.First.LabelShort + " " + v.Second + " "));
+                    IEnumerable<Pair<PsychologyPawn, float>> orderedPossibleVotes = (from v in possibleVotes
+                                                                                     orderby v.Second descending
+                                                                                     select v);
                     if (Prefs.DevMode && Prefs.LogVerbose)
                     {
+                        StringBuilder voteString = new StringBuilder("[Psychology] Vote weights for " + voter.LabelShort + ": ");
+                        foreach (Pair<PsychologyPawn, float> v in orderedPossibleVotes)
+                        {
+                            voteString.Append(v.First.LabelShort + " " + v.Second + " ");
+                        }
                         Log.Message(voteString.ToString());
                     }
-                    election.votes.Add(possibleVotes[0].First.LabelShort);
+                    election.votes.Add(orderedPossibleVotes.First().First.LabelShort);
                 }
                 else
                 {

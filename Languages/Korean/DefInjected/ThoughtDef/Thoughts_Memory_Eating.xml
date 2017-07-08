@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Special nature thoughts -->
+
+  <AteLavishMealPickyEater.stages.0.label>호화로운 음식</AteLavishMealPickyEater.stages.0.label>
+  <AteLavishMealPickyEater.stages.0.description>정말 엄청난 음식이었어. 내 입에 딱 맞는 음식이로군!</AteLavishMealPickyEater.stages.0.description>
+
+  <AteFineMealPickyEater.stages.0.label>맛있는 음식</AteFineMealPickyEater.stages.0.label>
+  <AteFineMealPickyEater.stages.0.description>정말 맛있게 먹었어. 이정도 음식이 되야 내 입에 맞지!</AteFineMealPickyEater.stages.0.description>
+
+  <AteAwfulMealPickyEater.stages.0.label>형편없는 음식</AteAwfulMealPickyEater.stages.0.label>
+  <AteAwfulMealPickyEater.stages.0.description>맛도 없는걸 삼켜야 했어. 용납할수 없어. 나같은 사람은 더 좋은 음식을 먹을 자격이 있어!</AteAwfulMealPickyEater.stages.0.description>
+
+  <AteRawFoodPickyEater.stages.0.label>생식</AteRawFoodPickyEater.stages.0.label>
+  <AteRawFoodPickyEater.stages.0.description>날것을 그냥 먹어야 했어. 요리사도 없는 이곳에서 더 이상 살고싶지 않아.</AteRawFoodPickyEater.stages.0.description>
+
+  <AteNormalMealPickyEater.stages.0.label>평범한 음식</AteNormalMealPickyEater.stages.0.label>
+  <AteNormalMealPickyEater.stages.0.description>내 기준에 부합하는 음식이라고는 말 할수 없군. 먹을게 없어서 마지못해 먹었을 뿐이야.</AteNormalMealPickyEater.stages.0.description>
+
+  <AteInsectMeatAsIngredientPickyEater.stages.0.label>곤충 요리 섭취</AteInsectMeatAsIngredientPickyEater.stages.0.label>
+  <AteInsectMeatAsIngredientPickyEater.stages.0.description>미끌미끌한 곤충 고기로 만든 음식을 먹었어. 양념으로 맛이 좀 가려지긴 했어도 정체 모를 덩어리들이 보였어.</AteInsectMeatAsIngredientPickyEater.stages.0.description>
+
+  <AteInsectMeatDirectPickyEater.stages.0.label>곤충 고기</AteInsectMeatDirectPickyEater.stages.0.label>
+  <AteInsectMeatDirectPickyEater.stages.0.description>미끌미끌한 곤충 고기를 먹었어. 날 제발 죽여줘.</AteInsectMeatDirectPickyEater.stages.0.description>
+
+  <AteRottenFoodPickyEater.stages.0.label>상한 음식</AteRottenFoodPickyEater.stages.0.label>
+  <AteRottenFoodPickyEater.stages.0.description>냄새나고 썩은 음식을 먹었어. 이런 음식을 먹느니 죽음을 택하고 말겠어.</AteRottenFoodPickyEater.stages.0.description>
+
+
+</LanguageData>

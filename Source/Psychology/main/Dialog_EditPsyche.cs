@@ -108,7 +108,9 @@ namespace Psychology
             {
                 foreach(PersonalityNode node in this.pawn.psyche.PersonalityNodes)
                 {
-                    node.rawRating = cachedList.Where(n => n.First == node.def.label.CapitalizeFirst()).First().Second;
+                    node.rawRating = (from n in cachedList
+                                      where n.First == node.def.label.CapitalizeFirst()
+                                      select n).First().Second;
                 }
                 if(PsychologyBase.ActivateKinsey())
                 {

@@ -191,6 +191,31 @@ namespace Psychology
                     knowColonistOrganHarvested = ModifyThoughtStages(knowColonistOrganHarvested, new int[] { -4 });
                 }
 
+
+                IEnumerable<ThingDef> things = (from m in LoadedModManager.RunningMods
+                                         from def in m.AllDefs.OfType<ThingDef>()
+                                         where typeof(Pawn).IsAssignableFrom(def.thingClass)
+                                         select def);
+                foreach (ThingDef t in things)
+                {
+                    if (t.race.intelligence == Intelligence.Humanlike)
+                    {
+                        t.thingClass = typeof(PsychologyPawn);
+                        t.inspectorTabsResolved.Add(InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Psyche)));
+                        DirectXmlCrossRefLoader.RegisterListWantsCrossRef(t.recipes, "TreatPyromania");
+                        DirectXmlCrossRefLoader.RegisterListWantsCrossRef(t.recipes, "TreatChemicalInterest");
+                        DirectXmlCrossRefLoader.RegisterListWantsCrossRef(t.recipes, "TreatChemicalFascination");
+                        DirectXmlCrossRefLoader.RegisterListWantsCrossRef(t.recipes, "TreatDepression");
+                        if (!t.race?.hediffGiverSets?.NullOrEmpty() ?? false)
+                        {
+                            if (t.race.hediffGiverSets.Contains(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicStandard")))
+                            {
+                                t.race.hediffGiverSets.Add(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicPsychology"));
+                            }
+                        }
+                    }
+                }
+
                 /*
                  * Now to enjoy the benefits of having made a popular mod!
                  * This will be our little secret.
@@ -267,9 +292,9 @@ namespace Psychology
             if (ModIsActive && PsychologyBase.ActivateKinsey())
             {
                 /* Remove Gay trait from pawns if Kinsey scale is enabled */
-                List<Pawn> gayPawns = (from p in map.mapPawns.AllPawns
+                IEnumerable<Pawn> gayPawns = (from p in map.mapPawns.AllPawns
                                        where p.RaceProps.Humanlike && p.story.traits.HasTrait(TraitDefOf.Gay)
-                                       select p).ToList();
+                                       select p);
                 foreach (Pawn pawn in gayPawns)
                 {
                     RemoveTrait(pawn, TraitDefOf.Gay);
@@ -288,17 +313,17 @@ namespace Psychology
             if (currentTick % GenDate.TicksPerHour*2 == 0)
             {
                 Map playerFactionMap = Find.WorldObjects.FactionBases.Find(b => b.Faction.IsPlayer).Map;
-                List<Pawn> constituents = (from p in playerFactionMap.mapPawns.FreeColonistsSpawned
-                                           where !p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && p.GetTimeAssignment() != TimeAssignmentDefOf.Work && p.Awake()
-                                           select p).ToList();
-                if(constituents.Count > 0)
+                IEnumerable<Pawn> constituents = (from p in playerFactionMap.mapPawns.FreeColonistsSpawned
+                                                  where !p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && p.GetTimeAssignment() != TimeAssignmentDefOf.Work && p.Awake()
+                                                  select p);
+                if(constituents.Count() > 0)
                 {
                     Pawn potentialConstituent = constituents.RandomElementByWeight(p => 0.0001f + Mathf.Pow(Mathf.Abs(0.7f - p.needs.mood.CurLevel), 2));
-                    List<Pawn> activeMayors = (from m in playerFactionMap.mapPawns.FreeColonistsSpawned
-                                               where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == potentialConstituent.Map.Tile
-                                               && m.GetTimeAssignment() != TimeAssignmentDefOf.Work && m.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && m.GetLord() == null && m.Awake()
-                                               select m).ToList();
-                    if (potentialConstituent != null && activeMayors.Count > 0)
+                    IEnumerable<Pawn> activeMayors = (from m in playerFactionMap.mapPawns.FreeColonistsSpawned
+                                                      where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == potentialConstituent.Map.Tile
+                                                      && m.GetTimeAssignment() != TimeAssignmentDefOf.Work && m.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && m.GetLord() == null && m.Awake()
+                                                      select m);
+                    if (potentialConstituent != null && activeMayors.Count() > 0)
                     {
                         Pawn mayor = activeMayors.RandomElement(); //There should only be one.
                         PsychologyPawn psychologyConstituent = potentialConstituent as PsychologyPawn;
@@ -359,10 +384,10 @@ namespace Psychology
                         continue;
                     }
                     //If an election has already been completed this year, don't start a new one.
-                    List<Pawn> activeMayors = (from m in factionBase.Map.mapPawns.FreeColonistsSpawned
-                                               where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == factionBase.Map.Tile && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).yearElected == GenLocalDate.Year(factionBase.Map.Tile)
-                                               select m).ToList();
-                    if (activeMayors.Count > 0)
+                    IEnumerable<Pawn> activeMayors = (from m in factionBase.Map.mapPawns.FreeColonistsSpawned
+                                                      where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == factionBase.Map.Tile && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).yearElected == GenLocalDate.Year(factionBase.Map.Tile)
+                                                      select m);
+                    if (activeMayors.Count() > 0)
                     {
                         continue;
                     }

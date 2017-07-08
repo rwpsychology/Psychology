@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Random social interactions -->
+
+  <PrudeSeen.label>나체목격</PrudeSeen.label>
+  <PrudeSeen.logRulesInitiator.rulesStrings.0>logentry->[other_nameShortIndef]의 알몸을 봤어.</PrudeSeen.logRulesInitiator.rulesStrings.0>
+  <PrudeSeen.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef]가 나의 알몸을 봤어.</PrudeSeen.logRulesRecipient.rulesStrings.0>
+
+  <Conversation.label>대화</Conversation.label>
+  <Conversation.logRulesInitiator.rulesStrings.0>logentry->[other_nameShortIndef]에게 말을 건냈어.</Conversation.logRulesInitiator.rulesStrings.0>
+  <Conversation.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef]가 나에게 말을 건냈어.</Conversation.logRulesRecipient.rulesStrings.0>
+
+  <EndConversation.label>대화 종료</EndConversation.label>
+  <EndConversation.logRulesInitiator.rulesStrings.0>logentry->[other_nameShortIndef]와 대화를 끝냈어.</EndConversation.logRulesInitiator.rulesStrings.0>
+  <EndConversation.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef]와 대화를 끝냈어.</EndConversation.logRulesRecipient.rulesStrings.0>
+
+  <HangOut.label>함께하기</HangOut.label>
+  <HangOut.logRulesInitiator.rulesStrings.0>logentry->[other_nameShortIndef]에게 함께 놀자고 제안했어.</HangOut.logRulesInitiator.rulesStrings.0>
+  <HangOut.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef]가 나에게 함께 놀자고 제안했어.</HangOut.logRulesRecipient.rulesStrings.0>
+
+  <PlanDate.label>데이트하기</PlanDate.label>
+  <PlanDate.logRulesInitiator.rulesStrings.0>logentry->[other_nameShortIndef]와 데이트하기로 했어.</PlanDate.logRulesInitiator.rulesStrings.0>
+  <PlanDate.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef]와 데이트하기로 했어.</PlanDate.logRulesRecipient.rulesStrings.0>
+
+
+</LanguageData>
