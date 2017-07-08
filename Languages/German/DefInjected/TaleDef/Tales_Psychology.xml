@@ -48,39 +48,39 @@
 
   <MentalStateTantrum.label>zerstörerische Wut behandelt</MentalStateTantrum.label>
   <MentalStateTantrum.rulePack.rulesStrings.0>tale_noun->[pawn_nameShortDef] hat einen Wutanfall</MentalStateTantrum.rulePack.rulesStrings.0>
-  <MentalStateTantrum.rulePack.rulesStrings.1>image->[pawn_nameFull] flying into a destructive rage [circumstance_group]</MentalStateTantrum.rulePack.rulesStrings.1>
-  <MentalStateTantrum.rulePack.rulesStrings.2>image->[pawn_nameFull] taking [pawn_possessive] anger out on furniture [circumstance_group]</MentalStateTantrum.rulePack.rulesStrings.2>
-  <MentalStateTantrum.rulePack.rulesStrings.3>image->[pawn_nameFull] stumbling into furniture with a psychotic look on [pawn_possessive] face [circumstance_group]</MentalStateTantrum.rulePack.rulesStrings.3>
-  <MentalStateTantrum.rulePack.rulesStrings.4>circumstance_phrase->while violently cursing</MentalStateTantrum.rulePack.rulesStrings.4>
-  <MentalStateTantrum.rulePack.rulesStrings.5>circumstance_phrase->seemingly without reason</MentalStateTantrum.rulePack.rulesStrings.5>
-  <MentalStateTantrum.rulePack.rulesStrings.6>circumstance_phrase->as others cower in fear</MentalStateTantrum.rulePack.rulesStrings.6>
-  <MentalStateTantrum.rulePack.rulesStrings.7>circumstance_phrase->as others watch in horror</MentalStateTantrum.rulePack.rulesStrings.7>
-  <MentalStateTantrum.rulePack.rulesStrings.8>circumstance_phrase->because of the stress</MentalStateTantrum.rulePack.rulesStrings.8>
-  <MentalStateTantrum.rulePack.rulesStrings.9>circumstance_phrase->while screaming</MentalStateTantrum.rulePack.rulesStrings.9>
-  <MentalStateTantrum.rulePack.rulesStrings.10>circumstance_phrase->while trembling with rage</MentalStateTantrum.rulePack.rulesStrings.10>
-  <MentalStateTantrum.rulePack.rulesStrings.11>desc_sentence->[pawn_pronoun] is shaking with ungovernable rage.</MentalStateTantrum.rulePack.rulesStrings.11>
-  <MentalStateTantrum.rulePack.rulesStrings.12>desc_sentence->[pawn_possessive] teeth are bared in a deadly snarl.</MentalStateTantrum.rulePack.rulesStrings.12>
-  <MentalStateTantrum.rulePack.rulesStrings.13>desc_sentence->[pawn_possessive] eyes are dead pools of madness.</MentalStateTantrum.rulePack.rulesStrings.13>
-  <MentalStateTantrum.rulePack.rulesStrings.14>desc_sentence->[pawn_pronoun] has bruised [pawn_possessive] fists.</MentalStateTantrum.rulePack.rulesStrings.14>
-  <MentalStateTantrum.rulePack.rulesStrings.15>desc_sentence->[pawn_pronoun] is grimacing in misery.</MentalStateTantrum.rulePack.rulesStrings.15>
-  <MentalStateTantrum.rulePack.rulesStrings.16>desc_sentence->[pawn_pronoun] is holding a chair over [pawn_possessive] head.</MentalStateTantrum.rulePack.rulesStrings.16>
-  <MentalStateTantrum.rulePack.rulesStrings.17>desc_sentence->[pawn_possessive] entire body is trembling with hatred.</MentalStateTantrum.rulePack.rulesStrings.17>
-  <MentalStateTantrum.rulePack.rulesStrings.18>desc_sentence->A single tear rolls down [pawn_possessive] face.</MentalStateTantrum.rulePack.rulesStrings.18>
+  <MentalStateTantrum.rulePack.rulesStrings.1>image->[pawn_nameFull] Gerät in zerstörerischer Wut [circumstance_group]</MentalStateTantrum.rulePack.rulesStrings.1>
+  <MentalStateTantrum.rulePack.rulesStrings.2>image->[pawn_nameFull] lässt [pawn_possessive] Wut an Möbel raus [circumstance_group]</MentalStateTantrum.rulePack.rulesStrings.2>
+  <MentalStateTantrum.rulePack.rulesStrings.3>image->[pawn_nameFull] stolpert in ein Möbelstück mit einem psychotischen Blick auf [pawn_possessive]s Gesicht [circumstance_group]</MentalStateTantrum.rulePack.rulesStrings.3>
+  <MentalStateTantrum.rulePack.rulesStrings.4>circumstance_phrase->während verbal geflucht wird</MentalStateTantrum.rulePack.rulesStrings.4>
+  <MentalStateTantrum.rulePack.rulesStrings.5>circumstance_phrase->scheinbar ohne Grund</MentalStateTantrum.rulePack.rulesStrings.5>
+  <MentalStateTantrum.rulePack.rulesStrings.6>circumstance_phrase->als andere in Angst kauern</MentalStateTantrum.rulePack.rulesStrings.6>
+  <MentalStateTantrum.rulePack.rulesStrings.7>circumstance_phrase->als andere entsetzlich schauen</MentalStateTantrum.rulePack.rulesStrings.7>
+  <MentalStateTantrum.rulePack.rulesStrings.8>circumstance_phrase->wegen dem Stress</MentalStateTantrum.rulePack.rulesStrings.8>
+  <MentalStateTantrum.rulePack.rulesStrings.9>circumstance_phrase->während des schreiens</MentalStateTantrum.rulePack.rulesStrings.9>
+  <MentalStateTantrum.rulePack.rulesStrings.10>circumstance_phrase->während gezittert wird vor Wut</MentalStateTantrum.rulePack.rulesStrings.10>
+  <MentalStateTantrum.rulePack.rulesStrings.11>desc_sentence->[pawn_pronoun] zittert mit unbezähmbarer Wut.</MentalStateTantrum.rulePack.rulesStrings.11>
+  <MentalStateTantrum.rulePack.rulesStrings.12>desc_sentence->[pawn_possessive] Zähne sind in einem tödlichen Knurren entblößt.</MentalStateTantrum.rulePack.rulesStrings.12>
+  <MentalStateTantrum.rulePack.rulesStrings.13>desc_sentence->[pawn_possessive] Augen streben nach Wahnsinn.</MentalStateTantrum.rulePack.rulesStrings.13>
+  <MentalStateTantrum.rulePack.rulesStrings.14>desc_sentence->[pawn_pronoun] hat [pawn_possessive] Fäuste eingequetscht.</MentalStateTantrum.rulePack.rulesStrings.14>
+  <MentalStateTantrum.rulePack.rulesStrings.15>desc_sentence->[pawn_pronoun] schneidet Grimassen in Elend.</MentalStateTantrum.rulePack.rulesStrings.15>
+  <MentalStateTantrum.rulePack.rulesStrings.16>desc_sentence->[pawn_pronoun] hält einen Stuhl über [pawn_possessive] Kopf.</MentalStateTantrum.rulePack.rulesStrings.16>
+  <MentalStateTantrum.rulePack.rulesStrings.17>desc_sentence->[pawn_possessive] ganzer Körper bebt voller Hass.</MentalStateTantrum.rulePack.rulesStrings.17>
+  <MentalStateTantrum.rulePack.rulesStrings.18>desc_sentence->Eine einzige Träne rollt [pawn_possessive] Gesicht runter.</MentalStateTantrum.rulePack.rulesStrings.18>
 
   <MentalStateSelfHarm.label>tiefe Depression</MentalStateSelfHarm.label>
-  <MentalStateSelfHarm.rulePack.rulesStrings.0>tale_noun->[pawn_nameShortDef] hurting [pawn_pronoun]self</MentalStateSelfHarm.rulePack.rulesStrings.0>
-  <MentalStateSelfHarm.rulePack.rulesStrings.1>image->[pawn_nameFull] cutting [pawn_possessive] wrists [circumstance_group]</MentalStateSelfHarm.rulePack.rulesStrings.1>
-  <MentalStateSelfHarm.rulePack.rulesStrings.2>image->[pawn_nameFull] sitting in a pool of [pawn_possessive] blood [circumstance_group]</MentalStateSelfHarm.rulePack.rulesStrings.2>
-  <MentalStateSelfHarm.rulePack.rulesStrings.3>image->[pawn_nameFull] staring off into the distance [circumstance_group]</MentalStateSelfHarm.rulePack.rulesStrings.3>
-  <MentalStateSelfHarm.rulePack.rulesStrings.4>circumstance_phrase->while whimpering</MentalStateSelfHarm.rulePack.rulesStrings.4>
-  <MentalStateSelfHarm.rulePack.rulesStrings.5>circumstance_phrase->while cowering in [pawn_possessive] room</MentalStateSelfHarm.rulePack.rulesStrings.5>
-  <MentalStateSelfHarm.rulePack.rulesStrings.6>circumstance_phrase->without speaking a word</MentalStateSelfHarm.rulePack.rulesStrings.6>
-  <MentalStateSelfHarm.rulePack.rulesStrings.7>circumstance_phrase->while crying</MentalStateSelfHarm.rulePack.rulesStrings.7>
-  <MentalStateSelfHarm.rulePack.rulesStrings.8>desc_sentence->[pawn_pronoun] looks pale and sickly.</MentalStateSelfHarm.rulePack.rulesStrings.8>
-  <MentalStateSelfHarm.rulePack.rulesStrings.9>desc_sentence->[pawn_possessive] arms are limp.</MentalStateSelfHarm.rulePack.rulesStrings.9>
-  <MentalStateSelfHarm.rulePack.rulesStrings.10>desc_sentence->[pawn_possessive] clothes are stained with blood.</MentalStateSelfHarm.rulePack.rulesStrings.10>
-  <MentalStateSelfHarm.rulePack.rulesStrings.11>desc_sentence->[pawn_pronoun] is sitting on the floor, rocking back and forth.</MentalStateSelfHarm.rulePack.rulesStrings.11>
-  <MentalStateSelfHarm.rulePack.rulesStrings.12>desc_sentence->[pawn_pronoun] has a blank look on [pawn_possessive] face.</MentalStateSelfHarm.rulePack.rulesStrings.12>
+  <MentalStateSelfHarm.rulePack.rulesStrings.0>tale_noun->[pawn_nameShortDef] verletzt [pawn_pronoun]selbst</MentalStateSelfHarm.rulePack.rulesStrings.0>
+  <MentalStateSelfHarm.rulePack.rulesStrings.1>image->[pawn_nameFull] ritzt [pawn_possessive] Handgelenke [circumstance_group]</MentalStateSelfHarm.rulePack.rulesStrings.1>
+  <MentalStateSelfHarm.rulePack.rulesStrings.2>image->[pawn_nameFull] sitzt in einem Pool voller [pawn_possessive] Blut [circumstance_group]</MentalStateSelfHarm.rulePack.rulesStrings.2>
+  <MentalStateSelfHarm.rulePack.rulesStrings.3>image->[pawn_nameFull] starrt in die Ferne [circumstance_group]</MentalStateSelfHarm.rulePack.rulesStrings.3>
+  <MentalStateSelfHarm.rulePack.rulesStrings.4>circumstance_phrase->während des Wimmerns</MentalStateSelfHarm.rulePack.rulesStrings.4>
+  <MentalStateSelfHarm.rulePack.rulesStrings.5>circumstance_phrase->während des Kauerns in [pawn_possessive] Zimmer</MentalStateSelfHarm.rulePack.rulesStrings.5>
+  <MentalStateSelfHarm.rulePack.rulesStrings.6>circumstance_phrase->ohne ein Wort zu sagen</MentalStateSelfHarm.rulePack.rulesStrings.6>
+  <MentalStateSelfHarm.rulePack.rulesStrings.7>circumstance_phrase->während des Weinens</MentalStateSelfHarm.rulePack.rulesStrings.7>
+  <MentalStateSelfHarm.rulePack.rulesStrings.8>desc_sentence->[pawn_pronoun] sieht blass und krank aus.</MentalStateSelfHarm.rulePack.rulesStrings.8>
+  <MentalStateSelfHarm.rulePack.rulesStrings.9>desc_sentence->[pawn_possessive] Arme sind schlaff.</MentalStateSelfHarm.rulePack.rulesStrings.9>
+  <MentalStateSelfHarm.rulePack.rulesStrings.10>desc_sentence->[pawn_possessive] Kleidung ist befleckt mit Blut.</MentalStateSelfHarm.rulePack.rulesStrings.10>
+  <MentalStateSelfHarm.rulePack.rulesStrings.11>desc_sentence->[pawn_pronoun] sitzt auf dem Boden, schaukelt hin und her.</MentalStateSelfHarm.rulePack.rulesStrings.11>
+  <MentalStateSelfHarm.rulePack.rulesStrings.12>desc_sentence->[pawn_pronoun] hat einen leeren Blick auf [pawn_possessive] Gesicht.</MentalStateSelfHarm.rulePack.rulesStrings.12>
 
   <MentalStateApathy.label>apathie</MentalStateApathy.label>
   <MentalStateApathy.rulePack.rulesStrings.0>tale_noun->[pawn_nameShortDef] wandering around apathetically</MentalStateApathy.rulePack.rulesStrings.0>
