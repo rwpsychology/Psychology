@@ -202,10 +202,10 @@ namespace Psychology
                     {
                         t.thingClass = typeof(PsychologyPawn);
                         t.inspectorTabsResolved.Add(InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Psyche)));
-                        DirectXmlCrossRefLoader.RegisterListWantsCrossRef(t.recipes, "TreatPyromania");
-                        DirectXmlCrossRefLoader.RegisterListWantsCrossRef(t.recipes, "TreatChemicalInterest");
-                        DirectXmlCrossRefLoader.RegisterListWantsCrossRef(t.recipes, "TreatChemicalFascination");
-                        DirectXmlCrossRefLoader.RegisterListWantsCrossRef(t.recipes, "TreatDepression");
+                        t.recipes.Add(RecipeDefOfPsychology.TreatPyromania);
+                        t.recipes.Add(RecipeDefOfPsychology.TreatChemicalInterest);
+                        t.recipes.Add(RecipeDefOfPsychology.TreatChemicalFascination);
+                        t.recipes.Add(RecipeDefOfPsychology.TreatDepression);
                         if (!t.race?.hediffGiverSets?.NullOrEmpty() ?? false)
                         {
                             if (t.race.hediffGiverSets.Contains(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicStandard")))
