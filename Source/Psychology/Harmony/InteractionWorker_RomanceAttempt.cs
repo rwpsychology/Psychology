@@ -113,7 +113,8 @@ namespace Psychology.Harmony
             else
             {
                 //Psychology: A pawn's likelihood to romance is based on how Aggressive and Romantic they are.
-                romanceChance = Mathf.Pow(4f, realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive)) + Mathf.Pow(4f, (1f - realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic))) - 1.6f;
+                float personalityFactor = Mathf.Pow(20f, realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive)) * Mathf.Pow(12f, (1f - realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic)));
+                romanceChance = personalityFactor * 0.005f;
             }
             //A pawn with +50 or more opinion of their lover will not hit on other pawns unless they are lecherous or polygamous (and their lover is also polygamous).
             float existingLovePartnerFactor = 1f;

@@ -89,12 +89,12 @@ namespace Psychology.Harmony
                         ageFactor *= GenMath.FlatHill(0.3f, ageBiologicalYearsFloat - 3f, ageBiologicalYearsFloat, ageBiologicalYearsFloat + 10f, ageBiologicalYearsFloat + 30f, 0.15f, ageBiologicalYearsFloat2);
                     }
                 }
-                ageFactor = Mathf.Lerp(ageFactor, (1f - ageFactor), realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
+                ageFactor = Mathf.Lerp(ageFactor, (1.6f - ageFactor), realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
                 float disabilityFactor = 1f;
                 disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetLevel(PawnCapacityDefOf.Talking));
                 disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetLevel(PawnCapacityDefOf.Manipulation));
                 disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetLevel(PawnCapacityDefOf.Moving));
-                disabilityFactor = Mathf.Lerp(disabilityFactor, (1f - disabilityFactor), realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
+                disabilityFactor = Mathf.Lerp(disabilityFactor, (1.6f - disabilityFactor), realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
                 if (pawn.RaceProps.Humanlike && pawn.story.traits.HasTrait(TraitDefOfPsychology.OpenMinded))
                 {
                     ageFactor = 1f;

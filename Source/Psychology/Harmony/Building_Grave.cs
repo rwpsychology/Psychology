@@ -15,7 +15,7 @@ namespace Psychology.Harmony
         public static void FillGraveThought(Building_Grave __instance, Pawn worker)
         {
             CompArt comp = __instance.GetComp<CompArt>();
-            if (comp != null)
+            if (worker.needs.mood != null && comp != null)
             {
                 worker.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.FilledGraveBleedingHeart);
             }

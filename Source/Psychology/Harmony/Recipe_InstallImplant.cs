@@ -12,7 +12,7 @@ namespace Psychology.Harmony
         [HarmonyPrefix]
         public static void BleedingHeartThought(Pawn pawn, Pawn billDoer)
         {
-            if (billDoer != null)
+            if (billDoer.needs.mood != null && billDoer != null)
                 billDoer.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.ReplacedPartBleedingHeart, pawn);
         }
     }

@@ -51,7 +51,8 @@ namespace Psychology
         {
             foreach (PersonalityNode parent in this.ParentNodes)
             {
-                rating = ((rating * 2) + parent.AdjustedRating) / 3;
+                float parentRating = (def.GetModifier(parent.def) < 0 ? (1f - parent.AdjustedRating) : parent.AdjustedRating) * Mathf.Abs(def.GetModifier(parent.def));
+                rating = ((rating * (2f + (1f - Mathf.Abs(def.GetModifier(parent.def))))) + parentRating) / 3f;
             }
             rating += (0.5f - this.rawRating) / 4f;
             return Mathf.Clamp01(rating);

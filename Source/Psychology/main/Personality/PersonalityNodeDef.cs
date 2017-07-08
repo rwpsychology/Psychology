@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using RimWorld;
 using Verse;
+using UnityEngine;
 
 namespace Psychology
 {
@@ -18,7 +19,7 @@ namespace Psychology
         public float GetModifier(PersonalityNodeDef def)
         {
             PersonalityNodeParent parent = parents.Find((PersonalityNodeParent p) => p.node == def);
-            return parent.modifier;
+            return (parent.modifier > 0 ? -1/parent.modifier : 1/Mathf.Abs(parent.modifier-1));
         }
 
         public List<PersonalityNodeDef> ParentNodes

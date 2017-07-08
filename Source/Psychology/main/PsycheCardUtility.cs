@@ -11,18 +11,6 @@ namespace Psychology
 {
     public static class PsycheCardUtility
     {
-        private static void CheckRecache(Pawn selPawnForSocialInfo)
-        {
-            if (PsycheCardUtility.cachedForPawn != selPawnForSocialInfo || Time.frameCount % 20 == 0)
-            {
-                PsycheCardUtility.Recache(selPawnForSocialInfo);
-            }
-        }
-        private static void Recache(Pawn selPawnForSocialInfo)
-        {
-            PsycheCardUtility.cachedForPawn = selPawnForSocialInfo;
-        }
-
         private static void DrawPersonalityNodes(Rect rect, PsychologyPawn pawn)
         {
             float width = rect.width - 26f - 3f;
@@ -180,7 +168,5 @@ namespace Psychology
         private static List<Pair<string, int>> nodeStrings = new List<Pair<string, int>>();
         private const float RowLeftRightPadding = 5f;
         private const float RowTopPadding = 1f;
-        private static Pawn cachedForPawn;
-        private static HashSet<Pawn> tmpToCache = new HashSet<Pawn>();
     }
 }
