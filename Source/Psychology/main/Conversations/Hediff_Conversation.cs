@@ -59,7 +59,7 @@ namespace Psychology
             }
             if (this.pawn.IsHashIntervalTick(200))
             {
-                if (Rand.Value > 1f - (this.ageTicks / 500000f))
+                if (Rand.Value > 1f - (this.ageTicks / 400000f))
                 {
                     this.pawn.health.RemoveHediff(this);
                     return;
@@ -122,7 +122,7 @@ namespace Psychology
                 //Cool pawns are liked more.
                 opinionMod += Mathf.Pow(2f, topic.controversiality) * (0.5f - this.otherPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Cool));
                 //The length of the talk has a large impact on how much the pawn cares.
-                opinionMod *= 5f * (this.ageTicks / (GenDate.TicksPerHour * 2f)); //talkModifier[talkLength]
+                opinionMod *= 5f * (this.ageTicks / (GenDate.TicksPerHour * 2.25f)); //talkModifier[talkLength]
                 //If they had a bad experience, the more polite the pawn is, the less they're bothered by it.
                 opinionMod *= (opinionMod < 0f ? 0.5f + (1f - this.otherPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
                 //The more judgmental the pawn, the more they're affected by all conversations.

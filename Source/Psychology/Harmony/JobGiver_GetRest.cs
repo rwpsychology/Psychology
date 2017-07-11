@@ -45,7 +45,7 @@ namespace Psychology.Harmony
                 }
                 else if (timeAssignmentDef == TimeAssignmentDefOf.Sleep)
                 {
-                    if (curLevel < 0.5f)
+                    if (curLevel < RestUtility.FallAsleepMaxLevel(pawn)/2f)
                     {
                         __result = 3f;
                         return;

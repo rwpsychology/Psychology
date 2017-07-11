@@ -55,7 +55,7 @@ namespace Psychology
             Scribe_Values.Look(ref this.spot, "spot", default(IntVec3));
             Scribe_Values.Look(ref this.baseName, "settlementName", "a settlement");
             Scribe_Collections.Look(ref this.candidates, "candidates", LookMode.Deep, new object[0]);
-            Scribe_Collections.Look(ref this.voters, "voters", LookMode.Reference, new object[0]);
+            Scribe_Collections.Look(ref this.voters, "voters", LookMode.Value, new object[0]);
             Scribe_Collections.Look(ref this.votes, "votes", LookMode.Value, new object[0]);
         }
         

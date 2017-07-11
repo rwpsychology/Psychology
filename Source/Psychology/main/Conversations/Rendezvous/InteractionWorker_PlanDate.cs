@@ -17,6 +17,10 @@ namespace Psychology
             {
                 return 0f;
             }
+            if(!PartyUtility.AcceptableGameConditionsToStartParty(initiator.Map))
+            {
+                return 0f;
+            }
             PsychologyPawn realRecipient = recipient as PsychologyPawn;
             PsychologyPawn realInitiator = initiator as PsychologyPawn;
             if (realRecipient == null || realInitiator == null)

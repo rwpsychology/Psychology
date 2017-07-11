@@ -18,7 +18,7 @@ namespace Psychology.Harmony
             {
                 __result = false;
             }
-            if (pawn is PsychologyPawn)
+            if (pawn is PsychologyPawn && other is PsychologyPawn)
             {
                 __result = false;
             }

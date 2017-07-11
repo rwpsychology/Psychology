@@ -12,9 +12,9 @@ namespace Psychology.Harmony
     public static class ThoughtWorker_AnnoyingVoicePatch
     {
         [HarmonyPostfix]
-        public static void Disable(ref bool __result, Pawn pawn)
+        public static void Disable(ref ThoughtState __result, Pawn pawn, Pawn other)
         {
-            if (pawn is PsychologyPawn)
+            if (pawn is PsychologyPawn && other is PsychologyPawn)
             {
                 __result = false;
             }

@@ -74,6 +74,9 @@
     <Compile Include="Harmony\Optional\PresetSaver.cs" />
     <Compile Include="Harmony\Optional\SaveRecordPawnV3.cs" />
     <Compile Include="Harmony\Page_ConfigureStartingPawns.cs" />
+    <Compile Include="Harmony\ThoughtWorker_ChemicalInterestVsTeetotaler.cs" />
+    <Compile Include="Harmony\ThoughtWorker_HardWorkerVsLazy.cs" />
+    <Compile Include="Harmony\ThoughtWorker_TeetotalerVsChemicalInterest.cs" />
     <Compile Include="Harmony\TraitSet.cs" />
     <Compile Include="Main\Conversations\Rendezvous\Hediff_PlannedDate.cs" />
     <Compile Include="Main\Conversations\Rendezvous\InteractionWorker_PlanDate.cs" />
@@ -193,13 +196,11 @@
     <Compile Include="Harmony\TendUtility.cs" />
     <Compile Include="Main\InteractionWorkers\InteractionWorker_PrudeSeen.cs" />
     <Compile Include="PsychologyBase.cs" />
-    <Compile Include="Main\ThoughtWorkers\ThoughtWorker_BleedingHeartVsPsychopath.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Light.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Pluviophile.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Outdoorsy.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Codependency.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_WorkingPassion.cs" />
-    <Compile Include="Main\ThoughtWorkers\ThoughtWorker_PrudeVsNudist.cs" />
     <Compile Include="Defs\ThoughtDefOfPsychology.cs" />
     <Compile Include="Harmony\ThoughtUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

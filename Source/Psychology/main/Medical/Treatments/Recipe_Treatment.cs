@@ -61,7 +61,7 @@ namespace Psychology
             Thought_Memory failureThought = (from memory in pawn.needs.mood.thoughts.memories.Memories
                                              where memory.def.workerClass.Name == "Thought_TreatmentFailed"
                                              orderby memory.age ascending
-                                             select memory).Last();
+                                             select memory).LastOrDefault();
             if(failureThought != null)
             {
                 (failureThought as Thought_TreatmentFailed).traitName = this.traitName;
