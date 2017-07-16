@@ -125,7 +125,7 @@ namespace Psychology.Harmony
                 existingLovePartnerFactor = Mathf.InverseLerp(50f, -50f, value);
             }
             float attractivenessFactor = Mathf.InverseLerp(0.25f, 1f, attractiveness);
-            float opinionFactor = Mathf.InverseLerp(5f, 100f, (float)opinion)*2f;
+            float opinionFactor = Mathf.InverseLerp(-5f, 100f, (float)opinion)*2f;
             //People who have hit on someone in the past and been rejected because of their sexuality will rarely attempt to hit on them again.
             float knownSexualityFactor = (realInitiator != null && PsychologyBase.ActivateKinsey() && realInitiator.sexuality.IncompatibleSexualityKnown(recipient) && !realInitiator.story.traits.HasTrait(TraitDefOfPsychology.Lecher)) ? 0.05f : (realInitiator == null ? (initiator.gender == recipient.gender ? (initiator.story.traits.HasTrait(TraitDefOf.Gay) && recipient.story.traits.HasTrait(TraitDefOf.Gay) ? 1f : 0.15f) : (!initiator.story.traits.HasTrait(TraitDefOf.Gay) && !recipient.story.traits.HasTrait(TraitDefOf.Gay) ? 1f : 0.15f)) : 1f);
             //Only lechers will try to romance someone in a stable relationship.
@@ -210,7 +210,7 @@ namespace Psychology.Harmony
                 successChance = 0.25f + (1f - realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
             }
             successChance *= recipient.relations.SecondaryRomanceChanceFactor(initiator);
-            successChance *= 2f * Mathf.InverseLerp(5f, 100f, (float)recipient.relations.OpinionOf(initiator));
+            successChance *= 2f * Mathf.InverseLerp(-5f, 100f, (float)recipient.relations.OpinionOf(initiator));
             float existingLovePartnerFactor = 1f;
             if (!recipient.story.traits.HasTrait(TraitDefOfPsychology.Polygamous))
             {

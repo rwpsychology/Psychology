@@ -7,6 +7,8 @@
   <LetterElectionHeld>Die Wahl in {0} ist jetzt im Gange. Deine Kolonisten haben von den verfügbaren Versammlungsplätzen ein Wahllokal eröffnet, wo sie nun hingehen und ihre Stimme abgeben werden.</LetterElectionHeld>
   <LetterLabelElectionCandidate>Kandidat: {0}</LetterLabelElectionCandidate>
   <LetterElectionCandidate>{0} ist ein Kandidat für den Bürgermeister-Posten von {1}. Das ist HIS Plattform:\n{2}</LetterElectionCandidate>
+  <LetterLabelTieSettled>Wahlkampf setzte sich für {0}</LetterLabelTieSettled>
+  <LetterTieSettled>Die Bürgermeisterwahlen führten zu einer Krawatte, und nach einem Schlacht-Royale-Gezänk-Match war {0} der einzige, der bereit war, weiter darüber zu streiten. Die anderen Kandidaten haben sich zurückgezogen und haben HIM den Sieger verlassen.</LetterTieSettled>
   <LetterLabelElectionWon>{0} hat die Wahl gewonnen.</LetterLabelElectionWon>
   <LetterElectionWon>{0} hat die Bürgermeister-Wahl gewonnen bei {1}. HECAP bekam {2} Stimmen.\n\nAls Erinnerung, das war HIS Plattform:\n{3}\n\nHECAP wird nun Besuche von HIS Wählerschaft in HIS Zimmer bekommen, falls HE einen hat. Falls sie Beschwerden haben, dann werden sie sich besser fühlen, nachdem sie mit HIM gesprochen haben, wenn HE gut im sozialen Umgang mit anderen ist. Währenddessen ein schönes Zimmer zu haben, wird allen auch nicht schaden.\n\nHalte jedoch ein Auge auf HIM; HE kann sich nun bei niemanden beklagen, denn HE trägt die ganze Bürde der ganzen Kolonie auf HIM Schultern. Das ist eine große Last, vorallem wenn die Dinge nicht so laufen, wie sie sollten.</LetterElectionWon>
 

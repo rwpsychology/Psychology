@@ -75,7 +75,7 @@ namespace Psychology
             realRecipient.psyche.lastDateTick = day;
             if (Prefs.DevMode && Prefs.LogVerbose)
             {
-                Log.Message(initiator.LabelShort + " planned date with " + recipient.LabelShort + " for hour " + hour + " on date " + GenDate.DateFullStringAt(day, Find.WorldGrid.LongLatOf(initiator.Map.Tile)));
+                Log.Message(initiator.LabelShort + " planned date with " + recipient.LabelShort + " for hour " + hour + " on date " + GenDate.DateFullStringAt(GenDate.TickGameToAbs(day), Find.WorldGrid.LongLatOf(initiator.Map.Tile)));
             }
         }
     }

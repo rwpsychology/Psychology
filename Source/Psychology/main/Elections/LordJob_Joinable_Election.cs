@@ -72,8 +72,8 @@ namespace Psychology
             //If there ends up being a tie, we'll just assume the least competitive candidates drop out.
             //The chances of there being a tie after that are exceedingly slim, but the result will be essentially random.
             IEnumerable<Pair<PsychologyPawn, int>> orderedTally = (from v in voteTally
-                                                                   orderby v.Second descending
                                                                    orderby v.First.psyche.GetPersonalityRating(PersonalityNodeDefOf.Competitive) descending
+                                                                   orderby v.Second descending
                                                                    select v);
             if (Prefs.DevMode && Prefs.LogVerbose)
             {
@@ -83,6 +83,10 @@ namespace Psychology
                 }
             }
             Pair<PsychologyPawn, int> winningCandidate = orderedTally.First();
+            if (orderedTally.Count() > 1 && orderedTally.First().Second == orderedTally.ElementAt(1).Second)
+            {
+                Find.LetterStack.ReceiveLetter("LetterLabelTieSettled".Translate(winningCandidate.First.LabelShort), "LetterTieSettled".Translate(winningCandidate.First.LabelShort).AdjustedFor(winningCandidate.First), LetterDefOf.BadNonUrgent, winningCandidate.First);
+            }
             StringBuilder issuesString = new StringBuilder();
             for (int i = 0; i < candidates.Find(c => c.pawn == winningCandidate.First).nodes.Count; i++)
             {
