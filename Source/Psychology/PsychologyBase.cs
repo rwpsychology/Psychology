@@ -198,7 +198,7 @@ namespace Psychology
                                          select def);
                 foreach (ThingDef t in things)
                 {
-                    if (t.race.intelligence == Intelligence.Humanlike && DefDatabase<ThinkTreeDef>.GetNamedSilentFail("Zombie")  != null && t.race.thinkTreeMain != DefDatabase<ThinkTreeDef>.GetNamedSilentFail("Zombie"))
+                    if (t.race.intelligence == Intelligence.Humanlike && (DefDatabase<ThinkTreeDef>.GetNamedSilentFail("Zombie")  == null || t.race.thinkTreeMain != DefDatabase<ThinkTreeDef>.GetNamedSilentFail("Zombie")))
                     {
                         t.thingClass = typeof(PsychologyPawn);
                         t.inspectorTabsResolved.Add(InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Psyche)));
