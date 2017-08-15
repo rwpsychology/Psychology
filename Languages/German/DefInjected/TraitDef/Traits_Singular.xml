@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <Prude.degreeDatas.0.label>prude</Prude.degreeDatas.0.label>
-  <Prude.degreeDatas.0.description>NAME hates the sight of the human body. HECAP will be extremely unhappy when naked, more displeased than usual in tattered or worn-out clothing, and dislike the sight of other naked people.</Prude.degreeDatas.0.description>
+  <Prude.degreeDatas.0.label>prüde</Prude.degreeDatas.0.label>
+  <Prude.degreeDatas.0.description>NAME hasst den Anblick eines menschlichen Körpers. HECAP wird extrem unglücklich, wenn man nackt ist, unzufriedener als üblich in zerlumpten oder abgenutzten Kleidungsstücken, und mag es nicht andere nackt zu sehen.</Prude.degreeDatas.0.description>
 
-  <Insomniac.degreeDatas.0.label>insomniac</Insomniac.degreeDatas.0.label>
-  <Insomniac.degreeDatas.0.description>NAME will find it difficult to fall asleep because of HIS condition. HECAP will stay up longer and probably be tired a lot.</Insomniac.degreeDatas.0.description>
+  <Insomniac.degreeDatas.0.label>schlaflos</Insomniac.degreeDatas.0.label>
+  <Insomniac.degreeDatas.0.description>NAME findet es schwer in HIS Zustand einzuschlafen. HECAP wird länger wachbleiben und wahrscheinlich schneller müde werden.</Insomniac.degreeDatas.0.description>
 
-  <BleedingHeart.degreeDatas.0.label>bleeding heart</BleedingHeart.degreeDatas.0.label>
-  <BleedingHeart.degreeDatas.0.description>NAME has a big heart and gets very emotional. HECAP loves helping people, and abhors violence and injustice. HE is more affected by these things than others.</BleedingHeart.degreeDatas.0.description>
+  <BleedingHeart.degreeDatas.0.label>blutendes Herz</BleedingHeart.degreeDatas.0.label>
+  <BleedingHeart.degreeDatas.0.description>NAME hat ein großes Herz und wird sehr schnell emotional. HECAP liebt es anderen zu helfen und verabscheucht Gewalt und Ungerechtigkeit. HE ist mehr von diesen Sachen betroffen als andere.</BleedingHeart.degreeDatas.0.description>
 
   <Gourmet.degreeDatas.0.label>gourmet</Gourmet.degreeDatas.0.label>
-  <Gourmet.degreeDatas.0.description>NAME is always a critic when it comes to food. HECAP expects to be fed well and will complain if HIS meals aren't up to par.</Gourmet.degreeDatas.0.description>
+  <Gourmet.degreeDatas.0.description>NAME ist sehr kritisch, wenn es ums Essen geht. HECAP erwartet es gut gegessen zu haben und wird sich beschweren, wenn HIS Essen nicht gut ist.</Gourmet.degreeDatas.0.description>
 
   <Unstable.degreeDatas.0.label>unstable</Unstable.degreeDatas.0.label>
   <Unstable.degreeDatas.0.description>NAME is more prone to random mood swings, which can be more severe than normal for others.</Unstable.degreeDatas.0.description>
