@@ -17,6 +17,12 @@
 		<defName>Intelligent</defName>
 		<label>intelligent</label>
 		<description>An intelligent person possesses a lot of raw brain-power.</description>
+		<traitModifiers>
+			<li>
+				<trait>TooSmart</trait>
+				<modifier>0.4</modifier>
+			</li>
+		</traitModifiers>
 	</Psychology.PersonalityNodeDef>
 
 	<Psychology.PersonalityNodeDef>
@@ -971,6 +977,10 @@
 			<li>
 				<trait>OpenMinded</trait>
 				<modifier>-0.5</modifier>
+			</li>
+			<li>
+				<trait>Kind</trait>
+				<modifier>-0.3</modifier>
 			</li>
 		</traitModifiers>
 	</Psychology.PersonalityNodeDef>

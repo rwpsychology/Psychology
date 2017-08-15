@@ -23,7 +23,7 @@
     <degreeDatas>
       <li>
         <label>insomniac</label>
-        <description>NAME will find it difficult to fall asleep because of HIS condition. HECAP will stay up longer and probably be tired a lot.</description>
+        <description>NAME finds it difficult to sleep because of HIS condition. HECAP will prioritize sleep less, wake up sooner, and get less rest from sleeping.</description>
       </li>
     </degreeDatas>
     <conflictingTraits>
@@ -37,7 +37,7 @@
     <degreeDatas>
       <li>
         <label>bleeding heart</label>
-        <description>NAME has a big heart and gets very emotional. HECAP loves helping people, and abhors violence and injustice. HE is more affected by these things than others.</description>
+        <description>NAME has a big heart and gets very emotional. HECAP loves helping people, and abhors violence and injustice. HECAP is more affected by these things than others.</description>
       </li>
     </degreeDatas>
     <conflictingTraits>

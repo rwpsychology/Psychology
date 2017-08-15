@@ -14,7 +14,7 @@ namespace Psychology
         public override bool TryExecute(IncidentParms parms)
         {
             Map map = (Map)parms.target;
-            FactionBase factionBase = (FactionBase)Find.WorldObjects.ObjectsAt(map.Tile).ToList().Find(obj => obj is FactionBase);
+            FactionBase factionBase = Find.WorldObjects.ObjectsAt(map.Tile).OfType<FactionBase>().First();
             int duration = Mathf.RoundToInt(this.def.durationDays.RandomInRange * GenDate.TicksPerDay);
             GameCondition cond = GameConditionMaker.MakeCondition(this.def.gameCondition, duration, 0);
             map.gameConditionManager.RegisterCondition(cond);

@@ -65,7 +65,7 @@
 	<workerClass>Psychology.MentalStateWorker_FellPlotting</workerClass>
 	<colonistsOnly>true</colonistsOnly>
     <label>scheming madly</label>
-    <category>Aggro</category>
+    <category>Misc</category>
     <moodRecoveryThought>Catharsis</moodRecoveryThought>
     <blockNormalThoughts>true</blockNormalThoughts>
     <nameColor>(0.9,0.2,0.5)</nameColor>
@@ -119,7 +119,7 @@
 	<colonistsOnly>true</colonistsOnly>
     <stateClass>Psychology.MentalState_Sadism</stateClass>
     <label>laughing sadistically</label>
-    <category>Aggro</category>
+    <category>Misc</category>
     <moodRecoveryThought>Catharsis</moodRecoveryThought>
     <blockNormalThoughts>true</blockNormalThoughts>
     <nameColor>(0.9,0.2,0.5)</nameColor>

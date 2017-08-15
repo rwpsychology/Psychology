@@ -13,10 +13,10 @@ namespace Psychology
     {
         private void BruiseFist(Pawn pawn)
         {
-            List<BodyPartRecord> hands = (from b in pawn.health.hediffSet.GetNotMissingParts()
+            IEnumerable<BodyPartRecord> hands = (from b in pawn.health.hediffSet.GetNotMissingParts()
                                           where b.def == BodyPartDefOf.LeftHand || b.def == BodyPartDefOf.RightHand
-                                          select b).ToList();
-            if (hands.Count > 0)
+                                          select b);
+            if (hands.Count() > 0)
             {
                 BodyPartRecord hand = hands.RandomElement();
                 int num = Mathf.Max(3, GenMath.RoundRandom(pawn.health.hediffSet.GetPartHealth(hand) * Rand.Range(0.1f, 0.25f)));

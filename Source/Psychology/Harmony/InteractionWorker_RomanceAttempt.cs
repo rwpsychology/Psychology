@@ -77,56 +77,72 @@ namespace Psychology.Harmony
         [HarmonyPostfix]
         public static void PsychologyException(ref float __result, Pawn initiator, Pawn recipient)
         {
+            PsychologyPawn realInitiator = initiator as PsychologyPawn;
+            //Don't hit on people in mental breaks... unless you're really freaky.
+            if (recipient.InMentalState && realInitiator != null && realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental) > 0.8f)
+            {
+                __result = 0f;
+                return;
+            }
+            //Pawns won't hit on their spouses.
+            if (LovePartnerRelationUtility.LovePartnerRelationExists(initiator, recipient))
+            {
+                __result = 0f;
+                return;
+            }
             //Codependents won't romance anyone if they are in a relationship
             if (LovePartnerRelationUtility.HasAnyLovePartner(initiator) && initiator.story.traits.HasTrait(TraitDefOfPsychology.Codependent))
             {
                 __result = 0f;
                 return;
             }
-            PsychologyPawn realInitiator = initiator as PsychologyPawn;
-            if (realInitiator != null || initiator.story.traits.HasTrait(TraitDefOfPsychology.Lecher))
+            //Only lechers will romance someone that has less than +5 opinion of them
+            if (recipient.relations.OpinionOf(initiator) < 5 && !initiator.story.traits.HasTrait(TraitDefOfPsychology.Lecher))
             {
-                /* If they're a Psychology pawn, or just a Lecher, we throw out the result for our own formula. */
-                float attractiveness = initiator.relations.SecondaryRomanceChanceFactor(recipient);
-                int opinion = initiator.relations.OpinionOf(recipient);
-                float romanceChance = 1.15f;
-                if (realInitiator == null)
-                {
-                    //Straight women are 15% as likely to romance anyone.
-                    romanceChance = (!initiator.story.traits.HasTrait(TraitDefOf.Gay)) ? ((initiator.gender != Gender.Female) ? romanceChance : romanceChance * 0.15f) : romanceChance;
-                }
-                else
-                {
-                    //A pawn's likelihood to romance is based on how Aggressive and Romantic they are.
-                    romanceChance = 0.2f + realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive) + (1f - realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
-                }
-                //A pawn with +50 or more opinion of their lover will not hit on other pawns unless they are lecherous or polygamous (and their lover is also polygamous).
-                float existingLovePartnerFactor = 1f;
-                Pawn pawn = LovePartnerRelationUtility.ExistingMostLikedLovePartner(initiator, false);
-                if (pawn != null && !initiator.story.traits.HasTrait(TraitDefOfPsychology.Lecher) && (!initiator.story.traits.HasTrait(TraitDefOfPsychology.Polygamous) && !pawn.story.traits.HasTrait(TraitDefOfPsychology.Polygamous)))
-                {
-                    float value = (float)initiator.relations.OpinionOf(pawn);
-                    existingLovePartnerFactor = Mathf.InverseLerp(50f, -50f, value);
-                }
-                float attractivenessFactor = Mathf.InverseLerp(0.25f, 1f, attractiveness);
-                float opinionFactor = Mathf.InverseLerp(5f, 100f, (float)opinion);
-                //People who have hit on someone in the past and been rejected because of their sexuality will rarely attempt to hit on them again.
-                float knownSexualityFactor = (realInitiator != null && realInitiator.sexuality.IncompatibleSexualityKnown(recipient) && !realInitiator.story.traits.HasTrait(TraitDefOfPsychology.Lecher)) ? 0.05f : 1f;
-                //Only lechers will try to romance someone in a stable relationship.
-                float recipientLovePartnerFactor = 1f;
-                Pawn pawn2 = LovePartnerRelationUtility.ExistingMostLikedLovePartner(recipient, false);
-                if (pawn2 != null && !initiator.story.traits.HasTrait(TraitDefOfPsychology.Lecher))
-                {
-                    int value = recipient.relations.OpinionOf(pawn2);
-                    recipientLovePartnerFactor = Mathf.InverseLerp(5f, -100f, (float)value);
-                }
-                __result = romanceChance * existingLovePartnerFactor * attractivenessFactor * opinionFactor * knownSexualityFactor * recipientLovePartnerFactor;
+                __result = 0f;
+                return;
             }
+            float attractiveness = initiator.relations.SecondaryRomanceChanceFactor(recipient);
+            int opinion = initiator.relations.OpinionOf(recipient);
+            float romanceChance = 1.15f;
+            if (realInitiator == null)
+            {
+                //Vanilla: Straight women are 15% as likely to romance anyone.
+                romanceChance = (!initiator.story.traits.HasTrait(TraitDefOf.Gay)) ? ((initiator.gender != Gender.Female) ? romanceChance : romanceChance * 0.15f) : romanceChance;
+            }
+            else
+            {
+                //Psychology: A pawn's likelihood to romance is based on how Aggressive and Romantic they are.
+                float personalityFactor = Mathf.Pow(20f, realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive)) * Mathf.Pow(12f, (1f - realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic)));
+                romanceChance = personalityFactor * 0.005f;
+            }
+            //A pawn with +50 or more opinion of their lover will not hit on other pawns unless they are lecherous or polygamous (and their lover is also polygamous).
+            float existingLovePartnerFactor = 1f;
+            Pawn pawn = LovePartnerRelationUtility.ExistingMostLikedLovePartner(initiator, false);
+            if (pawn != null && !initiator.story.traits.HasTrait(TraitDefOfPsychology.Lecher) && (!initiator.story.traits.HasTrait(TraitDefOfPsychology.Polygamous) && !pawn.story.traits.HasTrait(TraitDefOfPsychology.Polygamous)))
+            {
+                float value = (float)initiator.relations.OpinionOf(pawn);
+                existingLovePartnerFactor = Mathf.InverseLerp(50f, -50f, value);
+            }
+            float attractivenessFactor = Mathf.InverseLerp(0.25f, 1f, attractiveness);
+            float opinionFactor = Mathf.InverseLerp(-5f, 100f, (float)opinion)*2f;
+            //People who have hit on someone in the past and been rejected because of their sexuality will rarely attempt to hit on them again.
+            float knownSexualityFactor = (realInitiator != null && PsychologyBase.ActivateKinsey() && realInitiator.sexuality.IncompatibleSexualityKnown(recipient) && !realInitiator.story.traits.HasTrait(TraitDefOfPsychology.Lecher)) ? 0.05f : (realInitiator == null ? (initiator.gender == recipient.gender ? (initiator.story.traits.HasTrait(TraitDefOf.Gay) && recipient.story.traits.HasTrait(TraitDefOf.Gay) ? 1f : 0.15f) : (!initiator.story.traits.HasTrait(TraitDefOf.Gay) && !recipient.story.traits.HasTrait(TraitDefOf.Gay) ? 1f : 0.15f)) : 1f);
+            //Only lechers will try to romance someone in a stable relationship.
+            float recipientLovePartnerFactor = 1f;
+            Pawn pawn2 = LovePartnerRelationUtility.ExistingMostLikedLovePartner(recipient, false);
+            if (pawn2 != null && !initiator.story.traits.HasTrait(TraitDefOfPsychology.Lecher))
+            {
+                int value = recipient.relations.OpinionOf(pawn2);
+                recipientLovePartnerFactor = Mathf.InverseLerp(5f, -100f, (float)value);
+            }
+            __result = romanceChance * existingLovePartnerFactor * attractivenessFactor * opinionFactor * knownSexualityFactor * recipientLovePartnerFactor;
+            return;
         }
     }
 
     [HarmonyPatch(typeof(InteractionWorker_RomanceAttempt), "Interacted")]
-    public static class InteractionWorker_RomanceAttempt_InteractedPatch
+    public static class InteractionWorker_RomanceAttempt_InteractedLearnSexualityPatch
     {
         [HarmonyPriority(Priority.High)]
         [HarmonyPrefix]
@@ -143,7 +159,11 @@ namespace Psychology.Harmony
             }
             return true;
         }
+    }
 
+    [HarmonyPatch(typeof(InteractionWorker_RomanceAttempt), "Interacted")]
+    public static class InteractionWorker_RomanceAttempt_InteractedHandleThoughtsPatch
+    {
         [HarmonyPostfix]
         public static void HandleNewThoughts(InteractionWorker_RomanceAttempt __instance, Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks)
         {
@@ -190,7 +210,7 @@ namespace Psychology.Harmony
                 successChance = 0.25f + (1f - realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
             }
             successChance *= recipient.relations.SecondaryRomanceChanceFactor(initiator);
-            successChance *= 2f * Mathf.InverseLerp(5f, 100f, (float)recipient.relations.OpinionOf(initiator));
+            successChance *= 2f * Mathf.InverseLerp(-5f, 100f, (float)recipient.relations.OpinionOf(initiator));
             float existingLovePartnerFactor = 1f;
             if (!recipient.story.traits.HasTrait(TraitDefOfPsychology.Polygamous))
             {

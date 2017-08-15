@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Lord job reports -->
+  <LordReportAttendingElection>투표소 방문중</LordReportAttendingElection>
+  <LordReportVisitingMayor>회의 참석중</LordReportVisitingMayor>
+  <LordReportHangingOut>누군가와 노는중</LordReportHangingOut>
+  <LordReportDate>데이트 중</LordReportDate>
+
+  <!-- Miscellaneous thought log text -->
+  <ConversationStage>대화</ConversationStage>
+  <ConversationEnd>대화 종료</ConversationEnd>
+  <ConversationEnded>대화 종료</ConversationEnded>
+  <Complained>지도자에게 항의함.</Complained>
+  <Supported>지도자에게 지지를 표함.</Supported>
+  <HadMeeting>정착민과 상담을 함</HadMeeting>
+
+  <!-- Node descriptions -->
+  <PsycheNot>Not</PsycheNot>
+  <PsycheSlightly>Slightly</PsycheSlightly>
+  <PsycheLess>Less</PsycheLess>
+  <PsycheMore>More</PsycheMore>
+  <PsycheVery>Very</PsycheVery>
+  <PsycheExtremely>Extremely</PsycheExtremely>
+
+</LanguageData>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TreatPyromania.label>방화광 치료제</TreatPyromania.label>
+  <TreatPyromania.description>방화충동을 억제합니다.</TreatPyromania.description>
+  <TreatPyromania.jobString>방화광 치료.</TreatPyromania.jobString>
+
+  <TreatChemicalInterest.label>약물선호 치료제</TreatChemicalInterest.label>
+  <TreatChemicalInterest.description>약물에 대한 흥미를 억제합니다.</TreatChemicalInterest.description>
+  <TreatChemicalInterest.jobString>약물선호 치료.</TreatChemicalInterest.jobString>
+
+  <TreatChemicalFascination.label>약물광 치료제</TreatChemicalFascination.label>
+  <TreatChemicalFascination.description>약물에 대한 강한 흥미를 억제합니다.</TreatChemicalFascination.description>
+  <TreatChemicalFascination.jobString>약물광 치료.</TreatChemicalFascination.jobString>
+
+  <TreatDepression.label>우울증 치료제</TreatDepression.label>
+  <TreatDepression.description>감정조절에 도움을 줍니다.</TreatDepression.description>
+  <TreatDepression.jobString>우울증 치료.</TreatDepression.jobString>
+
+
+</LanguageData>

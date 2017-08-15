@@ -13,6 +13,10 @@ namespace Psychology
     {
         public override float RandomSelectionWeight(Pawn initiator, Pawn recipient)
         {
+            if(initiator.guest.IsPrisoner || recipient.guest.IsPrisoner)
+            {
+                return 0f;
+            }
             PsychologyPawn realRecipient = recipient as PsychologyPawn;
             PsychologyPawn realInitiator = initiator as PsychologyPawn;
             if (realRecipient == null || realInitiator == null)

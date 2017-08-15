@@ -55,7 +55,7 @@ namespace Psychology
             Scribe_Values.Look(ref this.spot, "spot", default(IntVec3));
             Scribe_Values.Look(ref this.baseName, "settlementName", "a settlement");
             Scribe_Collections.Look(ref this.candidates, "candidates", LookMode.Deep, new object[0]);
-            Scribe_Collections.Look(ref this.voters, "voters", LookMode.Reference, new object[0]);
+            Scribe_Collections.Look(ref this.voters, "voters", LookMode.Value, new object[0]);
             Scribe_Collections.Look(ref this.votes, "votes", LookMode.Value, new object[0]);
         }
         
@@ -64,19 +64,29 @@ namespace Psychology
             List<Pair<PsychologyPawn, int>> voteTally = new List<Pair<PsychologyPawn, int>>();
             foreach (Candidate candidate in this.candidates)
             {
-                List<string> votesForMe = (from v in this.votes
+                IEnumerable<string> votesForMe = (from v in this.votes
                                            where v == candidate.pawn.LabelShort
-                                           select v).ToList();
-                voteTally.Add(new Pair<PsychologyPawn, int>(candidate.pawn, votesForMe.Count));
+                                           select v);
+                voteTally.Add(new Pair<PsychologyPawn, int>(candidate.pawn, votesForMe.Count()));
             }
             //If there ends up being a tie, we'll just assume the least competitive candidates drop out.
             //The chances of there being a tie after that are exceedingly slim, but the result will be essentially random.
-            voteTally = voteTally.OrderByDescending(pair => pair.Second).ThenByDescending(pair => pair.First.psyche.GetPersonalityRating(PersonalityNodeDefOf.Competitive)).ToList();
+            IEnumerable<Pair<PsychologyPawn, int>> orderedTally = (from v in voteTally
+                                                                   orderby v.First.psyche.GetPersonalityRating(PersonalityNodeDefOf.Competitive) descending
+                                                                   orderby v.Second descending
+                                                                   select v);
             if (Prefs.DevMode && Prefs.LogVerbose)
             {
-                voteTally.ForEach(t => Log.Message("[Psychology] Votes for " + t.First + ": " + t.Second));
+                foreach(Pair<PsychologyPawn, int> t in orderedTally)
+                {
+                    Log.Message("[Psychology] Votes for " + t.First + ": " + t.Second);
+                }
             }
-            Pair<PsychologyPawn, int> winningCandidate = voteTally[0];
+            Pair<PsychologyPawn, int> winningCandidate = orderedTally.First();
+            if (orderedTally.Count() > 1 && orderedTally.First().Second == orderedTally.ElementAt(1).Second)
+            {
+                Find.LetterStack.ReceiveLetter("LetterLabelTieSettled".Translate(winningCandidate.First.LabelShort), "LetterTieSettled".Translate(winningCandidate.First.LabelShort).AdjustedFor(winningCandidate.First), LetterDefOf.BadNonUrgent, winningCandidate.First);
+            }
             StringBuilder issuesString = new StringBuilder();
             for (int i = 0; i < candidates.Find(c => c.pawn == winningCandidate.First).nodes.Count; i++)
             {
@@ -110,7 +120,20 @@ namespace Psychology
         
         private bool ShouldPawnKeepVoting(Pawn p)
         {
-            return GatheringsUtility.ShouldGuestKeepAttendingGathering(p) && (p is PsychologyPawn && ((((PsychologyPawn)p).psyche.GetPersonalityRating(PersonalityNodeDefOf.Passionate) > (0.6f/candidates.Count) && !voters.Contains(p)) || candidates.Find(c => c.pawn == (PsychologyPawn)p) != null));
+            if(!(p is PsychologyPawn))
+            {
+                return false;
+            }
+            PsychologyPawn realPawn = p as PsychologyPawn;
+            bool matchingCandidates = (from c in candidates
+                                       where c.pawn == realPawn
+                                       select c).Count() > 0;
+            if (voters.Contains(p.GetHashCode()) && !matchingCandidates)
+            {
+                return false;
+            }
+            bool notApathetic = realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Passionate) > (0.6f / candidates.Count);
+            return GatheringsUtility.ShouldGuestKeepAttendingGathering(p) && (notApathetic || matchingCandidates);
         }
 
         public override float VoluntaryJoinPriorityFor(Pawn p)
@@ -134,7 +157,7 @@ namespace Psychology
         private string baseName;
         private Trigger_TicksPassed timeoutTrigger;
         public List<string> votes = new List<string>();
-        public List<Pawn> voters = new List<Pawn>();
+        public List<int> voters = new List<int>();
         public List<Candidate> candidates = new List<Candidate>();
     }
 }

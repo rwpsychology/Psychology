@@ -7,6 +7,8 @@
 	<LetterElectionHeld>L'élection à {0} est maintenant en cours. La colonie a choisi un lieu de scrutin parmi les points de rassemblement disponibles, et les colons s'y rendent pour voter.</LetterElectionHeld>
 	<LetterLabelElectionCandidate>Candidat : {0}</LetterLabelElectionCandidate>
 	<LetterElectionCandidate>{0} est candidat au poste de maire de {1}. Voici HIS objectifs :\n{2}</LetterElectionCandidate>
+	<LetterLabelTieSettled>Lien d'élection réglé en faveur de {0}</LetterLabelTieSettled>
+	<LetterTieSettled>Les élections de la mairie ont entraîné une égalité, et après un match de batailles de bataille royale, {0} était le seul à continuer de discuter à ce sujet. Les autres candidats se sont retirés, laissant HIM le vainqueur.</LetterTieSettled>
 	<LetterLabelElectionWon>Élection gagnée par {0}</LetterLabelElectionWon>
 	<LetterElectionWon>{0} a remporté l'élection du maire à {1}. HECAP a reçu {2} votes.\n\nPour rappel, C'était HIS objectifs:\n{3}\n\nHECAP recevra maintenant des visites de HIS électeurs dans HIS chambre si HE en a une. Si ils ont des plaintes, ils se sentiront probablement mieux après avoir parlé avec HIM si HE sait bien parler aux gens et comprendre leurs sentiments. Avoir une belle salle pour les rencontrer ne sera pas mal non plus.\n\nSurveillez le maire de près; HE n'a personne à qui se plaindre et porter les fardeaux d'une colonie entière peut être difficile, surtout si les choses vont mal.</LetterElectionWon>
 	

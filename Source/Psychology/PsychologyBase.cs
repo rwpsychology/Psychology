@@ -18,8 +18,6 @@ namespace Psychology
     {
         private static bool kinsey = true;
         private static KinseyMode mode = KinseyMode.Realistic;
-        public static bool detoursMedical = true;
-        public static bool detoursSexual = true;
         public static bool notBabyMode = true;
         public static bool elections = true;
         private SettingHandle<bool> toggleKinsey;
@@ -63,21 +61,9 @@ namespace Psychology
             }
         }
 
-        private static TraitDef AddConflictingTraits(String name, TraitDef[] traits)
+        private static void RemoveTrait(Pawn pawn, TraitDef trait)
         {
-            TraitDef trait = TraitDef.Named(name);
-            if (trait != null)
-            {
-                if (trait.conflictingTraits == null)
-                {
-                    trait.conflictingTraits = new List<TraitDef>();
-                }
-                foreach (TraitDef conflict in traits)
-                {
-                    trait.conflictingTraits.Add(conflict);
-                }
-            }
-            return trait;
+            pawn.story.traits.allTraits.RemoveAll(t => t.def == trait);
         }
 
         private static ThoughtDef AddNullifyingTraits(String name, TraitDef[] traits)
@@ -99,26 +85,11 @@ namespace Psychology
 
         private static ThoughtDef ModifyThoughtStages(ThoughtDef thought, int[] stages)
         {
-            for(int stage = 0; stage < thought.stages.Count; stage++)
+            for (int stage = 0; stage < thought.stages.Count; stage++)
             {
                 thought.stages[stage].baseMoodEffect = stages[stage];
             }
             return thought;
-        }
-
-        private static ThoughtDef ReplaceThoughtWorker(String name, Type newWorker)
-        {
-            ThoughtDef thought = ThoughtDef.Named(name);
-            if (thought != null && thought.workerClass != null)
-            {
-                thought.workerClass = newWorker;
-            }
-            return thought;
-        }
-
-        private static void RemoveTrait(Pawn pawn, TraitDef trait)
-        {
-            pawn.story.traits.allTraits.RemoveAll(t => t.def == trait);
         }
 
         public override void SettingsChanged()
@@ -144,106 +115,26 @@ namespace Psychology
                 notBabyMode = toggleIndividuality.Value;
                 elections = toggleElections.Value;
 
-                /* Mod conflict detection */
-
-                if (!detoursMedical)
+                if (PsychologyBase.ActivateKinsey())
                 {
-                    Logger.Warning("MedicalDetourDisable".Translate());
+                    mode = kinseyMode.Value;
                 }
+
+                /* Mod conflict detection */
 
                 TraitDef bisexual = DefDatabase<TraitDef>.GetNamedSilentFail("Bisexual");
                 TraitDef asexual = DefDatabase<TraitDef>.GetNamedSilentFail("Asexual");
-                if (bisexual != null || asexual != null || !toggleKinsey || !detoursSexual)
+                if (bisexual != null || asexual != null || !toggleKinsey)
                 {
                     if (toggleKinsey)
                     {
                         Logger.Message("KinseyDisable".Translate());
-                        if (!detoursSexual)
-                        {
-                            Logger.Warning("KinseyDetourDisable".Translate());
-                            Traverse.Create(TraitDefOfPsychology.Codependent).Field("commonality").SetValue(0f);
-                            Traverse.Create(TraitDefOfPsychology.Lecher).Field("commonality").SetValue(0f);
-                            Traverse.Create(TraitDefOfPsychology.OpenMinded).Field("commonality").SetValue(0f);
-                            Traverse.Create(TraitDefOfPsychology.Polygamous).Field("commonality").SetValue(0f);
-                        }
                     }
                     kinsey = false;
                 }
 
-                if (PsychologyBase.ActivateKinsey())
-                {
-                    mode = kinseyMode.Value;
-                    TraitDef gay = TraitDef.Named("Gay");
-                    if (gay != null)
-                    {
-                        Traverse.Create(gay).Field("commonality").SetValue(0f);
-                    }
-                }
-                
-                foreach (ThingDef t in DefDatabase<ThingDef>.AllDefsListForReading)
-                {
-                    if (t.thingClass == typeof(Pawn))
-                    {
-                        t.thingClass = typeof(PsychologyPawn);
-                        t.inspectorTabs.Add(typeof(ITab_Pawn_Psyche));
-                        try
-                        {
-                            t.inspectorTabsResolved.Add(InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Psyche)));
-                        }
-                        catch (Exception ex)
-                        {
-                            Log.Error(string.Concat(new object[]
-                            {
-                            "Could not instantiate inspector tab of type ",
-                            typeof(ITab_Pawn_Psyche),
-                            ": ",
-                            ex
-                            }));
-                        }
-                        if(t.race.intelligence == Intelligence.Humanlike)
-                        {
-                            t.recipes.Add(RecipeDefOfPsychology.TreatPyromania);
-                            t.recipes.Add(RecipeDefOfPsychology.TreatChemicalInterest);
-                            t.recipes.Add(RecipeDefOfPsychology.TreatChemicalFascination);
-                            t.recipes.Add(RecipeDefOfPsychology.TreatDepression);
-                        }
-                    }
-                }
+                /* Conditional vanilla Def edits */
 
-                /* Vanilla Def edits */
-                AddConflictingTraits("Nudist", new TraitDef[] { TraitDefOfPsychology.Prude });
-                AddConflictingTraits("Bloodlust", new TraitDef[] { TraitDefOfPsychology.BleedingHeart, TraitDefOfPsychology.Desensitized });
-                AddConflictingTraits("Psychopath", new TraitDef[] { TraitDefOfPsychology.BleedingHeart, TraitDefOfPsychology.Desensitized, TraitDefOfPsychology.OpenMinded });
-                AddConflictingTraits("Cannibal", new TraitDef[] { TraitDefOfPsychology.BleedingHeart, TraitDefOfPsychology.Gourmet });
-                AddConflictingTraits("Ascetic", new TraitDef[] { TraitDefOfPsychology.Gourmet });
-                AddConflictingTraits("Neurotic", new TraitDef[] { TraitDefOfPsychology.HeavySleeper });
-                AddConflictingTraits("DislikesMen", new TraitDef[] { TraitDefOfPsychology.OpenMinded });
-                AddConflictingTraits("DislikesWomen", new TraitDef[] { TraitDefOfPsychology.OpenMinded });
-                AddConflictingTraits("Prosthophobe", new TraitDef[] { TraitDefOfPsychology.OpenMinded });
-                
-                AddNullifyingTraits("AteLavishMeal", new TraitDef[] { TraitDefOfPsychology.Gourmet });
-                AddNullifyingTraits("AteFineMeal", new TraitDef[] { TraitDefOfPsychology.Gourmet });
-                AddNullifyingTraits("AteAwfulMeal", new TraitDef[] { TraitDefOfPsychology.Gourmet });
-                AddNullifyingTraits("AteRawFood", new TraitDef[] { TraitDefOfPsychology.Gourmet });
-                AddNullifyingTraits("AteInsectMeatAsIngredient", new TraitDef[] { TraitDefOfPsychology.Gourmet });
-                AddNullifyingTraits("AteInsectMeatDirect", new TraitDef[] { TraitDefOfPsychology.Gourmet });
-                AddNullifyingTraits("AteRottenFood", new TraitDef[] { TraitDefOfPsychology.Gourmet });
-                AddNullifyingTraits("SleepDisturbed", new TraitDef[] { TraitDefOfPsychology.HeavySleeper });
-                AddNullifyingTraits("ObservedLayingCorpse", new TraitDef[] { TraitDefOfPsychology.Desensitized });
-                AddNullifyingTraits("WitnessedDeathAlly", new TraitDef[] { TraitDefOfPsychology.BleedingHeart, TraitDefOfPsychology.Desensitized });
-                AddNullifyingTraits("WitnessedDeathNonAlly", new TraitDef[] { TraitDefOfPsychology.BleedingHeart, TraitDefOfPsychology.Desensitized });
-                AddNullifyingTraits("FeelingRandom", new TraitDef[] { TraitDefOfPsychology.Unstable });
-                AddNullifyingTraits("ApparelDamaged", new TraitDef[] { TraitDefOfPsychology.Prude });
-                AddNullifyingTraits("EnvironmentDark", new TraitDef[] { TraitDefOfPsychology.Photosensitive });
-                AddNullifyingTraits("DeadMansApparel", new TraitDef[] { TraitDefOfPsychology.Desensitized });
-                AddNullifyingTraits("Naked", new TraitDef[] { TraitDefOfPsychology.Prude });
-                AddNullifyingTraits("ColonistLeftUnburied", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
-                AddNullifyingTraits("CheatedOnMe", new TraitDef[] { TraitDefOfPsychology.Polygamous });
-                AddNullifyingTraits("Affair", new TraitDef[] { TraitDefOfPsychology.Polygamous });
-                AddNullifyingTraits("Disfigured", new TraitDef[] { TraitDefOfPsychology.OpenMinded });
-                AddNullifyingTraits("Pretty", new TraitDef[] { TraitDefOfPsychology.OpenMinded });
-                AddNullifyingTraits("Ugly", new TraitDef[] { TraitDefOfPsychology.OpenMinded });
-                AddNullifyingTraits("SleptOutside", new TraitDef[] { TraitDefOfPsychology.Outdoorsy });
                 ThoughtDef knowGuestExecuted = AddNullifyingTraits("KnowGuestExecuted", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (knowGuestExecuted != null && toggleEmpathy)
                 {
@@ -299,68 +190,29 @@ namespace Psychology
                 {
                     knowColonistOrganHarvested = ModifyThoughtStages(knowColonistOrganHarvested, new int[] { -4 });
                 }
-                AddNullifyingTraits("RebuffedMyRomanceAttempt", new TraitDef[] { TraitDefOfPsychology.Lecher });
 
-                ReplaceThoughtWorker("CabinFever", typeof(ThoughtWorker_CabinFever));
-                ReplaceThoughtWorker("Disfigured", typeof(ThoughtWorker_Disfigured));
-                ReplaceThoughtWorker("Ugly", typeof(ThoughtWorker_Ugly));
-                ReplaceThoughtWorker("AnnoyingVoice", typeof(ThoughtWorker_AnnoyingVoice));
-                ReplaceThoughtWorker("CreepyBreathing", typeof(ThoughtWorker_CreepyBreathing));
-                ReplaceThoughtWorker("Pretty", typeof(ThoughtWorker_Pretty));
-                DefDatabase<ThoughtDef>.GetNamed("Chitchat").stages[0].label = "Smalltalk";
-                DefDatabase<ThoughtDef>.AllDefsListForReading.Where(def => def.workerClass == typeof(ThoughtWorker_Hediff)).ToList().ForEach(def => ReplaceThoughtWorker(def.defName, typeof(ThoughtWorker_HediffPsychology)));
-                ThoughtDef depressive = ReplaceThoughtWorker("MoodOffsetDepressive", typeof(ThoughtWorker_AlwaysActiveDepression));
-                ThoughtStage treated = new ThoughtStage();
-                treated.label = "depressive";
-                treated.description = "Natural penalty from Depressive trait.";
-                treated.baseMoodEffect = -6f;
-                depressive.stages.Add(treated);
-                ThoughtDef wantToSleepWithSpouseOrLover = ReplaceThoughtWorker("WantToSleepWithSpouseOrLover", typeof(ThoughtWorker_WantToSleepWithSpouseOrLover));
-                if(wantToSleepWithSpouseOrLover != null)
-                {
-                    wantToSleepWithSpouseOrLover.thoughtClass = typeof(Thought_WantToSleepWithSpouseOrLoverPsychology);
-                }
 
-                InteractionDef chitChat = InteractionDefOf.Chitchat;
-                if(chitChat != null)
+                IEnumerable<ThingDef> things = (from m in LoadedModManager.RunningMods
+                                         from def in m.AllDefs.OfType<ThingDef>()
+                                         where typeof(Pawn).IsAssignableFrom(def.thingClass)
+                                         select def);
+                foreach (ThingDef t in things)
                 {
-                    FieldInfo RuleStrings = typeof(RulePack).GetField("rulesStrings", BindingFlags.Instance | BindingFlags.NonPublic);
-                    RulePack rulePack = new RulePack();
-                    List<string> strings = new List<string>();
-                    strings.Add("logentry->Exchanged pleasantries with [other_nameShortIndef].");
-                    RuleStrings.SetValue(rulePack, strings);
-                    chitChat.logRulesInitiator = rulePack;
-                }
-
-                MentalBreakDef berserk = DefDatabase<MentalBreakDef>.GetNamed("Berserk");
-                if(berserk != null)
-                {
-                    berserk.baseCommonality = 0f;
-                }
-                MentalStateDef fireStartingSpree = DefDatabase<MentalStateDef>.GetNamed("FireStartingSpree");
-                if(fireStartingSpree != null)
-                {
-                    fireStartingSpree.workerClass = typeof(MentalStateWorker_FireStartingSpree);
-                }
-                IEnumerable<MentalStateDef> drugBinges = (from def in DefDatabase<MentalStateDef>.AllDefsListForReading
-                                                          where def.workerClass == typeof(MentalStateWorker_BingingDrug)
-                                                          select def);
-                foreach (MentalStateDef binge in drugBinges)
-                {
-                    binge.workerClass = typeof(MentalStateWorker_BingingDrugPsychology);
-                }
-
-                /* New race-specific options
-                 * Code adapted from code by FluffierThanThou */
-                var livingRaces = DefDatabase<ThingDef>
-                    .AllDefsListForReading
-                    .Where(t => !t.race?.hediffGiverSets?.NullOrEmpty() ?? false);
-
-                foreach (ThingDef alive in livingRaces)
-                {
-                    if (alive.race.hediffGiverSets.Contains(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicStandard")))
+                    if (t.race.intelligence == Intelligence.Humanlike && (DefDatabase<ThinkTreeDef>.GetNamedSilentFail("Zombie")  == null || t.race.thinkTreeMain != DefDatabase<ThinkTreeDef>.GetNamedSilentFail("Zombie")))
                     {
-                        alive.race.hediffGiverSets.Add(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicPsychology"));
+                        t.thingClass = typeof(PsychologyPawn);
+                        t.inspectorTabsResolved.Add(InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Psyche)));
+                        t.recipes.Add(RecipeDefOfPsychology.TreatPyromania);
+                        t.recipes.Add(RecipeDefOfPsychology.TreatChemicalInterest);
+                        t.recipes.Add(RecipeDefOfPsychology.TreatChemicalFascination);
+                        t.recipes.Add(RecipeDefOfPsychology.TreatDepression);
+                        if (!t.race?.hediffGiverSets?.NullOrEmpty() ?? false)
+                        {
+                            if (t.race.hediffGiverSets.Contains(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicStandard")))
+                            {
+                                t.race.hediffGiverSets.Add(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicPsychology"));
+                            }
+                        }
                     }
                 }
 
@@ -440,9 +292,9 @@ namespace Psychology
             if (ModIsActive && PsychologyBase.ActivateKinsey())
             {
                 /* Remove Gay trait from pawns if Kinsey scale is enabled */
-                List<Pawn> gayPawns = (from p in map.mapPawns.AllPawns
+                IEnumerable<Pawn> gayPawns = (from p in map.mapPawns.AllPawns
                                        where p.RaceProps.Humanlike && p.story.traits.HasTrait(TraitDefOf.Gay)
-                                       select p).ToList();
+                                       select p);
                 foreach (Pawn pawn in gayPawns)
                 {
                     RemoveTrait(pawn, TraitDefOf.Gay);
@@ -450,18 +302,6 @@ namespace Psychology
                     if (realPawn != null && realPawn.sexuality.kinseyRating < 5)
                     {
                         realPawn.sexuality.kinseyRating = Rand.RangeInclusive(5, 6);
-                    }
-                }
-                /* Fix Anxiety not being located in the brain */
-                List<Pawn> anxiousPawns = (from p in map.mapPawns.AllPawns
-                                       where p.health.hediffSet.HasHediff(HediffDefOfPsychology.Anxiety)
-                                       select p).ToList();
-                foreach (Pawn pawn in anxiousPawns)
-                {
-                    Hediff anxiety = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Anxiety);
-                    if(anxiety.Part != pawn.health.hediffSet.GetBrain())
-                    {
-                        anxiety.Part = pawn.health.hediffSet.GetBrain();
                     }
                 }
             }
@@ -473,17 +313,17 @@ namespace Psychology
             if (currentTick % GenDate.TicksPerHour*2 == 0)
             {
                 Map playerFactionMap = Find.WorldObjects.FactionBases.Find(b => b.Faction.IsPlayer).Map;
-                List<Pawn> constituents = (from p in playerFactionMap.mapPawns.FreeColonistsSpawned
-                                           where !p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && p.GetTimeAssignment() != TimeAssignmentDefOf.Work && p.Awake()
-                                           select p).ToList();
-                if(constituents.Count > 0)
+                IEnumerable<Pawn> constituents = (from p in playerFactionMap.mapPawns.FreeColonistsSpawned
+                                                  where !p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && p.GetTimeAssignment() != TimeAssignmentDefOf.Work && p.Awake()
+                                                  select p);
+                if(constituents.Count() > 0)
                 {
                     Pawn potentialConstituent = constituents.RandomElementByWeight(p => 0.0001f + Mathf.Pow(Mathf.Abs(0.7f - p.needs.mood.CurLevel), 2));
-                    List<Pawn> activeMayors = (from m in playerFactionMap.mapPawns.FreeColonistsSpawned
-                                               where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == potentialConstituent.Map.Tile
-                                               && m.GetTimeAssignment() != TimeAssignmentDefOf.Work && m.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && m.GetLord() == null && m.Awake()
-                                               select m).ToList();
-                    if (potentialConstituent != null && activeMayors.Count > 0)
+                    IEnumerable<Pawn> activeMayors = (from m in playerFactionMap.mapPawns.FreeColonistsSpawned
+                                                      where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == potentialConstituent.Map.Tile
+                                                      && m.GetTimeAssignment() != TimeAssignmentDefOf.Work && m.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && m.GetLord() == null && m.Awake()
+                                                      select m);
+                    if (potentialConstituent != null && activeMayors.Count() > 0)
                     {
                         Pawn mayor = activeMayors.RandomElement(); //There should only be one.
                         PsychologyPawn psychologyConstituent = potentialConstituent as PsychologyPawn;
@@ -544,10 +384,10 @@ namespace Psychology
                         continue;
                     }
                     //If an election has already been completed this year, don't start a new one.
-                    List<Pawn> activeMayors = (from m in factionBase.Map.mapPawns.FreeColonistsSpawned
-                                               where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == factionBase.Map.Tile && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).yearElected == GenLocalDate.Year(factionBase.Map.Tile)
-                                               select m).ToList();
-                    if (activeMayors.Count > 0)
+                    IEnumerable<Pawn> activeMayors = (from m in factionBase.Map.mapPawns.FreeColonistsSpawned
+                                                      where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == factionBase.Map.Tile && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).yearElected == GenLocalDate.Year(factionBase.Map.Tile)
+                                                      select m);
+                    if (activeMayors.Count() > 0)
                     {
                         continue;
                     }

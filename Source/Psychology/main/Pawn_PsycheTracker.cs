@@ -21,7 +21,10 @@ namespace Psychology
         {
             this.upbringing = Mathf.RoundToInt(Rand.ValueSeeded(this.pawn.HashOffset()) * (PersonalityCategories-1))+1;
             this.nodes = new List<PersonalityNode>();
-            DefDatabase<PersonalityNodeDef>.AllDefsListForReading.ForEach((PersonalityNodeDef def) => nodes.Add(PersonalityNodeMaker.MakeNode(def, this.pawn)));
+            foreach(PersonalityNodeDef def in DefDatabase<PersonalityNodeDef>.AllDefsListForReading)
+            {
+                nodes.Add(PersonalityNodeMaker.MakeNode(def, this.pawn));
+            }
         }
 
         public void ExposeData()
@@ -46,10 +49,13 @@ namespace Psychology
             /* Pawns will avoid controversial topics until they know someone better.
              * This isn't a perfect system, but the weights will be closer together the higher totalOpinionModifiers is.
              */
-            float weight = 10f/(Mathf.Lerp(1f+(4*def.controversiality), 1f + (def.controversiality/2), Mathf.Clamp01(this.TotalThoughtOpinion(otherPawn)/75) + this.GetPersonalityRating(PersonalityNodeDefOf.Aggressive)));
+            float weight = 10f/(Mathf.Lerp(1f+(8*def.controversiality), 1f + (def.controversiality/2), Mathf.Clamp01(this.TotalThoughtOpinion(otherPawn)/75) + this.GetPersonalityRating(PersonalityNodeDefOf.Aggressive)));
             /* Polite pawns will avoid topics they already know are contentious. */
             float knownDisagreements = 0f;
-            foreach(Thought_MemorySocialDynamic memory in this.pawn.needs.mood.thoughts.memories.Memories.Where(m => m is Thought_MemorySocialDynamic && m.def.defName.Contains("Conversation")))
+            IEnumerable<Thought_MemorySocialDynamic> allConvos = (from m in this.pawn.needs.mood.thoughts.memories.Memories.OfType<Thought_MemorySocialDynamic>()
+                                                                  where m.def.defName.Contains("Conversation")
+                                                                  select m);
+            foreach (Thought_MemorySocialDynamic memory in allConvos)
             {
                 if(memory.CurStage.label == def.defName && memory.opinionOffset < 0f)
                 {
@@ -63,7 +69,13 @@ namespace Psychology
         public float TotalThoughtOpinion(PsychologyPawn other)
         {
             float knownThoughtOpinion = 1f;
-            this.pawn.needs.mood.thoughts.memories.Memories.Where(m => m.def.defName.Contains("Conversation") && m.otherPawn.ThingID == other.ThingID).ToList().ForEach(m => knownThoughtOpinion += Mathf.Abs(m.CurStage.baseOpinionOffset));
+            IEnumerable<Thought_Memory> convos = (from m in this.pawn.needs.mood.thoughts.memories.Memories
+                                                 where m.def.defName.Contains("Conversation") && m.otherPawn.ThingID == other.ThingID
+                                                 select m);
+            foreach(Thought_Memory m in convos)
+            {
+                knownThoughtOpinion += Mathf.Abs(m.CurStage.baseOpinionOffset);
+            }
             return knownThoughtOpinion;
         }
 
@@ -83,6 +95,6 @@ namespace Psychology
         public int lastDateTick = 0;
         private PsychologyPawn pawn;
         private List<PersonalityNode> nodes;
-        private const int PersonalityCategories = 16;
+        public const int PersonalityCategories = 16;
     }
 }

@@ -11,6 +11,10 @@ namespace Psychology
 {
     public class PersonalityNode : IExposable
     {
+        public PersonalityNode()
+        {
+        }
+
         public PersonalityNode(PsychologyPawn pawn)
         {
             this.pawn = pawn;
@@ -25,7 +29,10 @@ namespace Psychology
                  * Pawns will never have conversations about core nodes, they exist only to influence child nodes.
                  */
                 int defSeed = 0;
-                this.def.defName.ToList().ForEach((char c) => defSeed += c);
+                foreach(char c in this.def.defName)
+                {
+                    defSeed += c;
+                }
                 this.rawRating = Rand.ValueSeeded(this.pawn.psyche.upbringing + defSeed + Find.World.info.Seed);
             }
             else
@@ -44,7 +51,8 @@ namespace Psychology
         {
             foreach (PersonalityNode parent in this.ParentNodes)
             {
-                rating = ((rating * 2) + parent.AdjustedRating) / 3;
+                float parentRating = (def.GetModifier(parent.def) < 0 ? (1f - parent.AdjustedRating) : parent.AdjustedRating) * Mathf.Abs(def.GetModifier(parent.def));
+                rating = ((rating * (2f + (1f - Mathf.Abs(def.GetModifier(parent.def))))) + parentRating) / 3f;
             }
             rating += (0.5f - this.rawRating) / 4f;
             return Mathf.Clamp01(rating);
@@ -55,9 +63,15 @@ namespace Psychology
             if(!this.def.skillModifiers.NullOrEmpty())
             {
                 int totalLearning = 0;
-                this.pawn.skills.skills.ForEach((SkillRecord s) => totalLearning += s.Level);
+                foreach(SkillRecord s in this.pawn.skills.skills)
+                {
+                    totalLearning += s.Level;
+                }
                 int skillWeight = 0;
-                this.def.skillModifiers.ForEach((PersonalityNodeSkillModifier skillMod) => skillWeight += this.pawn.skills.GetSkill(skillMod.skill).Level);
+                foreach (PersonalityNodeSkillModifier skillMod in this.def.skillModifiers)
+                {
+                    skillWeight += this.pawn.skills.GetSkill(skillMod.skill).Level;
+                }
                 if(totalLearning > 0)
                 {
                     float totalWeight = skillWeight / totalLearning;

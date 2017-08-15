@@ -81,7 +81,10 @@ namespace Psychology.Harmony
         {
             if(pawn.story.traits.HasTrait(TraitDefOfPsychology.Polygamous))
             {
-                foreach (Pawn spousePawn in pawn.relations.RelatedPawns.Where(p => pawn.relations.GetFirstDirectRelationPawn(PawnRelationDefOf.Spouse) != null))
+                IEnumerable<Pawn> spouses = (from p in pawn.relations.RelatedPawns
+                                             where pawn.relations.DirectRelationExists(PawnRelationDefOf.Spouse, p)
+                                             select p);
+                foreach (Pawn spousePawn in spouses)
                 {
                     if (!spousePawn.story.traits.HasTrait(TraitDefOfPsychology.Polygamous))
                     {

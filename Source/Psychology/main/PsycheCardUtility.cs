@@ -11,18 +11,6 @@ namespace Psychology
 {
     public static class PsycheCardUtility
     {
-        private static void CheckRecache(Pawn selPawnForSocialInfo)
-        {
-            if (PsycheCardUtility.cachedForPawn != selPawnForSocialInfo || Time.frameCount % 20 == 0)
-            {
-                PsycheCardUtility.Recache(selPawnForSocialInfo);
-            }
-        }
-        private static void Recache(Pawn selPawnForSocialInfo)
-        {
-            PsycheCardUtility.cachedForPawn = selPawnForSocialInfo;
-        }
-
         private static void DrawPersonalityNodes(Rect rect, PsychologyPawn pawn)
         {
             float width = rect.width - 26f - 3f;
@@ -32,10 +20,10 @@ namespace Psychology
             float num = 0f;
             for (int i = 0; i < allNodes.Count; i++)
             {
-                int descString = Mathf.RoundToInt(6f*allNodes[i].AdjustedRating);
-                if (/*!allNodes[i].Core && */descString != 3)
+                int category = Mathf.RoundToInt(6f*Mathf.InverseLerp(0.16f, 0.83f, allNodes[i].AdjustedRating));
+                if (/*!allNodes[i].Core && */category != 3)
                 {
-                    string text = (NodeDescriptions[descString] == "" ? "" : ("Psyche"+NodeDescriptions[descString]).Translate());
+                    string text = (NodeDescriptions[category] == "" ? "" : ("Psyche"+NodeDescriptions[category]).Translate());
                     PsycheCardUtility.nodeStrings.Add(new Pair<string, int>(text, i));
                     num += Mathf.Max(26f, Text.CalcHeight(text, width));
                 }
@@ -51,7 +39,8 @@ namespace Psychology
                 float num4 = Mathf.Max(26f, Text.CalcHeight(first, width));
                 Rect rect2 = new Rect(10f, num3, width/3, num4);
                 Rect rect3 = new Rect(10f+width/3, num3, (2*width)/3, num4);
-                GUI.color = NodeColors[Mathf.RoundToInt(6f*allNodes[PsycheCardUtility.nodeStrings[j].Second].AdjustedRating)];
+                int category = Mathf.RoundToInt(6f*Mathf.InverseLerp(0.16f, 0.83f, allNodes[PsycheCardUtility.nodeStrings[j].Second].AdjustedRating));
+                GUI.color = NodeColors[category];
                 Widgets.Label(rect2, first.ToString());
                 GUI.color = Color.white;
                 Widgets.DrawHighlightIfMouseover(rect3);
@@ -62,7 +51,7 @@ namespace Psychology
             GUI.EndScrollView();
         }
 
-        private static void DrawSexuality(Rect rect, PsychologyPawn pawn)
+        private static void DrawSexuality(Rect rect, PsychologyPawn pawn, bool notOnMenu)
         {
             float width = rect.width - 26f - 3f;
             GUI.color = Color.white;
@@ -71,13 +60,12 @@ namespace Psychology
                 Text.Font = GameFont.Medium;
                 Rect rect2 = rect;
                 rect2.yMax = rect2.y + 30f;
-                rect2.xMax = rect2.x + 200f;
                 Widgets.Label(rect2, "Sexuality".Translate());
                 Text.Font = GameFont.Small;
                 Rect rect3 = rect;
                 rect3.y = rect2.yMax + RowTopPadding;
                 string text = "KinseyRating".Translate() + "    " + pawn.sexuality.kinseyRating;
-                float num4 = Mathf.Max(26f, Text.CalcHeight(text, width));
+                float num4 = Mathf.Max(50f, Text.CalcHeight(text, width));
                 rect3.yMax = rect3.y + num4;
                 Widgets.Label(rect3, text);
                 bool asexual = false;
@@ -103,13 +91,23 @@ namespace Psychology
                     TooltipHandler.TipRegion(rect5, () => "AromanticDescription".Translate(), 613261 + (int)(100 * pawn.sexuality.romanticDrive));
                 }
             }
-            else
+            else if(notOnMenu)
             {
                 GUI.color = Color.red;
                 string text = "SexualityDisabledWarning".Translate();
                 Widgets.Label(rect, text);
                 GUI.color = Color.white;
             }
+        }
+
+        public static void DrawDebugOptions(Rect rect, PsychologyPawn pawn)
+        {
+            GUI.BeginGroup(rect);
+            if (Widgets.ButtonText(new Rect((rect.width * 0.6f) - 80f, 0f, 100f, 22f), "EditPsyche".Translate(), true, false, true))
+            {
+                Find.WindowStack.Add(new Dialog_EditPsyche(pawn));
+            }
+            GUI.EndGroup();
         }
 
         public static void DrawPsycheCard(Rect rect, Pawn pawn)
@@ -129,8 +127,36 @@ namespace Psychology
                 GUI.color = new Color(1f, 1f, 1f, 0.5f);
                 Widgets.DrawLineVertical(rect4.xMax, 0f, rect.height);
                 GUI.color = Color.white;
+                if (Prefs.DevMode)
+                {
+                    Rect rect6 = new Rect(0f, 5f, rect3.width, 22f);
+                    PsycheCardUtility.DrawDebugOptions(rect6, realPawn);
+                }
                 PsycheCardUtility.DrawPersonalityNodes(rect4, realPawn);
-                PsycheCardUtility.DrawSexuality(rect5, realPawn);
+                PsycheCardUtility.DrawSexuality(rect5, realPawn, true);
+                GUI.EndGroup();
+            }
+        }
+
+        public static void DrawPsycheMenuCard(Rect rect, Pawn pawn)
+        {
+            PsychologyPawn realPawn = pawn as PsychologyPawn;
+            if (realPawn != null)
+            {
+                GUI.BeginGroup(rect);
+                Text.Font = GameFont.Small;
+                Rect rect2 = new Rect(10f, 10f, rect.width - 10f, rect.height - 10f);
+                Rect rect4 = rect2;
+                Rect rect5 = rect2;
+                rect4.width *= 0.6f;
+                rect4.xMin -= 20f;
+                rect5.x = rect4.xMax + 17f;
+                rect5.xMax = rect.xMax;
+                GUI.color = new Color(1f, 1f, 1f, 0.5f);
+                Widgets.DrawLineVertical(rect4.xMax, 0f, rect.height);
+                GUI.color = Color.white;
+                PsycheCardUtility.DrawPersonalityNodes(rect4, realPawn);
+                PsycheCardUtility.DrawSexuality(rect5, realPawn, false);
                 GUI.EndGroup();
             }
         }
@@ -138,12 +164,9 @@ namespace Psychology
         private static string[] NodeDescriptions = { "Not", "Slightly", "Less", "", "More", "Very", "Extremely" };
         private static Color[] NodeColors = { new Color(1f, 0.2f, 0.2f, 0.6f), new Color(1f, 0.4f, 0.4f, 0.4f), new Color(1f, 0.6f, 0.6f, 0.2f), Color.white, new Color(0.6f, 1f, 0.6f, 0.2f), new Color(0.4f, 1f, 0.4f, 0.4f), new Color(0.2f, 1f, 0.2f, 0.6f) };
         private static readonly Color HighlightColor = new Color(0.5f, 0.5f, 0.5f, 1f);
-        private static Vector2 listScrollPosition = Vector2.zero;
         private static Vector2 nodeScrollPosition = Vector2.zero;
         private static List<Pair<string, int>> nodeStrings = new List<Pair<string, int>>();
         private const float RowLeftRightPadding = 5f;
         private const float RowTopPadding = 1f;
-        private static Pawn cachedForPawn;
-        private static HashSet<Pawn> tmpToCache = new HashSet<Pawn>();
     }
 }

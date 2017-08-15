@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <HoldingConversation.label>대화</HoldingConversation.label>
+  <HoldingConversation.stages.0.label>hidden</HoldingConversation.stages.0.label>
+
+  <Mayor.label>지도자</Mayor.label>
+  <Mayor.stages.0.label>hidden</Mayor.stages.0.label>
+
+  <PlannedDate.label>데이트</PlannedDate.label>
+  <PlannedDate.stages.0.label>hidden</PlannedDate.stages.0.label>
+
+
+</LanguageData>

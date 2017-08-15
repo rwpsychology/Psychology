@@ -18,10 +18,10 @@ namespace Psychology
             if (pawn.health != null)
             {
 
-                List<BodyPartRecord> parts = (from b in pawn.health.hediffSet.GetNotMissingParts()
+                IEnumerable<BodyPartRecord> parts = (from b in pawn.health.hediffSet.GetNotMissingParts()
                                               where b.def == BodyPartDefOf.LeftHand || b.def == BodyPartDefOf.RightHand || b.def == BodyPartDefOf.LeftArm || b.def == BodyPartDefOf.RightArm
-                                              select b).ToList();
-                if (parts.Count > 0 && pawn.IsHashIntervalTick(2000))
+                                              select b);
+                if (parts.Count() > 0 && pawn.IsHashIntervalTick(2000))
                 {
                     foreach (BodyPartRecord part in parts)
                     {

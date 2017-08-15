@@ -22,7 +22,7 @@ namespace Psychology.Harmony
                 return false;
             }
             int socialiteMod = 1;
-            List<Pawn> allPawnsSpawned = map.mapPawns.FreeColonistsSpawned.ToList();
+            IEnumerable<Pawn> allPawnsSpawned = map.mapPawns.FreeColonistsSpawned;
             foreach (Pawn pawn in allPawnsSpawned)
             {
                 if (pawn.RaceProps.Humanlike && pawn.story.traits.HasTrait(TraitDefOfPsychology.Socialite))

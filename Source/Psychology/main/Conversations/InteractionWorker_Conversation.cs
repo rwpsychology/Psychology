@@ -18,14 +18,16 @@ namespace Psychology
             {
                 return 0f;
             }
-            return Mathf.Max(0f, 0.45f + (0.6f-realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly)) + (0.5f-realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Extroverted)));
+            return Mathf.Max(0f, 0.45f + (realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly)-0.6f) + (realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Extroverted)-0.5f));
         }
 
         public override void Interacted(Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks)
         {
             PsychologyPawn realInitiator = initiator as PsychologyPawn;
             PsychologyPawn realRecipient = recipient as PsychologyPawn;
-            PersonalityNode topic = realInitiator.psyche.PersonalityNodes.Where(node => !node.Core).RandomElementByWeight(node => realInitiator.psyche.GetConversationTopicWeight(node.def, realRecipient));
+            PersonalityNode topic = (from node in realInitiator.psyche.PersonalityNodes
+                                     where !node.Core
+                                     select node).RandomElementByWeight(node => realInitiator.psyche.GetConversationTopicWeight(node.def, realRecipient));
             Hediff_Conversation initiatorHediff = (Hediff_Conversation)HediffMaker.MakeHediff(HediffDefOfPsychology.HoldingConversation, realInitiator);
             initiatorHediff.otherPawn = realRecipient;
             initiatorHediff.topic = topic.def;

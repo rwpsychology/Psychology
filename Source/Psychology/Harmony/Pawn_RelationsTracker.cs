@@ -31,6 +31,11 @@ namespace Psychology.Harmony
             PsychologyPawn realPawn = pawn as PsychologyPawn;
             if (realPawn != null)
             {
+                if (pawn.def != otherPawn.def || pawn == otherPawn)
+                {
+                    __result = 0f;
+                    return;
+                }
                 /* Throw away the existing result and substitute our own formula. */
                 float ageFactor = 1f;
                 float sexualityFactor = 1f;
@@ -78,24 +83,23 @@ namespace Psychology.Harmony
                     }
                     if ((ageBiologicalYearsFloat2 < ageBiologicalYearsFloat - 10f) && (!pawn.story.traits.HasTrait(TraitDefOfPsychology.OpenMinded)))
                     {
-                        __result = 0.15f;
-                        return;
+                        ageFactor *= 0.15f;
                     }
                     if (ageBiologicalYearsFloat2 < ageBiologicalYearsFloat - 3f)
                     {
-                        ageFactor = Mathf.InverseLerp(ageBiologicalYearsFloat - 10f, ageBiologicalYearsFloat - 3f, ageBiologicalYearsFloat2) * 0.3f;
+                        ageFactor *= Mathf.InverseLerp(ageBiologicalYearsFloat - 10f, ageBiologicalYearsFloat - 3f, ageBiologicalYearsFloat2) * 0.3f;
                     }
                     else
                     {
-                        ageFactor = GenMath.FlatHill(0.3f, ageBiologicalYearsFloat - 3f, ageBiologicalYearsFloat, ageBiologicalYearsFloat + 10f, ageBiologicalYearsFloat + 30f, 0.15f, ageBiologicalYearsFloat2);
+                        ageFactor *= GenMath.FlatHill(0.3f, ageBiologicalYearsFloat - 3f, ageBiologicalYearsFloat, ageBiologicalYearsFloat + 10f, ageBiologicalYearsFloat + 30f, 0.15f, ageBiologicalYearsFloat2);
                     }
                 }
-                ageFactor = Mathf.Lerp(ageFactor, (1f - ageFactor), realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
+                ageFactor = Mathf.Lerp(ageFactor, (1.6f - ageFactor), realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
                 float disabilityFactor = 1f;
                 disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetLevel(PawnCapacityDefOf.Talking));
                 disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetLevel(PawnCapacityDefOf.Manipulation));
                 disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetLevel(PawnCapacityDefOf.Moving));
-                disabilityFactor = Mathf.Lerp(disabilityFactor, (1f - disabilityFactor), realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
+                disabilityFactor = Mathf.Lerp(disabilityFactor, (1.6f - disabilityFactor), realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
                 if (pawn.RaceProps.Humanlike && pawn.story.traits.HasTrait(TraitDefOfPsychology.OpenMinded))
                 {
                     ageFactor = 1f;

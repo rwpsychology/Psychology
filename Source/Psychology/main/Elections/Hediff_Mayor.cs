@@ -27,7 +27,8 @@ namespace Psychology
         public override void Tick()
         {
             base.Tick();
-            if (this.pawn.Dead || !PsychologyBase.ActivateElections() || ((FactionBase)Find.WorldObjects.ObjectsAt(worldTileElectedOn).ToList().Find(o => o is FactionBase)).Map.lordManager.lords.Find(l => l.LordJob is LordJob_Joinable_Election) != null)
+            FactionBase colony = Find.WorldObjects.ObjectsAt(worldTileElectedOn).OfType<FactionBase>().FirstOrDefault();
+            if (this.pawn.Dead || !PsychologyBase.ActivateElections() || colony == null || colony.Map.lordManager.lords.Find(l => l.LordJob is LordJob_Joinable_Election) != null)
             {
                 this.pawn.health.RemoveHediff(this);
             }

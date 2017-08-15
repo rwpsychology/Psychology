@@ -20,7 +20,6 @@ namespace Psychology.Harmony
             PsychologyPawn realPawn = pawn as PsychologyPawn;
             if (realPawn != null && PsychologyBase.ActivateKinsey() && trait.def == TraitDefOf.Gay)
             {
-                Log.Error("[Psychology] Something tried to add the Gay trait to a pawn. You're probably using a mod incompatible with Psychology's Kinsey system, either disable it in the mod options or remove the offending mod.");
                 return false;
             }
             if (realPawn != null && PsychologyBase.ActivateKinsey() && realPawn.sexuality.romanticDrive < 0.5f)

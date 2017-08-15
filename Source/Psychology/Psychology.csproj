@@ -39,6 +39,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\Steam\steamapps\common\RimWorld\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="EdBPrepareCarefully">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\735106432\Assemblies\EdBPrepareCarefully.dll</HintPath>
+    </Reference>
     <Reference Include="HugsLib, Version=0.16.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\Steam\steamapps\workshop\content\294100\818773962\Assemblies\HugsLib.dll</HintPath>
@@ -64,6 +67,16 @@
     <Compile Include="Harmony\InteractionUtility.cs" />
     <Compile Include="Harmony\InteractionWorker_DeepTalk.cs" />
     <Compile Include="Harmony\NegativeInteractionUtility.cs" />
+    <Compile Include="Harmony\Optional\ColonistSaver.cs" />
+    <Compile Include="Harmony\Optional\EdBPrepareCarefully.cs" />
+    <Compile Include="Harmony\Optional\PanelBackstory.cs" />
+    <Compile Include="Harmony\Optional\PresetLoader.cs" />
+    <Compile Include="Harmony\Optional\PresetSaver.cs" />
+    <Compile Include="Harmony\Optional\SaveRecordPawnV3.cs" />
+    <Compile Include="Harmony\Page_ConfigureStartingPawns.cs" />
+    <Compile Include="Harmony\ThoughtWorker_ChemicalInterestVsTeetotaler.cs" />
+    <Compile Include="Harmony\ThoughtWorker_HardWorkerVsLazy.cs" />
+    <Compile Include="Harmony\ThoughtWorker_TeetotalerVsChemicalInterest.cs" />
     <Compile Include="Harmony\TraitSet.cs" />
     <Compile Include="Main\Conversations\Rendezvous\Hediff_PlannedDate.cs" />
     <Compile Include="Main\Conversations\Rendezvous\InteractionWorker_PlanDate.cs" />
@@ -74,6 +87,7 @@
     <Compile Include="Main\Conversations\Rendezvous\LordToil_HangOut.cs" />
     <Compile Include="Main\Conversations\PlayLogEntry_InteractionConversation.cs" />
     <Compile Include="Main\Conversations\Rendezvous\RendezvousUtility.cs" />
+    <Compile Include="Main\Dialog_EditPsyche.cs" />
     <Compile Include="Main\Elections\Candidate.cs" />
     <Compile Include="Main\Elections\Hediff_Mayor.cs" />
     <Compile Include="Main\Elections\JobGiver_Vote.cs" />
@@ -89,7 +103,8 @@
     <Compile Include="Harmony\JobGiver_DoLovin.cs" />
     <Compile Include="Harmony\VoluntarilyJoinableLordsStarter.cs" />
     <Compile Include="Main\Alerts\Alert_Individuality.cs" />
-    <Compile Include="Main\ThoughtWorkers\ThoughtWorker_WantToSleepWithSpouseOrLover.cs" />
+    <Compile Include="Harmony\ThoughtWorker_WantToSleepWithSpouseOrLover.cs" />
+    <Compile Include="Main\PrepareCarefully\SaveRecordPsycheV3.cs" />
     <Compile Include="Main\Thought_MemoryDynamic.cs" />
     <Compile Include="Main\ITab_Pawn_Psyche.cs" />
     <Compile Include="Main\Pawn_PsycheTracker.cs" />
@@ -101,10 +116,10 @@
     <Compile Include="Main\Personality\PersonalityNodeTraitModifier.cs" />
     <Compile Include="Main\Personality\PersonalityNodeDef.cs" />
     <Compile Include="Main\PsycheCardUtility.cs" />
-    <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Hediff.cs" />
+    <Compile Include="Harmony\ThoughtWorker_Hediff.cs" />
     <Compile Include="Main\Thought_MemorySocialDynamic.cs" />
     <Compile Include="Main\Medical\Treatments\Recipe_TreatDepression.cs" />
-    <Compile Include="Main\Medical\Treatments\ThoughtWorker_AlwaysActiveDepression.cs" />
+    <Compile Include="Harmony\ThoughtWorker_AlwaysActiveDepression.cs" />
     <Compile Include="Main\Thought_WantToSleepWithSpouseOrLoverPsychology.cs" />
     <Compile Include="Main\Thought_TreatmentFailed.cs" />
     <Compile Include="Main\MentalStates\Jobs\JobGiver_ArmSelf.cs" />
@@ -112,7 +127,7 @@
     <Compile Include="Main\MentalStates\MentalState_FellPlotting.cs" />
     <Compile Include="Main\MentalStates\MentalState_Paranoia.cs" />
     <Compile Include="Main\MentalStates\Workers\MentalStateWorker_FellPlotting.cs" />
-    <Compile Include="Main\MentalStates\Workers\MentalStateWorker_BingingDrugPsychology.cs" />
+    <Compile Include="Harmony\MentalStateWorker_BingingDrug.cs" />
     <Compile Include="Main\Medical\Treatments\Hediff_DrugFree.cs" />
     <Compile Include="Main\Medical\Treatments\Hediff_RecoveringPyromaniac.cs" />
     <Compile Include="Harmony\InteractionWorker_RecruitAttempt.cs" />
@@ -157,12 +172,12 @@
     <Compile Include="Main\Medical\Treatments\Recipe_TreatChemicalInterest.cs" />
     <Compile Include="Main\Medical\Treatments\Recipe_TreatPyromaniac.cs" />
     <Compile Include="Defs\StatDefOfPsychology.cs" />
-    <Compile Include="Main\ThoughtWorkers\ThoughtWorker_CreepyBreathing.cs" />
-    <Compile Include="Main\ThoughtWorkers\ThoughtWorker_AnnoyingVoice.cs" />
-    <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Ugly.cs" />
-    <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Pretty.cs" />
-    <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Disfigured.cs" />
-    <Compile Include="Main\ThoughtWorkers\ThoughtWorker_CabinFever.cs" />
+    <Compile Include="Harmony\ThoughtWorker_CreepyBreathing.cs" />
+    <Compile Include="Harmony\ThoughtWorker_AnnoyingVoice.cs" />
+    <Compile Include="Harmony\ThoughtWorker_Ugly.cs" />
+    <Compile Include="Harmony\ThoughtWorker_Pretty.cs" />
+    <Compile Include="Harmony\ThoughtWorker_Disfigured.cs" />
+    <Compile Include="Harmony\ThoughtWorker_CabinFever.cs" />
     <Compile Include="Defs\JobDefOfPsychology.cs" />
     <Compile Include="Main\Pawn_SexualityTracker.cs" />
     <Compile Include="Main\PsychologyPawn.cs" />
@@ -181,13 +196,11 @@
     <Compile Include="Harmony\TendUtility.cs" />
     <Compile Include="Main\InteractionWorkers\InteractionWorker_PrudeSeen.cs" />
     <Compile Include="PsychologyBase.cs" />
-    <Compile Include="Main\ThoughtWorkers\ThoughtWorker_BleedingHeartVsPsychopath.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Light.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Pluviophile.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Outdoorsy.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Codependency.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_WorkingPassion.cs" />
-    <Compile Include="Main\ThoughtWorkers\ThoughtWorker_PrudeVsNudist.cs" />
     <Compile Include="Defs\ThoughtDefOfPsychology.cs" />
     <Compile Include="Harmony\ThoughtUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

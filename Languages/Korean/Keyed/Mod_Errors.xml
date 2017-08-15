@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <KinseyDisable>"로맨스/성 정체성" 관련 모드가 탐지되어 킨제이 등급 기능을 비활성화 합니다.</KinseyDisable>
+  <KinseyDetourDisable>호환성 확보를 위해 우회기능이 비활성화 되며, 비활성화 된 특성 기능들은 0으로 재설정 됩니다.</KinseyDetourDisable>
+  <MedicalDetourDisable>의료/수술 관련 모드가 탐지되어 관련 우회기능을 비활성화 합니다. Less Arbitrary Surgery 모드 관련 충돌이 아닐 경우 "연민성애자" 관련 기능이 비활성화 됩니다.</MedicalDetourDisable>
+
+</LanguageData>

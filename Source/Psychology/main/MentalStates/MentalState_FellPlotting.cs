@@ -21,11 +21,11 @@ namespace Psychology
             base.MentalStateTick();
             if (target == null)
             {
-                List<Pawn> rivals = (from c in pawn.Map.mapPawns.FreeColonistsSpawned
-                                     where pawn.relations.OpinionOf(c) < -20
-                                     select c).ToList();
-                rivals.SortByDescending((Pawn x) => pawn.relations.OpinionOf(x));
-                if (rivals.Count == 0)
+                IEnumerable<Pawn> rivals = (from c in pawn.Map.mapPawns.FreeColonistsSpawned
+                                            where pawn.relations.OpinionOf(c) < -20
+                                            orderby pawn.relations.OpinionOf(c) descending
+                                            select c);
+                if (rivals.Count() == 0)
                 {
                     Log.ErrorOnce(pawn.LabelShort + " was in Fell Plotting mental break but has no rivals.", 100 + pawn.GetHashCode());
                     this.RecoverFromState();

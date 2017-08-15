@@ -8,23 +8,48 @@ using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 using Harmony;
+using System.Reflection.Emit;
 
 namespace Psychology.Harmony
 {
     [HarmonyPatch(typeof(Pawn), "CheckAcceptArrest")]
     public static class Pawn_ArrestPatch
     {
-        [HarmonyPostfix]
-        public static void PsychologyArrestChance(Pawn __instance, ref bool __result, Pawn arrester)
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> SwapArrestChance(IEnumerable<CodeInstruction> instr, ILGenerator gen)
         {
-            if (__result && !__instance.health.Downed && (__instance.story == null || !__instance.story.WorkTagIsDisabled(WorkTags.Violent)))
+            List<Label> labels = new List<Label>();
+            Label skipLabel = gen.DefineLabel(); //Have to assign variable
+            bool removeIfStatement = false;
+            foreach(CodeInstruction itr in instr)
             {
-                __result = false;
+                if((itr.opcode == OpCodes.Call && itr.operand == AccessTools.Property(typeof(Rand), "Value").GetGetMethod()) || removeIfStatement)
+                {
+                    if(!removeIfStatement)
+                    {
+                        removeIfStatement = true;
+                        labels = itr.labels;
+                    }
+                    if (itr.opcode == OpCodes.Bge_Un)
+                    {
+                        skipLabel = (Label)itr.operand;
+                        yield return new CodeInstruction(OpCodes.Ldarg_0) { labels = labels };
+                        yield return new CodeInstruction(OpCodes.Ldarg_1);
+                        yield return new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(Pawn_ArrestPatch), "NewArrestCheck", new Type[] { typeof(Pawn), typeof(Pawn) }));
+                        yield return new CodeInstruction(OpCodes.Brfalse_S, skipLabel);
+                        removeIfStatement = false;
+                    }
+                }
+                else
+                {
+                    yield return itr;
+                }
             }
-            if (Rand.Value < (arrester.GetStatValue(StatDefOfPsychology.ArrestPeacefullyChance) * (Mathf.InverseLerp(-100f, 100f, __instance.relations.OpinionOf(arrester))) * (arrester.Faction == __instance.Faction ? 1.5 : 1)))
-            {
-                __result = true;
-            }
+        }
+
+        public static bool NewArrestCheck(Pawn pawn, Pawn arrester)
+        {
+            return (Rand.Value < (arrester.GetStatValue(StatDefOfPsychology.ArrestPeacefullyChance) * (Mathf.InverseLerp(-100f, 100f, pawn.relations.OpinionOf(arrester))) * (arrester.Faction == pawn.Faction ? 1.5f : 1f) * (pawn.InMentalState ? 0.2f : 1f)));
         }
     }
 

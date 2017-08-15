@@ -10,7 +10,14 @@
   <KinseyRating>Échelle de Kinsey :</KinseyRating>
   <Asexual>Asexué</Asexual>
   <AsexualDescription>Cette personne a une très faible libido. Ils n'éprouvent pas grand désir sexuel et sont peu enclins à s'engager dans quelque chose d'intime.</AsexualDescription>
-  <Aromantic>Aromantic</Aromantic>
+  <Aromantic>Aromantique</Aromantic>
   <AromanticDescription>Cette personne a des pulsions romantique très faible. Ils sont peu susceptibles de faire des tentatives de romance ou d'accepter des propositions de mariage, mais peut encore prendre des amoureux.</AromanticDescription>
+  
+  <!-- Dialog text -->
+  <EditPsyche>Editeur de dév</EditPsyche>
+  <PsycheEditor>Modification de la psyché de {0} :</PsycheEditor>
+  <PersonalityNodeWarning>Vous modifiez les valeurs brutes de la personnalité d'un pion. Les statistiques actuelles seront ajustées par d'autres facteurs.</PersonalityNodeWarning>
+  <SexDrive>Pulsion sexuelle :</SexDrive>
+  <RomanticDrive>Pulsion romantique :</RomanticDrive>
 
 </LanguageData>

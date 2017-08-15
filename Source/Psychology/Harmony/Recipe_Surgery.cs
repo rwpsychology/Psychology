@@ -14,7 +14,7 @@ namespace Psychology.Harmony
         [HarmonyPostfix]
         public static void BleedingHeartThought(bool __result, Pawn surgeon, Pawn patient)
         {
-            if (__result && patient.Dead)
+            if (surgeon.needs.mood != null && __result && patient.Dead)
             {
                 surgeon.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.KilledPatientBleedingHeart, patient);
             }

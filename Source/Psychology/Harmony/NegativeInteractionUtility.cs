@@ -17,14 +17,9 @@ namespace Psychology.Harmony
             PsychologyPawn realInitiator = initiator as PsychologyPawn;
             if (realInitiator != null)
             {
-                float num = 1f;
-                num *= 2f * realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive);
-                num *= Traverse.Create(typeof(NegativeInteractionUtility)).Field("OpinionFactorCurve").GetValue<SimpleCurve>().Evaluate((float)initiator.relations.OpinionOf(recipient));
-                if (initiator.story.traits.HasTrait(TraitDefOf.Abrasive))
-                {
-                    num *= 2.3f;
-                }
-                __result = num;
+                SimpleCurve opinionCurve = Traverse.Create(typeof(NegativeInteractionUtility)).Field("CompatibilityFactorCurve").GetValue<SimpleCurve>();
+                __result /= opinionCurve.Evaluate(initiator.relations.CompatibilityWith(recipient));
+                __result *= 2f * realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive);
             }
         }
     }

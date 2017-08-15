@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Random social interactions -->
+
+  <PrudeSeen.stages.0.label>나체를 목격함</PrudeSeen.stages.0.label>
+  <PrudeSeen.stages.0.description>그사람 알몸이었던거야? 여기선 아무나 옷을 벗고 돌아다니는건가? 역겹군.</PrudeSeen.stages.0.description>
+
+  <DynamicSocial.stages.0.label>대화</DynamicSocial.stages.0.label>
+  <BrokeUpWithMeCodependent.stages.0.label>그리움</BrokeUpWithMeCodependent.stages.0.label>
+
+  <BrokeUpWithMeCodependentMood.stages.0.label>{0}을 그리워함</BrokeUpWithMeCodependentMood.stages.0.label>
+  <BrokeUpWithMeCodependentMood.stages.0.description>네가 너무 그리워... 제발 내게 돌아와.</BrokeUpWithMeCodependentMood.stages.0.description>
+
+  <CheatedOnMeCodependent.stages.0.label>바람을 핌</CheatedOnMeCodependent.stages.0.label>
+
+  <CheatedOnMeCodependentMood.stages.0.label>{0}가 바람을 핌</CheatedOnMeCodependentMood.stages.0.label>
+  <CheatedOnMeCodependentMood.stages.0.description>이해할수 없어... 내가 뭔가 잘못했음이 분명해.</CheatedOnMeCodependentMood.stages.0.description>
+
+  <RebuffedMyRomanceAttemptLecher.stages.0.label>퇴짜맞음</RebuffedMyRomanceAttemptLecher.stages.0.label>
+  <CapturedMe.stages.0.label>수감자가 됨</CapturedMe.stages.0.label>
+  <WentOnDate.stages.0.label>데이트를 함</WentOnDate.stages.0.label>
+  <MissedDate.stages.0.label>데이트에서 밤을 보냄</MissedDate.stages.0.label>
+
+
+</LanguageData>
