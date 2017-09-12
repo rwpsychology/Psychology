@@ -107,7 +107,7 @@
     <Compile Include="Main\Alerts\Alert_Individuality.cs" />
     <Compile Include="Harmony\ThoughtWorker_WantToSleepWithSpouseOrLover.cs" />
     <Compile Include="Main\Funerals\LordToil_Funeral.cs" />
-    <Compile Include="Main\Medical\Treatments\Recipe_TreatInsomniac.cs" />
+    <Compile Include="Main\Medical\Treatments\Recipe_TreatInsomnia.cs" />
     <Compile Include="Main\PrepareCarefully\SaveRecordPsycheV3.cs" />
     <Compile Include="Main\Thought_MemoryDynamic.cs" />
     <Compile Include="Main\ITab_Pawn_Psyche.cs" />

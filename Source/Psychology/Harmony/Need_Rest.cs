@@ -49,7 +49,7 @@ namespace Psychology.Harmony
             if (Traverse.Create(__instance).Property("Resting").GetValue<bool>())
             {
                 Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-                if (!Traverse.Create(__instance).Property("IsFrozen").GetValue<bool>() && pawn.RaceProps.Humanlike && pawn.story.traits.HasTrait(TraitDefOfPsychology.Insomniac))
+                if (!Traverse.Create(__instance).Property("IsFrozen").GetValue<bool>() && pawn.RaceProps.Humanlike && pawn.story.traits.HasTrait(TraitDefOfPsychology.Insomniac) && !pawn.health.hediffSet.HasHediff(HediffDefOfPsychology.SleepingPills))
                 {
                     __instance.CurLevel -= (2f * 150f * Need_Rest.BaseRestGainPerTick) / 3f;
                     if (__instance.CurLevel > (Need_Rest.DefaultNaturalWakeThreshold / 4f))

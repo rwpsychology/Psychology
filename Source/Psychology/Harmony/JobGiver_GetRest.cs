@@ -14,7 +14,7 @@ namespace Psychology.Harmony
         [HarmonyPostfix]
         public static void InsomniacPriority(ref float __result, Pawn pawn)
         {
-            if (pawn.RaceProps.Humanlike && pawn.story.traits.HasTrait(TraitDefOfPsychology.Insomniac))
+            if (pawn.RaceProps.Humanlike && pawn.story.traits.HasTrait(TraitDefOfPsychology.Insomniac) && !pawn.health.hediffSet.HasHediff(HediffDefOfPsychology.SleepingPills))
             {
                 TimeAssignmentDef timeAssignmentDef = ((pawn.timetable != null) ? pawn.timetable.CurrentAssignment : TimeAssignmentDefOf.Anything);
                 float curLevel = pawn.needs.rest.CurLevel;
