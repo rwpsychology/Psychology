@@ -147,4 +147,9 @@
     <defName>Antidepressants</defName>
     <label>antidepressants</label>
   </HediffDef>
+  
+  <HediffDef ParentName="TreatmentBase">
+    <defName>SleepingPills</defName>
+    <label>prescribed sedatives</label>
+  </HediffDef>
 </Defs>

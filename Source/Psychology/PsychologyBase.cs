@@ -9,12 +9,12 @@ using Verse;
 using Verse.AI.Group;
 using Verse.Grammar;
 using HugsLib.Settings;
-using Harmony;
+using HugsLib;
 using UnityEngine;
 
 namespace Psychology
 {
-    public class PsychologyBase : HugsLib.ModBase
+    public class PsychologyBase : ModBase
     {
         private static bool kinsey = true;
         private static KinseyMode mode = KinseyMode.Realistic;
@@ -198,7 +198,7 @@ namespace Psychology
                                          select def);
                 foreach (ThingDef t in things)
                 {
-                    if (t.race.intelligence == Intelligence.Humanlike && (DefDatabase<ThinkTreeDef>.GetNamedSilentFail("Zombie")  == null || t.race.thinkTreeMain != DefDatabase<ThinkTreeDef>.GetNamedSilentFail("Zombie")))
+                    if (t.race.intelligence == Intelligence.Humanlike && !t.defName.Contains("AIPawn") && (DefDatabase<ThinkTreeDef>.GetNamedSilentFail("Zombie")  == null || t.race.thinkTreeMain != DefDatabase<ThinkTreeDef>.GetNamedSilentFail("Zombie")))
                     {
                         t.thingClass = typeof(PsychologyPawn);
                         t.inspectorTabsResolved.Add(InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Psyche)));
@@ -206,6 +206,7 @@ namespace Psychology
                         t.recipes.Add(RecipeDefOfPsychology.TreatChemicalInterest);
                         t.recipes.Add(RecipeDefOfPsychology.TreatChemicalFascination);
                         t.recipes.Add(RecipeDefOfPsychology.TreatDepression);
+                        t.recipes.Add(RecipeDefOfPsychology.TreatInsomnia);
                         if (!t.race?.hediffGiverSets?.NullOrEmpty() ?? false)
                         {
                             if (t.race.hediffGiverSets.Contains(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicStandard")))
@@ -314,14 +315,14 @@ namespace Psychology
             {
                 Map playerFactionMap = Find.WorldObjects.FactionBases.Find(b => b.Faction.IsPlayer).Map;
                 IEnumerable<Pawn> constituents = (from p in playerFactionMap.mapPawns.FreeColonistsSpawned
-                                                  where !p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && p.GetTimeAssignment() != TimeAssignmentDefOf.Work && p.Awake()
+                                                  where !p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && p.GetLord() == null && p.GetTimeAssignment() != TimeAssignmentDefOf.Work && p.Awake()
                                                   select p);
                 if(constituents.Count() > 0)
                 {
                     Pawn potentialConstituent = constituents.RandomElementByWeight(p => 0.0001f + Mathf.Pow(Mathf.Abs(0.7f - p.needs.mood.CurLevel), 2));
                     IEnumerable<Pawn> activeMayors = (from m in playerFactionMap.mapPawns.FreeColonistsSpawned
                                                       where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == potentialConstituent.Map.Tile
-                                                      && m.GetTimeAssignment() != TimeAssignmentDefOf.Work && m.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && m.GetLord() == null && m.Awake()
+                                                      && m.GetTimeAssignment() != TimeAssignmentDefOf.Work && m.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && m.GetLord() == null && m.Awake() && m.GetLord() == null
                                                       select m);
                     if (potentialConstituent != null && activeMayors.Count() > 0)
                     {

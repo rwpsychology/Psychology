@@ -9,5 +9,6 @@ namespace Psychology
         public static DutyDef Vote;
         public static DutyDef Meeting;
         public static DutyDef HangOut;
+        public static DutyDef Funeral;
     }
 }

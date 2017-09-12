@@ -14,10 +14,12 @@ namespace Psychology
         public static HediffDef RecoveringPyromaniac;
         public static HediffDef DrugFree;
         public static HediffDef Antidepressants;
+        public static HediffDef SleepingPills;
 
         /* Miscellaneous non-health */
         public static HediffDef HoldingConversation;
         public static HediffDef Mayor;
         public static HediffDef PlannedDate;
+        public static HediffDef PlannedFuneral;
     }
 }

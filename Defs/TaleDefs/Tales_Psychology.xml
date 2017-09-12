@@ -81,6 +81,33 @@
       </rulesStrings>
     </rulePack>
   </TaleDef>
+  
+  <TaleDef>
+    <defName>TreatedInsomnia</defName>
+    <label>treated insomnia</label>
+    <taleClass>Tale_DoublePawn</taleClass>
+    <type>Volatile</type>
+    <firstPawnSymbol>psychologist</firstPawnSymbol>
+    <secondPawnSymbol>patient</secondPawnSymbol>
+    <baseInterest>1.5</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[patient_nameShortDef]'s psychotherapy for insomnia</li>
+        <li>image->[patient_nameFull] looking like a dead-eyed zombie [circumstance_group]</li>
+        <li>image->[patient_nameFull] dozing off during a session with [psychologist_nameFull]</li>
+        <li>image->[psychologist_nameFull] discussing [patient_nameFull]'s sleeping problems [circumstance_group]</li>
+        <li>circumstance_phrase->as [psychologist_nameShortDef] takes notes</li>
+        <li>circumstance_phrase->as [psychologist_nameShortDef] writes a prescription</li>
+        <li>circumstance_phrase->as [psychologist_nameShortDef] hands [patient_nameShortDef] a bottle of pills</li>
+        <li>circumstance_phrase->while Z's float above [patient_possessive] head</li>
+        <li>desc_sentence->[psychologist_nameShortDef] has a knowledgeable look on [psychologist_possessive] face.</li>
+        <li>desc_sentence->[psychologist_nameShortDef] is patting [patient_possessive] on the shoulder.</li>
+        <li>desc_sentence->[psychologist_nameShortDef] has a serious but kind demeanour.</li>
+        <li>desc_sentence->[patient_nameShortDef] finally gets a good night's sleep.</li>
+        <li>desc_sentence->[patient_nameShortDef] seems anxious to go to bed.</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
 
   <TaleDef>
     <defName>MentalStateTantrum</defName>
@@ -279,7 +306,9 @@
 		<li>circumstance_phrase->with overly-dramatic flair</li>
 		<li>desc_sentence->Everyone is avoiding [pawn_pronoun].</li>
         <li>desc_sentence->[pawn_pronoun] is wringing [pawn_possessive] hands.</li>		
-		<li>desc_sentence->[pawn_pronoun] seems impatient.</li>
+		<li>desc_sentence->[pawn_pronoun] seems impatient and needy.</li>
+		<li>desc_sentence->[pawn_pronoun] is trying to talk to people, but they're avoiding her.</li>
+		<li>desc_sentence->[pawn_pronoun] is hitting on everything that moves.</li>
       </rulesStrings>
     </rulePack>
   </TaleDef>
@@ -309,6 +338,8 @@
 		<li>desc_sentence->[pawn_pronoun] is holding a stolen weapon.</li>
         <li>desc_sentence->[pawn_pronoun] is tightening [pawn_possessive] grip on [pawn_possessive] weapon.</li>		
 		<li>desc_sentence->[pawn_pronoun] has a gaze filled with malice.</li>
+		<li>desc_sentence->[pawn_pronoun] seems determined.</li>
+		<li>desc_sentence->[pawn_pronoun] is staring straight at the viewer.</li>
       </rulesStrings>
     </rulePack>
   </TaleDef>

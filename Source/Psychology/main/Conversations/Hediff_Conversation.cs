@@ -118,7 +118,7 @@ namespace Psychology
                 //Base opinion mod is 5 to the power of controversiality.
                 float opinionMod = Mathf.Pow(5f, topic.controversiality);
                 //Multiplied by difference between their personality ratings, on an exponential scale.
-                opinionMod *= Mathf.Lerp(-1.25f, 1.25f, Mathf.Pow(1f-Mathf.Abs(this.realPawn.psyche.GetPersonalityRating(topic) - this.otherPawn.psyche.GetPersonalityRating(topic)),3));
+                opinionMod *= Mathf.Lerp((LovePartnerRelationUtility.LovePartnerRelationExists(realPawn,otherPawn) ? -2f : -1.5f), 1.25f, Mathf.Pow(1f-Mathf.Abs(this.realPawn.psyche.GetPersonalityRating(topic) - this.otherPawn.psyche.GetPersonalityRating(topic)),3));
                 //Cool pawns are liked more.
                 opinionMod += Mathf.Pow(2f, topic.controversiality) * (0.5f - this.otherPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Cool));
                 //The length of the talk has a large impact on how much the pawn cares.

@@ -40,4 +40,17 @@
     </stages>
   </HediffDef>
 
+  <HediffDef>
+    <defName>PlannedFuneral</defName>
+    <hediffClass>Psychology.Hediff_Funeral</hediffClass>
+    <initialSeverity>1</initialSeverity>
+    <label>planned funeral</label>
+    <stages>
+      <li>
+        <label>hidden</label>
+        <everVisible>false</everVisible>
+      </li>
+    </stages>
+  </HediffDef>
+
 </Defs>

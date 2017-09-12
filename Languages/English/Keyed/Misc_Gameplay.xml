@@ -6,6 +6,7 @@
 	<LordReportVisitingMayor>Attending meeting</LordReportVisitingMayor>
 	<LordReportHangingOut>Hanging out with someone</LordReportHangingOut>
 	<LordReportDate>On a date</LordReportDate>
+	<LordReportAttendingFuneral>Attending funeral</LordReportAttendingFuneral>
 
 <!-- Miscellaneous thought log text -->
 	<ConversationStage>conversation about</ConversationStage>

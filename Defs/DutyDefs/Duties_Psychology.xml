@@ -106,5 +106,56 @@
 		</subnodes>
     </thinkNode>
   </DutyDef>
+  
+  <DutyDef>
+    <defName>Funeral</defName>
+    <hook>MediumPriority</hook>
+    <thinkNode Class="ThinkNode_Priority">
+      <subNodes>
+		
+        <li Class="ThinkNode_ConditionalInPartyArea">
+          <subNodes>
+            <!-- Eat -->
+            <li Class="ThinkNode_ConditionalRandom">
+              <chance>0.05</chance>
+              <subNodes>
+                <li Class="JobGiver_EatInPartyArea" />
+              </subNodes>
+            </li>
+			
+            <!-- Wander -->
+            <li Class="ThinkNode_ConditionalRandom">
+              <chance>0.05</chance>
+              <subNodes>
+				<li Class="JobGiver_WanderInPartyArea">
+				  <ticksBetweenWandersRange>
+					<min>50</min>
+					<max>250</max>
+				  </ticksBetweenWandersRange>
+				</li>
+              </subNodes>
+            </li>
+            
+            <!-- Stand where you are and be socially active -->
+			<li Class="JobGiver_StandAndBeSociallyActive">
+			  <ticksRange>
+				<min>400</min>
+				<max>1000</max>
+			  </ticksRange>
+			</li>
+          </subNodes>
+        </li>
+		
+        <!-- Reach the party area -->
+        <li Class="JobGiver_WanderInPartyArea">
+          <ticksBetweenWandersRange>
+            <min>50</min>
+            <max>250</max>
+          </ticksBetweenWandersRange>
+          <locomotionUrgency>Jog</locomotionUrgency>
+        </li>
+      </subNodes>
+    </thinkNode>
+  </DutyDef>
 
 </Defs>

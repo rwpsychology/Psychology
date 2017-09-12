@@ -150,7 +150,7 @@ namespace Psychology
             {
                 return 0f;
             }
-            return 20f;
+            return 30f;
         }
         
         private IntVec3 spot;

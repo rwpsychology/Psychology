@@ -13,5 +13,6 @@ namespace Psychology
         public static TaleDef TreatedPyromania;
         public static TaleDef TreatedDrugDesire;
         public static TaleDef TreatedDepression;
+        public static TaleDef TreatedInsomnia;
     }
 }

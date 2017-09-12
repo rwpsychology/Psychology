@@ -2,6 +2,22 @@
 <ThoughtDefs>
 
   <ThoughtDef>
+    <defName>AttendedFuneral</defName>
+    <durationDays>20</durationDays>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Desensitized</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>attended a funeral</label>
+        <description>I attended the funeral of a colonist. It made me feel a little better.</description>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
     <defName>WitnessedDeathAllyBleedingHeart</defName>
     <durationDays>1.5</durationDays>
     <stackedEffectMultiplier>0.4</stackedEffectMultiplier>

@@ -91,6 +91,8 @@
     <Compile Include="Main\Elections\Candidate.cs" />
     <Compile Include="Main\Elections\Hediff_Mayor.cs" />
     <Compile Include="Main\Elections\JobGiver_Vote.cs" />
+    <Compile Include="Main\Funerals\Hediff_Funeral.cs" />
+    <Compile Include="Main\Funerals\LordJob_Joinable_Funeral.cs" />
     <Compile Include="Main\Elections\LordJob_VisitMayor.cs" />
     <Compile Include="Main\Elections\LordJob_Joinable_Election.cs" />
     <Compile Include="Main\Elections\LordToil_Meeting.cs" />
@@ -104,6 +106,8 @@
     <Compile Include="Harmony\VoluntarilyJoinableLordsStarter.cs" />
     <Compile Include="Main\Alerts\Alert_Individuality.cs" />
     <Compile Include="Harmony\ThoughtWorker_WantToSleepWithSpouseOrLover.cs" />
+    <Compile Include="Main\Funerals\LordToil_Funeral.cs" />
+    <Compile Include="Main\Medical\Treatments\Recipe_TreatInsomniac.cs" />
     <Compile Include="Main\PrepareCarefully\SaveRecordPsycheV3.cs" />
     <Compile Include="Main\Thought_MemoryDynamic.cs" />
     <Compile Include="Main\ITab_Pawn_Psyche.cs" />

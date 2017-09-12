@@ -69,12 +69,19 @@ namespace Psychology
         public float TotalThoughtOpinion(PsychologyPawn other)
         {
             float knownThoughtOpinion = 1f;
-            IEnumerable<Thought_Memory> convos = (from m in this.pawn.needs.mood.thoughts.memories.Memories
-                                                 where m.def.defName.Contains("Conversation") && m.otherPawn.ThingID == other.ThingID
-                                                 select m);
-            foreach(Thought_Memory m in convos)
+            if (this.pawn != null)
             {
-                knownThoughtOpinion += Mathf.Abs(m.CurStage.baseOpinionOffset);
+                IEnumerable<Thought_Memory> convos = (from m in this.pawn.needs.mood.thoughts.memories.Memories
+                                                      where m.def.defName.Contains("Conversation") && m.otherPawn.ThingID == other.ThingID
+                                                      select m);
+                foreach (Thought_Memory m in convos)
+                {
+                    if (m == null)
+                    {
+                        break;
+                    }
+                    knownThoughtOpinion += Mathf.Abs(m.CurStage.baseOpinionOffset);
+                }
             }
             return knownThoughtOpinion;
         }

@@ -52,5 +52,13 @@
 		<workerClass>Psychology.Recipe_TreatDepression</workerClass>
 		<jobString>Treating depression.</jobString>
 	</RecipeDef>
+
+	<RecipeDef ParentName="Treatment">
+		<defName>TreatInsomnia</defName>
+		<label>treat insomnia</label>
+		<description>Helps someone with insomnia sleep more soundly.</description>
+		<workerClass>Psychology.Recipe_TreatInsomnia</workerClass>
+		<jobString>Treating insomnia.</jobString>
+	</RecipeDef>
   	
 </RecipeDefs>

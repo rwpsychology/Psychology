@@ -29,7 +29,10 @@ namespace Psychology
             }
             if (toil.hangOut != null && toil.hangOut.GetTarget(TargetIndex.A) != null && !pawn.CanReserve(toil.hangOut.GetTarget(TargetIndex.A), toil.hangOut.def.joyMaxParticipants, 0, null))
             {
-                Log.Message("can't reserve the target of the hangout");
+                if (Prefs.LogVerbose)
+                {
+                    Log.Message("[Psychology] Can't reserve the target of the hangout.");
+                }
                 /* Try our best to figure out which JoyGiver was used for the unreservable job. */
                 int prefix = "JoyGiver".Count();
                 var def = (
@@ -40,7 +43,10 @@ namespace Psychology
                 ).FirstOrDefault();
                 if (def != null)
                 {
-                    Log.Message("giving job of def " + def.defName);
+                    if (Prefs.LogVerbose)
+                    {
+                        Log.Message("[Psychology] Giving job of def " + def.defName);
+                    }
                     do
                     {
                         toil.hangOut = base.TryGiveJobFromJoyGiverDefDirect(def, pawn);
@@ -60,7 +66,6 @@ namespace Psychology
             {
                 return toil.hangOut;
             }
-            Log.Message("no joy hangout available");
             IntVec3 root = WanderUtility.BestCloseWanderRoot(toil.hangOut.targetA.Cell, pawn);
             Func<Pawn, IntVec3, bool> validator = delegate (Pawn wanderer, IntVec3 loc)
             {
@@ -74,15 +79,12 @@ namespace Psychology
             {
                 if ((pawn.Position - friend.Position).LengthHorizontalSquared >= 42f && friend.jobs.curJob.def != JobDefOf.Goto)
                 {
-                    Log.Message("friend not nearby, going to friend");
                     IntVec3 friendDest = RCellFinder.RandomWanderDestFor(pawn, friend.Position, 5f, validator, PawnUtility.ResolveMaxDanger(pawn, Danger.Some));
                     pawn.Map.pawnDestinationManager.ReserveDestinationFor(pawn, friendDest);
                     return new Job(JobDefOf.Goto, friendDest);
                 }
-                Log.Message("waiting");
                 return null;
             }
-            Log.Message("wandering");
             pawn.Map.pawnDestinationManager.ReserveDestinationFor(pawn, wanderDest);
             return new Job(JobDefOf.GotoWander, wanderDest);
         }

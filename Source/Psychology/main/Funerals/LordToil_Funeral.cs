@@ -10,9 +10,9 @@ using UnityEngine;
 
 namespace Psychology
 {
-    public class LordToil_Meeting : LordToil
+    public class LordToil_Funeral : LordToil
     {
-        public LordToil_Meeting(IntVec3 spot)
+        public LordToil_Funeral(IntVec3 spot)
         {
             this.spot = spot;
         }
@@ -21,29 +21,34 @@ namespace Psychology
         {
             for (int i = 0; i < this.lord.ownedPawns.Count; i++)
             {
-                this.lord.ownedPawns[i].mindState.duty = new PawnDuty(DutyDefOfPsychology.Meeting, this.spot, -1f);
+                this.lord.ownedPawns[i].mindState.duty = new PawnDuty(DutyDefOfPsychology.Funeral, this.spot, -1f);
             }
+        }
+
+        public override ThinkTreeDutyHook VoluntaryJoinDutyHookFor(Pawn p)
+        {
+            return DutyDefOfPsychology.Funeral.hook;
         }
 
         public override void LordToilTick()
         {
             base.LordToilTick();
-            LordJob_VisitMayor meeting = this.lord.LordJob as LordJob_VisitMayor;
+            LordJob_Joinable_Funeral funeral = this.lord.LordJob as LordJob_Joinable_Funeral;
             for (int i = 0; i < this.lord.ownedPawns.Count; i++)
             {
                 if (this.lord.ownedPawns[i].Position == null || this.spot == null || this.lord.ownedPawns[i].Map == null || !PartyUtility.InPartyArea(this.lord.ownedPawns[i].Position, this.spot, this.lord.ownedPawns[i].Map))
                 {
                     return;
                 }
+                funeral.Attended(this.lord.ownedPawns[i]);
             }
-            if (meeting != null)
+        }
+
+        public override bool AllowSatisfyLongNeeds
+        {
+            get
             {
-                meeting.ticksInSameRoom += 1;
-                if(meeting.ticksInSameRoom % 200 == 0 && Rand.Value < 0.2f)
-                {
-                    meeting.mayor.skills.Learn(SkillDefOf.Social, 0.5f);
-                    MoteMaker.MakeInteractionBubble(meeting.constituent, meeting.mayor, InteractionDefOf.DeepTalk.interactionMote, InteractionDefOf.DeepTalk.Symbol);
-                }
+                return true;
             }
         }
 

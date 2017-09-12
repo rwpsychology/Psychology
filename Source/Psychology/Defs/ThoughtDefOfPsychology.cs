@@ -47,6 +47,9 @@ namespace Psychology
         public static ThoughtDef MissedDate;
         public static ThoughtDef DateCancelled;
 
+        /* Funeral related thoughts */
+        public static ThoughtDef AttendedFuneral;
+
         /* Miscellaneous thoughts */
         public static ThoughtDef KilledHumanlikeEnemy;
         public static ThoughtDef DreamGood;

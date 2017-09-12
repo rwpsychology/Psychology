@@ -6,5 +6,8 @@
 	
 	<VisitLabel>visited by constituent</VisitLabel>
 	<VisitDesc>A visit from a constituent made me feel this way.</VisitDesc>
+	
+	<AttendedFuneralThought>attended the funeral of {0}</AttendedFuneralThought>
+	<AttendedFuneralDesc>I still can't believe HE's dead, but... I'm more at peace with it after the funeral.</AttendedFuneralDesc>
 
 </LanguageData>
