@@ -126,8 +126,8 @@
       <li Class="HediffCompProperties_Immunizable">
         <severityPerDayNotImmune>0.0002</severityPerDayNotImmune>
         <severityPerDayNotImmuneRandomFactor>
-          <min>0.5</min>
-          <max>5</max>
+          <min>0.4</min>
+          <max>4</max>
         </severityPerDayNotImmuneRandomFactor>
       </li>
     </comps>

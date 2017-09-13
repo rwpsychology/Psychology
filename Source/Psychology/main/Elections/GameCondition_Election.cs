@@ -43,7 +43,7 @@ namespace Psychology
                 {
                     PersonalityNodeDef issue = (from node in candidate.psyche.PersonalityNodes
                                                 where !node.Core
-                                                select node.def).RandomElementByWeight(n => Mathf.Pow(Mathf.Abs(0.5f - candidate.psyche.GetPersonalityRating(n)),2) * Mathf.Pow(2, n.controversiality));
+                                                select node.def).RandomElementByWeight(n => Mathf.Pow(Mathf.Abs(0.5f - candidate.psyche.GetPersonalityRating(n)),4) * Mathf.Pow(2, n.controversiality));
                     if(!issues.Contains(issue))
                     {
                         issues.Add(issue);

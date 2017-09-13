@@ -43,7 +43,7 @@ namespace Psychology
                     foreach (Candidate candidate in election.candidates)
                     {
                         float issueWeighting = 0f;
-                        candidate.nodes.ForEach(p => issueWeighting += Mathf.Pow((1f - Mathf.Abs(candidate.pawn.psyche.GetPersonalityRating(p) - voter.psyche.GetPersonalityRating(p))), 2) * Mathf.Pow(10, p.controversiality));
+                        candidate.nodes.ForEach(p => issueWeighting += (4f * Mathf.Pow(1f - Mathf.Abs(candidate.pawn.psyche.GetPersonalityRating(p) - voter.psyche.GetPersonalityRating(p)), 5f)) * Mathf.Pow(2.5f, p.controversiality));
                         possibleVotes.Add(new Pair<PsychologyPawn, float>(candidate.pawn, issueWeighting+voter.relations.OpinionOf(candidate.pawn)));
                     }
                     IEnumerable<Pair<PsychologyPawn, float>> orderedPossibleVotes = (from v in possibleVotes
