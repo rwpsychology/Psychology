@@ -153,8 +153,6 @@
     <Compile Include="Main\MentalStates\Jobs\JobDriver_MakeAdvance.cs" />
     <Compile Include="Main\MentalStates\Jobs\JobDriver_Abuse.cs" />
     <Compile Include="Main\MentalStates\Jobs\JobGiver_MakeAdvance.cs" />
-    <Compile Include="Main\MentalStates\Jobs\JobGiver_Tantrum.cs" />
-    <Compile Include="Main\MentalStates\Jobs\JobGiver_Sadism.cs" />
     <Compile Include="Main\MentalStates\Jobs\JobGiver_Compulsion.cs" />
     <Compile Include="Main\MentalStates\Jobs\JobGiver_Apathy.cs" />
     <Compile Include="Main\MentalStates\Jobs\JobGiver_Abuse.cs" />
@@ -163,9 +161,7 @@
     <Compile Include="Main\MentalStates\Workers\MentalStateWorker_Histrionic.cs" />
     <Compile Include="Main\MentalStates\Workers\MentalStateWorker_FireStartingSpree.cs" />
     <Compile Include="Main\MentalStates\MentalState_Histrionic.cs" />
-    <Compile Include="Main\MentalStates\MentalState_Tantrum.cs" />
     <Compile Include="Main\MentalStates\MentalState_SelfHarm.cs" />
-    <Compile Include="Main\MentalStates\MentalState_Sadism.cs" />
     <Compile Include="Main\MentalStates\MentalState_Compulsion.cs" />
     <Compile Include="Main\MentalStates\MentalState_Apathy.cs" />
     <Compile Include="Main\MentalStates\MentalState_Antisocial.cs" />

@@ -342,6 +342,8 @@
     <moodRecoveryThought>Catharsis</moodRecoveryThought>
   </MentalStateDef>
   
+  <!-- minor mental breaks -->
+  
   <MentalBreakDef>
     <defName>Antisocial</defName>
     <mentalState>Antisocial</mentalState>
