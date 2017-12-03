@@ -10,6 +10,11 @@ namespace Psychology
 {
     public class JobDriver_MakeAdvance : JobDriver
     {
+        public override bool TryMakePreToilReservations()
+        {
+            return true;
+        }
+
         private static Toil FlirtWithTarget(Pawn target)
         {
             Toil toil = new Toil();

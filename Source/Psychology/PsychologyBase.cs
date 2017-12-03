@@ -155,17 +155,17 @@ namespace Psychology
                 {
                     knowColonistDied = ModifyThoughtStages(knowColonistDied, new int[] { -2 });
                 }
-                ThoughtDef colonistAbandoned = AddNullifyingTraits("ColonistAbandoned", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
+                ThoughtDef colonistAbandoned = AddNullifyingTraits("ColonistBanished", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (colonistAbandoned != null && toggleEmpathy)
                 {
                     colonistAbandoned = ModifyThoughtStages(colonistAbandoned, new int[] { -2 });
                 }
-                ThoughtDef colonistAbandonedToDie = AddNullifyingTraits("ColonistAbandonedToDie", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
+                ThoughtDef colonistAbandonedToDie = AddNullifyingTraits("ColonistBanishedToDie", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (colonistAbandonedToDie != null && toggleEmpathy)
                 {
                     colonistAbandonedToDie = ModifyThoughtStages(colonistAbandonedToDie, new int[] { -4 });
                 }
-                ThoughtDef prisonerAbandonedToDie = AddNullifyingTraits("PrisonerAbandonedToDie", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
+                ThoughtDef prisonerAbandonedToDie = AddNullifyingTraits("PrisonerBanishedToDie", new TraitDef[] { TraitDefOfPsychology.BleedingHeart });
                 if (prisonerAbandonedToDie != null && toggleEmpathy)
                 {
                     prisonerAbandonedToDie = ModifyThoughtStages(prisonerAbandonedToDie, new int[] { -3 });
@@ -207,6 +207,7 @@ namespace Psychology
                         t.recipes.Add(RecipeDefOfPsychology.TreatChemicalFascination);
                         t.recipes.Add(RecipeDefOfPsychology.TreatDepression);
                         t.recipes.Add(RecipeDefOfPsychology.TreatInsomnia);
+                        t.recipes.Add(RecipeDefOfPsychology.CureAnxiety);
                         if (!t.race?.hediffGiverSets?.NullOrEmpty() ?? false)
                         {
                             if (t.race.hediffGiverSets.Contains(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicStandard")))

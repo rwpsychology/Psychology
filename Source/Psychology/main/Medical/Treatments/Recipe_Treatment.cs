@@ -38,7 +38,7 @@ namespace Psychology
             return false;
         }
 
-        public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients)
+        public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
             if(!CheckTreatmentFail(billDoer, pawn))
             {
@@ -49,7 +49,7 @@ namespace Psychology
                 });
                 if (PawnUtility.ShouldSendNotificationAbout(pawn) || PawnUtility.ShouldSendNotificationAbout(billDoer))
                 {
-                    Messages.Message("TreatedTrait".Translate(new object[] { pawn.LabelShort, traitName }), pawn, MessageSound.Benefit);
+                    Messages.Message("TreatedTrait".Translate(new object[] { pawn.LabelShort, traitName }), pawn, MessageTypeDefOf.PositiveEvent);
                 }
                 Hediff recover = HediffMaker.MakeHediff(hediffDef, pawn, pawn.health.hediffSet.GetBrain());
                 recover.Tended(1f);

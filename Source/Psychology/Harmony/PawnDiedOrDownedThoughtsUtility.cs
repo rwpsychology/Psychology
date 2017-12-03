@@ -77,11 +77,11 @@ namespace Psychology.Harmony
                     }
                 }
             }
-            if (thoughtsKind == PawnDiedOrDownedThoughtsKind.Abandoned && victim.IsColonist)
+            if (thoughtsKind == PawnDiedOrDownedThoughtsKind.Banished && victim.IsColonist)
             {
                 outAllColonistsThoughts.Add(ThoughtDefOfPsychology.ColonistAbandonedBleedingHeart);
             }
-            if (thoughtsKind == PawnDiedOrDownedThoughtsKind.AbandonedToDie)
+            if (thoughtsKind == PawnDiedOrDownedThoughtsKind.BanishedToDie)
             {
                 if (victim.IsColonist)
                 {

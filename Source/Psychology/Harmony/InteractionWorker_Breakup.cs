@@ -74,7 +74,7 @@ namespace Psychology.Harmony
 			}
 			if (PawnUtility.ShouldSendNotificationAbout(initiator) || PawnUtility.ShouldSendNotificationAbout(recipient))
 			{
-				Find.LetterStack.ReceiveLetter("LetterLabelBreakup".Translate(), stringBuilder.ToString(), LetterDefOf.BadNonUrgent, initiator, null);
+				Find.LetterStack.ReceiveLetter("LetterLabelBreakup".Translate(), stringBuilder.ToString(), LetterDefOf.NegativeEvent, initiator, null);
 			}
 			return false;
 		}
@@ -122,6 +122,7 @@ namespace Psychology.Harmony
 		{
 			/*
              * TODO: Fix the below
+             * Just kidding, that's never gonna happen
             PawnRelationDef exLover = new PawnRelationDef();
             exLover.defName = "ExLover" + lover.LabelShort + Find.TickManager.TicksGame;
             exLover.label = "ex-lover";

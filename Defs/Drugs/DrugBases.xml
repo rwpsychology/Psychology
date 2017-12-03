@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<DrugBases>
+<Defs>
 
   <ThingDef Name="DrugBase" Abstract="True">
     <thingClass>ThingWithComps</thingClass>
@@ -82,7 +82,7 @@
     <stages>
       <li>
         <minSeverity>0</minSeverity>
-        <everVisible>false</everVisible>
+        <becomeVisible>false</becomeVisible>
       </li>
       <li>
         <minSeverity>0.20</minSeverity>
@@ -105,4 +105,4 @@
     <showForCaravanMembers>true</showForCaravanMembers>
   </NeedDef>
   
-</DrugBases>
+</Defs>

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Psychology</name>
+	<name>Psychology testing</name>
 	<author>Linq</author>
 	<url>https://ludeon.com/forums/index.php?topic=34112.0</url>
-	<targetVersion>0.17.1557</targetVersion>
+	<targetVersion>0.18.1722</targetVersion>
 	<description>&lt;b&gt;Doesn't break saves!&lt;/b&gt;
 &lt;b&gt;Mod options available!&lt;/b&gt;
 	
@@ -39,6 +39,8 @@ The candidate with the plurality of votes becomes the mayor until the next elect
 The number of mental breaks has been vastly improved, and colonists will break differently depending on their traits. Inhabitants of the rimworld can also develop anxiety (usually in their teenage years), or acquire it after suffering PTSD from a stressful mental break. They will require occasional treatment (and good medicine, if it can be spared) to keep their anxiety in check, but once managed, it won't affect their day-to-day life. Some traits that can make colonists undesirable, like chemical interest and pyromania, can also now be treated to mitigate their effects at the cost of medical upkeep.
 
 Additionally, the drug methadone is now available to help treat addiction. Instead of removing legs or trapping colonists in walled-up rooms, you can put them on a methadone regimen to eliminate the severe mood penalty, though they will still suffer all the physical effects of addiction. Methadone itself is mildly addictive, so be careful!
+
+Mental breaks have been rebalanced and tweaked, and new ones have been added. Some of the new vanilla mental breaks are replaced by better versions that were in Psychology already.
 	
 &lt;b&gt;Support&lt;/b&gt;
 I do not accept any form of financial support. If you want to support this mod, then please subscribe to it, rate it, and tell everyone about it. If you absolutely must spend money on something, then gift Rimworld to someone who hasn't yet experienced it to support Tynan and the incredible work that he does. This mod would not be possible without the great game he created, and the strenuous effort he has put into supporting mod creators.

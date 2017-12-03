@@ -36,7 +36,7 @@ namespace Psychology
             Transition transition = new Transition(lordToil_Funeral, lordToil_End);
             transition.AddTrigger(new Trigger_TickCondition(() => !PartyUtility.AcceptableGameConditionsToContinueParty(base.Map)));
             transition.AddTrigger(new Trigger_PawnLostViolently());
-            transition.AddPreAction(new TransitionAction_Message("MessageFuneralCalledOff".Translate(), MessageSound.Negative, new TargetInfo(this.spot, this.Map, false)));
+            transition.AddPreAction(new TransitionAction_Message("MessageFuneralCalledOff".Translate(), MessageTypeDefOf.NegativeEvent, new TargetInfo(this.spot, this.Map, false)));
             stateGraph.AddTransition(transition);
             int length = Rand.RangeInclusive(GenDate.TicksPerHour, Mathf.RoundToInt(GenDate.TicksPerHour * 2.5f));
             this.timeoutTrigger = new Trigger_TicksPassed(length);
@@ -89,7 +89,7 @@ namespace Psychology
             {
                 attendedString.AppendLine("No one.");
             }
-            Find.LetterStack.ReceiveLetter("LetterLabelFuneralEnded".Translate(dead), "LetterFuneralEnded".Translate(dead, attendedString), LetterDefOf.Good, null);
+            Find.LetterStack.ReceiveLetter("LetterLabelFuneralEnded".Translate(dead), "LetterFuneralEnded".Translate(dead, attendedString), LetterDefOf.NeutralEvent, null);
         }
         
         public override string GetReport()

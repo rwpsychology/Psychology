@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Thoughts>
+<Defs>
   <ThoughtDef>
     <defName>ApparelDamagedPrude</defName>
     <workerClass>ThoughtWorker_ApparelDamaged</workerClass>
@@ -47,4 +47,4 @@
     </stages>
   </ThoughtDef>
   
-</Thoughts>
+</Defs>

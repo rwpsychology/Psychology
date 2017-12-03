@@ -15,5 +15,6 @@ namespace Psychology
         public static RecipeDef TreatChemicalFascination;
         public static RecipeDef TreatDepression;
         public static RecipeDef TreatInsomnia;
+        public static RecipeDef CureAnxiety;
     }
 }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ThoughtDefs>
+<Defs>
   <ThoughtDef>
     <defName>ColonistLeftUnburiedBleedingHeart</defName>
     <workerClass>ThoughtWorker_ColonistLeftUnburied</workerClass>
@@ -53,4 +53,4 @@
       </li>
     </stages>
   </ThoughtDef>
-</ThoughtDefs>
+</Defs>

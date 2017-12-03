@@ -16,14 +16,14 @@ namespace Psychology
         {
             base.Init();
             //Make sure the election occurs during the day if possible.
-            int plannedStart = GenDate.HourOfDay(this.duration + Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(this.Map.Tile).x);
+            int plannedStart = GenDate.HourOfDay(this.Duration + Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(this.Map.Tile).x);
             if(plannedStart < 7)
             {
-                this.duration += (7 - plannedStart) * GenDate.TicksPerHour;
+                this.Duration += (7 - plannedStart) * GenDate.TicksPerHour;
             }
             else if (plannedStart > 18)
             {
-                this.duration -= (plannedStart - 18) * GenDate.TicksPerHour;
+                this.Duration -= (plannedStart - 18) * GenDate.TicksPerHour;
             }
             IEnumerable<PsychologyPawn> psychologyColonists = this.Map.mapPawns.FreeColonistsSpawned.OfType<PsychologyPawn>();
             int maxCandidatesThisColonySupports = Mathf.RoundToInt(psychologyColonists.Count() * 0.3f);
@@ -79,7 +79,7 @@ namespace Psychology
                 {
                     issuesString.AppendFormat("{0}) {1}{2}",i+1,candidate.pawn.psyche.GetPersonalityNodeOfDef(candidate.nodes[i]).PlatformIssue,(i != candidate.nodes.Count-1 ? "\n" : ""));
                 }
-                Find.LetterStack.ReceiveLetter("LetterLabelElectionCandidate".Translate(candidate.pawn.LabelShort), "LetterElectionCandidate".Translate(candidate.pawn.LabelShort, Find.WorldObjects.ObjectsAt(candidate.pawn.Map.Tile).OfType<FactionBase>().First().Label, issuesString.ToString()).AdjustedFor(candidate.pawn), LetterDefOf.Good, candidate.pawn, null);
+                Find.LetterStack.ReceiveLetter("LetterLabelElectionCandidate".Translate(candidate.pawn.LabelShort), "LetterElectionCandidate".Translate(candidate.pawn.LabelShort, Find.WorldObjects.ObjectsAt(candidate.pawn.Map.Tile).OfType<FactionBase>().First().Label, issuesString.ToString()).AdjustedFor(candidate.pawn), LetterDefOf.NeutralEvent, candidate.pawn, null);
             }
         }
 
@@ -116,7 +116,7 @@ namespace Psychology
                 return;
             }
             LordMaker.MakeNewLord(organizer.Faction, new LordJob_Joinable_Election(intVec, candidates, baseName), organizer.Map, null);
-            Find.LetterStack.ReceiveLetter("LetterLabelElectionHeld".Translate(baseName), "LetterElectionHeld".Translate(baseName), LetterDefOf.Good, new TargetInfo(intVec, organizer.Map, false), null);
+            Find.LetterStack.ReceiveLetter("LetterLabelElectionHeld".Translate(baseName), "LetterElectionHeld".Translate(baseName), LetterDefOf.NeutralEvent, new TargetInfo(intVec, organizer.Map, false), null);
         }
         
         public List<Candidate> candidates = new List<Candidate>();

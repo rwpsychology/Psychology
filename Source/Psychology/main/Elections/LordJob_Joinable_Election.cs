@@ -37,7 +37,7 @@ namespace Psychology
             transition.AddTrigger(new Trigger_TickCondition(() => this.ShouldBeCalledOff()));
             transition.AddTrigger(new Trigger_TickCondition(() => this.candidates.Count == 0));
             transition.AddTrigger(new Trigger_PawnLostViolently());
-            transition.AddPreAction(new TransitionAction_Message("MessageElectionCalledOff".Translate(this.baseName), MessageSound.Negative, new TargetInfo(this.spot, this.Map, false)));
+            transition.AddPreAction(new TransitionAction_Message("MessageElectionCalledOff".Translate(this.baseName), MessageTypeDefOf.NegativeEvent, new TargetInfo(this.spot, this.Map, false)));
             stateGraph.AddTransition(transition);
             this.timeoutTrigger = new Trigger_TicksPassed(Rand.RangeInclusive(GenDate.TicksPerHour * 4, GenDate.TicksPerHour * 8));
             Transition transition2 = new Transition(lordToil_Election, lordToil_End);
@@ -85,7 +85,7 @@ namespace Psychology
             Pair<PsychologyPawn, int> winningCandidate = orderedTally.First();
             if (orderedTally.Count() > 1 && orderedTally.First().Second == orderedTally.ElementAt(1).Second)
             {
-                Find.LetterStack.ReceiveLetter("LetterLabelTieSettled".Translate(winningCandidate.First.LabelShort), "LetterTieSettled".Translate(winningCandidate.First.LabelShort).AdjustedFor(winningCandidate.First), LetterDefOf.BadNonUrgent, winningCandidate.First);
+                Find.LetterStack.ReceiveLetter("LetterLabelTieSettled".Translate(winningCandidate.First.LabelShort), "LetterTieSettled".Translate(winningCandidate.First.LabelShort).AdjustedFor(winningCandidate.First), LetterDefOf.NeutralEvent, winningCandidate.First);
             }
             StringBuilder issuesString = new StringBuilder();
             for (int i = 0; i < candidates.Find(c => c.pawn == winningCandidate.First).nodes.Count; i++)
@@ -95,7 +95,7 @@ namespace Psychology
             Hediff mayor = HediffMaker.MakeHediff(HediffDefOfPsychology.Mayor, winningCandidate.First);
             winningCandidate.First.health.AddHediff(mayor);
             winningCandidate.First.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.WonElection);
-            Find.LetterStack.ReceiveLetter("LetterLabelElectionWon".Translate(winningCandidate.First.LabelShort), "LetterElectionWon".Translate(winningCandidate.First.LabelShort, this.baseName, winningCandidate.Second, issuesString.ToString()).AdjustedFor(winningCandidate.First), LetterDefOf.Good, winningCandidate.First);
+            Find.LetterStack.ReceiveLetter("LetterLabelElectionWon".Translate(winningCandidate.First.LabelShort), "LetterElectionWon".Translate(winningCandidate.First.LabelShort, this.baseName, winningCandidate.Second, issuesString.ToString()).AdjustedFor(winningCandidate.First), LetterDefOf.NeutralEvent, winningCandidate.First);
         }
         
         public override string GetReport()

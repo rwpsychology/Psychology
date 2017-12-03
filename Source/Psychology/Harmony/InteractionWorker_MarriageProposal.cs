@@ -40,7 +40,7 @@ namespace Psychology.Harmony
 		[HarmonyPrefix]
 		public static bool NewInteracted(InteractionWorker_MarriageProposal __instance, Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks)
 		{
-			//TODO: Turn this into a transpihahaha no.
+			//TODO: Kill anyone who tries to get me to make this a transpiler.
 			float num = __instance.AcceptanceChance(initiator, recipient);
 			bool flag = Rand.Value < num;
 			bool brokeUp = false;

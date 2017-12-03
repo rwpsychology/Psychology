@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<RecipeDefs>
+<Defs>
 
 	<RecipeDef Abstract="True" Name="Treatment">
 		<workSpeedStat>MedicalOperationSpeed</workSpeedStat>
@@ -10,14 +10,8 @@
 		<hideBodyPartNames>true</hideBodyPartNames>
 		<anesthetize>false</anesthetize>
 		<skillRequirements>
-			<li>
-				<skill>Medicine</skill>
-				<minLevel>3</minLevel>
-			</li>
-			<li>
-				<skill>Social</skill>
-				<minLevel>6</minLevel>
-			</li>
+			<Medicine>3</Medicine>
+			<Social>6</Social>
 		</skillRequirements>
 	</RecipeDef>
 
@@ -60,5 +54,33 @@
 		<workerClass>Psychology.Recipe_TreatInsomnia</workerClass>
 		<jobString>Treating insomnia.</jobString>
 	</RecipeDef>
+
+	<RecipeDef>
+		<defName>CureAnxiety</defName>
+		<label>cure anxiety</label>
+		<description>Permanently removes anxiety through the power of glitterworld therapy.</description>
+		<workerClass>Psychology.Recipe_CureAnxiety</workerClass>
+		<jobString>Curing anxiety.</jobString>
+		<workSpeedStat>MedicalOperationSpeed</workSpeedStat>
+		<workSkill>Medicine</workSkill>
+		<workSkillLearnFactor>16</workSkillLearnFactor>
+		<workAmount>7000</workAmount>
+		<targetsBodyPart>true</targetsBodyPart>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<anesthetize>false</anesthetize>
+		<skillRequirements>
+			<Medicine>15</Medicine>
+		</skillRequirements>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>GlitterworldMedicine</li>
+			  </thingDefs>
+			</filter>
+			<count>3</count>
+		  </li>
+		</ingredients>
+	</RecipeDef>
   	
-</RecipeDefs>
+</Defs>

@@ -6,6 +6,48 @@
 			</value>
 	</Operation>
 	
+	<Operation Class="PatchOperationReplace">
+			<xpath>*/MentalBreakDef[defName="MurderousRage"]/baseCommonality</xpath>
+			<value>
+				<baseCommonality>0</baseCommonality>
+			</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+			<xpath>*/MentalBreakDef[defName="Slaughterer"]/baseCommonality</xpath>
+			<value>
+				<baseCommonality>0.2</baseCommonality>
+			</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+			<xpath>*/MentalBreakDef[defName="Tantrum"]/baseCommonality</xpath>
+			<value>
+				<baseCommonality>0.7</baseCommonality>
+			</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+			<xpath>*/MentalBreakDef[defName="SadisticRage"]/baseCommonality</xpath>
+			<value>
+				<baseCommonality>0.05</baseCommonality>
+			</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+			<xpath>*/MentalBreakDef[defName="InsultingSpree"]/baseCommonality</xpath>
+			<value>
+				<baseCommonality>0.01</baseCommonality>
+			</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+			<xpath>*/MentalBreakDef[defName="TargetedInsultingSpree"]/baseCommonality</xpath>
+			<value>
+				<baseCommonality>0.01</baseCommonality>
+			</value>
+	</Operation>
+	
 	<Operation Class="PatchOperationAdd">
 			<xpath>*/MentalStateDef[defName="FireStartingSpree"]</xpath>
 			<value>

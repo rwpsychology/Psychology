@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Methadone>
+<Defs>
 
   <ThingDef ParentName="MakeableDrugPillBase">
     <defName>Methadone</defName>
@@ -167,4 +167,4 @@
     </stages>
   </ThoughtDef>
   
-</Methadone>
+</Defs>

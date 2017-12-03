@@ -46,12 +46,12 @@ namespace Psychology
             }
             if(!announced && ageTicks > GenDate.TicksPerHour)
             {
-                Find.LetterStack.ReceiveLetter("LetterLabelFuneralPlanned".Translate(dead), "LetterFuneralPlanned".Translate(pawn, dead, GenDate.QuadrumDateStringAt(GenDate.TickGameToAbs(date), Find.WorldGrid.LongLatOf(pawn.Map.Tile).x), hour), LetterDefOf.Good, pawn);
+                Find.LetterStack.ReceiveLetter("LetterLabelFuneralPlanned".Translate(dead), "LetterFuneralPlanned".Translate(pawn, dead, GenDate.QuadrumDateStringAt(GenDate.TickGameToAbs(date), Find.WorldGrid.LongLatOf(pawn.Map.Tile).x), hour), LetterDefOf.PositiveEvent, pawn);
                 announced = true;
             }
             if(GenLocalDate.DayOfYear(pawn.Map) >= day && GenLocalDate.HourOfDay(pawn.Map) == hour)
             {
-                Find.LetterStack.ReceiveLetter("LetterLabelFuneralStarted".Translate(dead), "LetterFuneralStarted".Translate(dead), LetterDefOf.Good, grave);
+                Find.LetterStack.ReceiveLetter("LetterLabelFuneralStarted".Translate(dead), "LetterFuneralStarted".Translate(dead), LetterDefOf.PositiveEvent, grave);
                 LordMaker.MakeNewLord(pawn.Faction, new LordJob_Joinable_Funeral(spot, grave as Building_Grave), pawn.Map, null);
                 pawn.health.RemoveHediff(this);
             }

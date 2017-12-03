@@ -79,7 +79,7 @@ namespace Psychology.Harmony
         {
             PsychologyPawn realInitiator = initiator as PsychologyPawn;
             //Don't hit on people in mental breaks... unless you're really freaky.
-            if (recipient.InMentalState && realInitiator != null && realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental) > 0.8f)
+            if (recipient.InMentalState && realInitiator != null && realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental) < 0.8f)
             {
                 __result = 0f;
                 return;

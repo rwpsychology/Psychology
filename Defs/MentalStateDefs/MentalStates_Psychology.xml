@@ -37,6 +37,80 @@
   </MentalBreakDef>
   
   <MentalBreakDef>
+    <defName>PsychologySlaughterer_Bloodlust</defName>
+    <mentalState>Slaughterer</mentalState>
+    <baseCommonality>1.25</baseCommonality>
+    <intensity>Extreme</intensity>
+	<requiredTrait>Bloodlust</requiredTrait>
+  </MentalBreakDef>
+  
+  <MentalBreakDef>
+    <defName>PsychologySlaughterer_Psycho</defName>
+    <mentalState>Slaughterer</mentalState>
+    <baseCommonality>0.5</baseCommonality>
+    <intensity>Extreme</intensity>
+	<requiredTrait>Psychopath</requiredTrait>
+  </MentalBreakDef>
+  
+  <MentalBreakDef>
+    <defName>PsychologyJailbreaker_BleedingHeart</defName>
+    <mentalState>Jailbreaker</mentalState>
+    <baseCommonality>1.25</baseCommonality>
+    <intensity>Extreme</intensity>
+	<requiredTrait>BleedingHeart</requiredTrait>
+  </MentalBreakDef>
+  
+  <MentalBreakDef>
+    <defName>PsychologyCatatonic_HeavySleeper</defName>
+	<label>catatonic</label>
+    <baseCommonality>1.25</baseCommonality>
+    <intensity>Extreme</intensity>
+	<requiredTrait>HeavySleeper</requiredTrait>
+    <workerClass>MentalBreakWorker_Catatonic</workerClass>
+  </MentalBreakDef>
+  
+  <MentalBreakDef>
+    <defName>PsychologyCatatonic_Insomniac</defName>
+	<label>catatonic</label>
+    <baseCommonality>0.75</baseCommonality>
+    <intensity>Extreme</intensity>
+	<requiredTrait>Insomniac</requiredTrait>
+    <workerClass>MentalBreakWorker_Catatonic</workerClass>
+  </MentalBreakDef>
+  
+  <MentalBreakDef>
+    <defName>PsychologyRunWild_Outdoorsy</defName>
+    <label>run wild</label>
+    <baseCommonality>0.25</baseCommonality>
+    <intensity>Extreme</intensity>
+	<requiredTrait>Outdoorsy</requiredTrait>
+    <workerClass>MentalBreakWorker_RunWild</workerClass>
+  </MentalBreakDef>
+  
+  <MentalBreakDef>
+    <defName>PsychologySadisticRage_Extreme</defName>
+    <mentalState>SadisticRage</mentalState>
+    <baseCommonality>0.21</baseCommonality>
+    <intensity>Extreme</intensity>
+  </MentalBreakDef>
+  
+  <MentalBreakDef>
+    <defName>PsychologySadisticRage_BloodlustExtreme</defName>
+    <mentalState>SadisticRage</mentalState>
+    <baseCommonality>1</baseCommonality>
+	<requiredTrait>Bloodlust</requiredTrait>
+    <intensity>Extreme</intensity>
+  </MentalBreakDef>
+  
+  <MentalBreakDef>
+    <defName>PsychologySadisticRage_BrawlerExtreme</defName>
+    <mentalState>SadisticRage</mentalState>
+    <baseCommonality>0.4</baseCommonality>
+	<requiredTrait>Brawler</requiredTrait>
+    <intensity>Extreme</intensity>
+  </MentalBreakDef>
+  
+  <MentalBreakDef>
     <defName>Fell_Psycho</defName>
     <mentalState>FellPlotting</mentalState>
     <baseCommonality>1.25</baseCommonality>
@@ -71,7 +145,7 @@
     <nameColor>(0.9,0.2,0.5)</nameColor>
     <beginLetterLabel>fell plotting</beginLetterLabel>
     <beginLetter>{0} is retiring to HIS room to scheme!</beginLetter>
-    <beginLetterDef>BadNonUrgent</beginLetterDef>
+    <beginLetterDef>NegativeEvent</beginLetterDef>
     <minTicksBeforeRecovery>20000</minTicksBeforeRecovery>
     <maxTicksBeforeRecovery>60000</maxTicksBeforeRecovery>
     <recoveryMessage>{0}'s fell plotting is ended.</recoveryMessage>
@@ -79,60 +153,6 @@
     <stateEffecter>Berserk</stateEffecter>
     <tale>MentalStateFellPlotting</tale>
     <recoverFromSleep>true</recoverFromSleep>
-    <recoverFromDowned>true</recoverFromDowned>
-    <unspawnedCanDo>true</unspawnedCanDo>
-  </MentalStateDef>
-  
-  <MentalBreakDef>
-    <defName>Sadism_Bloodlust</defName>
-    <mentalState>Sadism</mentalState>
-    <baseCommonality>0.75</baseCommonality>
-    <intensity>Extreme</intensity>
-	<requiredTrait>Bloodlust</requiredTrait>
-  </MentalBreakDef>
-  
-  <MentalBreakDef>
-    <defName>Sadism_Psycho</defName>
-    <mentalState>Sadism</mentalState>
-    <baseCommonality>1.25</baseCommonality>
-    <intensity>Extreme</intensity>
-	<requiredTrait>Psychopath</requiredTrait>
-  </MentalBreakDef>
-  
-  <MentalBreakDef>
-    <defName>Sadism_Brawler</defName>
-    <mentalState>Sadism</mentalState>
-    <baseCommonality>0.5</baseCommonality>
-    <intensity>Extreme</intensity>
-	<requiredTrait>Brawler</requiredTrait>
-  </MentalBreakDef>
-  
-  <MentalBreakDef>
-    <defName>Sadism</defName>
-    <mentalState>Sadism</mentalState>
-    <baseCommonality>0.25</baseCommonality>
-    <intensity>Extreme</intensity>
-  </MentalBreakDef>
-  
-  <MentalStateDef ParentName="BaseMentalState">
-    <defName>Sadism</defName>
-	<colonistsOnly>true</colonistsOnly>
-    <stateClass>Psychology.MentalState_Sadism</stateClass>
-    <label>laughing sadistically</label>
-    <category>Misc</category>
-    <moodRecoveryThought>Catharsis</moodRecoveryThought>
-    <blockNormalThoughts>true</blockNormalThoughts>
-    <nameColor>(0.9,0.2,0.5)</nameColor>
-    <beginLetterLabel>sadism</beginLetterLabel>
-    <beginLetter>{0} is brandishing HIS weapon with a sadistic look on HIS face.</beginLetter>
-    <beginLetterDef>BadUrgent</beginLetterDef>
-    <maxTicksBeforeRecovery>60000</maxTicksBeforeRecovery>
-    <recoveryMessage>{0}'s cruel frenzy has come to an end.</recoveryMessage>
-    <baseInspectLine>Mental state: Sadism</baseInspectLine>
-    <stateEffecter>Berserk</stateEffecter>
-    <tale>MentalStateSadism</tale>
-    <recoverFromSleep>true</recoverFromSleep>
-    <recoverFromDowned>true</recoverFromDowned>
     <unspawnedCanDo>true</unspawnedCanDo>
   </MentalStateDef>
   
@@ -162,44 +182,92 @@
     <nameColor>(0.65, 0.9, 0.93)</nameColor>
     <beginLetterLabel>self-harm</beginLetterLabel>
     <beginLetter>{0} has slit HIS wrists and is hiding in HIS room.</beginLetter>
-    <beginLetterDef>BadNonUrgent</beginLetterDef>
+    <beginLetterDef>NegativeEvent</beginLetterDef>
     <maxTicksBeforeRecovery>60000</maxTicksBeforeRecovery>
     <recoveryMessage>{0} has stopped self-harming.</recoveryMessage>
     <baseInspectLine>Mental state: Self-harming</baseInspectLine>
     <tale>MentalStateSelfHarm</tale>
     <recoverFromSleep>true</recoverFromSleep>
-    <recoverFromDowned>true</recoverFromDowned>
     <unspawnedCanDo>true</unspawnedCanDo>
   </MentalStateDef>
   
-  
   <MentalBreakDef>
-    <defName>Tantrum</defName>
-    <mentalState>Tantrum</mentalState>
-    <baseCommonality>1.0</baseCommonality>
+    <defName>Paranoia_TooSmart</defName>
+    <mentalState>Paranoia</mentalState>
+    <baseCommonality>0.75</baseCommonality>
+    <intensity>Extreme</intensity>
+	<requiredTrait>TooSmart</requiredTrait>
+  </MentalBreakDef>
+
+  <MentalBreakDef>
+    <defName>Paranoia</defName>
+    <mentalState>Paranoia</mentalState>
+    <baseCommonality>0.75</baseCommonality>
     <intensity>Extreme</intensity>
   </MentalBreakDef>
   
   <MentalStateDef ParentName="BaseMentalState">
-    <defName>Tantrum</defName>
-    <stateClass>Psychology.MentalState_Tantrum</stateClass>
-    <label>throwing tantrum</label>
+    <defName>Paranoia</defName>
+    <stateClass>Psychology.MentalState_Paranoia</stateClass>
+    <label>babbling</label>
     <category>Misc</category>
     <moodRecoveryThought>Catharsis</moodRecoveryThought>
     <blockNormalThoughts>true</blockNormalThoughts>
     <nameColor>(0.5, 0.9, 0.5)</nameColor>
-    <beginLetterLabel>tantrum</beginLetterLabel>
-    <beginLetter>{0} is taking HIS anger out on nearby equipment!</beginLetter>
-    <beginLetterDef>BadNonUrgent</beginLetterDef>
+    <beginLetterLabel>paranoia</beginLetterLabel>
+    <beginLetter>{0} is absorbed by paranoid babbling.</beginLetter>
+    <beginLetterDef>NegativeEvent</beginLetterDef>
+    <minTicksBeforeRecovery>20000</minTicksBeforeRecovery>
     <maxTicksBeforeRecovery>60000</maxTicksBeforeRecovery>
-    <recoveryMessage>{0}'s destructive tantrum has come to an end.</recoveryMessage>
-    <baseInspectLine>Mental state: Throwing tantrum</baseInspectLine>
+    <recoveryMessage>{0} has overcome HIS paranoia.</recoveryMessage>
+    <baseInspectLine>Mental state: Paranoia</baseInspectLine>
     <stateEffecter>Berserk</stateEffecter>
-    <tale>MentalStateTantrum</tale>
+    <tale>MentalStateParanoia</tale>
     <recoverFromSleep>true</recoverFromSleep>
-    <recoverFromDowned>true</recoverFromDowned>
     <unspawnedCanDo>true</unspawnedCanDo>
   </MentalStateDef>
+  
+  <!-- major mental breaks -->
+  
+  <MentalBreakDef>
+    <defName>PsychologySadisticRage_Brawler</defName>
+    <mentalState>SadisticRage</mentalState>
+    <baseCommonality>0.2</baseCommonality>
+	<requiredTrait>Brawler</requiredTrait>
+    <intensity>Major</intensity>
+  </MentalBreakDef>
+  
+  <MentalBreakDef>
+    <defName>PsychologySadisticRage_Bloodlust</defName>
+    <mentalState>SadisticRage</mentalState>
+    <baseCommonality>0.5</baseCommonality>
+	<requiredTrait>Bloodlust</requiredTrait>
+    <intensity>Major</intensity>
+  </MentalBreakDef>
+  
+  <MentalBreakDef>
+    <defName>PsychologyCorpseObsession_Psycho</defName>
+    <mentalState>CorpseObsession</mentalState>
+    <baseCommonality>1</baseCommonality>
+	<requiredTrait>Psychopath</requiredTrait>
+    <intensity>Major</intensity>
+  </MentalBreakDef>
+  
+  <MentalBreakDef>
+    <defName>PsychologyCorpseObsession_Desensitized</defName>
+    <mentalState>CorpseObsession</mentalState>
+    <baseCommonality>0.5</baseCommonality>
+	<requiredTrait>Desensitized</requiredTrait>
+    <intensity>Major</intensity>
+  </MentalBreakDef>
+  
+  <MentalBreakDef>
+    <defName>PsychologyCorpseObsession_Cannibal</defName>
+    <mentalState>CorpseObsession</mentalState>
+    <baseCommonality>0.5</baseCommonality>
+	<requiredTrait>Cannibal</requiredTrait>
+    <intensity>Major</intensity>
+  </MentalBreakDef>
   
   <MentalBreakDef>
     <defName>Abuse</defName>
@@ -234,53 +302,15 @@
     <nameColor>(0.5, 0.9, 0.5)</nameColor>
     <beginLetterLabel>verbal abuse</beginLetterLabel>
     <beginLetter>{0} has become enraged and is verbally abusing everyone in sight.</beginLetter>
-    <beginLetterDef>BadNonUrgent</beginLetterDef>
+    <beginLetterDef>NegativeEvent</beginLetterDef>
     <maxTicksBeforeRecovery>60000</maxTicksBeforeRecovery>
     <recoveryMessage>{0} has stopped verbally abusing people.</recoveryMessage>
     <baseInspectLine>Mental state: Abusive</baseInspectLine>
 	<stateEffecter>Berserk</stateEffecter>
     <tale>MentalStateAbuse</tale>
     <recoverFromSleep>true</recoverFromSleep>
-    <recoverFromDowned>true</recoverFromDowned>
     <unspawnedCanDo>true</unspawnedCanDo>
     <moodRecoveryThought>Catharsis</moodRecoveryThought>
-  </MentalStateDef>
-  
-  <MentalBreakDef>
-    <defName>Paranoia_TooSmart</defName>
-    <mentalState>Paranoia</mentalState>
-    <baseCommonality>0.75</baseCommonality>
-    <intensity>Extreme</intensity>
-	<requiredTrait>TooSmart</requiredTrait>
-  </MentalBreakDef>
-
-  <MentalBreakDef>
-    <defName>Paranoia</defName>
-    <mentalState>Paranoia</mentalState>
-    <baseCommonality>0.75</baseCommonality>
-    <intensity>Extreme</intensity>
-  </MentalBreakDef>
-  
-  <MentalStateDef ParentName="BaseMentalState">
-    <defName>Paranoia</defName>
-    <stateClass>Psychology.MentalState_Paranoia</stateClass>
-    <label>babbling</label>
-    <category>Misc</category>
-    <moodRecoveryThought>Catharsis</moodRecoveryThought>
-    <blockNormalThoughts>true</blockNormalThoughts>
-    <nameColor>(0.5, 0.9, 0.5)</nameColor>
-    <beginLetterLabel>paranoia</beginLetterLabel>
-    <beginLetter>{0} is absorbed by paranoid babbling.</beginLetter>
-    <beginLetterDef>BadNonUrgent</beginLetterDef>
-    <minTicksBeforeRecovery>20000</minTicksBeforeRecovery>
-    <maxTicksBeforeRecovery>60000</maxTicksBeforeRecovery>
-    <recoveryMessage>{0} has overcome HIS paranoia.</recoveryMessage>
-    <baseInspectLine>Mental state: Paranoia</baseInspectLine>
-    <stateEffecter>Berserk</stateEffecter>
-    <tale>MentalStateParanoia</tale>
-    <recoverFromSleep>true</recoverFromSleep>
-    <recoverFromDowned>true</recoverFromDowned>
-    <unspawnedCanDo>true</unspawnedCanDo>
   </MentalStateDef>
   
   <MentalBreakDef>
@@ -302,12 +332,11 @@
     <nameColor>(0.65, 0.9, 0.93)</nameColor>
     <beginLetterLabel>compulsion</beginLetterLabel>
     <beginLetter>{0} is obsessively cleaning HIS surroundings with little regard for HIS own wellbeing.</beginLetter>
-    <beginLetterDef>BadNonUrgent</beginLetterDef>
+    <beginLetterDef>NegativeEvent</beginLetterDef>
     <recoveryMessage>{0} has stopped compulsively tidying HIS surroundings.</recoveryMessage>
     <baseInspectLine>Mental state: Compulsively cleaning</baseInspectLine>
     <tale>MentalStateCompulsion</tale>
     <recoverFromSleep>true</recoverFromSleep>
-    <recoverFromDowned>true</recoverFromDowned>
     <unspawnedCanDo>true</unspawnedCanDo>
     <allowBeatfire>true</allowBeatfire>
     <moodRecoveryThought>Catharsis</moodRecoveryThought>
@@ -332,12 +361,11 @@
     <nameColor>(0.65, 0.9, 0.93)</nameColor>
     <beginLetterLabel>antisocial</beginLetterLabel>
     <beginLetter>{0} is avoiding HIS fellow colonists.</beginLetter>
-    <beginLetterDef>BadNonUrgent</beginLetterDef>
+    <beginLetterDef>NegativeEvent</beginLetterDef>
     <recoveryMessage>{0} has stopped being antisocial.</recoveryMessage>
     <baseInspectLine>Mental state: Antisocial</baseInspectLine>
     <tale>MentalStateAntisocial</tale>
     <recoverFromSleep>true</recoverFromSleep>
-    <recoverFromDowned>true</recoverFromDowned>
     <unspawnedCanDo>true</unspawnedCanDo>
   </MentalStateDef>
   
@@ -360,12 +388,11 @@
     <nameColor>(0.65, 0.9, 0.93)</nameColor>
     <beginLetterLabel>apathy</beginLetterLabel>
     <beginLetter>{0} has become apathetic and is less likely to do HIS assigned work.</beginLetter>
-    <beginLetterDef>BadNonUrgent</beginLetterDef>
+    <beginLetterDef>NegativeEvent</beginLetterDef>
     <recoveryMessage>{0} has stopped being apathetic.</recoveryMessage>
     <baseInspectLine>Mental state: Apathy</baseInspectLine>
     <tale>MentalStateApathy</tale>
     <recoverFromSleep>false</recoverFromSleep>
-    <recoverFromDowned>true</recoverFromDowned>
     <unspawnedCanDo>true</unspawnedCanDo>
     <allowBeatfire>true</allowBeatfire>
     <moodRecoveryThought>Catharsis</moodRecoveryThought>
@@ -406,12 +433,11 @@
     <nameColor>(0.65, 0.9, 0.93)</nameColor>
     <beginLetterLabel>histrionic</beginLetterLabel>
     <beginLetter>{0} has become histrionic and is desperately seeking attention.</beginLetter>
-    <beginLetterDef>BadNonUrgent</beginLetterDef>
+    <beginLetterDef>NegativeEvent</beginLetterDef>
     <recoveryMessage>{0} has stopped being histrionic.</recoveryMessage>
     <baseInspectLine>Mental state: Histrionic</baseInspectLine>
     <tale>MentalStateHistrionic</tale>
     <recoverFromSleep>false</recoverFromSleep>
-    <recoverFromDowned>true</recoverFromDowned>
     <unspawnedCanDo>true</unspawnedCanDo>
     <allowBeatfire>true</allowBeatfire>
     <moodRecoveryThought>Catharsis</moodRecoveryThought>

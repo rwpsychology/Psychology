@@ -12,8 +12,8 @@
     <skillNeedFactors>
       <li Class="SkillNeed_BaseBonus">
         <skill>Social</skill>
-        <baseFactor>0.02</baseFactor>
-        <bonusFactor>0.05</bonusFactor>
+        <baseValue>0.02</baseValue>
+        <bonusPerLevel>0.05</bonusPerLevel>
       </li>
     </skillNeedFactors>
     <capacityFactors>

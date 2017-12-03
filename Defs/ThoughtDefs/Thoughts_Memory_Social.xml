@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ThoughtDefs>
+<Defs>
 
   <!-- Random social interactions -->
 
@@ -162,4 +162,4 @@
       </li>
     </stages>
   </ThoughtDef>
-</ThoughtDefs>
+</Defs>

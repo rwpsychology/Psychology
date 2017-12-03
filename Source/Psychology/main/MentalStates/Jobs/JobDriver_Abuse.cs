@@ -11,6 +11,11 @@ namespace Psychology
 {
     public class JobDriver_Abuse : JobDriver
     {
+        public override bool TryMakePreToilReservations()
+        {
+            return true;
+        }
+
         private static Toil AbuseTarget(Pawn target)
         {
             Toil toil = new Toil();

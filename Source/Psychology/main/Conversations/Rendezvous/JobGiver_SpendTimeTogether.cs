@@ -80,13 +80,15 @@ namespace Psychology
                 if ((pawn.Position - friend.Position).LengthHorizontalSquared >= 42f && friend.jobs.curJob.def != JobDefOf.Goto)
                 {
                     IntVec3 friendDest = RCellFinder.RandomWanderDestFor(pawn, friend.Position, 5f, validator, PawnUtility.ResolveMaxDanger(pawn, Danger.Some));
-                    pawn.Map.pawnDestinationManager.ReserveDestinationFor(pawn, friendDest);
-                    return new Job(JobDefOf.Goto, friendDest);
+                    Job goTo = new Job(JobDefOf.Goto, friendDest);
+                    pawn.Map.pawnDestinationReservationManager.Reserve(pawn, goTo, friendDest);
+                    return goTo;
                 }
                 return null;
             }
-            pawn.Map.pawnDestinationManager.ReserveDestinationFor(pawn, wanderDest);
-            return new Job(JobDefOf.GotoWander, wanderDest);
+            Job wander = new Job(JobDefOf.GotoWander, wanderDest);
+            pawn.Map.pawnDestinationReservationManager.Reserve(pawn, wander, wanderDest);
+            return wander;
         }
     }
 }
