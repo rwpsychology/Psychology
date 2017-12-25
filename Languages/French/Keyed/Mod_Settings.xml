@@ -12,6 +12,7 @@
 	<KinseyMode_Realistic>Défaut</KinseyMode_Realistic>
 	<KinseyMode_Invisible>Centre</KinseyMode_Invisible>
 	<KinseyMode_Gaypocalypse>Inverse</KinseyMode_Gaypocalypse>
+	<KinseyMode_Uniform>Uniforme</KinseyMode_Uniform>
 	
 	<IndividualityTitle>Activer les pensées d'individualité</IndividualityTitle>
 	<IndividualityTooltip>Désactivez cette option pour désactiver la pensée négative que vos colons obtiendront s'ils portent des tenues parfaitement correspondantes avec d'autres colons. Cette pensée ajoute une difficulté supplémentaire, donc c'est facultatif, mais recommandé.</IndividualityTooltip>

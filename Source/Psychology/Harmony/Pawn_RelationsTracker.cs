@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Reflection;
+using System.Reflection.Emit;
+using System.Collections.Generic;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -20,9 +22,9 @@ namespace Psychology.Harmony
             }
         }
     }
-
-    [HarmonyPatch(typeof(Pawn_RelationsTracker), "SecondaryRomanceChanceFactor")]
-    public static class Pawn_RelationsTracker_RomanceChancePatch
+        
+    [HarmonyPatch(typeof(Pawn_RelationsTracker), "SecondaryLovinChanceFactor")]
+    public static class Pawn_RelationsTracker_LovinChancePatch
     {
         [HarmonyPostfix]
         public static void PsychologyFormula(Pawn_RelationsTracker __instance, ref float __result, Pawn otherPawn)
@@ -105,11 +107,6 @@ namespace Psychology.Harmony
                     ageFactor = 1f;
                     disabilityFactor = 1f;
                 }
-                float relationFactor = 1f;
-                foreach (PawnRelationDef current in pawn.GetRelations(otherPawn))
-                {
-                    relationFactor *= current.attractionFactor;
-                }
                 int beauty = 0;
                 if (otherPawn.RaceProps.Humanlike)
                 {
@@ -142,7 +139,7 @@ namespace Psychology.Harmony
                 }
                 float initiatorYouthFactor = Mathf.InverseLerp(15f, 18f, ageBiologicalYearsFloat);
                 float recipientYouthFactor = Mathf.InverseLerp(15f, 18f, ageBiologicalYearsFloat2);
-                __result = 1f * sexualityFactor * ageFactor * disabilityFactor * relationFactor * beautyFactor * initiatorYouthFactor * recipientYouthFactor;
+                __result = 1f * sexualityFactor * ageFactor * disabilityFactor * beautyFactor * initiatorYouthFactor * recipientYouthFactor;
             }
         }
     }

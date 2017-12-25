@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Lord job reports -->
+  <LordReportAttendingElection>去投票</LordReportAttendingElection>
+  <LordReportVisitingMayor>參加談話</LordReportVisitingMayor>
+  <LordReportHangingOut>和某人出去玩</LordReportHangingOut>
+  <LordReportDate>約會</LordReportDate>
+  <LordReportAttendingFuneral>參加葬禮</LordReportAttendingFuneral>
+
+  <!-- Miscellaneous thought log text -->
+  <ConversationStage>討論</ConversationStage>
+  <ConversationEnd>結束了談話</ConversationEnd>
+  <ConversationEnded>結束談話</ConversationEnded>
+  <Complained>向鎮長抱怨</Complained>
+  <Supported>向鎮長表示支持。</Supported>
+  <HadMeeting>和選民談話</HadMeeting>
+
+  <!-- Node descriptions -->
+  <PsycheNot>一點也不</PsycheNot>
+  <PsycheSlightly>一點點</PsycheSlightly>
+  <PsycheLess>較少</PsycheLess>
+  <PsycheMore>較多</PsycheMore>
+  <PsycheVery>非常</PsycheVery>
+  <PsycheExtremely>極其</PsycheExtremely>
+
+</LanguageData>

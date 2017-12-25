@@ -24,7 +24,15 @@ namespace Psychology
             foreach (PersonalityNode node in this.pawn.psyche.PersonalityNodes)
             {
                 cachedList.Add(new Pair<string, float>(node.def.label.CapitalizeFirst(), node.rawRating));
-                descriptions.Add(node.def.label.CapitalizeFirst(), node.def.description);
+                try
+                {
+                    descriptions.Add(node.def.label.CapitalizeFirst(), node.def.description);
+                }
+                catch(ArgumentException e)
+                {
+                    Log.Error("[Psychology] "+"DuplicateDefLabel".Translate(node.def.defName));
+                    descriptions.Add(node.def.defName.CapitalizeFirst(), node.def.description);
+                }
             }
             cachedList.SortBy(n => n.First);
         }

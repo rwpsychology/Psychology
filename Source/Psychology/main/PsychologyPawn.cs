@@ -48,6 +48,7 @@ namespace Psychology
             {
                 this
             });
+            Scribe_Values.Look(ref this.beenBuried, "beenBuried");
         }
         
         public override string LabelNoCount
@@ -72,5 +73,6 @@ namespace Psychology
 
         public Pawn_SexualityTracker sexuality;
         public Pawn_PsycheTracker psyche;
+        public bool beenBuried = false;
     }
 }

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Random social interactions -->
+
+  <PrudeSeen.label>看到裸体</PrudeSeen.label>
+  <PrudeSeen.logRulesInitiator.rulesStrings.0>logentry->看到[other_nameShortIndef]的裸体。</PrudeSeen.logRulesInitiator.rulesStrings.0>
+  <PrudeSeen.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef]看到我的裸体。</PrudeSeen.logRulesRecipient.rulesStrings.0>
+
+  <Conversation.label>谈话</Conversation.label>
+  <Conversation.logRulesInitiator.rulesStrings.0>logentry->和[other_nameShortIndef]攀谈起来。</Conversation.logRulesInitiator.rulesStrings.0>
+  <Conversation.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef]和我开始谈话。</Conversation.logRulesRecipient.rulesStrings.0>
+
+  <EndConversation.label>结束谈话</EndConversation.label>
+  <EndConversation.logRulesInitiator.rulesStrings.0>logentry->结束与[other_nameShortIndef]的谈话。</EndConversation.logRulesInitiator.rulesStrings.0>
+  <EndConversation.logRulesRecipient.rulesStrings.0>logentry->结束与[other_nameShortIndef]的谈话。</EndConversation.logRulesRecipient.rulesStrings.0>
+
+  <HangOut.label>去闲逛</HangOut.label>
+  <HangOut.logRulesInitiator.rulesStrings.0>logentry->叫上[other_nameShortIndef]跟我出去逛逛。</HangOut.logRulesInitiator.rulesStrings.0>
+  <HangOut.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef]叫我出去逛逛。</HangOut.logRulesRecipient.rulesStrings.0>
+
+  <PlanDate.label>计划约会</PlanDate.label>
+  <PlanDate.logRulesInitiator.rulesStrings.0>logentry->和[other_nameShortIndef]计划约会。</PlanDate.logRulesInitiator.rulesStrings.0>
+  <PlanDate.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef]计划和我一起去约会。</PlanDate.logRulesRecipient.rulesStrings.0>
+
+
+</LanguageData>

@@ -12,6 +12,7 @@
 	<KinseyMode_Realistic>Default</KinseyMode_Realistic>
 	<KinseyMode_Invisible>Center</KinseyMode_Invisible>
 	<KinseyMode_Gaypocalypse>Inverse</KinseyMode_Gaypocalypse>
+	<KinseyMode_Uniform>Uniform</KinseyMode_Uniform>
 	
 	<IndividualityTitle>Enable Individuality thoughts</IndividualityTitle>
 	<IndividualityTooltip>Turn this off to disable the negative thought your colonists will get if they are wearing perfectly matching outfits with other colonists. This thought adds extra difficulty, so it's optional, but recommended.</IndividualityTooltip>

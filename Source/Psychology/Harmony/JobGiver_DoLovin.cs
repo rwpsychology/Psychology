@@ -22,7 +22,8 @@ namespace Psychology.Harmony
             if (realPawn != null && realPartner != null && PsychologyBase.ActivateKinsey() && realPawn.sexuality != null && realPartner.sexuality != null)
             {
                 float random = Rand.ValueSeeded((pawn.GetHashCode() ^ (GenLocalDate.DayOfYear(pawn) + GenLocalDate.Year(pawn) + (int)(GenLocalDate.DayPercent(pawn) * 2) * 60) * 391));
-                if (random > realPawn.sexuality.AdjustedSexDrive && random > realPartner.sexuality.AdjustedSexDrive)
+                float random2 = Rand.ValueSeeded((pawn.GetHashCode() ^ (GenLocalDate.DayOfYear(realPartner) + GenLocalDate.Year(realPartner) + (int)(GenLocalDate.DayPercent(realPartner) * 2) * 60) * 391));
+                if (random > realPawn.sexuality.AdjustedSexDrive && random2 > realPartner.sexuality.AdjustedSexDrive)
                 {
                     __result = null;
                 }

@@ -29,6 +29,7 @@ namespace Psychology
         public enum KinseyMode
         {
             Realistic,
+            Uniform,
             Invisible,
             Gaypocalypse
         };
@@ -243,7 +244,7 @@ namespace Psychology
                 adultMale.slot = BackstorySlot.Adulthood;
                 adultMale.SetTitle("Missing in action");
                 adultMale.SetTitleShort("P.O.W.");
-                adultMale.baseDesc = "Eventually, HE was captured on a mission by one of his faction's many enemies. HECAP was tortured for information, the techniques of which HE never forgot. When they could get no more out of HIM, HE was sent to a prison camp, where HE worked for years before staging an escape and fleeing into civilization.";
+                adultMale.baseDesc = "Eventually, HE was captured on a mission by one of HIS faction's many enemies. HECAP was tortured for information, the techniques of which HE never forgot. When they could get no more out of HIM, HE was sent to a prison camp, where HE worked for years before staging an escape and fleeing into civilization.";
                 adultMale.skillGains.Add("Crafting", 4);
                 adultMale.skillGains.Add("Construction", 3);
                 adultMale.skillGains.Add("Mining", 2);
@@ -355,13 +356,13 @@ namespace Psychology
             {
                 foreach (FactionBase factionBase in Find.WorldObjects.FactionBases)
                 {
-                    //If the base isn't owned or named by the player, no election can be held.
-                    if (!factionBase.Faction.IsPlayer || !factionBase.namedByPlayer)
+                    //Self-explanatory.
+                    if (!PsychologyBase.ActivateElections())
                     {
                         continue;
                     }
-                    //Self-explanatory.
-                    if (!PsychologyBase.ActivateElections())
+                    //If the base isn't owned or named by the player, no election can be held.
+                    if (!factionBase.Faction.IsPlayer || !factionBase.namedByPlayer)
                     {
                         continue;
                     }
@@ -380,8 +381,8 @@ namespace Psychology
                     {
                         continue;
                     }
-                    //Elections are held in the fall and during the day.
-                    if (GenLocalDate.Season(factionBase.Map) != Season.Fall || (GenLocalDate.HourOfDay(factionBase.Map) < 7 || GenLocalDate.HourOfDay(factionBase.Map) > 20))
+                    //Elections are held in Septober (because I guess some maps don't have fall?) and during the day.
+                    if (GenDate.Quadrum(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(factionBase.Tile).x) != Quadrum.Septober || (GenLocalDate.HourOfDay(factionBase.Map) < 7 || GenLocalDate.HourOfDay(factionBase.Map) > 20))
                     {
                         continue;
                     }
@@ -394,7 +395,7 @@ namespace Psychology
                         continue;
                     }
                     //Try to space out the elections so they don't all proc at once.
-                    if (Rand.RangeInclusive(1, 15 - GenLocalDate.DayOfSeason(factionBase.Map.Tile)) > 1)
+                    if (Rand.RangeInclusive(1, 15 - GenLocalDate.DayOfQuadrum(factionBase.Map.Tile)) > 1)
                     {
                         continue;
                     }

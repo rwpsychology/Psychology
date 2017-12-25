@@ -25,14 +25,6 @@ namespace Psychology
             }
         }
 
-        public override bool AllowSatisfyLongNeeds
-        {
-            get
-            {
-                return true;
-            }
-        }
-
         public Pawn[] friends;
         public Job hangOut;
         public int ticksToNextJoy = 0;

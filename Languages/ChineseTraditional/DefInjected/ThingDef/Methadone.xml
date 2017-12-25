@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Methadone.label>美沙酮</Methadone.label>
+  <Methadone.description>阿片類成癮品治療藥物。防止使用者受到除了路西法合劑之外所有成癮品在戒斷時的負面作用。由於其成癮性會導致身體機能的降低，而且可能會偶爾產生藥物濫用。一天一片，戒毒後請停藥。</Methadone.description>
+  <Methadone.ingestible.ingestCommandString>施用{0}</Methadone.ingestible.ingestCommandString>
+  <Methadone.ingestible.ingestReportString>施用{0}中。</Methadone.ingestible.ingestReportString>
+
+
+</LanguageData>

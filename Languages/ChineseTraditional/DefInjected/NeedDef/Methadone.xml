@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Methadone addiction -->
+
+  <Chemical_Methadone.label>美沙酮</Chemical_Methadone.label>
+  <Chemical_Methadone.description>由於美沙酮成癮，此人需要持續服用成癮品以避免產生戒斷反應。</Chemical_Methadone.description>
+
+
+</LanguageData>

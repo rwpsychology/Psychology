@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TreatPyromania.label>治療縱火狂</TreatPyromania.label>
+  <TreatPyromania.description>幫助一個縱火狂康復。</TreatPyromania.description>
+  <TreatPyromania.jobString>治療縱火狂中。</TreatPyromania.jobString>
+
+  <TreatChemicalInterest.label>治療成癮品愛好</TreatChemicalInterest.label>
+  <TreatChemicalInterest.description>幫助一個成癮品愛好者保持戒毒狀態。</TreatChemicalInterest.description>
+  <TreatChemicalInterest.jobString>治療成癮品愛好中。</TreatChemicalInterest.jobString>
+
+  <TreatChemicalFascination.label>治療成癮品痴迷</TreatChemicalFascination.label>
+  <TreatChemicalFascination.description>幫助一個成癮品痴迷者保持戒毒狀態。</TreatChemicalFascination.description>
+  <TreatChemicalFascination.jobString>治療成癮品痴迷中。</TreatChemicalFascination.jobString>
+
+  <TreatDepression.label>治療抑郁症</TreatDepression.label>
+  <TreatDepression.description>幫助抑郁的人管理他們的情緒。</TreatDepression.description>
+  <TreatDepression.jobString>治療抑郁症中。</TreatDepression.jobString>
+
+  <TreatInsomnia.label>治療失眠</TreatInsomnia.label>
+  <TreatInsomnia.description>幫助一個失眠的人睡得更香。</TreatInsomnia.description>
+  <TreatInsomnia.jobString>治療失眠中。</TreatInsomnia.jobString>
+
+  <CureAnxiety.label>治療焦慮</CureAnxiety.label>
+  <CureAnxiety.description>通過來自閃耀世界的力量來永久性消除焦慮。</CureAnxiety.description>
+  <CureAnxiety.jobString>治療焦慮中。</CureAnxiety.jobString>
+
+
+</LanguageData>

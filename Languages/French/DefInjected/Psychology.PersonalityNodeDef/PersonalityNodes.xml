@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-		<Confident.label>confiant</Confident.label>
-		<Confident.description>Une personne confiante a une assurance et une estime de soi élevées.</Confident.description>
+		<Confident.label>assuré</Confident.label>
+		<Confident.description>Une personne assuré a une assurance et une estime de soi élevées.</Confident.description>
 
 		<Experimental.label>expérimental</Experimental.label>
 		<Experimental.description>Quelqu'un d'expérimental est susceptible de tout essayer une fois, profiter de surprises, et d'être plus expérimenté.</Experimental.description>

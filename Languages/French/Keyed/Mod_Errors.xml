@@ -4,5 +4,6 @@
 	<KinseyDisable>Désactivation de l'échelle de Kinsey due à la détection d'un mod de romance/sexualité.</KinseyDisable>
 	<KinseyDetourDisable>Le détournement des méthodes essentielles à la fonctionnalité de certains traits a été désactivé pour protéger la compatibilité. Définition commune de ces traits à zéro.</KinseyDetourDisable>
 	<MedicalDetourDisable>Désactivation du détournement des méthodes médicales due à la détection d'un mod d'assemblage médical/chirurgical. Cela supprimera certaines fonctionnalités des personnes sentimental.</MedicalDetourDisable>
+	<DuplicateDefLabel>Dupliquer de l'étiquette de PersonalityNodeDef sur {0}. Veuillez le signaler afin que la traduction puisse être corrigée.</DuplicateDefLabel>
   
 </LanguageData>

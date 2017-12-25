@@ -83,6 +83,10 @@ namespace Psychology
             {
                 return Mathf.Clamp((int)Rand.GaussianAsymmetric(7f, 3.13f, 1f), 0, 6);
             }
+            else if (PsychologyBase.KinseyFormula() == PsychologyBase.KinseyMode.Uniform)
+            {
+                return (int)(Rand.Value*6f);
+            }
             throw new NotImplementedException();
         }
 

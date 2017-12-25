@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Confident.label>自信程度</Confident.label>
+  <Confident.description>一個自信的人會有較高的自我肯定和自尊心。</Confident.description>
+
+  <Experimental.label>動手能力</Experimental.label>
+  <Experimental.description>愛自己動手操作的人喜歡嘗試每一件事物，享受驚喜，更富有經驗。</Experimental.description>
+
+  <Intelligent.label>理解力</Intelligent.label>
+  <Intelligent.description>一個理解力比較強的人腦子轉的比較快。</Intelligent.description>
+
+  <Extroverted.label>性格外向</Extroverted.label>
+  <Extroverted.description>性格外向的人喜歡外出和體驗事物，主動性強。</Extroverted.description>
+
+  <Emotional.label>感性</Emotional.label>
+  <Emotional.description>感性的人天生擁有感知情緒的能力。</Emotional.description>
+
+  <Independent.label>獨立性</Independent.label>
+  <Independent.description>一個獨立的人非常樂於獨處，不依賴他人。</Independent.description>
+
+  <Aggressive.label>侵略性</Aggressive.label>
+  <Aggressive.description>一個有侵略性的人是坦率並直截了當的，如果沒有得到他們想要的東西，就會變得非常好鬥。</Aggressive.description>
+
+  <Adventurous.label>冒險精神</Adventurous.label>
+  <Adventurous.description>敢於冒險的人在嘗試新事物、拓展視野、去到新地方時會感到更加充實。</Adventurous.description>
+
+  <DrugFriendly.label>成癮品依賴</DrugFriendly.label>
+  <DrugFriendly.description>一個對成癮品依賴的人看不出成癮品的壞處，也不會想遠離成癮品。</DrugFriendly.description>
+
+  <Spontaneous.label>真性情</Spontaneous.label>
+  <Spontaneous.description>一個真性情的人經常受感情的驅使並且喜歡給其他人驚喜。</Spontaneous.description>
+
+  <Rational.label>理性</Rational.label>
+  <Rational.description>一個人越理性，他們就越有能力從真實的、客觀的角度來思考事情。</Rational.description>
+
+  <Logical.label>邏輯性</Logical.label>
+  <Logical.description>有邏輯的人很有能力理清因果關系並預測行為的後果。</Logical.description>
+
+  <Creative.label>創造力</Creative.label>
+  <Creative.description>有創造力的人可以在想像事物時產生生動的細節，不管它們是否存在。</Creative.description>
+
+  <Passionate.label>激情</Passionate.label>
+  <Passionate.description>充滿激情的人對事物的有很強烈情感，往往傾向於表達自己。</Passionate.description>
+
+  <Nostalgic.label>念舊</Nostalgic.label>
+  <Nostalgic.description>念舊的人與他們的過去和任何喚起這些回憶的東西有很強的聯系。</Nostalgic.description>
+
+  <Empathetic.label>善解人意</Empathetic.label>
+  <Empathetic.description>一個善解人意的人能把自己變成別人肚子裡的蛔蟲並理解他人的感受。</Empathetic.description>
+
+  <Competitive.label>競爭心</Competitive.label>
+  <Competitive.description>對於一個有競爭心重的人來說，僅僅自己成功是不夠的，其他人必須失敗。</Competitive.description>
+
+  <Polite.label>禮貌</Polite.label>
+  <Polite.description>有禮貌的人很文雅，盡量不冒犯別人。</Polite.description>
+
+  <Cool.label>時髦</Cool.label>
+  <Cool.description>那些“時髦”的人更前衛、獨特、有趣，人們更喜歡他們。</Cool.description>
+
+  <Romantic.label>浪漫</Romantic.label>
+  <Romantic.description>一個浪漫的人喜歡長期而有意義的關系、承諾和親密的姿態。</Romantic.description>
+
+  <Thoughtful.label>遠見性</Thoughtful.label>
+  <Thoughtful.description>有遠見的人通常是擅長自我反省和自我批評的，傾向於提前進行計劃。</Thoughtful.description>
+
+  <Geeky.label>書呆子</Geeky.label>
+  <Geeky.description>一個書呆子通常智商很高，但是行為反常，在社交中也經常陷入尷尬的境地。</Geeky.description>
+
+  <Cultured.label>修養</Cultured.label>
+  <Cultured.description>一個有教養的人一般來說都比較博學，受過良好教育，溫文爾雅。</Cultured.description>
+
+  <Organized.label>條理性</Organized.label>
+  <Organized.description>一個做事有條理的人能保持一切干淨、整潔。</Organized.description>
+
+  <Naive.label>天真</Naive.label>
+  <Naive.description>天真的人是缺乏經驗、誠實並且無憂無慮的。</Naive.description>
+
+  <Upbeat.label>積極向上</Upbeat.label>
+  <Upbeat.description>積極向上的人是快樂、熱情的，在周圍人中很受歡迎。</Upbeat.description>
+
+  <Outspoken.label>直言不諱</Outspoken.label>
+  <Outspoken.description>一個直言不諱的人有很多固執的觀點，並且會毫不猶豫地與其他人分享。</Outspoken.description>
+
+  <Ambitious.label>野心</Ambitious.label>
+  <Ambitious.description>一個雄心勃勃的人會為自己設定一個巨大的、艱難的目標，並想要成功。</Ambitious.description>
+
+  <LaidBack.label>無憂無慮</LaidBack.label>
+  <LaidBack.description>無憂無慮的人不會輕易地感到壓力，也不容易感到焦慮。</LaidBack.description>
+
+  <Pure.label>純潔</Pure.label>
+  <Pure.description>純潔的人更質樸、傳統、健康。</Pure.description>
+
+  <Moralistic.label>道德主義者</Moralistic.label>
+  <Moralistic.description>道德主義者會堅持傳統的道德觀念。</Moralistic.description>
+
+  <Trusting.label>信任</Trusting.label>
+  <Trusting.description>一個信任別人的人往往會相信別人的話，看到別人的優點。</Trusting.description>
+
+  <Judgmental.label>主觀</Judgmental.label>
+  <Judgmental.description>一個主觀的人會快速而膚淺地形成對其他人的印像，受到他人行為的影響會產生更大反應。</Judgmental.description>
+
+  <Friendly.label>友善</Friendly.label>
+  <Friendly.description>友善的人是善良、寬容、好說話的。</Friendly.description>
+
+  <Optimistic.label>樂觀</Optimistic.label>
+  <Optimistic.description>樂觀的人像總是活在生命中光明的那一面。</Optimistic.description>
+
+  <Compassionate.label>同情心</Compassionate.label>
+  <Compassionate.description>富有同情心的人關心別人的困難，並盡力幫助他們。</Compassionate.description>
+
+  <Generous.label>慷慨</Generous.label>
+  <Generous.description>慷慨的人更不關心擁有的東西，更願意把它們送給別人。</Generous.description>
+
+
+</LanguageData>

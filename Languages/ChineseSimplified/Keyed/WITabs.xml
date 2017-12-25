@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- WITab titles -->
+  <TabPsyche>心理</TabPsyche>
+
+  <!-- WITab text -->
+  <SexualityDisabledWarning>心理学的性行为系统被你手动或者是在你的模组列表中存在一个冲突的模组而自动被禁用。请禁用其他改变殖民者性行为或社交的模组。</SexualityDisabledWarning>
+  <Sexuality>金赛量表</Sexuality>
+  <KinseyRating>金赛量值:</KinseyRating>
+  <Asexual>无性恋</Asexual>
+  <AsexualDescription>这个殖民者的性欲很低。他们没有太多的性吸引力，也不太可能参与任何亲密的事情。</AsexualDescription>
+  <Aromantic>不浪漫</Aromantic>
+  <AromanticDescription>这个殖民者有着非常低的做浪漫的事的可能。他们不太可能做出浪漫的尝试或接受求婚，但可能还是会接受爱人。</AromanticDescription>
+
+  <!-- Dialog text -->
+  <EditPsyche>开发者编辑</EditPsyche>
+  <PsycheEditor>修改{0}的人格:</PsycheEditor>
+  <PersonalityNodeWarning>你正在编辑一个殖民者的原始人格。实际的统计数据将被其他因素调整。</PersonalityNodeWarning>
+  <SexDrive>金赛量值：</SexDrive>
+  <RomanticDrive>浪漫:</RomanticDrive>
+
+</LanguageData>

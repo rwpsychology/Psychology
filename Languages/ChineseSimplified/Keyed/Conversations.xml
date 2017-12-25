@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <NumberOfShortTalks>10</NumberOfShortTalks>
+  <ShortTalk1>和[other_nameShortIndef]关于{0}有过短暂的交谈。</ShortTalk1>
+  <ShortTalk2>与[other_nameShortIndef]关于{0}聊了一会儿。</ShortTalk2>
+  <ShortTalk3>和[other_nameShortIndef]聊了点有关{0}的事。</ShortTalk3>
+  <ShortTalk4>跟[other_nameShortIndef]快速讨论了一下{0}。</ShortTalk4>
+  <ShortTalk5>和[other_nameShortIndef]快速的聊了一会{0}。</ShortTalk5>
+  <ShortTalk6>顺便和[other_nameShortIndef]聊了一下{0}。</ShortTalk6>
+  <ShortTalk7>和[other_nameShortIndef]简洁有力地评价了一下{0}。</ShortTalk7>
+  <ShortTalk8>与[other_nameShortIndef]评论了一下{0}。</ShortTalk8>
+  <ShortTalk9>跟[other_nameShortIndef]关于{0}快速的交流了一些观点。</ShortTalk9>
+  <ShortTalk10>与[other_nameShortIndef]关于{0}达成共识。</ShortTalk10>
+
+  <NumberOfNormalTalks>12</NumberOfNormalTalks>
+  <NormalTalk1>和[other_nameShortIndef]谈及{0}。</NormalTalk1>
+  <NormalTalk2>与[other_nameShortIndef]关于{0}进行了一次讨论。</NormalTalk2>
+  <NormalTalk3>和[other_nameShortIndef]讨论{0}。</NormalTalk3>
+  <NormalTalk4>跟[other_nameShortIndef]交换关于{0}的想法。</NormalTalk4>
+  <NormalTalk5>跟[other_nameShortIndef]关于{0}展开交流。</NormalTalk5>
+  <NormalTalk6>和[other_nameShortIndef]谈论关于{0}的想法。</NormalTalk6>
+  <NormalTalk7>与[other_nameShortIndef]关于{0}的讨论开始了。</NormalTalk7>
+  <NormalTalk8>同意[other_nameShortIndef]关于{0}的观点。</NormalTalk8>
+  <NormalTalk9>和[other_nameShortIndef]分享关于{0}的想法。</NormalTalk9>
+  <NormalTalk10>领悟到[other_nameShortIndef]关于{0}的想法。</NormalTalk10>
+  <NormalTalk11>跟[other_nameShortIndef]关于{0}产生了争执。</NormalTalk11>
+  <NormalTalk12>向[other_nameShortIndef]咨询{0}的事。</NormalTalk12>
+
+  <NumberOfLongTalks>8</NumberOfLongTalks>
+  <LongTalk1>与[other_nameShortIndef]进行深入的关于{0}的交流。</LongTalk1>
+  <LongTalk2>与[other_nameShortIndef]进行了一次关于{0}的长时间交流。</LongTalk2>
+  <LongTalk3>和[other_nameShortIndef]有关{0}谈了一会。</LongTalk3>
+  <LongTalk4>同[other_nameShortIndef]有关{0}做了深入的交流。</LongTalk4>
+  <LongTalk5>向{[other_nameShortIndef]广泛咨询有关{0}的问题。</LongTalk5>
+  <LongTalk6>完全理解[other_nameShortIndef]对于{0}的想法。</LongTalk6>
+  <LongTalk7>共享[other_nameShortIndef]的关于{0}的深刻想法</LongTalk7>
+  <LongTalk8>与[other_nameShortIndef]关于{0}进行了长时间的辩论。</LongTalk8>
+
+  <NumberOfEpicTalks>6</NumberOfEpicTalks>
+  <EpicTalk1>和[other_nameShortIndef]有关{0}进行了长时间的商讨。</EpicTalk1>
+  <EpicTalk2>与[other_nameShortIndef]有关{0}进行没完没了的谈话。</EpicTalk2>
+  <EpicTalk3>跟[other_nameShortIndef]在{0}的问题上聊了很长时间。</EpicTalk3>
+  <EpicTalk4>和[other_nameShortIndef]有关{0}争论了很长时间。</EpicTalk4>
+  <EpicTalk5>和[other_nameShortIndef]反反复复地讨论{0}。</EpicTalk5>
+  <EpicTalk6>对[other_nameShortIndef]发泄对{0}的不满长达几个小时。</EpicTalk6>
+
+</LanguageData>

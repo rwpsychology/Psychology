@@ -32,7 +32,7 @@ namespace Psychology.Harmony
             (from c in worker.Map.mapPawns.FreeColonistsSpawned
              where c.relations.OpinionOf(__instance.Corpse.InnerPawn) >= 20
              select c).TryRandomElementByWeight((c) => Mathf.Max(0f, c.relations.OpinionOf(__instance.Corpse.InnerPawn) - ((c as PsychologyPawn) != null ? 100f * (1f - (c as PsychologyPawn).psyche.GetPersonalityRating(PersonalityNodeDefOf.Nostalgic)) : 0f)), out planner);
-            if(planner != null)
+            if(planner != null && __instance.Corpse.InnerPawn is PsychologyPawn && !(__instance.Corpse.InnerPawn as PsychologyPawn).beenBuried)
             {
                 PsychologyPawn realPlanner = planner as PsychologyPawn;
                 Func<int, float> timeAssignmentFactor = delegate(int h)
@@ -63,6 +63,7 @@ namespace Psychology.Harmony
                     planFuneral.grave = __instance;
                     planFuneral.spot = __instance.Position;
                     planner.health.AddHediff(planFuneral);
+                    (__instance.Corpse.InnerPawn as PsychologyPawn).beenBuried = true;
                 }
             }
         }
