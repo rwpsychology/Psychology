@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-<Anxiety.label>不安神経症</Anxiety.label>
-<Anxiety.Stages.0.label>治療済み</Anxiety.Stages.0.label>
-<Anxiety.Stages.1.label>微細</Anxiety.Stages.1.label>
-<Anxiety.Stages.2.label>中等</Anxiety.Stages.2.label>
-<Anxiety.Stages.3.label>中等</Anxiety.Stages.3.label>
-<Anxiety.Stages.4.label>重度</Anxiety.Stages.4.label>
-<Anxiety.Stages.5.label>深刻</Anxiety.Stages.5.label>
+  <Anxiety.label>不安神経症</Anxiety.label>
+  <Anxiety.Stages.0.label>治療済み</Anxiety.Stages.0.label>
+  <Anxiety.Stages.1.label>微細</Anxiety.Stages.1.label>
+  <Anxiety.Stages.2.label>中等</Anxiety.Stages.2.label>
+  <Anxiety.Stages.3.label>中等</Anxiety.Stages.3.label>
+  <Anxiety.Stages.4.label>重度</Anxiety.Stages.4.label>
+  <Anxiety.Stages.5.label>深刻</Anxiety.Stages.5.label>
 
-<RecoveringPyromaniac.label>回復中の放火魔</RecoveringPyromaniac.label>
+  <RecoveringPyromaniac.label>回復中の放火魔</RecoveringPyromaniac.label>
 
-<DrugFree.label>しらふの状態</DrugFree.label>
+  <DrugFree.label>しらふの状態</DrugFree.label>
 
-<Antidepressants.label>抗鬱薬</Antidepressants.label>
+  <Antidepressants.label>抗鬱薬</Antidepressants.label>
 
-<SleepingPills.label>睡眠薬</SleepingPills.label>
+  <SleepingPills.label>睡眠薬</SleepingPills.label>
 
 </LanguageData>
