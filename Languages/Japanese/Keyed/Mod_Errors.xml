@@ -4,5 +4,6 @@
 	<KinseyDisable>ロマンス・性別に影響するモッドを探知したため、キンゼイ指標を無効化します。</KinseyDisable>
 	<KinseyDetourDisable>適合性を保つため、いくつかの特徴が必要とするメソッドの迂回を無効化します。問題の特徴の共通性をゼロに設定します。</KinseyDetourDisable>
 	<MedicalDetourDisable>アセンブリの医療・手術モッドを探知したため、医療メソッドの迂回を無効化します。相反するモッドが「Less Arbitrary Surgery」でない場合、「お人好しすぎる」特徴の機能は少し抜かれます。</MedicalDetourDisable>
+	<DuplicateDefLabel>{0}の PersonalityNodeDef のラベルが重複しています。翻訳に修正が必要です。この件についてはご報告をよろしくお願いします。</DuplicateDefLabel>
   
 </LanguageData>
