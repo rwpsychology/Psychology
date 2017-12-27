@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<TreatPyromania.label>放火癖を治療</TreatPyromania.label>
+<TreatPyromania.description>放火魔の疾患を治療し、復旧を支援する。</TreatPyromania.description>
+<TreatPyromania.jobString>放火魔を治療している</TreatPyromania.jobString>
+
+<TreatChemicalInterest.label>ドラッグへの関心を治療</TreatChemicalInterest.label>
+<TreatChemicalInterest.description>ドラッグ通用者にしらふでいられる自信をつける。</TreatChemicalInterest.description>
+<TreatChemicalInterest.jobString>ドラッグ通用者を治療している</TreatChemicalInterest.jobString>
+
+<TreatChemicalFascination.label>ドラッグ中毒を治療</TreatChemicalFascination.label>
+<TreatChemicalFascination.description>ドラッグ中毒者にしらふでいられる自信をつける。</TreatChemicalFascination.description>
+<TreatChemicalFascination.jobString>ドラッグ中毒者を治療している</TreatChemicalFascination.jobString>
+
+<TreatDepression.label>鬱病を治療</TreatDepression.label>
+<TreatDepression.description>患者の気持ちの整理を支援する。</TreatDepression.description>
+<TreatDepression.jobString>鬱病を治療している</TreatDepression.jobString>
+
+<TreatInsomnia.label>不眠症を治療</TreatInsomnia.label>
+<TreatInsomnia.description>不眠症の患者の熟睡を支援する。</TreatInsomnia.description>
+<TreatInsomnia.jobString>不眠症を治療している</TreatInsomnia.jobString>
+
+</LanguageData>

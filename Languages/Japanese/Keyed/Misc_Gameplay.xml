@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Lord job reports -->
+  <LordReportAttendingElection>投票している</LordReportAttendingElection>
+  <LordReportVisitingMayor>リーダーに相談している</LordReportVisitingMayor>
+  <LordReportHangingOut>誰かと一緒にくつろいでいる</LordReportHangingOut>
+	<LordReportDate>デートしている</LordReportDate>
+	<LordReportAttendingFuneral>お葬式に出席している</LordReportAttendingFuneral>
+
+  <!-- Miscellaneous thought log text -->
+  <ConversationStage>会話 -</ConversationStage>
+  <ConversationEnd>会話を終わらせた　</ConversationEnd>
+  <ConversationEnded>会話を終わらせた</ConversationEnded>
+  <Complained>リーダーに文句を伝えた</Complained>
+  <Supported>リーダーを応援した</Supported>
+  <HadMeeting>入植者とミーティングした</HadMeeting>
+
+  <!-- Node descriptions -->
+  <PsycheNot>無</PsycheNot>
+  <PsycheSlightly>若干</PsycheSlightly>
+  <PsycheLess>わりと</PsycheLess>
+  <PsycheMore>かなり</PsycheMore>
+  <PsycheVery>とても</PsycheVery>
+  <PsycheExtremely>非常に</PsycheExtremely>
+
+</LanguageData>

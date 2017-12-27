@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<PrudeSeen.label>裸の目撃</PrudeSeen.label>
+<PrudeSeen.logRulesInitiator.rulesStrings.0>logentry->[other_nameShortIndef] の裸を見た。</PrudeSeen.logRulesInitiator.rulesStrings.0>
+<PrudeSeen.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef] に裸を見られた。</PrudeSeen.logRulesRecipient.rulesStrings.0>
+
+<Conversation.label>会話</Conversation.label>
+<Conversation.logRulesInitiator.rulesStrings.0>logentry->[other_nameShortIndef] に話しかけた。</Conversation.logRulesInitiator.rulesStrings.0>
+<Conversation.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef] に話しかけられた。</Conversation.logRulesRecipient.rulesStrings.0>
+
+<EndConversation.label>会話の終わり</EndConversation.label>
+<EndConversation.logRulesInitiator.rulesStrings.0>logentry->[other_nameShortIndef] との会話を終えた。</EndConversation.logRulesInitiator.rulesStrings.0>
+<EndConversation.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef] との会話が終わった。</EndConversation.logRulesRecipient.rulesStrings.0>
+
+</LanguageData>

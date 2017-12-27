@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+<HoldingConversation.label>会話</HoldingConversation.label>
+<HoldingConversation.Stages.0.label>表示していない</HoldingConversation.Stages.0.label>
+
+<Mayor.label>リーダー</Mayor.label>
+<Mayor.Stages.0.label>表示していない</Mayor.Stages.0.label>
+
+<PlannedDate.label>デートを予定</PlannedDate.label>
+<PlannedDate.Stages.0.label>表示していない</PlannedDate.Stages.0.label>
+
+<PlannedFuneral.label>お葬式を予定</PlannedFuneral.label>
+<PlannedFuneral.Stages.0.label>表示していない</PlannedFuneral.Stages.0.label>
+</LanguageData>
