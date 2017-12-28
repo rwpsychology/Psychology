@@ -5,8 +5,9 @@
 An opioid for treating addiction. Prevents users from suffering the negative effects of withdrawal from other drugs, except luciferium. Addiction causes reduced performance and occasional drug binges. Take every day. Discontinue use after withdrawal subsides.
 -->
 
-<Methadone.label>メサドン</Methadone.label>
-<Methadone.description>オピオイド系の合成鎮痛薬で薬物嗜癖の治療に使われる。ルシフェリウムを除いて、他のドラッグの離脱症状を防ぐ効果がある。依存症ができた場合は作業速度の低下とたまのドラッグ乱用が発生する。投薬は一日一回。離脱症状が消えるまで使う。</Methadone.description>
-
+  <Methadone.label>メサドン</Methadone.label>
+  <Methadone.description>オピオイド系の合成鎮痛薬で薬物嗜癖の治療に使われる。ルシフェリウムを除いて、他のドラッグの離脱症状を防ぐ効果がある。依存症ができた場合は作業速度の低下とたまのドラッグ乱用が発生する。投薬は一日一回。離脱症状が消えるまで使う。</Methadone.description>
+  <Methadone.ingestible.ingestCommandString>{0} injestCommandString</Methadone.ingestible.ingestCommandString>
+  <Methadone.ingestible.ingestReportString>{0} injestReportString</Methadone.ingestible.ingestReportString>
 
 </LanguageData>
