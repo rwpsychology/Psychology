@@ -1,211 +1,211 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-		<Confident.label>自信的</Confident.label>
-		<Confident.description>自信的な人は自尊心を持ち、あまり悩まない。</Confident.description>
+	<Confident.label>自信的</Confident.label>
+	<Confident.description>自信的な人は自尊心を持ち、あまり悩まない。</Confident.description>
 
-		<Experimental.label>実験的</Experimental.label>
-		<Experimental.description>実験的な人は驚きを楽しみ、何でも一度試したがるゆえ、さまざまな経験を持つ。</Experimental.description>
+	<Experimental.label>実験的</Experimental.label>
+	<Experimental.description>実験的な人は驚きを楽しみ、何でも一度試したがるゆえ、さまざまな経験を持つ。</Experimental.description>
 
-		<Intelligent.label>知的</Intelligent.label>
-		<Intelligent.description>頭いい。</Intelligent.description>
+	<Intelligent.label>知的</Intelligent.label>
+	<Intelligent.description>頭いい。</Intelligent.description>
 
-		<Extroverted.label>外向的</Extroverted.label>
-		<Extroverted.description>外向的な人は出かけることと新しい経験を好み、活発な性格である。</Extroverted.description>
+	<Extroverted.label>外向的</Extroverted.label>
+	<Extroverted.description>外向的な人は出かけることと新しい経験を好み、活発な性格である。</Extroverted.description>
 
-		<Emotional.label>感情的</Emotional.label>
-		<Emotional.description>感情的な人は気持ちを感じる能力が発達している。</Emotional.description>
-		
-		<Independent.label>個性的</Independent.label>
-		<Independent.description>個性的な人は孤独を恐れないし、他人に依存しない。</Independent.description>
-		<Independent.conversationTopic>孤独</Independent.conversationTopic>
-		<Independent.platformIssueHigh>このコロニーは役に立たない人が多すぎる。</Independent.platformIssueHigh>
-		<Independent.platformIssueLow>私たちは集まることで強くなる。</Independent.platformIssueLow>
-		
-		<Aggressive.label>積極的</Aggressive.label>
-		<Aggressive.description>積極的な人は、正直でぶっきらぼうで、 思い通りにいかない時は好戦的にもなる。</Aggressive.description>
-		<Aggressive.conversationTopic>意見の相違</Aggressive.conversationTopic>
-		<Aggressive.platformIssueHigh>私たちは言論の自由はもっと支持すべきだ。</Aggressive.platformIssueHigh>
-		<Aggressive.platformIssueLow>私たちにはもっと思いやりが必要です。</Aggressive.platformIssueLow>
-		
-		<Adventurous.label>冒険心が強い</Adventurous.label>
-		<Adventurous.description>冒険心のある人は新しい経験と知識を好み、新しい場所に行きたがる。</Adventurous.description>
-		<Adventurous.conversationTopic>いつかやりたいこと</Adventurous.conversationTopic>
-		<Adventurous.platformIssueHigh>ここの人たちは機会がまだ足りていない。</Adventurous.platformIssueHigh>
-		<Adventurous.platformIssueLow>私たちのコロニーは必要なものが全部揃っている。</Adventurous.platformIssueLow>
+	<Emotional.label>感情的</Emotional.label>
+	<Emotional.description>感情的な人は気持ちを感じる能力が発達している。</Emotional.description>
+	
+	<Independent.label>個性的</Independent.label>
+	<Independent.description>個性的な人は孤独を恐れないし、他人に依存しない。</Independent.description>
+	<Independent.conversationTopic>孤独</Independent.conversationTopic>
+	<Independent.platformIssueHigh>このコロニーは役に立たない人が多すぎる。</Independent.platformIssueHigh>
+	<Independent.platformIssueLow>私たちは集まることで強くなる。</Independent.platformIssueLow>
+	
+	<Aggressive.label>積極的</Aggressive.label>
+	<Aggressive.description>積極的な人は、正直でぶっきらぼうで、 思い通りにいかない時は好戦的にもなる。</Aggressive.description>
+	<Aggressive.conversationTopic>意見の相違</Aggressive.conversationTopic>
+	<Aggressive.platformIssueHigh>私たちは言論の自由はもっと支持すべきだ。</Aggressive.platformIssueHigh>
+	<Aggressive.platformIssueLow>私たちにはもっと思いやりが必要です。</Aggressive.platformIssueLow>
+	
+	<Adventurous.label>冒険心が強い</Adventurous.label>
+	<Adventurous.description>冒険心のある人は新しい経験と知識を好み、新しい場所に行きたがる。</Adventurous.description>
+	<Adventurous.conversationTopic>いつかやりたいこと</Adventurous.conversationTopic>
+	<Adventurous.platformIssueHigh>ここの人たちは機会がまだ足りていない。</Adventurous.platformIssueHigh>
+	<Adventurous.platformIssueLow>私たちのコロニーは必要なものが全部揃っている。</Adventurous.platformIssueLow>
 
-		<DrugFriendly.label>ドラッグに寛容</DrugFriendly.label>
-		<DrugFriendly.description>ドラッグに寛容な人はドラッグを社会問題化しないし、避けようとしない。</DrugFriendly.description>
-		<DrugFriendly.conversationTopic>ドラッグ</DrugFriendly.conversationTopic>
-		<DrugFriendly.platformIssueHigh>ここのドラッグに対するルールは厳しすぎる。</DrugFriendly.platformIssueHigh>
-		<DrugFriendly.platformIssueLow>ここのドラッグに対するルールは緩すぎる。</DrugFriendly.platformIssueLow>
+	<DrugFriendly.label>ドラッグに寛容</DrugFriendly.label>
+	<DrugFriendly.description>ドラッグに寛容な人はドラッグを社会問題化しないし、避けようとしない。</DrugFriendly.description>
+	<DrugFriendly.conversationTopic>ドラッグ</DrugFriendly.conversationTopic>
+	<DrugFriendly.platformIssueHigh>ここのドラッグに対するルールは厳しすぎる。</DrugFriendly.platformIssueHigh>
+	<DrugFriendly.platformIssueLow>ここのドラッグに対するルールは緩すぎる。</DrugFriendly.platformIssueLow>
 
-		<Spontaneous.label>自発的</Spontaneous.label>
-		<Spontaneous.description>自発的な人は衝動的であり、人を驚かすのを好む。</Spontaneous.description>
-		<Spontaneous.conversationTopic>いたずら</Spontaneous.conversationTopic>
-		<Spontaneous.platformIssueHigh>リーダーとして、多くのことを成し遂げる。</Spontaneous.platformIssueHigh>
-		<Spontaneous.platformIssueLow>リーダーとして、私たちの問題は慎重に取り扱う。</Spontaneous.platformIssueLow>
+	<Spontaneous.label>自発的</Spontaneous.label>
+	<Spontaneous.description>自発的な人は衝動的であり、人を驚かすのを好む。</Spontaneous.description>
+	<Spontaneous.conversationTopic>いたずら</Spontaneous.conversationTopic>
+	<Spontaneous.platformIssueHigh>リーダーとして、多くのことを成し遂げる。</Spontaneous.platformIssueHigh>
+	<Spontaneous.platformIssueLow>リーダーとして、私たちの問題は慎重に取り扱う。</Spontaneous.platformIssueLow>
 
-		<Rational.label>合理的</Rational.label>
-		<Rational.description>合理的な人は、物事の事実を客観的な観点から考える能力が高い。</Rational.description>
-		<Rational.conversationTopic>哲学</Rational.conversationTopic>
-		<Rational.platformIssueHigh>問題への取り組み方は事実に基いていないとだめだ。</Rational.platformIssueHigh>
-		<Rational.platformIssueLow>歴史は勝者によって書かれる。</Rational.platformIssueLow>
+	<Rational.label>合理的</Rational.label>
+	<Rational.description>合理的な人は、物事の事実を客観的な観点から考える能力が高い。</Rational.description>
+	<Rational.conversationTopic>哲学</Rational.conversationTopic>
+	<Rational.platformIssueHigh>問題への取り組み方は事実に基いていないとだめだ。</Rational.platformIssueHigh>
+	<Rational.platformIssueLow>歴史は勝者によって書かれる。</Rational.platformIssueLow>
 
-		<Logical.label>論理的</Logical.label>
-		<Logical.description>論理的な人は、因果関係を結びつけ、行動の結果を予測する能力が高い。</Logical.description>
-		<Logical.conversationTopic>発明の過程</Logical.conversationTopic>
-		<Logical.platformIssueHigh>我々の問題はどれも解決可能だ。</Logical.platformIssueHigh>
-		<Logical.platformIssueLow>我々の問題は私が解決して見せよう。</Logical.platformIssueLow>
+	<Logical.label>論理的</Logical.label>
+	<Logical.description>論理的な人は、因果関係を結びつけ、行動の結果を予測する能力が高い。</Logical.description>
+	<Logical.conversationTopic>発明の過程</Logical.conversationTopic>
+	<Logical.platformIssueHigh>我々の問題はどれも解決可能だ。</Logical.platformIssueHigh>
+	<Logical.platformIssueLow>我々の問題は私が解決して見せよう。</Logical.platformIssueLow>
 
-		<Creative.label>クリエイティブ</Creative.label>
-		<Creative.description>クリエイティブな人は、実在するかどうかにかかわらず、物事を細部まではっきりと想像できる。</Creative.description>
-		<Creative.conversationTopic>文学とアート</Creative.conversationTopic>
-		<Creative.platformIssueHigh>私は革命的な解決を提供できる。</Creative.platformIssueHigh>
-		<Creative.platformIssueLow>まずは事柄の現実を見なくてはならない。</Creative.platformIssueLow>
+	<Creative.label>クリエイティブ</Creative.label>
+	<Creative.description>クリエイティブな人は、実在するかどうかにかかわらず、物事を細部まではっきりと想像できる。</Creative.description>
+	<Creative.conversationTopic>文学とアート</Creative.conversationTopic>
+	<Creative.platformIssueHigh>私は革命的な解決を提供できる。</Creative.platformIssueHigh>
+	<Creative.platformIssueLow>まずは事柄の現実を見なくてはならない。</Creative.platformIssueLow>
 
-		<Passionate.label>情熱的</Passionate.label>
-		<Passionate.description>情熱的な人は物事に対し熱い思いを抱き、大げさを使いがちだ。</Passionate.description>
-		<Passionate.conversationTopic>自分の好き嫌い</Passionate.conversationTopic>
-		<Passionate.platformIssueHigh>一生懸命務めたいと思います。</Passionate.platformIssueHigh>
-		<Passionate.platformIssueLow>私は必要なことをする。</Passionate.platformIssueLow>
+	<Passionate.label>情熱的</Passionate.label>
+	<Passionate.description>情熱的な人は物事に対し熱い思いを抱き、大げさを使いがちだ。</Passionate.description>
+	<Passionate.conversationTopic>自分の好き嫌い</Passionate.conversationTopic>
+	<Passionate.platformIssueHigh>一生懸命務めたいと思います。</Passionate.platformIssueHigh>
+	<Passionate.platformIssueLow>私は必要なことをする。</Passionate.platformIssueLow>
 
-		<Nostalgic.label>懐古的</Nostalgic.label>
-		<Nostalgic.description>懐古する人は過去と過去を思い出させる物事に強い関心を抱いている。</Nostalgic.description>
-		<Nostalgic.conversationTopic>古き良き時代</Nostalgic.conversationTopic>
-		<Nostalgic.platformIssueHigh>かつての豊かな暮らしを取り戻そう。</Nostalgic.platformIssueHigh>
-		<Nostalgic.platformIssueLow>明るい未来は作れる。</Nostalgic.platformIssueLow>
+	<Nostalgic.label>懐古的</Nostalgic.label>
+	<Nostalgic.description>懐古する人は過去と過去を思い出させる物事に強い関心を抱いている。</Nostalgic.description>
+	<Nostalgic.conversationTopic>古き良き時代</Nostalgic.conversationTopic>
+	<Nostalgic.platformIssueHigh>かつての豊かな暮らしを取り戻そう。</Nostalgic.platformIssueHigh>
+	<Nostalgic.platformIssueLow>明るい未来は作れる。</Nostalgic.platformIssueLow>
 
-		<Empathetic.label>共感的</Empathetic.label>
-		<Empathetic.description>共感的な人は他人の視点や気持ちを理解することができる。</Empathetic.description>
-		<Empathetic.conversationTopic>お互いの生活</Empathetic.conversationTopic>
-		<Empathetic.platformIssueHigh>リーダーは入植者の生活を豊かにする義務がある。</Empathetic.platformIssueHigh>
-		<Empathetic.platformIssueLow>リーダーは入植者の私事に立ち入るべきではない。</Empathetic.platformIssueLow>
+	<Empathetic.label>共感的</Empathetic.label>
+	<Empathetic.description>共感的な人は他人の視点や気持ちを理解することができる。</Empathetic.description>
+	<Empathetic.conversationTopic>お互いの生活</Empathetic.conversationTopic>
+	<Empathetic.platformIssueHigh>リーダーは入植者の生活を豊かにする義務がある。</Empathetic.platformIssueHigh>
+	<Empathetic.platformIssueLow>リーダーは入植者の私事に立ち入るべきではない。</Empathetic.platformIssueLow>
 
-		<Competitive.label>競争的</Competitive.label>
-		<Competitive.description>競争的な人にとって勝利を掴み、敗北者の上に立つことが大切だ。</Competitive.description>
-		<Competitive.conversationTopic>大成</Competitive.conversationTopic>
-		<Competitive.platformIssueHigh>我々のコロニーではイノベーターは報われるべきだ。</Competitive.platformIssueHigh>
-		<Competitive.platformIssueLow>コロニーの皆に成功するチャンスを。</Competitive.platformIssueLow>
+	<Competitive.label>競争的</Competitive.label>
+	<Competitive.description>競争的な人にとって勝利を掴み、敗北者の上に立つことが大切だ。</Competitive.description>
+	<Competitive.conversationTopic>大成</Competitive.conversationTopic>
+	<Competitive.platformIssueHigh>我々のコロニーではイノベーターは報われるべきだ。</Competitive.platformIssueHigh>
+	<Competitive.platformIssueLow>コロニーの皆に成功するチャンスを。</Competitive.platformIssueLow>
 
-		<Polite.label>礼儀正しい</Polite.label>
-		<Polite.description>礼儀正しい人は丁寧で、他の人を傷つけないように努力している。</Polite.description>
-		<Polite.conversationTopic>礼儀</Polite.conversationTopic>
-		<Polite.platformIssueHigh>先人の方々への敬意は大切です。</Polite.platformIssueHigh>
-		<Polite.platformIssueLow>我々は実績によって評価されるべきだ。</Polite.platformIssueLow>
+	<Polite.label>礼儀正しい</Polite.label>
+	<Polite.description>礼儀正しい人は丁寧で、他の人を傷つけないように努力している。</Polite.description>
+	<Polite.conversationTopic>礼儀</Polite.conversationTopic>
+	<Polite.platformIssueHigh>先人の方々への敬意は大切です。</Polite.platformIssueHigh>
+	<Polite.platformIssueLow>我々は実績によって評価されるべきだ。</Polite.platformIssueLow>
 
-		<Cool.label>かっこいい</Cool.label>
-		<Cool.description>かっこいい人は度胸があり、ユニークで面白いため、人々に好かれやすい。</Cool.description>
-		<Cool.conversationTopic>グリッターワールド内での流行り</Cool.conversationTopic>
-		<Cool.platformIssueHigh>一番顔が利く人に投票しよう。</Cool.platformIssueHigh>
-		<Cool.platformIssueLow>最良の仕事をする人に投票しよう。</Cool.platformIssueLow>
+	<Cool.label>かっこいい</Cool.label>
+	<Cool.description>かっこいい人は度胸があり、ユニークで面白いため、人々に好かれやすい。</Cool.description>
+	<Cool.conversationTopic>グリッターワールド内での流行り</Cool.conversationTopic>
+	<Cool.platformIssueHigh>一番顔が利く人に投票しよう。</Cool.platformIssueHigh>
+	<Cool.platformIssueLow>最良の仕事をする人に投票しよう。</Cool.platformIssueLow>
 
-		<Romantic.label>ロマンチック</Romantic.label>
-		<Romantic.description>ロマンチストは長期的で意義のある関係、信頼し合こと、そして親密なしぐさを好む。</Romantic.description>
-		<Romantic.conversationTopic>人付き合い</Romantic.conversationTopic>
-		<Romantic.platformIssueHigh>この地位は真摯に受け止めるつもりだ。</Romantic.platformIssueHigh>
-		<Romantic.platformIssueLow>私が当選しても変われはしない。</Romantic.platformIssueLow>
+	<Romantic.label>ロマンチック</Romantic.label>
+	<Romantic.description>ロマンチストは長期的で意義のある関係、信頼し合こと、そして親密なしぐさを好む。</Romantic.description>
+	<Romantic.conversationTopic>人付き合い</Romantic.conversationTopic>
+	<Romantic.platformIssueHigh>この地位は真摯に受け止めるつもりだ。</Romantic.platformIssueHigh>
+	<Romantic.platformIssueLow>私が当選しても変われはしない。</Romantic.platformIssueLow>
 
-		<Thoughtful.label>思慮深い</Thoughtful.label>
-		<Thoughtful.description>思慮深い人は内省的で批判的に考え、将来に備える。</Thoughtful.description>
-		<Thoughtful.conversationTopic>将来</Thoughtful.conversationTopic>
-		<Thoughtful.platformIssueHigh>将来のためのプランが必要だ。</Thoughtful.platformIssueHigh>
-		<Thoughtful.platformIssueLow>今起こっていることに対処する必要がある。</Thoughtful.platformIssueLow>
+	<Thoughtful.label>思慮深い</Thoughtful.label>
+	<Thoughtful.description>思慮深い人は内省的で批判的に考え、将来に備える。</Thoughtful.description>
+	<Thoughtful.conversationTopic>将来</Thoughtful.conversationTopic>
+	<Thoughtful.platformIssueHigh>将来のためのプランが必要だ。</Thoughtful.platformIssueHigh>
+	<Thoughtful.platformIssueLow>今起こっていることに対処する必要がある。</Thoughtful.platformIssueLow>
 
-		<Geeky.label>オタクらしい</Geeky.label>
-		<Geeky.description>オタクと呼ばれる人はよく知的でありながら変わったところを持ち、人付き合いが下手だ。</Geeky.description>
-		<Geeky.conversationTopic>趣味</Geeky.conversationTopic>
-		<Geeky.platformIssueHigh>人間には「可能性」という、今を超える力がある。</Geeky.platformIssueHigh>
-		<Geeky.platformIssueLow>実用的なことに集中しよう。</Geeky.platformIssueLow>
+	<Geeky.label>オタクらしい</Geeky.label>
+	<Geeky.description>オタクと呼ばれる人はよく知的でありながら変わったところを持ち、人付き合いが下手だ。</Geeky.description>
+	<Geeky.conversationTopic>趣味</Geeky.conversationTopic>
+	<Geeky.platformIssueHigh>人間には「可能性」という、今を超える力がある。</Geeky.platformIssueHigh>
+	<Geeky.platformIssueLow>実用的なことに集中しよう。</Geeky.platformIssueLow>
 
-		<Cultured.label>教養ある</Cultured.label>
-		<Cultured.description>教養のある人は博覧多識で洗練されている。</Cultured.description>
-		<Cultured.conversationTopic>芸術と文学</Cultured.conversationTopic>
-		<Cultured.platformIssueHigh>歴史を忘れた者が歴史をくり返す。</Cultured.platformIssueHigh>
-		<Cultured.platformIssueLow>私は皆と同じ、普通の人だ。</Cultured.platformIssueLow>
+	<Cultured.label>教養ある</Cultured.label>
+	<Cultured.description>教養のある人は博覧多識で洗練されている。</Cultured.description>
+	<Cultured.conversationTopic>芸術と文学</Cultured.conversationTopic>
+	<Cultured.platformIssueHigh>歴史を忘れた者が歴史をくり返す。</Cultured.platformIssueHigh>
+	<Cultured.platformIssueLow>私は皆と同じ、普通の人だ。</Cultured.platformIssueLow>
 
-		<Organized.label>段取りがいい</Organized.label>
-		<Organized.description>段取りがいい人は部屋や身の回りを整理整頓し、「断捨離」をする。</Organized.description>
-		<Organized.conversationTopic>清潔</Organized.conversationTopic>
-		<Organized.platformIssueHigh>解決法とはたいてい、シンプルなほどいいのだ。</Organized.platformIssueHigh>
-		<Organized.platformIssueLow>我々が直面する問題は人生と同様、複雑だ。</Organized.platformIssueLow>
+	<Organized.label>段取りがいい</Organized.label>
+	<Organized.description>段取りがいい人は部屋や身の回りを整理整頓し、「断捨離」をする。</Organized.description>
+	<Organized.conversationTopic>清潔</Organized.conversationTopic>
+	<Organized.platformIssueHigh>解決法とはたいてい、シンプルなほどいいのだ。</Organized.platformIssueHigh>
+	<Organized.platformIssueLow>我々が直面する問題は人生と同様、複雑だ。</Organized.platformIssueLow>
 
-		<Naive.label>うぶ</Naive.label>
-		<Naive.description>うぶな人は経験が少なく、誠実で純真だ。</Naive.description>
-		<Naive.conversationTopic>理想</Naive.conversationTopic>
-		<Naive.platformIssueHigh>私には理想への献身があるから、いいリーダーになれる。</Naive.platformIssueHigh>
-		<Naive.platformIssueLow>私には経験とノーハウがあるから、いいリーダーになれる。</Naive.platformIssueLow>
+	<Naive.label>うぶ</Naive.label>
+	<Naive.description>うぶな人は経験が少なく、誠実で純真だ。</Naive.description>
+	<Naive.conversationTopic>理想</Naive.conversationTopic>
+	<Naive.platformIssueHigh>私には理想への献身があるから、いいリーダーになれる。</Naive.platformIssueHigh>
+	<Naive.platformIssueLow>私には経験とノーハウがあるから、いいリーダーになれる。</Naive.platformIssueLow>
 
-		<Upbeat.label>楽観的</Upbeat.label>
-		<Upbeat.description>楽観的な人はいつも楽しそうで、親切で、愉快な仲間だ。</Upbeat.description>
-		<Upbeat.conversationTopic>人生</Upbeat.conversationTopic>
-		<Upbeat.platformIssueHigh>この道、まっすぐ。</Upbeat.platformIssueHigh>
-		<Upbeat.platformIssueLow>このままではコロニーが滅びる。</Upbeat.platformIssueLow>
+	<Upbeat.label>楽観的</Upbeat.label>
+	<Upbeat.description>楽観的な人はいつも楽しそうで、親切で、愉快な仲間だ。</Upbeat.description>
+	<Upbeat.conversationTopic>人生</Upbeat.conversationTopic>
+	<Upbeat.platformIssueHigh>この道、まっすぐ。</Upbeat.platformIssueHigh>
+	<Upbeat.platformIssueLow>このままではコロニーが滅びる。</Upbeat.platformIssueLow>
 
-		<Outspoken.label>率直</Outspoken.label>
-		<Outspoken.description>率直な人は強い意見をさまざま持ち、意見をちゅうちょなく共有する。</Outspoken.description>
-		<Outspoken.conversationTopic>政治</Outspoken.conversationTopic>
-		<Outspoken.platformIssueHigh>このコロニーには強いリーダーが必要だ。</Outspoken.platformIssueHigh>
-		<Outspoken.platformIssueLow>心配を聞いてくれるリーダーが必要です。</Outspoken.platformIssueLow>
+	<Outspoken.label>率直</Outspoken.label>
+	<Outspoken.description>率直な人は強い意見をさまざま持ち、意見をちゅうちょなく共有する。</Outspoken.description>
+	<Outspoken.conversationTopic>政治</Outspoken.conversationTopic>
+	<Outspoken.platformIssueHigh>このコロニーには強いリーダーが必要だ。</Outspoken.platformIssueHigh>
+	<Outspoken.platformIssueLow>心配を聞いてくれるリーダーが必要です。</Outspoken.platformIssueLow>
 
-		<Ambitious.label>野望的</Ambitious.label>
-		<Ambitious.description>野望的な人は壮大で難しい目標を設定し、成功を望む。</Ambitious.description>
-		<Ambitious.conversationTopic>希望と夢</Ambitious.conversationTopic>
-		<Ambitious.platformIssueHigh>夢は大きく持とう。</Ambitious.platformIssueHigh>
-		<Ambitious.platformIssueLow>現実を見ていこう。</Ambitious.platformIssueLow>
+	<Ambitious.label>野望的</Ambitious.label>
+	<Ambitious.description>野望的な人は壮大で難しい目標を設定し、成功を望む。</Ambitious.description>
+	<Ambitious.conversationTopic>希望と夢</Ambitious.conversationTopic>
+	<Ambitious.platformIssueHigh>夢は大きく持とう。</Ambitious.platformIssueHigh>
+	<Ambitious.platformIssueLow>現実を見ていこう。</Ambitious.platformIssueLow>
 
-		<LaidBack.label>のんき</LaidBack.label>
-		<LaidBack.description>のんきな人はストレスがたまりにくく、ささいな心配をあまりしない。</LaidBack.description>
-		<LaidBack.conversationTopic>苦難</LaidBack.conversationTopic>
-		<LaidBack.platformIssueHigh>ストレスに耐えられるリーダーが必要だ。</LaidBack.platformIssueHigh>
-		<LaidBack.platformIssueLow>実績を気にするリーダーが必要だ。</LaidBack.platformIssueLow>
+	<LaidBack.label>のんき</LaidBack.label>
+	<LaidBack.description>のんきな人はストレスがたまりにくく、ささいな心配をあまりしない。</LaidBack.description>
+	<LaidBack.conversationTopic>苦難</LaidBack.conversationTopic>
+	<LaidBack.platformIssueHigh>ストレスに耐えられるリーダーが必要だ。</LaidBack.platformIssueHigh>
+	<LaidBack.platformIssueLow>実績を気にするリーダーが必要だ。</LaidBack.platformIssueLow>
 
-		<Pure.label>純粋</Pure.label>
-		<Pure.description>純粋な人は誠実で、伝統的で、兼山であるように努める。</Pure.description>
-		<Pure.conversationTopic>宗教と精神性</Pure.conversationTopic>
-		<Pure.platformIssueHigh>伝統的な価値観を尊重しよう。</Pure.platformIssueHigh>
-		<Pure.platformIssueLow>我々は進化し続ける。</Pure.platformIssueLow>
+	<Pure.label>純粋</Pure.label>
+	<Pure.description>純粋な人は誠実で、伝統的で、兼山であるように努める。</Pure.description>
+	<Pure.conversationTopic>宗教と精神性</Pure.conversationTopic>
+	<Pure.platformIssueHigh>伝統的な価値観を尊重しよう。</Pure.platformIssueHigh>
+	<Pure.platformIssueLow>我々は進化し続ける。</Pure.platformIssueLow>
 
-		<Moralistic.label>道徳的</Moralistic.label>
-		<Moralistic.description>道徳的な人は伝統的な道徳観を守っている。</Moralistic.description>
-		<Moralistic.conversationTopic>倫理</Moralistic.conversationTopic>
-		<Moralistic.platformIssueHigh>我々には正しい選択肢を選ぶ責任がある。</Moralistic.platformIssueHigh>
-		<Moralistic.platformIssueLow>正しいこととは人それぞれだ。</Moralistic.platformIssueLow>
+	<Moralistic.label>道徳的</Moralistic.label>
+	<Moralistic.description>道徳的な人は伝統的な道徳観を守っている。</Moralistic.description>
+	<Moralistic.conversationTopic>倫理</Moralistic.conversationTopic>
+	<Moralistic.platformIssueHigh>我々には正しい選択肢を選ぶ責任がある。</Moralistic.platformIssueHigh>
+	<Moralistic.platformIssueLow>正しいこととは人それぞれだ。</Moralistic.platformIssueLow>
 
-		<Trusting.label>信用深い</Trusting.label>
-		<Trusting.description>信用深い人は言われたことを素直に信じる傾向があり、人の一番良い面を重視する。</Trusting.description>
-		<Trusting.conversationTopic>人間の本質</Trusting.conversationTopic>
-		<Trusting.platformIssueHigh>このコロニーの入植者たちはさまざまな背景を持っている。</Trusting.platformIssueHigh>
-		<Trusting.platformIssueLow>このコロニーに暮らすのは真人間だけでいい。</Trusting.platformIssueLow>
+	<Trusting.label>信用深い</Trusting.label>
+	<Trusting.description>信用深い人は言われたことを素直に信じる傾向があり、人の一番良い面を重視する。</Trusting.description>
+	<Trusting.conversationTopic>人間の本質</Trusting.conversationTopic>
+	<Trusting.platformIssueHigh>このコロニーの入植者たちはさまざまな背景を持っている。</Trusting.platformIssueHigh>
+	<Trusting.platformIssueLow>このコロニーに暮らすのは真人間だけでいい。</Trusting.platformIssueLow>
 
-		<Judgmental.label>批判的</Judgmental.label>
-		<Judgmental.description>批判的な人は他人をすぐ見た目で判断し、普通以上に他人の行動に影響される。。</Judgmental.description>
-		<Judgmental.conversationTopic>最新のゴシップ</Judgmental.conversationTopic>
-		<Judgmental.platformIssueHigh>このコロニーでリーダーの器は私の他にいない。</Judgmental.platformIssueHigh>
-		<Judgmental.platformIssueLow>このコロニーのリーダーに一番適しているのは私だ。</Judgmental.platformIssueLow>
+	<Judgmental.label>批判的</Judgmental.label>
+	<Judgmental.description>批判的な人は他人をすぐ見た目で判断し、普通以上に他人の行動に影響される。。</Judgmental.description>
+	<Judgmental.conversationTopic>最新のゴシップ</Judgmental.conversationTopic>
+	<Judgmental.platformIssueHigh>このコロニーでリーダーの器は私の他にいない。</Judgmental.platformIssueHigh>
+	<Judgmental.platformIssueLow>このコロニーのリーダーに一番適しているのは私だ。</Judgmental.platformIssueLow>
 
-		<Friendly.label>友好的</Friendly.label>
-		<Friendly.description>友好的な人は親切で、寛容で、話し掛けやすい。</Friendly.description>
-		<Friendly.conversationTopic>お互いのこと</Friendly.conversationTopic>
-		<Friendly.platformIssueHigh>我々は皆、仲間だ。</Friendly.platformIssueHigh>
-		<Friendly.platformIssueLow>我々は皆、生きるために必要なことをしている。</Friendly.platformIssueLow>
+	<Friendly.label>友好的</Friendly.label>
+	<Friendly.description>友好的な人は親切で、寛容で、話し掛けやすい。</Friendly.description>
+	<Friendly.conversationTopic>お互いのこと</Friendly.conversationTopic>
+	<Friendly.platformIssueHigh>我々は皆、仲間だ。</Friendly.platformIssueHigh>
+	<Friendly.platformIssueLow>我々は皆、生きるために必要なことをしている。</Friendly.platformIssueLow>
 
-		<Optimistic.label>楽観的</Optimistic.label>
-		<Optimistic.description>楽観的な人はいつも人生の明るい面を見ている。</Optimistic.description>
-		<Optimistic.conversationTopic>感情</Optimistic.conversationTopic>
-		<Optimistic.platformIssueHigh>今のコロニーは順調だけど、改善の余地はまだあるから。</Optimistic.platformIssueHigh>
-		<Optimistic.platformIssueLow>今のコロニーは困難だが、状況はまだ悪化するから。</Optimistic.platformIssueLow>
+	<Optimistic.label>楽観的</Optimistic.label>
+	<Optimistic.description>楽観的な人はいつも人生の明るい面を見ている。</Optimistic.description>
+	<Optimistic.conversationTopic>感情</Optimistic.conversationTopic>
+	<Optimistic.platformIssueHigh>今のコロニーは順調だけど、改善の余地はまだあるから。</Optimistic.platformIssueHigh>
+	<Optimistic.platformIssueLow>今のコロニーは困難だが、状況はまだ悪化するから。</Optimistic.platformIssueLow>
 
-		<Compassionate.label>情け深い</Compassionate.label>
-		<Compassionate.description>情け深い人は他の人を困難から助けようとする。</Compassionate.description>
-		<Compassionate.conversationTopic>恵まれていない人々</Compassionate.conversationTopic>
-		<Compassionate.platformIssueHigh>どの社会も、最貧困層に対する取り組みで評価できる。</Compassionate.platformIssueHigh>
-		<Compassionate.platformIssueLow>有能の人の強さこそ社会の強さを左右する。</Compassionate.platformIssueLow>
+	<Compassionate.label>情け深い</Compassionate.label>
+	<Compassionate.description>情け深い人は他の人を困難から助けようとする。</Compassionate.description>
+	<Compassionate.conversationTopic>恵まれていない人々</Compassionate.conversationTopic>
+	<Compassionate.platformIssueHigh>どの社会も、最貧困層に対する取り組みで評価できる。</Compassionate.platformIssueHigh>
+	<Compassionate.platformIssueLow>有能の人の強さこそ社会の強さを左右する。</Compassionate.platformIssueLow>
 
-		<Generous.label>太っ腹</Generous.label>
-		<Generous.description>太っ腹な人は物の所有を重視しないため、一般の人より寄付をする。</Generous.description>
-		<Generous.conversationTopic>慈善</Generous.conversationTopic>
-		<Generous.platformIssueHigh>共存共栄の社会を目指そう。</Generous.platformIssueHigh>
-		<Generous.platformIssueLow>実力社会を目指そう。</Generous.platformIssueLow>
+	<Generous.label>太っ腹</Generous.label>
+	<Generous.description>太っ腹な人は物の所有を重視しないため、一般の人より寄付をする。</Generous.description>
+	<Generous.conversationTopic>慈善</Generous.conversationTopic>
+	<Generous.platformIssueHigh>共存共栄の社会を目指そう。</Generous.platformIssueHigh>
+	<Generous.platformIssueLow>実力社会を目指そう。</Generous.platformIssueLow>
 
 </LanguageData>
