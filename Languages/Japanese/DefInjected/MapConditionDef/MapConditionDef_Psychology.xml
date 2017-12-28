@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-<Election.label>TEST</Election.label>
-<Election.description>Delete this text if it does not come up in game. The Election translation seems to be duplicated.</Election.description>
+  <!-- >TODO: Confirm that this is not duplicated and used in game (probably where Toxic Fallout and stuff appear)<-->
+  <Election.label>COND:選挙</Election.label>
+  <Election.description>選挙が進行中です。入植者が候補者を十分に吟味できたら、投票が行われます。</Election.description>
 
 </LanguageData>
