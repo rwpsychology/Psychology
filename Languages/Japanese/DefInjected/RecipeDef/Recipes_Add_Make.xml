@@ -6,7 +6,7 @@
   <!-- Recipe Users: DrugLab -->
 
   <Make_Methadone.label>メサドンを調合する</Make_Methadone.label>
-  <Make_Methadone.description>あれをこうして、メサドンを調合する。</Make_Methadone.description>
-  <Make_Methadone.jobString>メサドンを調合している</Make_Methadone.jobString>
+  <Make_Methadone.description>メサドンを調合する。</Make_Methadone.description>
+  <Make_Methadone.jobString>メサドンを調合中</Make_Methadone.jobString>
 
 </LanguageData>

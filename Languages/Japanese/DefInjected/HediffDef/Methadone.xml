@@ -3,8 +3,11 @@
 
   <MethadoneHigh.label>メサドン</MethadoneHigh.label>
 
+  <!-- Methadone tolerance -->
   <MethadoneTolerance.label>メサドン耐性</MethadoneTolerance.label>
-  <!-- TODO: Test to see if the tolerance levels come standard >
+  <MethadoneTolerance.stages.1.label>弱</MethadoneTolerance.stages.1.label>
+  <MethadoneTolerance.stages.2.label>強</MethadoneTolerance.stages.2.label>
+  <MethadoneTolerance.stages.3.label>極度</MethadoneTolerance.stages.3.label>
 
   <!-- Methadone addiction -->
   <MethadoneAddiction.label>メサドン依存</MethadoneAddiction.label>
