@@ -59,7 +59,7 @@
   <TreatedInsomnia.rulePack.rulesStrings.9>desc_sentence->[psychologist_nameShortDef]は患者の肩を軽くたたいている。</TreatedInsomnia.rulePack.rulesStrings.9>
   <TreatedInsomnia.rulePack.rulesStrings.10>desc_sentence->[psychologist_nameShortDef]は真面目かつ優しい雰囲気を出している。</TreatedInsomnia.rulePack.rulesStrings.10>
   <TreatedInsomnia.rulePack.rulesStrings.11>desc_sentence->[patient_nameShortDef]はついに熟眠を楽しめそうだ。。</TreatedInsomnia.rulePack.rulesStrings.11>
-  <TreatedInsomnia.rulePack.rulesStrings.11>desc_sentence->[patient_nameShortDef]は早く就寝したい様子だ。</TreatedInsomnia.rulePack.rulesStrings.11>
+  <TreatedInsomnia.rulePack.rulesStrings.12>desc_sentence->[patient_nameShortDef]は早く就寝したい様子だ。</TreatedInsomnia.rulePack.rulesStrings.12>
 
   <CuredAnxiety.label>根治した不安神経症</CuredAnxiety.label>
   <CuredAnxiety.rulePack.rulesStrings.0>tale_noun->[patient_nameShortDef]の不安神経症の治療</CuredAnxiety.rulePack.rulesStrings.0>

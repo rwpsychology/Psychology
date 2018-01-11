@@ -7,12 +7,12 @@
   <FeelingRandomBipolar.Stages.1.description>理由は分からないけど、とてもいい気分だ。</FeelingRandomBipolar.Stages.1.description>
   <FeelingRandomBipolar.Stages.2.label>躁状態</FeelingRandomBipolar.Stages.2.label>
   <FeelingRandomBipolar.Stages.2.description>理由は分からないけど、いい気分だ。</FeelingRandomBipolar.Stages.2.description>
-  <FeelingRandomBipolar.Stages.2.label>躁状態</FeelingRandomBipolar.Stages.2.label>
-  <FeelingRandomBipolar.Stages.2.description>理由は分からないけど、悪い気分だ。</FeelingRandomBipolar.Stages.2.description>
-  <FeelingRandomBipolar.Stages.3.label>躁状態</FeelingRandomBipolar.Stages.3.label>
-  <FeelingRandomBipolar.Stages.3.description>理由は分からないけど、ひどい気分だ。</FeelingRandomBipolar.Stages.3.description>
-  <FeelingRandomBipolar.Stages.4.label>躁状態</FeelingRandomBipolar.Stages.4.label>
-  <FeelingRandomBipolar.Stages.4.description>理由は分からないけど、悲惨な気分だ…</FeelingRandomBipolar.Stages.4.description>
+  <FeelingRandomBipolar.Stages.3.label>躁状態</FeelingRandomBipolar.Stages.2.label>
+  <FeelingRandomBipolar.Stages.3.description>理由は分からないけど、悪い気分だ。</FeelingRandomBipolar.Stages.2.description>
+  <FeelingRandomBipolar.Stages.4.label>躁状態</FeelingRandomBipolar.Stages.3.label>
+  <FeelingRandomBipolar.Stages.4.description>理由は分からないけど、ひどい気分だ。</FeelingRandomBipolar.Stages.3.description>
+  <FeelingRandomBipolar.Stages.5.label>躁状態</FeelingRandomBipolar.Stages.4.label>
+  <FeelingRandomBipolar.Stages.5.description>理由は分からないけど、悲惨な気分だ…</FeelingRandomBipolar.Stages.4.description>
 
   <Codependency.Stages.0.label>寂しい気持ち</Codependency.Stages.0.label>
   <Codependency.Stages.0.description>寂しすぎる…　恋人がほしい。</Codependency.Stages.0.description>
@@ -30,8 +30,8 @@
 
   <Pluviophile.Stages.0.label>雨が降っている</Pluviophile.Stages.0.label>
   <Pluviophile.Stages.0.description>雨が降ってくるこの音が好きだ。</Pluviophile.Stages.0.description>
-  <Pluviophile.Stages.0.label>雨を浴びている</Pluviophile.Stages.0.label>
-  <Pluviophile.Stages.0.description>雨の中は落ち着く。濡れても構わない。</Pluviophile.Stages.0.description>
+  <Pluviophile.Stages.1.label>雨を浴びている</Pluviophile.Stages.0.label>
+  <Pluviophile.Stages.1.description>雨の中は落ち着く。濡れても構わない。</Pluviophile.Stages.0.description>
 
   <PolygamousRelationship.Stages.0.label>一夫一婦の関係</PolygamousRelationship.Stages.0.label>
   <PolygamousRelationship.Stages.0.description>愛とは共有すればするほど素晴らしいものなのに、この関係は残念かな。</PolygamousRelationship.Stages.0.description>
