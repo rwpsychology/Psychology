@@ -1,46 +1,46 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <FeelingRandomBipolar.Stages.0.label>躁状態</FeelingRandomBipolar.Stages.0.label>
-  <FeelingRandomBipolar.Stages.0.description>理由は分からないけど、素晴らしい気分だ！</FeelingRandomBipolar.Stages.0.description>
-  <FeelingRandomBipolar.Stages.1.label>躁状態</FeelingRandomBipolar.Stages.1.label>
-  <FeelingRandomBipolar.Stages.1.description>理由は分からないけど、とてもいい気分だ。</FeelingRandomBipolar.Stages.1.description>
-  <FeelingRandomBipolar.Stages.2.label>躁状態</FeelingRandomBipolar.Stages.2.label>
-  <FeelingRandomBipolar.Stages.2.description>理由は分からないけど、いい気分だ。</FeelingRandomBipolar.Stages.2.description>
-  <FeelingRandomBipolar.Stages.3.label>躁状態</FeelingRandomBipolar.Stages.3.label>
-  <FeelingRandomBipolar.Stages.3.description>理由は分からないけど、悪い気分だ。</FeelingRandomBipolar.Stages.3.description>
-  <FeelingRandomBipolar.Stages.4.label>躁状態</FeelingRandomBipolar.Stages.4.label>
-  <FeelingRandomBipolar.Stages.4.description>理由は分からないけど、ひどい気分だ。</FeelingRandomBipolar.Stages.4.description>
-  <FeelingRandomBipolar.Stages.5.label>躁状態</FeelingRandomBipolar.Stages.5.label>
-  <FeelingRandomBipolar.Stages.5.description>理由は分からないけど、悲惨な気分だ…</FeelingRandomBipolar.Stages.5.description>
+  <FeelingRandomBipolar.stages.0.label>躁状態</FeelingRandomBipolar.stages.0.label>
+  <FeelingRandomBipolar.stages.0.description>理由は分からないけど、素晴らしい気分だ！</FeelingRandomBipolar.stages.0.description>
+  <FeelingRandomBipolar.stages.1.label>躁状態</FeelingRandomBipolar.stages.1.label>
+  <FeelingRandomBipolar.stages.1.description>理由は分からないけど、とてもいい気分だ。</FeelingRandomBipolar.stages.1.description>
+  <FeelingRandomBipolar.stages.2.label>躁状態</FeelingRandomBipolar.stages.2.label>
+  <FeelingRandomBipolar.stages.2.description>理由は分からないけど、いい気分だ。</FeelingRandomBipolar.stages.2.description>
+  <FeelingRandomBipolar.stages.3.label>躁状態</FeelingRandomBipolar.stages.3.label>
+  <FeelingRandomBipolar.stages.3.description>理由は分からないけど、悪い気分だ。</FeelingRandomBipolar.stages.3.description>
+  <FeelingRandomBipolar.stages.4.label>躁状態</FeelingRandomBipolar.stages.4.label>
+  <FeelingRandomBipolar.stages.4.description>理由は分からないけど、ひどい気分だ。</FeelingRandomBipolar.stages.4.description>
+  <FeelingRandomBipolar.stages.5.label>躁状態</FeelingRandomBipolar.stages.5.label>
+  <FeelingRandomBipolar.stages.5.description>理由は分からないけど、悲惨な気分だ…</FeelingRandomBipolar.stages.5.description>
 
-  <Codependency.Stages.0.label>寂しい気持ち</Codependency.Stages.0.label>
-  <Codependency.Stages.0.description>寂しすぎる…　恋人がほしい。</Codependency.Stages.0.description>
-  <Codependency.Stages.1.label>依存関係の恋愛</Codependency.Stages.1.label>
-  <Codependency.Stages.1.description>うちの恋人が大好きだ。あの人がいなかったら、生きていけない。</Codependency.Stages.1.description>
-  <Codependency.Stages.2.label>依存関係の結婚</Codependency.Stages.2.label>
-  <Codependency.Stages.2.description>うちの配偶者が大好きだ。あの人がいなかったら、私は間違いなく死ぬ。</Codependency.Stages.2.description>
-  <Codependency.Stages.3.label>孤独</Codependency.Stages.3.label>
-  <Codependency.Stages.3.description>あの人を失った… これから、どうすればいい…</Codependency.Stages.3.description>
+  <Codependency.stages.0.label>寂しい気持ち</Codependency.stages.0.label>
+  <Codependency.stages.0.description>寂しい…　恋人がほしい。</Codependency.stages.0.description>
+  <Codependency.stages.1.label>依存関係の恋愛</Codependency.stages.1.label>
+  <Codependency.stages.1.description>うちの恋人が大好きだ。あの人がいなかったら、生きていけない。</Codependency.stages.1.description>
+  <Codependency.stages.2.label>依存関係の結婚</Codependency.stages.2.label>
+  <Codependency.stages.2.description>うちの配偶者が大好きだ。あの人がいなかったら、私は間違いなく死ぬ。</Codependency.stages.2.description>
+  <Codependency.stages.3.label>孤独</Codependency.stages.3.label>
+  <Codependency.stages.3.description>あの人を失った… これから、どうすればいい…</Codependency.stages.3.description>
 
-  <Outdoorsy.Stages.0.label>外にいる</Outdoorsy.Stages.0.label>
-  <Outdoorsy.Stages.0.description>上に空が見えるのは幸福なことだ。</Outdoorsy.Stages.0.description>
-  <Outdoorsy.Stages.1.label>外にいる</Outdoorsy.Stages.1.label>
-  <Outdoorsy.Stages.1.description>いやぁ、開放的なアウトドアは素晴らしい！</Outdoorsy.Stages.1.description>
+  <Outdoorsy.stages.0.label>外にいる</Outdoorsy.stages.0.label>
+  <Outdoorsy.stages.0.description>上に空が見えるのは幸福なことだ。</Outdoorsy.stages.0.description>
+  <Outdoorsy.stages.1.label>外にいる</Outdoorsy.stages.1.label>
+  <Outdoorsy.stages.1.description>いやぁ、開放的なアウトドアは素晴らしい！</Outdoorsy.stages.1.description>
 
-  <Pluviophile.Stages.0.label>雨が降っている</Pluviophile.Stages.0.label>
-  <Pluviophile.Stages.0.description>雨が降ってくるこの音が好きだ。</Pluviophile.Stages.0.description>
-  <Pluviophile.Stages.1.label>雨を浴びている</Pluviophile.Stages.0.label>
-  <Pluviophile.Stages.1.description>雨の中は落ち着く。濡れても構わない。</Pluviophile.Stages.0.description>
+  <Pluviophile.stages.0.label>雨が降っている</Pluviophile.stages.0.label>
+  <Pluviophile.stages.0.description>雨が降ってくるこの音が好きだ。</Pluviophile.stages.0.description>
+  <Pluviophile.stages.1.label>雨を浴びている</Pluviophile.stages.0.label>
+  <Pluviophile.stages.1.description>雨の中は落ち着く。濡れても構わない。</Pluviophile.stages.0.description>
 
-  <PolygamousRelationship.Stages.0.label>一夫一婦の関係</PolygamousRelationship.Stages.0.label>
-  <PolygamousRelationship.Stages.0.description>愛とは共有すればするほど素晴らしいものなのに、この関係は残念かな。</PolygamousRelationship.Stages.0.description>
+  <PolygamousRelationship.stages.0.label>一夫一婦の関係</PolygamousRelationship.stages.0.label>
+  <PolygamousRelationship.stages.0.description>愛とは共有すればするほど素晴らしいものなのに、この関係は残念かな。</PolygamousRelationship.stages.0.description>
 
-  <EnvironmentDarkLightSensitive.Stages.0.label>暗闇の中にいる</EnvironmentDarkLightSensitive.Stages.0.label>
-  <EnvironmentDarkLightSensitive.Stages.0.description>うん、暗闇は癒される。</EnvironmentDarkLightSensitive.Stages.0.description>
-  <EnvironmentDarkLightSensitive.Stages.1.label>光の中にいる</EnvironmentDarkLightSensitive.Stages.1.label>
-  <EnvironmentDarkLightSensitive.Stages.1.description>痛い… 眩しくて目を細めるしかない。</EnvironmentDarkLightSensitive.Stages.1.description>
-  <EnvironmentDarkLightSensitive.Stages.2.label>強烈な光の中にいる</EnvironmentDarkLightSensitive.Stages.2.label>
-  <EnvironmentDarkLightSensitive.Stages.2.description>目が！眩しくて目が痛い！</EnvironmentDarkLightSensitive.Stages.2.description>
+  <EnvironmentDarkLightSensitive.stages.0.label>暗闇の中にいる</EnvironmentDarkLightSensitive.stages.0.label>
+  <EnvironmentDarkLightSensitive.stages.0.description>うん、暗闇は癒される。</EnvironmentDarkLightSensitive.stages.0.description>
+  <EnvironmentDarkLightSensitive.stages.1.label>光の中にいる</EnvironmentDarkLightSensitive.stages.1.label>
+  <EnvironmentDarkLightSensitive.stages.1.description>痛い… 眩しくて目を細めるしかない。</EnvironmentDarkLightSensitive.stages.1.description>
+  <EnvironmentDarkLightSensitive.stages.2.label>強烈な光の中にいる</EnvironmentDarkLightSensitive.stages.2.label>
+  <EnvironmentDarkLightSensitive.stages.2.description>目が！眩しくて目が痛い！</EnvironmentDarkLightSensitive.stages.2.description>
 
 </LanguageData>
