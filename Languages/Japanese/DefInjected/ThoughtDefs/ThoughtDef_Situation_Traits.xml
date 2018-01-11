@@ -30,8 +30,8 @@
 
   <Pluviophile.stages.0.label>雨が降っている</Pluviophile.stages.0.label>
   <Pluviophile.stages.0.description>雨が降ってくるこの音が好きだ。</Pluviophile.stages.0.description>
-  <Pluviophile.stages.1.label>雨を浴びている</Pluviophile.stages.0.label>
-  <Pluviophile.stages.1.description>雨の中は落ち着く。濡れても構わない。</Pluviophile.stages.0.description>
+  <Pluviophile.stages.1.label>雨を浴びている</Pluviophile.stages.1.label>
+  <Pluviophile.stages.1.description>雨の中は落ち着く。濡れても構わない。</Pluviophile.stages.1.description>
 
   <PolygamousRelationship.stages.0.label>一夫一婦の関係</PolygamousRelationship.stages.0.label>
   <PolygamousRelationship.stages.0.description>愛とは共有すればするほど素晴らしいものなのに、この関係は残念かな。</PolygamousRelationship.stages.0.description>
