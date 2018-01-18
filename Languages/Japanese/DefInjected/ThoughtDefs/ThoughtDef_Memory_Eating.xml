@@ -14,15 +14,15 @@
   <AteRawFoodPickyEater.Stages.0.description>食材を生な状態で食べさせられた。料理人くらい出てくれないと、ここで生きてはいけない。</AteRawFoodPickyEater.Stages.0.description>
 
   <AteNormalMealPickyEater.Stages.0.label>簡単な食事</AteNormalMealPickyEater.Stages.0.label>
-  <AteNormalMealPickyEater.Stages.0.description>あの料理はこっちの基準に達していない。もっとましなものがなかったから仕方なく食べた。</AteNormalMealPickyEater.Stages.0.description>
+  <AteNormalMealPickyEater.Stages.0.description>あの料理はこちらの基準に達していない。もっとましなものがなかったから仕方なく食べた。</AteNormalMealPickyEater.Stages.0.description>
 
   <AteInsectMeatAsIngredientPickyEater.Stages.0.label>虫の肉でできた食事</AteInsectMeatAsIngredientPickyEater.Stages.0.label>
-  <AteInsectMeatAsIngredientPickyEater.Stages.0.description>虫のぬるぬるした灰色の肉でできた料理を食べてしまった。最初の一口は非常に不愉快なサプライズだった。</AteInsectMeatAsIngredientPickyEater.Stages.0.description>
+  <AteInsectMeatAsIngredientPickyEater.Stages.0.description>虫のぬるぬるした灰色の肉でできた料理を食べてしまった。最初の一口は非常に不愉快な驚きだった。</AteInsectMeatAsIngredientPickyEater.Stages.0.description>
 
   <AteInsectMeatDirectPickyEater.Stages.0.label>虫の肉の生な食事</AteInsectMeatDirectPickyEater.Stages.0.label>
   <AteInsectMeatDirectPickyEater.Stages.0.description>虫のぬるぬるした灰色の肉を生で食べた。いっそ殺してくれ。</AteInsectMeatDirectPickyEater.Stages.0.description>
 
   <AteRottenFoodPickyEater.Stages.0.label>腐った食事</AteRottenFoodPickyEater.Stages.0.label>
-  <AteRottenFoodPickyEater.Stages.0.description>何か気持ち悪くて悪臭のものを食べた。これほど落ちぶれるぐらいなら死んだほうがましだ。</AteRottenFoodPickyEater.Stages.0.description>
+  <AteRottenFoodPickyEater.Stages.0.description>何か気持ち悪くて悪臭のものを食べた。これほど落ちぶれるくらいなら死んだほうがましだ。</AteRottenFoodPickyEater.Stages.0.description>
 
 </LanguageData>

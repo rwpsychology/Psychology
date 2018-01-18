@@ -22,22 +22,22 @@
   <KnowColonistOrganHarvestedBleedingHeart.Stages.0.description>コロニーの一人が体の一部を収穫された。抵抗できない人を機械のように分解するなんて、あんまりだ。</KnowColonistOrganHarvestedBleedingHeart.Stages.0.description>
 
   <ReplacedPartBleedingHeart.Stages.0.label>手術に成功</ReplacedPartBleedingHeart.Stages.0.label>
-  <ReplacedPartBleedingHeart.Stages.0.description>移植手術が成功した！これで患者の生活の質を向上させることができたかな。嬉しいことだ。</ReplacedPartBleedingHeart.Stages.0.description>
+  <ReplacedPartBleedingHeart.Stages.0.description>移植手術が成功した！これで患者の生活の質を向上させることができたかな。嬉しいことです。</ReplacedPartBleedingHeart.Stages.0.description>
 
   <DoctorBleedingHeart.Stages.0.label>患者を治療した</DoctorBleedingHeart.Stages.0.label>
   <DoctorBleedingHeart.Stages.0.description>医学は人助けする機会が多くて好きです。</DoctorBleedingHeart.Stages.0.description>
 
   <RescuedBleedingHeart.Stages.0.label>人を救助した</RescuedBleedingHeart.Stages.0.label>
-  <RescuedBleedingHeart.Stages.0.description>死にそうな人を助けられた。礼にはおよばないよ、善行そのものが報いなのだ。</RescuedBleedingHeart.Stages.0.description>
+  <RescuedBleedingHeart.Stages.0.description>死にそうな人を助けられた。礼にはおよばないよ、善行こそが徳を積んでゆきます。</RescuedBleedingHeart.Stages.0.description>
 
   <CookedMealBleedingHeart.Stages.0.label>料理をした</CookedMealBleedingHeart.Stages.0.label>
-  <CookedMealBleedingHeart.Stages.0.description>人助けを実感できるから料理が大好きなんだ。私がコロニーの生命線だ！なんてね。</CookedMealBleedingHeart.Stages.0.description>
+  <CookedMealBleedingHeart.Stages.0.description>人助けを実感できるから料理が大好きなんです。 私がコロニーの生命線だ！なんてね。</CookedMealBleedingHeart.Stages.0.description>
 
   <FilledGraveBleedingHeart.Stages.0.label>埋葬をした</FilledGraveBleedingHeart.Stages.0.label>
   <FilledGraveBleedingHeart.Stages.0.description>成仏しますように。</FilledGraveBleedingHeart.Stages.0.description>
 
   <KilledPatientBleedingHeart.Stages.0.label>患者を殺した</KilledPatientBleedingHeart.Stages.0.label>
-  <KilledPatientBleedingHeart.Stages.0.description>私のせいで！患者が手術中に死んだ！TODO</KilledPatientBleedingHeart.Stages.0.description>
+  <KilledPatientBleedingHeart.Stages.0.description>私のせいで！患者が手術中に死んだ！ こんなはずじゃなかった…！</KilledPatientBleedingHeart.Stages.0.description>
 
   <RecentlyDesensitized.Stages.0.label>暴力に鈍感となった</RecentlyDesensitized.Stages.0.label>
   <RecentlyDesensitized.Stages.0.description>人が死んでいくのを見たのに、何も感じなかった。それが悲しい…</RecentlyDesensitized.Stages.0.description>
@@ -55,10 +55,10 @@
   <TreatmentFailed.Stages.0.description>医者が私の病の治療に失敗した… 私のことをまだ理解していない感じだ。</TreatmentFailed.Stages.0.description>
 
   <SuccessfulPlot.Stages.0.label>悪巧みをうまく実行した</SuccessfulPlot.Stages.0.label>
-  <SuccessfulPlot.Stages.0.description>悪鬼の退治は終わった。これで 私たちは再び安全だ。</SuccessfulPlot.Stages.0.description>
+  <SuccessfulPlot.Stages.0.description>悪鬼の退治は終わった。 これで私たちは再び安全だ。</SuccessfulPlot.Stages.0.description>
 
   <HeardParanoia.Stages.0.label>パラノイアの妄想を聞いた</HeardParanoia.Stages.0.label>
-  <HeardParanoia.Stages.0.description>ひどい話を聞いた… まさかと思うけど、 もし本当のことだったら…</HeardParanoia.Stages.0.description>
+  <HeardParanoia.Stages.0.description>ひどい話を聞いた… まさかと思うけど、 もし本当だったら…</HeardParanoia.Stages.0.description>
 
   <ColonistAbandonedBleedingHeart.Stages.0.label>入植者が見捨てられた</ColonistAbandonedBleedingHeart.Stages.0.label>
   <ColonistAbandonedBleedingHeart.Stages.0.description>あの人を置き去りにしてしまった。これからどうなるのかが心配で仕方がない。</ColonistAbandonedBleedingHeart.Stages.0.description>
@@ -67,6 +67,6 @@
   <ColonistAbandonedToDieBleedingHeart.Stages.0.description>一人で生き残るわけがないのに、 私たちはけが人を見殺しにした。胸が苦しい。</ColonistAbandonedToDieBleedingHeart.Stages.0.description>
 
   <PrisonerAbandonedToDieBleedingHeart.Stages.0.label>囚人が見殺しにされた</PrisonerAbandonedToDieBleedingHeart.Stages.0.label>
-  <PrisonerAbandonedToDieBleedingHeart.Stages.0.description>一人で生き残るわけがないのに、 私たちは囚人を見殺しにした。私たちが監禁する人も守る義務がある。</PrisonerAbandonedToDieBleedingHeart.Stages.0.description>
+  <PrisonerAbandonedToDieBleedingHeart.Stages.0.description>一人で生き残るわけがないのに、 私たちは囚人を見殺しにした。監禁している人も守る義務がある。</PrisonerAbandonedToDieBleedingHeart.Stages.0.description>
 
 </LanguageData>

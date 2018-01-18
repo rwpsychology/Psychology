@@ -2,11 +2,11 @@
 <LanguageData>
 
   <PrudeSeen.Stages.0.label>人の裸を見かけた</PrudeSeen.Stages.0.label>
-  <PrudeSeen.Stages.0.description>さっきの人、裸だったでしょう！ここって服を着ないで歩き回ってもいい場所なのか？みっともない。</PrudeSeen.Stages.0.description>
+  <PrudeSeen.Stages.0.description>さっきの人、裸だったでしょう！ここは服を着ないで歩き回ってもいい場所なのか？みっともない。</PrudeSeen.Stages.0.description>
 
   <DynamicSocial.Stages.0.label>雑談</DynamicSocial.Stages.0.label>
 
-  <BrokeUpWithMeCodependent.Stages.0.label>依存関係</BrokeUpWithMeCodependent.Stages.0.label>
+  <BrokeUpWithMeCodependent.Stages.0.label>共依存関係</BrokeUpWithMeCodependent.Stages.0.label>
 
   <BrokeUpWithMeCodependentMood.Stages.0.label>{0}に依存している</BrokeUpWithMeCodependentMood.Stages.0.label>
   <BrokeUpWithMeCodependentMood.Stages.0.description>寂しいよ… お願い、帰ってきて…</BrokeUpWithMeCodependentMood.Stages.0.description>

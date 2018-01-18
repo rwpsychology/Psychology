@@ -8,7 +8,7 @@
 	<Insomniac.degreeDatas.0.description>NAMEは眠りにくい体質をしています。睡眠は優先しません。寝てもぐっすりと眠れなくて、すぐに起きます。</Insomniac.degreeDatas.0.description>
 
 	<BleedingHeart.degreeDatas.0.label>お人好しすぎる</BleedingHeart.degreeDatas.0.label>
-	<BleedingHeart.degreeDatas.0.description>心の優しいNAMEは感傷的になりがちです。人助けをするのが大好きで、暴力と不公正な事を嫌っています。これらの出来事には他の人より影響されやすいです。</BleedingHeart.degreeDatas.0.description>
+	<BleedingHeart.degreeDatas.0.description>心の優しいNAMEは感傷的になりがちです。人助けをするのが大好きで、暴力と不公正なことを嫌ります。これらの出来事には他の人より影響されやすいです。</BleedingHeart.degreeDatas.0.description>
 	
 	<Gourmet.degreeDatas.0.label>グルメ</Gourmet.degreeDatas.0.label>
 	<Gourmet.degreeDatas.0.description>NAMEは鼻持ちならない食通です。 HECAPは期待にそぐわぬ食事に対して文句を言います。</Gourmet.degreeDatas.0.description>
@@ -29,7 +29,7 @@
 	<Pluviophile.degreeDatas.0.description>NAMEは雨が好きです。雨が降っている時、特に雨を浴びている時は気分にボーナスを得ます。</Pluviophile.degreeDatas.0.description>
 	
 	<Photosensitive.degreeDatas.0.label>感光性</Photosensitive.degreeDatas.0.label>
-	<Photosensitive.degreeDatas.0.description>遺伝子変異か工学の結果か、NAMEの目は光に非常に敏感です。HECAPにとっては強い日光が非常に痛く、室内照明だって厄介なので、暗闇の中にいるのが幸せです。</Photosensitive.degreeDatas.0.description>
+	<Photosensitive.degreeDatas.0.description>遺伝子変異か工学の結果か、NAMEの目は光に非常に敏感です。HECAPは強い日光が非常に痛く、室内照明でさえ厄介です。暗闇の中にいるのが一番幸せです。</Photosensitive.degreeDatas.0.description>
 	
 	<Socialite.degreeDatas.0.label>パーティー好き</Socialite.degreeDatas.0.label>
 	<Socialite.degreeDatas.0.description>NAMEはパーティーが最高！HECAPはコロニーにいるだけでパーティーの回数が増えます。なにせ、HEがいるとパーティーは盛り上がります。</Socialite.degreeDatas.0.description>
@@ -41,7 +41,7 @@
 	<HeavySleeper.degreeDatas.0.description>NAMEはどんな状況でも死んだように眠ります。簡単には起きません。</HeavySleeper.degreeDatas.0.description>
 	
 	<Polygamous.degreeDatas.0.label>ポリアモリー</Polygamous.degreeDatas.0.label>
-	<Polygamous.degreeDatas.0.description>NAMEは複数の人と性愛関係を営むのをおかしいと思いません。自分の相手が他の人と恋愛しても気にしませんが、一夫一婦制の関係では不機嫌になります。</Polygamous.degreeDatas.0.description>
+	<Polygamous.degreeDatas.0.description>NAMEは複数の人と性愛関係を営むのをおかしく思いません。そのため浮気は気にしないが、一夫一婦制の関係では不機嫌になります。</Polygamous.degreeDatas.0.description>
 	
 	<OpenMinded.degreeDatas.0.label>中身重視</OpenMinded.degreeDatas.0.label>
 	<OpenMinded.degreeDatas.0.description>NAMEは人を外見ではなく中身を見ています。人を見かけで判断しません。</OpenMinded.degreeDatas.0.description>

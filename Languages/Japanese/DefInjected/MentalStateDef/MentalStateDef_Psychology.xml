@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-  <FellPlotting.label>悪巧みしている</FellPlotting.label>
+  <FellPlotting.label>悪巧み中</FellPlotting.label>
   <FellPlotting.beginLetterLabel>狂ったように企んでいる</FellPlotting.beginLetterLabel>
   <FellPlotting.beginLetter>{0}は企てるために自分の部屋に戻っています！</FellPlotting.beginLetter>
   <FellPlotting.recoveryMessage>{0}の悪巧みは終わりました。</FellPlotting.recoveryMessage>
   <FellPlotting.baseInspectLine>精神状態: 悪巧み</FellPlotting.baseInspectLine>
 
-  <SelfHarm.label>自傷している</SelfHarm.label>
+  <SelfHarm.label>自傷中</SelfHarm.label>
   <SelfHarm.beginLetterLabel>自傷</SelfHarm.beginLetterLabel>
   <SelfHarm.beginLetter>{0}はリストカットをし、自分の部屋に隠れています。</SelfHarm.beginLetter>
   <SelfHarm.recoveryMessage>{0}は自傷を止めました。</SelfHarm.recoveryMessage>
