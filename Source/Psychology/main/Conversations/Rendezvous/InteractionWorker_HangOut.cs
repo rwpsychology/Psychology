@@ -48,7 +48,7 @@ namespace Psychology
             if (initiator.relations.OpinionOf(recipient) > -20)
             {
                 initiatorFactor = realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Extroverted) + 0.15f + Mathf.InverseLerp(0f, 100f, initiator.relations.OpinionOf(recipient));
-                recipientFactor = realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly);
+                recipientFactor = (realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly) + realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Cool))/2f;
             }
             else if(initiator.relations.OpinionOf(recipient) <= -20)
             {

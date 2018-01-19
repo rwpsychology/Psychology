@@ -14,5 +14,11 @@ namespace Psychology
         {
             return RandomSocialMode.SuperActive;
         }
+
+        public override void MentalStateTick()
+        {
+            base.MentalStateTick();
+            pawn.needs.mood.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.RebuffedMyRomanceAttempt);
+        }
     }
 }

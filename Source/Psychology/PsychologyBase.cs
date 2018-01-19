@@ -192,30 +192,50 @@ namespace Psychology
                     knowColonistOrganHarvested = ModifyThoughtStages(knowColonistOrganHarvested, new int[] { -4 });
                 }
 
+                /* ThingDef injection reworked by notfood */
+                var zombieThinkTree = DefDatabase<ThinkTreeDef>.GetNamedSilentFail("Zombie");
 
-                IEnumerable<ThingDef> things = (from m in LoadedModManager.RunningMods
-                                         from def in m.AllDefs.OfType<ThingDef>()
-                                         where typeof(Pawn).IsAssignableFrom(def.thingClass)
-                                         select def);
+                IEnumerable<ThingDef> things = (
+                    from def in DefDatabase<ThingDef>.AllDefs
+                    where typeof(Pawn).IsAssignableFrom(def.thingClass)
+                    && def.race?.intelligence == Intelligence.Humanlike
+                    && !def.defName.Contains("AIPawn")
+                    && (zombieThinkTree == null || def.race.thinkTreeMain != zombieThinkTree)
+                    select def
+                );
+
                 foreach (ThingDef t in things)
                 {
-                    if (t.race.intelligence == Intelligence.Humanlike && !t.defName.Contains("AIPawn") && (DefDatabase<ThinkTreeDef>.GetNamedSilentFail("Zombie")  == null || t.race.thinkTreeMain != DefDatabase<ThinkTreeDef>.GetNamedSilentFail("Zombie")))
+                    t.thingClass = typeof(PsychologyPawn);
+
+                    if (t.inspectorTabsResolved == null)
                     {
-                        t.thingClass = typeof(PsychologyPawn);
-                        t.inspectorTabsResolved.Add(InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Psyche)));
-                        t.recipes.Add(RecipeDefOfPsychology.TreatPyromania);
-                        t.recipes.Add(RecipeDefOfPsychology.TreatChemicalInterest);
-                        t.recipes.Add(RecipeDefOfPsychology.TreatChemicalFascination);
-                        t.recipes.Add(RecipeDefOfPsychology.TreatDepression);
-                        t.recipes.Add(RecipeDefOfPsychology.TreatInsomnia);
-                        t.recipes.Add(RecipeDefOfPsychology.CureAnxiety);
-                        if (!t.race?.hediffGiverSets?.NullOrEmpty() ?? false)
+                        t.inspectorTabsResolved = new List<InspectTabBase>(1);
+                    }
+                    t.inspectorTabsResolved.Add(InspectTabManager.GetSharedInstance(typeof(ITab_Pawn_Psyche)));
+
+                    if (t.recipes == null)
+                    {
+                        t.recipes = new List<RecipeDef>(6);
+                    }
+                    t.recipes.Add(RecipeDefOfPsychology.TreatPyromania);
+                    t.recipes.Add(RecipeDefOfPsychology.TreatChemicalInterest);
+                    t.recipes.Add(RecipeDefOfPsychology.TreatChemicalFascination);
+                    t.recipes.Add(RecipeDefOfPsychology.TreatDepression);
+                    t.recipes.Add(RecipeDefOfPsychology.TreatInsomnia);
+                    t.recipes.Add(RecipeDefOfPsychology.CureAnxiety);
+
+                    if (!t.race.hediffGiverSets.NullOrEmpty())
+                    {
+                        if (t.race.hediffGiverSets.Contains(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicStandard")))
                         {
-                            if (t.race.hediffGiverSets.Contains(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicStandard")))
-                            {
-                                t.race.hediffGiverSets.Add(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicPsychology"));
-                            }
+                            t.race.hediffGiverSets.Add(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicPsychology"));
                         }
+                    }
+
+                    if(Prefs.DevMode && Prefs.LogVerbose)
+                    {
+                        Log.Message("Psychology :: Registered " + t.defName);
                     }
                 }
 
@@ -274,7 +294,7 @@ namespace Psychology
                 maleMe.childhood = childMe;
                 maleMe.adulthood = adultMale;
                 maleMe.gender = GenderPossibility.Male;
-                maleMe.name = NameTriple.FromString("Nathan 'Jackal' Tarai");
+                maleMe.name = NameTriple.FromString("Jason 'Jackal' Tarai");
                 maleMe.PostLoad();
                 SolidBioDatabase.allBios.Add(maleMe);*/
                 PawnBio femaleMe = new PawnBio();

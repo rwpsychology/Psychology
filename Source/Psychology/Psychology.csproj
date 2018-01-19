@@ -63,6 +63,7 @@
     <Compile Include="Defs\GameConditionDefOfPsychology.cs" />
     <Compile Include="Defs\InteractionDefOfPsychology.cs" />
     <Compile Include="Defs\PersonalityNodeDefOf.cs" />
+    <Compile Include="Harmony\Dialog_FormCaravan.cs" />
     <Compile Include="Harmony\InteractionUtility.cs" />
     <Compile Include="Harmony\InteractionWorker_DeepTalk.cs" />
     <Compile Include="Harmony\NegativeInteractionUtility.cs" />
