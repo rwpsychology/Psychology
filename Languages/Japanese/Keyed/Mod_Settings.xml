@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<EmpathyChangesTitle>同情の変更の有効</EmpathyChangesTitle>
+	<EmpathyChangesTooltip>これを無効にすると、入植者の「他人の不幸」への反応はバニラ状態に戻ります。これは難易度を上げます。「お人好しすぎる」人は影響を受けません。無効化する際にゲームを再起動する必要があります。</EmpathyChangesTooltip>
+	
+	<SexualityChangesTitle>性的区別の変更の有効</SexualityChangesTitle>
+	<SexualityChangesTooltip>プレイ中に変更しないでください！これを無効にすると人のキンゼイ値はなくなり、「同性愛」の特徴は元に戻ります。変える際にゲームを再起動する必要があります。</SexualityChangesTooltip>
+	
+	<KinseyModeTitle>キンゼイ指標の公式</KinseyModeTitle>
+	<KinseyModeTooltip>これは人が初めて登場する際に受けるキンゼイ値の加重平均の設定です。</KinseyModeTooltip>
+	<KinseyMode_Realistic>普通</KinseyMode_Realistic>
+	<KinseyMode_Invisible>中央</KinseyMode_Invisible>
+	<KinseyMode_Gaypocalypse>逆側</KinseyMode_Gaypocalypse>
+	<KinseyMode_Uniform>統一</KinseyMode_Uniform>
+	
+	<IndividualityTitle>個性希望の有効</IndividualityTitle>
+	<IndividualityTooltip>これを無効にすると入植者は完璧に一致した服装を着ても嫌がらない（バニラ）。この思いは難易度を上げるので、使うのは任意だがおすすめです。</IndividualityTooltip>
+	
+	<ElectionsTitle>選挙の有効</ElectionsTitle>
+	<ElectionsTooltip>これを無効にすると年次選挙は行われません。進行中の選挙は実行されるが、既存のリーダーは普通の入植者に戻ります。他のモッドとの適合性に影響はありません。</ElectionsTooltip>
+  
+</LanguageData>

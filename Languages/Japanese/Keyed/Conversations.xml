@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <NumberOfShortTalks>10</NumberOfShortTalks>
+  <ShortTalk1>[other_nameShortIndef] と {0} について一瞬のお喋りをした。</ShortTalk1>
+  <ShortTalk2>[other_nameShortIndef] と {0} について短いお喋りをした。</ShortTalk2>
+  <ShortTalk3>[other_nameShortIndef] と {0} を短く語り合った。</ShortTalk3>
+  <ShortTalk4>[other_nameShortIndef] と {0} について急いで話し合った。</ShortTalk4>
+  <ShortTalk5>[other_nameShortIndef] と {0} についてつかの間のお喋りをした。</ShortTalk5>
+  <ShortTalk6>通りがかりに [other_nameShortIndef] と {0} について話した。</ShortTalk6>
+  <ShortTalk7>[other_nameShortIndef] と {0} について突っ込んだコメントをした。</ShortTalk7>
+  <ShortTalk8>[other_nameShortIndef] と {0} について意見を述べ合った。</ShortTalk8>
+  <ShortTalk9>[other_nameShortIndef] と {0} について言葉をいくつか交わした。</ShortTalk9>
+  <ShortTalk10>[other_nameShortIndef] と {0} について短いやりとりをした。</ShortTalk10>
+
+  <NumberOfNormalTalks>12</NumberOfNormalTalks>
+  <NormalTalk1>[other_nameShortIndef] と {0} について話した。</NormalTalk1>
+  <NormalTalk2>[other_nameShortIndef] と {0} の会話をした。</NormalTalk2>
+  <NormalTalk3>[other_nameShortIndef] と {0} を語り合った。</NormalTalk3>
+  <NormalTalk4>[other_nameShortIndef] と {0} について意見を比べた。</NormalTalk4>
+  <NormalTalk5>[other_nameShortIndef] と {0} について会話した。</NormalTalk5>
+  <NormalTalk6>[other_nameShortIndef] と {0} について語り合った。</NormalTalk6>
+  <NormalTalk7>[other_nameShortIndef] と {0} を論じ合った。</NormalTalk7>
+  <NormalTalk8>[other_nameShortIndef] に {0} について意見を教えてもらった。</NormalTalk8>
+  <NormalTalk9>[other_nameShortIndef] と {0} について考えを交わした。</NormalTalk9>
+  <NormalTalk10>[other_nameShortIndef] に {0} について意見を聞いた。</NormalTalk10>
+  <NormalTalk11>[other_nameShortIndef] と {0} について論争した。</NormalTalk11>
+  <NormalTalk12>[other_nameShortIndef] と {0} について相談した。</NormalTalk12>
+
+  <NumberOfLongTalks>8</NumberOfLongTalks>
+  <LongTalk1>[other_nameShortIndef] と {0} を長く話した。</LongTalk1>
+  <LongTalk2>[other_nameShortIndef] と {0} について長い会話をした。</LongTalk2>
+  <LongTalk3>[other_nameShortIndef] と {0} をかなりの間語り合った。</LongTalk3>
+  <LongTalk4>[other_nameShortIndef] と {0} を徹底的に話した。</LongTalk4>
+  <LongTalk5>[other_nameShortIndef] と {0} を細かく相談した。</LongTalk5>
+  <LongTalk6>[other_nameShortIndef] の {0} に関する気持ちをよく知ることができた。</LongTalk6>
+  <LongTalk7>[other_nameShortIndef] と {0} について正直な考えを共有した。</LongTalk7>
+  <LongTalk8>[other_nameShortIndef] と {0} について長く討論した。</LongTalk8>
+
+  <NumberOfEpicTalks>6</NumberOfEpicTalks>
+  <EpicTalk1>[other_nameShortIndef] と {0} について数時間も相談した。</EpicTalk1>
+  <EpicTalk2>[other_nameShortIndef] と {0} をしきりに語り合った。</EpicTalk2>
+  <EpicTalk3>[other_nameShortIndef] と {0} についてすごく長い会話をした。</EpicTalk3>
+  <EpicTalk4>[other_nameShortIndef] と {0} について果てしなく討論した。</EpicTalk4>
+  <EpicTalk5>[other_nameShortIndef] と {0} についてとても長いやりとりをした。</EpicTalk5>
+  <EpicTalk6>[other_nameShortIndef] と {0} について気持ちを何時間も発散した。</EpicTalk6>
+
+</LanguageData>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <PrudeSeen.Stages.0.label>人の裸を見かけた</PrudeSeen.Stages.0.label>
+  <PrudeSeen.Stages.0.description>さっきの人、裸だったでしょう！ここは服を着ないで歩き回ってもいい場所なのか？みっともない。</PrudeSeen.Stages.0.description>
+
+  <DynamicSocial.Stages.0.label>雑談</DynamicSocial.Stages.0.label>
+
+  <BrokeUpWithMeCodependent.Stages.0.label>共依存関係</BrokeUpWithMeCodependent.Stages.0.label>
+
+  <BrokeUpWithMeCodependentMood.Stages.0.label>{0}に依存している</BrokeUpWithMeCodependentMood.Stages.0.label>
+  <BrokeUpWithMeCodependentMood.Stages.0.description>寂しいよ… お願い、帰ってきて…</BrokeUpWithMeCodependentMood.Stages.0.description>
+
+  <CheatedOnMeCodependent.Stages.0.label>浮気された</CheatedOnMeCodependent.Stages.0.label>
+
+  <CheatedOnMeCodependentMood.Stages.0.label>{0}に浮気された</CheatedOnMeCodependentMood.Stages.0.label>
+  <CheatedOnMeCodependentMood.Stages.0.description>理解できない… きっと私のせいだけど、どこを間違った？</CheatedOnMeCodependentMood.Stages.0.description>
+
+  <RebuffedMyRomanceAttemptLecher.Stages.0.label>拒絶された</RebuffedMyRomanceAttemptLecher.Stages.0.label>
+
+  <CapturedMe.Stages.0.label>この人の派閥に囚われていた</CapturedMe.Stages.0.label>
+
+  <WentOnDate.stages.0.label>デートに行った</WentOnDate.stages.0.label>
+  <MissedDate.stages.0.label>デートの約束をしたのに寝ていた</MissedDate.stages.0.label>
+
+</LanguageData>

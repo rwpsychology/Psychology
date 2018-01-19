@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <AttendedFuneral.Stages.0.label>お葬式に出席した</AttendedFuneral.Stages.0.label>
+  <AttendedFuneral.Stages.0.description>入植者のお葬式に出席した。少し気が楽になった。</AttendedFuneral.Stages.0.description>
+
+  <WitnessedDeathAllyBleedingHeart.Stages.0.label>味方の死を目撃した</WitnessedDeathAllyBleedingHeart.Stages.0.label>
+  <WitnessedDeathAllyBleedingHeart.Stages.0.description>味方が死んでいくのを見た。あの人ともう話せないなんて…</WitnessedDeathAllyBleedingHeart.Stages.0.description>
+
+  <WitnessedDeathNonAllyBleedingHeart.Stages.0.label>人の死を目撃した</WitnessedDeathNonAllyBleedingHeart.Stages.0.label>
+  <WitnessedDeathNonAllyBleedingHeart.Stages.0.description>誰かが死んでいくのを見た。目の輝きが消えるのも…</WitnessedDeathNonAllyBleedingHeart.Stages.0.description>
+
+  <!-- Non-colonist deaths -->
+  <KnowGuestExecutedBleedingHeart.Stages.0.label>妥当な処刑</KnowGuestExecutedBleedingHeart.Stages.0.label>
+  <KnowGuestExecutedBleedingHeart.Stages.0.description>有罪の囚人か客が処刑された。妥当だったかもしれないけど、人命を奪うのは耐えがたいです。</KnowGuestExecutedBleedingHeart.Stages.0.description>
+
+  <KnowGuestExecutedBleedingHeart.Stages.1.label>人の安楽死</KnowGuestExecutedBleedingHeart.Stages.1.label>
+  <KnowGuestExecutedBleedingHeart.Stages.1.description>囚人か客が安楽死させられた。これのほうが人道的だけど、やっぱり悲しいです。</KnowGuestExecutedBleedingHeart.Stages.1.description>
+
+  <KnowGuestExecutedBleedingHeart.Stages.2.label>人の処刑</KnowGuestExecutedBleedingHeart.Stages.2.label>
+  <KnowGuestExecutedBleedingHeart.Stages.2.description>囚人か客が殺害された！信じられない！</KnowGuestExecutedBleedingHeart.Stages.2.description>
+
+  <KnowGuestExecutedBleedingHeart.Stages.3.label>人の「手術事故」</KnowGuestExecutedBleedingHeart.Stages.3.label>
+  <KnowGuestExecutedBleedingHeart.Stages.3.description>囚人か客が、入植者に内臓を収穫されて死んだ！許せない！</KnowGuestExecutedBleedingHeart.Stages.3.description>
+
+  <KnowPrisonerDiedInnocentBleedingHeart.Stages.0.label>無害な囚人の死</KnowPrisonerDiedInnocentBleedingHeart.Stages.0.label>
+  <KnowPrisonerDiedInnocentBleedingHeart.Stages.0.description>囚人の一人が、無害であるにもかかわらず、死んでしまった。私たちには囚人の世話をする義務がある。囚人に死んでほしかったら、こんな蛮行よりせめて秩序正しい安楽死にできたでしょう。</KnowPrisonerDiedInnocentBleedingHeart.Stages.0.description>
+
+  <!-- Colonist deaths -->
+  <KnowColonistExecutedBleedingHeart.Stages.0.label>入植者の妥当な処刑</KnowColonistExecutedBleedingHeart.Stages.0.label>
+  <KnowColonistExecutedBleedingHeart.Stages.0.description>有罪の囚人か客が処刑された。妥当だったかもしれないけど、人命を奪うのは耐えがたいです。</KnowColonistExecutedBleedingHeart.Stages.0.description>
+
+  <KnowColonistExecutedBleedingHeart.Stages.1.label>入植者の安楽死</KnowColonistExecutedBleedingHeart.Stages.1.label>
+  <KnowColonistExecutedBleedingHeart.Stages.1.description>入植者が安楽死させられた。これのほうが人道的だけど、やっぱり悲しいです。</KnowColonistExecutedBleedingHeart.Stages.1.description>
+
+  <KnowColonistExecutedBleedingHeart.Stages.2.label>入植者の処刑</KnowColonistExecutedBleedingHeart.Stages.2.label>
+  <KnowColonistExecutedBleedingHeart.Stages.2.description>入植者が無残に殺害された。信じられない！</KnowColonistExecutedBleedingHeart.Stages.2.description>
+
+  <KnowColonistExecutedBleedingHeart.Stages.3.label>入植者の「手術事故」</KnowColonistExecutedBleedingHeart.Stages.3.label>
+  <KnowColonistExecutedBleedingHeart.Stages.3.description>入植者が内臓を収穫されて死んだ！許せない！</KnowColonistExecutedBleedingHeart.Stages.3.description>
+
+  <KnowColonistDiedBleedingHeart.Stages.0.label>入植者の死</KnowColonistDiedBleedingHeart.Stages.0.label>
+  <KnowColonistDiedBleedingHeart.Stages.0.description>私たちのうちの一人が死んでしまった。何とかして助けられたはずだ…</KnowColonistDiedBleedingHeart.Stages.0.description>
+
+</LanguageData>

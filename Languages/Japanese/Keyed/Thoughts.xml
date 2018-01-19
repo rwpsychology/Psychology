@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<ComplaintLabel>リーダーに文句を伝えた</ComplaintLabel>
+	<ComplaintDesc>リーダーに文句を伝えたら、こんな気分になった。</ComplaintDesc>
+	
+	<VisitLabel>有権者の訪問を受けた</VisitLabel>
+	<VisitDesc>有権者の訪問を受けたことで、こんな気分になった。</VisitDesc>
+	
+	<AttendedFuneralThought>{0} のお葬式に出席した</AttendedFuneralThought>
+	<AttendedFuneralDesc>HEが死ぬなんて、まだ信じられない… でも、お葬式が終わってから、少し落ち着いてきた。</AttendedFuneralDesc>
+
+</LanguageData>

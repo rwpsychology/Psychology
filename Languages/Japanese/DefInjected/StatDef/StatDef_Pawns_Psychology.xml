@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <ArrestPeacefullyChance.label>平和な逮捕の確率</ArrestPeacefullyChance.label>
+  <ArrestPeacefullyChance.description>この人の、逮捕者がおとなしく投降するように説得できる確率です。</ArrestPeacefullyChance.description>
+
+</LanguageData>

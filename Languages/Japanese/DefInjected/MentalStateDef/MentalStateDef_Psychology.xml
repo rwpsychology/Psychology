@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <FellPlotting.label>悪巧み中</FellPlotting.label>
+  <FellPlotting.beginLetterLabel>狂ったように企んでいる</FellPlotting.beginLetterLabel>
+  <FellPlotting.beginLetter>{0}は企てるために自分の部屋に戻っています！</FellPlotting.beginLetter>
+  <FellPlotting.recoveryMessage>{0}の悪巧みは終わりました。</FellPlotting.recoveryMessage>
+  <FellPlotting.baseInspectLine>精神状態: 悪巧み</FellPlotting.baseInspectLine>
+
+  <SelfHarm.label>自傷中</SelfHarm.label>
+  <SelfHarm.beginLetterLabel>自傷</SelfHarm.beginLetterLabel>
+  <SelfHarm.beginLetter>{0}はリストカットをし、自分の部屋に隠れています。</SelfHarm.beginLetter>
+  <SelfHarm.recoveryMessage>{0}は自傷を止めました。</SelfHarm.recoveryMessage>
+  <SelfHarm.baseInspectLine>精神状態: 自傷</SelfHarm.baseInspectLine>
+
+  <Paranoia.label>うわ言を言っている</Paranoia.label>
+  <Paranoia.beginLetterLabel>パラノイア</Paranoia.beginLetterLabel>
+  <Paranoia.beginLetter>{0}は妄想のうわ言に夢中です。</Paranoia.beginLetter>
+  <Paranoia.recoveryMessage>{0}のパラノイアが止まりました。</Paranoia.recoveryMessage>
+  <Paranoia.baseInspectLine>精神状態: パラノイア</Paranoia.baseInspectLine>
+
+  <Abuse.label>怒鳴っている</Abuse.label>
+  <Abuse.beginLetterLabel>暴言</Abuse.beginLetterLabel>
+  <Abuse.beginLetter>{0}は憤り、見る人全員に暴言を吐いています。</Abuse.beginLetter>
+  <Abuse.recoveryMessage>{0}の暴言は止まりました。</Abuse.recoveryMessage>
+  <Abuse.baseInspectLine>精神状態: 暴言</Abuse.baseInspectLine>
+
+  <Compulsion.label>強迫的に掃除している</Compulsion.label>
+  <Compulsion.beginLetterLabel>衝動強迫</Compulsion.beginLetterLabel>
+  <Compulsion.beginLetter>{0}は自分の福祉を犠牲に周辺をひたすら掃除しています。</Compulsion.beginLetter>
+  <Compulsion.recoveryMessage>{0}の強迫的な掃除は止まりました。</Compulsion.recoveryMessage>
+  <Compulsion.baseInspectLine>精神状態: 強迫的な掃除</Compulsion.baseInspectLine>
+
+  <Antisocial.label>仲間を避けている</Antisocial.label>
+  <Antisocial.beginLetterLabel>反社会的行為</Antisocial.beginLetterLabel>
+  <Antisocial.beginLetter>{0}は自分の仲間を避けています。</Antisocial.beginLetter>
+  <Antisocial.recoveryMessage>{0}の反社会的行為が止まりました。</Antisocial.recoveryMessage>
+  <Antisocial.baseInspectLine>精神状態: 反社会的</Antisocial.baseInspectLine>
+
+  <Apathy.label>サボっている</Apathy.label>
+  <Apathy.beginLetterLabel>無気力症</Apathy.beginLetterLabel>
+  <Apathy.beginLetter>{0}は無気力になり、仕事のやる気が出ません。</Apathy.beginLetter>
+  <Apathy.recoveryMessage>{0}の無気力症状が止まりました。</Apathy.recoveryMessage>
+  <Apathy.baseInspectLine>精神状態: 無気力症</Apathy.baseInspectLine>
+
+  <Histrionic.label>人の気を引こうとしている</Histrionic.label>
+  <Histrionic.beginLetterLabel>ヒステリー</Histrionic.beginLetterLabel>
+  <Histrionic.beginLetter>{0}はヒステリーに陥り、必死に人の気を引こうとしています。</Histrionic.beginLetter>
+  <Histrionic.recoveryMessage>{0}のヒステリーは終わりました。</Histrionic.recoveryMessage>
+  <Histrionic.baseInspectLine>精神状態: ヒステリー</Histrionic.baseInspectLine>
+
+<!-- Vanilla B18+>
+
+  <Sadism.label>無残に笑っている</Sadism.label>
+  <Sadism.beginLetterLabel>サディズム</Sadism.beginLetterLabel>
+  <Sadism.beginLetter>{0}は冷酷な笑いを浮かべながら武器を振りかざしています。</Sadism.beginLetter>
+  <Sadism.recoveryMessage>{0}の無残な暴力は止まりました。</Sadism.recoveryMessage>
+  <Sadism.baseInspectLine>精神状態: サディズム</Sadism.baseInspectLine>
+
+  <Tantrum.label>かんしゃく</Tantrum.label>
+  <Tantrum.beginLetterLabel>かんしゃく</Tantrum.beginLetterLabel>
+  <Tantrum.beginLetter>{0}はかんしゃくを起こし、近くの物に八つ当たりし始めました！</Tantrum.beginLetter>
+  <Tantrum.recoveryMessage>{0}の破壊的なかんしゃくは止まりました。</Tantrum.recoveryMessage>
+  <Tantrum.baseInspectLine>精神状態: かんしゃくを起こしている</Tantrum.baseInspectLine>
+
+<-->
+
+</LanguageData>

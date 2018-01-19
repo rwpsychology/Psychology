@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <LetterLabelNewElection>選挙が始まる</LetterLabelNewElection>
+  <LetterNewElection>{0} のリーダーを決める選挙が開催されます。いくつかの入植者は立候補を発表しました。</LetterNewElection>
+  <LetterLabelElectionHeld>選挙が実施中</LetterLabelElectionHeld>
+  <LetterElectionHeld>{0} での選挙は進行中です。利用可能な集合場所は一つ投票所として選ばました。入植者はそこで投票を行います。</LetterElectionHeld>
+  <LetterLabelElectionCandidate>候補者 {0}</LetterLabelElectionCandidate>
+  <LetterElectionCandidate>{0} は {1} のリーダー選に出馬しています。HIS政綱は以下の通りです。\n{2}</LetterElectionCandidate>
+  <LetterLabelTieSettled>選挙で同点、{0} に決定</LetterLabelTieSettled>
+  <LetterTieSettled>リーダー選で同点になりました。候補者全員の激しい論争が終わったら、最後まで粘ったのは {0} だけでした。他の候補者は撤退したので、{0} はリーダーとなりました。</LetterTieSettled>
+	<LetterLabelElectionWon>選挙の勝利者 {0}</LetterLabelElectionWon>
+	<LetterElectionWon>{1} でのリーダー選に {0} は勝利しました。HECAPは{2}票を獲得しました。\n\n一応、HIS政綱は以下の通りでした。\n{3}\n\nこれから{0}は自分の部屋があれば入植者の訪問を受けることになります。もしHIS社交スキルが足りていれば、入植者は文句をHIMに伝えることですっきりするでしょう。奇麗な部屋で迎えられたらなおさらです。\n\nただし、{0} の精神状態に注意してください。コロニーの責任を背負うのは楽ではないし、つらい時にHEは悩みを聞いてもらえる相手がいません。</LetterElectionWon>
+	<LetterLabelFuneralPlanned>お葬式の予定</LetterLabelFuneralPlanned>
+	<LetterFuneralPlanned>{0} は {1} のためのお葬式を予定しました。葬儀は {2} {3}時に行われます。</LetterFuneralPlanned>
+	<LetterLabelFuneralStarted>お葬式が始まる</LetterLabelFuneralStarted>
+	<LetterFuneralStarted>{0}のお葬式が進行中です。入植者は {0} との関係次第で出席します。</LetterFuneralStarted>
+	<LetterLabelFuneralEnded>お葬式が終わった</LetterLabelFuneralEnded>
+	<LetterFuneralEnded>{0}のお葬式が終わりました。\n\n以下の人は出席しました。\n{1}</LetterFuneralEnded>
+
+</LanguageData>
