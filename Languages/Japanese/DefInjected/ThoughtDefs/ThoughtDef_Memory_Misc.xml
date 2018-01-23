@@ -69,4 +69,7 @@
   <PrisonerAbandonedToDieBleedingHeart.Stages.0.label>囚人が見殺しにされた</PrisonerAbandonedToDieBleedingHeart.Stages.0.label>
   <PrisonerAbandonedToDieBleedingHeart.Stages.0.description>一人で生き残るわけがないのに、 私たちは囚人を見殺しにした。監禁している人も守る義務がある。</PrisonerAbandonedToDieBleedingHeart.Stages.0.description>
 
+  <DateCancelled.Stages.0.label>やむを得ずデートを中止した</DateCancelled.Stages.0.label>
+  <DateCancelled.Stages.0.description>せっかくのデートがコロニーの事情で中止になった。楽しみにしていたのにねぇ。</DateCancelled.Stages.0.description>
+
 </LanguageData>

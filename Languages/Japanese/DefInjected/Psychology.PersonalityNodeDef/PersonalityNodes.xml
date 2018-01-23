@@ -193,8 +193,8 @@
 	<Optimistic.label>楽観的</Optimistic.label>
 	<Optimistic.description>楽観的な人はいつも人生の明るい面を見ている。</Optimistic.description>
 	<Optimistic.conversationTopic>感情</Optimistic.conversationTopic>
-	<Optimistic.platformIssueHigh>今のコロニーは順調だけど、改善の余地はまだあるから。</Optimistic.platformIssueHigh>
-	<Optimistic.platformIssueLow>今のコロニーは困難だが、状況はまだ悪化するから。</Optimistic.platformIssueLow>
+	<Optimistic.platformIssueHigh>今のコロニーは順調だけど、改善の余地はまだある。</Optimistic.platformIssueHigh>
+	<Optimistic.platformIssueLow>今のコロニーは困難だけど、今後良くなるとは限らない。</Optimistic.platformIssueLow>
 
 	<Compassionate.label>情け深い</Compassionate.label>
 	<Compassionate.description>情け深い人は他の人を困難から助けようとする。</Compassionate.description>
