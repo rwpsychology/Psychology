@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Random social interactions -->
+
+  <PrudeSeen.stages.0.label>vió la desnudez humana</PrudeSeen.stages.0.label>
+  <PrudeSeen.stages.0.description>¿Estaba esa persona desnuda? ¿Simplemente dejan que la gente corra sin ropa aquí? Asqueroso.</PrudeSeen.stages.0.description>
+
+  <DynamicSocial.stages.0.label>conversación</DynamicSocial.stages.0.label>
+  <BrokeUpWithMeCodependent.stages.0.label>codependiente</BrokeUpWithMeCodependent.stages.0.label>
+
+  <BrokeUpWithMeCodependentMood.stages.0.label>codependiente en {0}</BrokeUpWithMeCodependentMood.stages.0.label>
+  <BrokeUpWithMeCodependentMood.stages.0.description>Te extraño ... por favor vuelve.</BrokeUpWithMeCodependentMood.stages.0.description>
+
+  <CheatedOnMeCodependent.stages.0.label>me engañó</CheatedOnMeCodependent.stages.0.label>
+
+  <CheatedOnMeCodependentMood.stages.0.label>me engañó con {0}</CheatedOnMeCodependentMood.stages.0.label>
+  <CheatedOnMeCodependentMood.stages.0.description>No lo entiendo... Debí haber hecho algo mal.</CheatedOnMeCodependentMood.stages.0.description>
+
+  <RebuffedMyRomanceAttemptLecher.stages.0.label>me rechazó</RebuffedMyRomanceAttemptLecher.stages.0.label>
+  <CapturedMe.stages.0.label>facción me encarceló</CapturedMe.stages.0.label>
+  <WentOnDate.stages.0.label>fue a una cita</WentOnDate.stages.0.label>
+  <MissedDate.stages.0.label>dormimos al cabo de nuestra cita</MissedDate.stages.0.label>
+
+
+</LanguageData>

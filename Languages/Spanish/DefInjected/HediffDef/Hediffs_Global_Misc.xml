@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <HoldingConversation.label>conversación</HoldingConversation.label>
+  <HoldingConversation.stages.0.label>oculto</HoldingConversation.stages.0.label>
+
+  <Mayor.label>alcalde</Mayor.label>
+  <Mayor.stages.0.label>oculto</Mayor.stages.0.label>
+
+  <PlannedDate.label>fecha</PlannedDate.label>
+  <PlannedDate.stages.0.label>oculto</PlannedDate.stages.0.label>
+
+  <PlannedFuneral.label>funeral planificado</PlannedFuneral.label>
+  <PlannedFuneral.stages.0.label>oculto</PlannedFuneral.stages.0.label>
+
+
+</LanguageData>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Random social interactions -->
+
+  <PrudeSeen.label>vió desnudo/a</PrudeSeen.label>
+  <PrudeSeen.logRulesInitiator.rulesStrings.0>logentry-&gt;Saw [other_nameShortIndef] desnudo/a.</PrudeSeen.logRulesInitiator.rulesStrings.0>
+  <PrudeSeen.logRulesRecipient.rulesStrings.0>logentry-&gt;Saw [other_nameShortIndef] me vió desnudo/a.</PrudeSeen.logRulesRecipient.rulesStrings.0>
+
+  <Conversation.label>conversación</Conversation.label>
+  <Conversation.logRulesInitiator.rulesStrings.0>logentry-&gt;tuvo una conversación hiriente con [other_nameShortIndef].</Conversation.logRulesInitiator.rulesStrings.0>
+  <Conversation.logRulesRecipient.rulesStrings.0>logentry-&gt;[other_nameShortIndef] inició una conversación conmigo.</Conversation.logRulesRecipient.rulesStrings.0>
+
+  <EndConversation.label>terminó conversación</EndConversation.label>
+  <EndConversation.logRulesInitiator.rulesStrings.0>logentry-&gt;Terminó una conversación con [other_nameShortIndef].</EndConversation.logRulesInitiator.rulesStrings.0>
+  <EndConversation.logRulesRecipient.rulesStrings.0>logentry-&gt;Terminó una conversación con [other_nameShortIndef].</EndConversation.logRulesRecipient.rulesStrings.0>
+
+  <HangOut.label>pasando el rato</HangOut.label>
+  <HangOut.logRulesInitiator.rulesStrings.0>logentry-&gt;Preguntó [other_nameShortIndef] si puede pasar el rato conmigo.</HangOut.logRulesInitiator.rulesStrings.0>
+  <HangOut.logRulesRecipient.rulesStrings.0>logentry-&gt;[other_nameShortIndef] me pidió que pasara el rato.</HangOut.logRulesRecipient.rulesStrings.0>
+
+  <PlanDate.label>planificando una cita</PlanDate.label>
+  <PlanDate.logRulesInitiator.rulesStrings.0>logentry-&gt;Planeó una cita con [other_nameShortIndef].</PlanDate.logRulesInitiator.rulesStrings.0>
+  <PlanDate.logRulesRecipient.rulesStrings.0>logentry-&gt;[other_nameShortIndef] planeó una cita conmigo.</PlanDate.logRulesRecipient.rulesStrings.0>
+
+
+</LanguageData>

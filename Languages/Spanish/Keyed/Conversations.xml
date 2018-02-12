@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <NumberOfShortTalks>10</NumberOfShortTalks>
+  <ShortTalk1>Tuve una breve charla con [other_nameShortIndef] sobre {0}.</ShortTalk1>
+  <ShortTalk2>Tuve una corta charla con [other_nameShortIndef] sobre {0}.</ShortTalk2>
+  <ShortTalk3>Tuve una corta charla con [other_nameShortIndef] sobre {0}.</ShortTalk3>
+  <ShortTalk4>He discutido rápidamente sobre {0} con [other_nameShortIndef].</ShortTalk4>
+  <ShortTalk5>He discutido fugazmente sobre {0} con [other_nameShortIndef].</ShortTalk5>
+  <ShortTalk6>He hablado sobre {0} con [other_nameShortIndef].</ShortTalk6>
+  <ShortTalk7>He comentado consisamente de {0} con [other_nameShortIndef].</ShortTalk7>
+  <ShortTalk8>He remarcado en {0} con [other_nameShortIndef].</ShortTalk8>
+  <ShortTalk9>Palabras intercambiadas con [other_nameShortIndef] sobre {0} momentáneamente.</ShortTalk9>
+  <ShortTalk10>Tuve un breve intercambio con [other_nameShortIndef] sobre {0}.</ShortTalk10>
+
+  <NumberOfNormalTalks>12</NumberOfNormalTalks>
+  <NormalTalk1>Hablé sobre {0} con [other_nameShortIndef].</NormalTalk1>
+  <NormalTalk2>Tuve una conversación sobre {0} con [other_nameShortIndef].</NormalTalk2>
+  <NormalTalk3>He discutido {0} con [other_nameShortIndef].</NormalTalk3>
+  <NormalTalk4>He comparado opiniones sobre {0} con [other_nameShortIndef].</NormalTalk4>
+  <NormalTalk5>He conversado con [other_nameShortIndef] sobre {0}.</NormalTalk5>
+  <NormalTalk6>He hablado con [other_nameShortIndef] sobre {0}.</NormalTalk6>
+  <NormalTalk7>Tuve un discusión con [other_nameShortIndef] sobre {0}.</NormalTalk7>
+  <NormalTalk8>He aprendido la opinion de [other_nameShortIndef]'s sobre {0}.</NormalTalk8>
+  <NormalTalk9>He comparado opiniones en {0} con [other_nameShortIndef].</NormalTalk9>
+  <NormalTalk10>He aprendido los pensamientos de [other_nameShortIndef]'s sobre {0}.</NormalTalk10>
+  <NormalTalk11>Argumenté sobre {0} con [other_nameShortIndef].</NormalTalk11>
+  <NormalTalk12>He consultado con [other_nameShortIndef] sobre {0}.</NormalTalk12>
+
+  <NumberOfLongTalks>8</NumberOfLongTalks>
+  <LongTalk1>Discutí largamente de {0} con [other_nameShortIndef].</LongTalk1>
+  <LongTalk2>Tuve una larga conversación sobre {0} con [other_nameShortIndef].</LongTalk2>
+  <LongTalk3>Hablé con [other_nameShortIndef] sobre {0} por algun rato.</LongTalk3>
+  <LongTalk4>He discutido a fondo de  {0} con [other_nameShortIndef].</LongTalk4>
+  <LongTalk5>Consulté extensamente sobre {0} con [other_nameShortIndef].</LongTalk5>
+  <LongTalk6>Aprendí mucho sobre cómo [other_nameShortIndef] se siente acerca de {0}.</LongTalk6>
+  <LongTalk7>Pensamientos profundos compartidos sobre {0} con [other_nameShortIndef].</LongTalk7>
+  <LongTalk8>Tuvo un largo debate sobre {0} con [other_nameShortIndef].</LongTalk8>
+
+  <NumberOfEpicTalks>6</NumberOfEpicTalks>
+  <EpicTalk1>Conferido con [other_nameShortIndef] por horas, sobre {0}.</EpicTalk1>
+  <EpicTalk2>Hablaba interminablemente con [other_nameShortIndef] sobre {0}.</EpicTalk2>
+  <EpicTalk3>Tuve una conversación extremadamente larga sobre {0} con [other_nameShortIndef].</EpicTalk3>
+  <EpicTalk4>Debate inacabable con [other_nameShortIndef] sobre {0}.</EpicTalk4>
+  <EpicTalk5>Tuve un largo intercambio de ida y vuelta sobre {0} con [other_nameShortIndef].</EpicTalk5>
+  <EpicTalk6>Ha ventilado a cerca de {0} con [other_nameShortIndef] por horas.</EpicTalk6>
+
+</LanguageData>
