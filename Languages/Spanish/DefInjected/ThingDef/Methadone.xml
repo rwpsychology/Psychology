@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Methadone.label>metadona</Methadone.label>
+  <Methadone.description>Un opioide para tratar la adicción. Evita que los usuarios sufran los efectos negativos de la abstinencia de otras drogas, excepto el luciferio. La adicción causa un rendimiento reducido y ocasionales atracones de drogas. Tomar cada dia. Interrumpe el uso después de que la abstinencia disminuya.</Methadone.description>
+  <Methadone.ingestible.ingestCommandString>Tomar {0}</Methadone.ingestible.ingestCommandString>
+  <Methadone.ingestible.ingestReportString>Tomando {0}.</Methadone.ingestible.ingestReportString>
+
+
+</LanguageData>
