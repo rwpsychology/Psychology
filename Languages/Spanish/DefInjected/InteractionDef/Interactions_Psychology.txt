@@ -1,0 +1,15 @@
+﻿vió desnudo/a
+logentry->Saw [other_nameShortIndef] desnudo/a.
+logentry->Saw [other_nameShortIndef] me vió desnudo/a.
+conversación
+logentry->tuvo una conversación hiriente con [other_nameShortIndef].
+logentry->[other_nameShortIndef] inició una conversación conmigo.
+terminó conversación
+logentry->Terminó una conversación con [other_nameShortIndef].
+logentry->Terminó una conversación con [other_nameShortIndef].
+pasando el rato
+logentry->Preguntó [other_nameShortIndef] si puede pasar el rato conmigo.
+logentry->[other_nameShortIndef] me pidió que pasara el rato.
+planificando una cita
+logentry->Planeó una cita con [other_nameShortIndef].
+logentry->[other_nameShortIndef] planeó una cita conmigo.

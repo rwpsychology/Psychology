@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- WITab titles -->
+  <TabPsyche>Psique</TabPsyche>
+
+  <!-- WITab text -->
+  <SexualityDisabledWarning>El sistema de sexualidad del mod está desactivado, ya sea por usted o por la presencia de un mod conflictivo en su lista de mods. Deshabilite cualquier otra modificación que altere la sexualidad o interacción de los colonos.</SexualityDisabledWarning>
+  <Sexuality>Sexualidad</Sexuality>
+  <KinseyRating>Calificación de Kinsey:</KinseyRating>
+  <Asexual>Asexual</Asexual>
+  <AsexualDescription>Este peón tiene un deseo sexual muy bajo. No experimentan mucha atracción sexual y es poco probable que participen en algo íntimo.</AsexualDescription>
+  <Aromantic>Aromantico</Aromantic>
+  <AromanticDescription>Este colono tiene un impulso romántico muy bajo. Es poco probable que hagan intentos de romance o acepten propuestas de matrimonio, pero aún pueden tener amantes.</AromanticDescription>
+
+  <!-- Dialog text -->
+  <EditPsyche>Dev edit</EditPsyche>
+  <PsycheEditor>Modificando la psique de {0}:</PsycheEditor>
+  <PersonalityNodeWarning>Estás editando los valores en bruto de la personalidad de un colono. Las estadísticas reales se ajustarán por otros factores.</PersonalityNodeWarning>
+  <SexDrive>Unidad sexual:</SexDrive>
+  <RomanticDrive>Unidad romántica:</RomanticDrive>
+
+</LanguageData>

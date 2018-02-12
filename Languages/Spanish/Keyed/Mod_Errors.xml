@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <KinseyDisable>Desactivando la escala de Kinsey debido a la detección de un mod romance/sexualidad.</KinseyDisable>
+  <KinseyDetourDisable>El desvío de métodos vitales para la funcionalidad de algunos rasgos fue deshabilitado para proteger la compatibilidad. Estableciendo el carácter común de esos rasgos a cero.</KinseyDetourDisable>
+  <MedicalDetourDisable>Desactivando el desvío de métodos médicos debido a la detección de un ensamblaje médico/mod de cirugía Esto eliminará parte de la funcionalidad de peones Bleeding Heart a menos que el mod en cuestión sea Less Arbitrary Surgery</MedicalDetourDisable>
+
+</LanguageData>
