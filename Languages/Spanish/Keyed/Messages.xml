@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-  <TreatedTrait>{0} 's {1} ha sido tratado con éxito.</TreatedTrait>
+  <TreatedTrait>La/El {0} de {1} ha sido tratada/o con éxito.</TreatedTrait>
   <MessageElectionCalledOff>La elección en {0} ha sido cancelada debido a las condiciones en el lugar de votación.</MessageElectionCalledOff>
   <MessageFuneralCalledOff>El funeral ha sido cancelado debido a las condiciones en la colonia.</MessageFuneralCalledOff>
 

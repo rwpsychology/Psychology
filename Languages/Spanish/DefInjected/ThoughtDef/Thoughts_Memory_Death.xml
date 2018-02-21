@@ -5,29 +5,29 @@
   <AttendedFuneral.stages.0.description>Asistí al funeral de un colono. Me hizo sentir un poco mejor.</AttendedFuneral.stages.0.description>
 
   <WitnessedDeathAllyBleedingHeart.stages.0.label>testigo de la muerte de un aliado</WitnessedDeathAllyBleedingHeart.stages.0.label>
-  <WitnessedDeathAllyBleedingHeart.stages.0.description>Vi a uno de mi pueblo morir. No puedo creer que se hayan ido. Nunca volveré a hablar con ellos.</WitnessedDeathAllyBleedingHeart.stages.0.description>
+  <WitnessedDeathAllyBleedingHeart.stages.0.description>Vi a uno de mi pueblo morir. No puedo creer que se hayan ido. Nunca volveré a hablar con él/ella.</WitnessedDeathAllyBleedingHeart.stages.0.description>
 
   <WitnessedDeathNonAllyBleedingHeart.stages.0.label>fue testigo de la muerte de un extraño</WitnessedDeathNonAllyBleedingHeart.stages.0.label>
-  <WitnessedDeathNonAllyBleedingHeart.stages.0.description>Vi a alguien morir. Vi la luz en sus ojos, apagandose cuando cayeron.</WitnessedDeathNonAllyBleedingHeart.stages.0.description>
+  <WitnessedDeathNonAllyBleedingHeart.stages.0.description>Vi a alguien morir. Vi la luz en sus ojos apagarse mientras se cerraban.</WitnessedDeathNonAllyBleedingHeart.stages.0.description>
 
 
   <!-- executions and prisoner deaths -->
 
   <KnowGuestExecutedBleedingHeart.stages.0.label>ejecución justificada</KnowGuestExecutedBleedingHeart.stages.0.label>
-  <KnowGuestExecutedBleedingHeart.stages.0.description>Un prisionero o invitado culpable fue ejecutado. Estaba justificado, pero todavía no puedo soportar la pérdida de la vida.</KnowGuestExecutedBleedingHeart.stages.0.description>
+  <KnowGuestExecutedBleedingHeart.stages.0.description>Un prisionero o invitado culpable fue ejecutado. Estaba justificado, pero todavía no puedo soportar la pérdida de una vida.</KnowGuestExecutedBleedingHeart.stages.0.description>
   <KnowGuestExecutedBleedingHeart.stages.1.label>alguien fue sacrificado</KnowGuestExecutedBleedingHeart.stages.1.label>
-  <KnowGuestExecutedBleedingHeart.stages.1.description>Un prisionero o invitado fue sacrificado. Fue humano, pero aún desgarrador.</KnowGuestExecutedBleedingHeart.stages.1.description>
+  <KnowGuestExecutedBleedingHeart.stages.1.description>Un prisionero o invitado fue sacrificado. Fue humano, pero aún asi, desgarrador.</KnowGuestExecutedBleedingHeart.stages.1.description>
   <KnowGuestExecutedBleedingHeart.stages.2.label>alguien fue ejecutado</KnowGuestExecutedBleedingHeart.stages.2.label>
-  <KnowGuestExecutedBleedingHeart.stages.2.description>Un prisionero o huésped fue asesinado a sangre fría. ¡No puedo creer esto!</KnowGuestExecutedBleedingHeart.stages.2.description>
+  <KnowGuestExecutedBleedingHeart.stages.2.description>Un prisionero o huésped fue asesinado a sangre fría. ¡No puedo creerlo!</KnowGuestExecutedBleedingHeart.stages.2.description>
   <KnowGuestExecutedBleedingHeart.stages.3.label>alguien asesinado por cosecha de órganos</KnowGuestExecutedBleedingHeart.stages.3.label>
   <KnowGuestExecutedBleedingHeart.stages.3.description>Un prisionero o un invitado murió porque la colonia le quitó partes del cuerpo. ¡Estoy furioso!</KnowGuestExecutedBleedingHeart.stages.3.description>
 
   <KnowColonistExecutedBleedingHeart.stages.0.label>ejecución justificada de colono</KnowColonistExecutedBleedingHeart.stages.0.label>
-  <KnowColonistExecutedBleedingHeart.stages.0.description>Un colono culpable fue ejecutado. Estaba justificado, pero todavía no puedo soportar la pérdida de la vida.</KnowColonistExecutedBleedingHeart.stages.0.description>
+  <KnowColonistExecutedBleedingHeart.stages.0.description>Un colono culpable fue ejecutado. Estaba justificado, pero todavía no puedo soportar la pérdida de una vida.</KnowColonistExecutedBleedingHeart.stages.0.description>
   <KnowColonistExecutedBleedingHeart.stages.1.label>colono eutanasiado</KnowColonistExecutedBleedingHeart.stages.1.label>
-  <KnowColonistExecutedBleedingHeart.stages.1.description>Un colono fue eutanasiado. Fue humano, pero aún desgarrador.</KnowColonistExecutedBleedingHeart.stages.1.description>
+  <KnowColonistExecutedBleedingHeart.stages.1.description>Un colono fue eutanasiado. Fue humano, pero aún asi, desgarrador.</KnowColonistExecutedBleedingHeart.stages.1.description>
   <KnowColonistExecutedBleedingHeart.stages.2.label>colono ejecutado</KnowColonistExecutedBleedingHeart.stages.2.label>
-  <KnowColonistExecutedBleedingHeart.stages.2.description>Un colono fue asesinado a sangre fría. ¡No puedo creer esto!</KnowColonistExecutedBleedingHeart.stages.2.description>
+  <KnowColonistExecutedBleedingHeart.stages.2.description>Un colono fue asesinado a sangre fría. ¡No puedo creerlo!</KnowColonistExecutedBleedingHeart.stages.2.description>
   <KnowColonistExecutedBleedingHeart.stages.3.label>alguien asesinado por cosecha de órganos</KnowColonistExecutedBleedingHeart.stages.3.label>
   <KnowColonistExecutedBleedingHeart.stages.3.description>Un colono murió porque alguien le quitó partes del cuerpo. ¡Estoy furioso!</KnowColonistExecutedBleedingHeart.stages.3.description>
 
@@ -35,7 +35,7 @@
   <KnowPrisonerDiedInnocentBleedingHeart.stages.0.description>Uno de nuestros prisioneros murió a pesar de ser inofensivo. Tenemos el deber de cuidar a nuestros prisioneros. Si los quisiéramos muertos, podríamos al menos haber llevado a cabo una ejecución ordenada en lugar de permitir esa barbarie.</KnowPrisonerDiedInnocentBleedingHeart.stages.0.description>
 
   <KnowColonistDiedBleedingHeart.stages.0.label>colono murió</KnowColonistDiedBleedingHeart.stages.0.label>
-  <KnowColonistDiedBleedingHeart.stages.0.description>Una de nuestras personas murió. Si hubiéramos hecho algo diferente...</KnowColonistDiedBleedingHeart.stages.0.description>
+  <KnowColonistDiedBleedingHeart.stages.0.description>Una de nuestras personas murió. Si solo hubiéramos hecho algo diferente...</KnowColonistDiedBleedingHeart.stages.0.description>
 
 
 </LanguageData>

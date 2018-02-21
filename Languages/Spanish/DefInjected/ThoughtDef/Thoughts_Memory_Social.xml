@@ -9,7 +9,7 @@
   <DynamicSocial.stages.0.label>conversación</DynamicSocial.stages.0.label>
   <BrokeUpWithMeCodependent.stages.0.label>codependiente</BrokeUpWithMeCodependent.stages.0.label>
 
-  <BrokeUpWithMeCodependentMood.stages.0.label>codependiente en {0}</BrokeUpWithMeCodependentMood.stages.0.label>
+  <BrokeUpWithMeCodependentMood.stages.0.label>codependiente de {0}</BrokeUpWithMeCodependentMood.stages.0.label>
   <BrokeUpWithMeCodependentMood.stages.0.description>Te extraño ... por favor vuelve.</BrokeUpWithMeCodependentMood.stages.0.description>
 
   <CheatedOnMeCodependent.stages.0.label>me engañó</CheatedOnMeCodependent.stages.0.label>

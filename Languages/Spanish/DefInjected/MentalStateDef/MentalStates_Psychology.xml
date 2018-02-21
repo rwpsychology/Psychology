@@ -16,7 +16,7 @@
   <Paranoia.label>balbuceando</Paranoia.label>
   <Paranoia.beginLetter>{0} está absorto por balbuceo paranoico.</Paranoia.beginLetter>
   <Paranoia.beginLetterLabel>paranoico</Paranoia.beginLetterLabel>
-  <Paranoia.recoveryMessage>ha vencido su paranoia.</Paranoia.recoveryMessage>
+  <Paranoia.recoveryMessage>{0} ha vencido su paranoia.</Paranoia.recoveryMessage>
   <Paranoia.baseInspectLine>Estado mental: Paranoico</Paranoia.baseInspectLine>
 
 
@@ -40,7 +40,7 @@
   <Antisocial.label>evitando personas</Antisocial.label>
   <Antisocial.beginLetter>{0} está evitando a sus compañeros colonos.</Antisocial.beginLetter>
   <Antisocial.beginLetterLabel>antisocial</Antisocial.beginLetterLabel>
-  <Antisocial.recoveryMessage>{0} ha dejado de se antisocial.</Antisocial.recoveryMessage>
+  <Antisocial.recoveryMessage>{0} ha dejado de ser antisocial.</Antisocial.recoveryMessage>
   <Antisocial.baseInspectLine>Estado mental: Antisocial</Antisocial.baseInspectLine>
 
   <Apathy.label>flojo</Apathy.label>
@@ -50,7 +50,7 @@
   <Apathy.baseInspectLine>Estado mental: Apatia</Apathy.baseInspectLine>
 
   <Histrionic.label>comportándose histriónicamente</Histrionic.label>
-  <Histrionic.beginLetter>{0} se ha puesto histriónico y está buscando desesperadamente atención.</Histrionic.beginLetter>
+  <Histrionic.beginLetter>{0} se ha puesto histriónico/a y está buscando desesperadamente llamar la atención.</Histrionic.beginLetter>
   <Histrionic.beginLetterLabel>histrionico/a</Histrionic.beginLetterLabel>
   <Histrionic.recoveryMessage>{0} ha dejado de estar histrionico/a.</Histrionic.recoveryMessage>
   <Histrionic.baseInspectLine>Estado mental: Histrionico/a</Histrionic.baseInspectLine>

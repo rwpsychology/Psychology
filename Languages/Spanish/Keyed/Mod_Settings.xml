@@ -2,19 +2,19 @@
 <LanguageData>
 
   <EmpathyChangesTitle>Habilitar cambios de empatía</EmpathyChangesTitle>
-  <EmpathyChangesTooltip>Desactívela para restablecer la normalidad de las reacciones de los colonos ante las cosas malas que le suceden a otras personas. Esto aumentará la dificultad; Los peones de Bleeding Heart no se verán afectados. Reinicia el juego después de deshabilitar esto.</EmpathyChangesTooltip>
+  <EmpathyChangesTooltip>Desactívela para restablecer la normalidad de las reacciones de los colonos ante las cosas malas que le suceden a otras personas. Esto aumentará la dificultad; Los colonos de Bleeding Heart no se verán afectados. Reinicia el juego después de deshabilitar esto.</EmpathyChangesTooltip>
 
   <SexualityChangesTitle>Permitir cambios de sexualidad</SexualityChangesTitle>
-  <SexualityChangesTooltip>Desactívelo para desactivar la escala de peones de Kinsey y reactivar el rasgo Gay. NO cambie esto durante el juego, y reinicie el juego después de alternar esto.</SexualityChangesTooltip>
+  <SexualityChangesTooltip>Desactívelo para desactivar la escala de colonos de Kinsey y reactivar el rasgo gay. NO CAMBIE ESTO DURANTE EL JUEGO. REINICIE EL JUEGO DESPUÉS DE CAMBIAR ESTA OPCIÓN.</SexualityChangesTooltip>
 
   <KinseyModeTitle>Fórmula de la escala Kinsey</KinseyModeTitle>
-  <KinseyModeTooltip>Esta configuración determina qué fórmula se usa para pesar la escala de Kinsey cuando se generan peones.</KinseyModeTooltip>
+  <KinseyModeTooltip>Esta configuración determina qué fórmula se usa para pesar la escala de Kinsey cuando se generan colonos.</KinseyModeTooltip>
   <KinseyMode_Realistic>Por Defecto</KinseyMode_Realistic>
   <KinseyMode_Invisible>Centrado</KinseyMode_Invisible>
   <KinseyMode_Gaypocalypse>Inverso</KinseyMode_Gaypocalypse>
 
-  <IndividualityTitle>Habilitar pensamientos de individualidad</IndividualityTitle>
-  <IndividualityTooltip>Desactívela para desactivar el pensamiento negativo que obtendrán sus colonos si usan trajes que combinen perfectamente con otros colonos. Este pensamiento agrega dificultad extra, por lo que es opcional, pero recomendado.</IndividualityTooltip>
+  <IndividualityTitle>Habilitar sentimientos de individualidad</IndividualityTitle>
+  <IndividualityTooltip>Desactívela para desactivar el sentimiento negativo que obtendrán sus colonos si usan trajes que combinen perfectamente con otros colonos. Este sentimiento agrega dificultad extra, por lo que es opcional, pero recomendado.</IndividualityTooltip>
 
   <ElectionsTitle>Habilitar elecciones</ElectionsTitle>
   <ElectionsTooltip>Apáguelo para evitar que sus colonos tengan elecciones anuales. No detendrá una elección en progreso, y cualquier alcalde existente será revertido a un colono normal. Esto no afectará la compatibilidad con otras modificaciones.</ElectionsTooltip>

@@ -5,7 +5,7 @@
   <Confident.description>Una persona segura de sí misma tiene una gran autoconfianza y autoestima.</Confident.description>
 
   <Experimental.label>experimental</Experimental.label>
-  <Experimental.description>Es probable que alguien experimental intente de todo, disfrute de sorpresas y tenga más experiencia.</Experimental.description>
+  <Experimental.description>Es probable que alguien experimental intente de todo, disfrute de sorpresas y tenga más experiencias.</Experimental.description>
 
   <Intelligent.label>inteligente</Intelligent.label>
   <Intelligent.description>Una persona inteligente posee mucho poder cerebral bruto.</Intelligent.description>
@@ -32,13 +32,13 @@
   <Spontaneous.description>Una persona espontánea tiende a ser impulsiva y disfruta sorprendiendo a los demás.</Spontaneous.description>
 
   <Rational.label>racional</Rational.label>
-  <Rational.description>Cuanto más racional es una persona, más capaz es de pensar las cosas desde un punto de vista objetivo y objetivo.</Rational.description>
+  <Rational.description>Cuanto más racional es una persona, más capaz es de pensar las cosas desde un punto de vista objetivo y racional.</Rational.description>
 
   <Logical.label>logico</Logical.label>
-  <Logical.description>Una persona lógica es altamente capaz de conectar causa y efecto, y de predecir las consecuencias de las acciones.</Logical.description>
+  <Logical.description>Una persona lógica es altamente capaz de conectar "causa y efecto", y de predecir las consecuencias de las acciones.</Logical.description>
 
   <Creative.label>creativo</Creative.label>
-  <Creative.description>Las personas creativas pueden imaginar cosas en vívidos detalles, ya sea que hayan existido o no.</Creative.description>
+  <Creative.description>Las personas creativas pueden imaginar cosas con vívidos detalles, ya sea que hayan existido o no.</Creative.description>
 
   <Passionate.label>apasionado</Passionate.label>
   <Passionate.description>Las personas que son apasionadas sienten muy fuertemente acerca de las cosas y tienden a expresarse enfáticamente.</Passionate.description>
@@ -50,13 +50,13 @@
   <Empathetic.description>Una persona empática puede ponerse en el lugar de los demás y comprender sus sentimientos.</Empathetic.description>
 
   <Competitive.label>competitivo</Competitive.label>
-  <Competitive.description>Para una persona competitiva, no es suficiente que tener éxito, otros deben fallar.</Competitive.description>
+  <Competitive.description>Para una persona competitiva, no es suficiente tener éxito... Otros deben fallar.</Competitive.description>
 
   <Polite.label>cortés</Polite.label>
   <Polite.description>Una persona que es educada y hace un esfuerzo para no ofender a otras personas.</Polite.description>
 
   <Cool.label>genial</Cool.label>
-  <Cool.description>Alguien que es genial es nervioso, único e interesante, y la gente tiende a quererlos más.</Cool.description>
+  <Cool.description>Alguien que es genial es inquieto, único e interesante, y la gente tiende a quererlos más.</Cool.description>
 
   <Romantic.label>romantico</Romantic.label>
   <Romantic.description>A alguien romántico le gustan las relaciones significativas, el compromiso y los gestos íntimos a largo plazo.</Romantic.description>
@@ -65,16 +65,16 @@
   <Thoughtful.description>Las personas pensativas son introspectivas y críticas, y tienden a planificar el futuro.</Thoughtful.description>
 
   <Geeky.label>nerd</Geeky.label>
-  <Geeky.description>Alguien que es geek es intelectual, excéntrico y con frecuencia socialmente torpe.</Geeky.description>
+  <Geeky.description>Alguien que es "geek" es intelectual, excéntrico y con frecuencia, socialmente torpe.</Geeky.description>
 
   <Cultured.label>culto</Cultured.label>
   <Cultured.description>Una persona culta es bien leída, bien educada y refinada.</Cultured.description>
 
   <Organized.label>organizado</Organized.label>
-  <Organized.description>Una persona organizada mantiene todo ordenado, ordenado y minimalista.</Organized.description>
+  <Organized.description>Una persona organizada mantiene todo ordenado, pulcro y minimalista.</Organized.description>
 
   <Naive.label>ingenuo</Naive.label>
-  <Naive.description>Alguien ingenuo es inexperto, inocente e inocente.</Naive.description>
+  <Naive.description>Alguien ingenuo es inexperto, candido e inocente.</Naive.description>
 
   <Upbeat.label>optimista</Upbeat.label>
   <Upbeat.description>Las personas optimistas son felices, cálidas y agradables.</Upbeat.description>
