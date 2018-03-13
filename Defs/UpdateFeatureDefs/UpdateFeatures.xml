@@ -67,7 +67,7 @@
 	</HugsLib.UpdateFeatureDef>
 	
 	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
-		<assemblyVersion>17.3.13</assemblyVersion>
+		<assemblyVersion>18.3.13</assemblyVersion>
 		<content>-- RECEIVING GALAXY-WIDE TRANSMISSION -- | HAPPY 50,000 SUBSCRIBERS! | As long requested by colony managers, the Intergalactic Board of Room Designations has ruled to allow colonial mayors to build their own offices. An office can be created in any room which has a table in it by selecting it and designating the room as a mayoral office. Mayors will hold their meetings in their office if possible. | -- TRANSMISSION ENDS--</content>
 	</HugsLib.UpdateFeatureDef>
 </Defs>

@@ -16,8 +16,8 @@
   <ThoughtDef>
     <defName>MayorNoOffice</defName>
     <durationDays>2</durationDays>
-    <stackLimit>5</stackLimit>
-    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>0.5</stackedEffectMultiplier>
     <stages>
       <li>
         <label>no mayoral office</label>

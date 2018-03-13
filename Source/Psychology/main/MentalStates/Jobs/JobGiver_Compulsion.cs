@@ -12,6 +12,10 @@ namespace Psychology
     {
         protected override Job TryGiveJob(Pawn pawn)
         {
+            if (pawn.Map == null)
+            {
+                return null;
+            }
             if (!pawn.story.WorkTagIsDisabled(WorkTags.Cleaning) && pawn.Map.listerFilthInHomeArea.FilthInHomeArea.Count > 0)
             {
                 Thing closestFilth = pawn.Map.listerFilthInHomeArea.FilthInHomeArea.RandomElement();
