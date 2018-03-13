@@ -110,7 +110,7 @@ namespace Psychology
                 ThoughtDef def = new ThoughtDef();
                 def.defName = this.pawn.GetHashCode() + "Conversation" + topic.defName;
                 def.label = topic.defName;
-                def.durationDays = 60f;
+                def.durationDays = PsychologyBase.ConvoDuration();
                 def.nullifyingTraits = new List<TraitDef>();
                 def.nullifyingTraits.Add(TraitDefOf.Psychopath);
                 def.thoughtClass = typeof(Thought_MemorySocialDynamic);

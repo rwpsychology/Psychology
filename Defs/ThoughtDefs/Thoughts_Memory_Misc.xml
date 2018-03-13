@@ -14,15 +14,29 @@
   </ThoughtDef>
   
   <ThoughtDef>
+    <defName>MayorNoOffice</defName>
+    <durationDays>2</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>no mayoral office</label>
+        <description>I had to schedule a meeting with a constituent in my bedroom. An office would be a bit more professional.</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
     <defName>MayorNoBedroom</defName>
     <durationDays>2</durationDays>
     <stackLimit>5</stackLimit>
     <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
     <stages>
       <li>
-        <label>no mayoral bedroom</label>
-        <description>I had to schedule a meeting with a constituent at a gathering spot. I need a bedroom so I can conduct these meetings in private.</description>
-        <baseMoodEffect>-3</baseMoodEffect>
+        <label>no mayoral office</label>
+        <description>I had to schedule a meeting with a constituent at a gathering spot. At least give me a bedroom so I can conduct these meetings in private.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>

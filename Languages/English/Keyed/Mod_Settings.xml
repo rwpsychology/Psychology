@@ -19,5 +19,8 @@
 	
 	<ElectionsTitle>Enable elections</ElectionsTitle>
 	<ElectionsTooltip>Turn this off to prevent your colonists from having yearly elections. It will not stop an election in progress, and any existing mayor will be reverted to a normal colonist. This will not affect compatibility with other mods.</ElectionsTooltip>
+	
+	<DurationTitle>Conversation duration</DurationTitle>
+	<DurationTooltip>Set how long people will remember conversations for. The default is 60 days, i.e. one year. The minimum is 15 days, or a quadrum, to a maximum of 180 days, or three years. Setting it lower will make colonists' interactions with each other more ephemeral, and setting it higher will make them more lasting.</DurationTooltip>
   
 </LanguageData>

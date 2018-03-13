@@ -1,27 +1,27 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-<!-- Lord job reports -->
-	<LordReportAttendingElection>Посещение избирательного участка</LordReportAttendingElection>
-	<LordReportVisitingMayor>Посещение встречи</LordReportVisitingMayor>
-	<LordReportHangingOut>Пообщаться с кем-то</LordReportHangingOut>
-	<LordReportDate>На свидании</LordReportDate>
+  <!-- Lord job reports -->
+  <LordReportAttendingElection>Посещение избирательного участка</LordReportAttendingElection>
+  <LordReportVisitingMayor>Посещение встречи</LordReportVisitingMayor>
+  <LordReportHangingOut>Пообщаться с кем-то</LordReportHangingOut>
+  <LordReportDate>На свидании</LordReportDate>
+  <LordReportAttendingFuneral>Посещение похорон</LordReportAttendingFuneral>
 
-<!-- Miscellaneous thought text -->
-	<ConversationStage>Разговор о</ConversationStage>
-	<ConversationEnd>Закончился разговор с</ConversationEnd>
-	<ConversationEnded>закончившийся разговор</ConversationEnded>
-	<Complained>Жаловался мэру.</Complained>
-	<Supported>Выразил мою поддержку мэру.</Supported>
-	<HadMeeting>Встреча с учредителем</HadMeeting>
-	
-<!-- Node descriptions -->
-	<PsycheNot>Не</PsycheNot>
-	<PsycheSlightly>Немного</PsycheSlightly>
-	<PsycheLess>Меньше</PsycheLess>
-	<PsycheMore>Больше</PsycheMore>
-	<PsycheVery>Очень</PsycheVery>
-	<PsycheExtremely>Чрезвычайно</PsycheExtremely>
+  <!-- Miscellaneous thought log text -->
+  <ConversationStage>Разговор о</ConversationStage>
+  <ConversationEnd>Закончился разговор с</ConversationEnd>
+  <ConversationEnded>закончившийся разговор</ConversationEnded>
+  <Complained>Жаловался мэру.</Complained>
+  <Supported>Выразил мою поддержку мэру.</Supported>
+  <HadMeeting>Встреча с учредителем</HadMeeting>
 
+  <!-- Node descriptions -->
+  <PsycheNot>Нет</PsycheNot>
+  <PsycheSlightly>Немного</PsycheSlightly>
+  <PsycheLess>Меньше</PsycheLess>
+  <PsycheMore>Больше</PsycheMore>
+  <PsycheVery>Очень</PsycheVery>
+  <PsycheExtremely>Чрезвычайно</PsycheExtremely>
 
 </LanguageData>

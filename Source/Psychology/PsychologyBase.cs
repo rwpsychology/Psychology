@@ -20,11 +20,13 @@ namespace Psychology
         private static KinseyMode mode = KinseyMode.Realistic;
         public static bool notBabyMode = true;
         public static bool elections = true;
+        public static float convoDuration = 60f;
         private SettingHandle<bool> toggleKinsey;
         private SettingHandle<bool> toggleEmpathy;
         private SettingHandle<KinseyMode> kinseyMode;
         private SettingHandle<bool> toggleIndividuality;
         private SettingHandle<bool> toggleElections;
+        private SettingHandle<float> conversationDuration;
 
         public enum KinseyMode
         {
@@ -52,6 +54,11 @@ namespace Psychology
         static public bool ActivateElections()
         {
             return elections;
+        }
+
+        static public float ConvoDuration()
+        {
+            return convoDuration;
         }
 
         public override string ModIdentifier
@@ -112,9 +119,11 @@ namespace Psychology
                 kinseyMode = Settings.GetHandle<KinseyMode>("KinseyMode", "KinseyModeTitle".Translate(), "KinseyModeTooltip".Translate(), KinseyMode.Realistic, null, "KinseyMode_");
                 toggleIndividuality = Settings.GetHandle<bool>("EnableIndividuality", "IndividualityTitle".Translate(), "IndividualityTooltip".Translate(), true);
                 toggleElections = Settings.GetHandle<bool>("EnableElections", "ElectionsTitle".Translate(), "ElectionsTooltip".Translate(), true);
+                conversationDuration = Settings.GetHandle<float>("ConversationDuration", "DurationTitle".Translate(), "DurationTooltip".Translate(), 60f, (String s) => float.Parse(s) >= 15f && float.Parse(s) <= 180f);
 
                 notBabyMode = toggleIndividuality.Value;
                 elections = toggleElections.Value;
+                convoDuration = conversationDuration.Value;
 
                 if (PsychologyBase.ActivateKinsey())
                 {
@@ -351,19 +360,29 @@ namespace Psychology
                         Pawn mayor = activeMayors.RandomElement(); //There should only be one.
                         PsychologyPawn psychologyConstituent = potentialConstituent as PsychologyPawn;
                         IntVec3 gather = default(IntVec3);
-                        bool foundBed = false;
+                        String found = null;
+                        FactionBase colony = Find.WorldObjects.ObjectsAt((mayor.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor) as Hediff_Mayor).worldTileElectedOn).OfType<FactionBase>().FirstOrDefault();
+                        if (colony != null && mayor.Map.GetComponent<OfficeTableMapComponent>().officeTable != null)
+                        {
+                            gather = colony.Map.GetComponent<OfficeTableMapComponent>().officeTable.parent.Position;
+                            found = "office";
+                        }
                         if (mayor.ownership != null && mayor.ownership.OwnedBed != null)
                         {
                             gather = mayor.ownership.OwnedBed.Position;
-                            foundBed = true;
+                            found = "bed";
                         }
-                        if ((psychologyConstituent == null || Rand.Value < (1f - psychologyConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent)) / 5f) && (foundBed || RCellFinder.TryFindPartySpot(mayor, out gather)))
+                        if ((psychologyConstituent == null || Rand.Value < (1f - psychologyConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent)) / 5f) && (found != null || RCellFinder.TryFindPartySpot(mayor, out gather)))
                         {
                             List<Pawn> pawns = new List<Pawn>();
                             pawns.Add(mayor);
                             pawns.Add(potentialConstituent);
                             Lord meeting = LordMaker.MakeNewLord(mayor.Faction, new LordJob_VisitMayor(gather, potentialConstituent, mayor, (potentialConstituent.needs.mood.CurLevel < 0.4f)), mayor.Map, pawns);
-                            if (!foundBed)
+                            if (found == "bed")
+                            {
+                                mayor.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.MayorNoOffice);
+                            }
+                            else if (found == null)
                             {
                                 mayor.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.MayorNoBedroom);
                             }

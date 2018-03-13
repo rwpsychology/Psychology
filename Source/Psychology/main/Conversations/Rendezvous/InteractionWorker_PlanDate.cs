@@ -17,7 +17,7 @@ namespace Psychology
             {
                 return 0f;
             }
-            if(!PartyUtility.AcceptableGameConditionsToStartParty(initiator.Map))
+            if(!RendezvousUtility.AcceptableGameConditionsToStartHangingOut(initiator.Map))
             {
                 return 0f;
             }
@@ -35,7 +35,7 @@ namespace Psychology
             {
                 return 0f;
             }
-            if(initiator.health.summaryHealth.SummaryHealthPercent < 1f || recipient.health.summaryHealth.SummaryHealthPercent < 1f)
+            if(!GatheringsUtility.ShouldGuestKeepAttendingGathering(initiator) || !GatheringsUtility.ShouldGuestKeepAttendingGathering(recipient))
             {
                 return 0f;
             }

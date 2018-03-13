@@ -31,5 +31,39 @@ namespace Psychology
             }
             return 0f;
         }
+
+        public static bool AcceptableGameConditionsToStartHangingOut(Map map)
+        {
+            if (GatheringsUtility.AnyLordJobPreventsNewGatherings(map))
+            {
+                return false;
+            }
+            if (map.dangerWatcher.DangerRating != StoryDanger.None)
+            {
+                return false;
+            }
+            int freeColonistsSpawnedCount = map.mapPawns.FreeColonistsSpawnedCount;
+            if (freeColonistsSpawnedCount < 4)
+            {
+                return false;
+            }
+            int num = 0;
+            foreach (Pawn current in map.mapPawns.FreeColonistsSpawned)
+            {
+                if (current.health.hediffSet.BleedRateTotal > 0f)
+                {
+                    return false;
+                }
+                if (current.Drafted)
+                {
+                    num++;
+                }
+            }
+            if ((float)num / (float)freeColonistsSpawnedCount >= 0.5f)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
