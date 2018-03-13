@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Dynamic.stages.0.label>pensamiento dinamico</Dynamic.stages.0.label>
+
+  <MayorNoBedroom.stages.0.label>No hay dormitorio de alcalde</MayorNoBedroom.stages.0.label>
+  <MayorNoBedroom.stages.0.description>Tuve que programar una reunión con un constituyente en un lugar de reunión. Necesito un dormitorio para poder realizar estas reuniones en privado.</MayorNoBedroom.stages.0.description>
+
+  <WonElection.stages.0.label>ganó una elección</WonElection.stages.0.label>
+  <WonElection.stages.0.description>¡Lo hice! ¡Soy el alcalde ahora! Estoy tan agradecido con todos los que votaron por mí.</WonElection.stages.0.description>
+
+  <KilledHumanlikeEnemy.stages.0.label>subidón de adrenalina</KilledHumanlikeEnemy.stages.0.label>
+  <KilledHumanlikeEnemy.stages.0.description>Maté a alguien que estaba atacando nuestra colonia. Mis manos todavía están temblando... No puedo creer que sobreviví.</KilledHumanlikeEnemy.stages.0.description>
+
+  <KnowPrisonerSoldBleedingHeart.stages.0.label>un prisionero fue vendido</KnowPrisonerSoldBleedingHeart.stages.0.label>
+  <KnowPrisonerSoldBleedingHeart.stages.0.description>Esta colonia vendió un prisionero en esclavitud. No puedo creer que participemos en esa barbarie.</KnowPrisonerSoldBleedingHeart.stages.0.description>
+
+  <KnowGuestOrganHarvestedBleedingHeart.stages.0.label>el órgano de alguien fue removido</KnowGuestOrganHarvestedBleedingHeart.stages.0.label>
+  <KnowGuestOrganHarvestedBleedingHeart.stages.0.description>La colonia tomó parte/s del cuerpo de un huésped o un prisionero. Es inaceptable, cortar a alguien por partes cuando no tienen otra opción.</KnowGuestOrganHarvestedBleedingHeart.stages.0.description>
+
+  <KnowColonistOrganHarvestedBleedingHeart.stages.0.label>El órgano de un colono fue removido</KnowColonistOrganHarvestedBleedingHeart.stages.0.label>
+  <KnowColonistOrganHarvestedBleedingHeart.stages.0.description>Alguien tomó partes del cuerpo de un colonizador. Es inaceptable, cortar a alguien por partes cuando no tienen otra opción.</KnowColonistOrganHarvestedBleedingHeart.stages.0.description>
+
+  <ReplacedPartBleedingHeart.stages.0.label>instalado un órgano o una parte del cuerpo</ReplacedPartBleedingHeart.stages.0.label>
+  <ReplacedPartBleedingHeart.stages.0.description>Le di a alguien un nuevo órgano o parte del cuerpo. ¡Probablemente mejoré su calidad de vida! Estoy tan feliz.</ReplacedPartBleedingHeart.stages.0.description>
+
+  <DoctorBleedingHeart.stages.0.label>ayudé a un paciente</DoctorBleedingHeart.stages.0.label>
+  <DoctorBleedingHeart.stages.0.description>Amo la medicina. Te da muchas oportunidades para ayudar a las personas.</DoctorBleedingHeart.stages.0.description>
+
+  <RescuedBleedingHeart.stages.0.label>salvé a alguien</RescuedBleedingHeart.stages.0.label>
+  <RescuedBleedingHeart.stages.0.description>Rescaté a alguien de la muerte. No es necesario agradecerme, las buenas obras son su propia recompensa.</RescuedBleedingHeart.stages.0.description>
+
+  <CookedMealBleedingHeart.stages.0.label>cociné una comida</CookedMealBleedingHeart.stages.0.label>
+  <CookedMealBleedingHeart.stages.0.description>Me encanta cocinar, siento que estoy ayudando a la gente. ¡Mantendré viva esta colonia!</CookedMealBleedingHeart.stages.0.description>
+
+  <FilledGraveBleedingHeart.stages.0.label>enterré a alguien</FilledGraveBleedingHeart.stages.0.label>
+  <FilledGraveBleedingHeart.stages.0.description>Espero que encuentren la paz.</FilledGraveBleedingHeart.stages.0.description>
+
+  <KilledPatientBleedingHeart.stages.0.label>maté a un paciente</KilledPatientBleedingHeart.stages.0.label>
+  <KilledPatientBleedingHeart.stages.0.description>Maté a uno de mis pacientes en una cirugía. Todo es mi culpa... todavía debería estar vivo/a.</KilledPatientBleedingHeart.stages.0.description>
+
+  <RecentlyDesensitized.stages.0.label>insensible a la violencia</RecentlyDesensitized.stages.0.label>
+  <RecentlyDesensitized.stages.0.description>Fui testigo de la muerte y no sentí nada. Qué deprimente...</RecentlyDesensitized.stages.0.description>
+
+  <DreamGood.stages.0.label>tuve un buen sueño</DreamGood.stages.0.label>
+  <DreamGood.stages.0.description>Ese fue un buen sueño. Me dio esperanza.</DreamGood.stages.0.description>
+
+  <DreamBad.stages.0.label>tuve un mal sueño</DreamBad.stages.0.label>
+  <DreamBad.stages.0.description>Ese fue un sueño desagradable. Todavía me molesta.</DreamBad.stages.0.description>
+
+  <DreamNightmare.stages.0.label>tuve una pesadilla</DreamNightmare.stages.0.label>
+  <DreamNightmare.stages.0.description>¡Gah! Que sueño tan terrible Me deprime solo pensar al respecto.</DreamNightmare.stages.0.description>
+
+  <TreatmentFailed.stages.0.label>{0} tratamiento fallido</TreatmentFailed.stages.0.label>
+  <TreatmentFailed.stages.0.description>El doctor no trató mi enfermedad mental... Simplemente sentía que no me había entendido.</TreatmentFailed.stages.0.description>
+
+  <SuccessfulPlot.stages.0.label>la trama de otoño tuvo éxito</SuccessfulPlot.stages.0.label>
+  <SuccessfulPlot.stages.0.description>Destruí la plaga en este lugar. Estamos seguros ahora.</SuccessfulPlot.stages.0.description>
+
+  <HeardParanoia.stages.0.label>expuesto a caminar paranoicamente</HeardParanoia.stages.0.label>
+  <HeardParanoia.stages.0.description>Las cosas que escuché... No pueden ser ciertas. ¿Pueden ellos?</HeardParanoia.stages.0.description>
+
+
+  <!-- Abandoning pawns -->
+
+  <ColonistAbandonedBleedingHeart.stages.0.label>colono abandonado</ColonistAbandonedBleedingHeart.stages.0.label>
+  <ColonistAbandonedBleedingHeart.stages.0.description>Acabamos de dejar a alguien atrás. No puedo dejar de pensar en lo que podría pasarle.</ColonistAbandonedBleedingHeart.stages.0.description>
+
+  <ColonistAbandonedToDieBleedingHeart.stages.0.label>colono abandonado para morir</ColonistAbandonedToDieBleedingHeart.stages.0.label>
+  <ColonistAbandonedToDieBleedingHeart.stages.0.description>Dejamos a alguien atrás de tal manera que casi no hay manera de que sobreviva. ¿Cómo pudimos?</ColonistAbandonedToDieBleedingHeart.stages.0.description>
+
+  <PrisonerAbandonedToDieBleedingHeart.stages.0.label>prisionero abandonado para morir</PrisonerAbandonedToDieBleedingHeart.stages.0.label>
+  <PrisonerAbandonedToDieBleedingHeart.stages.0.description>Dejamos un prisionero atrás de tal manera que casi no hay manera de que sobreviva. Tenemos la responsabilidad de salvaguardar a las personas que encarcelamos.</PrisonerAbandonedToDieBleedingHeart.stages.0.description>
+
+  <DateCancelled.stages.0.label>tuvo que cancelar una cita</DateCancelled.stages.0.label>
+  <DateCancelled.stages.0.description>Se suponía que debía tener una cita con mi pareja, pero algo surgió en la colonia y tuvimos que cancelar. Lo esperaba con ansias...</DateCancelled.stages.0.description>
+
+
+</LanguageData>
