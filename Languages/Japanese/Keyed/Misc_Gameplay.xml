@@ -25,8 +25,8 @@
   <PsycheExtremely>非常に</PsycheExtremely>
 	
 <!-- Comp text -->
-	<CommandOfficeTableToggleLabel>事務所</CommandOfficeTableToggleLabel>
-	<CommandOfficeTableToggleDescActive>この部屋は事務所として設定されています。リーダーがいる場合、ここでミーティングが行われます。</CommandOfficeTableToggleDescActive>
-	<CommandOfficeTableToggleDescInactive>この部屋は事務所として設定できます。リーダーは一つの事務所しか使えません。</CommandOfficeTableToggleDescInactive>
+	<CommandOfficeTableToggleLabel>会議室</CommandOfficeTableToggleLabel>
+	<CommandOfficeTableToggleDescActive>この部屋は会議室として設定されています。リーダーがいる場合、ここでミーティングが行われます。</CommandOfficeTableToggleDescActive>
+	<CommandOfficeTableToggleDescInactive>この部屋は会議室として設定できます。リーダーは一つの会議室しか使えません。</CommandOfficeTableToggleDescInactive>
 
 </LanguageData>
