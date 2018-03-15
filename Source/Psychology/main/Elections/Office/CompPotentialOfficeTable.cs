@@ -11,7 +11,7 @@ namespace Psychology
     public class CompPotentialOfficeTable : ThingComp
     {
         //Working vars
-        private bool active = true;
+        private bool active = false;
 
         public bool Active
         {
@@ -66,7 +66,9 @@ namespace Psychology
             base.PostDeSpawn(map);
 
             if (Active)
-                parent.Map.GetComponent<OfficeTableMapComponent>().officeTable = null;
+            {
+                map.GetComponent<OfficeTableMapComponent>().officeTable = null;
+            }
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
