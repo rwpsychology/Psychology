@@ -50,7 +50,7 @@ namespace Psychology
 
         public override void PostExposeData()
         {
-            Scribe_Values.Look(ref active, "active", false);
+            Scribe_Values.Look(ref active, "office", false);
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
