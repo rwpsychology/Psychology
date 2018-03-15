@@ -26,7 +26,7 @@
 	
 <!-- Comp text -->
 	<CommandOfficeTableToggleLabel>事務所</CommandOfficeTableToggleLabel>
-	<CommandOfficeTableToggleDescActive>この部屋はリーダーの事務所として設定されています。リーダーがいる場合、ここで会議を行います。</CommandOfficeTableToggleDescActive>
+	<CommandOfficeTableToggleDescActive>この部屋は事務所として設定されています。リーダーがいる場合、ここでミーティングが行われます。</CommandOfficeTableToggleDescActive>
 	<CommandOfficeTableToggleDescInactive>この部屋は事務所として設定できます。リーダーは一つの事務所しか使えません。</CommandOfficeTableToggleDescInactive>
 
 </LanguageData>
