@@ -40,6 +40,7 @@ namespace Psychology
 
         /* Election related thoughts */
         public static ThoughtDef WonElection;
+        public static ThoughtDef MayorNoOffice;
         public static ThoughtDef MayorNoBedroom;
 
         /* Dating related thoughts */

@@ -63,6 +63,8 @@
     <Compile Include="Defs\GameConditionDefOfPsychology.cs" />
     <Compile Include="Defs\InteractionDefOfPsychology.cs" />
     <Compile Include="Defs\PersonalityNodeDefOf.cs" />
+    <Compile Include="Defs\PsychologyTexCommand.cs" />
+    <Compile Include="Harmony\Dialog_FormCaravan.cs" />
     <Compile Include="Harmony\InteractionUtility.cs" />
     <Compile Include="Harmony\InteractionWorker_DeepTalk.cs" />
     <Compile Include="Harmony\NegativeInteractionUtility.cs" />
@@ -89,8 +91,11 @@
     <Compile Include="Main\Dialog_ViewPsyche.cs" />
     <Compile Include="Main\Dialog_EditPsyche.cs" />
     <Compile Include="Main\Elections\Candidate.cs" />
+    <Compile Include="Main\Elections\Office\CompPotentialOfficeTable.cs" />
     <Compile Include="Main\Elections\Hediff_Mayor.cs" />
     <Compile Include="Main\Elections\JobGiver_Vote.cs" />
+    <Compile Include="Main\Elections\Office\OfficeTableMapComponent.cs" />
+    <Compile Include="Main\Elections\Office\RoomRoleWorker_Office.cs" />
     <Compile Include="Main\Funerals\Hediff_Funeral.cs" />
     <Compile Include="Main\Funerals\LordJob_Joinable_Funeral.cs" />
     <Compile Include="Main\Elections\LordJob_VisitMayor.cs" />

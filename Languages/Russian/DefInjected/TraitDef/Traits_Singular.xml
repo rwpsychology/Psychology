@@ -1,49 +1,50 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-	<Prude.degreeDatas.0.label>ханжа</Prude.degreeDatas.0.label>
-	<Prude.degreeDatas.0.description>NAME ненавидит вид человеческого тела. HECAP будет крайне недоволен, когда голый, более недовольным, чем обычно в рваной или изношенной одежде, и не любит вид других голых людей.</Prude.degreeDatas.0.description>
+  <Prude.degreeDatas.0.label>Ханжа</Prude.degreeDatas.0.label>
+  <Prude.degreeDatas.0.description>NAME ненавидит вид человеческого тела. HECAP будет крайне недоволен(а), когда голый(я), более недовольным, чем обычно в рваной или изношенной одежде, и не любит вид других голых людей.</Prude.degreeDatas.0.description>
 
-	<Insomniac.degreeDatas.0.label>страдающий бессонницей</Insomniac.degreeDatas.0.label>
-	<Insomniac.degreeDatas.0.description>NAME будет трудно заснуть из-за HIS состояния. HECAP долго не сможет заснуть и, вероятно, сильно устанет.</Insomniac.degreeDatas.0.description>
+  <Insomniac.degreeDatas.0.label>Страдающий бессонницей</Insomniac.degreeDatas.0.label>
+  <Insomniac.degreeDatas.0.description>NAME будет трудно заснуть из-за HIS состояния. HECAP долго не сможет заснуть и, вероятно, сильно устанет.</Insomniac.degreeDatas.0.description>
 
-	<BleedingHeart.degreeDatas.0.label>благородный</BleedingHeart.degreeDatas.0.label>
-	<BleedingHeart.degreeDatas.0.description>NAME имеет большое сердце и очень эмоционален. HECAP любит помогать людям, и не приемлет насилие и несправедливость. HECAP в большей степени затронут этими вещами, чем другие.</BleedingHeart.degreeDatas.0.description>
-	
-	<Gourmet.degreeDatas.0.label>гурман</Gourmet.degreeDatas.0.label>
-	<Gourmet.degreeDatas.0.description>NAME всегда критик, когда дело доходит до еды. HECAP рассчитывает питаться хорошо и будет жаловаться, если {HIS} питание не на высоте.</Gourmet.degreeDatas.0.description>
-	
-	<Unstable.degreeDatas.0.label>нестабильный</Unstable.degreeDatas.0.label>
-	<Unstable.degreeDatas.0.description>NAME более склонен к случайным колебаниям настроения, которые могут быть более серьезными, чем обычно для других.</Unstable.degreeDatas.0.description>
-	
-	<Lecher.degreeDatas.0.label>распутник</Lecher.degreeDatas.0.label>
-	<Lecher.degreeDatas.0.description>NAME беззастенчиво распутный и легкомысленный сердцеед. HECAP ударит любого и HE не обратит внимания на последствия.</Lecher.degreeDatas.0.description>
-	
-	<Codependent.degreeDatas.0.label>любовно зависимый</Codependent.degreeDatas.0.label>
-	<Codependent.degreeDatas.0.description>NAME нуждается в романтике и не будет счастлив, пока не состоит в отношениях. HECAP будет опустошен неверностью и расставанием.</Codependent.degreeDatas.0.description>
-	
-	<Outdoorsy.degreeDatas.0.label>природолюбивый</Outdoorsy.degreeDatas.0.label>
-	<Outdoorsy.degreeDatas.0.description>NAME любит быть на свежем воздухе. HECAP получает бонус к настроению, когда нет крыши над HIS головой.</Outdoorsy.degreeDatas.0.description>
-	
-	<Pluviophile.degreeDatas.0.label>плювиофил</Pluviophile.degreeDatas.0.label>
-	<Pluviophile.degreeDatas.0.description>NAME любит дождь. HECAP получает бонус к настроению, когда снаружи ливень, особенно, если HE он может в нём находиться.</Pluviophile.degreeDatas.0.description>
-	
-	<Photosensitive.degreeDatas.0.label>светочувствительный</Photosensitive.degreeDatas.0.label>
-	<Photosensitive.degreeDatas.0.description>NAME имеет глаза, либо с помощью генной модификации или случайной мутации, которые являются чрезвычайно светочувствительными. HECAP находит яркий свет чрезвычайно болезненным и внутреннее освещение надоедливым, и будет самым счастливым в темноте.</Photosensitive.degreeDatas.0.description>
-	
-	<Socialite.degreeDatas.0.label>светский</Socialite.degreeDatas.0.label>
-	<Socialite.degreeDatas.0.description>NAME любит вечеринки! HISCAP само присутствие вдохновляет на большее количество вечеринок в колонии, потому что каждому нравится тусить с HIM.</Socialite.degreeDatas.0.description>
-	
-	<Desensitized.degreeDatas.0.label>бесчувственный</Desensitized.degreeDatas.0.label>
-	<Desensitized.degreeDatas.0.description>NAME насмотрелся на насилие и смерть так, что это больше не шокирует HIM, как раньше.</Desensitized.degreeDatas.0.description>
-	
-	<HeavySleeper.degreeDatas.0.label>крепко спящий</HeavySleeper.degreeDatas.0.label>
-	<HeavySleeper.degreeDatas.0.description>NAME спит, как камень, никогда не беспокоится неблагоприятными условиями сна, но HIM трудно проснуться.</HeavySleeper.degreeDatas.0.description>
-	
-	<Polygamous.degreeDatas.0.label>полигамный</Polygamous.degreeDatas.0.label>
-	<Polygamous.degreeDatas.0.description>NAME не видит никаких проблем с наличием нескольких партнеров. HE не возражает, если HIS партнер встречается с другими людьми, но не будет счастлив в однобрачных отношениях.</Polygamous.degreeDatas.0.description>
-	
-	<OpenMinded.degreeDatas.0.label>открытый</OpenMinded.degreeDatas.0.label>
-	<OpenMinded.degreeDatas.0.description>NAME судит людей не по внешности, а по внутренним качествам.</OpenMinded.degreeDatas.0.description>
+  <BleedingHeart.degreeDatas.0.label>Благородный</BleedingHeart.degreeDatas.0.label>
+  <BleedingHeart.degreeDatas.0.description>NAME имеет большое сердце и очень эмоционален(а). HECAP любит помогать людям, и не приемлет насилие и несправедливость. HE в большей степени затронут(а) этими вещами, чем другие.</BleedingHeart.degreeDatas.0.description>
+
+  <Gourmet.degreeDatas.0.label>Гурман</Gourmet.degreeDatas.0.label>
+  <Gourmet.degreeDatas.0.description>NAME всегда критик, когда дело доходит до еды. HECAP рассчитывает питаться хорошо и будет жаловаться, если {HIS} питание не на высоте.</Gourmet.degreeDatas.0.description>
+
+  <Unstable.degreeDatas.0.label>Нестабильный</Unstable.degreeDatas.0.label>
+  <Unstable.degreeDatas.0.description>NAME более склонен(а) к случайным колебаниям настроения, которые могут быть более серьезными, чем у других.</Unstable.degreeDatas.0.description>
+
+  <Lecher.degreeDatas.0.label>Распутник</Lecher.degreeDatas.0.label>
+  <Lecher.degreeDatas.0.description>NAME беззастенчивы распутный и легкомысленный сердцеед. HECAP ударит любого и HE не обратит внимания на последствия.</Lecher.degreeDatas.0.description>
+
+  <Codependent.degreeDatas.0.label>Любовно зависимый</Codependent.degreeDatas.0.label>
+  <Codependent.degreeDatas.0.description>NAME нуждается в романтике и не будет счастлив, пока не состоит в отношениях. HECAP будет опустошен неверностью и расставанием.</Codependent.degreeDatas.0.description>
+
+  <Outdoorsy.degreeDatas.0.label>Природолюбивый</Outdoorsy.degreeDatas.0.label>
+  <Outdoorsy.degreeDatas.0.description>NAME любит быть на свежем воздухе. HECAP получает бонус к настроению, когда нет крыши над HIS головой.</Outdoorsy.degreeDatas.0.description>
+
+  <Pluviophile.degreeDatas.0.label>Плювиофил</Pluviophile.degreeDatas.0.label>
+  <Pluviophile.degreeDatas.0.description>NAME любит дождь. HECAP получает бонус к настроению, когда снаружи ливень, особенно, если HE может в нём находиться.</Pluviophile.degreeDatas.0.description>
+
+  <Photosensitive.degreeDatas.0.label>Светочувствительный</Photosensitive.degreeDatas.0.label>
+  <Photosensitive.degreeDatas.0.description>NAME имеет глаза, либо из-за генной модификации или случайной мутации, которые чрезвычайно светочувствительны. HECAP находит яркий свет чрезвычайно болезненным и внутреннее освещение надоедливым, и будет самым счастливым в темноте.</Photosensitive.degreeDatas.0.description>
+
+  <Socialite.degreeDatas.0.label>Светский</Socialite.degreeDatas.0.label>
+  <Socialite.degreeDatas.0.description>NAME любит вечеринки! HISCAP само присутствие вдохновляет на большее количество вечеринок в колонии, потому что каждому нравится тусить с ним/ней.</Socialite.degreeDatas.0.description>
+
+  <Desensitized.degreeDatas.0.label>Бесчувственный</Desensitized.degreeDatas.0.label>
+  <Desensitized.degreeDatas.0.description>NAME насмотрелся на насилие и смерть так, что это больше не шокирует HIM, как раньше.</Desensitized.degreeDatas.0.description>
+
+  <HeavySleeper.degreeDatas.0.label>Крепко спящий</HeavySleeper.degreeDatas.0.label>
+  <HeavySleeper.degreeDatas.0.description>NAME спит, как камень, никогда не беспокоится неблагоприятными условиями сна, но HIM трудно проснуться.</HeavySleeper.degreeDatas.0.description>
+
+  <Polygamous.degreeDatas.0.label>Полигамный</Polygamous.degreeDatas.0.label>
+  <Polygamous.degreeDatas.0.description>NAME не видит никаких проблем с наличием нескольких партнеров. HE не возражает, если HIS партнер встречается с другими людьми, но не будет счастлив в однобрачных отношениях.</Polygamous.degreeDatas.0.description>
+
+  <OpenMinded.degreeDatas.0.label>Открытый</OpenMinded.degreeDatas.0.label>
+  <OpenMinded.degreeDatas.0.description>NAME судит людей не по внешности, а по внутренним качествам.</OpenMinded.degreeDatas.0.description>
+
 
 </LanguageData>

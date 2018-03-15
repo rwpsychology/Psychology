@@ -19,11 +19,12 @@ namespace Psychology
             this.spot = spot;
         }
 
-        public LordJob_Joinable_Election(IntVec3 spot, List<Candidate> candidates, string baseName)
+        public LordJob_Joinable_Election(IntVec3 spot, List<Candidate> candidates, string baseName, Map map)
         {
             this.spot = spot;
             this.candidates = candidates;
             this.baseName = baseName;
+            this.map = map;
         }
 
         public override StateGraph CreateGraph()
@@ -53,6 +54,7 @@ namespace Psychology
         public override void ExposeData()
         {
             Scribe_Values.Look(ref this.spot, "spot", default(IntVec3));
+            Scribe_Values.Look(ref this.map, "map", map);
             Scribe_Values.Look(ref this.baseName, "settlementName", "a settlement");
             Scribe_Collections.Look(ref this.candidates, "candidates", LookMode.Deep, new object[0]);
             Scribe_Collections.Look(ref this.voters, "voters", LookMode.Value, new object[0]);
@@ -92,7 +94,13 @@ namespace Psychology
             {
                 issuesString.AppendFormat("{0}) {1}{2}", i + 1, winningCandidate.First.psyche.GetPersonalityNodeOfDef(candidates.Find(c => c.pawn == winningCandidate.First).nodes[i]).PlatformIssue, (i != candidates.Find(c => c.pawn == winningCandidate.First).nodes.Count - 1 ? "\n" : ""));
             }
+            if(this.map == null)
+            {
+                this.map = winningCandidate.First.Map;
+            }
             Hediff mayor = HediffMaker.MakeHediff(HediffDefOfPsychology.Mayor, winningCandidate.First);
+            (mayor as Hediff_Mayor).worldTileElectedOn = map.Tile;
+            (mayor as Hediff_Mayor).yearElected = GenLocalDate.Year(map);
             winningCandidate.First.health.AddHediff(mayor);
             winningCandidate.First.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.WonElection);
             Find.LetterStack.ReceiveLetter("LetterLabelElectionWon".Translate(winningCandidate.First.LabelShort), "LetterElectionWon".Translate(winningCandidate.First.LabelShort, this.baseName, winningCandidate.Second, issuesString.ToString()).AdjustedFor(winningCandidate.First), LetterDefOf.NeutralEvent, winningCandidate.First);
@@ -154,6 +162,7 @@ namespace Psychology
         }
         
         private IntVec3 spot;
+        private Map map;
         private string baseName;
         private Trigger_TicksPassed timeoutTrigger;
         public List<string> votes = new List<string>();

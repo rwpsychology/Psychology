@@ -115,7 +115,7 @@ namespace Psychology
             {
                 return;
             }
-            LordMaker.MakeNewLord(organizer.Faction, new LordJob_Joinable_Election(intVec, candidates, baseName), organizer.Map, null);
+            LordMaker.MakeNewLord(organizer.Faction, new LordJob_Joinable_Election(intVec, candidates, baseName, organizer.Map), organizer.Map, null);
             Find.LetterStack.ReceiveLetter("LetterLabelElectionHeld".Translate(baseName), "LetterElectionHeld".Translate(baseName), LetterDefOf.NeutralEvent, new TargetInfo(intVec, organizer.Map, false), null);
         }
         

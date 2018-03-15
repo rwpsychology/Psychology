@@ -33,11 +33,6 @@ namespace Psychology.Harmony
             PsychologyPawn realPawn = pawn as PsychologyPawn;
             if (realPawn != null)
             {
-                if (pawn.def.defName != otherPawn.def.defName || pawn == otherPawn)
-                {
-                    __result = 0f;
-                    return;
-                }
                 /* Throw away the existing result and substitute our own formula. */
                 float ageFactor = 1f;
                 float sexualityFactor = 1f;

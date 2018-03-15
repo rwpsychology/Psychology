@@ -58,13 +58,14 @@ namespace Psychology
             }
             ThoughtDef failure = ThoughtDefOfPsychology.TreatmentFailed;
             pawn.needs.mood.thoughts.memories.TryGainMemory(failure);
-            Thought_Memory failureThought = (from memory in pawn.needs.mood.thoughts.memories.Memories
+            IEnumerable<Thought_Memory> failureThoughts = (from memory in pawn.needs.mood.thoughts.memories.Memories
                                              where memory.def.workerClass.Name == "Thought_TreatmentFailed"
                                              orderby memory.age ascending
-                                             select memory).LastOrDefault();
-            if(failureThought != null)
+                                             select memory);
+            foreach(Thought_TreatmentFailed failureThought in failureThoughts)
             {
-                (failureThought as Thought_TreatmentFailed).traitName = this.traitName;
+                if(failureThought.traitName == null)
+                    failureThought.traitName = this.traitName;
             }
         }
 

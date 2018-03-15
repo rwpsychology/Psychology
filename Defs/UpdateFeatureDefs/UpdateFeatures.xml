@@ -65,4 +65,14 @@
 		<assemblyVersion>17.12.3</assemblyVersion>
 		<content>-- RECEIVING GALAXY-WIDE TRANSMISSION -- | The classification status of the galaxy's rimworlds has been upgraded from 'A17' to 'B18' as the quality of life and opportunity for self-fulfillment continues to improve there. | In other news, a glitterworld medical research firm has just disseminated a new, permanent cure for sufferers of anxiety. They caution that the procedure should only be performed by highly-skilled doctors. The glitterworld medical tech necessary to do so is already for sale on the intergalactic trade market... | -- TRANSMISSION ENDS--</content>
 	</HugsLib.UpdateFeatureDef>
+	
+	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+		<assemblyVersion>18.3.13</assemblyVersion>
+		<content>-- RECEIVING GALAXY-WIDE TRANSMISSION -- | HAPPY 50,000 SUBSCRIBERS! | As long requested by colony managers, the Intergalactic Board of Room Designations has ruled to allow colonial mayors to build their own offices. An office can be created in any room which has a table in it by selecting it and designating the room as a mayoral office. Mayors will hold their meetings in their office if possible. | -- TRANSMISSION ENDS--</content>
+	</HugsLib.UpdateFeatureDef>
+	
+	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+		<assemblyVersion>18.3.14</assemblyVersion>
+		<content>Issues with mayoral tables should now be fixed. Multiple tables may be "activated" as mayoral offices, but only the last one you activate will be used (this may be reset upon loading a save). The error thrown upon deconstructing/reinstalling tables is also fixed.</content>
+	</HugsLib.UpdateFeatureDef>
 </Defs>

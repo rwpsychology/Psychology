@@ -17,13 +17,6 @@ namespace Psychology
             Scribe_Values.Look(ref this.worldTileElectedOn, "worldTileElectedOn", 0);
         }
 
-        public override void PostMake()
-        {
-            base.PostMake();
-            this.yearElected = GenLocalDate.Year(this.pawn.Map.Tile);
-            this.worldTileElectedOn = this.pawn.Map.Tile;
-        }
-
         public override void Tick()
         {
             base.Tick();

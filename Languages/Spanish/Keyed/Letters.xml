@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <LetterLabelNewElection>Las elecciones se celebran en {0}</LetterLabelNewElection>
+  <LetterNewElection>Una elección de alcalde se llevará a cabo en {0} Algunos colonos han anunciado su candidatura.</LetterNewElection>
+  <LetterLabelElectionHeld>Elección en curso en {0}</LetterLabelElectionHeld>
+  <LetterElectionHeld>La elección en {0} ya está en marcha. La colonia ha seleccionado un lugar de votación de los lugares de reunión disponibles, y los colonos irán allí para votar.</LetterElectionHeld>
+  <LetterLabelElectionCandidate>Candidato: {0}</LetterLabelElectionCandidate>
+  <LetterElectionCandidate>{0} se está postulando para alcalde de {1}. Esta es su plancha:\n{2}</LetterElectionCandidate>
+  <LetterLabelTieSettled>El empate electoral se resolvió a favor de {0}</LetterLabelTieSettled>
+  <LetterTieSettled>La elección de la alcaldía resultó en un empate, y después de un debate de disputa real, {0} fue el único dispuesto a seguir discutiendo al respecto. Los otros candidatos se han retirado, dejándolo como el vencedor.</LetterTieSettled>
+  <LetterLabelElectionWon>Elección ganada por {0}</LetterLabelElectionWon>
+  <LetterElectionWon>{0} ganó las elecciones para la alcaldía en {1}. HECAP recibió {2} votos.\n\nComo recordatorio, esta era su plancha:\n\n{3}\n\nHECAP ahora recibirá visitas de su constituyentes en su sala si él tiene una. Si tienen quejas, es probable que se sientan mejor después de hablar con él, si es bueno para hablar con la gente y entender sus sentimientos. Tener una hermosa habitación para reunirse con ellos tampoco va a doler.\n\nMantén una estrecha vigilancia sobre él; no tiene a nadie a quien quejarse y cargar con las cargas de una colonia entera puede ser difícil, especialmente si las cosas van mal.</LetterElectionWon>
+  <LetterLabelFuneralPlanned>Funeral planeado por {0}</LetterLabelFuneralPlanned>
+  <LetterFuneralPlanned>{0} ha planificado un funeral para {1}. El servicio se llevará a cabo en el {2}, en {3}h.</LetterFuneralPlanned>
+  <LetterLabelFuneralStarted>Servicio fúnebre para {0}</LetterLabelFuneralStarted>
+  <LetterFuneralStarted>El funeral de {0} está en marcha. Sus colonos pueden asistir o no dependiendo de su relación con {0}.</LetterFuneralStarted>
+  <LetterLabelFuneralEnded>El funeral ha terminado</LetterLabelFuneralEnded>
+  <LetterFuneralEnded>El funeral de {0} se acabó.\n\nLas siguientes personas asistieron:\n{1}</LetterFuneralEnded>
+
+</LanguageData>

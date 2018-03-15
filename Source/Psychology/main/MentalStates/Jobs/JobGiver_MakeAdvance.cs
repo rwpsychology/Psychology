@@ -26,7 +26,7 @@ namespace Psychology
             {
                 return null;
             }
-            if(Rand.Value > 0.005f && new InteractionWorker_RomanceAttempt().SuccessChance(pawn2, pawn) > 0f)
+            if(Rand.Chance(0.005f) && new InteractionWorker_RomanceAttempt().SuccessChance(pawn2, pawn) > 0f)
             {
                 return new Job(JobDefOfPsychology.MakeAdvance, pawn2);
             }

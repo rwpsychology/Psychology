@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FellPlotting.label>Безумная интрига</FellPlotting.label>
+  <FellPlotting.beginLetter>{0} уходит в HIS комнату для планирования!</FellPlotting.beginLetter>
+  <FellPlotting.beginLetterLabel>Жестокий заговор</FellPlotting.beginLetterLabel>
+  <FellPlotting.recoveryMessage>{0} жестокая интрига завершилась.</FellPlotting.recoveryMessage>
+  <FellPlotting.baseInspectLine>Психическое состояние: жестокая интрига</FellPlotting.baseInspectLine>
+
+  <SelfHarm.label>Причинение боли самому себе</SelfHarm.label>
+  <SelfHarm.beginLetter>{0} имеет порез HIS запястья и прячется в своей комнате.</SelfHarm.beginLetter>
+  <SelfHarm.beginLetterLabel>Причинять себе вред</SelfHarm.beginLetterLabel>
+  <SelfHarm.recoveryMessage>{0} прекратил(а) самобичевание.</SelfHarm.recoveryMessage>
+  <SelfHarm.baseInspectLine>Психическое состояние: самобичевание</SelfHarm.baseInspectLine>
+
+  <Paranoia.label>Болтовня</Paranoia.label>
+  <Paranoia.beginLetter>{0} поглощен параноидальным лепетом.</Paranoia.beginLetter>
+  <Paranoia.beginLetterLabel>Паранойя</Paranoia.beginLetterLabel>
+  <Paranoia.recoveryMessage>{0} преодолел HIS паранойю.</Paranoia.recoveryMessage>
+  <Paranoia.baseInspectLine>Психическое состояние: Паранойя</Paranoia.baseInspectLine>
+
+
+  <!-- major mental breaks -->
+
+  <Abuse.label>Кричащий</Abuse.label>
+  <Abuse.beginLetter>{0} разозлился и устно оскорбил всех в поле зрения.</Abuse.beginLetter>
+  <Abuse.beginLetterLabel>Словесное оскорбление</Abuse.beginLetterLabel>
+  <Abuse.recoveryMessage>{0} прекратил словесное оскорбление людей.</Abuse.recoveryMessage>
+  <Abuse.baseInspectLine>Психическое состояние: Оскорбляющий</Abuse.baseInspectLine>
+
+  <Compulsion.label>Принуждение</Compulsion.label>
+  <Compulsion.beginLetter>{0} навязчиво очищает HIS окружение, не обращая внимания на HIS собственное самочувствие.</Compulsion.beginLetter>
+  <Compulsion.beginLetterLabel>Принуждение</Compulsion.beginLetterLabel>
+  <Compulsion.recoveryMessage>{0} прекратил компульсивное упорядочение HIS окружения.</Compulsion.recoveryMessage>
+  <Compulsion.baseInspectLine>Психическое состояние: импульсивная очистка</Compulsion.baseInspectLine>
+
+
+  <!-- minor mental breaks -->
+
+  <Antisocial.label>Антиобщественный</Antisocial.label>
+  <Antisocial.beginLetter>{0} избегает своих собратьев-колонистов.</Antisocial.beginLetter>
+  <Antisocial.beginLetterLabel>Антиобщественный</Antisocial.beginLetterLabel>
+  <Antisocial.recoveryMessage>{0} перестает быть антисоциальным.</Antisocial.recoveryMessage>
+  <Antisocial.baseInspectLine>Психическое состояние: Антисоциальное</Antisocial.baseInspectLine>
+
+  <Apathy.label>Ослабление</Apathy.label>
+  <Apathy.beginLetter>{0} стал апатичным и с меньшей вероятностью HIS выполнит работу.</Apathy.beginLetter>
+  <Apathy.beginLetterLabel>Апатия</Apathy.beginLetterLabel>
+  <Apathy.recoveryMessage>{0} перестает быть апатичным.</Apathy.recoveryMessage>
+  <Apathy.baseInspectLine>Психическое состояние: Апатия</Apathy.baseInspectLine>
+
+  <Histrionic.label>Театрал</Histrionic.label>
+  <Histrionic.beginLetter>{0} стал актером и отчаянно ищет внимания.</Histrionic.beginLetter>
+  <Histrionic.beginLetterLabel>Театрал</Histrionic.beginLetterLabel>
+  <Histrionic.recoveryMessage>{0} перестает быть театралом.</Histrionic.recoveryMessage>
+  <Histrionic.baseInspectLine>Психическое состояние: театральность</Histrionic.baseInspectLine>
+
+
+</LanguageData>
