@@ -19,5 +19,9 @@
 	
 	<ElectionsTitle>選挙の有効</ElectionsTitle>
 	<ElectionsTooltip>これを無効にすると年次選挙は行われません。進行中の選挙は実行されるが、既存のリーダーは普通の入植者に戻ります。他のモッドとの適合性に影響はありません。</ElectionsTooltip>
+
+	<DurationTitle>会話記録時期</DurationTitle>
+	<DurationTooltip>入植者が会話の項目を覚える時間の設定です。デフォルトは60日間、すなわち一年間です。最低限は15日間及び季節一つで、最大限は180日間及び3年間です。低い設定は入植者のやり取りの影響を低める一方、高い設定では会話の影響が積もりやすくなります（データも）。</DurationTooltip>
+  
   
 </LanguageData>
