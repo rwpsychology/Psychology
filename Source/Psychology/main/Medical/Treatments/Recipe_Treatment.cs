@@ -59,7 +59,7 @@ namespace Psychology
             ThoughtDef failure = ThoughtDefOfPsychology.TreatmentFailed;
             pawn.needs.mood.thoughts.memories.TryGainMemory(failure);
             IEnumerable<Thought_Memory> failureThoughts = (from memory in pawn.needs.mood.thoughts.memories.Memories
-                                             where memory.def.workerClass.Name == "Thought_TreatmentFailed"
+                                             where memory.def.workerClass != null && memory.def.workerClass.Name == "Thought_TreatmentFailed"
                                              orderby memory.age ascending
                                              select memory);
             foreach(Thought_TreatmentFailed failureThought in failureThoughts)

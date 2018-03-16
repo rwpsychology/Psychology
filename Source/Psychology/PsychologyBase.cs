@@ -366,7 +366,7 @@ namespace Psychology
                             gather = mayor.Map.GetComponent<OfficeTableMapComponent>().officeTable.parent.Position;
                             found = "office";
                         }
-                        if (mayor.ownership != null && mayor.ownership.OwnedBed != null)
+                        else if (mayor.ownership != null && mayor.ownership.OwnedBed != null)
                         {
                             gather = mayor.ownership.OwnedBed.Position;
                             found = "bed";

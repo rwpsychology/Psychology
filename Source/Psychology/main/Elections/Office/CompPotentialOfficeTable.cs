@@ -74,7 +74,6 @@ namespace Psychology
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             Command_Toggle com = new Command_Toggle();
-            com.hotKey = KeyBindingDefOf.CommandTogglePower;
             com.defaultLabel = "CommandOfficeTableToggleLabel".Translate();
             com.icon = PsychologyTexCommand.OfficeTable;
             com.isActive = () => Active;
