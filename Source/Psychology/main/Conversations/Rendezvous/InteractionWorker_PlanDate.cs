@@ -39,7 +39,7 @@ namespace Psychology
             {
                 return 0f;
             }
-            return 1.2f * realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic) * (1f - realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent))
+            return 1.2f * (1f + Mathf.InverseLerp(100f, 0f,realInitiator.needs.mood.thoughts.TotalOpinionOffset(realRecipient))) * realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic) * (1f - realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent))
                 * realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic) * (1f - realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent)) * RendezvousUtility.ColonySizeFactor(initiator);
         }
 

@@ -52,6 +52,7 @@ namespace Psychology
         public static ThoughtDef AttendedFuneral;
 
         /* Miscellaneous thoughts */
+        public static ThoughtDef HungOut;
         public static ThoughtDef KilledHumanlikeEnemy;
         public static ThoughtDef DreamGood;
         public static ThoughtDef DreamBad;
