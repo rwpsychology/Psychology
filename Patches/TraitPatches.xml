@@ -166,7 +166,7 @@
 			  <success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/TraitDef[defname="Bloodlust"]/conflictingTraits</xpath>
+				<xpath>*/TraitDef[defname="Bloodlust"]</xpath>
 				<value>
 					<conflictingTraits>
 						<li>BleedingHeart</li>
@@ -185,7 +185,7 @@
 			  <success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/TraitDef[defname="Psychopath"]/conflictingTraits</xpath>
+				<xpath>*/TraitDef[defname="Psychopath"]</xpath>
 				<value>
 					<conflictingTraits>
 						<li>BleedingHeart</li>
@@ -205,7 +205,7 @@
 			  <success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/TraitDef[defname="Cannibal"]/conflictingTraits</xpath>
+				<xpath>*/TraitDef[defname="Cannibal"]</xpath>
 				<value>
 					<conflictingTraits>
 						<li>BleedingHeart</li>
@@ -224,7 +224,7 @@
 			  <success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/TraitDef[defname="Ascetic"]/conflictingTraits</xpath>
+				<xpath>*/TraitDef[defname="Ascetic"]</xpath>
 				<value>
 					<conflictingTraits>
 						<li>Gourmet</li>
@@ -242,7 +242,7 @@
 			  <success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/TraitDef[defname="Neurotic"]/conflictingTraits</xpath>
+				<xpath>*/TraitDef[defname="Neurotic"]</xpath>
 				<value>
 					<conflictingTraits>
 						<li>HeavySleeper</li>
@@ -260,7 +260,7 @@
 			  <success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/TraitDef[defname="DislikesMen"]/conflictingTraits</xpath>
+				<xpath>*/TraitDef[defname="DislikesMen"]</xpath>
 				<value>
 					<conflictingTraits>
 						<li>OpenMinded</li>
@@ -278,7 +278,7 @@
 			  <success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/TraitDef[defname="DislikesWomen"]/conflictingTraits</xpath>
+				<xpath>*/TraitDef[defname="DislikesWomen"]</xpath>
 				<value>
 					<conflictingTraits>
 						<li>OpenMinded</li>
@@ -296,7 +296,7 @@
 			  <success>Invert</success>
 			</li>
 			<li Class="PatchOperationAdd">
-				<xpath>*/TraitDef[defname="Prosthophobe"]/conflictingTraits</xpath>
+				<xpath>*/TraitDef[defname="Prosthophobe"]</xpath>
 				<value>
 					<conflictingTraits>
 						<li>OpenMinded</li>

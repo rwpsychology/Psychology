@@ -40,6 +40,7 @@ namespace Psychology
 
         /* Election related thoughts */
         public static ThoughtDef WonElection;
+        public static ThoughtDef MayorNoOffice;
         public static ThoughtDef MayorNoBedroom;
 
         /* Dating related thoughts */
@@ -51,6 +52,7 @@ namespace Psychology
         public static ThoughtDef AttendedFuneral;
 
         /* Miscellaneous thoughts */
+        public static ThoughtDef HungOut;
         public static ThoughtDef KilledHumanlikeEnemy;
         public static ThoughtDef DreamGood;
         public static ThoughtDef DreamBad;

@@ -17,7 +17,7 @@ namespace Psychology.Harmony
         {
             //Transpiler?
             Map map = Traverse.Create(__instance).Field("map").GetValue<Map>();
-            if (map.IsPlayerHome)
+            if (!map.IsPlayerHome)
             {
                 return false;
             }
@@ -27,19 +27,16 @@ namespace Psychology.Harmony
             {
                 if (pawn.RaceProps.Humanlike && pawn.story.traits.HasTrait(TraitDefOfPsychology.Socialite))
                 {
-                    Log.Message("Socialite found on map");
                     socialiteMod++;
                 }
             }
-            if (Find.TickManager.TicksGame % GenDate.TicksPerHour * 2 == 0)
+            if (Find.TickManager.TicksGame % (GenDate.TicksPerHour * 2) == 0)
             {
-                Log.Message("Checking for party");
-                if (Rand.MTBEventOccurs(40f, GenDate.TicksPerDay, (GenDate.TicksPerHour * 2f * socialiteMod)))
+                if (Rand.MTBEventOccurs(40f, GenDate.TicksPerDay, (GenDate.TicksPerHour * 2f * (1 + (socialiteMod/(map.mapPawns.ColonistCount > 0 ? map.mapPawns.ColonistCount : 1))))))
                 {
-                    Log.Message("Party should start");
                     Traverse.Create(__instance).Field("startPartyASAP").SetValue(true);
                 }
-                if (Traverse.Create(__instance).Field("startPartyASAP").GetValue<bool>() && Find.TickManager.TicksGame - Traverse.Create(__instance).Field("lastLordStartTick").GetValue<int>() >= (int)(GenDate.TicksPerSeason * 2 / socialiteMod) && PartyUtility.AcceptableGameConditionsToStartParty(map))
+                if (Traverse.Create(__instance).Field("startPartyASAP").GetValue<bool>() && Find.TickManager.TicksGame - Traverse.Create(__instance).Field("lastLordStartTick").GetValue<int>() >= (int)(GenDate.TicksPerSeason * 2 / (1 + (socialiteMod / (map.mapPawns.ColonistCount > 0 ? map.mapPawns.ColonistCount : 1)))) && PartyUtility.AcceptableGameConditionsToStartParty(map))
                 {
                     Traverse.Create(__instance).Method("TryStartParty", new object[] { }).GetValue();
                 }

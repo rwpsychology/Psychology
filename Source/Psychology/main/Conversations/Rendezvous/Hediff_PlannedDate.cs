@@ -29,7 +29,7 @@ namespace Psychology
             else if(Find.TickManager.TicksGame >= this.day && GenLocalDate.HourOfDay(this.pawn) == this.hour)
             {
                 if(this.pawn.GetTimeAssignment() != TimeAssignmentDefOf.Work && this.partner.GetTimeAssignment() != TimeAssignmentDefOf.Work && !this.pawn.Drafted && !this.partner.Drafted
-                    && PartyUtility.AcceptableGameConditionsToStartParty(this.pawn.Map) && this.pawn.Map == this.partner.Map)
+                    && GatheringsUtility.ShouldGuestKeepAttendingGathering(this.pawn) && GatheringsUtility.ShouldGuestKeepAttendingGathering(this.partner) && this.pawn.Map == this.partner.Map)
                 {
                     pawn.jobs.StopAll();
                     if (pawn.Awake() && partner.Awake())

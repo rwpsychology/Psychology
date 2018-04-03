@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using RimWorld;
 using Verse;
+using Verse.AI.Group;
 using UnityEngine;
 
 namespace Psychology
@@ -18,7 +19,17 @@ namespace Psychology
             {
                 return 0f;
             }
-            return Mathf.Max(0f, 0.45f + (realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly)-0.6f) + (realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Extroverted)-0.5f));
+            if (!initiator.health.capacities.CapableOf(PawnCapacityDefOf.Talking) || !recipient.health.capacities.CapableOf(PawnCapacityDefOf.Talking))
+            {
+                return 0f;
+            }
+            float baseChance = 0.45f;
+            Lord lord = LordUtility.GetLord(initiator);
+            if (lord != null && (lord.LordJob.GetType() == typeof(LordJob_HangOut) || lord.LordJob.GetType() == typeof(LordJob_Date)) && LordUtility.GetLord(recipient) == lord)
+            {
+                baseChance = 0.75f;
+            }
+            return Mathf.Max(0f, baseChance + (realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly)-0.6f) + (realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Extroverted)-0.5f));
         }
 
         public override void Interacted(Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks)

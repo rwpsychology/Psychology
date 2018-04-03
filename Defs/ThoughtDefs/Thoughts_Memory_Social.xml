@@ -150,6 +150,20 @@
   </ThoughtDef>
 
   <ThoughtDef>
+    <defName>HungOut</defName>
+    <thoughtClass>Thought_MemorySocial</thoughtClass>
+    <durationDays>4.0</durationDays>
+    <stackLimit>300</stackLimit>
+    <stackLimitPerPawn>1</stackLimitPerPawn>
+    <stages>
+      <li>
+        <label>hung out together</label>
+        <baseOpinionOffset>5</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
     <defName>MissedDate</defName>
     <thoughtClass>Thought_MemorySocial</thoughtClass>
     <durationDays>30.0</durationDays>
@@ -157,7 +171,7 @@
     <stackLimitPerPawn>1</stackLimitPerPawn>
     <stages>
       <li>
-        <label>slept through our date</label>
+        <label>missed our date</label>
         <baseOpinionOffset>-5</baseOpinionOffset>
       </li>
     </stages>

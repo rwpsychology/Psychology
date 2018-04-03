@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Random social interactions -->
+
+  <PrudeSeen.label>Увиденный(ая) голым(ой)</PrudeSeen.label>
+  <PrudeSeen.logRulesInitiator.rulesStrings.0>logentry->Saw [other_nameShortIndef] в обнаженном виде.</PrudeSeen.logRulesInitiator.rulesStrings.0>
+  <PrudeSeen.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef] увидел(а) меня в обнаженном виде.</PrudeSeen.logRulesRecipient.rulesStrings.0>
+
+  <Conversation.label>Разговор</Conversation.label>
+  <Conversation.logRulesInitiator.rulesStrings.0>logentry->Завязал разговор с [other_nameShortIndef].</Conversation.logRulesInitiator.rulesStrings.0>
+  <Conversation.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef] начал разговор со мной.</Conversation.logRulesRecipient.rulesStrings.0>
+
+  <EndConversation.label>Завершенный разговор</EndConversation.label>
+  <EndConversation.logRulesInitiator.rulesStrings.0>logentry->Закончился разговор с [other_nameShortIndef].</EndConversation.logRulesInitiator.rulesStrings.0>
+  <EndConversation.logRulesRecipient.rulesStrings.0>logentry->Закончился разговор с [other_nameShortIndef].</EndConversation.logRulesRecipient.rulesStrings.0>
+
+  <HangOut.label>болтается</HangOut.label>
+  <HangOut.logRulesInitiator.rulesStrings.0>logentry->[other_nameShortIndef] Попросил пообщаться со мной.</HangOut.logRulesInitiator.rulesStrings.0>
+  <HangOut.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef] попросил меня пообщаться.</HangOut.logRulesRecipient.rulesStrings.0>
+
+  <PlanDate.label>планирование свидания</PlanDate.label>
+  <PlanDate.logRulesInitiator.rulesStrings.0>logentry->Запланировано свидания с [other_nameShortIndef].</PlanDate.logRulesInitiator.rulesStrings.0>
+  <PlanDate.logRulesRecipient.rulesStrings.0>logentry->[other_nameShortIndef] запланировал(а) свидание со мной.</PlanDate.logRulesRecipient.rulesStrings.0>
+
+
+</LanguageData>

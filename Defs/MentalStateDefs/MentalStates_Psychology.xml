@@ -153,7 +153,7 @@
     <stateEffecter>Berserk</stateEffecter>
     <tale>MentalStateFellPlotting</tale>
     <recoverFromSleep>true</recoverFromSleep>
-    <unspawnedCanDo>true</unspawnedCanDo>
+    <unspawnedCanDo>false</unspawnedCanDo>
   </MentalStateDef>
   
   
@@ -309,7 +309,7 @@
 	<stateEffecter>Berserk</stateEffecter>
     <tale>MentalStateAbuse</tale>
     <recoverFromSleep>true</recoverFromSleep>
-    <unspawnedCanDo>true</unspawnedCanDo>
+    <unspawnedCanDo>false</unspawnedCanDo>
     <moodRecoveryThought>Catharsis</moodRecoveryThought>
   </MentalStateDef>
   
@@ -337,7 +337,7 @@
     <baseInspectLine>Mental state: Compulsively cleaning</baseInspectLine>
     <tale>MentalStateCompulsion</tale>
     <recoverFromSleep>true</recoverFromSleep>
-    <unspawnedCanDo>true</unspawnedCanDo>
+    <unspawnedCanDo>false</unspawnedCanDo>
     <allowBeatfire>true</allowBeatfire>
     <moodRecoveryThought>Catharsis</moodRecoveryThought>
   </MentalStateDef>
@@ -440,7 +440,7 @@
     <baseInspectLine>Mental state: Histrionic</baseInspectLine>
     <tale>MentalStateHistrionic</tale>
     <recoverFromSleep>false</recoverFromSleep>
-    <unspawnedCanDo>true</unspawnedCanDo>
+    <unspawnedCanDo>false</unspawnedCanDo>
     <allowBeatfire>true</allowBeatfire>
     <moodRecoveryThought>Catharsis</moodRecoveryThought>
   </MentalStateDef>

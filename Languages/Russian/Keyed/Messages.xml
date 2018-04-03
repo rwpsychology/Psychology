@@ -1,7 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
-	<TreatedTrait>{0} {1} успешно вылечен.</TreatedTrait>
-	<MessageElectionCalledOff>Выборы в {0} были отменены из-за условий на избирательном участке.</MessageElectionCalledOff>	
-	
+  <TreatedTrait>{0} {1} успешно вылечен.</TreatedTrait>
+  <MessageElectionCalledOff>Выборы в {0} были отменены из-за условий на избирательном участке.</MessageElectionCalledOff>
+  <MessageFuneralCalledOff>Похороны были отменены из-за условий в колонии.</MessageFuneralCalledOff>
+
 </LanguageData>

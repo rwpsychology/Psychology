@@ -74,6 +74,10 @@ namespace Psychology
         public override void PostRemoved()
         {
             base.PostRemoved();
+            if (this.realPawn.Dead || this.otherPawn.Dead)
+            {
+                return;
+            }
             if (this.realPawn == null)
             {
                 this.realPawn = this.pawn as PsychologyPawn;
@@ -110,7 +114,7 @@ namespace Psychology
                 ThoughtDef def = new ThoughtDef();
                 def.defName = this.pawn.GetHashCode() + "Conversation" + topic.defName;
                 def.label = topic.defName;
-                def.durationDays = 60f;
+                def.durationDays = PsychologyBase.ConvoDuration();
                 def.nullifyingTraits = new List<TraitDef>();
                 def.nullifyingTraits.Add(TraitDefOf.Psychopath);
                 def.thoughtClass = typeof(Thought_MemorySocialDynamic);
@@ -130,6 +134,10 @@ namespace Psychology
                 if (opinionMod < 0f)
                 {
                     opinionMod *= PopulationModifier;
+                }
+                else if(LovePartnerRelationUtility.LovePartnerRelationExists(this.realPawn, this.otherPawn) && this.realPawn.story.traits.HasTrait(TraitDefOfPsychology.Codependent))
+                {
+                    opinionMod *= 1.25f;
                 }
                 stage.label = "ConversationStage".Translate() + " " + topic.conversationTopic;
                 stage.baseOpinionOffset = Mathf.RoundToInt(opinionMod);

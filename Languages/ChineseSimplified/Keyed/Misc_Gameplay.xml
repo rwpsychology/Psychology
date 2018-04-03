@@ -23,5 +23,10 @@
   <PsycheMore>较多</PsycheMore>
   <PsycheVery>非常</PsycheVery>
   <PsycheExtremely>极其</PsycheExtremely>
+	
+	<!-- Comp text -->
+	<CommandOfficeTableToggleLabel>Mayoral office</CommandOfficeTableToggleLabel>
+	<CommandOfficeTableToggleDescActive>This room is designated as your mayor's office. If you have a mayor, they will hold meetings here.</CommandOfficeTableToggleDescActive>
+	<CommandOfficeTableToggleDescInactive>You can assign this room to be used as your mayor's office, if you have one. You can only give your mayor one office.</CommandOfficeTableToggleDescInactive>
 
 </LanguageData>

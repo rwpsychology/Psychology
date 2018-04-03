@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <NumberOfShortTalks>10</NumberOfShortTalks>
+  <ShortTalk1>Был краткий разговор с [other_nameShortIndef] о {0}.</ShortTalk1>
+  <ShortTalk2>Был короткий разговор с [other_nameShortIndef] о {0}.</ShortTalk2>
+  <ShortTalk3>Был короткий разговор с [other_nameShortIndef] о {0}.</ShortTalk3>
+  <ShortTalk4>Быстро обсуждает {0} с [other_nameShortIndef].</ShortTalk4>
+  <ShortTalk5>Осторожно беседовал о {0} с [other_nameShortIndef].</ShortTalk5>
+  <ShortTalk6>Поговорил попутно о {0} с [other_nameShortIndef].</ShortTalk6>
+  <ShortTalk7>Прокомментировал {0} с [other_nameShortIndef].</ShortTalk7>
+  <ShortTalk8>Делал замечание {0} с [other_nameShortIndef].</ShortTalk8>
+  <ShortTalk9>На мгновение обменялся словами с [other_nameShortIndef] о {0}.</ShortTalk9>
+  <ShortTalk10>Был краткий обмен с [other_nameShortIndef] о {0}.</ShortTalk10>
+
+  <NumberOfNormalTalks>12</NumberOfNormalTalks>
+  <NormalTalk1>Разговор о {0} с [other_nameShortIndef].</NormalTalk1>
+  <NormalTalk2>Был разговор о {0} с [other_nameShortIndef].</NormalTalk2>
+  <NormalTalk3>Обсуждал {0} с [other_nameShortIndef].</NormalTalk3>
+  <NormalTalk4>Сравнивал мысли о {0} с [other_nameShortIndef].</NormalTalk4>
+  <NormalTalk5>Общался с [other_nameShortIndef] насчёт {0}.</NormalTalk5>
+  <NormalTalk6>Поговорил с [other_nameShortIndef] насчёт {0}.</NormalTalk6>
+  <NormalTalk7>Обсуждал с [other_nameShortIndef] о {0}.</NormalTalk7>
+  <NormalTalk8>Узнал о мнении [other_nameShortIndef] о {0}.</NormalTalk8>
+  <NormalTalk9>Общие мысли о {0} с [other_nameShortIndef].</NormalTalk9>
+  <NormalTalk10>Узнал о мыслях [other_nameShortIndef] относительно {0}.</NormalTalk10>
+  <NormalTalk11>Спорит о {0} с [other_nameShortIndef].</NormalTalk11>
+  <NormalTalk12>Проконсультировался с [other_nameShortIndef] о {0}.</NormalTalk12>
+
+  <NumberOfLongTalks>8</NumberOfLongTalks>
+  <LongTalk1>Подробно обсуждает {0} с [other_nameShortIndef].</LongTalk1>
+  <LongTalk2>Был длинный разговор о {0} с [other_nameShortIndef].</LongTalk2>
+  <LongTalk3>Несколько раз поговорил с [other_nameShortIndef] о {0}.</LongTalk3>
+  <LongTalk4>Тщательно обсуждает {0} с [other_nameShortIndef].</LongTalk4>
+  <LongTalk5>Многочисленные консультации о {0} с [other_nameShortIndef].</LongTalk5>
+  <LongTalk6>Много узнал о том, как [other_nameShortIndef] оценивает {0}.</LongTalk6>
+  <LongTalk7>Делился глубокими мыслями о {0} с [other_nameShortIndef].</LongTalk7>
+  <LongTalk8>Были длительные дебаты о {0} с [other_nameShortIndef].</LongTalk8>
+
+  <NumberOfEpicTalks>6</NumberOfEpicTalks>
+  <EpicTalk1>В течение нескольких часов советовался с [other_nameShortIndef] о {0}.</EpicTalk1>
+  <EpicTalk2>Бесконечно разговаривал с [other_nameShortIndef] о {0}.</EpicTalk2>
+  <EpicTalk3>Был очень длинный разговор о {0} с [other_nameShortIndef].</EpicTalk3>
+  <EpicTalk4>Вечные дебаты с [other_nameShortIndef] о {0}.</EpicTalk4>
+  <EpicTalk5>Был очень длинный переброс словами о {0} с [other_nameShortIndef].</EpicTalk5>
+  <EpicTalk6>Высказывался о {0} с [other_nameShortIndef] в течение нескольких часов.</EpicTalk6>
+
+</LanguageData>

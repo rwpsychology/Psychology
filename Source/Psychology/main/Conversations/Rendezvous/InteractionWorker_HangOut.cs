@@ -13,7 +13,7 @@ namespace Psychology
     {
         public override float RandomSelectionWeight(Pawn initiator, Pawn recipient)
         {
-            if(initiator.guest.IsPrisoner || recipient.guest.IsPrisoner)
+            if(!GatheringsUtility.ShouldGuestKeepAttendingGathering(initiator) || !GatheringsUtility.ShouldGuestKeepAttendingGathering(recipient))
             {
                 return 0f;
             }
@@ -31,11 +31,7 @@ namespace Psychology
             {
                 return 0f;
             }
-            if (!PartyUtility.AcceptableGameConditionsToStartParty(initiator.Map))
-            {
-                return 0f;
-            }
-            if (initiator.health.summaryHealth.SummaryHealthPercent < 1f || recipient.health.summaryHealth.SummaryHealthPercent < 1f)
+            if (!RendezvousUtility.AcceptableGameConditionsToStartHangingOut(initiator.Map))
             {
                 return 0f;
             }
