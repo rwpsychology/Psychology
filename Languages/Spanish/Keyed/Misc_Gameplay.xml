@@ -25,8 +25,7 @@
   <PsycheExtremely>Extremadamente</PsycheExtremely>
 	
 	<!-- Comp text -->
-	<CommandOfficeTableToggleLabel>Mayoral office</CommandOfficeTableToggleLabel>
-	<CommandOfficeTableToggleDescActive>This room is designated as your mayor's office. If you have a mayor, they will hold meetings here.</CommandOfficeTableToggleDescActive>
-	<CommandOfficeTableToggleDescInactive>You can assign this room to be used as your mayor's office, if you have one. You can only give your mayor one office.</CommandOfficeTableToggleDescInactive>
+	<CommandOfficeTableToggleDescActive>Esta habitación está designada como la oficina de su alcalde. Si tienes un alcalde, celebrarán reuniones aquí.</CommandOfficeTableToggleDescActive>
+	<CommandOfficeTableToggleDescInactive>Puedes asignar esta sala para ser utilizada como la oficina de su alcalde, si tiene uno. Puede darle a su alcalde una sola oficina.</CommandOfficeTableToggleDescInactive>
 
 </LanguageData>
