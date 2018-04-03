@@ -25,6 +25,7 @@
   <PsycheExtremely>Extremadamente</PsycheExtremely>
 	
 	<!-- Comp text -->
+	<CommandOfficeTableToggleLabel>Oficina del alcalde</CommandOfficeTableToggleLabel>
 	<CommandOfficeTableToggleDescActive>Esta habitación está designada como la oficina de su alcalde. Si tienes un alcalde, celebrarán reuniones aquí.</CommandOfficeTableToggleDescActive>
 	<CommandOfficeTableToggleDescInactive>Puedes asignar esta sala para ser utilizada como la oficina de su alcalde, si tiene uno. Puede darle a su alcalde una sola oficina.</CommandOfficeTableToggleDescInactive>
 
