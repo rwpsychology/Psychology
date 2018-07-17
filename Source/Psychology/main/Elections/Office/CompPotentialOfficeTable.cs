@@ -50,7 +50,7 @@ namespace Psychology
 
         public override void PostExposeData()
         {
-            Scribe_Values.Look(ref active, "active", false);
+            Scribe_Values.Look(ref active, "office", false);
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -74,7 +74,6 @@ namespace Psychology
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             Command_Toggle com = new Command_Toggle();
-            com.hotKey = KeyBindingDefOf.CommandTogglePower;
             com.defaultLabel = "CommandOfficeTableToggleLabel".Translate();
             com.icon = PsychologyTexCommand.OfficeTable;
             com.isActive = () => Active;

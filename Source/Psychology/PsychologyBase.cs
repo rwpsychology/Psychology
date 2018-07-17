@@ -361,13 +361,12 @@ namespace Psychology
                         PsychologyPawn psychologyConstituent = potentialConstituent as PsychologyPawn;
                         IntVec3 gather = default(IntVec3);
                         String found = null;
-                        FactionBase colony = Find.WorldObjects.ObjectsAt((mayor.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor) as Hediff_Mayor).worldTileElectedOn).OfType<FactionBase>().FirstOrDefault();
-                        if (colony != null && mayor.Map.GetComponent<OfficeTableMapComponent>().officeTable != null)
+                        if (mayor.Map.GetComponent<OfficeTableMapComponent>().officeTable != null)
                         {
-                            gather = colony.Map.GetComponent<OfficeTableMapComponent>().officeTable.parent.Position;
+                            gather = mayor.Map.GetComponent<OfficeTableMapComponent>().officeTable.parent.Position;
                             found = "office";
                         }
-                        if (mayor.ownership != null && mayor.ownership.OwnedBed != null)
+                        else if (mayor.ownership != null && mayor.ownership.OwnedBed != null)
                         {
                             gather = mayor.ownership.OwnedBed.Position;
                             found = "bed";
@@ -378,6 +377,8 @@ namespace Psychology
                             pawns.Add(mayor);
                             pawns.Add(potentialConstituent);
                             Lord meeting = LordMaker.MakeNewLord(mayor.Faction, new LordJob_VisitMayor(gather, potentialConstituent, mayor, (potentialConstituent.needs.mood.CurLevel < 0.4f)), mayor.Map, pawns);
+                            mayor.jobs.EndCurrentJob(Verse.AI.JobCondition.InterruptForced);
+                            potentialConstituent.jobs.EndCurrentJob(Verse.AI.JobCondition.InterruptForced);
                             if (found == "bed")
                             {
                                 mayor.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.MayorNoOffice);

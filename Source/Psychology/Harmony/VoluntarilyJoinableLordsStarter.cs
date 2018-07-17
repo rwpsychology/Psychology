@@ -32,11 +32,11 @@ namespace Psychology.Harmony
             }
             if (Find.TickManager.TicksGame % (GenDate.TicksPerHour * 2) == 0)
             {
-                if (Rand.MTBEventOccurs(40f, GenDate.TicksPerDay, (GenDate.TicksPerHour * 2f * (1 + (socialiteMod/map.mapPawns.ColonistCount)))))
+                if (Rand.MTBEventOccurs(40f, GenDate.TicksPerDay, (GenDate.TicksPerHour * 2f * (1 + (socialiteMod/(map.mapPawns.ColonistCount > 0 ? map.mapPawns.ColonistCount : 1))))))
                 {
                     Traverse.Create(__instance).Field("startPartyASAP").SetValue(true);
                 }
-                if (Traverse.Create(__instance).Field("startPartyASAP").GetValue<bool>() && Find.TickManager.TicksGame - Traverse.Create(__instance).Field("lastLordStartTick").GetValue<int>() >= (int)(GenDate.TicksPerSeason * 2 / (1 + (socialiteMod / map.mapPawns.ColonistCount))) && PartyUtility.AcceptableGameConditionsToStartParty(map))
+                if (Traverse.Create(__instance).Field("startPartyASAP").GetValue<bool>() && Find.TickManager.TicksGame - Traverse.Create(__instance).Field("lastLordStartTick").GetValue<int>() >= (int)(GenDate.TicksPerSeason * 2 / (1 + (socialiteMod / (map.mapPawns.ColonistCount > 0 ? map.mapPawns.ColonistCount : 1)))) && PartyUtility.AcceptableGameConditionsToStartParty(map))
                 {
                     Traverse.Create(__instance).Method("TryStartParty", new object[] { }).GetValue();
                 }

@@ -39,10 +39,19 @@ namespace Psychology
             this.timeoutTrigger = new Trigger_TicksPassed(Rand.RangeInclusive(GenDate.TicksPerHour*4, GenDate.TicksPerHour*6));
             Transition transition2 = new Transition(lordToil_HangOut, lordToil_End);
             transition2.AddTrigger(this.timeoutTrigger);
+            transition2.AddPreAction(new TransitionAction_Custom((Action)delegate
+            {
+                this.Finished();
+            }));
             stateGraph.AddTransition(transition2);
             return stateGraph;
         }
-        
+        public void Finished()
+        {
+            this.initiator.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.WentOnDate, this.recipient);
+            this.recipient.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.WentOnDate, this.initiator);
+        }
+
         public override void ExposeData()
         {
             Scribe_References.Look(ref this.initiator, "initiator");
