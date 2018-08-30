@@ -10,7 +10,7 @@ using System.Reflection.Emit;
 namespace Psychology.Harmony
 {
     [HarmonyPatch(typeof(ThoughtWorker_NeedOutdoors), "CurrentStateInternal")]
-    public static class ThoughtWorker_CabinFeverPatch
+    public static class ThoughtWorker_NeedOutdoorsPatch
     {
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> OutdoorsyModifier(IEnumerable<CodeInstruction> instrs)
@@ -24,7 +24,7 @@ namespace Psychology.Harmony
                     yield return new CodeInstruction(OpCodes.Ldarg_1);
                     yield return new CodeInstruction(OpCodes.Ldc_R4, 1f);
                     yield return new CodeInstruction(OpCodes.Ldc_R4, 0f);
-                    yield return new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(ThoughtWorker_CabinFeverPatch), "HasOutdoorsyTraitVal", new Type[] { typeof(Pawn), typeof(float), typeof(float) }));
+                    yield return new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(ThoughtWorker_NeedOutdoorsPatch), "HasOutdoorsyTraitVal", new Type[] { typeof(Pawn), typeof(float), typeof(float) }));
                     yield return new CodeInstruction(OpCodes.Sub);
                 }
                 else if (itr.opcode == OpCodes.Ldc_R4 && float.TryParse("" + itr.operand, out floatOperand) && floatOperand == 7.5f)
@@ -32,7 +32,7 @@ namespace Psychology.Harmony
                     yield return new CodeInstruction(OpCodes.Ldarg_1);
                     yield return new CodeInstruction(OpCodes.Ldc_R4, 2.5f);
                     yield return new CodeInstruction(OpCodes.Ldc_R4, 0f);
-                    yield return new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(ThoughtWorker_CabinFeverPatch), "HasOutdoorsyTraitVal", new Type[] { typeof(Pawn), typeof(float), typeof(float) }));
+                    yield return new CodeInstruction(OpCodes.Callvirt, AccessTools.Method(typeof(ThoughtWorker_NeedOutdoorsPatch), "HasOutdoorsyTraitVal", new Type[] { typeof(Pawn), typeof(float), typeof(float) }));
                     yield return new CodeInstruction(OpCodes.Sub);
                 }
             }
