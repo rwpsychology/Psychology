@@ -9,7 +9,7 @@ using System.Reflection.Emit;
 
 namespace Psychology.Harmony
 {
-    [HarmonyPatch(typeof(ThoughtWorker_CabinFever), "CurrentStateInternal")]
+    [HarmonyPatch(typeof(ThoughtWorker_NeedOutdoors), "CurrentStateInternal")]
     public static class ThoughtWorker_CabinFeverPatch
     {
         [HarmonyTranspiler]
