@@ -180,6 +180,10 @@
 				<trait>Outdoorsy</trait>
 				<modifier>0.1</modifier>
 			</li>
+			<li>
+				<trait>Sedentary</trait>
+				<modifier>-0.2</modifier>
+			</li>
 		</traitModifiers>
 	</Psychology.PersonalityNodeDef>
 	
@@ -189,8 +193,8 @@
 		<description>A drug-friendly person sees nothing wrong with drugs and makes no effort to avoid them.</description>
 		<controversiality>1.2</controversiality>
 		<conversationTopic>drugs</conversationTopic>
-		<platformIssueHigh>Drug usage restrictions should be loosened.</platformIssueHigh>
-		<platformIssueLow>Drug usage restrictions should be tightened.</platformIssueLow>
+		<platformIssueHigh>Drugs can make our lives easier and better.</platformIssueHigh>
+		<platformIssueLow>Drugs have no place in this colony.</platformIssueLow>
 		<parents>
 			<li>
 				<node>Experimental</node>
@@ -366,6 +370,12 @@
 				<node>Emotional</node>
 			</li>
 		</parents>
+		<traitModifiers>
+			<li>
+				<trait>Transhumanist</trait>
+				<modifier>-0.3</modifier>
+			</li>
+		</traitModifiers>
 		<preferredDateHours>
 			<li>10</li>
 			<li>11</li>
@@ -967,7 +977,7 @@
 		</parents>
 		<traitModifiers>
 			<li>
-				<trait>Prosthophobe</trait>
+				<trait>BodyPurist</trait>
 				<modifier>0.2</modifier>
 			</li>
 			<li>
@@ -1002,6 +1012,12 @@
 				<modifier>2</modifier>
 			</li>
 		</parents>
+		<traitModifiers>
+			<li>
+				<trait>Chatty</trait>
+				<modifier>0.1</modifier>
+			</li>
+		</traitModifiers>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>

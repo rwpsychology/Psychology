@@ -12,14 +12,9 @@
     <socialFightBaseChance>0.005</socialFightBaseChance>
     <logRulesInitiator>
       <rulesStrings>
-        <li>logentry->Saw [other_nameShortIndef] in the nude.</li>
+        <li>r_logentry->[INITIATOR_nameDef] saw [RECIPIENT_nameDef] in the nude.</li>
       </rulesStrings>
     </logRulesInitiator>
-    <logRulesRecipient>
-      <rulesStrings>
-        <li>logentry->[other_nameShortIndef] saw me in the nude.</li>
-      </rulesStrings>
-    </logRulesRecipient>
   </InteractionDef>
   
   <InteractionDef>
@@ -29,14 +24,17 @@
     <symbol>Things/Mote/SpeechSymbols/Chitchat</symbol>
     <logRulesInitiator>
       <rulesStrings>
-        <li>logentry->Struck up a conversation with [other_nameShortIndef].</li>
+        <li>r_logentry(p=4)->[INITIATOR_nameDef] [conversed] with [RECIPIENT_nameDef].</li>
+        <li>r_logentry->[INITIATOR_nameDef] hailed [RECIPIENT_nameDef] for a conversation.</li>
+        <li>r_logentry->[INITIATOR_nameDef] brought up a topic with [RECIPIENT_nameDef].</li>
+		
+        <li>conversed(p=4)->struck up a conversation</li>
+        <li>conversed->started to talk</li>
+        <li>conversed->got into a chat</li>
+        <li>conversed->brought up a topic</li>
+        <li>conversed->started discussing something</li>
       </rulesStrings>
     </logRulesInitiator>
-    <logRulesRecipient>
-      <rulesStrings>
-        <li>logentry->[other_nameShortIndef] started a conversation with me.</li>
-      </rulesStrings>
-    </logRulesRecipient>
   </InteractionDef>
   
   <InteractionDef>
@@ -46,14 +44,9 @@
     <symbol>Things/Mote/SpeechSymbols/DeepTalk</symbol>
     <logRulesInitiator>
       <rulesStrings>
-        <li>logentry->Ended a conversation with [other_nameShortIndef].</li>
+        <li>r_logentry->[INITIATOR_nameDef] ended a conversation with [RECIPIENT_nameDef].</li>
       </rulesStrings>
     </logRulesInitiator>
-    <logRulesRecipient>
-      <rulesStrings>
-        <li>logentry->Ended a conversation with [other_nameShortIndef].</li>
-      </rulesStrings>
-    </logRulesRecipient>
   </InteractionDef>
   
   <InteractionDef>
@@ -63,14 +56,9 @@
     <symbol>Things/Mote/SpeechSymbols/DeepTalk</symbol>
     <logRulesInitiator>
       <rulesStrings>
-        <li>logentry->Asked [other_nameShortIndef] to hang out with me.</li>
+        <li>r_logentry->[INITIATOR_nameDef] asked [RECIPIENT_nameDef] to hang out with [INITIATOR_objective].</li>
       </rulesStrings>
     </logRulesInitiator>
-    <logRulesRecipient>
-      <rulesStrings>
-        <li>logentry->[other_nameShortIndef] asked me to hang out.</li>
-      </rulesStrings>
-    </logRulesRecipient>
   </InteractionDef>
   
   <InteractionDef>
@@ -80,14 +68,24 @@
     <symbol>Things/Mote/Heart</symbol>
     <logRulesInitiator>
       <rulesStrings>
-        <li>logentry->Planned a date with [other_nameShortIndef].</li>
+        <li>r_logentry->[INITIATOR_nameDef] planned a date with [RECIPIENT_nameDef].</li>
       </rulesStrings>
     </logRulesInitiator>
-    <logRulesRecipient>
-      <rulesStrings>
-        <li>logentry->[other_nameShortIndef] planned a date with me.</li>
-      </rulesStrings>
-    </logRulesRecipient>
   </InteractionDef>
+  
+  
+  <!--<InteractionDef>
+    <defName>TourFinished</defName>
+    <label>finished tour</label>
+    <symbol>Things/Mote/SpeechSymbols/PrisonerRecruit</symbol>
+    <workerClass>InteractionWorker_DeepTalk</workerClass>
+    <initiatorXpGainSkill>Social</initiatorXpGainSkill>
+    <initiatorXpGainAmount>0</initiatorXpGainAmount>
+    <logRulesInitiator>
+      <rulesStrings>
+        <li>logentry->Showed [other_nameShortIndef] around the colony and offered to let them join.</li>
+      </rulesStrings>
+    </logRulesInitiator>
+  </InteractionDef>-->
   
 </Defs>

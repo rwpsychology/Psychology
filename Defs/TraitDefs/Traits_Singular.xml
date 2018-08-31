@@ -6,7 +6,7 @@
     <degreeDatas>
       <li>
         <label>prude</label>
-        <description>NAME hates the sight of the human body. HECAP will be extremely unhappy when naked, more displeased than usual in tattered or worn-out clothing, and dislike the sight of other naked people.</description>
+        <description>[PAWN_nameDef] hates the sight of the human body. [PAWN_pronoun] will be extremely unhappy when naked, more displeased than usual in tattered or worn-out clothing, and dislike the sight of other naked people.</description>
       </li>
     </degreeDatas>
     <conflictingTraits>
@@ -23,7 +23,7 @@
     <degreeDatas>
       <li>
         <label>insomniac</label>
-        <description>NAME finds it difficult to sleep because of HIS condition. HECAP will prioritize sleep less, wake up sooner, and get less rest from sleeping.</description>
+        <description>[PAWN_nameDef] finds it difficult to sleep because of [PAWN_possessive] condition. [PAWN_pronoun] will prioritize sleep less, wake up sooner, and get less rest from sleeping.</description>
       </li>
     </degreeDatas>
     <conflictingTraits>
@@ -33,11 +33,11 @@
   
   <TraitDef>
     <defName>BleedingHeart</defName>
-    <commonality>0.3</commonality>
+    <commonality>0.6</commonality>
     <degreeDatas>
       <li>
         <label>bleeding heart</label>
-        <description>NAME has a big heart and gets very emotional. HECAP loves helping people, and abhors violence and injustice. HECAP is more affected by these things than others.</description>
+        <description>[PAWN_nameDef] has a big heart and gets very emotional. [PAWN_pronoun] loves helping people, and abhors violence and injustice. [PAWN_pronoun] is more affected by these things than others.</description>
       </li>
     </degreeDatas>
     <conflictingTraits>
@@ -54,7 +54,7 @@
     <degreeDatas>
       <li>
         <label>gourmet</label>
-        <description>NAME is always a critic when it comes to food. HECAP expects to be fed well and will complain if HIS meals aren't up to par.</description>
+        <description>[PAWN_nameDef] is always a critic when it comes to food. [PAWN_pronoun] expects to be fed well and will complain if [PAWN_possessive] meals aren't up to par.</description>
       </li>
     </degreeDatas>
     <conflictingTraits>
@@ -69,19 +69,19 @@
     <degreeDatas>
       <li>
         <label>unstable</label>
-        <description>NAME is more prone to random mood swings, which can be more severe than normal for others.</description>
+        <description>[PAWN_nameDef] is more prone to random mood swings, which can be more severe than normal for others.</description>
       </li>
     </degreeDatas>
   </TraitDef>
   
   <TraitDef>
     <defName>Lecher</defName>
-    <commonality>0.2</commonality>
+    <commonality>0.4</commonality>
     <commonalityFemale>0.1</commonalityFemale>
     <degreeDatas>
       <li>
         <label>lecher</label>
-        <description>NAME is unabashedly lecherous and a thoughtless heartbreaker. HECAP will hit on anyone HE desires with no regard for the consequences.</description>
+        <description>[PAWN_nameDef] is unabashedly lecherous and a thoughtless heartbreaker. [PAWN_pronoun] will hit on anyone [PAWN_pronoun] desires with no regard for the consequences.</description>
       </li>
     </degreeDatas>
     <conflictingTraits>
@@ -96,11 +96,11 @@
   
   <TraitDef>
     <defName>Codependent</defName>
-    <commonality>0.1</commonality>
+    <commonality>0.2</commonality>
     <degreeDatas>
       <li>
         <label>codependent</label>
-        <description>NAME is romantically needy and won't be happy unless in a relationship. HECAP will be devastated by infidelity and breakups.</description>
+        <description>[PAWN_nameDef] is romantically needy and won't be happy unless in a relationship. [PAWN_pronoun] will be devastated by infidelity and breakups.</description>
       </li>
     </degreeDatas>
     <conflictingTraits>
@@ -111,23 +111,23 @@
   
   <TraitDef>
     <defName>Outdoorsy</defName>
-    <commonality>0.5</commonality>
-    <commonalityFemale>0.2</commonalityFemale>
+    <commonality>1</commonality>
+    <commonalityFemale>0.6</commonalityFemale>
     <degreeDatas>
       <li>
         <label>outdoorsy</label>
-        <description>NAME loves to be outside. HECAP gets a mood bonus when there is no roof over HIS head.</description>
+        <description>[PAWN_nameDef] loves to be outside. [PAWN_pronoun] gets a mood bonus when there is no roof over [PAWN_possessive] head.</description>
       </li>
     </degreeDatas>
   </TraitDef>
   
   <TraitDef>
     <defName>Pluviophile</defName>
-    <commonality>0.4</commonality>
+    <commonality>1.5</commonality>
     <degreeDatas>
       <li>
         <label>pluviophile</label>
-        <description>NAME likes the rain. HECAP gets a mood bonus when it's pouring outside, especially if HE gets to go out in it.</description>
+        <description>[PAWN_nameDef] likes the rain. [PAWN_pronoun] gets a mood bonus when it's pouring outside, especially if [PAWN_pronoun] gets to go out in it.</description>
       </li>
     </degreeDatas>
   </TraitDef>
@@ -138,18 +138,18 @@
     <degreeDatas>
       <li>
         <label>photosensitive</label>
-        <description>NAME has eyes, either through gene modding or random mutation, that are extremely light-sensitive. HECAP finds bright light extremely painful and indoor lighting bothersome, and will be happiest in the dark.</description>
+        <description>[PAWN_nameDef] has eyes, either through gene modding or random mutation, that are extremely light-sensitive. [PAWN_pronoun] finds bright light extremely painful and indoor lighting bothersome, and will be happiest in the dark.</description>
       </li>
     </degreeDatas>
   </TraitDef>
   
   <TraitDef>
     <defName>Socialite</defName>
-    <commonality>0.3</commonality>
+    <commonality>0.6</commonality>
     <degreeDatas>
       <li>
         <label>socialite</label>
-        <description>NAME loves to party! HISCAP mere presence inspires more parties in the colony, because everyone enjoys partying with HIM.</description>
+        <description>[PAWN_nameDef] loves to party! [PAWN_possessive] mere presence inspires more parties in the colony, because everyone enjoys partying with [PAWN_pronoun].</description>
       </li>
     </degreeDatas>
     <requiredWorkTags>
@@ -163,7 +163,7 @@
     <degreeDatas>
       <li>
         <label>desensitized</label>
-        <description>NAME has seen enough violence and death that it no longer shocks HIM like it used to.</description>
+        <description>[PAWN_nameDef] has seen enough violence and death that it no longer shocks [PAWN_pronoun] like it used to.</description>
       </li>
     </degreeDatas>
     <conflictingTraits>
@@ -179,7 +179,7 @@
     <degreeDatas>
       <li>
         <label>heavy sleeper</label>
-        <description>NAME sleeps like a rock, never bothered by adverse sleeping conditions, but is difficult to wake up.</description>
+        <description>[PAWN_nameDef] sleeps like a rock, never bothered by adverse sleeping conditions, but is difficult to wake up.</description>
       </li>
     </degreeDatas>
     <conflictingTraits>
@@ -191,11 +191,11 @@
   <TraitDef>
     <defName>Polygamous</defName>
     <commonality>0.1</commonality>
-    <commonalityFemale>0.05</commonalityFemale>
+    <commonalityFemale>0.08</commonalityFemale>
     <degreeDatas>
       <li>
         <label>polyamorous</label>
-        <description>NAME doesn't see any problem with having multiple partners. HECAP doesn't mind if HIS partner romances other people, but will not be happy in a monogamous relationship.</description>
+        <description>[PAWN_nameDef] doesn't see any problem with having multiple partners. [PAWN_pronoun] doesn't mind if [PAWN_possessive] partner romances other people, but will not be happy in a monogamous relationship.</description>
       </li>
     </degreeDatas>
     <conflictingTraits>
@@ -209,11 +209,11 @@
   
   <TraitDef>
     <defName>OpenMinded</defName>
-    <commonality>0.1</commonality>
+    <commonality>0.5</commonality>
     <degreeDatas>
       <li>
         <label>open-minded</label>
-        <description>NAME sees people for what they are on the inside, not the outside. HECAP doesn't judge others for their appearances.</description>
+        <description>[PAWN_nameDef] sees people for what they are on the inside, not the outside. [PAWN_pronoun] doesn't judge others for their appearances.</description>
       </li>
     </degreeDatas>
     <conflictingTraits>
@@ -221,9 +221,39 @@
       <li>Lecher</li>
       <li>DislikesMen</li>
       <li>DislikesWomen</li>
-      <li>Prosthophobe</li>
+      <li>BodyPurist</li>
       <li>Psychopath</li>
     </conflictingTraits>
+    <requiredWorkTags>
+      <li>Social</li>
+    </requiredWorkTags>
+  </TraitDef>
+  
+  <TraitDef>
+    <defName>Sedentary</defName>
+    <commonality>1.3</commonality>
+    <degreeDatas>
+      <li>
+        <label>sedentary</label>
+        <description>[PAWN_nameDef] isn't a very active person. [PAWN_pronoun] isn't very physically fit, but [PAWN_pronoun] enjoys sitting around all day working on things.</description>
+        <statOffsets>
+          <MoveSpeed>-0.15</MoveSpeed>
+        </statOffsets>
+      </li>
+    </degreeDatas>
+    <conflictingTraits>
+      <li>SpeedOffset</li>
+    </conflictingTraits>
+  </TraitDef>
+  
+  <TraitDef>
+    <defName>Chatty</defName>
+    <degreeDatas>
+      <li>
+        <label>chatty</label>
+        <description>[PAWN_nameDef] just talks and talks and talks... and talks. [PAWN_pronoun] tends to have longer conversations than most, because [PAWN_pronoun] can't seem to end them.</description>
+      </li>
+    </degreeDatas>
     <requiredWorkTags>
       <li>Social</li>
     </requiredWorkTags>

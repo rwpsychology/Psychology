@@ -150,5 +150,25 @@
       </li>
     </stages>
   </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>Sedentary</defName>
+    <workerClass>Psychology.ThoughtWorker_Sedentary</workerClass>
+    <requiredTraits>
+      <li>Sedentary</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>settled in</label>
+        <description>It's nice to not have to run around so much.</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+      <li>
+        <label>comfortably settled in</label>
+        <description>A nice, comfortable place to rest for a while. Just the way I like it.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
   
 </Defs>

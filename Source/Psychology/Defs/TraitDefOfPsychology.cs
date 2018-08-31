@@ -26,5 +26,7 @@ namespace Psychology
         public static TraitDef Unstable;
         public static TraitDef Polygamous;
         public static TraitDef OpenMinded;
+        public static TraitDef Chatty;
+        public static TraitDef Sedentary;
     }
 }
