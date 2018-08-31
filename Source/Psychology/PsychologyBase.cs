@@ -344,7 +344,7 @@ namespace Psychology
             //Constituent tick
             if (currentTick % GenDate.TicksPerHour*2 == 0)
             {
-                Map playerFactionMap = Find.WorldObjects.FactionBases.Find(b => b.Faction.IsPlayer).Map;
+                Map playerFactionMap = Find.WorldObjects.SettlementBases.Find(b => b.Faction.IsPlayer).Map;
                 IEnumerable<Pawn> constituents = (from p in playerFactionMap.mapPawns.FreeColonistsSpawned
                                                   where !p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && p.GetLord() == null && p.GetTimeAssignment() != TimeAssignmentDefOf.Work && p.Awake()
                                                   select p);
@@ -394,7 +394,7 @@ namespace Psychology
             //Election tick
             if (currentTick % (GenDate.TicksPerDay/4f) == 0)
             {
-                foreach (FactionBase factionBase in Find.WorldObjects.FactionBases)
+                foreach (SettlementBase settlementBase in Find.WorldObjects.SettlementBases)
                 {
                     //Self-explanatory.
                     if (!PsychologyBase.ActivateElections())
@@ -402,32 +402,32 @@ namespace Psychology
                         continue;
                     }
                     //If the base isn't owned or named by the player, no election can be held.
-                    if (!factionBase.Faction.IsPlayer || !factionBase.namedByPlayer)
+                    if (!settlementBase.Faction.IsPlayer || !settlementBase.namedByPlayer)
                     {
                         continue;
                     }
                     //If the base is not at least a year old, no election will be held.
-                    if ((Find.TickManager.TicksGame - factionBase.creationGameTicks) / GenDate.TicksPerYear < 1)
+                    if ((Find.TickManager.TicksGame - settlementBase.creationGameTicks) / GenDate.TicksPerYear < 1)
                     {
                         continue;
                     }
                     //A base must have at least 7 people in it to hold an election.
-                    if (factionBase.Map.mapPawns.FreeColonistsSpawnedCount < 7)
+                    if (settlementBase.Map.mapPawns.FreeColonistsSpawnedCount < 7)
                     {
                         continue;
                     }
                     //If an election is already being held, don't start a new one.
-                    if (factionBase.Map.gameConditionManager.ConditionIsActive(GameConditionDefOfPsychology.Election) || factionBase.Map.lordManager.lords.Find(l => l.LordJob is LordJob_Joinable_Election) != null)
+                    if (settlementBase.Map.gameConditionManager.ConditionIsActive(GameConditionDefOfPsychology.Election) || settlementBase.Map.lordManager.lords.Find(l => l.LordJob is LordJob_Joinable_Election) != null)
                     {
                         continue;
                     }
                     //Elections are held in Septober (because I guess some maps don't have fall?) and during the day.
-                    if (GenDate.Quadrum(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(factionBase.Tile).x) != Quadrum.Septober || (GenLocalDate.HourOfDay(factionBase.Map) < 7 || GenLocalDate.HourOfDay(factionBase.Map) > 20))
+                    if (GenDate.Quadrum(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(settlementBase.Tile).x) != Quadrum.Septober || (GenLocalDate.HourOfDay(settlementBase.Map) < 7 || GenLocalDate.HourOfDay(settlementBase.Map) > 20))
                     {
                         continue;
                     }
                     //If an election has already been completed this year, don't start a new one.
-                    IEnumerable<Pawn> activeMayors = (from m in factionBase.Map.mapPawns.FreeColonistsSpawned
+                    IEnumerable<Pawn> activeMayors = (from m in settlementBase.Map.mapPawns.FreeColonistsSpawned
                                                       where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == factionBase.Map.Tile && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).yearElected == GenLocalDate.Year(factionBase.Map.Tile)
                                                       select m);
                     if (activeMayors.Count() > 0)
@@ -435,13 +435,13 @@ namespace Psychology
                         continue;
                     }
                     //Try to space out the elections so they don't all proc at once.
-                    if (Rand.RangeInclusive(1, 15 - GenLocalDate.DayOfQuadrum(factionBase.Map.Tile)) > 1)
+                    if (Rand.RangeInclusive(1, 15 - GenLocalDate.DayOfQuadrum(settlementBase.Map.Tile)) > 1)
                     {
                         continue;
                     }
                     IncidentParms parms = new IncidentParms();
-                    parms.target = factionBase.Map;
-                    parms.faction = factionBase.Faction;
+                    parms.target = settlementBase.Map;
+                    parms.faction = settlementBase.Faction;
                     FiringIncident fi = new FiringIncident(IncidentDefOfPsychology.Election, null, parms);
                     Find.Storyteller.TryFire(fi);
                 }
