@@ -53,7 +53,7 @@ namespace Psychology.Harmony
                 GUI.DrawTexture(rect, ContentFinder<Texture2D>.Get("Buttons/ButtonPsyche", true));
                 if (Widgets.ButtonInvisible(rect, false))
                 {
-                    SoundDefOf.TickLow.PlayOneShotOnCamera(null);
+                    SoundDefOf.Tick_Low.PlayOneShotOnCamera(null);
                     Find.WindowStack.Add(new Dialog_ViewPsyche(realPawn));
                 }
                 GUI.color = old;
