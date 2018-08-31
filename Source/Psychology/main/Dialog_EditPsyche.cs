@@ -89,7 +89,7 @@ namespace Psychology
                 cachedList[i] = new Pair<string, float>(cachedList[i].First, newVal);
                 num3 += num4;
             }
-            GUI.EndScrollView();
+            Widgets.EndScrollView();
             if(PsychologyBase.ActivateKinsey())
             {
                 Rect sexDriveLabelRect = new Rect(sexDriveRect.x, sexDriveRect.y, sexDriveRect.width / 3, sexDriveRect.height);

@@ -305,4 +305,20 @@
 			</li>
 		</operations>
 	</Operation>
+	
+	
+	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+			<li Class="PatchOperationTest">
+			  <xpath>*/TraitDef[defName="Undergrounder"]/conflictingTraits</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>*/TraitDef[defname="Undergrounder"]/conflictingTraits</xpath>
+				<value>
+					<li>Outdoorsy</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
 </Patch>

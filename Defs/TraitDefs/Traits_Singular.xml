@@ -119,6 +119,9 @@
         <description>[PAWN_nameDef] loves to be outside. [PAWN_pronoun] gets a mood bonus when there is no roof over [PAWN_possessive] head.</description>
       </li>
     </degreeDatas>
+    <conflictingTraits>
+      <li>Undergrounder</li>
+    </conflictingTraits>
   </TraitDef>
   
   <TraitDef>
