@@ -11,10 +11,10 @@ namespace Psychology
 {
     public static class PsycheCardUtility
     {
-        private static void DrawPersonalityNodes(Rect rect, PsychologyPawn pawn)
+        private static void DrawPersonalityNodes(Rect rect, Pawn pawn)
         {
             float width = rect.width - 26f - 3f;
-            List<PersonalityNode> allNodes = pawn.psyche.PersonalityNodes;
+            List<PersonalityNode> allNodes = PsycheHelper.Comp(pawn).Psyche.PersonalityNodes;
             allNodes.SortBy(p => -p.AdjustedRating, p=> p.def.defName);
             PsycheCardUtility.nodeStrings.Clear();
             float num = 0f;
@@ -45,13 +45,21 @@ namespace Psychology
                 GUI.color = Color.white;
                 Widgets.DrawHighlightIfMouseover(rect3);
                 Widgets.Label(rect3, node.def.label.CapitalizeFirst());
-                TooltipHandler.TipRegion(rect3, () => node.def.description, 613261 + j * 612);
+                Func<String> descriptionString = delegate
+                {
+                    if(node.def.conversationTopic != null)
+                    {
+                        return node.def.description + "\n\n" + "ConversationTooltip".Translate(new object[] { node.def.conversationTopic });
+                    }
+                    return node.def.description;
+                };
+                TooltipHandler.TipRegion(rect3, descriptionString, 613261 + j * 612);
                 num3 += num4;
             }
-            GUI.EndScrollView();
+            Widgets.EndScrollView();
         }
 
-        private static void DrawSexuality(Rect rect, PsychologyPawn pawn, bool notOnMenu)
+        private static void DrawSexuality(Rect rect, Pawn pawn, bool notOnMenu)
         {
             float width = rect.width - 26f - 3f;
             GUI.color = Color.white;
@@ -64,23 +72,23 @@ namespace Psychology
                 Text.Font = GameFont.Small;
                 Rect rect3 = rect;
                 rect3.y = rect2.yMax + RowTopPadding;
-                string text = "KinseyRating".Translate() + "    " + pawn.sexuality.kinseyRating;
+                string text = "KinseyRating".Translate() + "    " + PsycheHelper.Comp(pawn).Sexuality.kinseyRating;
                 float num4 = Mathf.Max(50f, Text.CalcHeight(text, width));
                 rect3.yMax = rect3.y + num4;
                 Widgets.Label(rect3, text);
                 bool asexual = false;
                 Rect rect4 = rect;
-                if (pawn.sexuality.sexDrive < 0.1f)
+                if (PsycheHelper.Comp(pawn).Sexuality.sexDrive < 0.1f)
                 {
                     rect4.y = rect3.yMax;
                     string text2 = "Asexual".Translate();
                     float num5 = Mathf.Max(26f, Text.CalcHeight(text2, width));
                     rect4.yMax = rect4.y + num5;
                     Widgets.Label(rect4, text2);
-                    TooltipHandler.TipRegion(rect4, () => "AsexualDescription".Translate(), 613261 + (int)(100 * pawn.sexuality.sexDrive));
+                    TooltipHandler.TipRegion(rect4, () => "AsexualDescription".Translate(), 613261 + (int)(100 * PsycheHelper.Comp(pawn).Sexuality.sexDrive));
                     asexual = true;
                 }
-                if (pawn.sexuality.romanticDrive < 0.1f)
+                if (PsycheHelper.Comp(pawn).Sexuality.romanticDrive < 0.1f)
                 {
                     Rect rect5 = rect;
                     rect5.y = (asexual ? rect4.yMax : rect3.yMax);
@@ -88,7 +96,7 @@ namespace Psychology
                     float num5 = Mathf.Max(26f, Text.CalcHeight(text2, width));
                     rect5.yMax = rect5.y + num5;
                     Widgets.Label(rect5, text2);
-                    TooltipHandler.TipRegion(rect5, () => "AromanticDescription".Translate(), 613261 + (int)(100 * pawn.sexuality.romanticDrive));
+                    TooltipHandler.TipRegion(rect5, () => "AromanticDescription".Translate(), 613261 + (int)(100 * PsycheHelper.Comp(pawn).Sexuality.romanticDrive));
                 }
             }
             else if(notOnMenu)
@@ -100,7 +108,7 @@ namespace Psychology
             }
         }
 
-        public static void DrawDebugOptions(Rect rect, PsychologyPawn pawn)
+        public static void DrawDebugOptions(Rect rect, Pawn pawn)
         {
             GUI.BeginGroup(rect);
             if (Widgets.ButtonText(new Rect((rect.width * 0.6f) - 80f, 0f, 100f, 22f), "EditPsyche".Translate(), true, false, true))
@@ -112,8 +120,7 @@ namespace Psychology
 
         public static void DrawPsycheCard(Rect rect, Pawn pawn)
         {
-            PsychologyPawn realPawn = pawn as PsychologyPawn;
-            if(realPawn != null)
+            if(PsycheHelper.PsychologyEnabled(pawn))
             {
                 GUI.BeginGroup(rect);
                 Text.Font = GameFont.Small;
@@ -130,18 +137,17 @@ namespace Psychology
                 if (Prefs.DevMode)
                 {
                     Rect rect6 = new Rect(0f, 5f, rect3.width, 22f);
-                    PsycheCardUtility.DrawDebugOptions(rect6, realPawn);
+                    PsycheCardUtility.DrawDebugOptions(rect6, pawn);
                 }
-                PsycheCardUtility.DrawPersonalityNodes(rect4, realPawn);
-                PsycheCardUtility.DrawSexuality(rect5, realPawn, true);
+                PsycheCardUtility.DrawPersonalityNodes(rect4, pawn);
+                PsycheCardUtility.DrawSexuality(rect5, pawn, true);
                 GUI.EndGroup();
             }
         }
 
         public static void DrawPsycheMenuCard(Rect rect, Pawn pawn)
         {
-            PsychologyPawn realPawn = pawn as PsychologyPawn;
-            if (realPawn != null)
+            if (PsycheHelper.PsychologyEnabled(pawn))
             {
                 GUI.BeginGroup(rect);
                 Text.Font = GameFont.Small;
@@ -155,8 +161,8 @@ namespace Psychology
                 GUI.color = new Color(1f, 1f, 1f, 0.5f);
                 Widgets.DrawLineVertical(rect4.xMax, 0f, rect.height);
                 GUI.color = Color.white;
-                PsycheCardUtility.DrawPersonalityNodes(rect4, realPawn);
-                PsycheCardUtility.DrawSexuality(rect5, realPawn, false);
+                PsycheCardUtility.DrawPersonalityNodes(rect4, pawn);
+                PsycheCardUtility.DrawSexuality(rect5, pawn, false);
                 GUI.EndGroup();
             }
         }

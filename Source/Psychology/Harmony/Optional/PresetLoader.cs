@@ -19,12 +19,11 @@ namespace Psychology.Harmony.Optional
             if(SaveRecordPawnV3Patch.savedPawns.Keys.Contains(record))
             {
                 Pawn pawn = __result.Pawn;
-                if (pawn != null && pawn is PsychologyPawn)
+                if (pawn != null && PsycheHelper.PsychologyEnabled(pawn))
                 {
                     PrepareCarefully.SaveRecordPsycheV3 psycheSave = SaveRecordPawnV3Patch.savedPawns[record];
-                    PsychologyPawn realPawn = pawn as PsychologyPawn;
-                    realPawn.psyche.upbringing = psycheSave.upbringing;
-                    foreach (PersonalityNode node in realPawn.psyche.PersonalityNodes)
+                    PsycheHelper.Comp(pawn).Psyche.upbringing = psycheSave.upbringing;
+                    foreach (PersonalityNode node in PsycheHelper.Comp(pawn).Psyche.PersonalityNodes)
                     {
                         PersonalityNode savedNode = psycheSave.nodes.Find(n => n.def == node.def);
                         if(savedNode != null)
@@ -32,12 +31,9 @@ namespace Psychology.Harmony.Optional
                             node.rawRating = savedNode.rawRating;
                         }
                     }
-                    if(PsychologyBase.ActivateKinsey())
-                    {
-                        realPawn.sexuality.sexDrive = psycheSave.sexDrive;
-                        realPawn.sexuality.romanticDrive = psycheSave.romanticDrive;
-                        realPawn.sexuality.kinseyRating = psycheSave.kinseyRating;
-                    }
+                    PsycheHelper.Comp(pawn).Sexuality.sexDrive = psycheSave.sexDrive;
+                    PsycheHelper.Comp(pawn).Sexuality.romanticDrive = psycheSave.romanticDrive;
+                    PsycheHelper.Comp(pawn).Sexuality.kinseyRating = psycheSave.kinseyRating;
                 }
             }
         }

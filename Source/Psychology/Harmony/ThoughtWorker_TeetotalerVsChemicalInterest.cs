@@ -14,7 +14,7 @@ namespace Psychology.Harmony
         [HarmonyPostfix]
         public static void Disable(ref ThoughtState __result, Pawn p, Pawn other)
         {
-            if (p is PsychologyPawn && other is PsychologyPawn)
+            if (PsycheHelper.PsychologyEnabled(p) && PsycheHelper.PsychologyEnabled(other))
             {
                 __result = false;
             }

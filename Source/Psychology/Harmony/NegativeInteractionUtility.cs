@@ -14,12 +14,11 @@ namespace Psychology.Harmony
         [HarmonyPostfix]
         public static void NewFormula(ref float __result, Pawn initiator, Pawn recipient)
         {
-            PsychologyPawn realInitiator = initiator as PsychologyPawn;
-            if (realInitiator != null)
+            if (PsycheHelper.PsychologyEnabled(initiator))
             {
                 SimpleCurve opinionCurve = Traverse.Create(typeof(NegativeInteractionUtility)).Field("CompatibilityFactorCurve").GetValue<SimpleCurve>();
                 __result /= opinionCurve.Evaluate(initiator.relations.CompatibilityWith(recipient));
-                __result *= 2f * realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive);
+                __result *= 2f * PsycheHelper.Comp(initiator).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive);
             }
         }
     }

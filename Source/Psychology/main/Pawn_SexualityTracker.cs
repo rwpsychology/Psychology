@@ -11,7 +11,7 @@ namespace Psychology
 {
     public class Pawn_SexualityTracker : IExposable
     {
-        public Pawn_SexualityTracker(PsychologyPawn pawn)
+        public Pawn_SexualityTracker(Pawn pawn)
         {
             this.pawn = pawn;
             GenerateSexuality();
@@ -29,11 +29,11 @@ namespace Psychology
             return false;
         }
 
-        public void LearnSexuality(PsychologyPawn p)
+        public void LearnSexuality(Pawn p)
         {
-            if(p != null && !knownSexualities.Keys.Contains(p))
+            if(p != null && PsycheHelper.PsychologyEnabled(pawn) && !knownSexualities.Keys.Contains(p))
             {
-                knownSexualities.Add(p, p.sexuality.kinseyRating);
+                knownSexualities.Add(p, PsycheHelper.Comp(p).Sexuality.kinseyRating);
             }
         }
 
@@ -161,13 +161,13 @@ namespace Psychology
                 return Mathf.InverseLerp(0f, 0.5f, this.romanticDrive);
             }
         }
-
+        
         public int kinseyRating;
         public float sexDrive;
         public float romanticDrive;
         private List<Pawn> knownSexualitiesWorkingKeys;
         private List<int> knownSexualitiesWorkingValues;
         private Dictionary<Pawn, int> knownSexualities = new Dictionary<Pawn, int>();
-        private PsychologyPawn pawn;
+        private Pawn pawn;
     }
 }

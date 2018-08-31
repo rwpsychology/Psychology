@@ -18,7 +18,6 @@ namespace Psychology
         {
             FieldInfo RuleStrings = typeof(RulePack).GetField("rulesStrings", BindingFlags.Instance | BindingFlags.NonPublic);
             this.rulesInit = (List<string>)RuleStrings.GetValue(intDef.logRulesInitiator);
-            this.rulesRecip = (List<string>)RuleStrings.GetValue(intDef.logRulesRecipient);
         }
 
         public override void ExposeData()
@@ -28,13 +27,13 @@ namespace Psychology
             {
                 if(i+1 > this.rulesInit.Count)
                 {
-                    this.rulesInit.Add("logentry->"+"ConversationEnd".Translate()+" [other_nameShortIndef].");
+                    this.rulesInit.Add("r_logentry->"+"ConversationEnd".Translate()+" [RECIPIENT_nameDef].");
                 }
                 string ruleText = this.rulesInit[i];
-                Scribe_Values.Look(ref ruleText, "rulesInit" + i, "logentry->" + "ConversationEnd".Translate() + " [other_nameShortIndef].");
+                Scribe_Values.Look(ref ruleText, "rulesInit" + i, "r_logentry->" + "ConversationEnd".Translate() + " [RECIPIENT_nameDef].");
                 this.rulesInit[i] = ruleText;
             }
-            for (int i = 0; i < rulesRecip.Capacity; i++)
+            /*for (int i = 0; i < rulesRecip.Capacity; i++)
             {
                 if (i+1 > this.rulesRecip.Count)
                 {
@@ -43,7 +42,7 @@ namespace Psychology
                 string ruleText = this.rulesRecip[i];
                 Scribe_Values.Look(ref ruleText, "rulesRecip" + i, "logentry->" + "ConversationEnd".Translate() + " [other_nameShortIndef].");
                 this.rulesRecip[i] = ruleText;
-            }
+            }*/
             FieldInfo IntDef = typeof(PlayLogEntry_Interaction).GetField("intDef", BindingFlags.Instance | BindingFlags.NonPublic);
             InteractionDef newIntDef = new InteractionDef();
             newIntDef.defName = "EndConversation";
@@ -54,13 +53,13 @@ namespace Psychology
             RulePack initPack = new RulePack();
             RuleStrings.SetValue(initPack, this.rulesInit);
             newIntDef.logRulesInitiator = initPack;
-            RulePack recipPack = new RulePack();
+            /*RulePack recipPack = new RulePack();
             RuleStrings.SetValue(recipPack, this.rulesRecip);
-            newIntDef.logRulesRecipient = recipPack;
+            newIntDef.logRulesRecipient = recipPack;*/
             IntDef.SetValue(this, newIntDef);
         }
 
         protected List<string> rulesInit = new List<string>(1);
-        protected List<string> rulesRecip = new List<string>(1);
+        //protected List<string> rulesRecip = new List<string>(1);
     }
 }

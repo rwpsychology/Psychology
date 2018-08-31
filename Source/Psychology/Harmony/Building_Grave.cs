@@ -31,10 +31,9 @@ namespace Psychology.Harmony
             Pawn planner;
             (from c in worker.Map.mapPawns.FreeColonistsSpawned
              where c.relations.OpinionOf(__instance.Corpse.InnerPawn) >= 20
-             select c).TryRandomElementByWeight((c) => Mathf.Max(0f, c.relations.OpinionOf(__instance.Corpse.InnerPawn) - ((c as PsychologyPawn) != null ? 100f * (1f - (c as PsychologyPawn).psyche.GetPersonalityRating(PersonalityNodeDefOf.Nostalgic)) : 0f)), out planner);
-            if(planner != null && __instance.Corpse.InnerPawn is PsychologyPawn && !(__instance.Corpse.InnerPawn as PsychologyPawn).beenBuried)
+             select c).TryRandomElementByWeight((c) => Mathf.Max(0f, c.relations.OpinionOf(__instance.Corpse.InnerPawn) - (PsycheHelper.PsychologyEnabled(c) ? 100f * (1f - PsycheHelper.Comp(c).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Nostalgic)) : 0f)), out planner);
+            if(planner != null && PsycheHelper.PsychologyEnabled(__instance.Corpse.InnerPawn) && !PsycheHelper.Comp(__instance.Corpse.InnerPawn).AlreadyBuried)
             {
-                PsychologyPawn realPlanner = planner as PsychologyPawn;
                 Func<int, float> timeAssignmentFactor = delegate(int h)
                 {
                     if (planner.timetable.GetAssignment(h) == TimeAssignmentDefOf.Joy)
@@ -50,7 +49,7 @@ namespace Psychology.Harmony
                 int hour = -1;
                 if (Enumerable.Range(0, GenDate.HoursPerDay).TryRandomElementByWeight(h => timeAssignmentFactor(h), out hour))
                 {
-                    int date = Find.TickManager.TicksGame + Mathf.RoundToInt(GenDate.TicksPerDay * (2f + (realPlanner != null ? 3f - (5f * realPlanner.psyche.GetPersonalityRating(PersonalityNodeDefOf.Spontaneous)) : 0f)));
+                    int date = Find.TickManager.TicksGame + Mathf.RoundToInt(GenDate.TicksPerDay * (2f + (PsycheHelper.PsychologyEnabled(planner) ? 3f - (5f * PsycheHelper.Comp(planner).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Spontaneous)) : 0f)));
                     int currentDay = GenDate.DayOfYear(GenDate.TickGameToAbs(date), Find.WorldGrid.LongLatOf(planner.Map.Tile).x);
                     if (currentDay <= GenLocalDate.DayOfYear(planner.Map) && GenDate.HourOfDay(GenDate.TickGameToAbs(date), Find.WorldGrid.LongLatOf(planner.Map.Tile).x) > hour)
                     {
@@ -63,7 +62,7 @@ namespace Psychology.Harmony
                     planFuneral.grave = __instance;
                     planFuneral.spot = __instance.Position;
                     planner.health.AddHediff(planFuneral);
-                    (__instance.Corpse.InnerPawn as PsychologyPawn).beenBuried = true;
+                    PsycheHelper.Comp(__instance.Corpse.InnerPawn).AlreadyBuried = true;
                 }
             }
         }

@@ -14,7 +14,7 @@ namespace Psychology.Harmony
 		[HarmonyPrefix]
 		public static bool PsychologyException(InteractionWorker_DeepTalk __instance, Pawn initiator, Pawn recipient)
 		{
-			return !(initiator is PsychologyPawn || recipient is PsychologyPawn);
+			return !PsycheHelper.PsychologyEnabled(initiator) || !PsycheHelper.PsychologyEnabled(recipient);
 		}
 	}
 }

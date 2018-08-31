@@ -63,28 +63,28 @@ namespace Psychology
         
         private void Finished()
         {
-            List<Pair<PsychologyPawn, int>> voteTally = new List<Pair<PsychologyPawn, int>>();
+            List<Pair<Pawn, int>> voteTally = new List<Pair<Pawn, int>>();
             foreach (Candidate candidate in this.candidates)
             {
                 IEnumerable<string> votesForMe = (from v in this.votes
                                            where v == candidate.pawn.LabelShort
                                            select v);
-                voteTally.Add(new Pair<PsychologyPawn, int>(candidate.pawn, votesForMe.Count()));
+                voteTally.Add(new Pair<Pawn, int>(candidate.pawn, votesForMe.Count()));
             }
             //If there ends up being a tie, we'll just assume the least competitive candidates drop out.
             //The chances of there being a tie after that are exceedingly slim, but the result will be essentially random.
-            IEnumerable<Pair<PsychologyPawn, int>> orderedTally = (from v in voteTally
-                                                                   orderby v.First.psyche.GetPersonalityRating(PersonalityNodeDefOf.Competitive) descending
+            IEnumerable<Pair<Pawn, int>> orderedTally = (from v in voteTally
+                                                                   orderby PsycheHelper.Comp(v.First).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Competitive) descending
                                                                    orderby v.Second descending
                                                                    select v);
             if (Prefs.DevMode && Prefs.LogVerbose)
             {
-                foreach(Pair<PsychologyPawn, int> t in orderedTally)
+                foreach(Pair<Pawn, int> t in orderedTally)
                 {
                     Log.Message("[Psychology] Votes for " + t.First + ": " + t.Second);
                 }
             }
-            Pair<PsychologyPawn, int> winningCandidate = orderedTally.First();
+            Pair<Pawn, int> winningCandidate = orderedTally.First();
             if (orderedTally.Count() > 1 && orderedTally.First().Second == orderedTally.ElementAt(1).Second)
             {
                 Find.LetterStack.ReceiveLetter("LetterLabelTieSettled".Translate(winningCandidate.First.LabelShort), "LetterTieSettled".Translate(winningCandidate.First.LabelShort).AdjustedFor(winningCandidate.First), LetterDefOf.NeutralEvent, winningCandidate.First);
@@ -92,7 +92,7 @@ namespace Psychology
             StringBuilder issuesString = new StringBuilder();
             for (int i = 0; i < candidates.Find(c => c.pawn == winningCandidate.First).nodes.Count; i++)
             {
-                issuesString.AppendFormat("{0}) {1}{2}", i + 1, winningCandidate.First.psyche.GetPersonalityNodeOfDef(candidates.Find(c => c.pawn == winningCandidate.First).nodes[i]).PlatformIssue, (i != candidates.Find(c => c.pawn == winningCandidate.First).nodes.Count - 1 ? "\n" : ""));
+                issuesString.AppendFormat("{0}) {1}{2}", i + 1, PsycheHelper.Comp(winningCandidate.First).Psyche.GetPersonalityNodeOfDef(candidates.Find(c => c.pawn == winningCandidate.First).nodes[i]).PlatformIssue, (i != candidates.Find(c => c.pawn == winningCandidate.First).nodes.Count - 1 ? "\n" : ""));
             }
             if(this.map == null)
             {
@@ -128,19 +128,18 @@ namespace Psychology
         
         private bool ShouldPawnKeepVoting(Pawn p)
         {
-            if(!(p is PsychologyPawn))
+            if(!PsycheHelper.PsychologyEnabled(p))
             {
                 return false;
             }
-            PsychologyPawn realPawn = p as PsychologyPawn;
             bool matchingCandidates = (from c in candidates
-                                       where c.pawn == realPawn
+                                       where c.pawn == p
                                        select c).Count() > 0;
             if (voters.Contains(p.GetHashCode()) && !matchingCandidates)
             {
                 return false;
             }
-            bool notApathetic = realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Passionate) > (0.6f / candidates.Count);
+            bool notApathetic = PsycheHelper.Comp(p).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Passionate) > (0.6f / candidates.Count);
             return GatheringsUtility.ShouldGuestKeepAttendingGathering(p) && (notApathetic || matchingCandidates);
         }
 

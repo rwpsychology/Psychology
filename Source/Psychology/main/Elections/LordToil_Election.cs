@@ -30,29 +30,28 @@ namespace Psychology
             return DutyDefOfPsychology.Vote.hook;
         }
 
-        public override void Notify_ReachedDutyLocation(Pawn pawn)
+        public override void Notify_ReachedDutyLocation(Pawn voter)
         {
-            LordJob_Joinable_Election election = pawn.GetLord().LordJob as LordJob_Joinable_Election;
-            PsychologyPawn voter = pawn as PsychologyPawn;
-            if(election != null && voter != null && !election.voters.Contains(pawn.GetHashCode()))
+            LordJob_Joinable_Election election = voter.GetLord().LordJob as LordJob_Joinable_Election;
+            if(election != null && PsycheHelper.PsychologyEnabled(voter) && !election.voters.Contains(voter.GetHashCode()))
             {
-                election.voters.Add(pawn.GetHashCode());
+                election.voters.Add(voter.GetHashCode());
                 if(election.candidates.Find(c => c.pawn == voter) == null)
                 {
-                    List<Pair<PsychologyPawn, float>> possibleVotes = new List<Pair<PsychologyPawn, float>>();
+                    List<Pair<Pawn, float>> possibleVotes = new List<Pair<Pawn, float>>();
                     foreach (Candidate candidate in election.candidates)
                     {
                         float issueWeighting = 0f;
-                        candidate.nodes.ForEach(p => issueWeighting += (4f * Mathf.Pow(1f - Mathf.Abs(candidate.pawn.psyche.GetPersonalityRating(p) - voter.psyche.GetPersonalityRating(p)), 5f)) * Mathf.Pow(2.5f, p.controversiality));
-                        possibleVotes.Add(new Pair<PsychologyPawn, float>(candidate.pawn, issueWeighting+voter.relations.OpinionOf(candidate.pawn)));
+                        candidate.nodes.ForEach(p => issueWeighting += (4f * Mathf.Pow(1f - Mathf.Abs(PsycheHelper.Comp(candidate.pawn).Psyche.GetPersonalityRating(p) - PsycheHelper.Comp(voter).Psyche.GetPersonalityRating(p)), 5f)) * Mathf.Pow(2.5f, p.controversiality));
+                        possibleVotes.Add(new Pair<Pawn, float>(candidate.pawn, issueWeighting+voter.relations.OpinionOf(candidate.pawn)));
                     }
-                    IEnumerable<Pair<PsychologyPawn, float>> orderedPossibleVotes = (from v in possibleVotes
-                                                                                     orderby v.Second descending
-                                                                                     select v);
+                    IEnumerable<Pair<Pawn, float>> orderedPossibleVotes = (from v in possibleVotes
+                                                                           orderby v.Second descending
+                                                                           select v);
                     if (Prefs.DevMode && Prefs.LogVerbose)
                     {
                         StringBuilder voteString = new StringBuilder("[Psychology] Vote weights for " + voter.LabelShort + ": ");
-                        foreach (Pair<PsychologyPawn, float> v in orderedPossibleVotes)
+                        foreach (Pair<Pawn, float> v in orderedPossibleVotes)
                         {
                             voteString.Append(v.First.LabelShort + " " + v.Second + " ");
                         }

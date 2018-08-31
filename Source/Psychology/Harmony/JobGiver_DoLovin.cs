@@ -16,14 +16,12 @@ namespace Psychology.Harmony
         [HarmonyPostfix]
         public static void CancelJob(ref Job __result, Pawn pawn)
         {
-            Pawn partnerInMyBed = LovePartnerRelationUtility.GetPartnerInMyBed(pawn);
-            PsychologyPawn realPawn = pawn as PsychologyPawn;
-            PsychologyPawn realPartner = partnerInMyBed as PsychologyPawn;
-            if (realPawn != null && realPartner != null && PsychologyBase.ActivateKinsey() && realPawn.sexuality != null && realPartner.sexuality != null)
+            Pawn partner = LovePartnerRelationUtility.GetPartnerInMyBed(pawn);
+            if (PsycheHelper.PsychologyEnabled(pawn) && PsycheHelper.PsychologyEnabled(partner) && PsychologyBase.ActivateKinsey())
             {
                 float random = Rand.ValueSeeded((pawn.GetHashCode() ^ (GenLocalDate.DayOfYear(pawn) + GenLocalDate.Year(pawn) + (int)(GenLocalDate.DayPercent(pawn) * 2) * 60) * 391));
-                float random2 = Rand.ValueSeeded((pawn.GetHashCode() ^ (GenLocalDate.DayOfYear(realPartner) + GenLocalDate.Year(realPartner) + (int)(GenLocalDate.DayPercent(realPartner) * 2) * 60) * 391));
-                if (random > realPawn.sexuality.AdjustedSexDrive && random2 > realPartner.sexuality.AdjustedSexDrive)
+                float random2 = Rand.ValueSeeded((pawn.GetHashCode() ^ (GenLocalDate.DayOfYear(partner) + GenLocalDate.Year(partner) + (int)(GenLocalDate.DayPercent(partner) * 2) * 60) * 391));
+                if (random > PsycheHelper.Comp(pawn).Sexuality.AdjustedSexDrive && random2 > PsycheHelper.Comp(partner).Sexuality.AdjustedSexDrive)
                 {
                     __result = null;
                 }

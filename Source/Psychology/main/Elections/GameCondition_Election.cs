@@ -16,7 +16,7 @@ namespace Psychology
         {
             base.Init();
             //Make sure the election occurs during the day if possible.
-            int plannedStart = GenDate.HourOfDay(this.Duration + Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(this.Map.Tile).x);
+            int plannedStart = GenDate.HourOfDay(this.Duration + Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(this.SingleMap.Tile).x);
             if(plannedStart < 7)
             {
                 this.Duration += (7 - plannedStart) * GenDate.TicksPerHour;
@@ -25,25 +25,27 @@ namespace Psychology
             {
                 this.Duration -= (plannedStart - 18) * GenDate.TicksPerHour;
             }
-            IEnumerable<PsychologyPawn> psychologyColonists = this.Map.mapPawns.FreeColonistsSpawned.OfType<PsychologyPawn>();
+            IEnumerable<Pawn> psychologyColonists = (from p in this.SingleMap.mapPawns.FreeColonistsSpawned
+                                                     where PsycheHelper.PsychologyEnabled(p)
+                                                     select p);
             int maxCandidatesThisColonySupports = Mathf.RoundToInt(psychologyColonists.Count() * 0.3f);
             float totalOutspoken = 0f;
-            foreach(PsychologyPawn p in psychologyColonists)
+            foreach(Pawn p in psychologyColonists)
             {
-                totalOutspoken += p.psyche.GetPersonalityRating(PersonalityNodeDefOf.Outspoken);
+                totalOutspoken += PsycheHelper.Comp(p).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Outspoken);
             }
             int numCandidates = Rand.RangeInclusive(Mathf.Min(maxCandidatesThisColonySupports, 1 + Mathf.RoundToInt(totalOutspoken * 0.1f)), maxCandidatesThisColonySupports);
             int tries = 0;
             while (this.candidates.Count < numCandidates && tries < 500)
             {
-                PsychologyPawn candidate = psychologyColonists.RandomElementByWeight(p => (p.ageTracker.CurLifeStageIndex >= 3) ? p.psyche.GetPersonalityRating(PersonalityNodeDefOf.Outspoken) * 2 + (p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) ? p.needs.mood.CurLevel - 0.5f : 0f) : 0f);
+                Pawn candidate = psychologyColonists.RandomElementByWeight(p => (p.ageTracker.CurLifeStageIndex >= 3) ? PsycheHelper.Comp(p).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Outspoken) * 2 + (p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) ? p.needs.mood.CurLevel - 0.5f : 0f) : 0f);
                 List<PersonalityNodeDef> issues = new List<PersonalityNodeDef>();
                 int tries2 = 0;
                 while(issues.Count < 5 && tries2 < 500)
                 {
-                    PersonalityNodeDef issue = (from node in candidate.psyche.PersonalityNodes
+                    PersonalityNodeDef issue = (from node in PsycheHelper.Comp(candidate).Psyche.PersonalityNodes
                                                 where !node.Core
-                                                select node.def).RandomElementByWeight(n => Mathf.Pow(Mathf.Abs(0.5f - candidate.psyche.GetPersonalityRating(n)),4) * Mathf.Pow(2, n.controversiality));
+                                                select node.def).RandomElementByWeight(n => Mathf.Pow(Mathf.Abs(0.5f - PsycheHelper.Comp(candidate).Psyche.GetPersonalityRating(n)),4) * Mathf.Pow(2, n.controversiality));
                     if(!issues.Contains(issue))
                     {
                         issues.Add(issue);
@@ -77,9 +79,9 @@ namespace Psychology
                 StringBuilder issuesString = new StringBuilder();
                 for (int i = 0; i < candidate.nodes.Count; i++)
                 {
-                    issuesString.AppendFormat("{0}) {1}{2}",i+1,candidate.pawn.psyche.GetPersonalityNodeOfDef(candidate.nodes[i]).PlatformIssue,(i != candidate.nodes.Count-1 ? "\n" : ""));
+                    issuesString.AppendFormat("{0}) {1}{2}",i+1,PsycheHelper.Comp(candidate.pawn).Psyche.GetPersonalityNodeOfDef(candidate.nodes[i]).PlatformIssue,(i != candidate.nodes.Count-1 ? "\n" : ""));
                 }
-                Find.LetterStack.ReceiveLetter("LetterLabelElectionCandidate".Translate(candidate.pawn.LabelShort), "LetterElectionCandidate".Translate(candidate.pawn.LabelShort, Find.WorldObjects.ObjectsAt(candidate.pawn.Map.Tile).OfType<FactionBase>().First().Label, issuesString.ToString()).AdjustedFor(candidate.pawn), LetterDefOf.NeutralEvent, candidate.pawn, null);
+                Find.LetterStack.ReceiveLetter("LetterLabelElectionCandidate".Translate(candidate.pawn.LabelShort), "LetterElectionCandidate".Translate(candidate.pawn.LabelShort, Find.WorldObjects.ObjectsAt(candidate.pawn.Map.Tile).OfType<SettlementBase>().First().Label, issuesString.ToString()).AdjustedFor(candidate.pawn), LetterDefOf.NeutralEvent, candidate.pawn, null);
             }
         }
 
@@ -109,8 +111,8 @@ namespace Psychology
                 return;
             }
             IntVec3 intVec;
-            PsychologyPawn organizer = candidates.RandomElement().pawn;
-            string baseName = Find.WorldObjects.ObjectsAt(organizer.Map.Tile).OfType<FactionBase>().First().Label;
+            Pawn organizer = candidates.RandomElement().pawn;
+            string baseName = Find.WorldObjects.ObjectsAt(organizer.Map.Tile).OfType<SettlementBase>().First().Label;
             if (!RCellFinder.TryFindPartySpot(organizer, out intVec))
             {
                 return;

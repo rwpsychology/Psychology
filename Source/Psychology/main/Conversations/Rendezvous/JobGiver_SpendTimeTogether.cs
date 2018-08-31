@@ -23,7 +23,7 @@ namespace Psychology
                 return null;
             }
             /* If they are partners, possibly send them to lay down together so they'll do lovin'. */
-            if (LovePartnerRelationUtility.LovePartnerRelationExists(pawn, friend) && pawn.jobs.curDriver != null && pawn.jobs.curDriver.layingDown == LayingDownState.NotLaying && (pawn.IsHashIntervalTick(GenDate.TicksPerHour) || friend.IsHashIntervalTick(GenDate.TicksPerHour)))
+            if (LovePartnerRelationUtility.LovePartnerRelationExists(pawn, friend) && pawn.jobs.curDriver != null && !pawn.GetPosture().Laying() && (pawn.IsHashIntervalTick(GenDate.TicksPerHour) || friend.IsHashIntervalTick(GenDate.TicksPerHour)))
             {
                 return new Job(JobDefOf.LayDown, pawn.ownership.OwnedBed, GenDate.TicksPerHour);
             }

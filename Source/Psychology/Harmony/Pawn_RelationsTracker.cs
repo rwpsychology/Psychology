@@ -30,17 +30,16 @@ namespace Psychology.Harmony
         public static void PsychologyFormula(Pawn_RelationsTracker __instance, ref float __result, Pawn otherPawn)
         {
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            PsychologyPawn realPawn = pawn as PsychologyPawn;
-            if (realPawn != null)
+            if (PsycheHelper.PsychologyEnabled(pawn))
             {
                 /* Throw away the existing result and substitute our own formula. */
                 float ageFactor = 1f;
                 float sexualityFactor = 1f;
                 float ageBiologicalYearsFloat = pawn.ageTracker.AgeBiologicalYearsFloat;
                 float ageBiologicalYearsFloat2 = otherPawn.ageTracker.AgeBiologicalYearsFloat;
-                if (PsychologyBase.ActivateKinsey() && realPawn.sexuality != null)
+                if (PsychologyBase.ActivateKinsey())
                 {
-                    float kinsey = 3 - realPawn.sexuality.kinseyRating;
+                    float kinsey = 3 - PsycheHelper.Comp(pawn).Sexuality.kinseyRating;
                     float homo = (pawn.gender == otherPawn.gender) ? 1f : -1f;
                     sexualityFactor = Mathf.InverseLerp(3f, 0f, kinsey * homo);
                 }
@@ -91,12 +90,12 @@ namespace Psychology.Harmony
                         ageFactor *= GenMath.FlatHill(0.3f, ageBiologicalYearsFloat - 3f, ageBiologicalYearsFloat, ageBiologicalYearsFloat + 10f, ageBiologicalYearsFloat + 30f, 0.15f, ageBiologicalYearsFloat2);
                     }
                 }
-                ageFactor = Mathf.Lerp(ageFactor, (1.6f - ageFactor), realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
+                ageFactor = Mathf.Lerp(ageFactor, (1.6f - ageFactor), PsycheHelper.Comp(pawn).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
                 float disabilityFactor = 1f;
                 disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetLevel(PawnCapacityDefOf.Talking));
                 disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetLevel(PawnCapacityDefOf.Manipulation));
                 disabilityFactor *= Mathf.Lerp(0.2f, 1f, otherPawn.health.capacities.GetLevel(PawnCapacityDefOf.Moving));
-                disabilityFactor = Mathf.Lerp(disabilityFactor, (1.6f - disabilityFactor), realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
+                disabilityFactor = Mathf.Lerp(disabilityFactor, (1.6f - disabilityFactor), PsycheHelper.Comp(pawn).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Experimental));
                 if (pawn.RaceProps.Humanlike && pawn.story.traits.HasTrait(TraitDefOfPsychology.OpenMinded))
                 {
                     ageFactor = 1f;
@@ -125,12 +124,12 @@ namespace Psychology.Harmony
                     /* Pawns who can't see as well can't determine beauty as well. */
                     beautyFactor = Mathf.Pow(beautyFactor, pawn.health.capacities.GetLevel(PawnCapacityDefOf.Sight));
                 }
-                if (realPawn != null && PsychologyBase.ActivateKinsey() && realPawn.sexuality != null && realPawn.sexuality.AdjustedSexDrive < 1f)
+                if (PsycheHelper.PsychologyEnabled(pawn) && PsychologyBase.ActivateKinsey() && PsycheHelper.Comp(pawn).Sexuality.AdjustedSexDrive < 1f)
                 {
                     /* Pawns with low sex drive will care about physical features less. */
-                    beautyFactor = Mathf.Pow(beautyFactor, realPawn.sexuality.AdjustedSexDrive);
-                    ageFactor = Mathf.Pow(ageFactor, realPawn.sexuality.AdjustedSexDrive);
-                    disabilityFactor = Mathf.Pow(disabilityFactor, realPawn.sexuality.AdjustedSexDrive);
+                    beautyFactor = Mathf.Pow(beautyFactor, PsycheHelper.Comp(pawn).Sexuality.AdjustedSexDrive);
+                    ageFactor = Mathf.Pow(ageFactor, PsycheHelper.Comp(pawn).Sexuality.AdjustedSexDrive);
+                    disabilityFactor = Mathf.Pow(disabilityFactor, PsycheHelper.Comp(pawn).Sexuality.AdjustedSexDrive);
                 }
                 float initiatorYouthFactor = Mathf.InverseLerp(15f, 18f, ageBiologicalYearsFloat);
                 float recipientYouthFactor = Mathf.InverseLerp(15f, 18f, ageBiologicalYearsFloat2);

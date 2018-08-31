@@ -26,7 +26,7 @@ namespace Psychology
         {
             get
             {
-                return this.PawnToShowInfoAbout is PsychologyPawn && ((PsychologyPawn)this.PawnToShowInfoAbout).psyche != null;
+                return PsycheHelper.PsychologyEnabled(this.PawnToShowInfoAbout);
             }
         }
         

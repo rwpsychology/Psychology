@@ -12,7 +12,7 @@ namespace Psychology
 {
     public class Pawn_PsycheTracker : IExposable
     {
-        public Pawn_PsycheTracker(PsychologyPawn pawn)
+        public Pawn_PsycheTracker(Pawn pawn)
         {
             this.pawn = pawn;
         }
@@ -44,7 +44,7 @@ namespace Psychology
             return nodes.Find((PersonalityNode n) => n.def == def);
         }
 
-        public float GetConversationTopicWeight(PersonalityNodeDef def, PsychologyPawn otherPawn)
+        public float GetConversationTopicWeight(PersonalityNodeDef def, Pawn otherPawn)
         {
             /* Pawns will avoid controversial topics until they know someone better.
              * This isn't a perfect system, but the weights will be closer together the higher totalOpinionModifiers is.
@@ -66,7 +66,7 @@ namespace Psychology
             return weight;
         }
 
-        public float TotalThoughtOpinion(PsychologyPawn other)
+        public float TotalThoughtOpinion(Pawn other)
         {
             float knownThoughtOpinion = 1f;
             if (this.pawn != null)
@@ -100,7 +100,7 @@ namespace Psychology
 
         public int upbringing;
         public int lastDateTick = 0;
-        private PsychologyPawn pawn;
+        private Pawn pawn;
         private List<PersonalityNode> nodes;
         public const int PersonalityCategories = 16;
     }

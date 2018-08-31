@@ -37,8 +37,7 @@ namespace Psychology.Harmony
 
         public static void PsycheCardButton(Rect panelRect, Pawn pawn)
         {
-            PsychologyPawn realPawn = pawn as PsychologyPawn;
-            if(realPawn != null)
+            if(PsycheHelper.PsychologyEnabled(pawn))
             {
                 Rect rect = new Rect(panelRect.xMax + 5f, 3f, 22f, 22f);
                 Color old = GUI.color;
@@ -53,8 +52,8 @@ namespace Psychology.Harmony
                 GUI.DrawTexture(rect, ContentFinder<Texture2D>.Get("Buttons/ButtonPsyche", true));
                 if (Widgets.ButtonInvisible(rect, false))
                 {
-                    SoundDefOf.TickLow.PlayOneShotOnCamera(null);
-                    Find.WindowStack.Add(new Dialog_ViewPsyche(realPawn));
+                    SoundDefOf.Tick_Low.PlayOneShotOnCamera(null);
+                    Find.WindowStack.Add(new Dialog_ViewPsyche(pawn));
                 }
                 GUI.color = old;
             }

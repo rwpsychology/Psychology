@@ -63,13 +63,25 @@ namespace Psychology.Harmony
             {
                 if (__instance.RaceProps.Humanlike)
                 {
-                    foreach (Pawn current in from x in PawnsFinder.AllMapsCaravansAndTravelingTransportPods
-                                             where x.IsColonist || x.IsPrisonerOfColony
-                                             select x)
+                    foreach (Pawn current in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonistsAndPrisoners)
                     {
                         current.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.KnowPrisonerSoldBleedingHeart, null);
                     }
                 }
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(Pawn))]
+    [HarmonyPatch("LabelNoCount", PropertyMethod.Getter)]
+    public static class Pawn_MayorLabel
+    {
+        [HarmonyPostfix]
+        public static void AddMayorLabel(Pawn __instance, String __result)
+        {
+            if (__instance.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor))
+            {
+                __result = __instance.Name.ToStringShort + ", Mayor";
             }
         }
     }

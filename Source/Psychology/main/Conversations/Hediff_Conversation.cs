@@ -15,8 +15,7 @@ namespace Psychology
         public override void PostMake()
         {
             base.PostMake();
-            this.realPawn = pawn as PsychologyPawn;
-            if (this.realPawn == null)
+            if (this.pawn.GetComp<CompPsychology>() == null || !this.pawn.GetComp<CompPsychology>().isPsychologyPawn)
             {
                 this.pawn.health.RemoveHediff(this);
             }
@@ -33,10 +32,6 @@ namespace Psychology
         public override void Tick()
         {
             base.Tick();
-            if(this.realPawn == null)
-            {
-                this.realPawn = this.pawn as PsychologyPawn;
-            }
             if (this.otherPawn == null)
             {
                 this.pawn.health.RemoveHediff(this);
@@ -59,7 +54,28 @@ namespace Psychology
             }
             if (this.pawn.IsHashIntervalTick(200))
             {
-                if (Rand.Value > 1f - (this.ageTicks / 400000f))
+                float mtb = 3f;
+                if (this.ageTicks > GenDate.TicksPerHour*2)
+                {
+                    mtb = 0.5f;
+                }
+                else if (this.ageTicks > GenDate.TicksPerHour)
+                {
+                    mtb = 1f;
+                }
+                else if (this.ageTicks > GenDate.TicksPerHour/2)
+                {
+                    mtb = 2f;
+                }
+                if (pawn.story.traits.HasTrait(TraitDefOfPsychology.Chatty))
+                {
+                    mtb *= 2f;
+                }
+                if (this.otherPawn.story.traits.HasTrait(TraitDefOfPsychology.Chatty))
+                {
+                    mtb *= 2f;
+                }
+                if (Rand.MTBEventOccurs(mtb, GenDate.TicksPerHour, 200))
                 {
                     this.pawn.health.RemoveHediff(this);
                     return;
@@ -74,17 +90,13 @@ namespace Psychology
         public override void PostRemoved()
         {
             base.PostRemoved();
-            if (this.realPawn.Dead || this.otherPawn.Dead)
+            if (this.pawn != null && this.otherPawn != null)
             {
-                return;
-            }
-            if (this.realPawn == null)
-            {
-                this.realPawn = this.pawn as PsychologyPawn;
-            }
-            if (this.realPawn != null && this.otherPawn != null)
-            {
-                Hediff otherConvo = otherPawn.health.hediffSet.hediffs.Find(h => h is Hediff_Conversation && ((Hediff_Conversation)h).otherPawn == this.realPawn);
+                if (this.pawn.Dead || this.otherPawn.Dead || this.pawn.GetComp<CompPsychology>() == null || this.otherPawn.GetComp<CompPsychology>() == null || !this.pawn.GetComp<CompPsychology>().isPsychologyPawn || !this.otherPawn.GetComp<CompPsychology>().isPsychologyPawn)
+                {
+                    return;
+                }
+                Hediff otherConvo = otherPawn.health.hediffSet.hediffs.Find(h => h is Hediff_Conversation && ((Hediff_Conversation)h).otherPawn == this.pawn);
                 if(otherConvo != null)
                 {
                     this.otherPawn.health.RemoveHediff(otherConvo);
@@ -122,20 +134,20 @@ namespace Psychology
                 //Base opinion mod is 5 to the power of controversiality.
                 float opinionMod = Mathf.Pow(5f, topic.controversiality);
                 //Multiplied by difference between their personality ratings, on an exponential scale.
-                opinionMod *= Mathf.Lerp((LovePartnerRelationUtility.LovePartnerRelationExists(realPawn,otherPawn) ? -2f : -1.5f), 1.25f, Mathf.Pow(1f-Mathf.Abs(this.realPawn.psyche.GetPersonalityRating(topic) - this.otherPawn.psyche.GetPersonalityRating(topic)),3));
+                opinionMod *= Mathf.Lerp((LovePartnerRelationUtility.LovePartnerRelationExists(pawn,otherPawn) ? -2f : -1.5f), 1.25f, Mathf.Pow(1f-Mathf.Abs(this.pawn.GetComp<CompPsychology>().Psyche.GetPersonalityRating(topic) - this.otherPawn.GetComp<CompPsychology>().Psyche.GetPersonalityRating(topic)),3));
                 //Cool pawns are liked more.
-                opinionMod += Mathf.Pow(2f, topic.controversiality) * (0.5f - this.otherPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Cool));
+                opinionMod += Mathf.Pow(2f, topic.controversiality) * (0.5f - this.otherPawn.GetComp<CompPsychology>().Psyche.GetPersonalityRating(PersonalityNodeDefOf.Cool));
                 //The length of the talk has a large impact on how much the pawn cares.
                 opinionMod *= 5f * (this.ageTicks / (GenDate.TicksPerHour * 2.25f)); //talkModifier[talkLength]
                 //If they had a bad experience, the more polite the pawn is, the less they're bothered by it.
-                opinionMod *= (opinionMod < 0f ? 0.5f + (1f - this.otherPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
+                opinionMod *= (opinionMod < 0f ? 0.5f + (1f - this.otherPawn.GetComp<CompPsychology>().Psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
                 //The more judgmental the pawn, the more they're affected by all conversations.
-                opinionMod *= 0.5f + this.realPawn.psyche.GetPersonalityRating(PersonalityNodeDefOf.Judgmental);
+                opinionMod *= 0.5f + this.pawn.GetComp<CompPsychology>().Psyche.GetPersonalityRating(PersonalityNodeDefOf.Judgmental);
                 if (opinionMod < 0f)
                 {
                     opinionMod *= PopulationModifier;
                 }
-                else if(LovePartnerRelationUtility.LovePartnerRelationExists(this.realPawn, this.otherPawn) && this.realPawn.story.traits.HasTrait(TraitDefOfPsychology.Codependent))
+                else if(LovePartnerRelationUtility.LovePartnerRelationExists(this.pawn, this.otherPawn) && this.pawn.story.traits.HasTrait(TraitDefOfPsychology.Codependent))
                 {
                     opinionMod *= 1.25f;
                 }
@@ -146,7 +158,7 @@ namespace Psychology
                  * This helps declutter the Social card without preventing pawns from having conversations.
                  * They just won't change their mind about the colonist as a result.
                  */
-                if (Rand.Value < Mathf.InverseLerp(0f, this.realPawn.psyche.TotalThoughtOpinion(this.otherPawn), 250f+Mathf.Abs(stage.baseOpinionOffset)) && stage.baseOpinionOffset != 0)
+                if (Rand.Value < Mathf.InverseLerp(0f, this.pawn.GetComp<CompPsychology>().Psyche.TotalThoughtOpinion(this.otherPawn), 250f+Mathf.Abs(stage.baseOpinionOffset)) && stage.baseOpinionOffset != 0)
                 {
                     this.pawn.needs.mood.thoughts.memories.TryGainMemory(def, this.otherPawn);
                 }
@@ -157,13 +169,12 @@ namespace Psychology
                     RulePack goodbyeText = new RulePack();
                     FieldInfo RuleStrings = typeof(RulePack).GetField("rulesStrings", BindingFlags.Instance | BindingFlags.NonPublic);
                     List<string> text = new List<string>(1);
-                    text.Add("logentry->" + talkDesc.Translate(topic.conversationTopic));
+                    text.Add("r_logentry->" + talkDesc.Translate(topic.conversationTopic));
                     RuleStrings.SetValue(goodbyeText, text);
                     endConversation.logRulesInitiator = goodbyeText;
-                    endConversation.logRulesRecipient = goodbyeText;
                     FieldInfo Symbol = typeof(InteractionDef).GetField("symbol", BindingFlags.Instance | BindingFlags.NonPublic);
                     Symbol.SetValue(endConversation, Symbol.GetValue(InteractionDefOf.DeepTalk));
-                    PlayLogEntry_InteractionConversation log = new PlayLogEntry_InteractionConversation(endConversation, realPawn, this.otherPawn, new List<RulePackDef>());
+                    PlayLogEntry_InteractionConversation log = new PlayLogEntry_InteractionConversation(endConversation, pawn, this.otherPawn, new List<RulePackDef>());
                     Find.PlayLog.Add(log);
                     MoteMaker.MakeInteractionBubble(this.pawn, this.otherPawn, InteractionDefOf.Chitchat.interactionMote, InteractionDefOf.Chitchat.Symbol);
                 }
@@ -185,8 +196,7 @@ namespace Psychology
             }
         }
         
-        public PsychologyPawn realPawn;
-        public PsychologyPawn otherPawn;
+        public Pawn otherPawn;
         public PersonalityNodeDef topic;
         public bool waveGoodbye;
     }

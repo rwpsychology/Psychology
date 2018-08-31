@@ -17,19 +17,23 @@ namespace Psychology.Harmony
         public static bool KinseyException(ref TraitSet __instance, Trait trait)
         {
             Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            PsychologyPawn realPawn = pawn as PsychologyPawn;
-            if (realPawn != null && PsychologyBase.ActivateKinsey() && trait.def == TraitDefOf.Gay)
+            Pawn_SexualityTracker ps = null;
+            if (pawn.GetComp<CompPsychology>() != null && pawn.GetComp<CompPsychology>().isPsychologyPawn)
+            {
+                ps = pawn.GetComp<CompPsychology>().Sexuality;
+            }
+            if (ps != null && PsychologyBase.ActivateKinsey() && trait.def == TraitDefOf.Gay)
             {
                 return false;
             }
-            if (realPawn != null && PsychologyBase.ActivateKinsey() && realPawn.sexuality.romanticDrive < 0.5f)
+            if (ps != null && PsychologyBase.ActivateKinsey() && ps.romanticDrive < 0.5f)
             {
                 if (trait.def == TraitDefOfPsychology.Codependent)
                 {
                     return false;
                 }
             }
-            if (realPawn != null && PsychologyBase.ActivateKinsey() && realPawn.sexuality.sexDrive < 0.5f)
+            if (ps != null && PsychologyBase.ActivateKinsey() && ps.sexDrive < 0.5f)
             {
                 if (trait.def == TraitDefOfPsychology.Lecher)
                 {

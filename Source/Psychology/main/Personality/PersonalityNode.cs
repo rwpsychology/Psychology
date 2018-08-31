@@ -15,7 +15,7 @@ namespace Psychology
         {
         }
 
-        public PersonalityNode(PsychologyPawn pawn)
+        public PersonalityNode(Pawn pawn)
         {
             this.pawn = pawn;
         }
@@ -33,7 +33,7 @@ namespace Psychology
                 {
                     defSeed += c;
                 }
-                this.rawRating = Rand.ValueSeeded(this.pawn.psyche.upbringing + defSeed + Find.World.info.Seed);
+                this.rawRating = Rand.ValueSeeded(this.pawn.GetComp<CompPsychology>().Psyche.upbringing + defSeed + Find.World.info.Seed);
             }
             else
             {
@@ -110,9 +110,9 @@ namespace Psychology
 
         public float AdjustGender(float rating)
         {
-            if (this.def.femaleModifier > 0f && this.pawn.gender == Gender.Female && this.pawn.sexuality != null && PsychologyBase.ActivateKinsey())
+            if (this.def.femaleModifier > 0f && this.pawn.gender == Gender.Female && PsychologyBase.ActivateKinsey())
             {
-                rating = (Rand.ValueSeeded(pawn.HashOffset()) < 0.8f ? rating * Mathf.Lerp(this.def.femaleModifier, 1f, (this.pawn.sexuality.kinseyRating / 6)) : rating);
+                rating = (Rand.ValueSeeded(pawn.HashOffset()) < 0.8f ? rating * Mathf.Lerp(this.def.femaleModifier, 1f, (this.pawn.GetComp<CompPsychology>().Sexuality.kinseyRating / 6)) : rating);
             }
             else if(this.def.femaleModifier > 0f && this.pawn.gender == Gender.Female)
             {
@@ -138,7 +138,7 @@ namespace Psychology
                     this.parents = new List<PersonalityNode>();
                     if(!this.def.ParentNodes.NullOrEmpty())
                     {
-                        this.parents = (from p in this.pawn.psyche.PersonalityNodes
+                        this.parents = (from p in this.pawn.GetComp<CompPsychology>().Psyche.PersonalityNodes
                                         where this.def.ParentNodes.Contains(p.def)
                                         select p).ToList();
                     }
@@ -184,7 +184,7 @@ namespace Psychology
             }
         }
 
-        public PsychologyPawn pawn;
+        public Pawn pawn;
         public PersonalityNodeDef def;
         public float rawRating;
         public float cachedRating = -1f;

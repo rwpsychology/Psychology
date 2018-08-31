@@ -22,16 +22,15 @@ namespace Psychology.PrepareCarefully
 
         public SaveRecordPsycheV3(Pawn pawn)
         {
-            PsychologyPawn realPawn = pawn as PsychologyPawn;
-            if(realPawn != null)
+            if(PsycheHelper.PsychologyEnabled(pawn))
             {
-                nodes = realPawn.psyche.PersonalityNodes;
-                upbringing = realPawn.psyche.upbringing;
+                nodes = PsycheHelper.Comp(pawn).Psyche.PersonalityNodes;
+                upbringing = PsycheHelper.Comp(pawn).Psyche.upbringing;
                 if(PsychologyBase.ActivateKinsey())
                 {
-                    sexDrive = realPawn.sexuality.sexDrive;
-                    romanticDrive = realPawn.sexuality.romanticDrive;
-                    kinseyRating = realPawn.sexuality.kinseyRating;
+                    sexDrive = PsycheHelper.Comp(pawn).Sexuality.sexDrive;
+                    romanticDrive = PsycheHelper.Comp(pawn).Sexuality.romanticDrive;
+                    kinseyRating = PsycheHelper.Comp(pawn).Sexuality.kinseyRating;
                 }
             }
         }

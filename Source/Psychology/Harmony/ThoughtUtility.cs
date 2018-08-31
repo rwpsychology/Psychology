@@ -61,9 +61,7 @@ namespace Psychology.Harmony
             {
                 def = ThoughtDefOfPsychology.KnowGuestExecutedBleedingHeart;
             }
-            foreach (Pawn current in from x in PawnsFinder.AllMapsCaravansAndTravelingTransportPods
-                                     where x.IsColonist || x.IsPrisonerOfColony
-                                     select x)
+            foreach (Pawn current in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonistsAndPrisoners)
             {
                 current.needs.mood.thoughts.memories.TryGainMemory(ThoughtMaker.MakeThought(def, forcedStage), null);
             }
@@ -89,9 +87,7 @@ namespace Psychology.Harmony
             {
                 thoughtDef = ThoughtDefOfPsychology.KnowGuestOrganHarvestedBleedingHeart;
             }
-            foreach (Pawn current in from x in PawnsFinder.AllMapsCaravansAndTravelingTransportPods
-                                     where x.IsColonist || x.IsPrisonerOfColony
-                                     select x)
+            foreach (Pawn current in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonistsAndPrisoners)
             {
                 if (current == victim)
                 {

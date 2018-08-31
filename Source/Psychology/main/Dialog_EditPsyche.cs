@@ -10,18 +10,18 @@ namespace Psychology
 {
     public class Dialog_EditPsyche : Window
     {
-        private PsychologyPawn pawn;
+        private Pawn pawn;
 
-        public Dialog_EditPsyche(PsychologyPawn editFor)
+        public Dialog_EditPsyche(Pawn editFor)
         {
             pawn = editFor;
             if(PsychologyBase.ActivateKinsey())
             {
-                pawnKinseyRating = pawn.sexuality.kinseyRating;
-                pawnSexDrive = pawn.sexuality.sexDrive;
-                pawnRomanticDrive = pawn.sexuality.romanticDrive;
+                pawnKinseyRating = PsycheHelper.Comp(pawn).Sexuality.kinseyRating;
+                pawnSexDrive = PsycheHelper.Comp(pawn).Sexuality.sexDrive;
+                pawnRomanticDrive = PsycheHelper.Comp(pawn).Sexuality.romanticDrive;
             }
-            foreach (PersonalityNode node in this.pawn.psyche.PersonalityNodes)
+            foreach (PersonalityNode node in PsycheHelper.Comp(pawn).Psyche.PersonalityNodes)
             {
                 cachedList.Add(new Pair<string, float>(node.def.label.CapitalizeFirst(), node.rawRating));
                 try
@@ -69,7 +69,7 @@ namespace Psychology
             Rect kinseyRect = new Rect(mainRect.x, romanticDriveRect.yMax, mainRect.width, labelSize+10f);
             Widgets.DrawLineHorizontal(nodeRect.x, nodeRect.yMax, nodeRect.width);
             float num = 0f;
-            foreach (PersonalityNode node in this.pawn.psyche.PersonalityNodes)
+            foreach (PersonalityNode node in PsycheHelper.Comp(pawn).Psyche.PersonalityNodes)
             {
                 num += Mathf.Max(26f, Text.CalcHeight(node.def.label, nodeRect.width));
             }
@@ -114,7 +114,7 @@ namespace Psychology
             }
             if (Widgets.ButtonText(okRect, "AcceptButton".Translate(), true, false, true) || flag)
             {
-                foreach(PersonalityNode node in this.pawn.psyche.PersonalityNodes)
+                foreach(PersonalityNode node in PsycheHelper.Comp(pawn).Psyche.PersonalityNodes)
                 {
                     node.rawRating = (from n in cachedList
                                       where n.First == node.def.label.CapitalizeFirst()
@@ -122,9 +122,9 @@ namespace Psychology
                 }
                 if(PsychologyBase.ActivateKinsey())
                 {
-                    pawn.sexuality.sexDrive = pawnSexDrive;
-                    pawn.sexuality.romanticDrive = pawnRomanticDrive;
-                    pawn.sexuality.kinseyRating = pawnKinseyRating;
+                    PsycheHelper.Comp(pawn).Sexuality.sexDrive = pawnSexDrive;
+                    PsycheHelper.Comp(pawn).Sexuality.romanticDrive = pawnRomanticDrive;
+                    PsycheHelper.Comp(pawn).Sexuality.kinseyRating = pawnKinseyRating;
                 }
                 this.Close(false);
             }

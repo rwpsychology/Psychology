@@ -34,18 +34,18 @@ namespace Psychology.Harmony
                 float value3 = (float)parameters[9];
                 string last = (string)parameters[10];
                 bool allowGay = true;
-                PsychologyPawn parent = null;
+                Pawn parent = null;
                 if (genderToGenerate == Gender.Male && existingChild.GetMother() != null)
                 {
-                    parent = existingChild.GetMother() as PsychologyPawn;
+                    parent = existingChild.GetMother();
                 }
                 else if (genderToGenerate == Gender.Female && existingChild.GetFather() != null)
                 {
-                    parent = existingChild.GetFather() as PsychologyPawn;
+                    parent = existingChild.GetFather();
                 }
-                if (parent != null)
+                if (PsycheHelper.PsychologyEnabled(parent))
                 {
-                    float kinsey = 3 - parent.sexuality.kinseyRating;
+                    float kinsey = 3 - PsycheHelper.Comp(parent).Sexuality.kinseyRating;
                     float num5 = Mathf.InverseLerp(3f, 0f, -kinsey);
                     if (newlyGeneratedParentsWillBeSpousesIfNotGay && last.NullOrEmpty() && Rand.Value < num5)
                     {
@@ -59,7 +59,7 @@ namespace Psychology.Harmony
                     bool tryMedievalOrBetter = faction != null && faction.def.techLevel >= TechLevel.Medieval;
                     if (!Find.FactionManager.TryGetRandomNonColonyHumanlikeFaction(out faction, tryMedievalOrBetter, true, TechLevel.Undefined))
                     {
-                        faction = Faction.OfSpacer;
+                        faction = Faction.OfAncients;
                     }
                 }
                 PawnKindDef kindDef = existingChild.kindDef;
@@ -71,7 +71,7 @@ namespace Psychology.Harmony
                 Gender? fixedGender = new Gender?(genderToGenerate);
                 float? fixedMelanin = new float?(value3);
                 string fixedLastName = last;
-                PawnGenerationRequest request = new PawnGenerationRequest(kindDef, faction2, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn, false, allowDead, allowDowned, canGeneratePawnRelations, false, 1f, false, allowGay, true, false, false, false, false, null, null, new float?(value), new float?(value2), fixedGender, fixedMelanin, fixedLastName);
+                PawnGenerationRequest request = new PawnGenerationRequest(kindDef, faction2, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn, false, allowDead, allowDowned, canGeneratePawnRelations, false, 1f, false, allowGay, true, false, false, false, false, null, null, null, new float?(value), new float?(value2), fixedGender, fixedMelanin, fixedLastName);
                 Pawn pawn = PawnGenerator.GeneratePawn(request);
                 if (!Find.WorldPawns.Contains(pawn))
                 {

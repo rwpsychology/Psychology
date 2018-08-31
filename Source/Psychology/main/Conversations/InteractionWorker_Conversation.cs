@@ -13,9 +13,7 @@ namespace Psychology
     {
         public override float RandomSelectionWeight(Pawn initiator, Pawn recipient)
         {
-            PsychologyPawn realRecipient = recipient as PsychologyPawn;
-            PsychologyPawn realInitiator = initiator as PsychologyPawn;
-            if (realRecipient == null || realInitiator == null)
+            if (!PsycheHelper.PsychologyEnabled(initiator) || !PsycheHelper.PsychologyEnabled(recipient))
             {
                 return 0f;
             }
@@ -25,30 +23,31 @@ namespace Psychology
             }
             float baseChance = 0.45f;
             Lord lord = LordUtility.GetLord(initiator);
-            if (lord != null && (lord.LordJob.GetType() == typeof(LordJob_HangOut) || lord.LordJob.GetType() == typeof(LordJob_Date)) && LordUtility.GetLord(recipient) == lord)
+            if (lord != null && (lord.LordJob is LordJob_HangOut || lord.LordJob is LordJob_Date) && LordUtility.GetLord(recipient) == lord)
             {
                 baseChance = 0.75f;
             }
-            return Mathf.Max(0f, baseChance + (realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly)-0.6f) + (realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Extroverted)-0.5f));
+            return Mathf.Max(0f, baseChance + (PsycheHelper.Comp(recipient).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly)-0.6f) + (PsycheHelper.Comp(initiator).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Extroverted)-0.5f));
         }
 
-        public override void Interacted(Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks)
+        public override void Interacted(Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks, out string letterText, out string letterLabel, out LetterDef letterDef)
         {
-            PsychologyPawn realInitiator = initiator as PsychologyPawn;
-            PsychologyPawn realRecipient = recipient as PsychologyPawn;
-            PersonalityNode topic = (from node in realInitiator.psyche.PersonalityNodes
+            letterText = null;
+            letterLabel = null;
+            letterDef = null;
+            PersonalityNode topic = (from node in PsycheHelper.Comp(initiator).Psyche.PersonalityNodes
                                      where !node.Core
-                                     select node).RandomElementByWeight(node => realInitiator.psyche.GetConversationTopicWeight(node.def, realRecipient));
-            Hediff_Conversation initiatorHediff = (Hediff_Conversation)HediffMaker.MakeHediff(HediffDefOfPsychology.HoldingConversation, realInitiator);
-            initiatorHediff.otherPawn = realRecipient;
+                                     select node).RandomElementByWeight(node => PsycheHelper.Comp(initiator).Psyche.GetConversationTopicWeight(node.def, recipient));
+            Hediff_Conversation initiatorHediff = (Hediff_Conversation)HediffMaker.MakeHediff(HediffDefOfPsychology.HoldingConversation, initiator);
+            initiatorHediff.otherPawn = recipient;
             initiatorHediff.topic = topic.def;
             initiatorHediff.waveGoodbye = true;
-            realInitiator.health.AddHediff(initiatorHediff);
-            Hediff_Conversation recipientHediff = (Hediff_Conversation)HediffMaker.MakeHediff(HediffDefOfPsychology.HoldingConversation, realRecipient);
-            recipientHediff.otherPawn = realInitiator;
+            initiator.health.AddHediff(initiatorHediff);
+            Hediff_Conversation recipientHediff = (Hediff_Conversation)HediffMaker.MakeHediff(HediffDefOfPsychology.HoldingConversation, recipient);
+            recipientHediff.otherPawn = initiator;
             recipientHediff.topic = topic.def;
             recipientHediff.waveGoodbye = false;
-            realRecipient.health.AddHediff(recipientHediff);
+            recipient.health.AddHediff(recipientHediff);
         }
         
     }

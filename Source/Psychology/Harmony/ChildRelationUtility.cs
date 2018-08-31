@@ -18,18 +18,16 @@ namespace Psychology.Harmony
             /* Kinsey-enabled pawns shouldn't have the Gay trait, so we can just apply the sexuality modifier here. */
             if (father != null && child != null && child.GetFather() == null)
             {
-                PsychologyPawn realFather = father as PsychologyPawn;
-                if (PsychologyBase.ActivateKinsey() && realFather != null)
+                if (father.GetComp<CompPsychology>() != null && father.GetComp<CompPsychology>().isPsychologyPawn && PsychologyBase.ActivateKinsey())
                 {
-                    __result *= Mathf.InverseLerp(6f, 0f, realFather.sexuality.kinseyRating);
+                    __result *= Mathf.InverseLerp(6f, 0f, father.GetComp<CompPsychology>().Sexuality.kinseyRating);
                 }
             }
             if (mother != null && child != null && child.GetMother() == null)
             {
-                PsychologyPawn realMother = mother as PsychologyPawn;
-                if (PsychologyBase.ActivateKinsey() && realMother != null)
+                if (mother.GetComp<CompPsychology>() != null && mother.GetComp<CompPsychology>().isPsychologyPawn && PsychologyBase.ActivateKinsey())
                 {
-                    __result *= Mathf.InverseLerp(6f, 0f, realMother.sexuality.kinseyRating);
+                    __result *= Mathf.InverseLerp(6f, 0f, mother.GetComp<CompPsychology>().Sexuality.kinseyRating);
                 }
             }
         }

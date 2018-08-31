@@ -16,14 +16,13 @@ namespace Psychology.Harmony
 		[HarmonyPrefix]
 		public static bool PsychologyException(InteractionWorker_MarriageProposal __instance, ref float __result, Pawn initiator, Pawn recipient)
 		{
-			PsychologyPawn realRecipient = recipient as PsychologyPawn;
-			if (realRecipient != null)
+			if (recipient.GetComp<CompPsychology>() != null && recipient.GetComp<CompPsychology>().isPsychologyPawn)
             {
                 float num = 1.2f;
-                num *= Mathf.InverseLerp(0f, 0.75f, realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
+                num *= Mathf.InverseLerp(0f, 0.75f, recipient.GetComp<CompPsychology>().Psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
                 if (PsychologyBase.ActivateKinsey())
                 {
-                    num *= realRecipient.sexuality.AdjustedRomanticDrive;
+                    num *= recipient.GetComp<CompPsychology>().Sexuality.AdjustedRomanticDrive;
                 }
                 num *= Mathf.Clamp01(GenMath.LerpDouble(-20f, 60f, 0f, 1f, (float)recipient.relations.OpinionOf(initiator)));
                 __result = Mathf.Clamp01(num);
@@ -34,11 +33,11 @@ namespace Psychology.Harmony
 		}
 	}
 
-	[HarmonyPatch(typeof(InteractionWorker_MarriageProposal), "Interacted", new[] { typeof(Pawn), typeof(Pawn), typeof(List<RulePackDef>) })]
+	[HarmonyPatch(typeof(InteractionWorker_MarriageProposal), "Interacted")]
 	public static class InteractionWorker_MarriageProposal_InteractedPatch
 	{
 		[HarmonyPrefix]
-		public static bool NewInteracted(InteractionWorker_MarriageProposal __instance, Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks)
+		public static bool NewInteracted(InteractionWorker_MarriageProposal __instance, Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks, string letterText, string letterLabel, LetterDef letterDef)
 		{
 			//TODO: Kill anyone who tries to get me to make this a transpiler.
 			float num = __instance.AcceptanceChance(initiator, recipient);
@@ -69,26 +68,24 @@ namespace Psychology.Harmony
 			}
 			else
 			{
-				PsychologyPawn realInitiator = initiator as PsychologyPawn;
-				PsychologyPawn realRecipient = recipient as PsychologyPawn;
-				if (realInitiator != null)
+				if (PsycheHelper.PsychologyEnabled(initiator))
 				{
 					ThoughtDef rejectedProposalDef = new ThoughtDef();
-					rejectedProposalDef.defName = "RejectedMyProposal" + realInitiator.LabelShort + Find.TickManager.TicksGame;
+					rejectedProposalDef.defName = "RejectedMyProposal" + initiator.LabelShort + Find.TickManager.TicksGame;
 					rejectedProposalDef.durationDays = 40f;
 					rejectedProposalDef.thoughtClass = typeof(Thought_MemorySocialDynamic);
 					ThoughtStage rejectedProposalStage = new ThoughtStage();
 					rejectedProposalStage.label = "rejected my proposal";
-					rejectedProposalStage.baseOpinionOffset = Mathf.RoundToInt(-30f * realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic) * Mathf.InverseLerp(100f, 5f, realInitiator.relations.OpinionOf(realRecipient)));
+					rejectedProposalStage.baseOpinionOffset = Mathf.RoundToInt(-30f * initiator.GetComp<CompPsychology>().Psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic) * Mathf.InverseLerp(100f, 5f, initiator.relations.OpinionOf(recipient)));
 					rejectedProposalDef.stages.Add(rejectedProposalStage);
 					ThoughtDef rejectedProposalMoodDef = new ThoughtDef();
-					rejectedProposalMoodDef.defName = "RejectedMyProposalMood" + realInitiator.LabelShort + Find.TickManager.TicksGame;
+					rejectedProposalMoodDef.defName = "RejectedMyProposalMood" + initiator.LabelShort + Find.TickManager.TicksGame;
 					rejectedProposalMoodDef.durationDays = 25f;
 					rejectedProposalMoodDef.thoughtClass = typeof(Thought_MemoryDynamic);
 					rejectedProposalMoodDef.stackedEffectMultiplier = 1f;
 					ThoughtStage rejectedProposalMoodStage = new ThoughtStage();
 					rejectedProposalMoodStage.label = "proposal rejected by {0}";
-					rejectedProposalMoodStage.baseMoodEffect = Mathf.RoundToInt(-25f * realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic) * Mathf.InverseLerp(100f, 5f, realInitiator.relations.OpinionOf(realRecipient)));
+					rejectedProposalMoodStage.baseMoodEffect = Mathf.RoundToInt(-25f * initiator.GetComp<CompPsychology>().Psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic) * Mathf.InverseLerp(100f, 5f, initiator.relations.OpinionOf(recipient)));
 					if (rejectedProposalMoodStage.baseMoodEffect < -5f)
 					{
 						rejectedProposalMoodStage.description = "My lover isn't ready for that kind of commitment right now, and I understand, but rejection is hard to take.";
@@ -100,9 +97,9 @@ namespace Psychology.Harmony
 					rejectedProposalMoodDef.stages.Add(rejectedProposalMoodStage);
 					if (rejectedProposalMoodStage.baseMoodEffect > 0)
 					{
-						realInitiator.needs.mood.thoughts.memories.TryGainMemory(rejectedProposalMoodDef, realRecipient);
+						initiator.needs.mood.thoughts.memories.TryGainMemory(rejectedProposalMoodDef, recipient);
 					}
-					realInitiator.needs.mood.thoughts.memories.TryGainMemory(rejectedProposalDef, realRecipient);
+					initiator.needs.mood.thoughts.memories.TryGainMemory(rejectedProposalDef, recipient);
 				}
 				else
 				{
@@ -110,11 +107,11 @@ namespace Psychology.Harmony
 				}
 				recipient.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.IRejectedTheirProposal, initiator);
 				extraSentencePacks.Add(RulePackDefOf.Sentence_MarriageProposalRejected);
-				if (realRecipient != null && !recipient.story.traits.HasTrait(TraitDefOfPsychology.Codependent) && Rand.Value > 2f * realRecipient.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic))
+				if (PsycheHelper.PsychologyEnabled(recipient) && !recipient.story.traits.HasTrait(TraitDefOfPsychology.Codependent) && Rand.Value > 2f * recipient.GetComp<CompPsychology>().Psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic))
 				{
 					recipient.interactions.TryInteractWith(initiator, DefDatabase<InteractionDef>.GetNamed("Breakup"));
 				}
-				else if (realRecipient == null && !recipient.story.traits.HasTrait(TraitDefOfPsychology.Codependent) && Rand.Value < 0.4f)
+				else if (!PsycheHelper.PsychologyEnabled(recipient) && !recipient.story.traits.HasTrait(TraitDefOfPsychology.Codependent) && Rand.Value < 0.4f)
 				{
 					initiator.relations.RemoveDirectRelation(PawnRelationDefOf.Lover, recipient);
 					initiator.relations.AddDirectRelation(PawnRelationDefOf.ExLover, recipient);
@@ -136,18 +133,17 @@ namespace Psychology.Harmony
         [HarmonyPostfix]
         internal static void _RandomSelectionWeight(InteractionWorker_MarriageProposal __instance, ref float __result, Pawn initiator, Pawn recipient)
         {
-            PsychologyPawn realInitiator = initiator as PsychologyPawn;
-            if (realInitiator != null)
+            if (PsycheHelper.PsychologyEnabled(initiator))
             {
 				if (initiator.gender == Gender.Female)
 				{
 					/* Undo the effect of this in the postfixed method. */
 					__result /= 0.2f;
 				}
-				__result *= 0.1f + realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive) + realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic);
+				__result *= 0.1f + PsycheHelper.Comp(initiator).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive) + PsycheHelper.Comp(initiator).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic);
                 if(PsychologyBase.ActivateKinsey())
                 {
-                    __result *= realInitiator.sexuality.AdjustedRomanticDrive;
+                    __result *= PsycheHelper.Comp(initiator).Sexuality.AdjustedRomanticDrive;
                 }
             }
         }

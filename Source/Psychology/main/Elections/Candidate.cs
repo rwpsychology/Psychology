@@ -14,7 +14,7 @@ namespace Psychology
         {
         }
 
-        public Candidate(PsychologyPawn pawn, List<PersonalityNodeDef> nodes)
+        public Candidate(Pawn pawn, List<PersonalityNodeDef> nodes)
         {
             this.pawn = pawn;
             this.nodes = nodes;
@@ -26,7 +26,7 @@ namespace Psychology
             Scribe_Collections.Look(ref this.nodes, "nodes", LookMode.Def, new object[0]);
         }
 
-        public PsychologyPawn pawn;
+        public Pawn pawn;
         public List<PersonalityNodeDef> nodes;
     }
 }

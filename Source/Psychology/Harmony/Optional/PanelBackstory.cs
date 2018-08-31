@@ -16,26 +16,9 @@ namespace Psychology.Harmony.Optional
         public static void AddPsycheEditButton(EdB.PrepareCarefully.PanelBackstory __instance, EdB.PrepareCarefully.State state)
         {
             Rect panelRect = __instance.PanelRect;
-            PsychologyPawn pawn = state.CurrentPawn.Pawn as PsychologyPawn;
-            if (pawn != null)
+            Pawn pawn = state.CurrentPawn.Pawn;
+            if (PsycheHelper.PsychologyEnabled(pawn))
             {
-                if (pawn.psyche == null || pawn.psyche.PersonalityNodes == null)
-                {
-                    pawn.psyche = new Pawn_PsycheTracker(pawn);
-                    pawn.psyche.Initialize();
-                    foreach (PersonalityNode node in pawn.psyche.PersonalityNodes)
-                    {
-                        if (node.rawRating < 0)
-                        {
-                            node.Initialize();
-                        }
-                    }
-                }
-                if (pawn.sexuality == null && PsychologyBase.ActivateKinsey())
-                {
-                    pawn.sexuality = new Pawn_SexualityTracker(pawn);
-                    pawn.sexuality.GenerateSexuality();
-                }
                 Rect rect = new Rect(panelRect.width - 60f, 9f, 22f, 22f);
                 if (rect.Contains(Event.current.mousePosition))
                 {
@@ -48,7 +31,7 @@ namespace Psychology.Harmony.Optional
                 GUI.DrawTexture(rect, ContentFinder<Texture2D>.Get("Buttons/ButtonPsyche", true));
                 if (Widgets.ButtonInvisible(rect, false))
                 {
-                    SoundDefOf.TickLow.PlayOneShotOnCamera(null);
+                    SoundDefOf.Tick_Low.PlayOneShotOnCamera(null);
                     Find.WindowStack.Add(new Dialog_EditPsyche(pawn));
                 }
             }

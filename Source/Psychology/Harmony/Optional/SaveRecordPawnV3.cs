@@ -18,7 +18,7 @@ namespace Psychology.Harmony.Optional
         {
             if(customPawns.Keys.Contains(__instance.id) && Scribe.mode == LoadSaveMode.Saving) {
                 EdB.PrepareCarefully.CustomPawn pawn = customPawns[__instance.id] as EdB.PrepareCarefully.CustomPawn;
-                if(pawn.Pawn is PsychologyPawn)
+                if(PsycheHelper.PsychologyEnabled(pawn.Pawn))
                 {
                     PrepareCarefully.SaveRecordPsycheV3 psycheSave = new PrepareCarefully.SaveRecordPsycheV3(pawn.Pawn);
                     psycheSave.ExposeData();

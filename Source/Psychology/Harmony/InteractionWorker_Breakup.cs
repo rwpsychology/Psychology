@@ -31,15 +31,14 @@ namespace Psychology.Harmony
 			else
 			{
 				initiator.relations.TryRemoveDirectRelation(PawnRelationDefOf.Lover, recipient);
-				initiator.relations.TryRemoveDirectRelation(PawnRelationDefOf.Fiance, recipient); PsychologyPawn realRecipient = recipient as PsychologyPawn;
-				PsychologyPawn realInitiator = initiator as PsychologyPawn;
-				if (realRecipient != null && realInitiator != null)
+				initiator.relations.TryRemoveDirectRelation(PawnRelationDefOf.Fiance, recipient);
+				if (PsycheHelper.PsychologyEnabled(initiator) && PsycheHelper.PsychologyEnabled(recipient))
 				{
-					BreakupHelperMethods.AddExLover(realInitiator, realRecipient);
+					BreakupHelperMethods.AddExLover(initiator, recipient);
 					//AddExLover(realRecipient, realInitiator);
-					BreakupHelperMethods.AddBrokeUpOpinion(realRecipient, realInitiator);
-					BreakupHelperMethods.AddBrokeUpMood(realRecipient, realInitiator);
-					BreakupHelperMethods.AddBrokeUpMood(realInitiator, realRecipient);
+					BreakupHelperMethods.AddBrokeUpOpinion(recipient, initiator);
+					BreakupHelperMethods.AddBrokeUpMood(recipient, initiator);
+					BreakupHelperMethods.AddBrokeUpMood(initiator, recipient);
 				}
 				else
 				{
@@ -99,11 +98,10 @@ namespace Psychology.Harmony
 			}
 			float chance = 0.02f;
 			float romanticFactor = 1f;
-			PsychologyPawn realInitiator = initiator as PsychologyPawn;
-			if (realInitiator != null)
+			if (PsycheHelper.PsychologyEnabled(initiator))
 			{
 				chance = 0.05f;
-				romanticFactor = Mathf.InverseLerp(1.05f, 0f, realInitiator.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
+				romanticFactor = Mathf.InverseLerp(1.05f, 0f, PsycheHelper.Comp(initiator).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic));
 			}
 			float opinionFactor = Mathf.InverseLerp(100f, -100f, (float)initiator.relations.OpinionOf(recipient));
 			float spouseFactor = 1f;
@@ -118,7 +116,7 @@ namespace Psychology.Harmony
 
     internal static class BreakupHelperMethods
 	{
-		public static void AddExLover(PsychologyPawn lover, PsychologyPawn ex)
+		public static void AddExLover(Pawn lover, Pawn ex)
 		{
 			/*
              * TODO: Fix the below
@@ -141,7 +139,7 @@ namespace Psychology.Harmony
 			lover.relations.AddDirectRelation(PawnRelationDefOf.ExLover, ex);
 		}
 
-		public static void AddBrokeUpOpinion(PsychologyPawn lover, PsychologyPawn ex)
+		public static void AddBrokeUpOpinion(Pawn lover, Pawn ex)
 		{
 			ThoughtDef brokeUpDef = new ThoughtDef();
 			brokeUpDef.defName = "BrokeUpWithMe" + lover.LabelShort + Find.TickManager.TicksGame;
@@ -149,12 +147,12 @@ namespace Psychology.Harmony
 			brokeUpDef.thoughtClass = typeof(Thought_MemorySocialDynamic);
 			ThoughtStage brokeUpStage = new ThoughtStage();
 			brokeUpStage.label = "broke up with me";
-			brokeUpStage.baseOpinionOffset = Mathf.RoundToInt(-50f * lover.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic) * Mathf.InverseLerp(5f, 100f, lover.relations.OpinionOf(ex)));
+			brokeUpStage.baseOpinionOffset = Mathf.RoundToInt(-50f * PsycheHelper.Comp(lover).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic) * Mathf.InverseLerp(5f, 100f, lover.relations.OpinionOf(ex)));
 			brokeUpDef.stages.Add(brokeUpStage);
 			lover.needs.mood.thoughts.memories.TryGainMemory(brokeUpDef, ex);
 		}
 
-		public static void AddBrokeUpMood(PsychologyPawn lover, PsychologyPawn ex)
+		public static void AddBrokeUpMood(Pawn lover, Pawn ex)
 		{
 			ThoughtDef brokeUpMoodDef = new ThoughtDef();
 			brokeUpMoodDef.defName = "BrokeUpWithMeMood" + lover.LabelShort + Find.TickManager.TicksGame;
@@ -163,7 +161,7 @@ namespace Psychology.Harmony
 			brokeUpMoodDef.stackedEffectMultiplier = 1f;
 			ThoughtStage brokeUpStage = new ThoughtStage();
 			brokeUpStage.label = "Broke up with {0}";
-			brokeUpStage.baseMoodEffect = Mathf.RoundToInt(-20f * Mathf.InverseLerp(0.25f, 0.75f, lover.psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic)) * Mathf.InverseLerp(-20f, 100f, lover.relations.OpinionOf(ex)));
+			brokeUpStage.baseMoodEffect = Mathf.RoundToInt(-20f * Mathf.InverseLerp(0.25f, 0.75f, PsycheHelper.Comp(lover).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic)) * Mathf.InverseLerp(-20f, 100f, lover.relations.OpinionOf(ex)));
 			if (brokeUpStage.baseMoodEffect < -5f)
 			{
 				brokeUpStage.description = "My lover and I parted ways amicably, but it's still a little sad.";
