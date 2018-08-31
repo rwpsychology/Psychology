@@ -63,7 +63,7 @@ namespace Psychology.Harmony
             {
                 if (__instance.RaceProps.Humanlike)
                 {
-                    foreach (Pawn current in from x in PawnsFinder.AllMapsCaravansAndTravelingTransportPods
+                    foreach (Pawn current in from x in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive
                                              where x.IsColonist || x.IsPrisonerOfColony
                                              select x)
                     {
