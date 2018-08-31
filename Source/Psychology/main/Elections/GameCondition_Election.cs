@@ -79,7 +79,7 @@ namespace Psychology
                 {
                     issuesString.AppendFormat("{0}) {1}{2}",i+1,candidate.pawn.psyche.GetPersonalityNodeOfDef(candidate.nodes[i]).PlatformIssue,(i != candidate.nodes.Count-1 ? "\n" : ""));
                 }
-                Find.LetterStack.ReceiveLetter("LetterLabelElectionCandidate".Translate(candidate.pawn.LabelShort), "LetterElectionCandidate".Translate(candidate.pawn.LabelShort, Find.WorldObjects.ObjectsAt(candidate.pawn.Map.Tile).OfType<FactionBase>().First().Label, issuesString.ToString()).AdjustedFor(candidate.pawn), LetterDefOf.NeutralEvent, candidate.pawn, null);
+                Find.LetterStack.ReceiveLetter("LetterLabelElectionCandidate".Translate(candidate.pawn.LabelShort), "LetterElectionCandidate".Translate(candidate.pawn.LabelShort, Find.WorldObjects.ObjectsAt(candidate.pawn.Map.Tile).OfType<SettlementBase>().First().Label, issuesString.ToString()).AdjustedFor(candidate.pawn), LetterDefOf.NeutralEvent, candidate.pawn, null);
             }
         }
 
@@ -110,7 +110,7 @@ namespace Psychology
             }
             IntVec3 intVec;
             PsychologyPawn organizer = candidates.RandomElement().pawn;
-            string baseName = Find.WorldObjects.ObjectsAt(organizer.Map.Tile).OfType<FactionBase>().First().Label;
+            string baseName = Find.WorldObjects.ObjectsAt(organizer.Map.Tile).OfType<SettlementBase>().First().Label;
             if (!RCellFinder.TryFindPartySpot(organizer, out intVec))
             {
                 return;
