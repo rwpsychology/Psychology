@@ -10,11 +10,10 @@
       <MaxHitPoints>50</MaxHitPoints>
       <Flammability>1.0</Flammability>
       <DeteriorationRate>2</DeteriorationRate>
-			<Beauty>-6</Beauty>
+			<Beauty>-4</Beauty>
     </statBases>
     <altitudeLayer>Item</altitudeLayer>
-    <stackLimit>400</stackLimit>
-    <socialPropernessMatters>true</socialPropernessMatters>
+    <stackLimit>150</stackLimit>
     <thingCategories>
       <li>Drugs</li>
     </thingCategories>
@@ -28,7 +27,6 @@
     <ingestible>
       <preferability>NeverForNutrition</preferability>
       <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
-      <joyKind>Chemical</joyKind>
       <chairSearchRadius>8</chairSearchRadius>
     </ingestible>
     <storedConceptLearnOpportunity>DrugPolicies</storedConceptLearnOpportunity>
@@ -36,8 +34,8 @@
   
   <ThingDef Name="MakeableDrugBase" ParentName="DrugBase" Abstract="True">
     <recipeMaker>
-      <workSpeedStat>DrugProductionSpeed</workSpeedStat>
-      <workSkill>Crafting</workSkill>
+      <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
       <effectWorking>Cook</effectWorking>
       <soundWorking>Recipe_CookMeal</soundWorking>
     </recipeMaker>
@@ -53,6 +51,7 @@
       <ingestCommandString>Take {0}</ingestCommandString>
       <ingestReportString>Taking {0}.</ingestReportString>
     </ingestible>
+    <socialPropernessMatters>true</socialPropernessMatters>
   </ThingDef>
 
   <ThingDef Name="DrugPillBase" ParentName="DrugBase" Abstract="True">
@@ -65,6 +64,7 @@
       <ingestCommandString>Take {0}</ingestCommandString>
       <ingestReportString>Taking {0}.</ingestReportString>
     </ingestible>
+    <socialPropernessMatters>true</socialPropernessMatters>
   </ThingDef>
   
   <HediffDef Name="AddictionBase" Abstract="True">
@@ -79,10 +79,12 @@
     <defaultLabelColor>(179,86,132)</defaultLabelColor>
     <maxSeverity>1.0</maxSeverity>
     <scenarioCanAdd>true</scenarioCanAdd>
+    <isBad>false</isBad>
     <stages>
       <li>
         <minSeverity>0</minSeverity>
         <becomeVisible>false</becomeVisible>
+        <label>small</label>
       </li>
       <li>
         <minSeverity>0.20</minSeverity>
