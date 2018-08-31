@@ -5,9 +5,9 @@
     <defName>Election</defName>
     <label>election</label>
 	<category>Misc</category>
-    <targetTypes>
-      <li>MapPlayerHome</li>
-    </targetTypes>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
     <gameCondition>Election</gameCondition>
     <workerClass>Psychology.IncidentWorker_Election</workerClass>
     <baseChance>0</baseChance> <!-- Manual fire only -->

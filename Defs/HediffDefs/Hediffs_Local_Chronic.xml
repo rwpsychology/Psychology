@@ -22,7 +22,7 @@
     </stages>
     <comps>
       <li Class="HediffCompProperties_TendDuration">
-        <tendDuration>240000</tendDuration>
+        <baseTendDurationHours>96</baseTendDurationHours>
         <severityPerDayTended>0.12</severityPerDayTended>
       </li>
       <li Class="HediffCompProperties_SeverityPerDay">
@@ -120,7 +120,7 @@
     </stages>
     <comps>
       <li Class="HediffCompProperties_TendDuration">
-        <tendDuration>300000</tendDuration>
+        <baseTendDurationHours>120</baseTendDurationHours>
         <severityPerDayTended>-0.003425</severityPerDayTended>
       </li>
       <li Class="HediffCompProperties_Immunizable">

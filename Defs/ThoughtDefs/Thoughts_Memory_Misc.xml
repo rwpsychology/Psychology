@@ -4,13 +4,11 @@
   <ThoughtDef>
     <defName>Dynamic</defName>
 	<thoughtClass>Psychology.Thought_MemoryDynamic</thoughtClass>
-    <durationDays>1</durationDays>
-    <stages>
-      <li>
-        <label>dynamic thought</label>
-        <baseMoodEffect>1</baseMoodEffect>
-      </li>
-    </stages>
+	<stages>
+		<li>
+			<label>dynamic</label>
+		</li>
+	</stages>
   </ThoughtDef>
   
   <ThoughtDef>

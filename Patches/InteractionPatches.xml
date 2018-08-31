@@ -2,7 +2,19 @@
 	<Operation Class="PatchOperationReplace">
 			<xpath>*/InteractionDef[defName="Chitchat"]/logRulesInitiator/rulesStrings/li[1]</xpath>
 			<value>
-				<li>logentry->Exchanged pleasantries with [other_nameShortIndef].</li>
+				<li>r_logentry->[INITIATOR_nameDef] exchanged pleasantries with [RECIPIENT_nameDef].</li>
+			</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+			<xpath>*/InteractionDef[defName="Chitchat"]/logRulesInitiator/rulesStrings/li[2]</xpath>
+			<value>
+				<li>r_logentry(p=0.8)->[INITIATOR_nameDef] greeted [RECIPIENT_nameDef] in passing.</li>
+			</value>
+	</Operation>
+	<Operation Class="PatchOperationReplace">
+			<xpath>*/InteractionDef[defName="Chitchat"]/logRulesInitiator/rulesStrings/li[3]</xpath>
+			<value>
+				<li>r_logentry(p=0.2)->[INITIATOR_nameDef] waved at [RECIPIENT_nameDef].</li>
 			</value>
 	</Operation>
 </Patch>

@@ -41,7 +41,7 @@
     <thoughtClass>Thought_MemorySocial</thoughtClass>
     <durationDays>80.0</durationDays>
     <stackLimit>300</stackLimit>
-    <stackLimitPerPawn>1</stackLimitPerPawn>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
     <requiredTraits>
       <li>Codependent</li>
     </requiredTraits>
@@ -74,7 +74,7 @@
     <thoughtClass>Thought_MemorySocial</thoughtClass>
     <durationDays>40.0</durationDays>
     <stackLimit>300</stackLimit>
-    <stackLimitPerPawn>1</stackLimitPerPawn>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
     <requiredTraits>
       <li>Codependent</li>
     </requiredTraits>
@@ -107,7 +107,7 @@
     <thoughtClass>Thought_MemorySocial</thoughtClass>
     <durationDays>5.0</durationDays>
     <stackLimit>300</stackLimit>
-    <stackLimitPerPawn>5</stackLimitPerPawn>
+    <stackLimitForSameOtherPawn>5</stackLimitForSameOtherPawn>
     <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
     <requiredTraits>
       <li>Lecher</li>
@@ -125,7 +125,7 @@
     <thoughtClass>Thought_MemorySocial</thoughtClass>
     <durationDays>45.0</durationDays>
     <stackLimit>300</stackLimit>
-    <stackLimitPerPawn>5</stackLimitPerPawn>
+    <stackLimitForSameOtherPawn>5</stackLimitForSameOtherPawn>
     <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
     <stages>
       <li>
@@ -140,7 +140,7 @@
     <thoughtClass>Thought_MemorySocial</thoughtClass>
     <durationDays>5.0</durationDays>
     <stackLimit>300</stackLimit>
-    <stackLimitPerPawn>1</stackLimitPerPawn>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
     <stages>
       <li>
         <label>went on a date</label>
@@ -154,7 +154,7 @@
     <thoughtClass>Thought_MemorySocial</thoughtClass>
     <durationDays>4.0</durationDays>
     <stackLimit>300</stackLimit>
-    <stackLimitPerPawn>1</stackLimitPerPawn>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
     <stages>
       <li>
         <label>hung out together</label>
@@ -168,7 +168,7 @@
     <thoughtClass>Thought_MemorySocial</thoughtClass>
     <durationDays>30.0</durationDays>
     <stackLimit>300</stackLimit>
-    <stackLimitPerPawn>1</stackLimitPerPawn>
+    <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
     <stages>
       <li>
         <label>missed our date</label>

@@ -10,11 +10,11 @@
 
 <!-- Miscellaneous thought log text -->
 	<ConversationStage>conversation about</ConversationStage>
-	<ConversationEnd>Ended a conversation with</ConversationEnd>
+	<ConversationEnd>[INITIATOR_nameDef] ended a conversation with</ConversationEnd>
 	<ConversationEnded>ended conversation</ConversationEnded>
-	<Complained>Complained to the mayor.</Complained>
-	<Supported>Voiced my support to the mayor.</Supported>
-	<HadMeeting>Had a meeting with a constituent</HadMeeting>
+	<Complained>[INITIATOR_nameDef] complained to the mayor.</Complained>
+	<Supported>[INITIATOR_nameDef] voiced [INITIATOR_possessive] support to the mayor.</Supported>
+	<HadMeeting>[RECIPIENT_nameDef] had a meeting with a constituent</HadMeeting>
 	
 <!-- Node descriptions -->
 	<PsycheNot>Not</PsycheNot>
@@ -23,6 +23,7 @@
 	<PsycheMore>More</PsycheMore>
 	<PsycheVery>Very</PsycheVery>
 	<PsycheExtremely>Extremely</PsycheExtremely>
+	<ConversationTooltip>People will talk about {0} to discuss this with each other.</ConversationTooltip>
 	
 <!-- Comp text -->
 	<CommandOfficeTableToggleLabel>Mayoral office</CommandOfficeTableToggleLabel>

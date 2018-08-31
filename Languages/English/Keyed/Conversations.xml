@@ -2,47 +2,47 @@
 <LanguageData>
 
 	<NumberOfShortTalks>10</NumberOfShortTalks>
-	<ShortTalk1>Had a brief chat with [other_nameShortIndef] about {0}.</ShortTalk1>
-	<ShortTalk2>Had a short chat with [other_nameShortIndef] about {0}.</ShortTalk2>
-	<ShortTalk3>Had a short talk with [other_nameShortIndef] about {0}.</ShortTalk3>
-	<ShortTalk4>Quickly discussed {0} with [other_nameShortIndef].</ShortTalk4>
-	<ShortTalk5>Fleetingly chatted about {0} with [other_nameShortIndef].</ShortTalk5>
-	<ShortTalk6>Talked about {0} with [other_nameShortIndef] in passing.</ShortTalk6>
-	<ShortTalk7>Commented pithily on {0} with [other_nameShortIndef].</ShortTalk7>
-	<ShortTalk8>Remarked on {0} with [other_nameShortIndef].</ShortTalk8>
-	<ShortTalk9>Exchanged words with [other_nameShortIndef] about {0} momentarily.</ShortTalk9>
-	<ShortTalk10>Had a brief exchange with [other_nameShortIndef] about {0}.</ShortTalk10>
+	<ShortTalk1>[INITIATOR_nameDef] had a brief chat with [RECIPIENT_nameDef] about {0}.</ShortTalk1>
+	<ShortTalk2>[INITIATOR_nameDef] had a short chat with [RECIPIENT_nameDef] about {0}.</ShortTalk2>
+	<ShortTalk3>[INITIATOR_nameDef] had a short talk with [RECIPIENT_nameDef] about {0}.</ShortTalk3>
+	<ShortTalk4>[INITIATOR_nameDef] quickly discussed {0} with [RECIPIENT_nameDef].</ShortTalk4>
+	<ShortTalk5>[INITIATOR_nameDef] fleetingly chatted about {0} with [RECIPIENT_nameDef].</ShortTalk5>
+	<ShortTalk6>[INITIATOR_nameDef] talked about {0} with [RECIPIENT_nameDef] in passing.</ShortTalk6>
+	<ShortTalk7>[INITIATOR_nameDef] commented pithily on {0} with [RECIPIENT_nameDef].</ShortTalk7>
+	<ShortTalk8>[INITIATOR_nameDef] remarked on {0} with [RECIPIENT_nameDef].</ShortTalk8>
+	<ShortTalk9>[INITIATOR_nameDef] exchanged words with [RECIPIENT_nameDef] about {0} momentarily.</ShortTalk9>
+	<ShortTalk10>[INITIATOR_nameDef] had a brief exchange with [RECIPIENT_nameDef] about {0}.</ShortTalk10>
 	
 	<NumberOfNormalTalks>12</NumberOfNormalTalks>
-	<NormalTalk1>Talked about {0} with [other_nameShortIndef].</NormalTalk1>
-	<NormalTalk2>Had a conversation about {0} with [other_nameShortIndef].</NormalTalk2>
-	<NormalTalk3>Discussed {0} with [other_nameShortIndef].</NormalTalk3>
-	<NormalTalk4>Compared thoughts on {0} with [other_nameShortIndef].</NormalTalk4>
-	<NormalTalk5>Conversed with [other_nameShortIndef] about {0}.</NormalTalk5>
-	<NormalTalk6>Talked with [other_nameShortIndef] about {0}.</NormalTalk6>
-	<NormalTalk7>Had a discussion with [other_nameShortIndef] about {0}.</NormalTalk7>
-	<NormalTalk8>Learned about [other_nameShortIndef]'s opinions on {0}.</NormalTalk8>
-	<NormalTalk9>Shared thoughts on {0} with [other_nameShortIndef].</NormalTalk9>
-	<NormalTalk10>Learned about [other_nameShortIndef]'s thoughts on {0}.</NormalTalk10>
-	<NormalTalk11>Argued about {0} with [other_nameShortIndef].</NormalTalk11>
-	<NormalTalk12>Consulted with [other_nameShortIndef] about {0}.</NormalTalk12>
+	<NormalTalk1>[INITIATOR_nameDef] talked about {0} with [RECIPIENT_nameDef].</NormalTalk1>
+	<NormalTalk2>[INITIATOR_nameDef] had a conversation about {0} with [RECIPIENT_nameDef].</NormalTalk2>
+	<NormalTalk3>[INITIATOR_nameDef] discussed {0} with [RECIPIENT_nameDef].</NormalTalk3>
+	<NormalTalk4>[INITIATOR_nameDef] compared thoughts on {0} with [RECIPIENT_nameDef].</NormalTalk4>
+	<NormalTalk5>[INITIATOR_nameDef] conversed with [RECIPIENT_nameDef] about {0}.</NormalTalk5>
+	<NormalTalk6>[INITIATOR_nameDef] talked with [RECIPIENT_nameDef] about {0}.</NormalTalk6>
+	<NormalTalk7>[INITIATOR_nameDef] had a discussion with [RECIPIENT_nameDef] about {0}.</NormalTalk7>
+	<NormalTalk8>[INITIATOR_nameDef] learned about [RECIPIENT_nameDef]'s opinions on {0}.</NormalTalk8>
+	<NormalTalk9>[INITIATOR_nameDef] shared thoughts on {0} with [RECIPIENT_nameDef].</NormalTalk9>
+	<NormalTalk10>[INITIATOR_nameDef] learned about [RECIPIENT_nameDef]'s thoughts on {0}.</NormalTalk10>
+	<NormalTalk11>[INITIATOR_nameDef] argued about {0} with [RECIPIENT_nameDef].</NormalTalk11>
+	<NormalTalk12>[INITIATOR_nameDef] consulted with [RECIPIENT_nameDef] about {0}.</NormalTalk12>
 	
 	<NumberOfLongTalks>8</NumberOfLongTalks>
-	<LongTalk1>Discussed {0} at length with [other_nameShortIndef].</LongTalk1>
-	<LongTalk2>Had a long conversation about {0} with [other_nameShortIndef].</LongTalk2>
-	<LongTalk3>Talked with [other_nameShortIndef] about {0} for some time.</LongTalk3>
-	<LongTalk4>Thoroughly discussed {0} with [other_nameShortIndef].</LongTalk4>
-	<LongTalk5>Consulted extensively about {0} with [other_nameShortIndef].</LongTalk5>
-	<LongTalk6>Learned a lot about how [other_nameShortIndef] feels about {0}.</LongTalk6>
-	<LongTalk7>Shared deep thoughts on {0} with [other_nameShortIndef].</LongTalk7>
-	<LongTalk8>Had a lengthy debate about {0} with [other_nameShortIndef].</LongTalk8>
+	<LongTalk1>[INITIATOR_nameDef] discussed {0} at length with [RECIPIENT_nameDef].</LongTalk1>
+	<LongTalk2>[INITIATOR_nameDef] had a long conversation about {0} with [RECIPIENT_nameDef].</LongTalk2>
+	<LongTalk3>[INITIATOR_nameDef] talked with [RECIPIENT_nameDef] about {0} for some time.</LongTalk3>
+	<LongTalk4>[INITIATOR_nameDef] thoroughly discussed {0} with [RECIPIENT_nameDef].</LongTalk4>
+	<LongTalk5>[INITIATOR_nameDef] consulted extensively about {0} with [RECIPIENT_nameDef].</LongTalk5>
+	<LongTalk6>[INITIATOR_nameDef] learned a lot about how [RECIPIENT_nameDef] feels about {0}.</LongTalk6>
+	<LongTalk7>[INITIATOR_nameDef] shared deep thoughts on {0} with [RECIPIENT_nameDef].</LongTalk7>
+	<LongTalk8>[INITIATOR_nameDef] had a lengthy debate about {0} with [RECIPIENT_nameDef].</LongTalk8>
 
 	<NumberOfEpicTalks>6</NumberOfEpicTalks>
-	<EpicTalk1>Conferred with [other_nameShortIndef] for hours about {0}.</EpicTalk1>
-	<EpicTalk2>Talked endlessly with [other_nameShortIndef] about {0}.</EpicTalk2>
-	<EpicTalk3>Had an extremely long conversation about {0} with [other_nameShortIndef].</EpicTalk3>
-	<EpicTalk4>Debated forever with [other_nameShortIndef] about {0}.</EpicTalk4>
-	<EpicTalk5>Had a very lengthy back-and-forth about {0} with [other_nameShortIndef].</EpicTalk5>
-	<EpicTalk6>Vented about {0} with [other_nameShortIndef] for hours.</EpicTalk6>
+	<EpicTalk1>[INITIATOR_nameDef] conferred with [RECIPIENT_nameDef] for hours about {0}.</EpicTalk1>
+	<EpicTalk2>[INITIATOR_nameDef] talked endlessly with [RECIPIENT_nameDef] about {0}.</EpicTalk2>
+	<EpicTalk3>[INITIATOR_nameDef] had an extremely long conversation about {0} with [RECIPIENT_nameDef].</EpicTalk3>
+	<EpicTalk4>[INITIATOR_nameDef] debated forever with [RECIPIENT_nameDef] about {0}.</EpicTalk4>
+	<EpicTalk5>[INITIATOR_nameDef] had a very lengthy back-and-forth about {0} with [RECIPIENT_nameDef].</EpicTalk5>
+	<EpicTalk6>[INITIATOR_nameDef] vented about {0} with [RECIPIENT_nameDef] for hours.</EpicTalk6>
 	
 </LanguageData>

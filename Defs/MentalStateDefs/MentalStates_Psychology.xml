@@ -176,7 +176,7 @@
     <defName>SelfHarm</defName>
     <stateClass>Psychology.MentalState_SelfHarm</stateClass>
     <label>self-harming</label>
-    <category>Sad</category>
+    <category>Misc</category>
     <moodRecoveryThought>Catharsis</moodRecoveryThought>
     <blockNormalThoughts>true</blockNormalThoughts>
     <nameColor>(0.65, 0.9, 0.93)</nameColor>
@@ -357,7 +357,7 @@
 	<colonistsOnly>true</colonistsOnly>
     <stateClass>Psychology.MentalState_Antisocial</stateClass>
     <label>avoiding people</label>
-    <category>Sad</category>
+    <category>Misc</category>
 	<moodRecoveryThought>Catharsis</moodRecoveryThought>
     <blockNormalThoughts>true</blockNormalThoughts>
     <nameColor>(0.65, 0.9, 0.93)</nameColor>
