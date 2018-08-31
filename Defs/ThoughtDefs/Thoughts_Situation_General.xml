@@ -26,22 +26,22 @@
     <stages>
       <li>
         <label>matching apparel</label>
-        <description>Someone else in the colony is wearing the exact same things as me. It's awkward.</description>
-        <baseMoodEffect>-3</baseMoodEffect>
+        <description>Someone else in the colony is dressed in a matching outfit to me, head to toe. It's kind of unsettling.</description>
+        <baseMoodEffect>-2</baseMoodEffect>
       </li>
       <li>
         <label>matching apparel</label>
-        <description>Other people in the colony wear the exact same things as me. It's offputting.</description>
-        <baseMoodEffect>-5</baseMoodEffect>
+        <description>Other people in the colony are wearing identical outfits to me, head to toe. It's offputting.</description>
+        <baseMoodEffect>-4</baseMoodEffect>
       </li>
       <li>
         <label>stifled individuality</label>
-        <description>Most of the colony wears the exact same things. It's creepy, and I want to express my individuality.</description>
+        <description>Most of the colony looks exactly the same, head to toe. It's creepy, and I want to express my individuality.</description>
         <baseMoodEffect>-8</baseMoodEffect>
       </li>
       <li>
         <label>stifled individuality</label>
-        <description>Everyone here wears the exact same things! It's deeply unsettling, and I want to express my individuality.</description>
+        <description>Everyone here looks exactly the same, head to toe! It's deeply unsettling, and I want to express my individuality.</description>
         <baseMoodEffect>-12</baseMoodEffect>
       </li>
     </stages>
