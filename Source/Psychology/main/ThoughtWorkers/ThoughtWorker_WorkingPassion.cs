@@ -80,7 +80,9 @@ namespace Psychology
                 skill = SkillDefOf.Social;
             else if (job == JobDefOf.PrisonerExecution)
                 skill = SkillDefOf.Social;
-            else if (job == JobDefOf.PrisonerFriendlyChat)
+            else if (job == JobDefOf.StandAndBeSociallyActive)
+                skill = SkillDefOf.Social;
+            else if (job == JobDefOf.InducePrisonerToEscape)
                 skill = SkillDefOf.Social;
             else if (job == JobDefOf.DeliverFood)
                 skill = SkillDefOf.Social;

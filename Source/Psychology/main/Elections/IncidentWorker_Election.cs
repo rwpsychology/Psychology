@@ -14,11 +14,11 @@ namespace Psychology
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
             Map map = (Map)parms.target;
-            FactionBase factionBase = Find.WorldObjects.ObjectsAt(map.Tile).OfType<FactionBase>().First();
+            SettlementBase settlementBase = Find.WorldObjects.ObjectsAt(map.Tile).OfType<SettlementBase>().First();
             int duration = Mathf.RoundToInt(this.def.durationDays.RandomInRange * GenDate.TicksPerDay);
             GameCondition cond = GameConditionMaker.MakeCondition(this.def.gameCondition, duration, 0);
             map.gameConditionManager.RegisterCondition(cond);
-            Find.LetterStack.ReceiveLetter("LetterLabelNewElection".Translate(factionBase.Label), "LetterNewElection".Translate(factionBase.Label), LetterDefOf.PositiveEvent, new TargetInfo(map.Center, map, false), null);
+            Find.LetterStack.ReceiveLetter("LetterLabelNewElection".Translate(settlementBase.Label), "LetterNewElection".Translate(settlementBase.Label), LetterDefOf.PositiveEvent, new TargetInfo(map.Center, map, false), null);
             return true;
         }
     }

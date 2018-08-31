@@ -28,7 +28,7 @@ namespace Psychology
                         if (pawn.health.hediffSet.GetPartHealth(part) > 3 && Rand.Chance(0.08f))
                         {
                             int num = Mathf.Max(3, GenMath.RoundRandom(pawn.health.hediffSet.GetPartHealth(part) * Rand.Range(0.1f, 0.35f)));
-                            DamageInfo info = new DamageInfo(DamageDefOf.Cut, num, -1, null, part, null);
+                            DamageInfo info = new DamageInfo(DamageDefOf.Cut, num, -1, -1F, pawn, part, null);
                             pawn.TakeDamage(info);
                         }
                     }
