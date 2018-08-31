@@ -21,7 +21,7 @@ namespace Psychology.Harmony
         {
             bool flag = dinfo.HasValue && dinfo.Value.Def.execution;
             bool flag2 = victim.IsPrisonerOfColony && !victim.guilt.IsGuilty && !victim.InAggroMentalState;
-            bool flag3 = dinfo.HasValue && dinfo.Value.Def.externalViolence && dinfo.Value.Instigator != null && dinfo.Value.Instigator is Pawn;
+            bool flag3 = dinfo.HasValue && dinfo.Value.Def.ExternalViolenceFor(victim) && dinfo.Value.Instigator != null && dinfo.Value.Instigator is Pawn;
             if (flag3)
             {
                 Pawn pawn = (Pawn)dinfo.Value.Instigator;

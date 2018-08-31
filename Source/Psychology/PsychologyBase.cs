@@ -68,7 +68,7 @@ namespace Psychology
                 return "Psychology";
             }
         }
-
+        
         private static void RemoveTrait(Pawn pawn, TraitDef trait)
         {
             pawn.story.traits.allTraits.RemoveAll(t => t.def == trait);
@@ -215,8 +215,6 @@ namespace Psychology
 
                 foreach (ThingDef t in things)
                 {
-                    t.thingClass = typeof(PsychologyPawn);
-
                     if (t.inspectorTabsResolved == null)
                     {
                         t.inspectorTabsResolved = new List<InspectTabBase>(1);
@@ -233,6 +231,12 @@ namespace Psychology
                     t.recipes.Add(RecipeDefOfPsychology.TreatDepression);
                     t.recipes.Add(RecipeDefOfPsychology.TreatInsomnia);
                     t.recipes.Add(RecipeDefOfPsychology.CureAnxiety);
+
+                    if (t.comps == null)
+                    {
+                        t.comps = new List<CompProperties>(1);
+                    }
+                    t.comps.Add(new CompProperties_Psychology());
 
                     if (!t.race.hediffGiverSets.NullOrEmpty())
                     {
@@ -252,7 +256,8 @@ namespace Psychology
                  * Now to enjoy the benefits of having made a popular mod!
                  * This will be our little secret.
                  */
-                Backstory childMe = new Backstory();
+                //Disabled until I can be bothered to look into how Tynan changed the backstory code.
+                /*Backstory childMe = new Backstory();
                 childMe.bodyTypeMale = BodyType.Male;
                 childMe.bodyTypeFemale = BodyType.Female;
                 childMe.slot = BackstorySlot.Childhood;
@@ -265,7 +270,7 @@ namespace Psychology
                 childMe.requiredWorkTags = WorkTags.Violent;
                 childMe.shuffleable = false;
                 childMe.PostLoad();
-                childMe.ResolveReferences();
+                childMe.ResolveReferences();*/
                 //Disabled until I can be bothered to code it so they're actually siblings.
                 /*Backstory adultMale = new Backstory();
                 adultMale.bodyTypeMale = BodyType.Male;
@@ -283,7 +288,7 @@ namespace Psychology
                 adultMale.shuffleable = false;
                 adultMale.PostLoad();
                 adultMale.ResolveReferences();*/
-                Backstory adultFemale = new Backstory();
+                /*Backstory adultFemale = new Backstory();
                 adultFemale.bodyTypeMale = BodyType.Male;
                 adultFemale.bodyTypeFemale = BodyType.Female;
                 adultFemale.slot = BackstorySlot.Adulthood;
@@ -298,7 +303,7 @@ namespace Psychology
                 adultFemale.spawnCategories.AddRange(new string[] { "Civil", "Raider", "Slave", "Trader", "Traveler" });
                 adultFemale.shuffleable = false;
                 adultFemale.PostLoad();
-                adultFemale.ResolveReferences();
+                adultFemale.ResolveReferences();*/
                 /*PawnBio maleMe = new PawnBio();
                 maleMe.childhood = childMe;
                 maleMe.adulthood = adultMale;
@@ -306,7 +311,7 @@ namespace Psychology
                 maleMe.name = NameTriple.FromString("Jason 'Jackal' Tarai");
                 maleMe.PostLoad();
                 SolidBioDatabase.allBios.Add(maleMe);*/
-                PawnBio femaleMe = new PawnBio();
+                /*PawnBio femaleMe = new PawnBio();
                 femaleMe.childhood = childMe;
                 femaleMe.adulthood = adultFemale;
                 femaleMe.gender = GenderPossibility.Female;
@@ -315,7 +320,7 @@ namespace Psychology
                 SolidBioDatabase.allBios.Add(femaleMe);
                 BackstoryDatabase.AddBackstory(childMe);
                 //BackstoryDatabase.AddBackstory(adultMale);
-                BackstoryDatabase.AddBackstory(adultFemale);
+                BackstoryDatabase.AddBackstory(adultFemale);*/
             }
         }
 
@@ -325,15 +330,14 @@ namespace Psychology
             {
                 /* Remove Gay trait from pawns if Kinsey scale is enabled */
                 IEnumerable<Pawn> gayPawns = (from p in map.mapPawns.AllPawns
-                                       where p.RaceProps.Humanlike && p.story.traits.HasTrait(TraitDefOf.Gay)
+                                       where p.story != null && p.story.traits.HasTrait(TraitDefOf.Gay)
                                        select p);
                 foreach (Pawn pawn in gayPawns)
                 {
                     RemoveTrait(pawn, TraitDefOf.Gay);
-                    PsychologyPawn realPawn = pawn as PsychologyPawn;
-                    if (realPawn != null && realPawn.sexuality.kinseyRating < 5)
+                    if (PsycheHelper.PsychologyEnabled(pawn) && PsycheHelper.Comp(pawn).Sexuality.kinseyRating < 5)
                     {
-                        realPawn.sexuality.kinseyRating = Rand.RangeInclusive(5, 6);
+                        PsycheHelper.Comp(pawn).Sexuality.kinseyRating = Rand.RangeInclusive(5, 6);
                     }
                 }
             }
@@ -344,7 +348,7 @@ namespace Psychology
             //Constituent tick
             if (currentTick % GenDate.TicksPerHour*2 == 0)
             {
-                Map playerFactionMap = Find.WorldObjects.FactionBases.Find(b => b.Faction.IsPlayer).Map;
+                Map playerFactionMap = Find.WorldObjects.SettlementBases.Find(b => b.Faction.IsPlayer).Map;
                 IEnumerable<Pawn> constituents = (from p in playerFactionMap.mapPawns.FreeColonistsSpawned
                                                   where !p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && p.GetLord() == null && p.GetTimeAssignment() != TimeAssignmentDefOf.Work && p.Awake()
                                                   select p);
@@ -358,7 +362,6 @@ namespace Psychology
                     if (potentialConstituent != null && activeMayors.Count() > 0)
                     {
                         Pawn mayor = activeMayors.RandomElement(); //There should only be one.
-                        PsychologyPawn psychologyConstituent = potentialConstituent as PsychologyPawn;
                         IntVec3 gather = default(IntVec3);
                         String found = null;
                         if (mayor.Map.GetComponent<OfficeTableMapComponent>().officeTable != null)
@@ -371,7 +374,7 @@ namespace Psychology
                             gather = mayor.ownership.OwnedBed.Position;
                             found = "bed";
                         }
-                        if ((psychologyConstituent == null || Rand.Value < (1f - psychologyConstituent.psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent)) / 5f) && (found != null || RCellFinder.TryFindPartySpot(mayor, out gather)))
+                        if ((!PsycheHelper.PsychologyEnabled(potentialConstituent) || Rand.Value < (1f - PsycheHelper.Comp(potentialConstituent).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent)) / 5f) && (found != null || RCellFinder.TryFindPartySpot(mayor, out gather)))
                         {
                             List<Pawn> pawns = new List<Pawn>();
                             pawns.Add(mayor);
@@ -394,7 +397,7 @@ namespace Psychology
             //Election tick
             if (currentTick % (GenDate.TicksPerDay/4f) == 0)
             {
-                foreach (FactionBase factionBase in Find.WorldObjects.FactionBases)
+                foreach (Settlement settlement in Find.WorldObjects.Settlements)
                 {
                     //Self-explanatory.
                     if (!PsychologyBase.ActivateElections())
@@ -402,46 +405,46 @@ namespace Psychology
                         continue;
                     }
                     //If the base isn't owned or named by the player, no election can be held.
-                    if (!factionBase.Faction.IsPlayer || !factionBase.namedByPlayer)
+                    if (!settlement.Faction.IsPlayer || !settlement.namedByPlayer)
                     {
                         continue;
                     }
                     //If the base is not at least a year old, no election will be held.
-                    if ((Find.TickManager.TicksGame - factionBase.creationGameTicks) / GenDate.TicksPerYear < 1)
+                    if ((Find.TickManager.TicksGame - settlement.creationGameTicks) / GenDate.TicksPerYear < 1)
                     {
                         continue;
                     }
                     //A base must have at least 7 people in it to hold an election.
-                    if (factionBase.Map.mapPawns.FreeColonistsSpawnedCount < 7)
+                    if (settlement.Map.mapPawns.FreeColonistsSpawnedCount < 7)
                     {
                         continue;
                     }
                     //If an election is already being held, don't start a new one.
-                    if (factionBase.Map.gameConditionManager.ConditionIsActive(GameConditionDefOfPsychology.Election) || factionBase.Map.lordManager.lords.Find(l => l.LordJob is LordJob_Joinable_Election) != null)
+                    if (settlement.Map.gameConditionManager.ConditionIsActive(GameConditionDefOfPsychology.Election) || settlement.Map.lordManager.lords.Find(l => l.LordJob is LordJob_Joinable_Election) != null)
                     {
                         continue;
                     }
                     //Elections are held in Septober (because I guess some maps don't have fall?) and during the day.
-                    if (GenDate.Quadrum(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(factionBase.Tile).x) != Quadrum.Septober || (GenLocalDate.HourOfDay(factionBase.Map) < 7 || GenLocalDate.HourOfDay(factionBase.Map) > 20))
+                    if (GenDate.Quadrum(Find.TickManager.TicksAbs, Find.WorldGrid.LongLatOf(settlement.Tile).x) != Quadrum.Septober || (GenLocalDate.HourOfDay(settlement.Map) < 7 || GenLocalDate.HourOfDay(settlement.Map) > 20))
                     {
                         continue;
                     }
                     //If an election has already been completed this year, don't start a new one.
-                    IEnumerable<Pawn> activeMayors = (from m in factionBase.Map.mapPawns.FreeColonistsSpawned
-                                                      where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == factionBase.Map.Tile && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).yearElected == GenLocalDate.Year(factionBase.Map.Tile)
+                    IEnumerable<Pawn> activeMayors = (from m in settlement.Map.mapPawns.FreeColonistsSpawned
+                                                      where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == settlement.Map.Tile && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).yearElected == GenLocalDate.Year(settlement.Map.Tile)
                                                       select m);
                     if (activeMayors.Count() > 0)
                     {
                         continue;
                     }
                     //Try to space out the elections so they don't all proc at once.
-                    if (Rand.RangeInclusive(1, 15 - GenLocalDate.DayOfQuadrum(factionBase.Map.Tile)) > 1)
+                    if (Rand.RangeInclusive(1, 15 - GenLocalDate.DayOfQuadrum(settlement.Map.Tile)) > 1)
                     {
                         continue;
                     }
                     IncidentParms parms = new IncidentParms();
-                    parms.target = factionBase.Map;
-                    parms.faction = factionBase.Faction;
+                    parms.target = settlement.Map;
+                    parms.faction = settlement.Faction;
                     FiringIncident fi = new FiringIncident(IncidentDefOfPsychology.Election, null, parms);
                     Find.Storyteller.TryFire(fi);
                 }

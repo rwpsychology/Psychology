@@ -18,6 +18,7 @@ namespace Psychology
                 return (ThoughtState)false;
             JobDef job = p.jobs.curJob.def;
             SkillDef skill = null; //WHY don't jobs have skills associated with them?!
+            /* Warning: Hasn't been updated in probably 3 versions */
             if (job == JobDefOf.Tame)
                 skill = SkillDefOf.Animals;
             else if (job == JobDefOf.Shear)
@@ -47,9 +48,9 @@ namespace Psychology
             else if (job == JobDefOf.RemoveFloor)
                 skill = SkillDefOf.Construction;
             else if (job == JobDefOf.Harvest)
-                skill = SkillDefOf.Growing;
+                skill = SkillDefOf.Plants;
             else if (job == JobDefOf.Sow)
-                skill = SkillDefOf.Growing;
+                skill = SkillDefOf.Plants;
             else if (job == JobDefOf.DeliverFood)
                 skill = SkillDefOf.Medicine;
             else if (job == JobDefOf.FeedPatient)
@@ -79,8 +80,6 @@ namespace Psychology
             else if (job == JobDefOf.PrisonerAttemptRecruit)
                 skill = SkillDefOf.Social;
             else if (job == JobDefOf.PrisonerExecution)
-                skill = SkillDefOf.Social;
-            else if (job == JobDefOf.PrisonerFriendlyChat)
                 skill = SkillDefOf.Social;
             else if (job == JobDefOf.DeliverFood)
                 skill = SkillDefOf.Social;
