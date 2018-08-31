@@ -10,7 +10,7 @@
   <LetterLabelTieSettled>選挙で同点、{0} に決定</LetterLabelTieSettled>
   <LetterTieSettled>リーダー選で同点になりました。候補者全員の激しい論争が終わったら、最後まで粘ったのは {0} だけでした。他の候補者は撤退したので、{0} はリーダーとなりました。</LetterTieSettled>
 	<LetterLabelElectionWon>選挙の勝利者 {0}</LetterLabelElectionWon>
-	<LetterElectionWon>{1} でのリーダー選に {0} は勝利しました。HECAPは{2}票を獲得しました。\n\n一応、HIS政綱は以下の通りでした。\n{3}\n\nこれから{0}は自分の部屋があれば入植者の訪問を受けることになります。もしHIS社交スキルが足りていれば、入植者は文句をHIMに伝えることですっきりするでしょう。奇麗な部屋で迎えられたらなおさらです。\n\nただし、{0} の精神状態に注意してください。コロニーの責任を背負うのは楽ではないし、つらい時にHEは悩みを聞いてもらえる相手がいません。</LetterElectionWon>
+	<LetterElectionWon>{1} でのリーダー選に {0} は勝利しました。HECAPは{2}票を獲得しました。\n\n一応、HIS政綱は以下の通りでした。\n{3}\n\nこれから{0}は自分の部屋があれば入植者の訪問を受けることになります。もしHIS社交スキルが足りていれば、入植者は文句をHIMに伝えることですっきりするでしょう。奇麗な部屋で迎えられたらなおさらです。\n\nただし、{0}の精神状態に注意してください。コロニーの責任を背負うのは楽ではないし、つらい時にHEは悩みを聞いてもらえる相手がいません。</LetterElectionWon>
 	<LetterLabelFuneralPlanned>お葬式の予定</LetterLabelFuneralPlanned>
 	<LetterFuneralPlanned>{0} は {1} のためのお葬式を予定しました。葬儀は {2} {3}時に行われます。</LetterFuneralPlanned>
 	<LetterLabelFuneralStarted>お葬式が始まる</LetterLabelFuneralStarted>
