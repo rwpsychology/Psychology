@@ -23,6 +23,7 @@
   <PsycheMore>較多</PsycheMore>
   <PsycheVery>非常</PsycheVery>
   <PsycheExtremely>極其</PsycheExtremely>
+  <ConversationTooltip>People will talk about {0} to discuss this with each other.</ConversationTooltip>
 	
 	<!-- Comp text -->
 	<CommandOfficeTableToggleLabel>Mayoral office</CommandOfficeTableToggleLabel>

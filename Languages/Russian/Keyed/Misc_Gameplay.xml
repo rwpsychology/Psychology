@@ -23,6 +23,7 @@
   <PsycheMore>Больше</PsycheMore>
   <PsycheVery>Очень</PsycheVery>
   <PsycheExtremely>Чрезвычайно</PsycheExtremely>
+  <ConversationTooltip>People will talk about {0} to discuss this with each other.</ConversationTooltip>
 	
 	<!-- Comp text -->
 	<CommandOfficeTableToggleLabel>Mayoral office</CommandOfficeTableToggleLabel>

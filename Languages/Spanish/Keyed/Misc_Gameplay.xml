@@ -23,6 +23,7 @@
   <PsycheMore>Más</PsycheMore>
   <PsycheVery>Mucho</PsycheVery>
   <PsycheExtremely>Extremadamente</PsycheExtremely>
+  <ConversationTooltip>People will talk about {0} to discuss this with each other.</ConversationTooltip>
 	
 	<!-- Comp text -->
 	<CommandOfficeTableToggleLabel>Mayoral office</CommandOfficeTableToggleLabel>
