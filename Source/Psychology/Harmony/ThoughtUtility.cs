@@ -61,7 +61,7 @@ namespace Psychology.Harmony
             {
                 def = ThoughtDefOfPsychology.KnowGuestExecutedBleedingHeart;
             }
-            foreach (Pawn current in from x in PawnsFinder.AllMapsCaravansAndTravelingTransportPods
+            foreach (Pawn current in from x in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive
                                      where x.IsColonist || x.IsPrisonerOfColony
                                      select x)
             {
@@ -89,7 +89,7 @@ namespace Psychology.Harmony
             {
                 thoughtDef = ThoughtDefOfPsychology.KnowGuestOrganHarvestedBleedingHeart;
             }
-            foreach (Pawn current in from x in PawnsFinder.AllMapsCaravansAndTravelingTransportPods
+            foreach (Pawn current in from x in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive
                                      where x.IsColonist || x.IsPrisonerOfColony
                                      select x)
             {
