@@ -6,10 +6,16 @@
   <LetterLabelElectionHeld>{0}의 선거가 진행 중 입니다.</LetterLabelElectionHeld>
   <LetterElectionHeld>{0}의 선거가 진행 중 입니다. 빈 모임장소에 투표소가 개설되었고, 정착민들은 이곳에서 투표를 할 것 입니다.</LetterElectionHeld>
   <LetterLabelElectionCandidate>후보: {0}</LetterLabelElectionCandidate>
-  <LetterElectionCandidate>{0}(이)가 {1}의 지도자에 선거에 출마합니다. 이들이 HIS 의 지지자 입니다:\n{2}</LetterElectionCandidate>
+  <LetterElectionCandidate>{0}(이)가 {1}의 지도자에 선거에 출마합니다. 이들이 [PAWN_possessive] 의 지지자 입니다:\n{2}</LetterElectionCandidate>
   <LetterLabelTieSettled>선거 동점은 {0}에 찬성하여 정착했다.</LetterLabelTieSettled>
-  <LetterTieSettled>시장 선거 결과는 동점이었고, 전투 왕실의 논쟁 끝에 {0}만이 논쟁을 계속할 의향이있었습니다. 다른 후보자는 철수하여 HIM 승리자로 남겼습니다.</LetterTieSettled>
+  <LetterTieSettled>시장 선거 결과는 동점이었고, 전투 왕실의 논쟁 끝에 {0}만이 논쟁을 계속할 의향이있었습니다. 다른 후보자는 철수하여 [PAWN_objective] 승리자로 남겼습니다.</LetterTieSettled>
   <LetterLabelElectionWon>{0}가 선거에서 승리하였습니다.</LetterLabelElectionWon>
-  <LetterElectionWon>{0}(이)가 {1}의 지도자 선거에서 승리하였습니다. HECAP(은)는 {2} 표를 획득하였습니다.\n\n이들이 HIS 의 지지자 였습니다:\n{3}\n\nHECAP (은)는 이제 HIS 정착민들로 부터 HIS 방에서 상담 방문을 받을 것 입니다. 상담을 받기 위해 HE (은)는 반드시 방이 필요합니다. 만약 불만이 있는 정착민이 있다면, HIM (와)과 상담 후에 기분이 나아질 겁니다. 물론 HE (은)는 충분한 대화능력과 공감능력이 있어야 합니다. 응접실이 아름다울수록 상담의 효과는 증가합니다.\n\nHIM(을)를 계속 주시하십시오. 다른 정착민들과는 다르게, HE (은)는 불만을 토로할 상대도 없고 정착지의 지도자라는 의무감의 무게에 짓눌려 있을지도 모릅니다. 정착지의 상황이 나빠질수록, 지도자에게 가해지는 부담은 커질 것 입니다.</LetterElectionWon>
+  <LetterElectionWon>{0}(이)가 {1}의 지도자 선거에서 승리하였습니다. [PAWN_pronoun](은)는 {2} 표를 획득하였습니다.\n\n이들이 [PAWN_possessive] 의 지지자 였습니다:\n{3}\n\n[PAWN_pronoun] (은)는 이제 [PAWN_possessive] 정착민들로 부터 [PAWN_possessive] 방에서 상담 방문을 받을 것 입니다. 상담을 받기 위해 [PAWN_pronoun] (은)는 반드시 방이 필요합니다. 만약 불만이 있는 정착민이 있다면, [PAWN_objective] (와)과 상담 후에 기분이 나아질 겁니다. 물론 [PAWN_pronoun] (은)는 충분한 대화능력과 공감능력이 있어야 합니다. 응접실이 아름다울수록 상담의 효과는 증가합니다.\n\n[PAWN_objective](을)를 계속 주시하십시오. 다른 정착민들과는 다르게, [PAWN_pronoun] (은)는 불만을 토로할 상대도 없고 정착지의 지도자라는 의무감의 무게에 짓눌려 있을지도 모릅니다. 정착지의 상황이 나빠질수록, 지도자에게 가해지는 부담은 커질 것 입니다.</LetterElectionWon>
+	<LetterLabelFuneralPlanned>Funeral planned for {0}</LetterLabelFuneralPlanned>
+	<LetterFuneralPlanned>{0} has planned a funeral for {1}. The service will be held on the {2}, at {3}h.</LetterFuneralPlanned>
+	<LetterLabelFuneralStarted>Funeral service being held for {0}</LetterLabelFuneralStarted>
+	<LetterFuneralStarted>{0}'s funeral is underway. Your colonists may or may not attend depending on their relationship with {0}.</LetterFuneralStarted>
+	<LetterLabelFuneralEnded>Funeral ended</LetterLabelFuneralEnded>
+	<LetterFuneralEnded>The funeral for {0} is over now.\n\nThe following people attended:\n{1}</LetterFuneralEnded>
 
 </LanguageData>

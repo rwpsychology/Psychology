@@ -2,37 +2,37 @@
 <LanguageData>
 
   <Prude.degreeDatas.0.label>mojigato</Prude.degreeDatas.0.label>
-  <Prude.degreeDatas.0.description>NAME odia la forma del cuerpo humano. HECAP será extremadamente infeliz cuando esté desnudo, más disgustado de lo habitual en la ropa raída o desgastada. Tampoco le gustará ver a otras personas desnudas.</Prude.degreeDatas.0.description>
+  <Prude.degreeDatas.0.description>NAME odia la forma del cuerpo humano. [PAWN_pronoun] será extremadamente infeliz cuando esté desnudo, más disgustado de lo habitual en la ropa raída o desgastada. Tampoco le gustará ver a otras personas desnudas.</Prude.degreeDatas.0.description>
 
   <Insomniac.degreeDatas.0.label>insomne</Insomniac.degreeDatas.0.label>
-  <Insomniac.degreeDatas.0.description>NAME tiene dificultades para dormir debido a su condición. HECAP priorizará dormir menos, despertarse antes y descansar menos de lo que duerme.</Insomniac.degreeDatas.0.description>
+  <Insomniac.degreeDatas.0.description>NAME tiene dificultades para dormir debido a su condición. [PAWN_pronoun] priorizará dormir menos, despertarse antes y descansar menos de lo que duerme.</Insomniac.degreeDatas.0.description>
 
   <BleedingHeart.degreeDatas.0.label>corazón sangrante</BleedingHeart.degreeDatas.0.label>
-  <BleedingHeart.degreeDatas.0.description>NAME tiene un gran corazón y se pone muy emocional. HECAP ama ayudar a las personas y aborrece la violencia y la injusticia. HECAP se ve más afectado, por estas cosas, que otros.</BleedingHeart.degreeDatas.0.description>
+  <BleedingHeart.degreeDatas.0.description>NAME tiene un gran corazón y se pone muy emocional. [PAWN_pronoun] ama ayudar a las personas y aborrece la violencia y la injusticia. [PAWN_pronoun] se ve más afectado, por estas cosas, que otros.</BleedingHeart.degreeDatas.0.description>
 
   <Gourmet.degreeDatas.0.label>gastrónomo</Gourmet.degreeDatas.0.label>
-  <Gourmet.degreeDatas.0.description>NAME siempre es crítico cuando se trata de comida. HECAP espera ser alimentado bien y se quejará si sus comidas no están a la altura.</Gourmet.degreeDatas.0.description>
+  <Gourmet.degreeDatas.0.description>NAME siempre es crítico cuando se trata de comida. [PAWN_pronoun] espera ser alimentado bien y se quejará si sus comidas no están a la altura.</Gourmet.degreeDatas.0.description>
 
   <Unstable.degreeDatas.0.label>inestable</Unstable.degreeDatas.0.label>
   <Unstable.degreeDatas.0.description>NAME es más propenso a los cambios de humor aleatorios, que pueden ser más severos de lo normal, para él/ella, que para los demás.</Unstable.degreeDatas.0.description>
 
   <Lecher.degreeDatas.0.label>lascivo</Lecher.degreeDatas.0.label>
-  <Lecher.degreeDatas.0.description>NAME es descaradamente lascivo y rompecorazones irreflexivo. HECAP atacará a cualquiera que él desee sin tener en cuenta las consecuencias.</Lecher.degreeDatas.0.description>
+  <Lecher.degreeDatas.0.description>NAME es descaradamente lascivo y rompecorazones irreflexivo. [PAWN_pronoun] atacará a cualquiera que él desee sin tener en cuenta las consecuencias.</Lecher.degreeDatas.0.description>
 
   <Codependent.degreeDatas.0.label>codependiente</Codependent.degreeDatas.0.label>
-  <Codependent.degreeDatas.0.description>NAME es románticamente necesitado y no será feliz a menos que esté en una relación. HECAP será devastado por la infidelidad y las rupturas.</Codependent.degreeDatas.0.description>
+  <Codependent.degreeDatas.0.description>NAME es románticamente necesitado y no será feliz a menos que esté en una relación. [PAWN_pronoun] será devastado por la infidelidad y las rupturas.</Codependent.degreeDatas.0.description>
 
   <Outdoorsy.degreeDatas.0.label>aire libre</Outdoorsy.degreeDatas.0.label>
-  <Outdoorsy.degreeDatas.0.description>NAME adora estar fuera. HECAP obtiene una bonificación de humor cuando no hay techo sobre su cabeza.</Outdoorsy.degreeDatas.0.description>
+  <Outdoorsy.degreeDatas.0.description>NAME adora estar fuera. [PAWN_pronoun] obtiene una bonificación de humor cuando no hay techo sobre su cabeza.</Outdoorsy.degreeDatas.0.description>
 
   <Pluviophile.degreeDatas.0.label>pluviofilia</Pluviophile.degreeDatas.0.label>
-  <Pluviophile.degreeDatas.0.description>A NAME le gusta la lluvia. HECAP recibe un bono de estado de ánimo cuando se deambulando afuera, especialmente si llega a salir.</Pluviophile.degreeDatas.0.description>
+  <Pluviophile.degreeDatas.0.description>A NAME le gusta la lluvia. [PAWN_pronoun] recibe un bono de estado de ánimo cuando se deambulando afuera, especialmente si llega a salir.</Pluviophile.degreeDatas.0.description>
 
   <Photosensitive.degreeDatas.0.label>fotosensible</Photosensitive.degreeDatas.0.label>
-  <Photosensitive.degreeDatas.0.description>NAME tiene ojos (ya sea a través de modificación genética o mutación aleatoria) que son extremadamente sensibles a la luz. HECAP considera que la luz brillante es extremadamente dolorosa y la iluminación interior molesta, y será más feliz en la oscuridad.</Photosensitive.degreeDatas.0.description>
+  <Photosensitive.degreeDatas.0.description>NAME tiene ojos (ya sea a través de modificación genética o mutación aleatoria) que son extremadamente sensibles a la luz. [PAWN_pronoun] considera que la luz brillante es extremadamente dolorosa y la iluminación interior molesta, y será más feliz en la oscuridad.</Photosensitive.degreeDatas.0.description>
 
   <Socialite.degreeDatas.0.label>mundano</Socialite.degreeDatas.0.label>
-  <Socialite.degreeDatas.0.description>NAME adora las fiestas. La mera presencia de HISCAP inspira más las fiestas en la colonia, porque todos disfrutan festejando con él.</Socialite.degreeDatas.0.description>
+  <Socialite.degreeDatas.0.description>NAME adora las fiestas. La mera presencia de [PAWN_possessive] inspira más las fiestas en la colonia, porque todos disfrutan festejando con él.</Socialite.degreeDatas.0.description>
 
   <Desensitized.degreeDatas.0.label>insensible</Desensitized.degreeDatas.0.label>
   <Desensitized.degreeDatas.0.description>NAME ha visto suficiente violencia y muerte que ya no lo impacta como solía hacerlo.</Desensitized.degreeDatas.0.description>
@@ -41,10 +41,10 @@
   <HeavySleeper.degreeDatas.0.description>NAME duerme como una roca. Nunca le molestan las condiciones adversas para dormir, pero le es difícil despertarse.</HeavySleeper.degreeDatas.0.description>
 
   <Polygamous.degreeDatas.0.label>poliamoroso</Polygamous.degreeDatas.0.label>
-  <Polygamous.degreeDatas.0.description>NAME no ve ningún problema con tener múltiples parejas. A HECAP no le importa si su compañero tiene romances con otras personas, pero no será feliz en una relación monógama.</Polygamous.degreeDatas.0.description>
+  <Polygamous.degreeDatas.0.description>NAME no ve ningún problema con tener múltiples parejas. A [PAWN_pronoun] no le importa si su compañero tiene romances con otras personas, pero no será feliz en una relación monógama.</Polygamous.degreeDatas.0.description>
 
   <OpenMinded.degreeDatas.0.label>mente abierta</OpenMinded.degreeDatas.0.label>
-  <OpenMinded.degreeDatas.0.description>NAME ve a las personas por lo que son en el interior, no en el exterior. HECAP no juzga a otros por sus apariciones.</OpenMinded.degreeDatas.0.description>
+  <OpenMinded.degreeDatas.0.description>NAME ve a las personas por lo que son en el interior, no en el exterior. [PAWN_pronoun] no juzga a otros por sus apariciones.</OpenMinded.degreeDatas.0.description>
 
 
 </LanguageData>

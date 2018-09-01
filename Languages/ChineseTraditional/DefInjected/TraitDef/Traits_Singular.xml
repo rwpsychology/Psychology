@@ -2,49 +2,49 @@
 <LanguageData>
 
   <Prude.degreeDatas.0.label>守禮</Prude.degreeDatas.0.label>
-  <Prude.degreeDatas.0.description>NAME討厭看到別人的裸體。 HECAP看到裸體會非常不開心，穿著破舊的衣服會更不高興，不喜歡裸體的人。</Prude.degreeDatas.0.description>
+  <Prude.degreeDatas.0.description>NAME討厭看到別人的裸體。 [PAWN_pronoun]看到裸體會非常不開心，穿著破舊的衣服會更不高興，不喜歡裸體的人。</Prude.degreeDatas.0.description>
 
   <Insomniac.degreeDatas.0.label>失眠症患者</Insomniac.degreeDatas.0.label>
-  <Insomniac.degreeDatas.0.description>NAME發現HECAP很難睡著。 HECAP將睡眠放在首位，醒得早，從睡眠獲得的休息更少。</Insomniac.degreeDatas.0.description>
+  <Insomniac.degreeDatas.0.description>NAME發現[PAWN_pronoun]很難睡著。 [PAWN_pronoun]將睡眠放在首位，醒得早，從睡眠獲得的休息更少。</Insomniac.degreeDatas.0.description>
 
   <BleedingHeart.degreeDatas.0.label>玻璃心</BleedingHeart.degreeDatas.0.label>
-  <BleedingHeart.degreeDatas.0.description>NAME很善良並且情緒波動很劇烈。HECAP喜歡幫助別人，痛恨暴力和不公正。HECAP比其他人受到這些事情的影響更大。</BleedingHeart.degreeDatas.0.description>
+  <BleedingHeart.degreeDatas.0.description>NAME很善良並且情緒波動很劇烈。[PAWN_pronoun]喜歡幫助別人，痛恨暴力和不公正。[PAWN_pronoun]比其他人受到這些事情的影響更大。</BleedingHeart.degreeDatas.0.description>
 
   <Gourmet.degreeDatas.0.label>美食家</Gourmet.degreeDatas.0.label>
-  <Gourmet.degreeDatas.0.description>NAME當談到食物時總是一個評論家。HECAP希望吃的更好，如果HIS飯菜沒有達到標准就會抱怨。</Gourmet.degreeDatas.0.description>
+  <Gourmet.degreeDatas.0.description>NAME當談到食物時總是一個評論家。[PAWN_pronoun]希望吃的更好，如果[PAWN_possessive]飯菜沒有達到標准就會抱怨。</Gourmet.degreeDatas.0.description>
 
   <Unstable.degreeDatas.0.label>善變</Unstable.degreeDatas.0.label>
   <Unstable.degreeDatas.0.description>NAME更容易出現隨機情緒波動，相對其他人，這可能比正常情況更嚴重。</Unstable.degreeDatas.0.description>
 
   <Lecher.degreeDatas.0.label>好色之徒</Lecher.degreeDatas.0.label>
-  <Lecher.degreeDatas.0.description>NAME非常好色並且是不顧他人感受的愛情殺手。HECAP不顧後果的欲望會傷害到任何與HE發展感情的人。</Lecher.degreeDatas.0.description>
+  <Lecher.degreeDatas.0.description>NAME非常好色並且是不顧他人感受的愛情殺手。[PAWN_pronoun]不顧後果的欲望會傷害到任何與[PAWN_pronoun]發展感情的人。</Lecher.degreeDatas.0.description>
 
   <Codependent.degreeDatas.0.label>相互依賴</Codependent.degreeDatas.0.label>
-  <Codependent.degreeDatas.0.description>NAME渴望愛情，沒有愛情的滋潤會很不開心。HECAP會被不忠和分手所擊潰。</Codependent.degreeDatas.0.description>
+  <Codependent.degreeDatas.0.description>NAME渴望愛情，沒有愛情的滋潤會很不開心。[PAWN_pronoun]會被不忠和分手所擊潰。</Codependent.degreeDatas.0.description>
 
   <Outdoorsy.degreeDatas.0.label>戶外愛好者</Outdoorsy.degreeDatas.0.label>
-  <Outdoorsy.degreeDatas.0.description>NAME喜歡在戶外。HECAP在HIS頭頂沒有屋頂時會得到心情獎勵。</Outdoorsy.degreeDatas.0.description>
+  <Outdoorsy.degreeDatas.0.description>NAME喜歡在戶外。[PAWN_pronoun]在[PAWN_possessive]頭頂沒有屋頂時會得到心情獎勵。</Outdoorsy.degreeDatas.0.description>
 
   <Pluviophile.degreeDatas.0.label>喜歡下雨</Pluviophile.degreeDatas.0.label>
-  <Pluviophile.degreeDatas.0.description>NAME喜歡雨水。HECAP在下雨的時候會得到心情獎勵，特別是當HE走進雨中。</Pluviophile.degreeDatas.0.description>
+  <Pluviophile.degreeDatas.0.description>NAME喜歡雨水。[PAWN_pronoun]在下雨的時候會得到心情獎勵，特別是當[PAWN_pronoun]走進雨中。</Pluviophile.degreeDatas.0.description>
 
   <Photosensitive.degreeDatas.0.label>厭光</Photosensitive.degreeDatas.0.label>
-  <Photosensitive.degreeDatas.0.description>NAME的眼睛經過基因改造或是突變，變得對光亮特別敏感。HECAP發現強光會灼傷他的眼睛，室內的燈光也很討厭，在黑暗中最棒。</Photosensitive.degreeDatas.0.description>
+  <Photosensitive.degreeDatas.0.description>NAME的眼睛經過基因改造或是突變，變得對光亮特別敏感。[PAWN_pronoun]發現強光會灼傷他的眼睛，室內的燈光也很討厭，在黑暗中最棒。</Photosensitive.degreeDatas.0.description>
 
   <Socialite.degreeDatas.0.label>社會名流</Socialite.degreeDatas.0.label>
-  <Socialite.degreeDatas.0.description>NAME喜歡舉辦聚會！HISCAP因為每個人都喜歡和HECAP一起聚會，所以在這個殖民地中，僅僅是存在就會產生更多的聚會。</Socialite.degreeDatas.0.description>
+  <Socialite.degreeDatas.0.description>NAME喜歡舉辦聚會！[PAWN_possessive]因為每個人都喜歡和[PAWN_pronoun]一起聚會，所以在這個殖民地中，僅僅是存在就會產生更多的聚會。</Socialite.degreeDatas.0.description>
 
   <Desensitized.degreeDatas.0.label>麻木</Desensitized.degreeDatas.0.label>
-  <Desensitized.degreeDatas.0.description>NAME經歷了足夠多的暴力和死亡，死亡和暴力不再像過去那樣使HECAP震驚。</Desensitized.degreeDatas.0.description>
+  <Desensitized.degreeDatas.0.description>NAME經歷了足夠多的暴力和死亡，死亡和暴力不再像過去那樣使[PAWN_pronoun]震驚。</Desensitized.degreeDatas.0.description>
 
   <HeavySleeper.degreeDatas.0.label>熟睡者</HeavySleeper.degreeDatas.0.label>
   <HeavySleeper.degreeDatas.0.description>NAME睡得像塊石頭，從不因睡眠不好而煩惱，但卻很難醒來。</HeavySleeper.degreeDatas.0.description>
 
   <Polygamous.degreeDatas.0.label>多重戀者</Polygamous.degreeDatas.0.label>
-  <Polygamous.degreeDatas.0.description>NAME不認為有很多戀人有什麼奇怪的。HECAP不介意HIS伴侶出軌，但如果沒有情人會不高興。</Polygamous.degreeDatas.0.description>
+  <Polygamous.degreeDatas.0.description>NAME不認為有很多戀人有什麼奇怪的。[PAWN_pronoun]不介意[PAWN_possessive]伴侶出軌，但如果沒有情人會不高興。</Polygamous.degreeDatas.0.description>
 
   <OpenMinded.degreeDatas.0.label>沒有偏見的</OpenMinded.degreeDatas.0.label>
-  <OpenMinded.degreeDatas.0.description>NAME看人是從其內在出發而不是外在。HECAP不會以貌取人。</OpenMinded.degreeDatas.0.description>
+  <OpenMinded.degreeDatas.0.description>NAME看人是從其內在出發而不是外在。[PAWN_pronoun]不會以貌取人。</OpenMinded.degreeDatas.0.description>
 
 
 </LanguageData>

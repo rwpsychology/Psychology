@@ -6,5 +6,8 @@
 
   <VisitLabel>정착민 방문</VisitLabel>
   <VisitDesc>정착민이 방문한다는건 이런 기분이군.</VisitDesc>
+  
+	<AttendedFuneralThought>attended the funeral of {0}</AttendedFuneralThought>
+	<AttendedFuneralDesc>I still can't believe [PAWN_pronoun]'s dead, but... I'm more at peace with it after the funeral.</AttendedFuneralDesc>
 
 </LanguageData>

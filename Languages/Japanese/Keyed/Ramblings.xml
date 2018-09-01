@@ -34,8 +34,8 @@
 	<ParanoidRambling32>奴らは狂気を醸し出す！共食いをさせる！</ParanoidRambling32>
 	<ParanoidRambling33>私たちを家畜みたいに閉じ込めようとしている！</ParanoidRambling33>
 	
-	<FellMurmuring1>HISCAPせいで…</FellMurmuring1>
-	<FellMurmuring2>全部HISのせいなんだ…</FellMurmuring2>
+	<FellMurmuring1>[PAWN_possessive]せいで…</FellMurmuring1>
+	<FellMurmuring2>全部[PAWN_possessive]のせいなんだ…</FellMurmuring2>
 	<FellMurmuring3>もう許せない…</FellMurmuring3>
 	<FellMurmuring4>自分が賢いとでも思っているか？</FellMurmuring4>
 	<FellMurmuring5>思い知らせてやる…</FellMurmuring5>
@@ -68,6 +68,6 @@
 	<FellMurmuring32>できる… 絶対にできるんだから…</FellMurmuring32>
 	<FellMurmuring33>今にも私を笑っているでしょう…</FellMurmuring33>
 	<FellMurmuring34>ざまあみろ…</FellMurmuring34>
-	<FellMurmuring35>いつかHECAPに殺される…</FellMurmuring35>
+	<FellMurmuring35>いつか[PAWN_pronoun]に殺される…</FellMurmuring35>
 	<FellMurmuring36>ずっと前にやるべきだった…</FellMurmuring36>
 </LanguageData>

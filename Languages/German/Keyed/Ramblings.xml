@@ -34,15 +34,15 @@
 	<ParanoidRambling32>Sie machen uns verrückt! Sie machen uns zu Kannibalen!</ParanoidRambling32>
 	<ParanoidRambling33>Sie wollen uns so eingesperrt sehen wie Tiere!</ParanoidRambling33>
 	
-	<FellMurmuring1>HISCAP schuld...</FellMurmuring1>
-	<FellMurmuring2>Es ist alles HIS schuld...</FellMurmuring2>
-	<FellMurmuring3>Ich kann HIM damit nicht davonkommen lassen...</FellMurmuring3>
-	<FellMurmuring4>HECAP denkt HE sei schlau, oder nicht? </FellMurmuring4>
-	<FellMurmuring5>Ich werde es HIM zeigen...</FellMurmuring5>
+	<FellMurmuring1>[PAWN_possessive] schuld...</FellMurmuring1>
+	<FellMurmuring2>Es ist alles [PAWN_possessive] schuld...</FellMurmuring2>
+	<FellMurmuring3>Ich kann [PAWN_objective] damit nicht davonkommen lassen...</FellMurmuring3>
+	<FellMurmuring4>[PAWN_pronoun] denkt [PAWN_pronoun] sei schlau, oder nicht? </FellMurmuring4>
+	<FellMurmuring5>Ich werde es [PAWN_objective] zeigen...</FellMurmuring5>
 	<FellMurmuring6>Verräter... Saboteure... Verschwörer...</FellMurmuring6>
-	<FellMurmuring7>HECAP verspottet mich...</FellMurmuring7>
-	<FellMurmuring8>Wie kann HE es wagen...</FellMurmuring8>
-	<FellMurmuring9>HECAP denkt, ich würde es nicht bemerken?</FellMurmuring9>
+	<FellMurmuring7>[PAWN_pronoun] verspottet mich...</FellMurmuring7>
+	<FellMurmuring8>Wie kann [PAWN_pronoun] es wagen...</FellMurmuring8>
+	<FellMurmuring9>[PAWN_pronoun] denkt, ich würde es nicht bemerken?</FellMurmuring9>
 	<FellMurmuring10>Ich muss es alleine machen... man kann keinem vertrauen.</FellMurmuring10>
 	<FellMurmuring11>Für das Gute von uns allen...</FellMurmuring11>
 	<FellMurmuring12>Ich werde das Problem alleine lösen...</FellMurmuring12>
@@ -58,7 +58,7 @@
 	<FellMurmuring22>Lügner!</FellMurmuring22>
 	<FellMurmuring23>Hinter meinem Rücken... immer hinter meinem Rücken...</FellMurmuring23>
 	<FellMurmuring24>Die Quelle all unserer Probleme...</FellMurmuring24>
-	<FellMurmuring25>HECAP wird es niemals kommen sehen...</FellMurmuring25>
+	<FellMurmuring25>[PAWN_pronoun] wird es niemals kommen sehen...</FellMurmuring25>
 	<FellMurmuring26>Ich werde alles einplanen...</FellMurmuring26>
 	<FellMurmuring27>Ich werde an alles denken...</FellMurmuring27>
 	<FellMurmuring28>Ich werde warten bis die Zeit reif ist...</FellMurmuring28>
@@ -66,8 +66,8 @@
 	<FellMurmuring30>Wenn es niemand anderes machen will, dann werde ich es tun!</FellMurmuring30>
 	<FellMurmuring31>Niemand von denen sieht es... die sind alle so blind...</FellMurmuring31>
 	<FellMurmuring32>Ich kann es schaffen... ich werde es schaffen!</FellMurmuring32>
-	<FellMurmuring33>Sogar jetzt lacht HE über mich...</FellMurmuring33>
-	<FellMurmuring34>Geschieht HIM recht...</FellMurmuring34>
-	<FellMurmuring35>HECAP wird der Tod für mich...</FellMurmuring35>
+	<FellMurmuring33>Sogar jetzt lacht [PAWN_pronoun] über mich...</FellMurmuring33>
+	<FellMurmuring34>Geschieht [PAWN_objective] recht...</FellMurmuring34>
+	<FellMurmuring35>[PAWN_pronoun] wird der Tod für mich...</FellMurmuring35>
 	<FellMurmuring36>Ich sollte es schon vor langer Zeit gemacht haben...</FellMurmuring36>
 </LanguageData>

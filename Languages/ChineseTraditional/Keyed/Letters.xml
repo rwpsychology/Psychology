@@ -6,11 +6,11 @@
   <LetterLabelElectionHeld>選舉在{0}舉行</LetterLabelElectionHeld>
   <LetterElectionHeld>在{0}的選舉現在開始。殖民地從可用的聚集地點選擇了一個投票點，殖民者會去那裡投票。</LetterElectionHeld>
   <LetterLabelElectionCandidate>候選者:{0}</LetterLabelElectionCandidate>
-  <LetterElectionCandidate>{0}正為了成為{1}的鎮長而參選。這是HIS宣講台:\n{2}</LetterElectionCandidate>
+  <LetterElectionCandidate>{0}正為了成為{1}的鎮長而參選。這是[PAWN_possessive]宣講台:\n{2}</LetterElectionCandidate>
   <LetterLabelTieSettled>選票看起來對{0}有利</LetterLabelTieSettled>
-  <LetterTieSettled>鎮長選舉產生了平局，在一場皇家辯論賽後{0}是唯一願意繼續辯論的人。其他的候選人都退出了，留下HE作為勝利者。</LetterTieSettled>
+  <LetterTieSettled>鎮長選舉產生了平局，在一場皇家辯論賽後{0}是唯一願意繼續辯論的人。其他的候選人都退出了，留下[PAWN_pronoun]作為勝利者。</LetterTieSettled>
   <LetterLabelElectionWon>{0}贏得大選</LetterLabelElectionWon>
-  <LetterElectionWon>{0}贏得{1}的鎮長大選。HECAP贏得{2}票。\n\n提醒HIS宣講台:\n{3}\n\nHECAP如果有獨立的房間HE會在HIS房間接待HIS選民。如果他們抱怨，他們會找到鎮長談話，如果鎮長很會談話並且能理解他們，他們會好受一點。如果有一個漂亮的會客室也不是壞事。\n\n留意HIM; HE沒有地方訴苦，而承受整個殖民地的負擔是很難的，特別是事情進展不順利的時候。</LetterElectionWon>
+  <LetterElectionWon>{0}贏得{1}的鎮長大選。[PAWN_pronoun]贏得{2}票。\n\n提醒[PAWN_possessive]宣講台:\n{3}\n\n[PAWN_pronoun]如果有獨立的房間[PAWN_pronoun]會在[PAWN_possessive]房間接待[PAWN_possessive]選民。如果他們抱怨，他們會找到鎮長談話，如果鎮長很會談話並且能理解他們，他們會好受一點。如果有一個漂亮的會客室也不是壞事。\n\n留意[PAWN_objective]; [PAWN_pronoun]沒有地方訴苦，而承受整個殖民地的負擔是很難的，特別是事情進展不順利的時候。</LetterElectionWon>
   <LetterLabelFuneralPlanned>為{0}的葬禮計劃</LetterLabelFuneralPlanned>
   <LetterFuneralPlanned>{0}為了{1}計劃了一場葬禮。這場葬禮將在{2}舉行，在{3}點。</LetterFuneralPlanned>
   <LetterLabelFuneralStarted>為{0}的葬禮儀式</LetterLabelFuneralStarted>

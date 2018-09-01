@@ -34,15 +34,15 @@
 	<ParanoidRambling32>¡Nos vuelven locos! ¡Nos hacen comernos los unos a los otros!</ParanoidRambling32>
 	<ParanoidRambling33>¡Quieren mantenernos encerrados aquí, como animales!</ParanoidRambling33>
 	
-	<FellMurmuring1>HISCAP falló...</FellMurmuring1>
+	<FellMurmuring1>[PAWN_possessive] falló...</FellMurmuring1>
 	<FellMurmuring2>Todo esto es su culpa...</FellMurmuring2>
-	<FellMurmuring3>No puedo dejar que HIM se salga con la suya...</FellMurmuring3>
-	<FellMurmuring4>HECAP piensa que él es inteligente, ¿no?</FellMurmuring4>
+	<FellMurmuring3>No puedo dejar que [PAWN_objective] se salga con la suya...</FellMurmuring3>
+	<FellMurmuring4>[PAWN_pronoun] piensa que él es inteligente, ¿no?</FellMurmuring4>
 	<FellMurmuring5>Le mostraré...</FellMurmuring5>
 	<FellMurmuring6>Traidores... Saboteadores... Conspiradores...</FellMurmuring6>
-	<FellMurmuring7>HECAP se burla de mí...</FellMurmuring7>
+	<FellMurmuring7>[PAWN_pronoun] se burla de mí...</FellMurmuring7>
 	<FellMurmuring8>Como se atreve...</FellMurmuring8>
-	<FellMurmuring9>¿HECAP piensa que no me doy cuenta?</FellMurmuring9>
+	<FellMurmuring9>¿[PAWN_pronoun] piensa que no me doy cuenta?</FellMurmuring9>
 	<FellMurmuring10>Debo hacer esto yo solo... Nadie puede ser confiable.</FellMurmuring10>
 	<FellMurmuring11>Por el bien de todos nosotros...</FellMurmuring11>
 	<FellMurmuring12>Resolveré este problema yo mismo...</FellMurmuring12>
@@ -58,7 +58,7 @@
 	<FellMurmuring22>¡Mentiroso!</FellMurmuring22>
 	<FellMurmuring23>¡Detrás de mi espalda... siempre detrás de mi espalda...</FellMurmuring23>
 	<FellMurmuring24>La fuente de todos nuestros problemas...</FellMurmuring24>
-	<FellMurmuring25>HECAP nunca lo verá venir...</FellMurmuring25>
+	<FellMurmuring25>[PAWN_pronoun] nunca lo verá venir...</FellMurmuring25>
 	<FellMurmuring26>Lo planearé todo...</FellMurmuring26>
 	<FellMurmuring27>Pensaré en todo...</FellMurmuring27>
 	<FellMurmuring28>Voy a esperar hasta que llegue el momento...</FellMurmuring28>
@@ -68,7 +68,7 @@
 	<FellMurmuring32>Puedo hacer esto... Debo hacer esto...</FellMurmuring32>
 	<FellMurmuring33>Incluso ahora, el se ríe de mí...</FellMurmuring33>
 	<FellMurmuring34>Le sirve apropiadamente....</FellMurmuring34>
-	<FellMurmuring35>HECAP será mi muerte...</FellMurmuring35>
+	<FellMurmuring35>[PAWN_pronoun] será mi muerte...</FellMurmuring35>
 	<FellMurmuring36>Debería haber hecho esto hace mucho tiempo...</FellMurmuring36>
 	
 </LanguageData>

@@ -8,6 +8,6 @@
   <VisitDesc>選民來談話讓我有這種感覺。</VisitDesc>
 
   <AttendedFuneralThought>參加{0}的葬禮</AttendedFuneralThought>
-  <AttendedFuneralDesc>我還是不能相信HE死了，但是…葬禮結束後，我更平靜了。</AttendedFuneralDesc>
+  <AttendedFuneralDesc>我還是不能相信[PAWN_pronoun]死了，但是…葬禮結束後，我更平靜了。</AttendedFuneralDesc>
 
 </LanguageData>

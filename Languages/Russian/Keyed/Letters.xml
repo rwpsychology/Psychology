@@ -6,11 +6,11 @@
   <LetterLabelElectionHeld>Выборы в стадии реализации в {0}</LetterLabelElectionHeld>
   <LetterElectionHeld>Выборы в {0} сейчас идут полным ходом. Колония выбрала избирательный участок из доступных мест сбора, и колонисты идут туда, чтобы голосовать.</LetterElectionHeld>
   <LetterLabelElectionCandidate>Кандидат: {0}</LetterLabelElectionCandidate>
-  <LetterElectionCandidate>{0} - кандидат на пост мэра {1}. Это HIS Платформа:\n{2}</LetterElectionCandidate>
+  <LetterElectionCandidate>{0} - кандидат на пост мэра {1}. Это [PAWN_possessive] Платформа:\n{2}</LetterElectionCandidate>
   <LetterLabelTieSettled>Выборы прошли в пользу {0}</LetterLabelTieSettled>
-  <LetterTieSettled>Выборы мэра завершились в ничью, и после битвы в битве в споре, {0} был единственным, кто согласился продолжить спорить об этом. Другие кандидаты отошли, оставив HIM победителем.</LetterTieSettled>
+  <LetterTieSettled>Выборы мэра завершились в ничью, и после битвы в битве в споре, {0} был единственным, кто согласился продолжить спорить об этом. Другие кандидаты отошли, оставив [PAWN_objective] победителем.</LetterTieSettled>
   <LetterLabelElectionWon>На выборах победил {0}</LetterLabelElectionWon>
-  <LetterElectionWon>{0} победил на выборах мэра в {1}. HECAP получил {2} голосов.\n\nAНапомним, что это была HIS платформа:\n{3}\n\nHECAP теперь будет принимать гостей с HIS избирателями в {} HIS комнате, если HE имеет таковую. Если у них есть жалобы, то они будут чувствовать себя лучше после разговора с HIM, если HE является хорошо общается с людьми и понимает их чувства. Наличие красивой комнаты для встреч не помешает.\n\nПристально следите за HIM; HE не имеет никого, для жалоб и нести бремя целой колонии может быть трудно, особенно если дела идут плохо.</LetterElectionWon>
+  <LetterElectionWon>{0} победил на выборах мэра в {1}. [PAWN_pronoun] получил {2} голосов.\n\nAНапомним, что это была [PAWN_possessive] платформа:\n{3}\n\n[PAWN_pronoun] теперь будет принимать гостей с [PAWN_possessive] избирателями в {} [PAWN_possessive] комнате, если [PAWN_pronoun] имеет таковую. Если у них есть жалобы, то они будут чувствовать себя лучше после разговора с [PAWN_objective], если [PAWN_pronoun] является хорошо общается с людьми и понимает их чувства. Наличие красивой комнаты для встреч не помешает.\n\nПристально следите за [PAWN_objective]; [PAWN_pronoun] не имеет никого, для жалоб и нести бремя целой колонии может быть трудно, особенно если дела идут плохо.</LetterElectionWon>
   <LetterLabelFuneralPlanned>Похороны, запланированы для {0}</LetterLabelFuneralPlanned>
   <LetterFuneralPlanned>{0} запланировал похороны для {1}. Служба будет проводиться на {2}, в {3}ч.</LetterFuneralPlanned>
   <LetterLabelFuneralStarted>Похоронная служба проводится для {0}</LetterLabelFuneralStarted>

@@ -6,5 +6,8 @@
 
   <VisitLabel>Von einem Wähler besucht</VisitLabel>
   <VisitDesc>Dank dem Besuch von einem Wähler fühle ich mich so.</VisitDesc>
+	
+	<AttendedFuneralThought>Nahm an der Beerdigung von {0}</AttendedFuneralThought>
+	<AttendedFuneralDesc>Ich kann immer noch nicht glauben, dass [PAWN_pronoun] tot ist, aber ... nach der Beerdigung habe ich mehr Frieden damit.</AttendedFuneralDesc>
 
 </LanguageData>

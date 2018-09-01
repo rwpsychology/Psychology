@@ -2,13 +2,13 @@
 <LanguageData>
 
   <FellPlotting.label>邪恶密谋</FellPlotting.label>
-  <FellPlotting.beginLetter>{0}正藏到HIS房间去筹划阴谋！</FellPlotting.beginLetter>
+  <FellPlotting.beginLetter>{0}正藏到[PAWN_possessive]房间去筹划阴谋！</FellPlotting.beginLetter>
   <FellPlotting.beginLetterLabel>邪恶密谋</FellPlotting.beginLetterLabel>
   <FellPlotting.recoveryMessage>{0}的邪恶密谋已经结束。</FellPlotting.recoveryMessage>
   <FellPlotting.baseInspectLine>精神状态: 邪恶密谋</FellPlotting.baseInspectLine>
 
   <SelfHarm.label>自残中</SelfHarm.label>
-  <SelfHarm.beginLetter>{0}藏到HIS房间里并割开了HIS手腕。</SelfHarm.beginLetter>
+  <SelfHarm.beginLetter>{0}藏到[PAWN_possessive]房间里并割开了[PAWN_possessive]手腕。</SelfHarm.beginLetter>
   <SelfHarm.beginLetterLabel>自残</SelfHarm.beginLetterLabel>
   <SelfHarm.recoveryMessage>{0}停止了自残。</SelfHarm.recoveryMessage>
   <SelfHarm.baseInspectLine>精神状态: 自残中</SelfHarm.baseInspectLine>
@@ -16,7 +16,7 @@
   <Paranoia.label>胡言乱语</Paranoia.label>
   <Paranoia.beginLetter>{0}已经被妄想症所控制，开始胡言乱语。</Paranoia.beginLetter>
   <Paranoia.beginLetterLabel>妄想症</Paranoia.beginLetterLabel>
-  <Paranoia.recoveryMessage>{0}克服了HIS妄想症。</Paranoia.recoveryMessage>
+  <Paranoia.recoveryMessage>{0}克服了[PAWN_possessive]妄想症。</Paranoia.recoveryMessage>
   <Paranoia.baseInspectLine>精神状态:妄想症</Paranoia.baseInspectLine>
 
 
@@ -29,30 +29,30 @@
   <Abuse.baseInspectLine>精神状态:骂街</Abuse.baseInspectLine>
 
   <Compulsion.label>洁癖发作</Compulsion.label>
-  <Compulsion.beginLetter>{0}正着魔似的清洁HIS周围的一切，并不顾及HIS自己的需求。</Compulsion.beginLetter>
+  <Compulsion.beginLetter>{0}正着魔似的清洁[PAWN_possessive]周围的一切，并不顾及[PAWN_possessive]自己的需求。</Compulsion.beginLetter>
   <Compulsion.beginLetterLabel>强迫症</Compulsion.beginLetterLabel>
-  <Compulsion.recoveryMessage>{0}已经停止清洁HIS周围的一切。</Compulsion.recoveryMessage>
+  <Compulsion.recoveryMessage>{0}已经停止清洁[PAWN_possessive]周围的一切。</Compulsion.recoveryMessage>
   <Compulsion.baseInspectLine>精神状态:洁癖发作</Compulsion.baseInspectLine>
 
 
   <!-- minor mental breaks -->
 
   <Antisocial.label>回避他人</Antisocial.label>
-  <Antisocial.beginLetter>{0}正回避HIS殖民者同伴。</Antisocial.beginLetter>
+  <Antisocial.beginLetter>{0}正回避[PAWN_possessive]殖民者同伴。</Antisocial.beginLetter>
   <Antisocial.beginLetterLabel>不想交际</Antisocial.beginLetterLabel>
   <Antisocial.recoveryMessage>{0}不再不想交际。</Antisocial.recoveryMessage>
   <Antisocial.baseInspectLine>精神状态:不想交际</Antisocial.baseInspectLine>
 
   <Apathy.label>缺乏热情</Apathy.label>
-  <Apathy.beginLetter>{0}变得冷漠并不喜欢做HIS分配的工作。</Apathy.beginLetter>
+  <Apathy.beginLetter>{0}变得冷漠并不喜欢做[PAWN_possessive]分配的工作。</Apathy.beginLetter>
   <Apathy.beginLetterLabel>冷漠</Apathy.beginLetterLabel>
   <Apathy.recoveryMessage>{0}不再变得冷漠。</Apathy.recoveryMessage>
   <Apathy.baseInspectLine>精神状态:冷漠</Apathy.baseInspectLine>
 
   <Histrionic.label>举止夸张的表演</Histrionic.label>
-  <Histrionic.beginLetter>{0}开始了HIS夸张的表演并拼命地博取关注。</Histrionic.beginLetter>
+  <Histrionic.beginLetter>{0}开始了[PAWN_possessive]夸张的表演并拼命地博取关注。</Histrionic.beginLetter>
   <Histrionic.beginLetterLabel>做表演</Histrionic.beginLetterLabel>
-  <Histrionic.recoveryMessage>{0}停止了HIS表演。</Histrionic.recoveryMessage>
+  <Histrionic.recoveryMessage>{0}停止了[PAWN_possessive]表演。</Histrionic.recoveryMessage>
   <Histrionic.baseInspectLine>精神状态:做表演</Histrionic.baseInspectLine>
 
 

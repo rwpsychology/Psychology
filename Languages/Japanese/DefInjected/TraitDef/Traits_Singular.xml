@@ -11,13 +11,13 @@
 	<BleedingHeart.degreeDatas.0.description>心の優しいNAMEは感傷的になりがちです。人助けをするのが大好きで、暴力と不公正なことを嫌ります。これらの出来事には他の人より影響されやすいです。</BleedingHeart.degreeDatas.0.description>
 	
 	<Gourmet.degreeDatas.0.label>グルメ</Gourmet.degreeDatas.0.label>
-	<Gourmet.degreeDatas.0.description>NAMEは鼻持ちならない食通です。 HECAPは期待にそぐわぬ食事に対して文句を言います。</Gourmet.degreeDatas.0.description>
+	<Gourmet.degreeDatas.0.description>NAMEは鼻持ちならない食通です。 [PAWN_pronoun]は期待にそぐわぬ食事に対して文句を言います。</Gourmet.degreeDatas.0.description>
 	
 	<Unstable.degreeDatas.0.label>情緒不安定</Unstable.degreeDatas.0.label>
 	<Unstable.degreeDatas.0.description>NAMEは他の人に比べるとの気分変調が頻繁的で激しいです。</Unstable.degreeDatas.0.description>
 	
 	<Lecher.degreeDatas.0.label>スケベ</Lecher.degreeDatas.0.label>
-	<Lecher.degreeDatas.0.description>NAMEは恥を知らないスケベで人の心をもてあそびます。誰かに劣情を催したらHEは遠慮なく口説いてみます。</Lecher.degreeDatas.0.description>
+	<Lecher.degreeDatas.0.description>NAMEは恥を知らないスケベで人の心をもてあそびます。誰かに劣情を催したら[PAWN_pronoun]は遠慮なく口説いてみます。</Lecher.degreeDatas.0.description>
 	
 	<Codependent.degreeDatas.0.label>共依存</Codependent.degreeDatas.0.label>
 	<Codependent.degreeDatas.0.description>NAMEは恋愛欲が強くて親密な関係を結ぶまで不安を感じます。不倫や破局も大打撃になります。</Codependent.degreeDatas.0.description>
@@ -29,10 +29,10 @@
 	<Pluviophile.degreeDatas.0.description>NAMEは雨が好きです。雨が降っている時、特に雨を浴びている時は気分にボーナスを得ます。</Pluviophile.degreeDatas.0.description>
 	
 	<Photosensitive.degreeDatas.0.label>感光性</Photosensitive.degreeDatas.0.label>
-	<Photosensitive.degreeDatas.0.description>遺伝子変異か工学の結果か、NAMEの目は光に非常に敏感です。HECAPは強い日光が非常に痛く、室内照明でさえ厄介です。暗闇の中にいるのが一番幸せです。</Photosensitive.degreeDatas.0.description>
+	<Photosensitive.degreeDatas.0.description>遺伝子変異か工学の結果か、NAMEの目は光に非常に敏感です。[PAWN_pronoun]は強い日光が非常に痛く、室内照明でさえ厄介です。暗闇の中にいるのが一番幸せです。</Photosensitive.degreeDatas.0.description>
 	
 	<Socialite.degreeDatas.0.label>パーティー好き</Socialite.degreeDatas.0.label>
-	<Socialite.degreeDatas.0.description>NAMEはパーティーが最高！HECAPはコロニーにいるだけでパーティーの回数が増えます。なにせ、HEがいるとパーティーは盛り上がります。</Socialite.degreeDatas.0.description>
+	<Socialite.degreeDatas.0.description>NAMEはパーティーが最高！[PAWN_pronoun]はコロニーにいるだけでパーティーの回数が増えます。なにせ、[PAWN_pronoun]がいるとパーティーは盛り上がります。</Socialite.degreeDatas.0.description>
 	
 	<Desensitized.degreeDatas.0.label>暴力に鈍感</Desensitized.degreeDatas.0.label>
 	<Desensitized.degreeDatas.0.description>NAMEは凄まじい暴力や死を目にしすぎて、かつてのように動揺されません。</Desensitized.degreeDatas.0.description>

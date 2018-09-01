@@ -2,13 +2,13 @@
 <LanguageData>
 
   <FellPlotting.label>Безумная интрига</FellPlotting.label>
-  <FellPlotting.beginLetter>{0} уходит в HIS комнату для планирования!</FellPlotting.beginLetter>
+  <FellPlotting.beginLetter>{0} уходит в [PAWN_possessive] комнату для планирования!</FellPlotting.beginLetter>
   <FellPlotting.beginLetterLabel>Жестокий заговор</FellPlotting.beginLetterLabel>
   <FellPlotting.recoveryMessage>{0} жестокая интрига завершилась.</FellPlotting.recoveryMessage>
   <FellPlotting.baseInspectLine>Психическое состояние: жестокая интрига</FellPlotting.baseInspectLine>
 
   <SelfHarm.label>Причинение боли самому себе</SelfHarm.label>
-  <SelfHarm.beginLetter>{0} имеет порез HIS запястья и прячется в своей комнате.</SelfHarm.beginLetter>
+  <SelfHarm.beginLetter>{0} имеет порез [PAWN_possessive] запястья и прячется в своей комнате.</SelfHarm.beginLetter>
   <SelfHarm.beginLetterLabel>Причинять себе вред</SelfHarm.beginLetterLabel>
   <SelfHarm.recoveryMessage>{0} прекратил(а) самобичевание.</SelfHarm.recoveryMessage>
   <SelfHarm.baseInspectLine>Психическое состояние: самобичевание</SelfHarm.baseInspectLine>
@@ -16,7 +16,7 @@
   <Paranoia.label>Болтовня</Paranoia.label>
   <Paranoia.beginLetter>{0} поглощен параноидальным лепетом.</Paranoia.beginLetter>
   <Paranoia.beginLetterLabel>Паранойя</Paranoia.beginLetterLabel>
-  <Paranoia.recoveryMessage>{0} преодолел HIS паранойю.</Paranoia.recoveryMessage>
+  <Paranoia.recoveryMessage>{0} преодолел [PAWN_possessive] паранойю.</Paranoia.recoveryMessage>
   <Paranoia.baseInspectLine>Психическое состояние: Паранойя</Paranoia.baseInspectLine>
 
 
@@ -29,9 +29,9 @@
   <Abuse.baseInspectLine>Психическое состояние: Оскорбляющий</Abuse.baseInspectLine>
 
   <Compulsion.label>Принуждение</Compulsion.label>
-  <Compulsion.beginLetter>{0} навязчиво очищает HIS окружение, не обращая внимания на HIS собственное самочувствие.</Compulsion.beginLetter>
+  <Compulsion.beginLetter>{0} навязчиво очищает [PAWN_possessive] окружение, не обращая внимания на [PAWN_possessive] собственное самочувствие.</Compulsion.beginLetter>
   <Compulsion.beginLetterLabel>Принуждение</Compulsion.beginLetterLabel>
-  <Compulsion.recoveryMessage>{0} прекратил компульсивное упорядочение HIS окружения.</Compulsion.recoveryMessage>
+  <Compulsion.recoveryMessage>{0} прекратил компульсивное упорядочение [PAWN_possessive] окружения.</Compulsion.recoveryMessage>
   <Compulsion.baseInspectLine>Психическое состояние: импульсивная очистка</Compulsion.baseInspectLine>
 
 
@@ -44,7 +44,7 @@
   <Antisocial.baseInspectLine>Психическое состояние: Антисоциальное</Antisocial.baseInspectLine>
 
   <Apathy.label>Ослабление</Apathy.label>
-  <Apathy.beginLetter>{0} стал апатичным и с меньшей вероятностью HIS выполнит работу.</Apathy.beginLetter>
+  <Apathy.beginLetter>{0} стал апатичным и с меньшей вероятностью [PAWN_possessive] выполнит работу.</Apathy.beginLetter>
   <Apathy.beginLetterLabel>Апатия</Apathy.beginLetterLabel>
   <Apathy.recoveryMessage>{0} перестает быть апатичным.</Apathy.recoveryMessage>
   <Apathy.baseInspectLine>Психическое состояние: Апатия</Apathy.baseInspectLine>

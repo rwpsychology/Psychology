@@ -6,10 +6,16 @@
 	<LetterLabelElectionHeld>Élection en cours à {0}</LetterLabelElectionHeld>
 	<LetterElectionHeld>L'élection à {0} est maintenant en cours. La colonie a choisi un lieu de scrutin parmi les points de rassemblement disponibles, et les colons s'y rendent pour voter.</LetterElectionHeld>
 	<LetterLabelElectionCandidate>Candidat : {0}</LetterLabelElectionCandidate>
-	<LetterElectionCandidate>{0} est candidat au poste de maire de {1}. Voici HIS objectifs :\n{2}</LetterElectionCandidate>
+	<LetterElectionCandidate>{0} est candidat au poste de maire de {1}. Voici [PAWN_possessive] objectifs :\n{2}</LetterElectionCandidate>
 	<LetterLabelTieSettled>Lien d'élection réglé en faveur de {0}</LetterLabelTieSettled>
-	<LetterTieSettled>Les élections de la mairie ont entraîné une égalité, et après un match de batailles de bataille royale, {0} était le seul à continuer de discuter à ce sujet. Les autres candidats se sont retirés, laissant HIM le vainqueur.</LetterTieSettled>
+	<LetterTieSettled>Les élections de la mairie ont entraîné une égalité, et après un match de batailles de bataille royale, {0} était le seul à continuer de discuter à ce sujet. Les autres candidats se sont retirés, laissant [PAWN_objective] le vainqueur.</LetterTieSettled>
 	<LetterLabelElectionWon>Élection gagnée par {0}</LetterLabelElectionWon>
-	<LetterElectionWon>{0} a remporté l'élection du maire à {1}. HECAP a reçu {2} votes.\n\nPour rappel, C'était HIS objectifs:\n{3}\n\nHECAP recevra maintenant des visites de HIS électeurs dans HIS chambre si HE en a une. Si ils ont des plaintes, ils se sentiront probablement mieux après avoir parlé avec HIM si HE sait bien parler aux gens et comprendre leurs sentiments. Avoir une belle salle pour les rencontrer ne sera pas mal non plus.\n\nSurveillez le maire de près; HE n'a personne à qui se plaindre et porter les fardeaux d'une colonie entière peut être difficile, surtout si les choses vont mal.</LetterElectionWon>
+	<LetterElectionWon>{0} a remporté l'élection du maire à {1}. [PAWN_pronoun] a reçu {2} votes.\n\nPour rappel, C'était [PAWN_possessive] objectifs:\n{3}\n\n[PAWN_pronoun] recevra maintenant des visites de [PAWN_possessive] électeurs dans [PAWN_possessive] chambre si [PAWN_pronoun] en a une. Si ils ont des plaintes, ils se sentiront probablement mieux après avoir parlé avec [PAWN_objective] si [PAWN_pronoun] sait bien parler aux gens et comprendre leurs sentiments. Avoir une belle salle pour les rencontrer ne sera pas mal non plus.\n\nSurveillez le maire de près; [PAWN_pronoun] n'a personne à qui se plaindre et porter les fardeaux d'une colonie entière peut être difficile, surtout si les choses vont mal.</LetterElectionWon>
+	<LetterLabelFuneralPlanned>Funeral planned for {0}</LetterLabelFuneralPlanned>
+	<LetterFuneralPlanned>{0} has planned a funeral for {1}. The service will be held on the {2}, at {3}h.</LetterFuneralPlanned>
+	<LetterLabelFuneralStarted>Funeral service being held for {0}</LetterLabelFuneralStarted>
+	<LetterFuneralStarted>{0}'s funeral is underway. Your colonists may or may not attend depending on their relationship with {0}.</LetterFuneralStarted>
+	<LetterLabelFuneralEnded>Funeral ended</LetterLabelFuneralEnded>
+	<LetterFuneralEnded>The funeral for {0} is over now.\n\nThe following people attended:\n{1}</LetterFuneralEnded>
 	
 </LanguageData>

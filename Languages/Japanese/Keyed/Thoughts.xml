@@ -8,6 +8,6 @@
 	<VisitDesc>有権者の訪問を受けたことで、こんな気分になった。</VisitDesc>
 	
 	<AttendedFuneralThought>{0} のお葬式に出席した</AttendedFuneralThought>
-	<AttendedFuneralDesc>HEが死ぬなんて、まだ信じられない… でも、お葬式が終わってから、少し落ち着いてきた。</AttendedFuneralDesc>
+	<AttendedFuneralDesc>[PAWN_pronoun]が死ぬなんて、まだ信じられない… でも、お葬式が終わってから、少し落ち着いてきた。</AttendedFuneralDesc>
 
 </LanguageData>
