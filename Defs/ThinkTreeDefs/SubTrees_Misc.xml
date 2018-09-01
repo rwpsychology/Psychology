@@ -124,6 +124,19 @@
 				    </li>
 			    </subNodes>
 		    </li>
+			<li Class="ThinkNode_ConditionalMentalState">
+			    <state>HuntingTrip</state>
+			    <subNodes>
+				    <li Class="ThinkNode_Priority">
+					    <subNodes>
+							<li Class="Psychology.JobGiver_GoHunting"/>
+							<li Class="JobGiver_WanderMapEdge">
+								<maxDanger>Some</maxDanger>
+							</li>
+						</subNodes>
+				    </li>
+			    </subNodes>
+		    </li>
       </subNodes>
 	</thinkRoot>
   </ThinkTreeDef>

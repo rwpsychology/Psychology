@@ -5,6 +5,7 @@ using System.Text;
 using RimWorld;
 using Verse;
 using Verse.AI;
+using Harmony;
 
 namespace Psychology
 {
@@ -21,7 +22,37 @@ namespace Psychology
                 Thing closestFilth = pawn.Map.listerFilthInHomeArea.FilthInHomeArea.RandomElement();
                 if (closestFilth != null && pawn.CanReserveAndReach(closestFilth, PathEndMode.Touch, Danger.Some))
                 {
-                    return new Job(JobDefOf.Clean, closestFilth);
+
+                    Job job = new Job(JobDefOf.Clean);
+                    job.AddQueuedTarget(TargetIndex.A, closestFilth);
+                    int num = 15;
+                    Map map = closestFilth.Map;
+                    Room room = closestFilth.GetRoom(RegionType.Set_Passable);
+                    for (int i = 0; i < 100; i++)
+                    {
+                        IntVec3 intVec = closestFilth.Position + GenRadial.RadialPattern[i];
+                        if (intVec.InBounds(map) && intVec.GetRoom(map, RegionType.Set_Passable) == room)
+                        {
+                            List<Thing> thingList = intVec.GetThingList(map);
+                            for (int j = 0; j < thingList.Count; j++)
+                            {
+                                Thing thing = thingList[j];
+                                if (thing != closestFilth && IsValidFilth(pawn, thing))
+                                {
+                                    job.AddQueuedTarget(TargetIndex.A, thing);
+                                }
+                            }
+                            if (job.GetTargetQueue(TargetIndex.A).Count >= num)
+                            {
+                                break;
+                            }
+                        }
+                    }
+                    if (job.targetQueueA != null && job.targetQueueA.Count >= 5)
+                    {
+                        job.targetQueueA.SortBy((LocalTargetInfo targ) => targ.Cell.DistanceToSquared(pawn.Position));
+                    }
+                    return job;
                 }
             }
             if (!pawn.story.WorkTagIsDisabled(WorkTags.Hauling) && pawn.Map.listerHaulables.ThingsPotentiallyNeedingHauling().Count > 0)
@@ -33,6 +64,25 @@ namespace Psychology
                 }
             }
             return null;
+        }
+
+        protected static bool IsValidFilth(Pawn pawn, Thing t)
+        {
+            if (pawn.Faction != Faction.OfPlayer)
+            {
+                return false;
+            }
+            Filth filth = t as Filth;
+            if (filth == null)
+            {
+                return false;
+            }
+            if (!filth.Map.areaManager.Home[filth.Position])
+            {
+                return false;
+            }
+            LocalTargetInfo target = t;
+            return pawn.CanReserve(target, 1, -1, null, true) && filth.TicksSinceThickened >= 600;
         }
     }
 }

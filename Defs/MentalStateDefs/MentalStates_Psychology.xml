@@ -144,7 +144,7 @@
     <blockNormalThoughts>true</blockNormalThoughts>
     <nameColor>(0.9,0.2,0.5)</nameColor>
     <beginLetterLabel>fell plotting</beginLetterLabel>
-    <beginLetter>{0} is retiring to HIS room to scheme!</beginLetter>
+    <beginLetter>{0} is retiring to [PAWN_possessive] room to scheme!</beginLetter>
     <beginLetterDef>NegativeEvent</beginLetterDef>
     <minTicksBeforeRecovery>20000</minTicksBeforeRecovery>
     <maxTicksBeforeRecovery>60000</maxTicksBeforeRecovery>
@@ -181,7 +181,7 @@
     <blockNormalThoughts>true</blockNormalThoughts>
     <nameColor>(0.65, 0.9, 0.93)</nameColor>
     <beginLetterLabel>self-harm</beginLetterLabel>
-    <beginLetter>{0} has slit HIS wrists and is hiding in HIS room.</beginLetter>
+    <beginLetter>{0} has slit [PAWN_possessive] wrists and is hiding in [PAWN_possessive] room.</beginLetter>
     <beginLetterDef>NegativeEvent</beginLetterDef>
     <maxTicksBeforeRecovery>60000</maxTicksBeforeRecovery>
     <recoveryMessage>{0} has stopped self-harming.</recoveryMessage>
@@ -219,7 +219,7 @@
     <beginLetterDef>NegativeEvent</beginLetterDef>
     <minTicksBeforeRecovery>20000</minTicksBeforeRecovery>
     <maxTicksBeforeRecovery>60000</maxTicksBeforeRecovery>
-    <recoveryMessage>{0} has overcome HIS paranoia.</recoveryMessage>
+    <recoveryMessage>{0} has overcome [PAWN_possessive] paranoia.</recoveryMessage>
     <baseInspectLine>Mental state: Paranoia</baseInspectLine>
     <stateEffecter>Berserk</stateEffecter>
     <tale>MentalStateParanoia</tale>
@@ -331,9 +331,9 @@
     <blockNormalThoughts>true</blockNormalThoughts>
     <nameColor>(0.65, 0.9, 0.93)</nameColor>
     <beginLetterLabel>compulsion</beginLetterLabel>
-    <beginLetter>{0} is obsessively cleaning HIS surroundings with little regard for HIS own wellbeing.</beginLetter>
+    <beginLetter>{0} is obsessively cleaning [PAWN_possessive] surroundings with little regard for [PAWN_possessive] own wellbeing.</beginLetter>
     <beginLetterDef>NegativeEvent</beginLetterDef>
-    <recoveryMessage>{0} has stopped compulsively tidying HIS surroundings.</recoveryMessage>
+    <recoveryMessage>{0} has stopped compulsively tidying [PAWN_possessive] surroundings.</recoveryMessage>
     <baseInspectLine>Mental state: Compulsively cleaning</baseInspectLine>
     <tale>MentalStateCompulsion</tale>
     <recoverFromSleep>true</recoverFromSleep>
@@ -362,7 +362,7 @@
     <blockNormalThoughts>true</blockNormalThoughts>
     <nameColor>(0.65, 0.9, 0.93)</nameColor>
     <beginLetterLabel>antisocial</beginLetterLabel>
-    <beginLetter>{0} is avoiding HIS fellow colonists.</beginLetter>
+    <beginLetter>{0} is avoiding [PAWN_possessive] fellow colonists.</beginLetter>
     <beginLetterDef>NegativeEvent</beginLetterDef>
     <recoveryMessage>{0} has stopped being antisocial.</recoveryMessage>
     <baseInspectLine>Mental state: Antisocial</baseInspectLine>
@@ -389,7 +389,7 @@
     <blockNormalThoughts>true</blockNormalThoughts>
     <nameColor>(0.65, 0.9, 0.93)</nameColor>
     <beginLetterLabel>apathy</beginLetterLabel>
-    <beginLetter>{0} has become apathetic and is less likely to do HIS assigned work.</beginLetter>
+    <beginLetter>{0} has become apathetic and is less likely to do [PAWN_possessive] assigned work.</beginLetter>
     <beginLetterDef>NegativeEvent</beginLetterDef>
     <recoveryMessage>{0} has stopped being apathetic.</recoveryMessage>
     <baseInspectLine>Mental state: Apathy</baseInspectLine>
@@ -439,6 +439,51 @@
     <recoveryMessage>{0} has stopped being histrionic.</recoveryMessage>
     <baseInspectLine>Mental state: Histrionic</baseInspectLine>
     <tale>MentalStateHistrionic</tale>
+    <recoverFromSleep>false</recoverFromSleep>
+    <unspawnedCanDo>false</unspawnedCanDo>
+    <allowBeatfire>true</allowBeatfire>
+    <moodRecoveryThought>Catharsis</moodRecoveryThought>
+  </MentalStateDef>
+ 
+  <MentalBreakDef>
+    <defName>HuntingTrip</defName>
+    <mentalState>HuntingTrip</mentalState>
+    <baseCommonality>1.0</baseCommonality>
+    <intensity>Minor</intensity>
+  </MentalBreakDef>
+  
+  <MentalBreakDef>
+    <defName>HuntingTrip_Outdoorsy</defName>
+    <mentalState>HuntingTrip</mentalState>
+    <baseCommonality>0.8</baseCommonality>
+    <intensity>Minor</intensity>
+	<requiredTrait>Outdoorsy</requiredTrait>
+  </MentalBreakDef>
+  
+  <MentalBreakDef>
+    <defName>HuntingTrip_ShootingAccuracy</defName>
+    <mentalState>HuntingTrip</mentalState>
+    <baseCommonality>0.3</baseCommonality>
+    <intensity>Minor</intensity>
+	<requiredTrait>ShootingAccuracy</requiredTrait>
+  </MentalBreakDef>
+  
+  <MentalStateDef ParentName="BaseMentalState">
+    <minTicksBeforeRecovery>14000</minTicksBeforeRecovery>
+    <defName>HuntingTrip</defName>
+	<colonistsOnly>true</colonistsOnly>
+    <stateClass>Psychology.MentalState_HuntingTrip</stateClass>
+    <workerClass>Psychology.MentalStateWorker_HuntingTrip</workerClass>
+    <label>nature retreat</label>
+    <category>Misc</category>
+    <blockNormalThoughts>true</blockNormalThoughts>
+    <nameColor>(0.65, 0.9, 0.93)</nameColor>
+    <beginLetterLabel>nature retreat</beginLetterLabel>
+    <beginLetter>{0} has escaped to nature, finding relief in hunting.</beginLetter>
+    <beginLetterDef>NegativeEvent</beginLetterDef>
+    <recoveryMessage>{0} has returned from their hunting trip.</recoveryMessage>
+    <baseInspectLine>Mental state: Nature retreat</baseInspectLine>
+    <tale>MentalStateHuntingTrip</tale>
     <recoverFromSleep>false</recoverFromSleep>
     <unspawnedCanDo>false</unspawnedCanDo>
     <allowBeatfire>true</allowBeatfire>

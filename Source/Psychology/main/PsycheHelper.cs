@@ -6,7 +6,7 @@ using Verse;
 
 namespace Psychology
 {
-    static class PsycheHelper
+    public static class PsycheHelper
     {
         public static bool PsychologyEnabled(Pawn pawn)
         {

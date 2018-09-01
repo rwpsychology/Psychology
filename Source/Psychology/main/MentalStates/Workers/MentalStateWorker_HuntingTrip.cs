@@ -8,13 +8,11 @@ using Verse.AI;
 
 namespace Psychology
 {
-    public class MentalStateWorker_Abuse : MentalStateWorker
+    public class MentalStateWorker_HuntingTrip : MentalStateWorker
     {
         public override bool StateCanOccur(Pawn pawn)
         {
-            if (pawn.Map == null)
-                return false;
-            return base.StateCanOccur(pawn) && (pawn.Map.mapPawns.FreeColonistsSpawnedCount) > 1;
+            return pawn.Map != null && !pawn.story.WorkTagIsDisabled(WorkTags.Violent) && pawn.workSettings.WorkIsActive(WorkTypeDefOf.Hunting);
         }
     }
 }
