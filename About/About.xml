@@ -10,7 +10,7 @@
 "This is the absolute best mod for Rimworld. It adds innumerable layers of depth other mods could never hope to achieve. Well done."
 "I can't play rimworld without this beautiful mod!"
 "This is truly a masterpiece of a mod and I hope the developers see that and include it in the core game :)"
-"After trying out Psychology in A16, I can't go back from it."
+"This mod is so fundamental to the way I have come to play Rimworld that I will not start a single B19 game without it."
 "This is the mod in my opinion that TRUELY makes Rimworld one of the best games on Steam."
 "This mod really enriches the gameplay of Rimworld. I am much less likely to play without it."
 "This is the first comment I've made in ages for any mod I absolutely love this mod and can't believe you did it solo."
@@ -47,9 +47,7 @@ Mental breaks have been rebalanced and tweaked, and new ones have been added. So
 I do not accept any form of financial support. If you want to support this mod, then please subscribe to it, rate it, and tell everyone about it. If you absolutely must spend money on something, then gift Rimworld to someone who hasn't yet experienced it to support Tynan and the incredible work that he does. This mod would not be possible without the great game he created, and the strenuous effort he has put into supporting mod creators.
 	
 &lt;b&gt;Compatibility&lt;/b&gt;
-Thanks to HugsLib and Harmony, this mod should be compatible with practically everything. However, some features may be automatically disabled if you are using a mod which adds them in a different way. Romance Diversified is one example, which is almost entirely redundant when combined with Psychology. If you wish to use features from other mods instead, then it will not negatively impact your game, however you are encouraged to give all of Psychology's features a chance before disabling them.
-
-Not currently compatible with Zombie Apocalypse or Children and Pregnancy.
+Thanks to HugsLib and Harmony, this mod should be compatible with practically everything. You can disable many features from the mod's options if you don't want to play with them, and also adjust your play experience. Mods which make changes to the code but do not use Harmony are quite likely to be incompatible with Psychology.
 	
 &lt;b&gt;Credits&lt;/b&gt;
 ({x}) Disarray: Idea for passionate work mood bonus.
