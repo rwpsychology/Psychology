@@ -75,4 +75,9 @@
 		<assemblyVersion>18.3.14</assemblyVersion>
 		<content>Issues with mayoral tables should now be fixed. Multiple tables may be "activated" as mayoral offices, but only the last one you activate will be used (this may be reset upon loading a save). The error thrown upon deconstructing/reinstalling tables is also fixed.</content>
 	</HugsLib.UpdateFeatureDef>
+	
+	<HugsLib.UpdateFeatureDef ParentName="UpdateFeatureBase">
+		<assemblyVersion>18.9.1</assemblyVersion>
+		<content>Welcome to B19! | The internal workings of Psychology have been changed, so that anything that should receive a Psyche tab ought to now have one automatically. No more save file editing. Remember you can turn on dev mode to edit a pawn's psyche and sexuality from the Psyche tab, if the one that's generated for them isn't to your liking. | Two new traits have been added: Sedentary and Chatty. The likelihood of Psychology traits appearing has also been upped to bring them more in line with vanilla trait probabilities. | If you were ever curious which conversation topics corresponded to which parts of a person's personality, they are now listed in the Psyche tab. | The way that prisoner recruiting works is pretty dumb, huh? It'd be neat if someone were to make it more realistic and involved. Stay tuned.</content>
+	</HugsLib.UpdateFeatureDef>
 </Defs>
