@@ -14,14 +14,14 @@ namespace Psychology.Harmony.Optional
     public static class PresetLoaderPatch
     {
         [HarmonyPostfix]
-        public static void AddPsyche(ref EdB.PrepareCarefully.CustomPawn __result, EdB.PrepareCarefully.SaveRecordPawnV3 record)
+        public static void AddPsyche(ref EdB.PrepareCarefully.CustomPawn __result, EdB.PrepareCarefully.SaveRecordPawnV4 record)
         {
-            if(SaveRecordPawnV3Patch.savedPawns.Keys.Contains(record))
+            if(SaveRecordPawnV4Patch.savedPawns.Keys.Contains(record))
             {
                 Pawn pawn = __result.Pawn;
                 if (pawn != null && PsycheHelper.PsychologyEnabled(pawn))
                 {
-                    PrepareCarefully.SaveRecordPsycheV3 psycheSave = SaveRecordPawnV3Patch.savedPawns[record];
+                    PrepareCarefully.SaveRecordPsycheV4 psycheSave = SaveRecordPawnV4Patch.savedPawns[record];
                     PsycheHelper.Comp(pawn).Psyche.upbringing = psycheSave.upbringing;
                     foreach (PersonalityNode node in PsycheHelper.Comp(pawn).Psyche.PersonalityNodes)
                     {

@@ -10,7 +10,7 @@ namespace Psychology
     {
         public static bool PsychologyEnabled(Pawn pawn)
         {
-            return pawn.GetComp<CompPsychology>() != null && pawn.GetComp<CompPsychology>().isPsychologyPawn;
+            return pawn != null && pawn.GetComp<CompPsychology>() != null && pawn.GetComp<CompPsychology>().isPsychologyPawn;
         }
 
         public static CompPsychology Comp(Pawn pawn)

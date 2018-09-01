@@ -19,7 +19,8 @@ namespace Psychology.Harmony.Optional
             CodeInstruction last = null;
             foreach(CodeInstruction itr in instrs)
             {
-                if (last != null && itr.opcode == OpCodes.Newobj && itr.operand == AccessTools.Constructor(typeof(EdB.PrepareCarefully.SaveRecordPawnV3), new Type[] { typeof(EdB.PrepareCarefully.CustomPawn) }))
+                /* Steal the CustomPawn to add its psyche to the dictionary, then load it again. */
+                if (last != null && itr.opcode == OpCodes.Newobj && itr.operand == AccessTools.Constructor(typeof(EdB.PrepareCarefully.SaveRecordPawnV4), new Type[] { typeof(EdB.PrepareCarefully.CustomPawn) }))
                 {
                     yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PresetSaverPatch), "AddPsycheToDictionary", new Type[] { typeof(EdB.PrepareCarefully.CustomPawn) }));
                     yield return last;

@@ -8,7 +8,7 @@ using Verse;
 
 namespace Psychology.PrepareCarefully
 {
-    public class SaveRecordPsycheV3 : IExposable
+    public class SaveRecordPsycheV4 : IExposable
     {
         public List<PersonalityNode> nodes = new List<PersonalityNode>();
         public int upbringing;
@@ -16,11 +16,11 @@ namespace Psychology.PrepareCarefully
         public float romanticDrive = 1f;
         public int kinseyRating = 0;
 
-        public SaveRecordPsycheV3()
+        public SaveRecordPsycheV4()
         {
         }
 
-        public SaveRecordPsycheV3(Pawn pawn)
+        public SaveRecordPsycheV4(Pawn pawn)
         {
             if(PsycheHelper.PsychologyEnabled(pawn))
             {
@@ -46,15 +46,15 @@ namespace Psychology.PrepareCarefully
             {
                 if (Scribe.mode == LoadSaveMode.Saving || Scribe.loader.curXmlParent["sexDrive"] != null)
                 {
-                    Scribe_Values.Look(ref sexDrive, "sexDrive");
+                    Scribe_Values.Look(ref sexDrive, "sexDrive", 1f);
                 }
                 if (Scribe.mode == LoadSaveMode.Saving || Scribe.loader.curXmlParent["romanticDrive"] != null)
                 {
-                    Scribe_Values.Look(ref romanticDrive, "romanticDrive");
+                    Scribe_Values.Look(ref romanticDrive, "romanticDrive", 1f);
                 }
                 if (Scribe.mode == LoadSaveMode.Saving || Scribe.loader.curXmlParent["kinseyRating"] != null)
                 {
-                    Scribe_Values.Look(ref kinseyRating, "kinseyRating");
+                    Scribe_Values.Look(ref kinseyRating, "kinseyRating", 0);
                 }
             }
         }

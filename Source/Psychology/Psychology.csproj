@@ -72,7 +72,7 @@
     <Compile Include="Harmony\Optional\PanelBackstory.cs" />
     <Compile Include="Harmony\Optional\PresetLoader.cs" />
     <Compile Include="Harmony\Optional\PresetSaver.cs" />
-    <Compile Include="Harmony\Optional\SaveRecordPawnV3.cs" />
+    <Compile Include="Harmony\Optional\SaveRecordPawnV4.cs" />
     <Compile Include="Harmony\CharacterCardUtility.cs" />
     <Compile Include="Harmony\Thing.cs" />
     <Compile Include="Harmony\ThoughtWorker_ChemicalInterestVsTeetotaler.cs" />
@@ -115,7 +115,7 @@
     <Compile Include="Main\Funerals\LordToil_Funeral.cs" />
     <Compile Include="Main\Medical\Treatments\Recipe_TreatInsomnia.cs" />
     <Compile Include="Main\Medical\Treatments\Recipe_CureAnxiety.cs" />
-    <Compile Include="Main\PrepareCarefully\SaveRecordPsycheV3.cs" />
+    <Compile Include="Main\PrepareCarefully\SaveRecordPsycheV4.cs" />
     <Compile Include="Main\Recruiting\LordJob_WardenTour.cs" />
     <Compile Include="Main\Recruiting\LordToil_WardenTour.cs" />
     <Compile Include="Main\Recruiting\Pawn_TourMemories.cs" />
