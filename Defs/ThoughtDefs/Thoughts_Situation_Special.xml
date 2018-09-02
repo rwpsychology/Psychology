@@ -31,18 +31,6 @@
   </ThoughtDef>
   
   <ThoughtDef>
-    <defName>WorkingPassion</defName>
-    <workerClass>Psychology.ThoughtWorker_WorkingPassion</workerClass>
-    <stages>
-      <li>
-        <label>working passionately</label>
-        <description>I'm doing something I love!</description>
-        <baseMoodEffect>2</baseMoodEffect>
-      </li>
-    </stages>
-  </ThoughtDef>
-  
-  <ThoughtDef>
     <defName>PanicAttack</defName>
     <workerClass>Psychology.ThoughtWorker_PanicAttack</workerClass>
     <stages>

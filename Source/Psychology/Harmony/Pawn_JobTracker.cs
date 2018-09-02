@@ -9,7 +9,7 @@ using Harmony;
 
 namespace Psychology.Harmony
 {
-    [HarmonyPatch(typeof(Pawn_JobTracker), "EndCurrentJob")]
+    [HarmonyPatch(typeof(Pawn_JobTracker), nameof(Pawn_JobTracker.EndCurrentJob))]
     public static class Pawn_JobTracker_EndCurrentJobPatch
     {
         [HarmonyPrefix]

@@ -17,5 +17,8 @@
   <LetterFuneralStarted>{0}的葬禮正在進行中。與{0}的關系會影響到你的殖民者出席與否。</LetterFuneralStarted>
   <LetterLabelFuneralEnded>葬禮結束</LetterLabelFuneralEnded>
   <LetterFuneralEnded>為{0}舉行的葬禮結束了。\n\n以下人員參加:\n{1}</LetterFuneralEnded>
+	
+	<!-- Replaced vanilla letters -->
+	<LetterRejectedProposalPsychology>Depending on their personality, their mood and relationship will be affected.</LetterRejectedProposalPsychology>
 
 </LanguageData>

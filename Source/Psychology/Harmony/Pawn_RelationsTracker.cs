@@ -10,7 +10,7 @@ using Harmony;
 
 namespace Psychology.Harmony
 {
-    [HarmonyPatch(typeof(Pawn_RelationsTracker), "Notify_RescuedBy")]
+    [HarmonyPatch(typeof(Pawn_RelationsTracker), nameof(Pawn_RelationsTracker.Notify_RescuedBy))]
     public static class Notify_RescuedBy_BleedingHeartPatch
     {
         [HarmonyPostfix]
@@ -23,7 +23,7 @@ namespace Psychology.Harmony
         }
     }
         
-    [HarmonyPatch(typeof(Pawn_RelationsTracker), "SecondaryLovinChanceFactor")]
+    [HarmonyPatch(typeof(Pawn_RelationsTracker), nameof(Pawn_RelationsTracker.SecondaryLovinChanceFactor))]
     public static class Pawn_RelationsTracker_LovinChancePatch
     {
         [HarmonyPostfix]

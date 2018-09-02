@@ -18,4 +18,6 @@
   <LetterLabelFuneralEnded>Похороны закончились</LetterLabelFuneralEnded>
   <LetterFuneralEnded>Похороны для {0} завершены.\n\nСледующие лица присутствовали:\n{1}</LetterFuneralEnded>
 
+	<!-- Replaced vanilla letters -->
+	<LetterRejectedProposalPsychology>Depending on their personality, their mood and relationship will be affected.</LetterRejectedProposalPsychology>
 </LanguageData>

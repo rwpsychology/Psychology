@@ -10,7 +10,7 @@ using System.Reflection;
 
 namespace Psychology.Harmony
 {
-    [HarmonyPatch(typeof(TraitSet), "GainTrait")]
+    [HarmonyPatch(typeof(TraitSet), nameof(TraitSet.GainTrait))]
     public static class TraitSet_GainTraitPatch
     {
         [HarmonyPrefix]

@@ -8,7 +8,7 @@ using Harmony;
 
 namespace Psychology.Harmony
 {
-    [HarmonyPatch(typeof(JobGiver_GetRest), "GetPriority")]
+    [HarmonyPatch(typeof(JobGiver_GetRest), nameof(JobGiver_GetRest.GetPriority))]
     public static class JobGiver_GetRest_PriorityPatch
     {
         [HarmonyPostfix]

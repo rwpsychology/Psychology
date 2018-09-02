@@ -8,7 +8,7 @@ using Harmony;
 
 namespace Psychology.Harmony
 {
-    [HarmonyPatch(typeof(Recipe_Surgery),"CheckSurgeryFail")]
+    [HarmonyPatch(typeof(Recipe_Surgery), "CheckSurgeryFail")]
     public static class Recipe_Surgery_FailPatch
     {
         [HarmonyPostfix]

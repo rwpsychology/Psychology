@@ -9,7 +9,7 @@ using Harmony;
 
 namespace Psychology.Harmony
 {
-    [HarmonyPatch(typeof(MentalStateWorker_BingingDrug), "StateCanOccur", new Type[] { typeof(Pawn) })]
+    [HarmonyPatch(typeof(MentalStateWorker_BingingDrug), nameof(MentalStateWorker_BingingDrug.StateCanOccur), new Type[] { typeof(Pawn) })]
     public static class MentalStateWorker_BingingDrugPatch
     {
         [HarmonyPostfix]

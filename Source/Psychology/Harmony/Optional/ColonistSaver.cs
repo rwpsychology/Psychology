@@ -22,7 +22,7 @@ namespace Psychology.Harmony.Optional
                 /* Steal the CustomPawn to add its psyche to the dictionary, then load it again. */
                 if (last != null && itr.opcode == OpCodes.Newobj && itr.operand == AccessTools.Constructor(typeof(EdB.PrepareCarefully.SaveRecordPawnV4), new Type[] { typeof(EdB.PrepareCarefully.CustomPawn) }))
                 {
-                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PresetSaverPatch), "AddPsycheToDictionary", new Type[] { typeof(EdB.PrepareCarefully.CustomPawn) }));
+                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PresetSaverPatch), nameof(PresetSaverPatch.AddPsycheToDictionary), new Type[] { typeof(EdB.PrepareCarefully.CustomPawn) }));
                     yield return last;
                 }
                 yield return itr;

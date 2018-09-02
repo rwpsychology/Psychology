@@ -1,6 +1,7 @@
 ﻿ using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Text;
 using RimWorld;
 using Verse;
@@ -11,52 +12,35 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(PawnObserver), "ObserveSurroundingThings")]
     public static class PawnObserver_ObserveSurroundingPatch
     {
-        //Transpiler?
-        [HarmonyPostfix]
-        public static void DesensitizeViaCorpse(PawnObserver __instance)
+        [HarmonyTranspiler]
+        public static IEnumerable<CodeInstruction> DesensitizeViaCorpse(IEnumerable<CodeInstruction> instrs)
         {
-            Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            if (!pawn.health.capacities.CapableOf(PawnCapacityDefOf.Sight))
+            foreach(CodeInstruction itr in instrs)
             {
-                return;
-            }
-            RoomGroup roomGroup = pawn.GetRoomGroup();
-            Map map = pawn.Map;
-            int num = 0;
-            while ((float)num < 100f)
-            {
-                IntVec3 intVec = pawn.Position + GenRadial.RadialPattern[num];
-                if (intVec.InBounds(map))
+                yield return itr;
+                if(itr.opcode == OpCodes.Callvirt && itr.operand == AccessTools.Method(typeof(IThoughtGiver), nameof(IThoughtGiver.GiveObservedThought), new Type[] { }))
                 {
-                    if (intVec.GetRoomGroup(map) == roomGroup)
+                    yield return new CodeInstruction(OpCodes.Ldarg_0);
+                    yield return new CodeInstruction(OpCodes.Ldfld, AccessTools.Field(typeof(PawnObserver), "pawn"));
+                    yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PawnObserver_ObserveSurroundingPatch), nameof(PawnObserver_ObserveSurroundingPatch.AddDesensitizedChance), new Type[] { typeof(Thought_Memory), typeof(Pawn) }));
+                }
+            }
+        }
+
+        public static Thought_Memory AddDesensitizedChance(Thought_Memory thought_Memory, Pawn pawn)
+        {
+            if (thought_Memory != null && thought_Memory.def == ThoughtDefOf.ObservedLayingCorpse)
+            {
+                if (!pawn.story.traits.HasTrait(TraitDefOfPsychology.BleedingHeart) && !pawn.story.traits.HasTrait(TraitDefOf.Psychopath) && !pawn.story.traits.HasTrait(TraitDefOf.Bloodlust) && !pawn.story.traits.HasTrait(TraitDefOfPsychology.Desensitized))
+                {
+                    if (((pawn.GetHashCode() ^ (GenLocalDate.DayOfYear(pawn) + GenLocalDate.Year(pawn) + (int)(GenLocalDate.DayPercent(pawn) * 5) * 60) * 391) % 1000) == 0)
                     {
-                        if (GenSight.LineOfSight(intVec, pawn.Position, map, true, null, 0, 0))
-                        {
-                            List<Thing> thingList = intVec.GetThingList(map);
-                            for (int i = 0; i < thingList.Count; i++)
-                            {
-                                IThoughtGiver thoughtGiver = thingList[i] as IThoughtGiver;
-                                if (thoughtGiver != null)
-                                {
-                                    Thought_Memory thought_Memory = thoughtGiver.GiveObservedThought();
-                                    if (thought_Memory != null && thought_Memory.def == ThoughtDefOf.ObservedLayingCorpse)
-                                    {
-                                        if (!pawn.story.traits.HasTrait(TraitDefOfPsychology.BleedingHeart) && !pawn.story.traits.HasTrait(TraitDefOf.Psychopath) && !pawn.story.traits.HasTrait(TraitDefOf.Bloodlust) && !pawn.story.traits.HasTrait(TraitDefOfPsychology.Desensitized))
-                                        {
-                                            if (((pawn.GetHashCode() ^ (GenLocalDate.DayOfYear(pawn) + GenLocalDate.Year(pawn) + (int)(GenLocalDate.DayPercent(pawn) * 5) * 60) * 391) % 1000) == 0)
-                                            {
-                                                pawn.story.traits.GainTrait(new Trait(TraitDefOfPsychology.Desensitized));
-                                                pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.RecentlyDesensitized, null);
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        pawn.story.traits.GainTrait(new Trait(TraitDefOfPsychology.Desensitized));
+                        pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.RecentlyDesensitized);
                     }
                 }
-                num++;
             }
+            return thought_Memory;
         }
     }
 }

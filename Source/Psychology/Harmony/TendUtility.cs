@@ -9,7 +9,7 @@ using Harmony;
 
 namespace Psychology.Harmony
 {
-    [HarmonyPatch(typeof(TendUtility), "DoTend")]
+    [HarmonyPatch(typeof(TendUtility), nameof(TendUtility.DoTend))]
     public static class TendUtility_TendPatch
     {
         [HarmonyPostfix]

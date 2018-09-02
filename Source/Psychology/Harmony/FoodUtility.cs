@@ -8,7 +8,7 @@ using Harmony;
 
 namespace Psychology.Harmony
 {
-    [HarmonyPatch(typeof(FoodUtility), "ThoughtsFromIngesting")]
+    [HarmonyPatch(typeof(FoodUtility), nameof(FoodUtility.ThoughtsFromIngesting))]
     public static class FoodUtility_AddPickyThoughts_Patch
     {
         [HarmonyPostfix]

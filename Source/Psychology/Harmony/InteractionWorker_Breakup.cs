@@ -9,7 +9,7 @@ using System.Reflection;
 
 namespace Psychology.Harmony
 {
-	[HarmonyPatch(typeof(InteractionWorker_Breakup), "Interacted")]
+	[HarmonyPatch(typeof(InteractionWorker_Breakup), nameof(InteractionWorker_Breakup.Interacted))]
 	public static class InteractionWorker_Breakup_Interacted_Patch
 	{
 		[HarmonyPrefix]
@@ -79,7 +79,7 @@ namespace Psychology.Harmony
 		}
 	}
 
-	[HarmonyPatch(typeof(InteractionWorker_Breakup), "RandomSelectionWeight", new[] { typeof(Pawn), typeof(Pawn) })]
+	[HarmonyPatch(typeof(InteractionWorker_Breakup), nameof(InteractionWorker_Breakup.RandomSelectionWeight), new[] { typeof(Pawn), typeof(Pawn) })]
 	public static class InteractionWorker_RandomSelectionWeight_Patch
 	{
 		[HarmonyPrefix]

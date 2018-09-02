@@ -8,7 +8,7 @@ using Harmony;
 
 namespace Psychology.Harmony
 {
-	[HarmonyPatch(typeof(InteractionWorker_DeepTalk), "RandomSelectionWeight")]
+	[HarmonyPatch(typeof(InteractionWorker_DeepTalk), nameof(InteractionWorker_DeepTalk.RandomSelectionWeight))]
 	public static class InteractionWorker_DeepTalk_SelectionWeightPatch
 	{
 		[HarmonyPrefix]

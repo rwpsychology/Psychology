@@ -8,7 +8,7 @@ using Harmony;
 
 namespace Psychology.Harmony
 {
-    [HarmonyPatch(typeof(RecordsUtility), "Notify_BillDone")]
+    [HarmonyPatch(typeof(RecordsUtility), nameof(RecordsUtility.Notify_BillDone))]
     public static class RecordsUtility_BillDonePatch
     {
         [HarmonyPostfix]

@@ -17,5 +17,8 @@
 	<LetterFuneralStarted>{0}のお葬式が進行中です。入植者は {0} との関係次第で出席します。</LetterFuneralStarted>
 	<LetterLabelFuneralEnded>お葬式が終わった</LetterLabelFuneralEnded>
 	<LetterFuneralEnded>{0}のお葬式が終わりました。\n\n以下の人は出席しました。\n{1}</LetterFuneralEnded>
+	
+	<!-- Replaced vanilla letters -->
+	<LetterRejectedProposalPsychology>Depending on their personality, their mood and relationship will be affected.</LetterRejectedProposalPsychology>
 
 </LanguageData>

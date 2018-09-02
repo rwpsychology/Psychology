@@ -6,7 +6,7 @@ using Harmony;
 
 namespace Psychology.Harmony
 {
-    [HarmonyPatch(typeof(Recipe_InstallImplant), "ApplyOnPawn")]
+    [HarmonyPatch(typeof(Recipe_InstallImplant), nameof(Recipe_InstallImplant.ApplyOnPawn))]
     public static class Recipe_InstallImplant_ApplyPatch
     {
         [HarmonyPrefix]

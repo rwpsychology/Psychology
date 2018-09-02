@@ -68,7 +68,6 @@
     <Compile Include="Defs\PersonalityNodeDefOf.cs" />
     <Compile Include="Defs\PsychologyTexCommand.cs" />
     <Compile Include="Harmony\Dialog_FormCaravan.cs" />
-    <Compile Include="Harmony\HediffComp_TendDuration.cs" />
     <Compile Include="Harmony\InteractionUtility.cs" />
     <Compile Include="Harmony\InteractionWorker_DeepTalk.cs" />
     <Compile Include="Harmony\NegativeInteractionUtility.cs" />
@@ -220,7 +219,6 @@
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Pluviophile.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Outdoorsy.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Codependency.cs" />
-    <Compile Include="Main\ThoughtWorkers\ThoughtWorker_WorkingPassion.cs" />
     <Compile Include="Defs\ThoughtDefOfPsychology.cs" />
     <Compile Include="Harmony\ThoughtUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

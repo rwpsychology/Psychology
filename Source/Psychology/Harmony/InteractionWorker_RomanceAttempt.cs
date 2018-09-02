@@ -69,7 +69,7 @@ namespace Psychology.Harmony
         }
     }
 
-    [HarmonyPatch(typeof(InteractionWorker_RomanceAttempt), "RandomSelectionWeight")]
+    [HarmonyPatch(typeof(InteractionWorker_RomanceAttempt), nameof(InteractionWorker_RomanceAttempt.RandomSelectionWeight))]
     public static class InteractionWorker_RomanceAttempt_SelectionWeightPatch
     {
         [HarmonyPriority(Priority.Last)]
@@ -139,7 +139,7 @@ namespace Psychology.Harmony
         }
     }
 
-    [HarmonyPatch(typeof(InteractionWorker_RomanceAttempt), "Interacted")]
+    [HarmonyPatch(typeof(InteractionWorker_RomanceAttempt), nameof(InteractionWorker_RomanceAttempt.Interacted))]
     public static class InteractionWorker_RomanceAttempt_InteractedLearnSexualityPatch
     {
         [HarmonyPriority(Priority.High)]
@@ -158,7 +158,7 @@ namespace Psychology.Harmony
     public static class InteractionWorker_RomanceAttempt_InteractedHandleThoughtsPatch
     {
         [HarmonyPostfix]
-        public static void HandleNewThoughts(InteractionWorker_RomanceAttempt __instance, Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks)
+        public static void HandleNewThoughts(InteractionWorker_RomanceAttempt __instance, Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks, string letterText, string letterLabel, LetterDef letterDef)
         {
             if (extraSentencePacks.Contains(RulePackDefOf.Sentence_RomanceAttemptAccepted))
             {
@@ -187,7 +187,7 @@ namespace Psychology.Harmony
         }
     }
 
-    [HarmonyPatch(typeof(InteractionWorker_RomanceAttempt), "SuccessChance")]
+    [HarmonyPatch(typeof(InteractionWorker_RomanceAttempt), nameof(InteractionWorker_RomanceAttempt.SuccessChance))]
     public static class InteractionWorker_RomanceAttempt_SuccessChancePatch
     {
         [HarmonyPriority(Priority.Last)]

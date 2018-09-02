@@ -10,7 +10,7 @@ using Harmony;
 
 namespace Psychology.Harmony
 {
-    [HarmonyPatch(typeof(LovePartnerRelationUtility),"LovePartnerRelationGenerationChance")]
+    [HarmonyPatch(typeof(LovePartnerRelationUtility),nameof(LovePartnerRelationUtility.LovePartnerRelationGenerationChance))]
     public static class LovePartnerRelationUtility_GenerationChancePatch
     {
         [HarmonyPriority(Priority.Last)]
@@ -71,7 +71,7 @@ namespace Psychology.Harmony
         }
     }
 
-    [HarmonyPatch(typeof(LovePartnerRelationUtility), "ChangeSpouseRelationsToExSpouse")]
+    [HarmonyPatch(typeof(LovePartnerRelationUtility), nameof(LovePartnerRelationUtility.ChangeSpouseRelationsToExSpouse))]
     public static class LovePartnerRelationUtility_PolygamousSpousePatch
     {
         [HarmonyPrefix]

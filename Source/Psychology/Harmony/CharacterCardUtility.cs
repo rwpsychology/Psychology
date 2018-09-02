@@ -22,7 +22,7 @@ namespace Psychology.Harmony
             foreach(CodeInstruction itr in instr)
             {
                 yield return itr;
-                if (itr.opcode == OpCodes.Call && itr.operand == typeof(CharacterCardUtility).GetMethod("DoNameInputRect"))
+                if (itr.opcode == OpCodes.Call && itr.operand == typeof(CharacterCardUtility).GetMethod(nameof(CharacterCardUtility.DoNameInputRect)))
                 {
                     doNames++;
                     if (doNames == 3)

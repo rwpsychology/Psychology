@@ -17,5 +17,8 @@
   <LetterFuneralStarted>El funeral de {0} está en marcha. Sus colonos pueden asistir o no dependiendo de su relación con {0}.</LetterFuneralStarted>
   <LetterLabelFuneralEnded>El funeral ha terminado</LetterLabelFuneralEnded>
   <LetterFuneralEnded>El funeral de {0} se acabó.\n\nLas siguientes personas asistieron:\n{1}</LetterFuneralEnded>
+	
+	<!-- Replaced vanilla letters -->
+	<LetterRejectedProposalPsychology>Depending on their personality, their mood and relationship will be affected.</LetterRejectedProposalPsychology>
 
 </LanguageData>

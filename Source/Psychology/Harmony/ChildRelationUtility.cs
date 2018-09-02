@@ -9,7 +9,7 @@ using Harmony;
 
 namespace Psychology.Harmony
 {
-    [HarmonyPatch(typeof(ChildRelationUtility), "ChanceOfBecomingChildOf")]
+    [HarmonyPatch(typeof(ChildRelationUtility), nameof(ChildRelationUtility.ChanceOfBecomingChildOf))]
     public static class ChildRelationUtility_ChanceOfBecomingChildOf_Patch
     {
         [HarmonyPostfix]

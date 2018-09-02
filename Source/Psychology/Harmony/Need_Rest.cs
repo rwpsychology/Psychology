@@ -9,7 +9,7 @@ using Harmony;
 
 namespace Psychology.Harmony
 {
-    [HarmonyPatch(typeof(Need_Rest), "NeedInterval")]
+    [HarmonyPatch(typeof(Need_Rest), nameof(Need_Rest.NeedInterval))]
     public static class Need_Rest_IntervalDreamPatch
     {
         [HarmonyPostfix]
@@ -40,7 +40,7 @@ namespace Psychology.Harmony
         }
     }
 
-    [HarmonyPatch(typeof(Need_Rest), "NeedInterval")]
+    [HarmonyPatch(typeof(Need_Rest), nameof(Need_Rest.NeedInterval))]
     public static class Need_Rest_IntervalInsomniacPatch
     {
         [HarmonyPostfix]

@@ -7,7 +7,7 @@ using Harmony;
 
 namespace Psychology.Harmony
 {
-    [HarmonyPatch(typeof(ThoughtUtility), "GiveThoughtsForPawnExecuted")]
+    [HarmonyPatch(typeof(ThoughtUtility), nameof(ThoughtUtility.GiveThoughtsForPawnExecuted))]
     public static class ThoughtUtility_ExecutedPatch
     {
         /** This function searches for a thought in a pawn's memories, caused by another pawn, if applicable.
@@ -68,7 +68,7 @@ namespace Psychology.Harmony
         }
     }
 
-    [HarmonyPatch(typeof(ThoughtUtility), "GiveThoughtsForPawnOrganHarvested")]
+    [HarmonyPatch(typeof(ThoughtUtility), nameof(ThoughtUtility.GiveThoughtsForPawnOrganHarvested))]
     public static class ThoughtUtility_OrganHarvestedPatch
     {
         [HarmonyPostfix]
