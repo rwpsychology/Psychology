@@ -481,7 +481,7 @@
     <beginLetterLabel>nature retreat</beginLetterLabel>
     <beginLetter>{0} has escaped to nature, finding relief in hunting.</beginLetter>
     <beginLetterDef>NegativeEvent</beginLetterDef>
-    <recoveryMessage>{0} has returned from their hunting trip.</recoveryMessage>
+    <recoveryMessage>{0} has decided to return from their hunting trip.</recoveryMessage>
     <baseInspectLine>Mental state: Nature retreat</baseInspectLine>
     <tale>MentalStateHuntingTrip</tale>
     <recoverFromSleep>false</recoverFromSleep>

@@ -25,11 +25,10 @@ namespace Psychology
                 if (huntingWeapons.Count() > 0)
                 {
                     Thing bestWeapon = huntingWeapons.First();
-                    if (pawn.equipment.Primary != null && pawn.equipment.Primary.def.weaponTags.Contains("Melee") && pawn.equipment.Primary.GetStatValue(StatDefOf.MeleeDPS) >= bestWeapon.GetStatValue(StatDefOf.MeleeDPS))
+                    if (pawn.equipment.Primary == null || !pawn.equipment.Primary.def.IsRangedWeapon || !pawn.equipment.PrimaryEq.PrimaryVerb.HarmsHealth() || pawn.equipment.PrimaryEq.PrimaryVerb.UsesExplosiveProjectiles() || pawn.equipment.Primary.GetStatValue(StatDefOf.AccuracyLong) < bestWeapon.GetStatValue(StatDefOf.AccuracyLong))
                     {
-                        return null;
+                        return new Job(JobDefOf.Equip, bestWeapon);
                     }
-                    return new Job(JobDefOf.Equip, bestWeapon);
                 }
             }
             if (WorkGiver_HunterHunt.HasShieldAndRangedWeapon(pawn))
@@ -44,9 +43,19 @@ namespace Psychology
                 }
             }
             IEnumerable<Pawn> wildlife = from p in Find.CurrentMap.mapPawns.AllPawns
-                                         where p.Spawned && p.Faction == null && p.AnimalOrWildMan() && !p.Position.Fogged(p.Map)
+                                         where p.Spawned && p.Faction == null && p.AnimalOrWildMan() && !p.Position.Fogged(p.Map) && pawn.CanReserve(p, 1, -1, null, true)
                                          select p;
-            return new Job(JobDefOf.Hunt, wildlife.RandomElement());
+            if (wildlife.Count() > 0)
+            {
+                Pawn prey = wildlife.RandomElement();
+                if(pawn.Map.designationManager.DesignationOn(prey, DesignationDefOf.Hunt) == null)
+                {
+                    Designation hunt = new Designation(prey, DesignationDefOf.Hunt);
+                    prey.Map.designationManager.AddDesignation(hunt);
+                }
+                return new Job(JobDefOf.Hunt, prey);
+            }
+            return null;
         }
     }
 }
