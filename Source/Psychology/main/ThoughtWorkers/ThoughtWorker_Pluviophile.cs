@@ -16,6 +16,8 @@ namespace Psychology
                 return ThoughtState.Inactive;
             if (p.Map.weatherManager.RainRate < 0.25f)
                 return ThoughtState.Inactive;
+            if (p.Map.weatherManager.SnowRate > 0.25f)
+                return ThoughtState.Inactive;
             if (p.Position.Roofed(p.Map))
                 return ThoughtState.ActiveAtStage(0);
             return ThoughtState.ActiveAtStage(1);

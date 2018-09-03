@@ -17,11 +17,6 @@ namespace Psychology
             Pawn friend = (pawn == toil.friends[0] ? toil.friends[1] : toil.friends[0]);
             if (friend == null)
                 return null;
-            /* Don't give any jobs if they're hungry. It should automatically give them a job to eat through the Duty. */
-            if (pawn.needs.food.CurLevel < 0.33f)
-            {
-                return null;
-            }
             /* If they are partners, possibly send them to lay down together so they'll do lovin'. */
             if (LovePartnerRelationUtility.LovePartnerRelationExists(pawn, friend) && pawn.jobs.curDriver != null && !pawn.GetPosture().Laying() && (pawn.IsHashIntervalTick(GenDate.TicksPerHour) || friend.IsHashIntervalTick(GenDate.TicksPerHour)))
             {
@@ -34,18 +29,25 @@ namespace Psychology
                 toil.ticksToNextJoy = Find.TickManager.TicksGame + Rand.RangeInclusive(GenDate.TicksPerHour, GenDate.TicksPerHour * 3);
             }
             /* If they need joy, go do the joy activity.*/
-            if (friend.needs.food.CurLevel > 0.33f && pawn.needs.joy.CurLevel < 0.8f && pawn.CanReserve(toil.hangOut.GetTarget(TargetIndex.A), toil.hangOut.def.joyMaxParticipants, 0, null))
+            if (toil.hangOut != null && friend.needs.food.CurLevel > 0.33f && pawn.needs.joy.CurLevel < 0.8f && pawn.CanReserve(toil.hangOut.GetTarget(TargetIndex.A), toil.hangOut.def.joyMaxParticipants, 0, null))
             {
                 /* Sometimes the joy activity can't be reserved because it's for one person only. */
-                if (toil.hangOut.targetA != null && toil.hangOut.targetB != null)
-                    return new Job(toil.hangOut.def, toil.hangOut.targetA, toil.hangOut.targetB);
+                Job job = null;
+                if (toil.hangOut.targetA != null && toil.hangOut.targetB != null && toil.hangOut.targetC != null)
+                    job = new Job(toil.hangOut.def, toil.hangOut.targetA, toil.hangOut.targetB, toil.hangOut.targetC);
+                else if (toil.hangOut.targetA != null && toil.hangOut.targetB != null)
+                    job = new Job(toil.hangOut.def, toil.hangOut.targetA, toil.hangOut.targetB);
                 else if (toil.hangOut.targetA != null)
-                    return new Job(toil.hangOut.def, toil.hangOut.targetA);
-                return new Job(toil.hangOut.def);
+                    job = new Job(toil.hangOut.def, toil.hangOut.targetA);
+                else
+                    job = new Job(toil.hangOut.def);
+                job.count = toil.hangOut.count;
+                job.TryMakePreToilReservations(pawn, false);
+                return job;
             }
             else if (((pawn.Position - friend.Position).LengthHorizontalSquared >= 54f || !GenSight.LineOfSight(pawn.Position, friend.Position, pawn.Map, true)))
             { /* Make sure they are close to each other if they're not actively doing a joy activity. */
-                /* If the other pawn is already walking over, just hang around until they get there. */
+              /* If the other pawn is already walking over, just hang around until they get there. */
                 if (friend.CurJob.def != JobDefOf.Goto)
                     return new Job(JobDefOf.Goto, friend);
                 else

@@ -108,6 +108,7 @@ namespace Psychology
             base.End();
             if(candidates.Count == 0)
             {
+                Log.Message("Psychology :: Tried to start election... but there were no candidates.");
                 return;
             }
             IntVec3 intVec;
@@ -115,6 +116,7 @@ namespace Psychology
             string baseName = Find.WorldObjects.ObjectsAt(organizer.Map.Tile).OfType<SettlementBase>().First().Label;
             if (!RCellFinder.TryFindPartySpot(organizer, out intVec))
             {
+                Log.Message("Psychology :: Tried to start election, but couldn't find anywhere to hold it.");
                 return;
             }
             LordMaker.MakeNewLord(organizer.Faction, new LordJob_Joinable_Election(intVec, candidates, baseName, organizer.Map), organizer.Map, null);

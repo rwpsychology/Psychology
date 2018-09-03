@@ -110,13 +110,13 @@ namespace Psychology.Harmony
 
             foreach (ThoughtDef d in (from tgt in initiator.needs.mood.thoughts.memories.Memories
                                       where tgt.def.defName.Contains("RejectedMyProposal")
-                                      select tgt.def))
+                                      select tgt.def).ToList())
             {
                 initiator.needs.mood.thoughts.memories.RemoveMemoriesOfDefWhereOtherPawnIs(d, recipient);
             }
             foreach (ThoughtDef d in (from tgt in recipient.needs.mood.thoughts.memories.Memories
                                       where tgt.def.defName.Contains("RejectedMyProposal")
-                                      select tgt.def))
+                                      select tgt.def).ToList())
             {
                 recipient.needs.mood.thoughts.memories.RemoveMemoriesOfDefWhereOtherPawnIs(d, initiator);
             }

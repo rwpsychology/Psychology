@@ -106,7 +106,7 @@
       <li>
         <label>in the rain</label>
         <description>The rain is so relaxing. I don't mind getting wet.</description>
-        <baseMoodEffect>5</baseMoodEffect>
+        <baseMoodEffect>8</baseMoodEffect>
       </li>
     </stages>
   </ThoughtDef>

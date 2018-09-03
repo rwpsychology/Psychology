@@ -35,7 +35,7 @@ namespace Psychology
             transition.AddTrigger(new Trigger_TickCondition(() => this.initiator.health.summaryHealth.SummaryHealthPercent < 1f || this.recipient.health.summaryHealth.SummaryHealthPercent < 1f));
             transition.AddTrigger(new Trigger_TickCondition(() => this.initiator.Drafted || this.recipient.Drafted));
             transition.AddTrigger(new Trigger_TickCondition(() => this.initiator.Map == null || this.recipient.Map == null));
-            transition.AddTrigger(new Trigger_PawnLostViolently());
+            transition.AddTrigger(new Trigger_PawnLost());
             stateGraph.AddTransition(transition);
             this.timeoutTrigger = new Trigger_TicksPassed(Rand.RangeInclusive(GenDate.TicksPerHour*3, GenDate.TicksPerHour*5));
             Transition transition2 = new Transition(lordToil_HangOut, lordToil_End);

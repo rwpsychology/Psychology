@@ -6,7 +6,7 @@
 	<LetterLabelElectionHeld>Election underway in {0}</LetterLabelElectionHeld>
 	<LetterElectionHeld>The election in {0} is now underway. The colony has selected a polling place from the available gathering spots, and colonists will go there to vote.</LetterElectionHeld>
 	<LetterLabelElectionCandidate>Candidate: {0}</LetterLabelElectionCandidate>
-	<LetterElectionCandidate>{0} is running for mayor of {1}. This is [PAWN_pronoun] platform:\n{2}</LetterElectionCandidate>
+	<LetterElectionCandidate>{0} is running for mayor of {1}. This is [PAWN_possessive] platform:\n{2}</LetterElectionCandidate>
 	<LetterLabelTieSettled>Election tie settled in favor of {0}</LetterLabelTieSettled>
 	<LetterTieSettled>The mayoral election resulted in a tie, and after a battle royale bickering match, {0} was the only one willing to continue arguing about it. The other candidates have withdrawn, leaving [PAWN_objective] the victor.</LetterTieSettled>
 	<LetterLabelElectionWon>Election won by {0}</LetterLabelElectionWon>

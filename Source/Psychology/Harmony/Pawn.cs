@@ -71,18 +71,4 @@ namespace Psychology.Harmony
             }
         }
     }
-
-    [HarmonyPatch(typeof(Pawn))]
-    [HarmonyPatch("LabelNoCount", PropertyMethod.Getter)]
-    public static class Pawn_MayorLabel
-    {
-        [HarmonyPostfix]
-        public static void AddMayorLabel(Pawn __instance, String __result)
-        {
-            if (__instance.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor))
-            {
-                __result = __instance.Name.ToStringShort + ", Mayor";
-            }
-        }
-    }
 }

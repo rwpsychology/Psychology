@@ -32,6 +32,15 @@ namespace Psychology
                     && GatheringsUtility.ShouldGuestKeepAttendingGathering(this.pawn) && GatheringsUtility.ShouldGuestKeepAttendingGathering(this.partner) && this.pawn.Map == this.partner.Map)
                 {
                     pawn.jobs.StopAll();
+                    partner.jobs.StopAll();
+                    if(pawn.GetLord() != null)
+                    {
+                        pawn.GetLord().Notify_PawnLost(pawn, PawnLostCondition.ForcedToJoinOtherLord);
+                    }
+                    if (partner.GetLord() != null)
+                    {
+                        partner.GetLord().Notify_PawnLost(partner, PawnLostCondition.ForcedToJoinOtherLord);
+                    }
                     if (pawn.Awake() && partner.Awake())
                     {
                         LordMaker.MakeNewLord(this.pawn.Faction, new LordJob_Date(this.pawn, this.partner), this.pawn.Map, new Pawn[] { this.pawn, this.partner });
@@ -40,7 +49,7 @@ namespace Psychology
                     {
                         this.pawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.MissedDate, this.partner);
                     }
-                    else
+                    else if (partner.Awake())
                     {
                         this.partner.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.MissedDate, this.pawn);
                     }
