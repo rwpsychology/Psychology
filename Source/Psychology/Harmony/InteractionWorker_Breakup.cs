@@ -159,7 +159,8 @@ namespace Psychology.Harmony
 			brokeUpMoodDef.durationDays = 25f;
 			brokeUpMoodDef.thoughtClass = typeof(Thought_MemoryDynamic);
 			brokeUpMoodDef.stackedEffectMultiplier = 1f;
-			ThoughtStage brokeUpStage = new ThoughtStage();
+            brokeUpMoodDef.stackLimit = 999;
+            ThoughtStage brokeUpStage = new ThoughtStage();
 			brokeUpStage.label = "Broke up with {0}";
 			brokeUpStage.baseMoodEffect = Mathf.RoundToInt(-20f * Mathf.InverseLerp(0.25f, 0.75f, PsycheHelper.Comp(lover).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic)) * Mathf.InverseLerp(-20f, 100f, lover.relations.OpinionOf(ex)));
 			if (brokeUpStage.baseMoodEffect < -5f)

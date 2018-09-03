@@ -16,7 +16,7 @@ namespace Psychology
                 return ThoughtState.Inactive;
             if (!p.story.traits.HasTrait(TraitDefOfPsychology.Sedentary))
                 return ThoughtState.Inactive;
-            if (this.lastMoveTick == 0 || Find.TickManager.TicksGame % 200 == 0)
+            if (this.lastMoveTick == 0 || Find.TickManager.TicksGame % 100 == 0)
             {
                 if (this.lastMovePosition != p.Position)
                 {

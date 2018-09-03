@@ -72,10 +72,6 @@ namespace Psychology
             initiator.health.AddHediff(plannedDate);
             PsycheHelper.Comp(initiator).Psyche.lastDateTick = day;
             PsycheHelper.Comp(recipient).Psyche.lastDateTick = day;
-            if (Prefs.DevMode && Prefs.LogVerbose)
-            {
-                Log.Message("[Psychology] " + initiator.LabelShort + " planned date with " + recipient.LabelShort + " for hour " + hour + " on date " + GenDate.DateFullStringAt(GenDate.TickGameToAbs(day), Find.WorldGrid.LongLatOf(initiator.Map.Tile)));
-            }
         }
     }
 }

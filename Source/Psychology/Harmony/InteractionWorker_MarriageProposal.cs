@@ -138,6 +138,7 @@ namespace Psychology.Harmony
                 rejectedProposalMoodDef.defName = "RejectedMyProposalMood" + initiator.LabelShort + Find.TickManager.TicksGame;
                 rejectedProposalMoodDef.durationDays = 25f;
                 rejectedProposalMoodDef.thoughtClass = typeof(Thought_MemoryDynamic);
+                rejectedProposalMoodDef.stackLimit = 999;
                 rejectedProposalMoodDef.stackedEffectMultiplier = 1f;
                 ThoughtStage rejectedProposalMoodStage = new ThoughtStage();
                 rejectedProposalMoodStage.label = "proposal rejected by {0}";
@@ -175,6 +176,7 @@ namespace Psychology.Harmony
                 rejectedTheirProposalMoodDef.defName = "IRejectedTheirProposalMood" + recipient.LabelShort + Find.TickManager.TicksGame;
                 rejectedTheirProposalMoodDef.durationDays = 25f;
                 rejectedTheirProposalMoodDef.thoughtClass = typeof(Thought_MemoryDynamic);
+                rejectedTheirProposalMoodDef.stackLimit = 999;
                 rejectedTheirProposalMoodDef.stackedEffectMultiplier = 1f;
                 ThoughtStage rejectedTheirProposalMoodStage = new ThoughtStage();
                 rejectedTheirProposalMoodStage.label = "rejected {0}'s proposal";

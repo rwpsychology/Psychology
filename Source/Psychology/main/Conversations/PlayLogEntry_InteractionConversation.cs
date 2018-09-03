@@ -30,7 +30,7 @@ namespace Psychology
                     this.rulesInit.Add("r_logentry->"+"ConversationEnd".Translate()+" [RECIPIENT_nameDef].");
                 }
                 string ruleText = this.rulesInit[i];
-                Scribe_Values.Look(ref ruleText, "rulesInit" + i, "r_logentry->" + "ConversationEnd".Translate() + " [RECIPIENT_nameDef].");
+                Scribe_Values.Look(ref ruleText, "rulesInit" + i, "r_logentry->" + "ConversationEnd".Translate());
                 this.rulesInit[i] = ruleText;
             }
             /*for (int i = 0; i < rulesRecip.Capacity; i++)

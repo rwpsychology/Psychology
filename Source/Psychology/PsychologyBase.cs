@@ -374,12 +374,12 @@ namespace Psychology
                             gather = mayor.ownership.OwnedBed.Position;
                             found = "bed";
                         }
-                        if ((!PsycheHelper.PsychologyEnabled(potentialConstituent) || Rand.Value < (1f - PsycheHelper.Comp(potentialConstituent).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent)) / 5f) && (found != null || RCellFinder.TryFindPartySpot(mayor, out gather)))
+                        if (PsycheHelper.PsychologyEnabled(potentialConstituent) && Rand.Chance((1f - PsycheHelper.Comp(potentialConstituent).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent)) / 5f) && (found != null || RCellFinder.TryFindPartySpot(mayor, out gather)))
                         {
                             List<Pawn> pawns = new List<Pawn>();
                             pawns.Add(mayor);
                             pawns.Add(potentialConstituent);
-                            Lord meeting = LordMaker.MakeNewLord(mayor.Faction, new LordJob_VisitMayor(gather, potentialConstituent, mayor, (potentialConstituent.needs.mood.CurLevel < 0.4f)), mayor.Map, pawns);
+                            Lord meeting = LordMaker.MakeNewLord(mayor.Faction, new LordJob_VisitMayor(gather, potentialConstituent, mayor, (potentialConstituent.needs.mood.CurLevel < (potentialConstituent.mindState.mentalBreaker.BreakThresholdMinor*1.25f))), mayor.Map, pawns);
                             mayor.jobs.EndCurrentJob(Verse.AI.JobCondition.InterruptForced);
                             potentialConstituent.jobs.EndCurrentJob(Verse.AI.JobCondition.InterruptForced);
                             if (found == "bed")

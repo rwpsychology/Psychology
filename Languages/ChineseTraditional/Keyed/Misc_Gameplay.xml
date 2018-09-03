@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+	<MayorTitle>市長</MayorTitle>
 
   <!-- Lord job reports -->
   <LordReportAttendingElection>去投票</LordReportAttendingElection>
@@ -10,11 +11,10 @@
 
   <!-- Miscellaneous thought log text -->
   <ConversationStage>討論</ConversationStage>
-  <ConversationEnd>結束了談話</ConversationEnd>
+  <ConversationEnd>[INITIATOR_nameDef]以[RECIPIENT_nameDef]結束了對話。</ConversationEnd>
   <ConversationEnded>結束談話</ConversationEnded>
-  <Complained>向鎮長抱怨</Complained>
-  <Supported>向鎮長表示支持。</Supported>
-  <HadMeeting>和選民談話</HadMeeting>
+  <Complained>[INITIATOR_nameDef]向市長抱怨，[RECIPIENT_nameDef]。</Complained>
+  <Supported>[INITIATOR_nameDef]表達了[INITIATOR_possessive]對市長的支持，[RECIPIENT_nameDef]。</Supported>
 
   <!-- Node descriptions -->
   <PsycheNot>一點也不</PsycheNot>

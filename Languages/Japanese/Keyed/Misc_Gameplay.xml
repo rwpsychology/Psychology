@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+	<MayorTitle>市長</MayorTitle>
 
 <!-- Lord job reports -->
   <LordReportAttendingElection>投票している</LordReportAttendingElection>
@@ -10,10 +11,10 @@
 
 <!-- Miscellaneous thought log text -->
   <ConversationStage>会話 -</ConversationStage>
-  <ConversationEnd>会話を終わらせた</ConversationEnd>
+  <ConversationEnd>[INITIATOR_NAMEDef]さんが[RECIPIENT_NAMEDef]さんと会話を終了しました。</ConversationEnd>
   <ConversationEnded>会話を終わらせた</ConversationEnded>
-  <Complained>リーダーに文句を伝えた</Complained>
-  <Supported>リーダーを応援した</Supported>
+  <Complained>[INITIATOR_NAMEDef]さんが市長[RECIPIENT_NAMEDef]に苦情を申し立てました。</Complained>
+  <Supported>[INITIATOR_nameDef]は市長への支持を表明[RECIPIENT_nameDef]しました。</Supported>
   <HadMeeting>入植者とミーティングした</HadMeeting>
 
 <!-- Node descriptions -->

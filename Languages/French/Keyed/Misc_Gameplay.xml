@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
+	<MayorTitle>maire</MayorTitle>
 
 <!-- Lord job reports -->
 	<LordReportAttendingElection>Lieu de scrutin</LordReportAttendingElection>
@@ -9,11 +10,10 @@
 
 <!-- Miscellaneous thought text -->
 	<ConversationStage>Conversation sur</ConversationStage>
-	<ConversationEnd>Terminé une conversation avec</ConversationEnd>
+	<ConversationEnd>[INITIATOR_nameDef] terminé une conversation avec [RECIPIENT_nameDef].</ConversationEnd>
 	<ConversationEnded>conversation terminée</ConversationEnded>
-	<Complained>Se plaint au maire.</Complained>
-	<Supported>J'ai exprimé mon soutien au maire.</Supported>
-	<HadMeeting>A eu une réunion avec un</HadMeeting>
+	<Complained>[INITIATOR_nameDef] se plaint au maire, [RECIPIENT_nameDef].</Complained>
+	<Supported>[INITIATOR_nameDef] ai exprimé [INITIATOR_possessive] soutien au maire, [RECIPIENT_nameDef].</Supported>
 	
 <!-- Node descriptions -->
 	<PsycheNot>Ne pas</PsycheNot>

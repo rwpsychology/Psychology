@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
+	<MayorTitle>mayor</MayorTitle>
 
 <!-- Lord job reports -->
 	<LordReportAttendingElection>Visiting polling place</LordReportAttendingElection>
@@ -10,11 +11,10 @@
 
 <!-- Miscellaneous thought log text -->
 	<ConversationStage>conversation about</ConversationStage>
-	<ConversationEnd>[INITIATOR_nameDef] ended a conversation with</ConversationEnd>
+	<ConversationEnd>[INITIATOR_nameDef] ended a conversation with [RECIPIENT_nameDef].</ConversationEnd>
 	<ConversationEnded>ended conversation</ConversationEnded>
-	<Complained>[INITIATOR_nameDef] complained to the mayor.</Complained>
-	<Supported>[INITIATOR_nameDef] voiced [INITIATOR_possessive] support to the mayor.</Supported>
-	<HadMeeting>[RECIPIENT_nameDef] had a meeting with a constituent</HadMeeting>
+	<Complained>[INITIATOR_nameDef] complained to the mayor, [RECIPIENT_nameDef].</Complained>
+	<Supported>[INITIATOR_nameDef] voiced [INITIATOR_possessive] support to the mayor, [RECIPIENT_nameDef].</Supported>
 	
 <!-- Node descriptions -->
 	<PsycheNot>Not</PsycheNot>

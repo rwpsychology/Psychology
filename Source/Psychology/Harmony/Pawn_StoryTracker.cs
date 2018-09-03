@@ -22,7 +22,7 @@ namespace Psychology.Harmony
             Pawn p = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
             if (p != null && p.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor))
             {
-                __result = "mayor";
+                __result = "MayorTitle".Translate();
             }
         }
     }

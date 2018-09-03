@@ -152,7 +152,7 @@
     <degreeDatas>
       <li>
         <label>socialite</label>
-        <description>[PAWN_nameDef] loves to party! [PAWN_possessive] mere presence inspires more parties in the colony, because everyone enjoys partying with [PAWN_pronoun].</description>
+        <description>[PAWN_nameDef] loves to party! [PAWN_possessive] mere presence inspires more parties in the colony, because everyone enjoys partying with [PAWN_objective].</description>
       </li>
     </degreeDatas>
     <requiredWorkTags>
@@ -166,7 +166,7 @@
     <degreeDatas>
       <li>
         <label>desensitized</label>
-        <description>[PAWN_nameDef] has seen enough violence and death that it no longer shocks [PAWN_pronoun] like it used to.</description>
+        <description>[PAWN_nameDef] has seen enough violence and death that it no longer shocks [PAWN_objective] like it used to.</description>
       </li>
     </degreeDatas>
     <conflictingTraits>
@@ -198,7 +198,7 @@
     <degreeDatas>
       <li>
         <label>polyamorous</label>
-        <description>[PAWN_nameDef] doesn't see any problem with having multiple partners. [PAWN_pronoun] doesn't mind if [PAWN_possessive] partner romances other people, but will not be happy in a monogamous relationship.</description>
+        <description>[PAWN_nameDef] doesn't see any problem with having multiple partners. [PAWN_pronoun] doesn't mind if [PAWN_possessive] partner romances other people, but will be less happy in a restraining, monogamous relationship.</description>
       </li>
     </degreeDatas>
     <conflictingTraits>

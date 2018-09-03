@@ -50,7 +50,7 @@ namespace Psychology
                                                                            select v);
                     if (Prefs.DevMode && Prefs.LogVerbose)
                     {
-                        StringBuilder voteString = new StringBuilder("[Psychology] Vote weights for " + voter.LabelShort + ": ");
+                        StringBuilder voteString = new StringBuilder("Psychology :: Vote weights for " + voter.LabelShort + ": ");
                         foreach (Pair<Pawn, float> v in orderedPossibleVotes)
                         {
                             voteString.Append(v.First.LabelShort + " " + v.Second + " ");

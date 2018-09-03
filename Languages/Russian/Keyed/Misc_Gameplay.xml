@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+	<MayorTitle>мэр</MayorTitle>
 
   <!-- Lord job reports -->
   <LordReportAttendingElection>Посещение избирательного участка</LordReportAttendingElection>
@@ -10,10 +11,10 @@
 
   <!-- Miscellaneous thought log text -->
   <ConversationStage>Разговор о</ConversationStage>
-  <ConversationEnd>Закончился разговор с</ConversationEnd>
+  <ConversationEnd>[INITIATOR_nameDef] закончил разговор с [RECIPIENT_nameDef].</ConversationEnd>
   <ConversationEnded>закончившийся разговор</ConversationEnded>
-  <Complained>Жаловался мэру.</Complained>
-  <Supported>Выразил мою поддержку мэру.</Supported>
+  <Complained>[INITIATOR_nameDef] пожаловался мэру, [RECIPIENT_nameDef].</Complained>
+  <Supported>[INITIATOR_nameDef] высказал свою поддержку мэру, [RECIPIENT_nameDef].</Supported>
   <HadMeeting>Встреча с учредителем</HadMeeting>
 
   <!-- Node descriptions -->

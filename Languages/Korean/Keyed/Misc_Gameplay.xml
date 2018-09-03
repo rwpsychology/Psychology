@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+	<MayorTitle>시장</MayorTitle>
 
   <!-- Lord job reports -->
   <LordReportAttendingElection>투표소 방문중</LordReportAttendingElection>
@@ -9,10 +10,10 @@
 
   <!-- Miscellaneous thought log text -->
   <ConversationStage>대화</ConversationStage>
-  <ConversationEnd>대화 종료</ConversationEnd>
+  <ConversationEnd>[INITIATOR_NAMEDef] 님이 [RECIPIENT_NAMEDef] 님과 대화를 종료했습니다.</ConversationEnd>
   <ConversationEnded>대화 종료</ConversationEnded>
-  <Complained>지도자에게 항의함.</Complained>
-  <Supported>지도자에게 지지를 표함.</Supported>
+  <Complained>[INITIATOR_NAMEDef]는 시장 [RECIPIENT_NAMEDef]에 불만을 제기했습니다.</Complained>
+  <Supported>[INITIATOR_NAMEDef]는 시장 [RECIPIENT_NAMEDef]에 대한지지를 표명했습니다.</Supported>
   <HadMeeting>정착민과 상담을 함</HadMeeting>
 
   <!-- Node descriptions -->

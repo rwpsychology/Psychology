@@ -42,10 +42,10 @@ namespace Psychology
                 else
                     job = new Job(toil.hangOut.def);
                 job.count = toil.hangOut.count;
-                job.TryMakePreToilReservations(pawn, false);
-                return job;
+                if(job.TryMakePreToilReservations(pawn, false))
+                    return job;
             }
-            else if (((pawn.Position - friend.Position).LengthHorizontalSquared >= 54f || !GenSight.LineOfSight(pawn.Position, friend.Position, pawn.Map, true)))
+            if (((pawn.Position - friend.Position).LengthHorizontalSquared >= 54f || !GenSight.LineOfSight(pawn.Position, friend.Position, pawn.Map, true)))
             { /* Make sure they are close to each other if they're not actively doing a joy activity. */
               /* If the other pawn is already walking over, just hang around until they get there. */
                 if (friend.CurJob.def != JobDefOf.Goto)

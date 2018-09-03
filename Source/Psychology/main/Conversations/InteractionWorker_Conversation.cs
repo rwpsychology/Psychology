@@ -27,6 +27,10 @@ namespace Psychology
             {
                 baseChance = 0.75f;
             }
+            if (initiator.story.traits.HasTrait(TraitDefOfPsychology.Chatty))
+            {
+                baseChance *= 1.2f;
+            }
             return Mathf.Max(0f, baseChance + (PsycheHelper.Comp(recipient).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly)-0.6f) + (PsycheHelper.Comp(initiator).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Extroverted)-0.5f));
         }
 

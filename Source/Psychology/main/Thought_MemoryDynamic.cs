@@ -33,6 +33,7 @@ namespace Psychology
             def.durationDays = this.duration;
             def.thoughtClass = typeof(Thought_MemoryDynamic);
             def.stackedEffectMultiplier = 1f;
+            def.stackLimit = 999;
             ThoughtStage stage = new ThoughtStage();
             stage.label = this.label;
             stage.baseMoodEffect = this.baseMoodEffect;
