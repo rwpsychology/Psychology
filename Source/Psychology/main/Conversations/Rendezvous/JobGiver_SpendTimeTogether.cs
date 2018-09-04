@@ -18,7 +18,7 @@ namespace Psychology
             if (friend == null)
                 return null;
             /* If they are partners, possibly send them to lay down together so they'll do lovin'. */
-            if (LovePartnerRelationUtility.LovePartnerRelationExists(pawn, friend) && pawn.jobs.curDriver != null && !pawn.GetPosture().Laying() && (pawn.IsHashIntervalTick(GenDate.TicksPerHour) || friend.IsHashIntervalTick(GenDate.TicksPerHour)))
+            if (LovePartnerRelationUtility.LovePartnerRelationExists(pawn, friend) && pawn.ownership.OwnedBed != null && !pawn.GetPosture().Laying() && (pawn.IsHashIntervalTick(GenDate.TicksPerHour) || friend.IsHashIntervalTick(GenDate.TicksPerHour)))
             {
                 return new Job(JobDefOf.LayDown, pawn.ownership.OwnedBed, GenDate.TicksPerHour);
             }
@@ -32,16 +32,16 @@ namespace Psychology
             if (toil.hangOut != null && friend.needs.food.CurLevel > 0.33f && pawn.needs.joy.CurLevel < 0.8f && pawn.CanReserve(toil.hangOut.GetTarget(TargetIndex.A), toil.hangOut.def.joyMaxParticipants, 0, null))
             {
                 /* Sometimes the joy activity can't be reserved because it's for one person only. */
-                Job job = null;
-                if (toil.hangOut.targetA != null && toil.hangOut.targetB != null && toil.hangOut.targetC != null)
-                    job = new Job(toil.hangOut.def, toil.hangOut.targetA, toil.hangOut.targetB, toil.hangOut.targetC);
-                else if (toil.hangOut.targetA != null && toil.hangOut.targetB != null)
-                    job = new Job(toil.hangOut.def, toil.hangOut.targetA, toil.hangOut.targetB);
-                else if (toil.hangOut.targetA != null)
-                    job = new Job(toil.hangOut.def, toil.hangOut.targetA);
-                else
-                    job = new Job(toil.hangOut.def);
+                Job job = new Job(toil.hangOut.def);
+                job.targetA = toil.hangOut.targetA;
+                job.targetB = toil.hangOut.targetB;
+                job.targetC = toil.hangOut.targetC;
+                job.targetQueueA = toil.hangOut.targetQueueA;
+                job.targetQueueB = toil.hangOut.targetQueueB;
                 job.count = toil.hangOut.count;
+                job.countQueue = toil.hangOut.countQueue;
+                job.expiryInterval = toil.hangOut.expiryInterval;
+                job.locomotionUrgency = toil.hangOut.locomotionUrgency;
                 if(job.TryMakePreToilReservations(pawn, false))
                     return job;
             }

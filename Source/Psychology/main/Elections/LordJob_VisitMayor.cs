@@ -81,7 +81,7 @@ namespace Psychology
                         ThoughtStage complaintStage = new ThoughtStage();
                         float complaintMood = 15f * (PsycheHelper.Comp(mayor).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Empathetic) - 0.33f);
                         //Base complaint mood determined by mayor's Empathetic trait
-                        complaintMood *= this.ticksInSameRoom / GenDate.TicksPerHour;
+                        complaintMood *= (float)this.ticksInSameRoom / (float)GenDate.TicksPerHour;
                         //Length of meeting also affects mood
                         complaintMood *= (complaintMood < 0f ? Mathf.Lerp(1.25f, 0.75f, PsycheHelper.Comp(constituent).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Polite)) : 1f);
                         //Negative meeting thoughts (unempathetic mayors) mitigated by mayor's politeness

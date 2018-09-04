@@ -22,7 +22,11 @@ namespace Psychology.Harmony
                 int.TryParse("" + (byte)Traverse.Create(__instance).Property("CurrentDesiredMoodBreakIntensity").GetValue<MentalBreakIntensity>(), out intensity);
                 Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Anxiety);
                 float PTSDChance = (0.25f - (0.075f * intensity));
-                if (pawn.GetComp<CompPsychology>() != null && pawn.GetComp<CompPsychology>().isPsychologyPawn)
+                if (pawn.story.traits.HasTrait(TraitDefOfPsychology.Desensitized))
+                {
+                    PTSDChance *= 0.75f;
+                }
+                if (PsycheHelper.PsychologyEnabled(pawn))
                 {
                     //Laid-back pawns are less likely to get anxiety from mental breaks.
                     PTSDChance -= pawn.GetComp<CompPsychology>().Psyche.GetPersonalityRating(PersonalityNodeDefOf.LaidBack) / 10f;
@@ -35,6 +39,8 @@ namespace Psychology.Harmony
                 {
                     Hediff newHediff = HediffMaker.MakeHediff(HediffDefOfPsychology.Anxiety, pawn, pawn.health.hediffSet.GetBrain());
                     newHediff.Severity = 0.75f - (intensity * 0.25f);
+                    Letter newAnxiety = LetterMaker.MakeLetter("LetterLabelPTSD".Translate(), "LetterPTSD".Translate().AdjustedFor(pawn), LetterDefOf.NegativeEvent, pawn);
+                    Find.LetterStack.ReceiveLetter(newAnxiety);
                     pawn.health.AddHediff(newHediff, null, null);
                 }
             }

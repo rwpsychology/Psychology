@@ -17,6 +17,8 @@
   <LetterFuneralStarted>{0}的葬禮正在進行中。與{0}的關系會影響到你的殖民者出席與否。</LetterFuneralStarted>
   <LetterLabelFuneralEnded>葬禮結束</LetterLabelFuneralEnded>
   <LetterFuneralEnded>為{0}舉行的葬禮結束了。\n\n以下人員參加:\n{1}</LetterFuneralEnded>
+	<LetterLabelPTSD>Stress trauma</LetterLabelPTSD>
+	<LetterPTSD>[PAWN_nameDef] has developed post-traumatic anxiety as a result of [PAWN_possessive] mental break. Anxiety is a permanent condition, but can be treated to slowly reduce its severity to a manageable level and allow [PAWN_possessive] to function normally. Any further mental breaks will worsen [PAWN_possessive] anxiety.\n\nGlitterworld doctors are rumored to have cured mental illnesses like anxiety in their patients. If you get your hands on some ultratech medicine, an extremely skilled doctor may be able to use it to cure [PAWN_nameDef]'s anxiety.</LetterPTSD>
 	
 	<!-- Replaced vanilla letters -->
 	<LetterRejectedProposalPsychology>Depending on their personality, their mood and relationship will be affected.</LetterRejectedProposalPsychology>

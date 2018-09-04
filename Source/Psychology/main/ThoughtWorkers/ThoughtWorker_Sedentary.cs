@@ -16,13 +16,10 @@ namespace Psychology
                 return ThoughtState.Inactive;
             if (!p.story.traits.HasTrait(TraitDefOfPsychology.Sedentary))
                 return ThoughtState.Inactive;
-            if (this.lastMoveTick == 0 || Find.TickManager.TicksGame % 100 == 0)
+            if ((this.lastMovePosition - p.Position).LengthHorizontalSquared > 80f)
             {
-                if (this.lastMovePosition != p.Position)
-                {
-                    this.lastMovePosition = p.Position;
-                    this.lastMoveTick = Find.TickManager.TicksGame;
-                }
+                this.lastMovePosition = p.Position;
+                this.lastMoveTick = Find.TickManager.TicksGame;
             }
             if ((Find.TickManager.TicksGame - lastMoveTick) > GenDate.TicksPerHour)
             {

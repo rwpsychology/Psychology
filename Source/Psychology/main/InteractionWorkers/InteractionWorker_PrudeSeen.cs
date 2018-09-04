@@ -26,5 +26,11 @@ namespace Psychology
                 return 0f;
             }
         }
+
+        public override void Interacted(Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks, out string letterText, out string letterLabel, out LetterDef letterDef)
+        {
+            base.Interacted(initiator, recipient, extraSentencePacks, out letterText, out letterLabel, out letterDef);
+            initiator.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.PrudeSeen, recipient);
+        }
     }
 }

@@ -17,6 +17,8 @@
 	<LetterFuneralStarted>{0}'s funeral is underway. Your colonists may or may not attend depending on their relationship with {0}.</LetterFuneralStarted>
 	<LetterLabelFuneralEnded>Funeral ended</LetterLabelFuneralEnded>
 	<LetterFuneralEnded>The funeral for {0} is over now.\n\nThe following people attended:\n{1}</LetterFuneralEnded>
+	<LetterLabelPTSD>Stress trauma</LetterLabelPTSD>
+	<LetterPTSD>[PAWN_nameDef] has developed post-traumatic anxiety as a result of [PAWN_possessive] mental break. Anxiety is a permanent condition, but can be treated to slowly reduce its severity to a manageable level and allow [PAWN_possessive] to function normally. Any further mental breaks will worsen [PAWN_possessive] anxiety.\n\nGlitterworld doctors are rumored to have cured mental illnesses like anxiety in their patients. If you get your hands on some ultratech medicine, an extremely skilled doctor may be able to use it to cure [PAWN_nameDef]'s anxiety.</LetterPTSD>
 
 	<!-- Replaced vanilla letters -->
 	<LetterRejectedProposalPsychology>Depending on their personality, their mood and relationship will be affected.</LetterRejectedProposalPsychology>
