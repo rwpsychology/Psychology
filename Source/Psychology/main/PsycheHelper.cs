@@ -8,11 +8,13 @@ namespace Psychology
 {
     public static class PsycheHelper
     {
+        [LogPerformance]
         public static bool PsychologyEnabled(Pawn pawn)
         {
             return pawn != null && pawn.GetComp<CompPsychology>() != null && pawn.GetComp<CompPsychology>().isPsychologyPawn;
         }
 
+        [LogPerformance]
         public static CompPsychology Comp(Pawn pawn)
         {
             return pawn.GetComp<CompPsychology>();

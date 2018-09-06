@@ -12,6 +12,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(ThoughtWorker_WantToSleepWithSpouseOrLover), "CurrentStateInternal")]
     public class ThoughtWorker_WantToSleepWithSpouseOrLoverPatch
     {
+        [LogPerformance]
         public static void CurrentStateInternal(ref ThoughtState __result, Pawn p)
         {
             DirectPawnRelation directPawnRelation = LovePartnerRelationUtility.ExistingMostLikedLovePartnerRel(p, false);

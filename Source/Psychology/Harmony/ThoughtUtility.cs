@@ -25,6 +25,7 @@ namespace Psychology.Harmony
             }
             return false;
         } **/
+        [LogPerformance]
         [HarmonyPostfix]
         public static void BleedingHeartThoughts(Pawn victim, PawnExecutionKind kind)
         {
@@ -71,6 +72,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(ThoughtUtility), nameof(ThoughtUtility.GiveThoughtsForPawnOrganHarvested))]
     public static class ThoughtUtility_OrganHarvestedPatch
     {
+        [LogPerformance]
         [HarmonyPostfix]
         public static void BleedingHeartThoughts(Pawn victim)
         {

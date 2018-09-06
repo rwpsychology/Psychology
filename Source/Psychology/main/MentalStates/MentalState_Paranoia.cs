@@ -16,10 +16,11 @@ namespace Psychology
             return RandomSocialMode.Off;
         }
 
+        [LogPerformance]
         public override void MentalStateTick()
         {
             base.MentalStateTick();
-            if(pawn.IsHashIntervalTick(1000))
+            if(pawn.IsHashIntervalTick(1000) && pawn.Map != null)
             {
                 if(Rand.Value < 0.75f)
                 {

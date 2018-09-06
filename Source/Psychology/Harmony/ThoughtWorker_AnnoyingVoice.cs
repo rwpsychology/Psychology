@@ -11,6 +11,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(ThoughtWorker_AnnoyingVoice), "CurrentSocialStateInternal")]
     public static class ThoughtWorker_AnnoyingVoicePatch
     {
+        [LogPerformance]
         [HarmonyPostfix]
         public static void Disable(ref ThoughtState __result, Pawn pawn, Pawn other)
         {

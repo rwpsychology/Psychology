@@ -47,6 +47,7 @@ namespace Psychology
             Scribe_Values.Look(ref this.rawRating, "rawRating", -1f, false);
         }
 
+        [LogPerformance]
         public float AdjustForParents(float rating)
         {
             foreach (PersonalityNode parent in this.ParentNodes)
@@ -58,6 +59,7 @@ namespace Psychology
             return Mathf.Clamp01(rating);
         }
 
+        [LogPerformance]
         public float AdjustForCircumstance(float rating)
         {
             if(!this.def.skillModifiers.NullOrEmpty())
@@ -108,6 +110,7 @@ namespace Psychology
             return rating;
         }
 
+        [LogPerformance]
         public float AdjustGender(float rating)
         {
             if (this.def.femaleModifier > 0f && this.pawn.gender == Gender.Female && PsychologyBase.ActivateKinsey())
@@ -131,6 +134,7 @@ namespace Psychology
 
         public List<PersonalityNode> ParentNodes
         {
+            [LogPerformance]
             get
             {
                 if(this.parents == null || this.pawn.IsHashIntervalTick(500))
@@ -170,6 +174,7 @@ namespace Psychology
 
         public float AdjustedRating
         {
+            [LogPerformance]
             get
             {
                 if(cachedRating < 0f || this.pawn.IsHashIntervalTick(100))

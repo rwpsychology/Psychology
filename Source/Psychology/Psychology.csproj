@@ -79,6 +79,9 @@
     <Compile Include="Harmony\Optional\SaveRecordPawnV4.cs" />
     <Compile Include="Harmony\CharacterCardUtility.cs" />
     <Compile Include="Harmony\Pawn_StoryTracker.cs" />
+    <Compile Include="Harmony\Performance\Attribute.cs" />
+    <Compile Include="Harmony\Performance\PerformanceSetup.cs" />
+    <Compile Include="Harmony\Performance\PerformancePatches.cs" />
     <Compile Include="Harmony\Thing.cs" />
     <Compile Include="Harmony\ThoughtWorker_ChemicalInterestVsTeetotaler.cs" />
     <Compile Include="Harmony\ThoughtWorker_HardWorkerVsLazy.cs" />

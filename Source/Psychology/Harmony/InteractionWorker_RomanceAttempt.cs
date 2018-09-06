@@ -13,6 +13,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(InteractionWorker_RomanceAttempt), "BreakLoverAndFianceRelations")]
     public static class InteractionWorker_RomanceAttempt_BreakRelationsPatch
     {
+        [LogPerformance]
         [HarmonyPrefix]
         public static bool BreakRelations(Pawn pawn, ref List<Pawn> oldLoversAndFiances)
         {
@@ -72,6 +73,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(InteractionWorker_RomanceAttempt), nameof(InteractionWorker_RomanceAttempt.RandomSelectionWeight))]
     public static class InteractionWorker_RomanceAttempt_SelectionWeightPatch
     {
+        [LogPerformance]
         [HarmonyPriority(Priority.Last)]
         [HarmonyPostfix]
         public static void PsychologyException(ref float __result, Pawn initiator, Pawn recipient)
@@ -142,6 +144,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(InteractionWorker_RomanceAttempt), nameof(InteractionWorker_RomanceAttempt.Interacted))]
     public static class InteractionWorker_RomanceAttempt_InteractedLearnSexualityPatch
     {
+        [LogPerformance]
         [HarmonyPriority(Priority.High)]
         [HarmonyPrefix]
         public static bool LearnSexuality(Pawn initiator, Pawn recipient)
@@ -157,6 +160,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(InteractionWorker_RomanceAttempt), "Interacted")]
     public static class InteractionWorker_RomanceAttempt_InteractedHandleThoughtsPatch
     {
+        [LogPerformance]
         [HarmonyPostfix]
         public static void HandleNewThoughts(InteractionWorker_RomanceAttempt __instance, Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks, string letterText, string letterLabel, LetterDef letterDef)
         {
@@ -190,6 +194,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(InteractionWorker_RomanceAttempt), nameof(InteractionWorker_RomanceAttempt.SuccessChance))]
     public static class InteractionWorker_RomanceAttempt_SuccessChancePatch
     {
+        [LogPerformance]
         [HarmonyPriority(Priority.Last)]
         [HarmonyPostfix]
         public static void NewSuccessChance(ref float __result, Pawn initiator, Pawn recipient)
@@ -240,6 +245,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(InteractionWorker_RomanceAttempt), "TryAddCheaterThought")]
     public static class InteractionWorker_RomanceAttempt_CheaterThoughtPatch
     {
+        [LogPerformance]
         [HarmonyPostfix]
         public static void AddCodependentThought(Pawn pawn, Pawn cheater)
         {

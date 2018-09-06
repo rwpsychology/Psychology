@@ -35,6 +35,7 @@ namespace Psychology.Harmony
             }
         }
 
+        [LogPerformance]
         public static void PsycheCardButton(Rect panelRect, Pawn pawn)
         {
             if(PsycheHelper.PsychologyEnabled(pawn))

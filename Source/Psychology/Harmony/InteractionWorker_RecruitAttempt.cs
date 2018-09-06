@@ -14,6 +14,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(InteractionWorker_RecruitAttempt), "DoRecruit")]
     public static class InteractionWorker_RecruitAttempt_DoRecruitPatch
     {
+        [LogPerformance]
         [HarmonyPrefix]
         public static bool AddCapturedThoughts(Pawn recruiter, Pawn recruitee)
         {

@@ -12,6 +12,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(ThoughtWorker_Hediff), "CurrentStateInternal")]
     public static class ThoughtWorker_HediffPsychology
     {
+        [LogPerformance]
         [HarmonyPostfix]
         public static void MethadoneHigh(ThoughtWorker_Hediff __instance, ref ThoughtState __result, Pawn p)
         {

@@ -29,6 +29,7 @@ namespace Psychology
             Scribe_Values.Look(ref this.waveGoodbye, "waveGoodbye");
         }
 
+        [LogPerformance]
         public override void Tick()
         {
             base.Tick();
@@ -87,6 +88,7 @@ namespace Psychology
             }
         }
 
+        [LogPerformance]
         public override void PostRemoved()
         {
             base.PostRemoved();

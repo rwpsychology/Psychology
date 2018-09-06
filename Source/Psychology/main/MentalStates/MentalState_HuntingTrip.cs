@@ -15,6 +15,7 @@ namespace Psychology
             return RandomSocialMode.Off;
         }
 
+        [LogPerformance]
         public override void MentalStateTick()
         {
             /* Prevent pawns from carrying their kills back to the colony. */

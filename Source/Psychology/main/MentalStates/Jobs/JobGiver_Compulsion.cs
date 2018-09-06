@@ -11,6 +11,7 @@ namespace Psychology
 {
     public class JobGiver_Compulsion : ThinkNode_JobGiver
     {
+        [LogPerformance]
         protected override Job TryGiveJob(Pawn pawn)
         {
             if (pawn.Map == null)

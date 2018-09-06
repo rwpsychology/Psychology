@@ -62,7 +62,8 @@ namespace Psychology
             Scribe_References.Look(ref this.mayor, "mayor");
             Scribe_Values.Look(ref this.complaint, "complaining");
         }
-        
+
+        [LogPerformance]
         private void Finished()
         {
             if(PsycheHelper.PsychologyEnabled(mayor) && PsycheHelper.PsychologyEnabled(constituent))

@@ -14,6 +14,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(Dialog_FormCaravan), "AddPawnsToTransferables")]
     public static class Dialog_FormCaravan_AddPawnsToTransferables_Patch
     {
+        [LogPerformance]
         [HarmonyPrefix]
         public static bool DoWindowContentsDisbandCaravans(Dialog_FormCaravan __instance)
         {

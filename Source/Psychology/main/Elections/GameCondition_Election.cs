@@ -12,6 +12,7 @@ namespace Psychology
 {
     public class GameCondition_Election : GameCondition
     {
+        [LogPerformance]
         public override void Init()
         {
             base.Init();
@@ -103,6 +104,7 @@ namespace Psychology
             }
         }
 
+        [LogPerformance]
         public override void End()
         {
             base.End();

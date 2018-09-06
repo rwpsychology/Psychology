@@ -60,7 +60,8 @@ namespace Psychology
             Scribe_Collections.Look(ref this.voters, "voters", LookMode.Value, new object[0]);
             Scribe_Collections.Look(ref this.votes, "votes", LookMode.Value, new object[0]);
         }
-        
+
+        [LogPerformance]
         private void Finished()
         {
             List<Pair<Pawn, int>> voteTally = new List<Pair<Pawn, int>>();
@@ -125,7 +126,8 @@ namespace Psychology
         {
             return !PartyUtility.AcceptableGameConditionsToContinueParty(base.Map) || candidates.Count < 1;
         }
-        
+
+        [LogPerformance]
         private bool ShouldPawnKeepVoting(Pawn p)
         {
             if(!PsycheHelper.PsychologyEnabled(p))

@@ -12,6 +12,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(Pawn_JobTracker), nameof(Pawn_JobTracker.EndCurrentJob))]
     public static class Pawn_JobTracker_EndCurrentJobPatch
     {
+        [LogPerformance]
         [HarmonyPrefix]
         public static bool HeavySleeperTrait(Pawn_JobTracker __instance)
         {

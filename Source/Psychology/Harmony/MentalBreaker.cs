@@ -12,6 +12,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(MentalBreaker), nameof(MentalBreaker.TryDoRandomMoodCausedMentalBreak))]
     public static class MentalBreaker_AnxietyPatch
     {
+        [LogPerformance]
         [HarmonyPostfix]
         public static void AddAnxiety(MentalBreaker __instance, ref bool __result)
         {

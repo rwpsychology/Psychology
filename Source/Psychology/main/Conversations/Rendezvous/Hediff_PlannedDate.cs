@@ -26,10 +26,9 @@ namespace Psychology
             {
                 this.pawn.health.RemoveHediff(this);
             }
-            else if(Find.TickManager.TicksGame >= this.day && GenLocalDate.HourOfDay(this.pawn) == this.hour)
+            else if(Find.TickManager.TicksAbs >= this.day && GenLocalDate.HourOfDay(this.pawn) == this.hour)
             {
-                if(this.pawn.GetTimeAssignment() != TimeAssignmentDefOf.Work && this.partner.GetTimeAssignment() != TimeAssignmentDefOf.Work && !this.pawn.Drafted && !this.partner.Drafted
-                    && GatheringsUtility.ShouldGuestKeepAttendingGathering(this.pawn) && GatheringsUtility.ShouldGuestKeepAttendingGathering(this.partner) && this.pawn.Map == this.partner.Map)
+                if(ShouldStartDate(pawn, partner) && ShouldStartDate(partner, pawn))
                 {
                     pawn.jobs.StopAll();
                     partner.jobs.StopAll();
@@ -61,6 +60,16 @@ namespace Psychology
                 }
                 this.pawn.health.RemoveHediff(this);
             }
+        }
+
+        private static bool ShouldStartDate(Pawn p, Pawn partner)
+        {
+            return !p.Downed && (p.needs == null || !p.needs.food.Starving)
+                && p.health.hediffSet.BleedRateTotal <= 0f
+                && p.needs.rest.CurCategory < RestCategory.Exhausted
+                && !p.InAggroMentalState && !p.IsPrisoner
+                && p.GetTimeAssignment() != TimeAssignmentDefOf.Work
+                && !p.Drafted && p.Map == partner.Map;
         }
 
         public Pawn partner;

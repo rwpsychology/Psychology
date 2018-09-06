@@ -30,6 +30,7 @@ namespace Psychology
             return DutyDefOfPsychology.Vote.hook;
         }
 
+        [LogPerformance]
         public override void Notify_ReachedDutyLocation(Pawn voter)
         {
             LordJob_Joinable_Election election = voter.GetLord().LordJob as LordJob_Joinable_Election;

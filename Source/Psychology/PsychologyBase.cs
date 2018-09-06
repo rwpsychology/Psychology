@@ -21,12 +21,16 @@ namespace Psychology
         public static bool notBabyMode = true;
         public static bool elections = true;
         public static float convoDuration = 60f;
+        public static bool dateLetters = true;
+        public static bool benchmark = false;
         private SettingHandle<bool> toggleKinsey;
         private SettingHandle<bool> toggleEmpathy;
         private SettingHandle<KinseyMode> kinseyMode;
         private SettingHandle<bool> toggleIndividuality;
         private SettingHandle<bool> toggleElections;
         private SettingHandle<float> conversationDuration;
+        private SettingHandle<bool> toggleDateLetters;
+        private SettingHandle<bool> toggleBenchmarking;
 
         public enum KinseyMode
         {
@@ -59,6 +63,16 @@ namespace Psychology
         static public float ConvoDuration()
         {
             return convoDuration;
+        }
+
+        static public bool SendDateLetters()
+        {
+            return dateLetters;
+        }
+
+        static public bool EnablePerformanceTesting()
+        {
+            return new PsychologyBase().Settings.GetHandle<bool>("Benchmarking", "BenchmarkingTitle".Translate(), "BenchmarkingTooltip".Translate(), false).Value;
         }
 
         public override string ModIdentifier
@@ -106,6 +120,15 @@ namespace Psychology
             mode = kinseyMode.Value;
             notBabyMode = toggleIndividuality.Value;
             elections = toggleElections.Value;
+            convoDuration = conversationDuration.Value;
+            dateLetters = toggleDateLetters.Value;
+            bool oldBenchmarkVal = benchmark;
+            benchmark = toggleBenchmarking.Value;
+            // The game has to be restarted for benchmarking to be applied/removed.
+            if (oldBenchmarkVal != benchmark)
+            {
+                GenCommandLine.Restart();
+            }
         }
 
         public override void DefsLoaded()
@@ -120,6 +143,8 @@ namespace Psychology
                 toggleIndividuality = Settings.GetHandle<bool>("EnableIndividuality", "IndividualityTitle".Translate(), "IndividualityTooltip".Translate(), true);
                 toggleElections = Settings.GetHandle<bool>("EnableElections", "ElectionsTitle".Translate(), "ElectionsTooltip".Translate(), true);
                 conversationDuration = Settings.GetHandle<float>("ConversationDuration", "DurationTitle".Translate(), "DurationTooltip".Translate(), 60f, (String s) => float.Parse(s) >= 15f && float.Parse(s) <= 180f);
+                toggleDateLetters = Settings.GetHandle<bool>("SendDateLetters", "SendDateLettersTitle".Translate(), "SendDateLettersTooltip".Translate(), true);
+                toggleBenchmarking = Settings.GetHandle<bool>("Benchmarking", "BenchmarkingTitle".Translate(), "BenchmarkingTooltip".Translate(), false);
 
                 notBabyMode = toggleIndividuality.Value;
                 elections = toggleElections.Value;
@@ -345,6 +370,19 @@ namespace Psychology
 
         public override void Tick(int currentTick)
         {
+            //Performance reporting tick
+            if (EnablePerformanceTesting() && currentTick % 1000 == 0 && PerformanceSetup.performanceTotals.Keys.Count > 0)
+            {
+                Dictionary<string, float> averages = PerformanceSetup.performanceTotals.ToDictionary(x => x.Key, x => (float)x.Value / (float)PerformanceSetup.performanceCalls[x.Key]);
+                int topAmt = Math.Min(10, averages.Count);
+                List<KeyValuePair<string, float>> topTicks = (from avg in averages orderby avg.Value descending select avg).Take(topAmt).ToList();
+                StringBuilder topString = new StringBuilder();
+                foreach(KeyValuePair<string, float> t in topTicks)
+                {
+                    topString.AppendLine(t.Key + " (" + t.Value + ")");
+                }
+                Log.Message("Psychology :: Performance Report :: Top " + topAmt + " tick consumers:\n" + topString.ToString());
+            }
             //Constituent tick
             if (currentTick % GenDate.TicksPerHour*2 == 0)
             {

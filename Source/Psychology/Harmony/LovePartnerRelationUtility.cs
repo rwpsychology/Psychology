@@ -13,6 +13,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(LovePartnerRelationUtility),nameof(LovePartnerRelationUtility.LovePartnerRelationGenerationChance))]
     public static class LovePartnerRelationUtility_GenerationChancePatch
     {
+        [LogPerformance]
         [HarmonyPriority(Priority.Last)]
         [HarmonyPostfix]
         public static void PsychologyFormula(ref float __result, Pawn generated, Pawn other, PawnGenerationRequest request, bool ex)

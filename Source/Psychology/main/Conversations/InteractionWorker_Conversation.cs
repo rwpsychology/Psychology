@@ -6,11 +6,13 @@ using RimWorld;
 using Verse;
 using Verse.AI.Group;
 using UnityEngine;
+using System.Diagnostics;
 
 namespace Psychology
 {
     public class InteractionWorker_Conversation : InteractionWorker
     {
+        [LogPerformance]
         public override float RandomSelectionWeight(Pawn initiator, Pawn recipient)
         {
             if (!PsycheHelper.PsychologyEnabled(initiator) || !PsycheHelper.PsychologyEnabled(recipient))
@@ -34,14 +36,18 @@ namespace Psychology
             return Mathf.Max(0f, baseChance + (PsycheHelper.Comp(recipient).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly)-0.6f) + (PsycheHelper.Comp(initiator).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Extroverted)-0.5f));
         }
 
+        [LogPerformance]
         public override void Interacted(Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks, out string letterText, out string letterLabel, out LetterDef letterDef)
         {
             letterText = null;
             letterLabel = null;
             letterDef = null;
+            Stopwatch begin = Stopwatch.StartNew();
             PersonalityNode topic = (from node in PsycheHelper.Comp(initiator).Psyche.PersonalityNodes
                                      where !node.Core
                                      select node).RandomElementByWeight(node => PsycheHelper.Comp(initiator).Psyche.GetConversationTopicWeight(node.def, recipient));
+            begin.Stop();
+            Log.Message("Psychology :: Performance Report :: Time to select a topic for conversation: " + begin.ElapsedTicks);
             Hediff_Conversation initiatorHediff = (Hediff_Conversation)HediffMaker.MakeHediff(HediffDefOfPsychology.HoldingConversation, initiator);
             initiatorHediff.otherPawn = recipient;
             initiatorHediff.topic = topic.def;

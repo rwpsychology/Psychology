@@ -11,7 +11,7 @@ namespace Psychology
     public class Dialog_EditPsyche : Window
     {
         private Pawn pawn;
-
+        
         public Dialog_EditPsyche(Pawn editFor)
         {
             pawn = editFor;
@@ -37,6 +37,7 @@ namespace Psychology
             cachedList.SortBy(n => n.First);
         }
 
+        [LogPerformance]
         public override void DoWindowContents(Rect inRect)
         {
             bool flag = false;

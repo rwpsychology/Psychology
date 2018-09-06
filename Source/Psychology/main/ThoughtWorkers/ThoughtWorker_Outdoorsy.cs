@@ -6,6 +6,7 @@ namespace Psychology
 {
     public class ThoughtWorker_Outdoorsy : ThoughtWorker
     {
+        [LogPerformance]
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
             if (!p.Spawned)

@@ -11,6 +11,7 @@ namespace Psychology
 {
     public static class PsycheCardUtility
     {
+        [LogPerformance]
         private static void DrawPersonalityNodes(Rect rect, Pawn pawn)
         {
             float width = rect.width - 26f - 3f;
@@ -59,6 +60,7 @@ namespace Psychology
             Widgets.EndScrollView();
         }
 
+        [LogPerformance]
         private static void DrawSexuality(Rect rect, Pawn pawn, bool notOnMenu)
         {
             float width = rect.width - 26f - 3f;
@@ -117,7 +119,7 @@ namespace Psychology
             }
             GUI.EndGroup();
         }
-
+        
         public static void DrawPsycheCard(Rect rect, Pawn pawn)
         {
             if(PsycheHelper.PsychologyEnabled(pawn))

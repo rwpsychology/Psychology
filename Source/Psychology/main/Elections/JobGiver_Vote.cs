@@ -9,6 +9,7 @@ namespace Psychology
 {
     public class JobGiver_Vote : ThinkNode_JobGiver
     {
+        [LogPerformance]
         protected override Job TryGiveJob(Pawn pawn)
         {
             IntVec3 result;

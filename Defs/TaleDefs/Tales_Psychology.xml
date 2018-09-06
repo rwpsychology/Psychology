@@ -145,7 +145,7 @@
     <baseInterest>4</baseInterest>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->[PAWN_nameShortDef] throwing a tantrum</li>
+        <li>tale_noun->[PAWN_nameDef] throwing a tantrum</li>
         <li>image->[PAWN_nameFull] flying into a destructive rage [circumstance_group]</li>
 		<li>image->[PAWN_nameFull] taking [PAWN_possessive] anger out on furniture [circumstance_group]</li>
         <li>image->[PAWN_nameFull] stumbling into furniture with a psychotic look on [PAWN_possessive] face [circumstance_group]</li>
@@ -176,7 +176,7 @@
     <baseInterest>4</baseInterest>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->[PAWN_nameShortDef] hurting [PAWN_pronoun]self</li>
+        <li>tale_noun->[PAWN_nameDef] hurting [PAWN_pronoun]self</li>
         <li>image->[PAWN_nameFull] cutting [PAWN_possessive] wrists [circumstance_group]</li>
 		<li>image->[PAWN_nameFull] sitting in a pool of [PAWN_possessive] blood [circumstance_group]</li>
         <li>image->[PAWN_nameFull] staring off into the distance [circumstance_group]</li>
@@ -201,7 +201,7 @@
     <baseInterest>4</baseInterest>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->[PAWN_nameShortDef] wandering around apathetically</li>
+        <li>tale_noun->[PAWN_nameDef] wandering around apathetically</li>
         <li>image->[PAWN_nameFull] wandering around the colony apathetically [circumstance_group]</li>
 		<li>image->[PAWN_nameFull] sitting around lethargically [circumstance_group]</li>
         <li>image->[PAWN_nameFull] avoiding doing [PAWN_possessive] chores [circumstance_group]</li>
@@ -226,7 +226,7 @@
     <baseInterest>4</baseInterest>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->[PAWN_nameShortDef] laughing sadistically</li>
+        <li>tale_noun->[PAWN_nameDef] laughing sadistically</li>
         <li>image->[PAWN_nameFull] brandishing [PAWN_possessive] weapon [circumstance_group]</li>
 		<li>image->[PAWN_nameFull] mumbling under their breath [circumstance_group]</li>
         <li>image->[PAWN_nameFull] looking for a victim to brutalize [circumstance_group]</li>
@@ -248,7 +248,7 @@
     <baseInterest>4</baseInterest>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->[PAWN_nameShortDef] neurotically cleaning</li>
+        <li>tale_noun->[PAWN_nameDef] neurotically cleaning</li>
         <li>image->[PAWN_nameFull] obsessively organizing resources [circumstance_group]</li>
 		<li>image->[PAWN_nameFull] covered in dirt and grime [circumstance_group]</li>
         <li>image->[PAWN_nameFull] scrubbing the floors obsessively [circumstance_group]</li>
@@ -271,7 +271,7 @@
     <baseInterest>4</baseInterest>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->[PAWN_nameShortDef] screaming angrily</li>
+        <li>tale_noun->[PAWN_nameDef] screaming angrily</li>
         <li>image->[PAWN_nameFull] pacing back and forth [circumstance_group]</li>
 		<li>image->[PAWN_nameFull] stomping around [circumstance_group]</li>
 		<li>image->[PAWN_nameFull] looking for somebody to start an argument with [circumstance_group]</li>
@@ -297,7 +297,7 @@
     <baseInterest>4</baseInterest>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->[PAWN_nameShortDef] leaving the colony</li>
+        <li>tale_noun->[PAWN_nameDef] leaving the colony</li>
         <li>image->[PAWN_nameFull] distancing [PAWN_possessive]self from the colony [circumstance_group]</li>
 		<li>image->[PAWN_nameFull] avoiding interaction with other colonists [circumstance_group]</li>
 		<li>image->[PAWN_nameFull] walking away [circumstance_group]</li>
@@ -322,7 +322,7 @@
     <baseInterest>4</baseInterest>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->[PAWN_nameShortDef] desperately seeking attention</li>
+        <li>tale_noun->[PAWN_nameDef] desperately seeking attention</li>
         <li>image->[PAWN_nameFull] chasing someone down [circumstance_group]</li>
 		<li>image->[PAWN_nameFull] proposing awkwardly to another colonist [circumstance_group]</li>
 		<li>image->[PAWN_nameFull] making a scene [circumstance_group]</li>
@@ -349,7 +349,7 @@
     <baseInterest>4</baseInterest>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->[PAWN_nameShortDef] hatching a fell plot</li>
+        <li>tale_noun->[PAWN_nameDef] hatching a fell plot</li>
         <li>image->[PAWN_nameFull] scheming in [PAWN_possessive] room [circumstance_group]</li>
         <li>image->[PAWN_nameFull] hunched over a writing surface [circumstance_group]</li>
 		<li>image->[PAWN_nameFull] pacing back and forth [circumstance_group]</li>
@@ -380,7 +380,7 @@
     <baseInterest>4</baseInterest>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->[PAWN_nameShortDef] becoming consumed by paranoia</li>
+        <li>tale_noun->[PAWN_nameDef] becoming consumed by paranoia</li>
         <li>image->[PAWN_nameFull] absorbed by paranoid babbling [circumstance_group]</li>
         <li>image->[PAWN_nameFull] berating another colonist [circumstance_group]</li>
 		<li>image->[PAWN_nameFull] wandering senselessly around the colony [circumstance_group]</li>
@@ -407,8 +407,8 @@
     <baseInterest>4</baseInterest>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->[PAWN_nameShortDef] retreating to nature to escape from the stress of the colony</li>
-        <li>tale_noun->[PAWN_nameShortDef] running away from the colony to go hunting</li>
+        <li>tale_noun->[PAWN_nameDef] retreating to nature to escape from the stress of the colony</li>
+        <li>tale_noun->[PAWN_nameDef] running away from the colony to go hunting</li>
         <li>image->[PAWN_nameFull] stalking a wild animal [circumstance_group]</li>
         <li>image->[PAWN_nameFull] roaming through the wilderness [circumstance_group]</li>
 		<li>image->[PAWN_nameFull] relaxing against in nature [circumstance_group]</li>

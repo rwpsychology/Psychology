@@ -9,7 +9,7 @@ using Harmony;
 namespace Psychology.Harmony.Optional
 {
     [StaticConstructorOnStartup]
-    class EdBPrepareCarefully
+    static class EdBPrepareCarefully
     {
         static EdBPrepareCarefully()
         {

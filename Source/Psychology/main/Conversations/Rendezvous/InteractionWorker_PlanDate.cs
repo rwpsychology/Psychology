@@ -64,7 +64,7 @@ namespace Psychology
             }
             int hour = possibleHours.Keys.RandomElementByWeight(h => possibleHours[h] * RendezvousUtility.TimeAssignmentFactor(initiator, h) * RendezvousUtility.TimeAssignmentFactor(recipient, h));
             //More Spontaneous couples will plan their dates sooner; possibly even immediately!
-            int day = Find.TickManager.TicksGame + Mathf.RoundToInt(GenDate.TicksPerDay * 5 * (((1f - PsycheHelper.Comp(initiator).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Spontaneous)) + (1f - PsycheHelper.Comp(recipient).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Spontaneous))) / 2f));
+            int day = Find.TickManager.TicksAbs + Mathf.RoundToInt(GenDate.TicksPerDay * 5 * (((1f - PsycheHelper.Comp(initiator).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Spontaneous)) + (1f - PsycheHelper.Comp(recipient).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Spontaneous))) / 2f));
             Hediff_PlannedDate plannedDate = HediffMaker.MakeHediff(HediffDefOfPsychology.PlannedDate, initiator) as Hediff_PlannedDate;
             plannedDate.partner = recipient;
             plannedDate.day = day;
@@ -72,6 +72,15 @@ namespace Psychology
             initiator.health.AddHediff(plannedDate);
             PsycheHelper.Comp(initiator).Psyche.lastDateTick = day;
             PsycheHelper.Comp(recipient).Psyche.lastDateTick = day;
+            if(PsychologyBase.SendDateLetters())
+            {
+                int hourDiscrepancy = GenDate.HourOfDay(day, Find.WorldGrid.LongLatOf(initiator.Map.Tile).x) - hour;
+                int accurateTime = day + GenDate.TicksPerDay + Math.Abs(hourDiscrepancy) * GenDate.TicksPerHour;
+                Log.Message("Hour: " + hour + "/" + GenDate.HourOfDay(accurateTime, Find.WorldGrid.LongLatOf(initiator.Map.Tile).x));
+                String dateTime = GenDate.QuadrumDateStringAt(accurateTime, Find.WorldGrid.LongLatOf(initiator.Map.Tile).x);
+                Letter dateLetter = LetterMaker.MakeLetter("LetterLabelDatePlanned".Translate(), "LetterDatePlanned".Translate(new object[] { initiator, recipient, dateTime, hour }), LetterDefOf.PositiveEvent);
+                Find.LetterStack.ReceiveLetter(dateLetter);
+            }
         }
     }
 }

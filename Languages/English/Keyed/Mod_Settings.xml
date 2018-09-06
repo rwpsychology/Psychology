@@ -22,5 +22,11 @@
 	
 	<DurationTitle>Conversation duration</DurationTitle>
 	<DurationTooltip>Set how long people will remember conversations for. The default is 60 days, i.e. one year. The minimum is 15 days, or a quadrum, to a maximum of 180 days, or three years. Setting it lower will make colonists' interactions with each other more ephemeral, and setting it higher will make them more lasting.</DurationTooltip>
+	
+	<SendDateLettersTitle>Send date letters</SendDateLettersTitle>
+	<SendDateLettersTooltip>Turn this off to disable receiving letters when your colonists plan a date together.</SendDateLettersTooltip>
+	
+	<BenchmarkingTitle>Enable performance testing</BenchmarkingTitle>
+	<BenchmarkingTooltip>Turn this on to receive occasional performance reports in the console relating to Psychology systems. You can copy and paste these reports to assist in optimization of the mod. WARNING: Performance testing comes with its own performance impact.\n\nToggling this will restart your game.</BenchmarkingTooltip>
   
 </LanguageData>

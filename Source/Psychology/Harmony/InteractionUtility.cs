@@ -10,8 +10,9 @@ namespace Psychology.Harmony
 {
 	[HarmonyPatch(typeof(InteractionUtility), "CanReceiveRandomInteraction")]
 	public static class InteractionUtility_CanReceive_Patch
-	{
-		[HarmonyPostfix]
+    {
+        [LogPerformance]
+        [HarmonyPostfix]
 		public static void PsychologyAddonsForCanReceive(ref bool __result, Pawn p)
 		{
 			__result = __result && !p.health.hediffSet.HasHediff(HediffDefOfPsychology.HoldingConversation) && (p.Map.lordManager.lords.Find(l => l.LordJob is LordJob_VisitMayor) == null || !p.Map.lordManager.lords.Find(l => l.LordJob is LordJob_VisitMayor).ownedPawns.Contains(p));
@@ -20,8 +21,9 @@ namespace Psychology.Harmony
 
 	[HarmonyPatch(typeof(InteractionUtility), "CanInitiateRandomInteraction", new[] { typeof(Pawn) })]
 	public static class InteractionUtility_CanInitiate_Patch
-	{
-		[HarmonyPostfix]
+    {
+        [LogPerformance]
+        [HarmonyPostfix]
 		public static void PsychologyAddonsForCanInitiate(ref bool __result, Pawn p)
 		{
 			__result = __result && !p.health.hediffSet.HasHediff(HediffDefOfPsychology.HoldingConversation) && (p.Map.lordManager.lords.Find(l => l.LordJob is LordJob_VisitMayor) == null || !p.Map.lordManager.lords.Find(l => l.LordJob is LordJob_VisitMayor).ownedPawns.Contains(p));

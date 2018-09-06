@@ -6,6 +6,7 @@ namespace Psychology
 {
     public class ThoughtWorker_RandomMoodBipolar : ThoughtWorker
     {
+        [LogPerformance]
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
 

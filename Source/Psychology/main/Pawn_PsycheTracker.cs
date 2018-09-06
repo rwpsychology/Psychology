@@ -17,6 +17,7 @@ namespace Psychology
             this.pawn = pawn;
         }
 
+        [LogPerformance]
         public void Initialize()
         {
             this.upbringing = Mathf.RoundToInt(Rand.ValueSeeded(this.pawn.HashOffset()) * (PersonalityCategories-1))+1;
@@ -33,7 +34,8 @@ namespace Psychology
             Scribe_Values.Look(ref this.lastDateTick, "lastDateTick", 0, false);
             Scribe_Collections.Look(ref this.nodes, "nodes", LookMode.Deep, new object[] { this.pawn });
         }
-        
+
+        [LogPerformance]
         public float GetPersonalityRating(PersonalityNodeDef def)
         {
             return nodes.Find((PersonalityNode n) => n.def == def).AdjustedRating;
@@ -44,6 +46,7 @@ namespace Psychology
             return nodes.Find((PersonalityNode n) => n.def == def);
         }
 
+        [LogPerformance]
         public float GetConversationTopicWeight(PersonalityNodeDef def, Pawn otherPawn)
         {
             /* Pawns will avoid controversial topics until they know someone better.
@@ -66,6 +69,7 @@ namespace Psychology
             return weight;
         }
 
+        [LogPerformance]
         public float TotalThoughtOpinion(Pawn other)
         {
             float knownThoughtOpinion = 1f;

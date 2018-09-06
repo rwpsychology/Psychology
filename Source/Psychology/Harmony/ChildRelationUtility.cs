@@ -12,6 +12,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(ChildRelationUtility), nameof(ChildRelationUtility.ChanceOfBecomingChildOf))]
     public static class ChildRelationUtility_ChanceOfBecomingChildOf_Patch
     {
+        [LogPerformance]
         [HarmonyPostfix]
         public static void KinseyFactor(ref float __result, Pawn father, Pawn mother, Pawn child)
         {

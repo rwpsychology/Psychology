@@ -12,6 +12,7 @@ namespace Psychology
     public class MentalState_SelfHarm : MentalState
     {
 
+        [LogPerformance]
         public override void MentalStateTick()
         {
             base.MentalStateTick();

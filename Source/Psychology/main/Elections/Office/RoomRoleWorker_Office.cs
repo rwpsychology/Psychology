@@ -9,6 +9,7 @@ namespace Psychology
 {
     class RoomRoleWorker_Office : RoomRoleWorker
     {
+        [LogPerformance]
         public override float GetScore(Room room)
         {
             int num = 0;

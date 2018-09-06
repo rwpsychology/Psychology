@@ -18,6 +18,7 @@ namespace Psychology
             pawn = editFor;
         }
 
+        [LogPerformance]
         public override void DoWindowContents(Rect inRect)
         {
             bool flag = false;

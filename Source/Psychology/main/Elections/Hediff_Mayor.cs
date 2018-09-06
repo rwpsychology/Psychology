@@ -17,6 +17,7 @@ namespace Psychology
             Scribe_Values.Look(ref this.worldTileElectedOn, "worldTileElectedOn", 0);
         }
 
+        [LogPerformance]
         public override void Tick()
         {
             base.Tick();

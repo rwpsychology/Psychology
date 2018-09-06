@@ -6,6 +6,7 @@ namespace Psychology
 {
     public class ThoughtWorker_Pluviophile : ThoughtWorker
     {
+        [LogPerformance]
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
             if (!p.Spawned)

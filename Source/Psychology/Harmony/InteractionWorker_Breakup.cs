@@ -11,8 +11,9 @@ namespace Psychology.Harmony
 {
 	[HarmonyPatch(typeof(InteractionWorker_Breakup), nameof(InteractionWorker_Breakup.Interacted))]
 	public static class InteractionWorker_Breakup_Interacted_Patch
-	{
-		[HarmonyPrefix]
+    {
+        [LogPerformance]
+        [HarmonyPrefix]
 		public static bool NewInteracted(InteractionWorker_Breakup __instance, Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks)
 		{
 			/* If you want to patch this method, you can stuff it. */
@@ -81,8 +82,9 @@ namespace Psychology.Harmony
 
 	[HarmonyPatch(typeof(InteractionWorker_Breakup), nameof(InteractionWorker_Breakup.RandomSelectionWeight), new[] { typeof(Pawn), typeof(Pawn) })]
 	public static class InteractionWorker_RandomSelectionWeight_Patch
-	{
-		[HarmonyPrefix]
+    {
+        [LogPerformance]
+        [HarmonyPrefix]
 		public static bool NewSelectionWeight(InteractionWorker_Breakup __instance, ref float __result, Pawn initiator, Pawn recipient)
 		{
 			/* Also this one. */
@@ -115,8 +117,9 @@ namespace Psychology.Harmony
 	}
 
     internal static class BreakupHelperMethods
-	{
-		public static void AddExLover(Pawn lover, Pawn ex)
+    {
+        [LogPerformance]
+        public static void AddExLover(Pawn lover, Pawn ex)
 		{
 			/*
              * TODO: Fix the below
@@ -139,7 +142,8 @@ namespace Psychology.Harmony
 			lover.relations.AddDirectRelation(PawnRelationDefOf.ExLover, ex);
 		}
 
-		public static void AddBrokeUpOpinion(Pawn lover, Pawn ex)
+        [LogPerformance]
+        public static void AddBrokeUpOpinion(Pawn lover, Pawn ex)
 		{
 			ThoughtDef brokeUpDef = new ThoughtDef();
 			brokeUpDef.defName = "BrokeUpWithMe" + lover.LabelShort + Find.TickManager.TicksGame;
@@ -152,7 +156,8 @@ namespace Psychology.Harmony
 			lover.needs.mood.thoughts.memories.TryGainMemory(brokeUpDef, ex);
 		}
 
-		public static void AddBrokeUpMood(Pawn lover, Pawn ex)
+        [LogPerformance]
+        public static void AddBrokeUpMood(Pawn lover, Pawn ex)
 		{
 			ThoughtDef brokeUpMoodDef = new ThoughtDef();
 			brokeUpMoodDef.defName = "BrokeUpWithMeMood" + lover.LabelShort + Find.TickManager.TicksGame;

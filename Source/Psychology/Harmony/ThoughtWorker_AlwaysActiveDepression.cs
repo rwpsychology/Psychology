@@ -11,6 +11,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(ThoughtWorker_AlwaysActive), "CurrentStateInternal")]
     public static class ThoughtWorker_AlwaysActivePatch
     {
+        [LogPerformance]
         [HarmonyPostfix]
         public static void AlwaysActiveDepression(ref ThoughtState __result, Pawn p)
         {

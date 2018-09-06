@@ -13,8 +13,9 @@ namespace Psychology.Harmony
 {
 	[HarmonyPatch(typeof(InteractionWorker_MarriageProposal), nameof(InteractionWorker_MarriageProposal.AcceptanceChance))]
 	public static class InteractionWorker_MarriageProposal_AcceptanceChancePatch
-	{
-		[HarmonyPrefix]
+    {
+        [LogPerformance]
+        [HarmonyPrefix]
 		public static bool PsychologyException(InteractionWorker_MarriageProposal __instance, ref float __result, Pawn initiator, Pawn recipient)
 		{
 			if (recipient.GetComp<CompPsychology>() != null && recipient.GetComp<CompPsychology>().isPsychologyPawn)
@@ -36,8 +37,9 @@ namespace Psychology.Harmony
 
 	[HarmonyPatch(typeof(InteractionWorker_MarriageProposal), nameof(InteractionWorker_MarriageProposal.Interacted))]
 	public static class InteractionWorker_MarriageProposal_InteractedPatch
-	{
-		[HarmonyTranspiler]
+    {
+        [LogPerformance]
+        [HarmonyTranspiler]
 		public static IEnumerable<CodeInstruction> BlindfoldedSurgery(IEnumerable<CodeInstruction> instrs)
 		{
             //TODO: Kill self.

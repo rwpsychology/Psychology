@@ -11,6 +11,7 @@ namespace Psychology
 {
     public class IncidentWorker_Election : IncidentWorker_MakeGameCondition
     {
+        [LogPerformance]
         protected override bool TryExecuteWorker(IncidentParms parms)
         {
             Map map = (Map)parms.target;

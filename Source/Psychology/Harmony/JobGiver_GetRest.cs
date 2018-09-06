@@ -11,6 +11,7 @@ namespace Psychology.Harmony
     [HarmonyPatch(typeof(JobGiver_GetRest), nameof(JobGiver_GetRest.GetPriority))]
     public static class JobGiver_GetRest_PriorityPatch
     {
+        [LogPerformance]
         [HarmonyPostfix]
         public static void InsomniacPriority(ref float __result, Pawn pawn)
         {
