@@ -146,7 +146,7 @@ namespace Psychology
                     PlayLogEntry_InteractionConversation log = new PlayLogEntry_InteractionConversation(endConversation, pawn, this.otherPawn, new List<RulePackDef>());
                     Find.PlayLog.Add(log);
                     MoteMaker.MakeInteractionBubble(this.pawn, this.otherPawn, InteractionDefOf.Chitchat.interactionMote, InteractionDefOf.Chitchat.Symbol);
-                    this.pawn.interactions.CheckSocialFightStart(endConversation, pawn);
+                    this.pawn.interactions.CheckSocialFightStart(endConversation, otherPawn);
                 }
             }
         }
