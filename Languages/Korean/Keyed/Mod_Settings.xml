@@ -19,5 +19,14 @@
 
   <ElectionsTitle>선거 활성화</ElectionsTitle>
   <ElectionsTooltip>이 옵션을 해제하여 해마다 열리는 선거 이벤트 및 지도자 기능을 비활성화 합니다. 이미 진행중인 선거는 멈추지 못하며, 기존 지도자는 일반 정착민으로 돌아갈 것 입니다. 해당 옵션은 타 모드 호환성에 영향일 끼치지 않습니다.</ElectionsTooltip>
+	
+	<DurationTitle>Conversation duration</DurationTitle>
+	<DurationTooltip>Set how long people will remember conversations for. The default is 60 days, i.e. one year. The minimum is 15 days, or a quadrum, to a maximum of 180 days, or three years. Setting it lower will make colonists' interactions with each other more ephemeral, and setting it higher will make them more lasting.</DurationTooltip>
+	
+	<SendDateLettersTitle>Send date letters</SendDateLettersTitle>
+	<SendDateLettersTooltip>Turn this off to disable receiving letters when your colonists plan a date together.</SendDateLettersTooltip>
+	
+	<BenchmarkingTitle>Enable performance testing</BenchmarkingTitle>
+	<BenchmarkingTooltip>Turn this on to receive occasional performance reports in the console relating to Psychology systems. You can copy and paste these reports to assist in optimization of the mod. WARNING: Performance testing comes with its own performance impact.\n\nToggling this will restart your game.</BenchmarkingTooltip>
 
 </LanguageData>

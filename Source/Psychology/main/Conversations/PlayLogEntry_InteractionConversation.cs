@@ -47,7 +47,7 @@ namespace Psychology
             InteractionDef newIntDef = new InteractionDef();
             newIntDef.defName = "EndConversation";
             FieldInfo Symbol = typeof(InteractionDef).GetField("symbol", BindingFlags.Instance | BindingFlags.NonPublic);
-            Symbol.SetValue(newIntDef, Symbol.GetValue(InteractionDefOf.DeepTalk));
+            Symbol.SetValue(newIntDef, Symbol.GetValue(InteractionDefOfPsychology.EndConversation));
             newIntDef.label = "ConversationEnded".Translate();
             FieldInfo RuleStrings = typeof(RulePack).GetField("rulesStrings", BindingFlags.Instance | BindingFlags.NonPublic);
             RulePack initPack = new RulePack();

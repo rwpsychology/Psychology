@@ -11,6 +11,7 @@ namespace Psychology
 {
     public class InteractionWorker_PlanDate : InteractionWorker
     {
+        [LogPerformance]
         public override float RandomSelectionWeight(Pawn initiator, Pawn recipient)
         {
             if(!initiator.IsColonist || !recipient.IsColonist)
@@ -41,6 +42,7 @@ namespace Psychology
                 * PsycheHelper.Comp(recipient).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Romantic) * (1f - PsycheHelper.Comp(recipient).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent)) * RendezvousUtility.ColonySizeFactor(initiator);
         }
 
+        [LogPerformance]
         public override void Interacted(Pawn initiator, Pawn recipient, List<RulePackDef> extraSentencePacks, out string letterText, out string letterLabel, out LetterDef letterDef)
         {
             letterText = null;
@@ -75,7 +77,7 @@ namespace Psychology
             if(PsychologyBase.SendDateLetters())
             {
                 int hourDiscrepancy = GenDate.HourOfDay(day, Find.WorldGrid.LongLatOf(initiator.Map.Tile).x) - hour;
-                int accurateTime = day + GenDate.TicksPerDay + Math.Abs(hourDiscrepancy) * GenDate.TicksPerHour;
+                int accurateTime = day + Math.Abs(hourDiscrepancy) * GenDate.TicksPerHour;
                 Log.Message("Hour: " + hour + "/" + GenDate.HourOfDay(accurateTime, Find.WorldGrid.LongLatOf(initiator.Map.Tile).x));
                 String dateTime = GenDate.QuadrumDateStringAt(accurateTime, Find.WorldGrid.LongLatOf(initiator.Map.Tile).x);
                 Letter dateLetter = LetterMaker.MakeLetter("LetterLabelDatePlanned".Translate(), "LetterDatePlanned".Translate(new object[] { initiator, recipient, dateTime, hour }), LetterDefOf.PositiveEvent);

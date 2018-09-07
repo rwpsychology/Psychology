@@ -21,7 +21,7 @@
     <defName>Conversation</defName>
     <label>conversation</label>
     <workerClass>Psychology.InteractionWorker_Conversation</workerClass>
-    <symbol>Things/Mote/SpeechSymbols/Chitchat</symbol>
+    <symbol>Things/Mote/SpeechSymbols/DeepTalk</symbol>
     <logRulesInitiator>
       <rulesStrings>
         <li>r_logentry(p=4)->[INITIATOR_nameDef] [conversed] with [RECIPIENT_nameDef].</li>
@@ -41,7 +41,7 @@
     <defName>EndConversation</defName>
     <label>ended conversation</label>
     <workerClass>InteractionWorker_DeepTalk</workerClass> <!-- This will prevent them from actually doing it.-->
-    <symbol>Things/Mote/SpeechSymbols/DeepTalk</symbol>
+    <symbol>Things/Mote/SpeechSymbols/Conversation</symbol>
     <logRulesInitiator>
       <rulesStrings>
         <li>r_logentry->[INITIATOR_nameDef] ended a conversation with [RECIPIENT_nameDef].</li>
@@ -53,7 +53,7 @@
     <defName>HangOut</defName>
     <label>hanging out</label>
     <workerClass>Psychology.InteractionWorker_HangOut</workerClass>
-    <symbol>Things/Mote/SpeechSymbols/DeepTalk</symbol>
+    <symbol>Things/Mote/SpeechSymbols/HangOut</symbol>
     <logRulesInitiator>
       <rulesStrings>
         <li>r_logentry->[INITIATOR_nameDef] asked [RECIPIENT_nameDef] to hang out with [INITIATOR_objective].</li>

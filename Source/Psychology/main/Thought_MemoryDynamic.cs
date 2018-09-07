@@ -8,7 +8,7 @@ using Verse.AI;
 
 namespace Psychology
 {
-    class Thought_MemoryDynamic : Thought_Memory
+    public class Thought_MemoryDynamic : Thought_Memory
     {
         public Thought_MemoryDynamic()
         {

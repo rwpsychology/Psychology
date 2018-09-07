@@ -45,4 +45,6 @@
 	<EpicTalk5>[INITIATOR_nameDef] had a very lengthy back-and-forth about {0} with [RECIPIENT_nameDef].</EpicTalk5>
 	<EpicTalk6>[INITIATOR_nameDef] vented about {0} with [RECIPIENT_nameDef] for hours.</EpicTalk6>
 	
+	<ConversationAnd> y </ConversationAnd>
+	
 </LanguageData>

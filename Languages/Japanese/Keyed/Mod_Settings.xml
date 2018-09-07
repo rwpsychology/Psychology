@@ -22,6 +22,12 @@
 
 	<DurationTitle>会話記録時期</DurationTitle>
 	<DurationTooltip>入植者が会話の項目を覚える時間の設定です。デフォルトは60日間、すなわち一年間です。最低限は15日間及び季節一つで、最大限は180日間及び3年間です。低い設定は入植者のやり取りの影響を低める一方、高い設定では会話の影響が積もりやすくなります（データも）。</DurationTooltip>
+	
+	<SendDateLettersTitle>Send date letters</SendDateLettersTitle>
+	<SendDateLettersTooltip>Turn this off to disable receiving letters when your colonists plan a date together.</SendDateLettersTooltip>
+	
+	<BenchmarkingTitle>Enable performance testing</BenchmarkingTitle>
+	<BenchmarkingTooltip>Turn this on to receive occasional performance reports in the console relating to Psychology systems. You can copy and paste these reports to assist in optimization of the mod. WARNING: Performance testing comes with its own performance impact.\n\nToggling this will restart your game.</BenchmarkingTooltip>
   
   
 </LanguageData>

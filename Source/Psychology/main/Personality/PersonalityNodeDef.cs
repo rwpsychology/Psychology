@@ -42,14 +42,14 @@ namespace Psychology
         }
 
         /* Being a woman has an 80% chance to modify this node by this amount, reduced by how gay she is.
-         * This models the cultural impact traditional gender roles have on their personality.
-         * Even in 55XX, the patriarchy has not been vanquished.
+         * This models the cultural impact traditional gender roles have on their personality. (Lesbians, obviously, tend to subvert them.)
+         * Even in 55XX, the patriarchy has not been vanquished. /s
          */
         public float femaleModifier;
         //A list of the DefNames of the parents of this node.
         public List<PersonalityNodeParent> parents;
         //What pawns talk about when they talk about this node.
-        public string conversationTopic;
+        public List<string> conversationTopics;
         //What pawns with a high rating in this node use as a platform issue.
         public string platformIssueHigh;
         //What pawns with a low rating in this node use as a platform issue.

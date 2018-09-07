@@ -52,41 +52,45 @@ namespace Psychology
             /* Pawns will avoid controversial topics until they know someone better.
              * This isn't a perfect system, but the weights will be closer together the higher totalOpinionModifiers is.
              */
-            float weight = 10f/(Mathf.Lerp(1f+(8*def.controversiality), 1f + (def.controversiality/2), Mathf.Clamp01(this.TotalThoughtOpinion(otherPawn)/75) + this.GetPersonalityRating(PersonalityNodeDefOf.Aggressive)));
+            IEnumerable<Thought_MemorySocialDynamic> convoMemories;
+            float weight = 10f/(Mathf.Lerp(1f+(8*def.controversiality), 1f + (def.controversiality/2), Mathf.Clamp01(this.TotalThoughtOpinion(otherPawn, out convoMemories)/75) + this.GetPersonalityRating(PersonalityNodeDefOf.Aggressive)));
             /* Polite pawns will avoid topics they already know are contentious. */
-            float knownDisagreements = 0f;
-            IEnumerable<Thought_MemorySocialDynamic> allConvos = (from m in this.pawn.needs.mood.thoughts.memories.Memories.OfType<Thought_MemorySocialDynamic>()
-                                                                  where m.def.defName.Contains("Conversation")
-                                                                  select m);
-            foreach (Thought_MemorySocialDynamic memory in allConvos)
+            Pair<string, string> disagreementKey = new Pair<string,string>(otherPawn.ThingID, def.defName);
+            if (cachedDisagreementWeights.ContainsKey(disagreementKey) && !recalcNodeDisagreement[disagreementKey])
             {
-                if(memory.CurStage.label == def.defName && memory.opinionOffset < 0f)
-                {
-                    knownDisagreements += Mathf.Abs(memory.opinionOffset);
-                }
+                weight *= cachedDisagreementWeights[disagreementKey];
             }
-            weight *= Mathf.Clamp01(1f / (knownDisagreements / 50)) * Mathf.Lerp(0.25f, 1f, this.GetPersonalityRating(PersonalityNodeDefOf.Polite));
+            else
+            {
+                float knownDisagreements = (from m in convoMemories
+                                            where m.opinionOffset < 0f && m.CurStage.label == def.defName
+                                            select Math.Abs(m.opinionOffset)).Sum();
+                float disagree = 1f;
+                if (knownDisagreements > 0)
+                {
+                    disagree = Mathf.Clamp01(1f / (knownDisagreements / 50)) * Mathf.Lerp(0.25f, 1f, this.GetPersonalityRating(PersonalityNodeDefOf.Polite));
+                }
+                cachedDisagreementWeights[disagreementKey] = disagree;
+                recalcNodeDisagreement[disagreementKey] = false;
+                weight *= disagree;
+            }
             return weight;
         }
 
         [LogPerformance]
-        public float TotalThoughtOpinion(Pawn other)
+        public float TotalThoughtOpinion(Pawn other, out IEnumerable<Thought_MemorySocialDynamic> convoMemories)
         {
-            float knownThoughtOpinion = 1f;
-            if (this.pawn != null)
+            convoMemories = (from m in this.pawn.needs.mood.thoughts.memories.Memories.OfType<Thought_MemorySocialDynamic>()
+                             where m.def.defName.Contains("Conversation") && m.otherPawn == other
+                             select m);
+            if (cachedOpinions.ContainsKey(other.ThingID) && !recalcCachedOpinions[other.ThingID])
             {
-                IEnumerable<Thought_Memory> convos = (from m in this.pawn.needs.mood.thoughts.memories.Memories
-                                                      where m.def.defName.Contains("Conversation") && m.otherPawn.ThingID == other.ThingID
-                                                      select m);
-                foreach (Thought_Memory m in convos)
-                {
-                    if (m == null)
-                    {
-                        break;
-                    }
-                    knownThoughtOpinion += Mathf.Abs(m.CurStage.baseOpinionOffset);
-                }
+                return cachedOpinions[other.ThingID];
             }
+            float knownThoughtOpinion = 1f;
+            convoMemories.Do(m => knownThoughtOpinion += Math.Abs(m.opinionOffset));
+            cachedOpinions[other.ThingID] = knownThoughtOpinion;
+            recalcCachedOpinions[other.ThingID] = false;
             return knownThoughtOpinion;
         }
 
@@ -106,6 +110,10 @@ namespace Psychology
         public int lastDateTick = 0;
         private Pawn pawn;
         private List<PersonalityNode> nodes;
+        private Dictionary<string, float> cachedOpinions = new Dictionary<string, float>();
+        public Dictionary<string, bool> recalcCachedOpinions = new Dictionary<string, bool>();
+        private Dictionary<Pair<string,string>, float> cachedDisagreementWeights = new Dictionary<Pair<string, string>, float>();
+        public Dictionary<Pair<string,string>, bool> recalcNodeDisagreement = new Dictionary<Pair<string, string>, bool>();
         public const int PersonalityCategories = 16;
     }
 }

@@ -42,7 +42,19 @@
 		<label>independent</label>
 		<description>An independent person is perfectly happy being on their own and doesn't rely on others.</description>
 		<controversiality>0.9</controversiality>
-		<conversationTopic>solitude</conversationTopic>
+		<conversationTopics>
+			<li>solitude</li>
+			<li>introversion</li>
+			<li>extroversion</li>
+			<li>hard work</li>
+			<li>liberty</li>
+			<li>self-reliance</li>
+			<li>self-sufficiency</li>
+			<li>survival</li>
+			<li>society</li>
+			<li>dependence</li>
+			<li>addiction</li>
+		</conversationTopics>
 		<platformIssueHigh>This colony is burdened by takers.</platformIssueHigh>
 		<platformIssueLow>We're stronger when we're united.</platformIssueLow>
 		<parents>
@@ -133,7 +145,17 @@
 		<label>aggressive</label>
 		<description>An aggressive person is straightforward, blunt, and usually combative when they don't get what they want.</description>
 		<controversiality>1.6</controversiality>
-		<conversationTopic>a disagreement between them</conversationTopic>
+		<conversationTopics>
+			<li>a disagreement between them</li>
+			<li>a conflict between them</li>
+			<li>personal boundaries</li>
+			<li>conflict resolution</li>
+			<li>kindness</li>
+			<li>social fighting</li>
+			<li>stubbornness</li>
+			<li>civility</li>
+			<li>other people's feelings</li>
+		</conversationTopics>
 		<platformIssueHigh>We need greater support for free speech.</platformIssueHigh>
 		<platformIssueLow>We need to be more mindful of each other.</platformIssueLow>
 		<femaleModifier>0.5</femaleModifier>
@@ -161,7 +183,19 @@
 		<label>adventurous</label>
 		<description>Someone who is adventurous feels more fulfilled when they try new things, expand their horizons, and go new places.</description>
 		<controversiality>0.4</controversiality>
-		<conversationTopic>their bucket lists</conversationTopic>
+		<conversationTopics>
+			<li>their bucket lists</li>
+			<li>life's rewards</li>
+			<li>getting out and about</li>
+			<li>adventure</li>
+			<li>caravaning</li>
+			<li>travel</li>
+			<li>strangers</li>
+			<li>new research</li>
+			<li>exotic foods</li>
+			<li>sitting around</li>
+			<li>returning to the stars</li>
+		</conversationTopics>
 		<platformIssueHigh>Everyone should have more opportunities.</platformIssueHigh>
 		<platformIssueLow>Our colony has everything we need.</platformIssueLow>
 		<parents>
@@ -192,7 +226,19 @@
 		<label>drug-friendly</label>
 		<description>A drug-friendly person sees nothing wrong with drugs and makes no effort to avoid them.</description>
 		<controversiality>1.2</controversiality>
-		<conversationTopic>drugs</conversationTopic>
+		<conversationTopics>
+			<li>drugs</li>
+			<li>drunkenness</li>
+			<li>getting drunk</li>
+			<li>getting high</li>
+			<li>smokeleaf</li>
+			<li>beer</li>
+			<li>flake</li>
+			<li>yayo</li>
+			<li>go-juice</li>
+			<li>ambrosia</li>
+			<li>psychoid tea</li>
+		</conversationTopics>
 		<platformIssueHigh>Drugs can make our lives easier and better.</platformIssueHigh>
 		<platformIssueLow>Drugs have no place in this colony.</platformIssueLow>
 		<parents>
@@ -232,8 +278,16 @@
 		<defName>Spontaneous</defName>
 		<label>spontaneous</label>
 		<description>A spontaneous person tends to be impulsive and enjoy surprising others.</description>
-		<controversiality>1</controversiality>
-		<conversationTopic>practical jokes</conversationTopic>
+		<controversiality>0.9</controversiality>
+		<conversationTopics>
+			<li>practical jokes</li>
+			<li>humor</li>
+			<li>puns</li>
+			<li>planning ahead</li>
+			<li>introspection</li>
+			<li>surprise parties</li>
+			<li>presents</li>
+		</conversationTopics>
 		<platformIssueHigh>As mayor, I'll get things done.</platformIssueHigh>
 		<platformIssueLow>As mayor, I'll tackle our problems carefully.</platformIssueLow>
 		<parents>
@@ -246,9 +300,17 @@
 	<Psychology.PersonalityNodeDef>
 		<defName>Rational</defName>
 		<label>rational</label>
-		<description>The more rational someone is, the more capable they are thinking about things from a factual, objective standpoint.</description>
+		<description>The more rational someone is, the more capable they are of thinking about things from a factual, objective standpoint.</description>
 		<controversiality>1.4</controversiality>
-		<conversationTopic>philosophy</conversationTopic>
+		<conversationTopics>
+			<li>philosophy</li>
+			<li>maturity</li>
+			<li>reality</li>
+			<li>epistemology</li>
+			<li>causality</li>
+			<li>confirmation bias</li>
+			<li>belief perseverance</li>
+		</conversationTopics>
 		<platformIssueHigh>We need a facts-based approach to the issues.</platformIssueHigh>
 		<platformIssueLow>History is written by the winners.</platformIssueLow>
 		<parents>
@@ -271,7 +333,19 @@
 		<label>logical</label>
 		<description>A logical person is highly capable of connecting cause and effect, and predicting the consequences of actions.</description>
 		<controversiality>1</controversiality>
-		<conversationTopic>inventing things</conversationTopic>
+		<conversationTopics>
+			<li>inventing things</li>
+			<li>conspiracy theories</li>
+			<li>logical fallacies</li>
+			<li>human limitations</li>
+			<li>research</li>
+			<li>science</li>
+			<li>astronomy</li>
+			<li>chemistry</li>
+			<li>engineering</li>
+			<li>biology</li>
+			<li>technology</li>
+		</conversationTopics>
 		<platformIssueHigh>Our problems are solveable.</platformIssueHigh>
 		<platformIssueLow>I will solve our problems.</platformIssueLow>
 		<parents>
@@ -303,7 +377,19 @@
 		<label>creative</label>
 		<description>Creative people can imagine things in vivid detail, whether they ever existed or not.</description>
 		<controversiality>0.85</controversiality>
-		<conversationTopic>writing and drawing</conversationTopic>
+		<conversationTopics>
+			<li>writing and drawing</li>
+			<li>art</li>
+			<li>theater</li>
+			<li>aliens</li>
+			<li>alien contact</li>
+			<li>cryptids</li>
+			<li>ghost stories</li>
+			<li>fantasy</li>
+			<li>their favorite books</li>
+			<li>their favorite movies</li>
+			<li>xenohumans</li>
+		</conversationTopics>
 		<platformIssueHigh>I'll bring innovative solutions to the table.</platformIssueHigh>
 		<platformIssueLow>We need to look at things as they are.</platformIssueLow>
 		<parents>
@@ -340,7 +426,14 @@
 		<label>passionate</label>
 		<description>People who are passionate feel very strongly about things and tend to express themselves emphatically.</description>
 		<controversiality>1.4</controversiality>
-		<conversationTopic>their likes and dislikes</conversationTopic>
+		<conversationTopics>
+			<li>their likes and dislikes</li>
+			<li>enthusiasm</li>
+			<li>their desires</li>
+			<li>learning</li>
+			<li>being overbearing</li>
+			<li>apathy</li>
+		</conversationTopics>
 		<platformIssueHigh>I'll put all my energy into the job.</platformIssueHigh>
 		<platformIssueLow>I'll do what needs to be done.</platformIssueLow>
 		<parents>
@@ -362,7 +455,16 @@
 		<label>nostalgic</label>
 		<description>Someone nostalgic has a very strong connection to their past and anything that evokes those memories.</description>
 		<controversiality>0.75</controversiality>
-		<conversationTopic>the old days</conversationTopic>
+		<conversationTopics>
+			<li>the old days</li>
+			<li>childhood</li>
+			<li>regrets</li>
+			<li>old Earth</li>
+			<li>their origins</li>
+			<li>the way things were</li>
+			<li>history</li>
+			<li>mementos</li>
+		</conversationTopics>
 		<platformIssueHigh>Things were better in the old days.</platformIssueHigh>
 		<platformIssueLow>We can create a bright future.</platformIssueLow>
 		<parents>
@@ -391,8 +493,18 @@
 		<defName>Empathetic</defName>
 		<label>empathetic</label>
 		<description>An empathetic person is able to put themselves into the shoes of others and understand their feelings.</description>
-		<controversiality>1.7</controversiality>
-		<conversationTopic>their lives</conversationTopic>
+		<controversiality>1.6</controversiality>
+		<conversationTopics>
+			<li>psychopathy</li>
+			<li>isolationism</li>
+			<li>understanding each other</li>
+			<li>taking advantage of people</li>
+			<li>community</li>
+			<li>caring</li>
+			<li>mercy</li>
+			<li>sparing lives</li>
+			<li>selfishness</li>
+		</conversationTopics>
 		<platformIssueHigh>The mayor should ensure that every colonist is taken care of.</platformIssueHigh>
 		<platformIssueLow>The mayor shouldn't meddle in the private affairs of colonists.</platformIssueLow>
 		<femaleModifier>1.25</femaleModifier>
@@ -439,7 +551,15 @@
 		<label>competitive</label>
 		<controversiality>1.35</controversiality>
 		<description>For a competitive person, it's not enough that they succeed, others must fail.</description>
-		<conversationTopic>success</conversationTopic>
+		<conversationTopics>
+			<li>success</li>
+			<li>pride</li>
+			<li>social status</li>
+			<li>their accomplishments</li>
+			<li>talent</li>
+			<li>other settlements</li>
+			<li>their skills</li>
+		</conversationTopics>
 		<platformIssueHigh>Our colony should reward innovators.</platformIssueHigh>
 		<platformIssueLow>Everyone in our colony should be able to succeed.</platformIssueLow>
 		<parents>
@@ -465,8 +585,19 @@
 		<defName>Polite</defName>
 		<label>polite</label>
 		<description>A polite person is well-mannered and makes an effort not to offend other people.</description>
-		<controversiality>1.2</controversiality>
-		<conversationTopic>manners</conversationTopic>
+		<controversiality>1.5</controversiality>
+		<conversationTopics>
+			<li>manners</li>
+			<li>tact</li>
+			<li>civility</li>
+			<li>feelings</li>
+			<li>respect</li>
+			<li>the golden rule</li>
+			<li>subtlety</li>
+			<li>rudeness</li>
+			<li>swearing</li>
+			<li>slurs</li>
+		</conversationTopics>
 		<platformIssueHigh>We should respect those who came before us.</platformIssueHigh>
 		<platformIssueLow>We should be judged on our merits.</platformIssueLow>
 		<parents>
@@ -500,7 +631,15 @@
 		<label>cool</label>
 		<description>Someone who's cool is edgy, unique, and interesting, and people tend to like them more.</description>
 		<controversiality>1</controversiality>
-		<conversationTopic>glitterworld trends</conversationTopic>
+		<conversationTopics>
+			<li>glitterworld trends</li>
+			<li>fashion</li>
+			<li>hairstyles</li>
+			<li>makeup</li>
+			<li>facial hair</li>
+			<li>partying</li>
+			<li>the newest slang</li>
+		</conversationTopics>
 		<platformIssueHigh>Vote for the person you know and respect.</platformIssueHigh>
 		<platformIssueLow>Vote for the person who will do the best job.</platformIssueLow>
 		<parents>
@@ -567,7 +706,19 @@
 		<label>romantic</label>
 		<description>Someone romantic likes long-term, meaningful relationships, commitment, and intimate gestures.</description>
 		<controversiality>1.2</controversiality>
-		<conversationTopic>relationships</conversationTopic>
+		<conversationTopics>
+			<li>relationships</li>
+			<li>old flames</li>
+			<li>children</li>
+			<li>having children</li>
+			<li>love</li>
+			<li>romance</li>
+			<li>sexuality</li>
+			<li>lovers</li>
+			<li>lovin'</li>
+			<li>commitment</li>
+			<li>adultery</li>
+		</conversationTopics>
 		<platformIssueHigh>I will take the position seriously.</platformIssueHigh>
 		<platformIssueLow>This job won't go to my head.</platformIssueLow>
 		<parents>
@@ -605,7 +756,15 @@
 		<label>thoughtful</label>
 		<description>Thoughtful people are introspective and critical, and tend to plan ahead.</description>
 		<controversiality>0.75</controversiality>
-		<conversationTopic>the future</conversationTopic>
+		<conversationTopics>
+			<li>the future</li>
+			<li>life goals</li>
+			<li>priorities</li>
+			<li>solutions</li>
+			<li>memory</li>
+			<li>brainstorming</li>
+			<li>dreams</li>
+		</conversationTopics>
 		<platformIssueHigh>We need plans for the future.</platformIssueHigh>
 		<platformIssueLow>We need to address what's happening in the present.</platformIssueLow>
 		<parents>
@@ -614,6 +773,10 @@
 			</li>
 			<li>
 				<node>Logical</node>
+			</li>
+			<li>
+				<node>Spontaneous</node>
+				<modifier>-1</modifier>
 			</li>
 		</parents>
 		<preferredDateHours>
@@ -630,7 +793,24 @@
 		<label>geeky</label>
 		<description>Someone who is geeky is intellectual, eccentric, and frequently socially awkward.</description>
 		<controversiality>0.6</controversiality>
-		<conversationTopic>their hobbies</conversationTopic>
+		<conversationTopics>
+			<li>their hobbies</li>
+			<li>self-replicating machines</li>
+			<li>generation ships</li>
+			<li>Von Neumann probes</li>
+			<li>archotechnology</li>
+			<li>mechanoids</li>
+			<li>cryptosleep</li>
+			<li>cryptosleep tombs</li>
+			<li>artificial intelligence</li>
+			<li>the Johnson-Tanaka drive</li>
+			<li>the Ordo Historia</li>
+			<li>computer technology</li>
+			<li>weapons technology</li>
+			<li>AI personas</li>
+			<li>bionics</li>
+			<li>transhumanism</li>
+		</conversationTopics>
 		<platformIssueHigh>Think of the possibilities we can pursue.</platformIssueHigh>
 		<platformIssueLow>Let's focus on what's practical.</platformIssueLow>
 		<parents>
@@ -645,6 +825,16 @@
 				<modifier>1</modifier>
 			</li>
 		</parents>
+		<traitModifiers>
+			<li>
+				<trait>Transhumanist</trait>
+				<modifier>0.3</modifier>
+			</li>
+			<li>
+				<trait>BodyPurist</trait>
+				<modifier>-0.3</modifier>
+			</li>
+		</traitModifiers>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
@@ -652,7 +842,20 @@
 		<label>cultured</label>
 		<description>A cultured person is well-read, well-educated, and refined.</description>
 		<controversiality>0.4</controversiality>
-		<conversationTopic>arts and literature</conversationTopic>
+		<conversationTopics>
+			<li>aesthetics</li>
+			<li>television</li>
+			<li>books they've read</li>
+			<li>movies they've watched</li>
+			<li>statues</li>
+			<li>arts and literature</li>
+			<li>art history</li>
+			<li>the legitimacy of art</li>
+			<li>education</li>
+			<li>teachers</li>
+			<li>ancient history</li>
+			<li>fine foods</li>
+		</conversationTopics>
 		<platformIssueHigh>Those who do not learn history are doomed to repeat it.</platformIssueHigh>
 		<platformIssueLow>I'm just a regular person like all of you.</platformIssueLow>
 		<parents>
@@ -667,7 +870,16 @@
 		<label>organized</label>
 		<description>An organized person keeps everything tidy, neat, and minimalistic.</description>
 		<controversiality>0.4</controversiality>
-		<conversationTopic>cleanliness</conversationTopic>
+		<conversationTopics>
+			<li>cleanliness</li>
+			<li>pets</li>
+			<li>laundry</li>
+			<li>hauling</li>
+			<li>cleaning</li>
+			<li>eating with tables</li>
+			<li>filth</li>
+			<li>exotic animals</li>
+		</conversationTopics>
 		<platformIssueHigh>Simple solutions are usually best.</platformIssueHigh>
 		<platformIssueLow>Life is complex, and so are our problems.</platformIssueLow>
 		<parents>
@@ -699,7 +911,19 @@
 		<label>naive</label>
 		<description>Someone naive is inexperienced, guileless, and innocent.</description>
 		<controversiality>1.3</controversiality>
-		<conversationTopic>idealism</conversationTopic>
+		<conversationTopics>
+			<li>idealism</li>
+			<li>life after death</li>
+			<li>honor</li>
+			<li>fate</li>
+			<li>destiny</li>
+			<li>truth</li>
+			<li>prophecy</li>
+			<li>karma</li>
+			<li>astrology</li>
+			<li>fortune telling</li>
+			<li>luck</li>
+		</conversationTopics>
 		<platformIssueHigh>My commitment to ideals would make me a good mayor.</platformIssueHigh>
 		<platformIssueLow>My experience and know-how would make me a good mayor.</platformIssueLow>
 		<parents>
@@ -723,8 +947,18 @@
 		<defName>Upbeat</defName>
 		<label>upbeat</label>
 		<description>Upbeat people are happy, warm, and pleasant to be around.</description>
-		<conversationTopic>life</conversationTopic>
 		<controversiality>1.3</controversiality>
+		<conversationTopics>
+			<li>life</li>
+			<li>adulthood</li>
+			<li>nightmares</li>
+			<li>pet peeves</li>
+			<li>life's annoyances</li>
+			<li>doing one's best</li>
+			<li>positivity</li>
+			<li>looking on the bright side of life</li>
+			<li>skepticism</li>
+		</conversationTopics>
 		<platformIssueHigh>This colony is on the right track.</platformIssueHigh>
 		<platformIssueLow>This colony is headed for disaster.</platformIssueLow>
 		<parents>
@@ -768,7 +1002,21 @@
 		<label>outspoken</label>
 		<description>An outspoken person has a lot of strong opinions and doesn't hesitate to share them.</description>
 		<controversiality>1.8</controversiality>
-		<conversationTopic>politics</conversationTopic>
+		<conversationTopics>
+			<li>politics</li>
+			<li>rule of law</li>
+			<li>government</li>
+			<li>civil rights</li>
+			<li>extremism</li>
+			<li>radicalism</li>
+			<li>political debate</li>
+			<li>political opinions</li>
+			<li>crime and punishment</li>
+			<li>activism</li>
+			<li>the mayorship</li>
+			<li>arguing about things</li>
+			<li>their friends</li>
+		</conversationTopics>
 		<platformIssueHigh>This colony needs a strong leader.</platformIssueHigh>
 		<platformIssueLow>We need a leader that listens to our concerns.</platformIssueLow>
 		<parents>
@@ -786,7 +1034,16 @@
 		<label>ambitious</label>
 		<description>Someone ambitious sets large, difficult goals for themselves and wants to be successful.</description>
 		<controversiality>0.5</controversiality>
-		<conversationTopic>their hopes and dreams</conversationTopic>
+		<conversationTopics>
+			<li>their hopes and dreams</li>
+			<li>their fears</li>
+			<li>life challenges</li>
+			<li>perseverance</li>
+			<li>believing in oneself</li>
+			<li>becoming wealthy</li>
+			<li>lofty goals</li>
+			<li>luxury</li>
+		</conversationTopics>
 		<platformIssueHigh>We need to dream big.</platformIssueHigh>
 		<platformIssueLow>Let's ground ourselves in reality.</platformIssueLow>
 		<parents>
@@ -840,7 +1097,16 @@
 		<label>laid-back</label>
 		<description>Laid-back people don't get stressed out about things very easily and tend not to worry.</description>
 		<controversiality>1</controversiality>
-		<conversationTopic>hardship</conversationTopic>
+		<conversationTopics>
+			<li>hardship</li>
+			<li>stress</li>
+			<li>their mood</li>
+			<li>anxiety</li>
+			<li>pressure</li>
+			<li>appearances</li>
+			<li>vacations</li>
+			<li>their perfect Sunday</li>
+		</conversationTopics>
 		<platformIssueHigh>You need a leader that cares about performance.</platformIssueHigh>
 		<platformIssueLow>You need a leader that can take the stress.</platformIssueLow>
 		<parents>
@@ -899,7 +1165,19 @@
 		<label>pure</label>
 		<description>People who are pure try to be chaste, traditional, and wholesome.</description>
 		<controversiality>1.75</controversiality>
-		<conversationTopic>religion and spirituality</conversationTopic>
+		<conversationTopics>
+			<li>religion</li>
+			<li>spirituality</li>
+			<li>traditional values</li>
+			<li>sexual morality</li>
+			<li>femininity</li>
+			<li>masculinity</li>
+			<li>gender roles</li>
+			<li>deities</li>
+			<li>family</li>
+			<li>kinship</li>
+			<li>homosexuality</li>
+		</conversationTopics>
 		<platformIssueHigh>Traditional values are our values.</platformIssueHigh>
 		<platformIssueLow>We need to advance as a people.</platformIssueLow>
 		<parents>
@@ -932,8 +1210,21 @@
 		<defName>Moralistic</defName>
 		<label>moralistic</label>
 		<description>Someone who is moralistic adheres to traditional ideas of morality.</description>
-		<controversiality>1.6</controversiality>
-		<conversationTopic>ethics</conversationTopic>
+		<controversiality>1.7</controversiality>
+		<conversationTopics>
+			<li>ethics</li>
+			<li>morality</li>
+			<li>cannibalism</li>
+			<li>human leather</li>
+			<li>butchering people</li>
+			<li>slavery</li>
+			<li>enslavement</li>
+			<li>organ harvesting</li>
+			<li>prisoners of war</li>
+			<li>war crimes</li>
+			<li>murder</li>
+			<li>human sacrifice</li>
+		</conversationTopics>
 		<platformIssueHigh>It's our responsibility to do the right thing.</platformIssueHigh>
 		<platformIssueLow>We can only do what's right for us.</platformIssueLow>
 		<parents>
@@ -941,13 +1232,37 @@
 				<node>Naive</node>
 			</li>
 		</parents>
+		<traitModifiers>
+			<li>
+				<trait>Cannibal</trait>
+				<modifier>-1</modifier>
+			</li>
+			<li>
+				<trait>Psychopath</trait>
+				<modifier>-0.8</modifier>
+			</li>
+			<li>
+				<trait>Desensitized</trait>
+				<modifier>-0.4</modifier>
+			</li>
+		</traitModifiers>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
 		<defName>Trusting</defName>
 		<label>trusting</label>
 		<description>Someone who is trusting tends to take people at their word and see the good in people.</description>
-		<conversationTopic>human nature</conversationTopic>
+		<conversationTopics>
+			<li>human nature</li>
+			<li>honesty</li>
+			<li>integrity</li>
+			<li>con artistry</li>
+			<li>white lies</li>
+			<li>loyalty</li>
+			<li>fairness</li>
+			<li>corruption</li>
+			<li>new colonists</li>
+		</conversationTopics>
 		<controversiality>1.3</controversiality>
 		<platformIssueHigh>Only good citizens deserve to be part of this colony.</platformIssueHigh>
 		<platformIssueLow>People in this colony come from all walks of life.</platformIssueLow>
@@ -962,8 +1277,20 @@
 		<defName>Judgmental</defName>
 		<label>judgmental</label>
 		<description>A judgmental person tends to form their opinions of people quickly and superficially, and is affected more by the actions of others.</description>
-		<conversationTopic>the latest gossip</conversationTopic>
 		<controversiality>1</controversiality>
+		<conversationTopics>
+			<li>the latest gossip</li>
+			<li>the latest drama</li>
+			<li>culture</li>
+			<li>pettiness</li>
+			<li>melodrama</li>
+			<li>shallowness</li>
+			<li>fair-weather friends</li>
+			<li>jumping to conclusions</li>
+			<li>rash judgment</li>
+			<li>second chances</li>
+			<li>whether people can change</li>
+		</conversationTopics>
 		<platformIssueHigh>No one else is capable of leading this colony.</platformIssueHigh>
 		<platformIssueLow>I'm the most qualified to lead this colony.</platformIssueLow>
 		<parents>
@@ -999,7 +1326,15 @@
 		<defName>Friendly</defName>
 		<label>friendly</label>
 		<description>Someone friendly is kind, tolerant, and inviting to talk to.</description>
-		<conversationTopic>each other</conversationTopic>
+		<conversationTopics>
+			<li>each other</li>
+			<li>making friends</li>
+			<li>forgiveness</li>
+			<li>tolerance</li>
+			<li>their opinions of each other</li>
+			<li>admiration</li>
+			<li>whatever's on their minds</li>
+		</conversationTopics>
 		<controversiality>1.1</controversiality>
 		<platformIssueHigh>We're all in this together.</platformIssueHigh>
 		<platformIssueLow>We do what it takes to survive.</platformIssueLow>
@@ -1024,7 +1359,17 @@
 		<defName>Optimistic</defName>
 		<label>optimistic</label>
 		<description>Someone who is optimistic looks on the bright side of life.</description>
-		<conversationTopic>their feelings</conversationTopic>
+		<conversationTopics>
+			<li>their feelings</li>
+			<li>the meaning of life</li>
+			<li>hope</li>
+			<li>the inevitability of death</li>
+			<li>purpose</li>
+			<li>direction</li>
+			<li>getting through the day</li>
+			<li>what the future holds</li>
+			<li>leaving the planet</li>
+		</conversationTopics>
 		<controversiality>1</controversiality>
 		<platformIssueHigh>Things are good, but they could be better.</platformIssueHigh>
 		<platformIssueLow>Things are bad, but they will get worse.</platformIssueLow>
@@ -1040,8 +1385,18 @@
 		<defName>Compassionate</defName>
 		<label>compassionate</label>
 		<description>Compassionate people are concerned about other people's struggles and try to help them.</description>
-		<conversationTopic>the less fortunate</conversationTopic>
 		<controversiality>1.5</controversiality>
+		<conversationTopics>
+			<li>the less fortunate</li>
+			<li>aiding the downtrodden</li>
+			<li>helping the sick</li>
+			<li>helping the poor</li>
+			<li>human rights</li>
+			<li>saving people</li>
+			<li>other people's problems</li>
+			<li>interventionism</li>
+			<li>concern for others</li>
+		</conversationTopics>
 		<platformIssueHigh>Any society is judged on the basis of how it treats its weakest members.</platformIssueHigh>
 		<platformIssueLow>A society is only as strong as its most capable members.</platformIssueLow>
 		<parents>
@@ -1055,13 +1410,27 @@
 				<modifier>-0.6</modifier>
 			</li>
 		</incapableModifiers>
+		<traitModifiers>
+			<li>
+				<trait>Bloodlust</trait>
+				<modifier>-0.8</modifier>
+			</li>
+		</traitModifiers>
 	</Psychology.PersonalityNodeDef>
 	
 	<Psychology.PersonalityNodeDef>
 		<defName>Generous</defName>
 		<label>generous</label>
 		<description>Generous people care less about having things and are more likely to give them to others.</description>
-		<conversationTopic>charity</conversationTopic>
+		<conversationTopics>
+			<li>charity</li>
+			<li>philanthropism</li>
+			<li>material possessions</li>
+			<li>social equity</li>
+			<li>sharing</li>
+			<li>humanitarianism</li>
+			<li>altruism</li>
+		</conversationTopics>
 		<controversiality>1.1</controversiality>
 		<platformIssueHigh>Everyone should have access to the same things.</platformIssueHigh>
 		<platformIssueLow>Everyone should earn what they have.</platformIssueLow>

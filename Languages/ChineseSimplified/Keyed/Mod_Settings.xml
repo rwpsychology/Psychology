@@ -18,5 +18,14 @@
 
   <ElectionsTitle>选举</ElectionsTitle>
   <ElectionsTooltip>以防止你的殖民者进行一年一度的选举。它不会停止正在进行的选举，并将任何现有的镇长将恢复成一个正常的殖民者。这不会影响与其他模组的兼容性。</ElectionsTooltip>
+	
+	<DurationTitle>Conversation duration</DurationTitle>
+	<DurationTooltip>Set how long people will remember conversations for. The default is 60 days, i.e. one year. The minimum is 15 days, or a quadrum, to a maximum of 180 days, or three years. Setting it lower will make colonists' interactions with each other more ephemeral, and setting it higher will make them more lasting.</DurationTooltip>
+	
+	<SendDateLettersTitle>Send date letters</SendDateLettersTitle>
+	<SendDateLettersTooltip>Turn this off to disable receiving letters when your colonists plan a date together.</SendDateLettersTooltip>
+	
+	<BenchmarkingTitle>Enable performance testing</BenchmarkingTitle>
+	<BenchmarkingTooltip>Turn this on to receive occasional performance reports in the console relating to Psychology systems. You can copy and paste these reports to assist in optimization of the mod. WARNING: Performance testing comes with its own performance impact.\n\nToggling this will restart your game.</BenchmarkingTooltip>
 
 </LanguageData>

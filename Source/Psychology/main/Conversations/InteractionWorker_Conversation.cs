@@ -42,12 +42,9 @@ namespace Psychology
             letterText = null;
             letterLabel = null;
             letterDef = null;
-            Stopwatch begin = Stopwatch.StartNew();
             PersonalityNode topic = (from node in PsycheHelper.Comp(initiator).Psyche.PersonalityNodes
                                      where !node.Core
                                      select node).RandomElementByWeight(node => PsycheHelper.Comp(initiator).Psyche.GetConversationTopicWeight(node.def, recipient));
-            begin.Stop();
-            Log.Message("Psychology :: Performance Report :: Time to select a topic for conversation: " + begin.ElapsedTicks);
             Hediff_Conversation initiatorHediff = (Hediff_Conversation)HediffMaker.MakeHediff(HediffDefOfPsychology.HoldingConversation, initiator);
             initiatorHediff.otherPawn = recipient;
             initiatorHediff.topic = topic.def;

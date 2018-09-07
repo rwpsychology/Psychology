@@ -48,9 +48,9 @@ namespace Psychology
                 Widgets.Label(rect3, node.def.label.CapitalizeFirst());
                 Func<String> descriptionString = delegate
                 {
-                    if(node.def.conversationTopic != null)
+                    if(node.def.conversationTopics != null)
                     {
-                        return node.def.description + "\n\n" + "ConversationTooltip".Translate(new object[] { node.def.conversationTopic });
+                        return node.def.description + "\n\n" + "ConversationTooltip".Translate(new object[] { string.Join(", ", node.def.conversationTopics.Take(node.def.conversationTopics.Count-1).ToArray()) + "ConversationAnd".Translate() + node.def.conversationTopics.Last()});
                     }
                     return node.def.description;
                 };

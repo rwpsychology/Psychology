@@ -8,7 +8,7 @@ using Verse.AI;
 
 namespace Psychology
 {
-    class Thought_MemorySocialDynamic : Thought_MemorySocial
+    public class Thought_MemorySocialDynamic : Thought_MemorySocial
     {
         public Thought_MemorySocialDynamic()
         {
@@ -41,6 +41,12 @@ namespace Psychology
             this.topic = def.defName;
             this.label = def.stages[0].label;
             this.baseOpinionOffset = def.stages[0].baseOpinionOffset;
+            if(PsycheHelper.PsychologyEnabled(pawn))
+            {
+                PsycheHelper.Comp(pawn).Psyche.recalcCachedOpinions[otherPawn.ThingID] = true;
+                Pair<string, string> disagreeKey = new Pair<string, string>(otherPawn.ThingID, label);
+                PsycheHelper.Comp(pawn).Psyche.recalcNodeDisagreement[disagreeKey] = true;
+            }
             base.Init();
         }
 

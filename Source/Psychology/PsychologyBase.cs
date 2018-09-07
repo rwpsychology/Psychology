@@ -146,8 +146,11 @@ namespace Psychology
                 toggleDateLetters = Settings.GetHandle<bool>("SendDateLetters", "SendDateLettersTitle".Translate(), "SendDateLettersTooltip".Translate(), true);
                 toggleBenchmarking = Settings.GetHandle<bool>("Benchmarking", "BenchmarkingTitle".Translate(), "BenchmarkingTooltip".Translate(), false);
 
+                kinsey = toggleKinsey.Value;
                 notBabyMode = toggleIndividuality.Value;
                 elections = toggleElections.Value;
+                dateLetters = toggleDateLetters.Value;
+                benchmark = toggleBenchmarking.Value;
                 convoDuration = conversationDuration.Value;
 
                 if (PsychologyBase.ActivateKinsey())
@@ -238,6 +241,7 @@ namespace Psychology
                     select def
                 );
 
+                List<string> registered = new List<string>();
                 foreach (ThingDef t in things)
                 {
                     if (t.inspectorTabsResolved == null)
@@ -270,11 +274,11 @@ namespace Psychology
                             t.race.hediffGiverSets.Add(DefDatabase<HediffGiverSetDef>.GetNamed("OrganicPsychology"));
                         }
                     }
-
-                    if(Prefs.DevMode && Prefs.LogVerbose)
-                    {
-                        Log.Message("Psychology :: Registered " + t.defName);
-                    }
+                    registered.Add(t.defName);
+                }
+                if (Prefs.DevMode && Prefs.LogVerbose)
+                {
+                    Log.Message("Psychology :: Registered " + string.Join(", ", registered.ToArray()));
                 }
 
                 /*
@@ -371,10 +375,10 @@ namespace Psychology
         public override void Tick(int currentTick)
         {
             //Performance reporting tick
-            if (EnablePerformanceTesting() && currentTick % 1000 == 0 && PerformanceSetup.performanceTotals.Keys.Count > 0)
+            if (EnablePerformanceTesting() && currentTick % GenDate.TicksPerDay == 0 && PerformanceSetup.performanceTotals.Keys.Count > 0)
             {
                 Dictionary<string, float> averages = PerformanceSetup.performanceTotals.ToDictionary(x => x.Key, x => (float)x.Value / (float)PerformanceSetup.performanceCalls[x.Key]);
-                int topAmt = Math.Min(10, averages.Count);
+                int topAmt = Math.Min(20, averages.Count);
                 List<KeyValuePair<string, float>> topTicks = (from avg in averages orderby avg.Value descending select avg).Take(topAmt).ToList();
                 StringBuilder topString = new StringBuilder();
                 foreach(KeyValuePair<string, float> t in topTicks)

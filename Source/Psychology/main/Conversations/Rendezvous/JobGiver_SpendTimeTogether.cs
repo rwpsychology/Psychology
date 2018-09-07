@@ -63,7 +63,7 @@ namespace Psychology
                 IntVec3 result;
                 IntVec3 cell = pawn.mindState.duty.focus.Cell;
                 /* Make sure they only wander within conversational distance. */
-                Predicate<IntVec3> validator = (IntVec3 x) => x.Standable(pawn.Map) && !x.IsForbidden(pawn) && pawn.CanReserveAndReach(x, PathEndMode.OnCell, Danger.None, 1, -1, null, false) && (friend.Position - x).LengthHorizontalSquared < 40f && GenSight.LineOfSight(x, friend.Position, pawn.Map, true);
+                Predicate<IntVec3> validator = (IntVec3 x) => x.Standable(pawn.Map) && x.InAllowedArea(pawn) && !x.IsForbidden(pawn) && pawn.CanReserveAndReach(x, PathEndMode.OnCell, Danger.None, 1, -1, null, false) && (friend.Position - x).LengthHorizontalSquared < 40f && GenSight.LineOfSight(x, friend.Position, pawn.Map, true);
                 Room room = cell.GetRoom(pawn.Map, RegionType.Set_Passable);
                 if (cell.GetDoor(pawn.Map) != null)
                 {

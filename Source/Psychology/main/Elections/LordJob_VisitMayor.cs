@@ -141,7 +141,7 @@ namespace Psychology
                     RuleStrings.SetValue(goodbyeTextInit, text);
                     endConversation.logRulesInitiator = goodbyeTextInit;
                     FieldInfo Symbol = typeof(InteractionDef).GetField("symbol", BindingFlags.Instance | BindingFlags.NonPublic);
-                    Symbol.SetValue(endConversation, Symbol.GetValue(InteractionDefOf.DeepTalk));
+                    Symbol.SetValue(endConversation, Symbol.GetValue(InteractionDefOfPsychology.HangOut));
                     PlayLogEntry_InteractionConversation log = new PlayLogEntry_InteractionConversation(endConversation, this.constituent, this.mayor, new List<RulePackDef>());
                     Find.PlayLog.Add(log);
                     MoteMaker.MakeInteractionBubble(this.mayor, this.constituent, InteractionDefOf.Chitchat.interactionMote, InteractionDefOf.Chitchat.Symbol);
