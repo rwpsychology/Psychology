@@ -18,8 +18,12 @@ namespace Psychology
             {
                 Log.Warning("Psychology :: Performance reporting is ON. Benchmarking itself has a performance impact. Unless you are opting into performance testing, disable it in the mod options.");
                 HarmonyInstance harmony = HarmonyInstance.Create("rimworld.psychology.benchmarking");
-                foreach (Type t in Assembly.GetAssembly(typeof(PsychologyBase)).GetTypes())
+                foreach (Type t in Assembly.GetExecutingAssembly().GetTypes())
                 {
+                    if(t.AssemblyQualifiedName.Contains("Optional"))
+                    {
+                        continue;
+                    }
                     foreach (MethodInfo m in t.GetMethods(BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic))
                     {
                         if (DoLogPerformance(m))
