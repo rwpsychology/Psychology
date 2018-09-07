@@ -28,6 +28,7 @@ namespace Psychology
             Scribe_References.Look(ref this.otherPawn, "otherPawn");
             Scribe_Defs.Look(ref this.topic, "topic");
             Scribe_Values.Look(ref this.waveGoodbye, "waveGoodbye");
+            Scribe_Values.Look(ref this.convoTopic, "convoTopic", "something");
         }
 
         [LogPerformance]
@@ -126,13 +127,12 @@ namespace Psychology
                     talkDesc = "EpicTalk" + Rand.RangeInclusive(1, numEpicTalks);
                 }
                 float opinionMod;
-                string convoTopic;
-                ThoughtDef def = CreateSocialThought(out opinionMod, out convoTopic);
+                ThoughtDef def = CreateSocialThought(out opinionMod);
                 TryGainThought(def, Mathf.RoundToInt(opinionMod));
                 if (this.waveGoodbye && this.pawn.Map != null)
                 {
                     InteractionDef endConversation = new InteractionDef();
-                    endConversation.socialFightBaseChance = 0.4f * Mathf.InverseLerp(0f, -50f, opinionMod);
+                    endConversation.socialFightBaseChance = 0.4f * Mathf.InverseLerp(0f, -80f, opinionMod);
                     endConversation.defName = "EndConversation";
                     endConversation.label = def.label;
                     RulePack goodbyeText = new RulePack();
@@ -143,16 +143,21 @@ namespace Psychology
                     endConversation.logRulesInitiator = goodbyeText;
                     FieldInfo Symbol = typeof(InteractionDef).GetField("symbol", BindingFlags.Instance | BindingFlags.NonPublic);
                     Symbol.SetValue(endConversation, Symbol.GetValue(InteractionDefOfPsychology.EndConversation));
-                    PlayLogEntry_InteractionConversation log = new PlayLogEntry_InteractionConversation(endConversation, pawn, this.otherPawn, new List<RulePackDef>());
+                    List<RulePackDef> socialFightPacks = new List<RulePackDef>();
+                    if (this.pawn.interactions.CheckSocialFightStart(endConversation, otherPawn))
+                    {
+                        socialFightPacks.Add(RulePackDefOf.Sentence_SocialFightStarted);
+                    }
+                    PlayLogEntry_InteractionConversation log = new PlayLogEntry_InteractionConversation(endConversation, pawn, this.otherPawn, socialFightPacks);
                     Find.PlayLog.Add(log);
                     MoteMaker.MakeInteractionBubble(this.pawn, this.otherPawn, InteractionDefOf.Chitchat.interactionMote, InteractionDefOf.Chitchat.Symbol);
-                    this.pawn.interactions.CheckSocialFightStart(endConversation, otherPawn);
+                    
                 }
             }
         }
 
         [LogPerformance]
-        private ThoughtDef CreateSocialThought(out float opinionMod, out string convoTopic)
+        private ThoughtDef CreateSocialThought(out float opinionMod)
         {
             //We create a dynamic def to hold this thought so that the game won't worry about it being used anywhere else.
             ThoughtDef def = new ThoughtDef();
@@ -183,7 +188,6 @@ namespace Psychology
             {
                 opinionMod *= 1.25f;
             }
-            convoTopic = topic.conversationTopics.RandomElement();
             stage.label = "ConversationStage".Translate() + " " + convoTopic;
             stage.baseOpinionOffset = Mathf.RoundToInt(opinionMod);
             def.stages.Add(stage);
@@ -222,6 +226,7 @@ namespace Psychology
         
         public Pawn otherPawn;
         public PersonalityNodeDef topic;
+        public string convoTopic;
         public bool waveGoodbye;
     }
 }

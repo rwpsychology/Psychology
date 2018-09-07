@@ -11,6 +11,7 @@ using Verse.Grammar;
 using HugsLib.Settings;
 using HugsLib;
 using UnityEngine;
+using Harmony;
 
 namespace Psychology
 {
@@ -31,6 +32,7 @@ namespace Psychology
         private SettingHandle<float> conversationDuration;
         private SettingHandle<bool> toggleDateLetters;
         private SettingHandle<bool> toggleBenchmarking;
+        public static Backstory child = new Backstory();
 
         public enum KinseyMode
         {
@@ -285,71 +287,68 @@ namespace Psychology
                  * Now to enjoy the benefits of having made a popular mod!
                  * This will be our little secret.
                  */
-                //Disabled until I can be bothered to look into how Tynan changed the backstory code.
-                /*Backstory childMe = new Backstory();
-                childMe.bodyTypeMale = BodyType.Male;
-                childMe.bodyTypeFemale = BodyType.Female;
-                childMe.slot = BackstorySlot.Childhood;
-                childMe.SetTitle("Child soldier");
-                childMe.SetTitleShort("Scout");
-                childMe.baseDesc = "NAME was born into a dictatorial outlander society on a nearby rimworld. Their chief export was war, and HE was conscripted at a young age into the military to serve as a scout due to HIS runner's build. HECAP learned how to use a gun, patch wounds on the battlefield, and communicate with HIS squad. It was there HE earned HIS nickname.";
-                childMe.skillGains.Add("Shooting", 4);
-                childMe.skillGains.Add("Medicine", 2);
-                childMe.skillGains.Add("Social", 1);
-                childMe.requiredWorkTags = WorkTags.Violent;
-                childMe.shuffleable = false;
-                childMe.PostLoad();
-                childMe.ResolveReferences();*/
-                //Disabled until I can be bothered to code it so they're actually siblings.
-                /*Backstory adultMale = new Backstory();
-                adultMale.bodyTypeMale = BodyType.Male;
-                adultMale.bodyTypeFemale = BodyType.Female;
+                Traverse.Create(child).Field("bodyTypeMale").SetValue("Male");
+                Traverse.Create(child).Field("bodyTypeFemale").SetValue("Female");
+                child.slot = BackstorySlot.Childhood;
+                child.SetTitle("Child soldier", "Child soldier");
+                child.SetTitleShort("Scout", "Scout");
+                child.baseDesc = "[PAWN_nameDef] was born into a dictatorial outlander society on a nearby rimworld. Their chief export was war, and [PAWN_pronoun] was conscripted at a young age into the military to serve as a scout due to [PAWN_possessive] runner's build. [PAWN_pronoun] learned how to use a gun, patch wounds on the battlefield, and communicate with [PAWN_possessive] squad. It was there [PAWN_pronoun] earned [PAWN_possessive] nickname.";
+                Traverse.Create(child).Field("skillGains").GetValue<Dictionary<string,int>>().Add("Shooting", 4);
+                Traverse.Create(child).Field("skillGains").GetValue<Dictionary<string, int>>().Add("Medicine", 2);
+                Traverse.Create(child).Field("skillGains").GetValue<Dictionary<string, int>>().Add("Social", 1);
+                child.requiredWorkTags = WorkTags.Violent;
+                child.shuffleable = false;
+                child.PostLoad();
+                child.ResolveReferences();
+                Backstory adultMale = new Backstory();
+                Traverse.Create(adultMale).Field("bodyTypeMale").SetValue("Male");
+                Traverse.Create(adultMale).Field("bodyTypeFemale").SetValue("Female");
                 adultMale.slot = BackstorySlot.Adulthood;
-                adultMale.SetTitle("Missing in action");
-                adultMale.SetTitleShort("P.O.W.");
-                adultMale.baseDesc = "Eventually, HE was captured on a mission by one of HIS faction's many enemies. HECAP was tortured for information, the techniques of which HE never forgot. When they could get no more out of HIM, HE was sent to a prison camp, where HE worked for years before staging an escape and fleeing into civilization.";
-                adultMale.skillGains.Add("Crafting", 4);
-                adultMale.skillGains.Add("Construction", 3);
-                adultMale.skillGains.Add("Mining", 2);
-                adultMale.skillGains.Add("Social", 1);
+                adultMale.SetTitle("Missing in action", "Missing in action");
+                adultMale.SetTitleShort("Ex-P.O.W.", "Ex-P.O.W.");
+                adultMale.baseDesc = "Eventually, [PAWN_pronoun] was captured on a mission by one of [PAWN_possessive] faction's many enemies. [PAWN_pronoun] was tortured for information, the techniques of which [PAWN_pronoun] never forgot. When they could get no more out of [PAWN_objective], [PAWN_pronoun] was sent to a prison camp, where [PAWN_pronoun] worked for years before staging an escape and fleeing into civilization.";
+                Traverse.Create(adultMale).Field("skillGains").GetValue<Dictionary<string, int>>().Add("Crafting", 4);
+                Traverse.Create(adultMale).Field("skillGains").GetValue<Dictionary<string, int>>().Add("Construction", 3);
+                Traverse.Create(adultMale).Field("skillGains").GetValue<Dictionary<string, int>>().Add("Mining", 2);
+                Traverse.Create(adultMale).Field("skillGains").GetValue<Dictionary<string, int>>().Add("Social", 1);
                 adultMale.spawnCategories = new List<string>();
                 adultMale.spawnCategories.AddRange(new string[] { "Civil", "Raider", "Slave", "Trader", "Traveler" });
                 adultMale.shuffleable = false;
                 adultMale.PostLoad();
-                adultMale.ResolveReferences();*/
-                /*Backstory adultFemale = new Backstory();
-                adultFemale.bodyTypeMale = BodyType.Male;
-                adultFemale.bodyTypeFemale = BodyType.Female;
+                adultMale.ResolveReferences();
+                Backstory adultFemale = new Backstory();
+                Traverse.Create(adultFemale).Field("bodyTypeMale").SetValue("Male");
+                Traverse.Create(adultFemale).Field("bodyTypeFemale").SetValue("Female");
                 adultFemale.slot = BackstorySlot.Adulthood;
-                adultFemale.SetTitle("Battlefield medic");
-                adultFemale.SetTitleShort("Medic");
-                adultFemale.baseDesc = "HECAP continued to serve in the military, being promoted through the ranks as HIS skill increased. HECAP learned how to treat more serious wounds as HIS role slowly transitioned from scout to medic, as well as how to make good use of army rations. HECAP built good rapport with HIS squad as a result.";
-                adultFemale.skillGains.Add("Shooting", 4);
-                adultFemale.skillGains.Add("Medicine", 3);
-                adultFemale.skillGains.Add("Cooking", 2);
-                adultFemale.skillGains.Add("Social", 1);
+                adultFemale.SetTitle("Battlefield medic", "Battlefield medic");
+                adultFemale.SetTitleShort("Medic", "Medic");
+                adultFemale.baseDesc = "[PAWN_pronoun] continued to serve in the military, being promoted through the ranks as [PAWN_possessive] skill increased. [PAWN_pronoun] learned how to treat more serious wounds as [PAWN_possessive] role slowly transitioned from scout to medic, as well as how to make good use of army rations. [PAWN_pronoun] built good rapport with [PAWN_possessive] squad as a result.";
+                Traverse.Create(adultFemale).Field("skillGains").GetValue<Dictionary<string, int>>().Add("Shooting", 4);
+                Traverse.Create(adultFemale).Field("skillGains").GetValue<Dictionary<string, int>>().Add("Medicine", 3);
+                Traverse.Create(adultFemale).Field("skillGains").GetValue<Dictionary<string, int>>().Add("Cooking", 2);
+                Traverse.Create(adultFemale).Field("skillGains").GetValue<Dictionary<string, int>>().Add("Social", 1);
                 adultFemale.spawnCategories = new List<string>();
                 adultFemale.spawnCategories.AddRange(new string[] { "Civil", "Raider", "Slave", "Trader", "Traveler" });
                 adultFemale.shuffleable = false;
                 adultFemale.PostLoad();
-                adultFemale.ResolveReferences();*/
-                /*PawnBio maleMe = new PawnBio();
-                maleMe.childhood = childMe;
-                maleMe.adulthood = adultMale;
-                maleMe.gender = GenderPossibility.Male;
-                maleMe.name = NameTriple.FromString("Jason 'Jackal' Tarai");
-                maleMe.PostLoad();
-                SolidBioDatabase.allBios.Add(maleMe);*/
-                /*PawnBio femaleMe = new PawnBio();
-                femaleMe.childhood = childMe;
-                femaleMe.adulthood = adultFemale;
-                femaleMe.gender = GenderPossibility.Female;
-                femaleMe.name = NameTriple.FromString("Elizabeth 'Eagle' Tarai");
-                femaleMe.PostLoad();
-                SolidBioDatabase.allBios.Add(femaleMe);
-                BackstoryDatabase.AddBackstory(childMe);
-                //BackstoryDatabase.AddBackstory(adultMale);
-                BackstoryDatabase.AddBackstory(adultFemale);*/
+                adultFemale.ResolveReferences();
+                PawnBio male = new PawnBio();
+                male.childhood = child;
+                male.adulthood = adultMale;
+                male.gender = GenderPossibility.Male;
+                male.name = NameTriple.FromString("Jason 'Jackal' Tarai");
+                male.PostLoad();
+                SolidBioDatabase.allBios.Add(male);
+                PawnBio female = new PawnBio();
+                female.childhood = child;
+                female.adulthood = adultFemale;
+                female.gender = GenderPossibility.Female;
+                female.name = NameTriple.FromString("Elizabeth 'Eagle' Tarai");
+                female.PostLoad();
+                SolidBioDatabase.allBios.Add(female);
+                BackstoryDatabase.AddBackstory(child);
+                BackstoryDatabase.AddBackstory(adultMale);
+                BackstoryDatabase.AddBackstory(adultFemale);
             }
         }
 
@@ -401,7 +400,7 @@ namespace Psychology
                                                       where !m.Dead && m.health.hediffSet.HasHediff(HediffDefOfPsychology.Mayor) && ((Hediff_Mayor)m.health.hediffSet.GetFirstHediffOfDef(HediffDefOfPsychology.Mayor)).worldTileElectedOn == potentialConstituent.Map.Tile
                                                       && m.GetTimeAssignment() != TimeAssignmentDefOf.Work && m.GetTimeAssignment() != TimeAssignmentDefOf.Sleep && m.GetLord() == null && m.Awake() && m.GetLord() == null
                                                       select m);
-                    if (potentialConstituent != null && activeMayors.Count() > 0)
+                    if (potentialConstituent != null && !potentialConstituent.Downed && !potentialConstituent.Drafted && potentialConstituent.health.summaryHealth.SummaryHealthPercent >= 1f && potentialConstituent.GetTimeAssignment() != TimeAssignmentDefOf.Work && activeMayors.Count() > 0)
                     {
                         Pawn mayor = activeMayors.RandomElement(); //There should only be one.
                         IntVec3 gather = default(IntVec3);
@@ -416,7 +415,8 @@ namespace Psychology
                             gather = mayor.ownership.OwnedBed.Position;
                             found = "bed";
                         }
-                        if (PsycheHelper.PsychologyEnabled(potentialConstituent) && Rand.Chance((1f - PsycheHelper.Comp(potentialConstituent).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent)) / 5f) && (found != null || RCellFinder.TryFindPartySpot(mayor, out gather)))
+                        if (PsycheHelper.PsychologyEnabled(potentialConstituent) && Rand.Chance((1f - PsycheHelper.Comp(potentialConstituent).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent)) / 5f) && (found != null || RCellFinder.TryFindPartySpot(mayor, out gather))
+                            && (!mayor.Drafted && !mayor.Downed && mayor.health.summaryHealth.SummaryHealthPercent >= 1f && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Work && (mayor.CurJob == null || mayor.CurJob.def != JobDefOf.TendPatient)))
                         {
                             List<Pawn> pawns = new List<Pawn>();
                             pawns.Add(mayor);

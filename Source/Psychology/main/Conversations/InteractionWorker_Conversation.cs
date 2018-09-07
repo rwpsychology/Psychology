@@ -45,15 +45,18 @@ namespace Psychology
             PersonalityNode topic = (from node in PsycheHelper.Comp(initiator).Psyche.PersonalityNodes
                                      where !node.Core
                                      select node).RandomElementByWeight(node => PsycheHelper.Comp(initiator).Psyche.GetConversationTopicWeight(node.def, recipient));
+            string convoTopic = topic.def.conversationTopics.RandomElement();
             Hediff_Conversation initiatorHediff = (Hediff_Conversation)HediffMaker.MakeHediff(HediffDefOfPsychology.HoldingConversation, initiator);
             initiatorHediff.otherPawn = recipient;
             initiatorHediff.topic = topic.def;
             initiatorHediff.waveGoodbye = true;
+            initiatorHediff.convoTopic = convoTopic;
             initiator.health.AddHediff(initiatorHediff);
             Hediff_Conversation recipientHediff = (Hediff_Conversation)HediffMaker.MakeHediff(HediffDefOfPsychology.HoldingConversation, recipient);
             recipientHediff.otherPawn = initiator;
             recipientHediff.topic = topic.def;
             recipientHediff.waveGoodbye = false;
+            recipientHediff.convoTopic = convoTopic;
             recipient.health.AddHediff(recipientHediff);
         }
         

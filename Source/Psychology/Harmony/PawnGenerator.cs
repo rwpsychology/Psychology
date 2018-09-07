@@ -45,4 +45,25 @@ namespace Psychology.Harmony
             return true;
         }
     }
+
+    [HarmonyPatch(typeof(PawnGenerator), "GenerateTraits")]
+    public static class PawnGenerator_GenerateTraitsSiblingsPatch
+    {
+        [HarmonyPostfix]
+        public static void TaraiSiblings(ref Pawn pawn, ref PawnGenerationRequest request)
+        {
+            Pawn p = pawn;
+            if(pawn.story != null && pawn.story.childhood == PsychologyBase.child)
+            {
+                Log.Error("Found them");
+                IEnumerable<Pawn> other = (from x in PawnsFinder.AllMapsWorldAndTemporary_AliveOrDead
+                              where x.def == p.def && x.story != null && x.story.childhood == p.story.childhood
+                              select x);
+                if(other.Count() > 0)
+                {
+                    Traverse.Create(typeof(PawnGenerator)).Field("relationsGeneratableBlood").GetValue<PawnRelationDef[]>().Where(r => r.defName == "Sibling").First().Worker.CreateRelation(pawn, other.First(), ref request);
+                }
+            }
+        }
+    }
 }
