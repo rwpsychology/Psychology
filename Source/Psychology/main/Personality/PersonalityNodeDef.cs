@@ -18,18 +18,18 @@ namespace Psychology
 
         public float GetModifier(PersonalityNodeDef def)
         {
-            PersonalityNodeParent parent = parents.Find((PersonalityNodeParent p) => p.node == def);
+            PersonalityNodeParent parent = parents.FirstOrDefault((PersonalityNodeParent p) => p.node == def);
             return (parent.modifier > 0 ? -1/parent.modifier : 1/Mathf.Abs(parent.modifier-1));
         }
 
-        public List<PersonalityNodeDef> ParentNodes
+        public HashSet<PersonalityNodeDef> ParentNodes
         {
             get
             {
                 if(this.parentDefs == null)
                 {
-                    this.parentDefs = new List<PersonalityNodeDef>();
-                    if(!this.parents.NullOrEmpty())
+                    this.parentDefs = new HashSet<PersonalityNodeDef>();
+                    if(this.parents != null && this.parents.Count > 0)
                     {
                         foreach (PersonalityNodeParent parent in this.parents)
                         {
@@ -40,6 +40,12 @@ namespace Psychology
                 return this.parentDefs;
             }
         }
+
+        public override int GetHashCode()
+        {
+            return this.defName.GetHashCode();
+        }
+
 
         /* Being a woman has an 80% chance to modify this node by this amount, reduced by how gay she is.
          * This models the cultural impact traditional gender roles have on their personality. (Lesbians, obviously, tend to subvert them.)
@@ -66,7 +72,7 @@ namespace Psychology
         public List<int> preferredDateHours;
         //A list of the actual parent Defs of this node.
         [Unsaved]
-        private List<PersonalityNodeDef> parentDefs;
+        private HashSet<PersonalityNodeDef> parentDefs;
 
     }
 }

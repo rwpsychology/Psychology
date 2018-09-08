@@ -10,7 +10,7 @@ namespace Psychology.PrepareCarefully
 {
     public class SaveRecordPsycheV4 : IExposable
     {
-        public List<PersonalityNode> nodes = new List<PersonalityNode>();
+        public HashSet<PersonalityNode> nodes = new HashSet<PersonalityNode>();
         public int upbringing;
         public float sexDrive = 1f;
         public float romanticDrive = 1f;
@@ -39,7 +39,7 @@ namespace Psychology.PrepareCarefully
         {
             if (Scribe.mode == LoadSaveMode.Saving || Scribe.loader.curXmlParent["personality"] != null)
             {
-                Scribe_Collections.Look(ref nodes, "personality", LookMode.Deep, null);
+                Scribe_Collections.Look(ref nodes, "personality", LookMode.Deep);
             }
             Scribe_Values.Look(ref upbringing, "upbringing");
             if(PsychologyBase.ActivateKinsey())

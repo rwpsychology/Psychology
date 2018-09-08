@@ -28,11 +28,7 @@ namespace Psychology
                  * Two pawns with the same upbringing will always have the same core personality ratings.
                  * Pawns will never have conversations about core nodes, they exist only to influence child nodes.
                  */
-                int defSeed = 0;
-                foreach(char c in this.def.defName)
-                {
-                    defSeed += c;
-                }
+                int defSeed = this.def.defName.GetHashCode();
                 this.rawRating = Rand.ValueSeeded(this.pawn.GetComp<CompPsychology>().Psyche.upbringing + defSeed + Find.World.info.Seed);
             }
             else
@@ -62,7 +58,7 @@ namespace Psychology
         [LogPerformance]
         public float AdjustForCircumstance(float rating)
         {
-            if(!this.def.skillModifiers.NullOrEmpty())
+            if(this.def.skillModifiers != null && this.def.skillModifiers.Any())
             {
                 int totalLearning = 0;
                 foreach(SkillRecord s in this.pawn.skills.skills)
@@ -81,7 +77,7 @@ namespace Psychology
                     rating = Mathf.Clamp01(rating);
                 }
             }
-            if(!this.def.traitModifiers.NullOrEmpty())
+            if(this.def.traitModifiers != null && this.def.traitModifiers.Any())
             {
                 foreach (PersonalityNodeTraitModifier traitMod in this.def.traitModifiers)
                 {
@@ -92,7 +88,7 @@ namespace Psychology
                 }
                 rating = Mathf.Clamp01(rating);
             }
-            if (!this.def.incapableModifiers.NullOrEmpty())
+            if (this.def.incapableModifiers != null && this.def.incapableModifiers.Any())
             {
                 foreach (PersonalityNodeIncapableModifier incapableMod in this.def.incapableModifiers)
                 {
@@ -128,23 +124,23 @@ namespace Psychology
         {
             get
             {
-                return this.def.ParentNodes.NullOrEmpty();
+                return this.def.ParentNodes == null || !this.def.ParentNodes.Any();
             }
         }
 
-        public List<PersonalityNode> ParentNodes
+        public HashSet<PersonalityNode> ParentNodes
         {
             [LogPerformance]
             get
             {
                 if(this.parents == null || this.pawn.IsHashIntervalTick(500))
                 {
-                    this.parents = new List<PersonalityNode>();
-                    if(!this.def.ParentNodes.NullOrEmpty())
+                    this.parents = new HashSet<PersonalityNode>();
+                    if(this.def.ParentNodes != null && this.def.ParentNodes.Any())
                     {
                         this.parents = (from p in this.pawn.GetComp<CompPsychology>().Psyche.PersonalityNodes
                                         where this.def.ParentNodes.Contains(p.def)
-                                        select p).ToList();
+                                        select p) as HashSet<PersonalityNode>;
                     }
                 }
                 return this.parents;
@@ -182,17 +178,25 @@ namespace Psychology
                     float adjustedRating = AdjustForCircumstance(this.rawRating);
                     adjustedRating = AdjustHook(adjustedRating);
                     adjustedRating = AdjustGender(adjustedRating);
-                    adjustedRating = AdjustForParents(adjustedRating);
+                    if (this.ParentNodes != null && this.ParentNodes.Any())
+                    {
+                        adjustedRating = AdjustForParents(adjustedRating);
+                    }
                     cachedRating = Mathf.Clamp01(adjustedRating);
                 }
                 return cachedRating;
             }
         }
 
+        public override int GetHashCode()
+        {
+            return this.def.defName.GetHashCode();
+        }
+
         public Pawn pawn;
         public PersonalityNodeDef def;
         public float rawRating;
         public float cachedRating = -1f;
-        private List<PersonalityNode> parents;
+        private HashSet<PersonalityNode> parents;
     }
 }

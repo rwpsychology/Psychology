@@ -43,9 +43,9 @@ namespace Psychology
             this.baseOpinionOffset = def.stages[0].baseOpinionOffset;
             if(PsycheHelper.PsychologyEnabled(pawn))
             {
-                PsycheHelper.Comp(pawn).Psyche.recalcCachedOpinions[otherPawn.ThingID] = true;
+                PsycheHelper.Comp(pawn).Psyche.OpinionCacheDirty[otherPawn.ThingID] = true;
                 Pair<string, string> disagreeKey = new Pair<string, string>(otherPawn.ThingID, label);
-                PsycheHelper.Comp(pawn).Psyche.recalcNodeDisagreement[disagreeKey] = true;
+                PsycheHelper.Comp(pawn).Psyche.DisagreementCacheDirty[disagreeKey] = true;
             }
             base.Init();
         }

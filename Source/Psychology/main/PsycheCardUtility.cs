@@ -15,11 +15,12 @@ namespace Psychology
         private static void DrawPersonalityNodes(Rect rect, Pawn pawn)
         {
             float width = rect.width - 26f - 3f;
-            List<PersonalityNode> allNodes = PsycheHelper.Comp(pawn).Psyche.PersonalityNodes;
-            allNodes.SortBy(p => -p.AdjustedRating, p=> p.def.defName);
+            List<PersonalityNode> allNodes = (from n in PsycheHelper.Comp(pawn).Psyche.PersonalityNodes
+                                              orderby n.AdjustedRating descending, n.def.defName
+                                              select n).ToList();
             PsycheCardUtility.nodeStrings.Clear();
             float num = 0f;
-            for (int i = 0; i < allNodes.Count; i++)
+            for (int i = 0; i < allNodes.Count(); i++)
             {
                 int category = Mathf.RoundToInt(6f*Mathf.InverseLerp(0.16f, 0.83f, allNodes[i].AdjustedRating));
                 if (/*!allNodes[i].Core && */category != 3)

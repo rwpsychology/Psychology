@@ -128,11 +128,11 @@ namespace Psychology
                 }
                 float opinionMod;
                 ThoughtDef def = CreateSocialThought(out opinionMod);
-                TryGainThought(def, Mathf.RoundToInt(opinionMod));
+                bool mattered = TryGainThought(def, Mathf.RoundToInt(opinionMod));
                 if (this.waveGoodbye && this.pawn.Map != null)
                 {
                     InteractionDef endConversation = new InteractionDef();
-                    endConversation.socialFightBaseChance = 0.4f * Mathf.InverseLerp(0f, -80f, opinionMod);
+                    endConversation.socialFightBaseChance = 0.4f * PsycheHelper.Comp(pawn).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive) * Mathf.InverseLerp(0f, -80f, opinionMod);
                     endConversation.defName = "EndConversation";
                     endConversation.label = def.label;
                     RulePack goodbyeText = new RulePack();
@@ -144,7 +144,7 @@ namespace Psychology
                     FieldInfo Symbol = typeof(InteractionDef).GetField("symbol", BindingFlags.Instance | BindingFlags.NonPublic);
                     Symbol.SetValue(endConversation, Symbol.GetValue(InteractionDefOfPsychology.EndConversation));
                     List<RulePackDef> socialFightPacks = new List<RulePackDef>();
-                    if (this.pawn.interactions.CheckSocialFightStart(endConversation, otherPawn))
+                    if (mattered && this.pawn.interactions.CheckSocialFightStart(endConversation, otherPawn))
                     {
                         socialFightPacks.Add(RulePackDefOf.Sentence_SocialFightStarted);
                     }
@@ -195,7 +195,7 @@ namespace Psychology
         }
 
         [LogPerformance]
-        private void TryGainThought(ThoughtDef def, int opinionOffset)
+        private bool TryGainThought(ThoughtDef def, int opinionOffset)
         {
             ThoughtStage stage = def.stages.First();
             IEnumerable<Thought_MemorySocialDynamic> convoMemories;
@@ -206,7 +206,9 @@ namespace Psychology
             if (Rand.Value < Mathf.InverseLerp(0f, PsycheHelper.Comp(pawn).Psyche.TotalThoughtOpinion(this.otherPawn, out convoMemories), 250f + Mathf.Abs(opinionOffset)) && opinionOffset != 0)
             {
                 this.pawn.needs.mood.thoughts.memories.TryGainMemory(def, this.otherPawn);
+                return true;
             }
+            return false;
         }
 
         public float PopulationModifier

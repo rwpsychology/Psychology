@@ -21,7 +21,7 @@ namespace Psychology
         public void Initialize()
         {
             this.upbringing = Mathf.RoundToInt(Rand.ValueSeeded(this.pawn.HashOffset()) * (PersonalityCategories-1))+1;
-            this.nodes = new List<PersonalityNode>();
+            this.nodes = new HashSet<PersonalityNode>();
             foreach(PersonalityNodeDef def in DefDatabase<PersonalityNodeDef>.AllDefsListForReading)
             {
                 nodes.Add(PersonalityNodeMaker.MakeNode(def, this.pawn));
@@ -32,18 +32,18 @@ namespace Psychology
         {
             Scribe_Values.Look(ref this.upbringing, "upbringing", 0, false);
             Scribe_Values.Look(ref this.lastDateTick, "lastDateTick", 0, false);
-            Scribe_Collections.Look(ref this.nodes, "nodes", LookMode.Deep, new object[] { this.pawn });
+            PsycheHelper.Look(ref this.nodes, "nodes", LookMode.Deep, new object[] { this.pawn });
         }
 
         [LogPerformance]
         public float GetPersonalityRating(PersonalityNodeDef def)
         {
-            return nodes.Find((PersonalityNode n) => n.def == def).AdjustedRating;
+            return nodes.FirstOrDefault((PersonalityNode n) => n.def == def).AdjustedRating;
         }
 
         public PersonalityNode GetPersonalityNodeOfDef(PersonalityNodeDef def)
         {
-            return nodes.Find((PersonalityNode n) => n.def == def);
+            return nodes.FirstOrDefault((PersonalityNode n) => n.def == def);
         }
 
         [LogPerformance]
@@ -94,7 +94,7 @@ namespace Psychology
             return knownThoughtOpinion;
         }
 
-        public List<PersonalityNode> PersonalityNodes
+        public HashSet<PersonalityNode> PersonalityNodes
         {
             get
             {
@@ -106,14 +106,38 @@ namespace Psychology
             }
         }
 
+        public Dictionary<string, bool> OpinionCacheDirty
+        {
+            get
+            {
+                return recalcCachedOpinions;
+            }
+            set
+            {
+                recalcCachedOpinions = value;
+            }
+        }
+
+        public Dictionary<Pair<string,string>, bool> DisagreementCacheDirty
+        {
+            get
+            {
+                return recalcNodeDisagreement;
+            }
+            set
+            {
+                recalcNodeDisagreement = value;
+            }
+        }
+
         public int upbringing;
         public int lastDateTick = 0;
         private Pawn pawn;
-        private List<PersonalityNode> nodes;
+        private HashSet<PersonalityNode> nodes;
         private Dictionary<string, float> cachedOpinions = new Dictionary<string, float>();
-        public Dictionary<string, bool> recalcCachedOpinions = new Dictionary<string, bool>();
+        private Dictionary<string, bool> recalcCachedOpinions = new Dictionary<string, bool>();
         private Dictionary<Pair<string,string>, float> cachedDisagreementWeights = new Dictionary<Pair<string, string>, float>();
-        public Dictionary<Pair<string,string>, bool> recalcNodeDisagreement = new Dictionary<Pair<string, string>, bool>();
+        private Dictionary<Pair<string,string>, bool> recalcNodeDisagreement = new Dictionary<Pair<string, string>, bool>();
         public const int PersonalityCategories = 16;
     }
 }

@@ -20,12 +20,9 @@ namespace Psychology
         [LogPerformance]
         public bool IncompatibleSexualityKnown(Pawn recipient)
         {
-            foreach(Pawn key in this.knownSexualities.Keys)
+            if(this.knownSexualities.ContainsKey(recipient))
             {
-                if(recipient == key)
-                {
-                    return ((knownSexualities[recipient]-4) >= 0) != (recipient.gender == this.pawn.gender);
-                }
+                return ((knownSexualities[recipient]-4) >= 0) != (recipient.gender == this.pawn.gender);
             }
             return false;
         }
