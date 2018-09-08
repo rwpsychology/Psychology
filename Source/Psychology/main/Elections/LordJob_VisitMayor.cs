@@ -80,7 +80,7 @@ namespace Psychology
                         complaintDef.stackedEffectMultiplier = 1f;
                         complaintDef.stackLimit = 999;
                         ThoughtStage complaintStage = new ThoughtStage();
-                        float complaintMood = 15f * (PsycheHelper.Comp(mayor).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Empathetic) - 0.33f);
+                        float complaintMood = 18f * (PsycheHelper.Comp(mayor).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Empathetic) - 0.33f);
                         //Base complaint mood determined by mayor's Empathetic trait
                         complaintMood *= (float)this.ticksInSameRoom / (float)GenDate.TicksPerHour;
                         //Length of meeting also affects mood
@@ -108,7 +108,7 @@ namespace Psychology
                     visitDef.stackedEffectMultiplier = 1f;
                     visitDef.stackLimit = 999;
                     ThoughtStage stage = new ThoughtStage();
-                    float mood = 7f * (complaint ? -1f - (1f - this.constituent.needs.mood.CurLevel) : 0.1f + (this.constituent.needs.mood.CurLevel * 0.65f));
+                    float mood = 7f * (complaint ? -0.5f - (1f - this.constituent.needs.mood.CurLevel) : 0.1f + (this.constituent.needs.mood.CurLevel * 0.65f));
                     //Base visit mood determined by the mood level of the constituent
                     mood *= (float)this.ticksInSameRoom / (float)GenDate.TicksPerHour;
                     //Length of meeting also affects mood

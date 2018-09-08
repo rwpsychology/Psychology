@@ -15,9 +15,12 @@ namespace Psychology.Harmony
         [HarmonyPostfix]
         public static void AlwaysActiveDepression(ref ThoughtState __result, Pawn p)
         {
-            if(p.health.hediffSet.HasHediff(HediffDefOfPsychology.Antidepressants))
+            if (__result.StageIndex > 1)
             {
-                __result = ThoughtState.ActiveAtStage(1);
+                if (p.health.hediffSet.HasHediff(HediffDefOfPsychology.Antidepressants))
+                {
+                    __result = ThoughtState.ActiveAtStage(1);
+                }
             }
         }
     }

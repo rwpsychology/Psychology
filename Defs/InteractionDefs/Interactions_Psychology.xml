@@ -49,6 +49,24 @@
     </logRulesInitiator>
   </InteractionDef>
   
+  <RulePackDef>
+    <defName>Sentence_SocialFightConvoInitiatorStarted</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>sent->Their differences escalated until [INITIATOR_nameDef] started a fight!</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
+  <RulePackDef>
+    <defName>Sentence_SocialFightConvoRecipientStarted</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>sent->Their differences escalated until [RECIPIENT_nameDef] started a fight!</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
   <InteractionDef>
     <defName>HangOut</defName>
     <label>hanging out</label>

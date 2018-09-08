@@ -139,7 +139,7 @@ namespace Psychology
                     if(this.def.ParentNodes != null && this.def.ParentNodes.Any())
                     {
                         this.parents = (from p in this.pawn.GetComp<CompPsychology>().Psyche.PersonalityNodes
-                                        where this.def.ParentNodes.Contains(p.def)
+                                        where this.def.ParentNodes.ContainsKey(p.def)
                                         select p) as HashSet<PersonalityNode>;
                     }
                 }

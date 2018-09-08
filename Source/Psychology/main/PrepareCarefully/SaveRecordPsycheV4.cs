@@ -11,6 +11,7 @@ namespace Psychology.PrepareCarefully
     public class SaveRecordPsycheV4 : IExposable
     {
         public HashSet<PersonalityNode> nodes = new HashSet<PersonalityNode>();
+        private Dictionary<PersonalityNodeDef, PersonalityNode> nodeDict;
         public int upbringing;
         public float sexDrive = 1f;
         public float romanticDrive = 1f;
@@ -56,6 +57,25 @@ namespace Psychology.PrepareCarefully
                 {
                     Scribe_Values.Look(ref kinseyRating, "kinseyRating", 0);
                 }
+            }
+        }
+
+        public Dictionary<PersonalityNodeDef, PersonalityNode> NodeDict
+        {
+            get
+            {
+                if (this.nodeDict == null)
+                {
+                    this.nodeDict = new Dictionary<PersonalityNodeDef, PersonalityNode>();
+                    if (this.nodes != null && this.nodes.Count > 0)
+                    {
+                        foreach (PersonalityNode parent in this.nodes)
+                        {
+                            this.nodeDict.Add(parent.def, parent);
+                        }
+                    }
+                }
+                return this.nodeDict;
             }
         }
     }

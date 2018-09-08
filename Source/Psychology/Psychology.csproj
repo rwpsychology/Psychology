@@ -65,6 +65,7 @@
     <Compile Include="Defs\IncidentDefOfPsychology.cs" />
     <Compile Include="Defs\GameConditionDefOfPsychology.cs" />
     <Compile Include="Defs\InteractionDefOfPsychology.cs" />
+    <Compile Include="Defs\RulePackDefOfPsychology.cs" />
     <Compile Include="Harmony\MentalState_SocialFighting.cs" />
     <Compile Include="Defs\PersonalityNodeDefOf.cs" />
     <Compile Include="Defs\PsychologyTexCommand.cs" />

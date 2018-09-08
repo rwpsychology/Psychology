@@ -100,10 +100,11 @@ namespace Psychology
                 {
                     return;
                 }
-                Hediff otherConvo = otherPawn.health.hediffSet.hediffs.Find(h => h is Hediff_Conversation && ((Hediff_Conversation)h).otherPawn == this.pawn);
+                Hediff_Conversation otherConvo = otherPawn.health.hediffSet.hediffs.Find(h => h is Hediff_Conversation && ((Hediff_Conversation)h).otherPawn == this.pawn) as Hediff_Conversation;
                 if (otherConvo != null)
                 {
                     this.otherPawn.health.RemoveHediff(otherConvo);
+                    this.startedFight = otherConvo.startedFight;
                 }
                 string talkDesc;
                 if (this.ageTicks < 500)
@@ -129,12 +130,25 @@ namespace Psychology
                 float opinionMod;
                 ThoughtDef def = CreateSocialThought(out opinionMod);
                 bool mattered = TryGainThought(def, Mathf.RoundToInt(opinionMod));
+                InteractionDef endConversation = new InteractionDef();
+                endConversation.socialFightBaseChance = 0.2f * PsycheHelper.Comp(pawn).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive) * Mathf.InverseLerp(0f, -80f, opinionMod);
+                endConversation.defName = "EndConversation";
+                endConversation.label = def.label;
+                List<RulePackDef> socialFightPacks = new List<RulePackDef>();
+                if (startedFight || (mattered && this.pawn.interactions.CheckSocialFightStart(endConversation, otherPawn)))
+                {
+                    if(startedFight)
+                    {
+                        socialFightPacks.Add(RulePackDefOfPsychology.Sentence_SocialFightConvoRecipientStarted);
+                    }
+                    else
+                    {
+                        socialFightPacks.Add(RulePackDefOfPsychology.Sentence_SocialFightConvoInitiatorStarted);
+                    }
+                    this.startedFight = true;
+                }
                 if (this.waveGoodbye && this.pawn.Map != null)
                 {
-                    InteractionDef endConversation = new InteractionDef();
-                    endConversation.socialFightBaseChance = 0.4f * PsycheHelper.Comp(pawn).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Aggressive) * Mathf.InverseLerp(0f, -80f, opinionMod);
-                    endConversation.defName = "EndConversation";
-                    endConversation.label = def.label;
                     RulePack goodbyeText = new RulePack();
                     FieldInfo RuleStrings = typeof(RulePack).GetField("rulesStrings", BindingFlags.Instance | BindingFlags.NonPublic);
                     List<string> text = new List<string>(1);
@@ -143,11 +157,6 @@ namespace Psychology
                     endConversation.logRulesInitiator = goodbyeText;
                     FieldInfo Symbol = typeof(InteractionDef).GetField("symbol", BindingFlags.Instance | BindingFlags.NonPublic);
                     Symbol.SetValue(endConversation, Symbol.GetValue(InteractionDefOfPsychology.EndConversation));
-                    List<RulePackDef> socialFightPacks = new List<RulePackDef>();
-                    if (mattered && this.pawn.interactions.CheckSocialFightStart(endConversation, otherPawn))
-                    {
-                        socialFightPacks.Add(RulePackDefOf.Sentence_SocialFightStarted);
-                    }
                     PlayLogEntry_InteractionConversation log = new PlayLogEntry_InteractionConversation(endConversation, pawn, this.otherPawn, socialFightPacks);
                     Find.PlayLog.Add(log);
                     MoteMaker.MakeInteractionBubble(this.pawn, this.otherPawn, InteractionDefOf.Chitchat.interactionMote, InteractionDefOf.Chitchat.Symbol);
@@ -230,5 +239,6 @@ namespace Psychology
         public PersonalityNodeDef topic;
         public string convoTopic;
         public bool waveGoodbye;
+        public bool startedFight = false;
     }
 }

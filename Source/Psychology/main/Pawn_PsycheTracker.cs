@@ -26,6 +26,10 @@ namespace Psychology
             {
                 nodes.Add(PersonalityNodeMaker.MakeNode(def, this.pawn));
             }
+            foreach (PersonalityNode n in this.nodes)
+            {
+                nodeDict[n.def] = n;
+            }
         }
 
         public void ExposeData()
@@ -33,17 +37,21 @@ namespace Psychology
             Scribe_Values.Look(ref this.upbringing, "upbringing", 0, false);
             Scribe_Values.Look(ref this.lastDateTick, "lastDateTick", 0, false);
             PsycheHelper.Look(ref this.nodes, "nodes", LookMode.Deep, new object[] { this.pawn });
+            foreach(PersonalityNode n in this.nodes)
+            {
+                nodeDict[n.def] = n;
+            }
         }
 
         [LogPerformance]
         public float GetPersonalityRating(PersonalityNodeDef def)
         {
-            return nodes.FirstOrDefault((PersonalityNode n) => n.def == def).AdjustedRating;
+            return GetPersonalityNodeOfDef(def).AdjustedRating;
         }
 
         public PersonalityNode GetPersonalityNodeOfDef(PersonalityNodeDef def)
         {
-            return nodes.FirstOrDefault((PersonalityNode n) => n.def == def);
+            return nodeDict[def];
         }
 
         [LogPerformance]
@@ -134,6 +142,7 @@ namespace Psychology
         public int lastDateTick = 0;
         private Pawn pawn;
         private HashSet<PersonalityNode> nodes;
+        private Dictionary<PersonalityNodeDef, PersonalityNode> nodeDict = new Dictionary<PersonalityNodeDef, PersonalityNode>();
         private Dictionary<string, float> cachedOpinions = new Dictionary<string, float>();
         private Dictionary<string, bool> recalcCachedOpinions = new Dictionary<string, bool>();
         private Dictionary<Pair<string,string>, float> cachedDisagreementWeights = new Dictionary<Pair<string, string>, float>();

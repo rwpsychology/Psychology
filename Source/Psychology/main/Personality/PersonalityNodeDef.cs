@@ -13,31 +13,31 @@ namespace Psychology
         
         public void ReloadParents()
         {
-            parentDefs.Clear();
+            parentDict.Clear();
         }
 
         public float GetModifier(PersonalityNodeDef def)
         {
-            PersonalityNodeParent parent = parents.FirstOrDefault((PersonalityNodeParent p) => p.node == def);
+            PersonalityNodeParent parent = ParentNodes[def];
             return (parent.modifier > 0 ? -1/parent.modifier : 1/Mathf.Abs(parent.modifier-1));
         }
 
-        public HashSet<PersonalityNodeDef> ParentNodes
+        public Dictionary<PersonalityNodeDef, PersonalityNodeParent> ParentNodes
         {
             get
             {
-                if(this.parentDefs == null)
+                if(this.parentDict == null)
                 {
-                    this.parentDefs = new HashSet<PersonalityNodeDef>();
+                    this.parentDict = new Dictionary<PersonalityNodeDef, PersonalityNodeParent>();
                     if(this.parents != null && this.parents.Count > 0)
                     {
                         foreach (PersonalityNodeParent parent in this.parents)
                         {
-                            this.parentDefs.Add(parent.node);
+                            this.parentDict.Add(parent.node, parent);
                         }
                     }
                 }
-                return this.parentDefs;
+                return this.parentDict;
             }
         }
 
@@ -72,7 +72,7 @@ namespace Psychology
         public List<int> preferredDateHours;
         //A list of the actual parent Defs of this node.
         [Unsaved]
-        private HashSet<PersonalityNodeDef> parentDefs;
+        private Dictionary<PersonalityNodeDef, PersonalityNodeParent> parentDict;
 
     }
 }

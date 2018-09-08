@@ -15,16 +15,19 @@ namespace Psychology.Harmony
         [LogPerformance]
         public static void CurrentStateInternal(ref ThoughtState __result, Pawn p)
         {
-            DirectPawnRelation directPawnRelation = LovePartnerRelationUtility.ExistingMostLikedLovePartnerRel(p, false);
-            bool multiplePartners = (from r in p.relations.PotentiallyRelatedPawns
-                                     where LovePartnerRelationUtility.LovePartnerRelationExists(p, r)
-                                     select r).Count() > 1;
-            bool partnerBedInRoom = (from t in p.ownership.OwnedBed.GetRoom().ContainedBeds
-                                     where t.AssignedPawns.Contains(directPawnRelation.otherPawn)
-                                     select t).Count() > 0;
-            if (directPawnRelation != null && p.ownership.OwnedBed != null && p.story.traits.HasTrait(TraitDefOfPsychology.Polygamous) && multiplePartners && partnerBedInRoom)
+            if (__result.StageIndex != ThoughtState.Inactive.StageIndex)
             {
-                __result = false;
+                DirectPawnRelation directPawnRelation = LovePartnerRelationUtility.ExistingMostLikedLovePartnerRel(p, false);
+                bool multiplePartners = (from r in p.relations.PotentiallyRelatedPawns
+                                         where LovePartnerRelationUtility.LovePartnerRelationExists(p, r)
+                                         select r).Count() > 1;
+                bool partnerBedInRoom = (from t in p.ownership.OwnedBed.GetRoom().ContainedBeds
+                                         where t.AssignedPawns.Contains(directPawnRelation.otherPawn)
+                                         select t).Count() > 0;
+                if (directPawnRelation != null && p.ownership.OwnedBed != null && p.story.traits.HasTrait(TraitDefOfPsychology.Polygamous) && multiplePartners && partnerBedInRoom)
+                {
+                    __result = false;
+                }
             }
         }
     }

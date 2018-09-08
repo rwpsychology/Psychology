@@ -379,7 +379,7 @@ namespace Psychology
                 Dictionary<string, float> averages = PerformanceSetup.performanceTotals.ToDictionary(x => x.Key, x => (float)x.Value / (float)PerformanceSetup.performanceCalls[x.Key]);
                 int topAmt = Math.Min(10, averages.Count);
                 List<KeyValuePair<string, float>> avgTicks = (from avg in averages orderby avg.Value descending select avg).Take(topAmt).ToList();
-                List<KeyValuePair<string, float>> topTicks = (from avg in averages orderby Math.Pow(avg.Value, PerformanceSetup.performanceCalls[avg.Key]) descending select avg).Take(topAmt).ToList();
+                List<KeyValuePair<string, float>> topTicks = (from avg in averages orderby avg.Value*PerformanceSetup.performanceCalls[avg.Key] descending select avg).Take(topAmt).ToList();
                 StringBuilder avgString = new StringBuilder();
                 foreach(KeyValuePair<string, float> t in avgTicks)
                 {
@@ -388,7 +388,7 @@ namespace Psychology
                 StringBuilder topString = new StringBuilder();
                 foreach (KeyValuePair<string, float> t in topTicks)
                 {
-                    topString.AppendLine(t.Key + " (" + t.Value + ")");
+                    topString.AppendLine(t.Key + " (" + avgTicks.Find(x => x.Key == t.Key).Value + ")");
                 }
                 Log.Message("Psychology :: Performance Report :: Top " + topAmt + " average tick consumers:\n" + avgString.ToString() + "\nTop " + topAmt + " weighted tick consumers: " + topString.ToString());
             }

@@ -25,7 +25,7 @@ namespace Psychology.Harmony.Optional
                     PsycheHelper.Comp(pawn).Psyche.upbringing = psycheSave.upbringing;
                     foreach (PersonalityNode node in PsycheHelper.Comp(pawn).Psyche.PersonalityNodes)
                     {
-                        PersonalityNode savedNode = psycheSave.nodes.FirstOrDefault(n => n.def == node.def);
+                        PersonalityNode savedNode = psycheSave.NodeDict[node.def];
                         if(savedNode != null)
                         {
                             node.rawRating = savedNode.rawRating;

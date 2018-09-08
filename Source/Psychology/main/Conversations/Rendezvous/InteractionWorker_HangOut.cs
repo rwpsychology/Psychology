@@ -14,7 +14,7 @@ namespace Psychology
         [LogPerformance]
         public override float RandomSelectionWeight(Pawn initiator, Pawn recipient)
         {
-            if(!GatheringsUtility.ShouldGuestKeepAttendingGathering(initiator) || !GatheringsUtility.ShouldGuestKeepAttendingGathering(recipient))
+            if (!GatheringsUtility.ShouldGuestKeepAttendingGathering(initiator) || !GatheringsUtility.ShouldGuestKeepAttendingGathering(recipient))
             {
                 return 0f;
             }
@@ -45,7 +45,7 @@ namespace Psychology
                 initiatorFactor = PsycheHelper.Comp(initiator).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Extroverted) + 0.15f + Mathf.InverseLerp(0f, 100f, initiator.relations.OpinionOf(recipient));
                 recipientFactor = (PsycheHelper.Comp(recipient).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Friendly) + PsycheHelper.Comp(recipient).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Cool))/2f;
             }
-            else if(initiator.relations.OpinionOf(recipient) <= -20)
+            else if (initiator.relations.OpinionOf(recipient) <= -20)
             {
                 initiatorFactor = Mathf.InverseLerp(0.6f, 1f, PsycheHelper.Comp(initiator).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Empathetic));
                 recipientFactor = PsycheHelper.Comp(recipient).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Trusting);

@@ -38,7 +38,6 @@ namespace Psychology.Harmony
 	[HarmonyPatch(typeof(InteractionWorker_MarriageProposal), nameof(InteractionWorker_MarriageProposal.Interacted))]
 	public static class InteractionWorker_MarriageProposal_InteractedPatch
     {
-        [LogPerformance]
         [HarmonyTranspiler]
 		public static IEnumerable<CodeInstruction> BlindfoldedSurgery(IEnumerable<CodeInstruction> instrs)
 		{
@@ -107,6 +106,7 @@ namespace Psychology.Harmony
             }
 		}
 
+        [LogPerformance]
         public static void RemovePsychologyThoughts(Pawn initiator, Pawn recipient)
         {
 
@@ -124,6 +124,7 @@ namespace Psychology.Harmony
             }
         }
 
+        [LogPerformance]
         public static void AddPsychRejectedThoughts(Pawn initiator, Pawn recipient)
         {
             if (PsycheHelper.PsychologyEnabled(initiator))
@@ -204,6 +205,7 @@ namespace Psychology.Harmony
             }
         }
 
+        [LogPerformance]
         public static float PsychBreakupChance(Pawn recipient)
         {
             if(recipient.story.traits.HasTrait(TraitDefOfPsychology.Codependent))

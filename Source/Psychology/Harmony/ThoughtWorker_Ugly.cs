@@ -15,13 +15,16 @@ namespace Psychology.Harmony
         [HarmonyPostfix]
         public static void Disable(ref ThoughtState __result, Pawn pawn, Pawn other)
         {
-            if (pawn.health.capacities.GetLevel(PawnCapacityDefOf.Sight) == 0f)
+            if (__result.StageIndex != ThoughtState.Inactive.StageIndex)
             {
-                __result = false;
-            }
-            if (PsycheHelper.PsychologyEnabled(pawn) && PsycheHelper.PsychologyEnabled(other))
-            {
-                __result = false;
+                if (pawn.health.capacities.GetLevel(PawnCapacityDefOf.Sight) == 0f)
+                {
+                    __result = false;
+                }
+                if (PsycheHelper.PsychologyEnabled(pawn) && PsycheHelper.PsychologyEnabled(other))
+                {
+                    __result = false;
+                }
             }
         }
     }
