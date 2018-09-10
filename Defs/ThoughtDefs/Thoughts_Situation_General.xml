@@ -47,4 +47,37 @@
     </stages>
   </ThoughtDef>
   
+  <ThoughtDef>
+    <defName>SurvivedTogether</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>Psychology.ThoughtWorker_SurvivedTogether</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>survived together for a year</label>
+        <baseOpinionOffset>2</baseOpinionOffset>
+      </li>
+      <li>
+        <label>survived together for two years</label>
+        <baseOpinionOffset>5</baseOpinionOffset>
+      </li>
+      <li>
+        <label>survived together for three years</label>
+        <baseOpinionOffset>8</baseOpinionOffset>
+      </li>
+      <li>
+        <label>survived together for four years</label>
+        <baseOpinionOffset>12</baseOpinionOffset>
+      </li>
+      <li>
+        <label>survived together for five years</label>
+        <baseOpinionOffset>15</baseOpinionOffset>
+      </li>
+      <li>
+        <label>survived together for over five years</label>
+        <baseOpinionOffset>20</baseOpinionOffset>
+	  </li>
+    </stages>
+  </ThoughtDef>
+  
 </Defs>

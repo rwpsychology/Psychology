@@ -30,7 +30,7 @@ namespace Psychology
                 toil.ticksToNextJoy = Find.TickManager.TicksGame + Rand.RangeInclusive(GenDate.TicksPerHour, GenDate.TicksPerHour * 3);
             }
             /* If they need joy, go do the joy activity.*/
-            if (toil.hangOut != null && friend.needs.food.CurLevel > 0.33f && pawn.needs.joy.CurLevel < 0.8f && pawn.CanReserve(toil.hangOut.GetTarget(TargetIndex.A), toil.hangOut.def.joyMaxParticipants, 0, null))
+            if (toil.hangOut != null && friend.needs.food.CurLevel > 0.33f && pawn.needs.joy.CurLevel < 0.8f)
             {
                 /* Sometimes the joy activity can't be reserved because it's for one person only. */
                 Job job = new Job(toil.hangOut.def);
@@ -43,8 +43,10 @@ namespace Psychology
                 job.countQueue = toil.hangOut.countQueue;
                 job.expiryInterval = toil.hangOut.expiryInterval;
                 job.locomotionUrgency = toil.hangOut.locomotionUrgency;
-                if(job.TryMakePreToilReservations(pawn, false))
+                if (job.TryMakePreToilReservations(pawn, false))
                     return job;
+                else
+                    pawn.ClearAllReservations(false);
             }
             if (((pawn.Position - friend.Position).LengthHorizontalSquared >= 54f || !GenSight.LineOfSight(pawn.Position, friend.Position, pawn.Map, true)))
             { /* Make sure they are close to each other if they're not actively doing a joy activity. */
@@ -73,7 +75,7 @@ namespace Psychology
                         where validator(x)
                         select x).TryRandomElement(out result))
                 {
-                    if ((pawn.Position - friend.Position).LengthHorizontalSquared >= 3f || (LovePartnerRelationUtility.LovePartnerRelationExists(pawn, friend) && pawn.Position != friend.Position))
+                    if ((pawn.Position - friend.Position).LengthHorizontalSquared >= 5f || (LovePartnerRelationUtility.LovePartnerRelationExists(pawn, friend) && pawn.Position != friend.Position))
                     {
                         /* Sending them to goto a friend ends with them standing right next to/on top of them. So make them respect personal space a little more. */
                         pawn.mindState.nextMoveOrderIsWait = !pawn.mindState.nextMoveOrderIsWait;

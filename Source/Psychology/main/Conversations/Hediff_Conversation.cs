@@ -7,7 +7,7 @@ using RimWorld;
 using UnityEngine;
 using Verse.Grammar;
 using System.Reflection;
-using System.Diagnostics;
+using Harmony;
 
 namespace Psychology
 {
@@ -137,7 +137,7 @@ namespace Psychology
                 List<RulePackDef> socialFightPacks = new List<RulePackDef>();
                 if (startedFight || (mattered && this.pawn.interactions.CheckSocialFightStart(endConversation, otherPawn)))
                 {
-                    if(startedFight)
+                    if (startedFight)
                     {
                         socialFightPacks.Add(RulePackDefOfPsychology.Sentence_SocialFightConvoRecipientStarted);
                     }
@@ -146,6 +146,11 @@ namespace Psychology
                         socialFightPacks.Add(RulePackDefOfPsychology.Sentence_SocialFightConvoInitiatorStarted);
                     }
                     this.startedFight = true;
+                    if (!this.waveGoodbye && otherConvo.convoLog != null && !otherConvo.startedFight)
+                    {
+                        //The main conversation hediff was the other conversation, and didn't start a fight, so we have to add the extra sentence in after the fact.
+                        Traverse.Create(otherConvo.convoLog).Field("extraSentencePacks").GetValue<List<RulePackDef>>().AddRange(socialFightPacks);
+                    }
                 }
                 if (this.waveGoodbye && this.pawn.Map != null)
                 {
@@ -159,8 +164,8 @@ namespace Psychology
                     Symbol.SetValue(endConversation, Symbol.GetValue(InteractionDefOfPsychology.EndConversation));
                     PlayLogEntry_InteractionConversation log = new PlayLogEntry_InteractionConversation(endConversation, pawn, this.otherPawn, socialFightPacks);
                     Find.PlayLog.Add(log);
+                    convoLog = log;
                     MoteMaker.MakeInteractionBubble(this.pawn, this.otherPawn, InteractionDefOf.Chitchat.interactionMote, InteractionDefOf.Chitchat.Symbol);
-                    
                 }
             }
         }
@@ -240,5 +245,6 @@ namespace Psychology
         public string convoTopic;
         public bool waveGoodbye;
         public bool startedFight = false;
+        public PlayLogEntry_InteractionConversation convoLog;
     }
 }

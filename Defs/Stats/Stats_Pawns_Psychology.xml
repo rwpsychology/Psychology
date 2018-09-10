@@ -9,6 +9,7 @@
     <defaultBaseValue>1</defaultBaseValue>
     <minValue>0.01</minValue>
     <toStringStyle>PercentTwo</toStringStyle>
+	<neverDisabled>true</neverDisabled>
     <skillNeedFactors>
       <li Class="SkillNeed_BaseBonus">
         <skill>Social</skill>
