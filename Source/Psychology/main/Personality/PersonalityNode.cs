@@ -51,14 +51,24 @@ namespace Psychology
                 float parentRating = (def.GetModifier(parent.def) < 0 ? (1f - parent.AdjustedRating) : parent.AdjustedRating) * Mathf.Abs(def.GetModifier(parent.def));
                 rating = ((rating * (2f + (1f - Mathf.Abs(def.GetModifier(parent.def))))) + parentRating) / 3f;
             }
-            rating += (0.5f - this.rawRating) / 4f;
             return Mathf.Clamp01(rating);
         }
 
         [LogPerformance]
         public float AdjustForCircumstance(float rating)
         {
-            if(this.def.skillModifiers != null && this.def.skillModifiers.Any())
+            if (this.def.traitModifiers != null && this.def.traitModifiers.Any())
+            {
+                foreach (PersonalityNodeTraitModifier traitMod in this.def.traitModifiers)
+                {
+                    if (this.pawn.story.traits.HasTrait(traitMod.trait) && this.pawn.story.traits.DegreeOfTrait(traitMod.trait) == traitMod.degree)
+                    {
+                        rating += traitMod.modifier;
+                    }
+                }
+                rating = Mathf.Clamp01(rating);
+            }
+            if (this.def.skillModifiers != null && this.def.skillModifiers.Any())
             {
                 int totalLearning = 0;
                 foreach(SkillRecord s in this.pawn.skills.skills)
@@ -76,17 +86,6 @@ namespace Psychology
                     rating += Mathf.InverseLerp(.05f, .4f, totalWeight);
                     rating = Mathf.Clamp01(rating);
                 }
-            }
-            if(this.def.traitModifiers != null && this.def.traitModifiers.Any())
-            {
-                foreach (PersonalityNodeTraitModifier traitMod in this.def.traitModifiers)
-                {
-                    if (this.pawn.story.traits.HasTrait(traitMod.trait) && this.pawn.story.traits.DegreeOfTrait(traitMod.trait) == traitMod.degree)
-                    {
-                        rating += traitMod.modifier;
-                    }
-                }
-                rating = Mathf.Clamp01(rating);
             }
             if (this.def.incapableModifiers != null && this.def.incapableModifiers.Any())
             {
@@ -182,6 +181,7 @@ namespace Psychology
                     {
                         adjustedRating = AdjustForParents(adjustedRating);
                     }
+                    adjustedRating = ((3 * adjustedRating) + rawRating) / 4f; //Prevent it from being adjusted too strongly
                     cachedRating = Mathf.Clamp01(adjustedRating);
                 }
                 return cachedRating;

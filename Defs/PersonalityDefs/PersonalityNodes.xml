@@ -41,7 +41,7 @@
 		<defName>Independent</defName>
 		<label>independent</label>
 		<description>An independent person is perfectly happy being on their own and doesn't rely on others.</description>
-		<controversiality>0.9</controversiality>
+		<controversiality>1.15</controversiality>
 		<conversationTopics>
 			<li>solitude</li>
 			<li>introversion</li>
@@ -144,7 +144,7 @@
 		<defName>Aggressive</defName>
 		<label>aggressive</label>
 		<description>An aggressive person is straightforward, blunt, and usually combative when they don't get what they want.</description>
-		<controversiality>1.6</controversiality>
+		<controversiality>1.25</controversiality>
 		<conversationTopics>
 			<li>a disagreement between them</li>
 			<li>a conflict between them</li>
@@ -182,7 +182,7 @@
 		<defName>Adventurous</defName>
 		<label>adventurous</label>
 		<description>Someone who is adventurous feels more fulfilled when they try new things, expand their horizons, and go new places.</description>
-		<controversiality>0.4</controversiality>
+		<controversiality>0.7</controversiality>
 		<conversationTopics>
 			<li>their bucket lists</li>
 			<li>life's rewards</li>
@@ -278,7 +278,7 @@
 		<defName>Spontaneous</defName>
 		<label>spontaneous</label>
 		<description>A spontaneous person tends to be impulsive and enjoy surprising others.</description>
-		<controversiality>0.9</controversiality>
+		<controversiality>0.8</controversiality>
 		<conversationTopics>
 			<li>practical jokes</li>
 			<li>humor</li>
@@ -301,7 +301,7 @@
 		<defName>Rational</defName>
 		<label>rational</label>
 		<description>The more rational someone is, the more capable they are of thinking about things from a factual, objective standpoint.</description>
-		<controversiality>1.4</controversiality>
+		<controversiality>1</controversiality>
 		<conversationTopics>
 			<li>philosophy</li>
 			<li>maturity</li>
@@ -376,7 +376,7 @@
 		<defName>Creative</defName>
 		<label>creative</label>
 		<description>Creative people can imagine things in vivid detail, whether they ever existed or not.</description>
-		<controversiality>0.85</controversiality>
+		<controversiality>0.75</controversiality>
 		<conversationTopics>
 			<li>writing and drawing</li>
 			<li>art</li>
@@ -425,7 +425,7 @@
 		<defName>Passionate</defName>
 		<label>passionate</label>
 		<description>People who are passionate feel very strongly about things and tend to express themselves emphatically.</description>
-		<controversiality>1.4</controversiality>
+		<controversiality>0.85</controversiality>
 		<conversationTopics>
 			<li>their likes and dislikes</li>
 			<li>enthusiasm</li>
@@ -454,7 +454,7 @@
 		<defName>Nostalgic</defName>
 		<label>nostalgic</label>
 		<description>Someone nostalgic has a very strong connection to their past and anything that evokes those memories.</description>
-		<controversiality>0.75</controversiality>
+		<controversiality>0.7</controversiality>
 		<conversationTopics>
 			<li>the old days</li>
 			<li>childhood</li>
@@ -493,7 +493,7 @@
 		<defName>Empathetic</defName>
 		<label>empathetic</label>
 		<description>An empathetic person is able to put themselves into the shoes of others and understand their feelings.</description>
-		<controversiality>1.6</controversiality>
+		<controversiality>1.4</controversiality>
 		<conversationTopics>
 			<li>psychopathy</li>
 			<li>isolationism</li>
@@ -549,7 +549,7 @@
 	<Psychology.PersonalityNodeDef>
 		<defName>Competitive</defName>
 		<label>competitive</label>
-		<controversiality>1.35</controversiality>
+		<controversiality>0.9</controversiality>
 		<description>For a competitive person, it's not enough that they succeed, others must fail.</description>
 		<conversationTopics>
 			<li>success</li>
@@ -585,7 +585,7 @@
 		<defName>Polite</defName>
 		<label>polite</label>
 		<description>A polite person is well-mannered and makes an effort not to offend other people.</description>
-		<controversiality>1.5</controversiality>
+		<controversiality>0.78</controversiality>
 		<conversationTopics>
 			<li>manners</li>
 			<li>tact</li>
@@ -705,7 +705,7 @@
 		<defName>Romantic</defName>
 		<label>romantic</label>
 		<description>Someone romantic likes long-term, meaningful relationships, commitment, and intimate gestures.</description>
-		<controversiality>1.2</controversiality>
+		<controversiality>1.25</controversiality>
 		<conversationTopics>
 			<li>relationships</li>
 			<li>old flames</li>
@@ -755,7 +755,7 @@
 		<defName>Thoughtful</defName>
 		<label>thoughtful</label>
 		<description>Thoughtful people are introspective and critical, and tend to plan ahead.</description>
-		<controversiality>0.75</controversiality>
+		<controversiality>1</controversiality>
 		<conversationTopics>
 			<li>the future</li>
 			<li>life goals</li>
@@ -792,7 +792,7 @@
 		<defName>Geeky</defName>
 		<label>geeky</label>
 		<description>Someone who is geeky is intellectual, eccentric, and frequently socially awkward.</description>
-		<controversiality>0.6</controversiality>
+		<controversiality>0.8</controversiality>
 		<conversationTopics>
 			<li>their hobbies</li>
 			<li>self-replicating machines</li>
@@ -841,7 +841,7 @@
 		<defName>Cultured</defName>
 		<label>cultured</label>
 		<description>A cultured person is well-read, well-educated, and refined.</description>
-		<controversiality>0.4</controversiality>
+		<controversiality>0.8</controversiality>
 		<conversationTopics>
 			<li>aesthetics</li>
 			<li>television</li>
@@ -869,7 +869,7 @@
 		<defName>Organized</defName>
 		<label>organized</label>
 		<description>An organized person keeps everything tidy, neat, and minimalistic.</description>
-		<controversiality>0.4</controversiality>
+		<controversiality>0.7</controversiality>
 		<conversationTopics>
 			<li>cleanliness</li>
 			<li>pets</li>
@@ -909,7 +909,7 @@
 	<Psychology.PersonalityNodeDef>
 		<defName>Naive</defName>
 		<label>naive</label>
-		<description>Someone naive is inexperienced, guileless, and innocent.</description>
+		<description>Someone naive is guileless and often superstitious.</description>
 		<controversiality>1.3</controversiality>
 		<conversationTopics>
 			<li>idealism</li>
@@ -934,6 +934,10 @@
 				<node>Experimental</node>
 				<modifier>1</modifier>
 			</li>
+			<li>
+				<node>Rational</node>
+				<modifier>1</modifier>
+			</li>
 		</parents>
 		<preferredDateHours>
 			<li>9</li>
@@ -947,7 +951,7 @@
 		<defName>Upbeat</defName>
 		<label>upbeat</label>
 		<description>Upbeat people are happy, warm, and pleasant to be around.</description>
-		<controversiality>1.3</controversiality>
+		<controversiality>0.75</controversiality>
 		<conversationTopics>
 			<li>life</li>
 			<li>adulthood</li>
@@ -1001,7 +1005,7 @@
 		<defName>Outspoken</defName>
 		<label>outspoken</label>
 		<description>An outspoken person has a lot of strong opinions and doesn't hesitate to share them.</description>
-		<controversiality>1.8</controversiality>
+		<controversiality>1.5</controversiality>
 		<conversationTopics>
 			<li>politics</li>
 			<li>rule of law</li>
@@ -1033,7 +1037,7 @@
 		<defName>Ambitious</defName>
 		<label>ambitious</label>
 		<description>Someone ambitious sets large, difficult goals for themselves and wants to be successful.</description>
-		<controversiality>0.5</controversiality>
+		<controversiality>0.9</controversiality>
 		<conversationTopics>
 			<li>their hopes and dreams</li>
 			<li>their fears</li>
@@ -1164,7 +1168,7 @@
 		<defName>Pure</defName>
 		<label>pure</label>
 		<description>People who are pure try to be chaste, traditional, and wholesome.</description>
-		<controversiality>1.75</controversiality>
+		<controversiality>1.48</controversiality>
 		<conversationTopics>
 			<li>religion</li>
 			<li>spirituality</li>
@@ -1210,7 +1214,7 @@
 		<defName>Moralistic</defName>
 		<label>moralistic</label>
 		<description>Someone who is moralistic adheres to traditional ideas of morality.</description>
-		<controversiality>1.7</controversiality>
+		<controversiality>1.45</controversiality>
 		<conversationTopics>
 			<li>ethics</li>
 			<li>morality</li>
@@ -1252,6 +1256,7 @@
 		<defName>Trusting</defName>
 		<label>trusting</label>
 		<description>Someone who is trusting tends to take people at their word and see the good in people.</description>
+		<controversiality>1.3</controversiality>
 		<conversationTopics>
 			<li>human nature</li>
 			<li>honesty</li>
@@ -1263,7 +1268,6 @@
 			<li>corruption</li>
 			<li>new colonists</li>
 		</conversationTopics>
-		<controversiality>1.3</controversiality>
 		<platformIssueHigh>Only good citizens deserve to be part of this colony.</platformIssueHigh>
 		<platformIssueLow>People in this colony come from all walks of life.</platformIssueLow>
 		<parents>
@@ -1277,7 +1281,7 @@
 		<defName>Judgmental</defName>
 		<label>judgmental</label>
 		<description>A judgmental person tends to form their opinions of people quickly and superficially, and is affected more by the actions of others.</description>
-		<controversiality>1</controversiality>
+		<controversiality>1.3</controversiality>
 		<conversationTopics>
 			<li>the latest gossip</li>
 			<li>the latest drama</li>
@@ -1326,6 +1330,7 @@
 		<defName>Friendly</defName>
 		<label>friendly</label>
 		<description>Someone friendly is kind, tolerant, and inviting to talk to.</description>
+		<controversiality>0.7</controversiality>
 		<conversationTopics>
 			<li>each other</li>
 			<li>making friends</li>
@@ -1335,7 +1340,6 @@
 			<li>admiration</li>
 			<li>whatever's on their minds</li>
 		</conversationTopics>
-		<controversiality>1.1</controversiality>
 		<platformIssueHigh>We're all in this together.</platformIssueHigh>
 		<platformIssueLow>We do what it takes to survive.</platformIssueLow>
 		<parents>
@@ -1359,6 +1363,7 @@
 		<defName>Optimistic</defName>
 		<label>optimistic</label>
 		<description>Someone who is optimistic looks on the bright side of life.</description>
+		<controversiality>1.1</controversiality>
 		<conversationTopics>
 			<li>their feelings</li>
 			<li>the meaning of life</li>
@@ -1370,7 +1375,6 @@
 			<li>what the future holds</li>
 			<li>leaving the planet</li>
 		</conversationTopics>
-		<controversiality>1</controversiality>
 		<platformIssueHigh>Things are good, but they could be better.</platformIssueHigh>
 		<platformIssueLow>Things are bad, but they will get worse.</platformIssueLow>
 		<parents>
@@ -1385,7 +1389,7 @@
 		<defName>Compassionate</defName>
 		<label>compassionate</label>
 		<description>Compassionate people are concerned about other people's struggles and try to help them.</description>
-		<controversiality>1.5</controversiality>
+		<controversiality>1.3</controversiality>
 		<conversationTopics>
 			<li>the less fortunate</li>
 			<li>aiding the downtrodden</li>
@@ -1422,6 +1426,7 @@
 		<defName>Generous</defName>
 		<label>generous</label>
 		<description>Generous people care less about having things and are more likely to give them to others.</description>
+		<controversiality>1.2</controversiality>
 		<conversationTopics>
 			<li>charity</li>
 			<li>philanthropism</li>
@@ -1431,7 +1436,6 @@
 			<li>humanitarianism</li>
 			<li>altruism</li>
 		</conversationTopics>
-		<controversiality>1.1</controversiality>
 		<platformIssueHigh>Everyone should have access to the same things.</platformIssueHigh>
 		<platformIssueLow>Everyone should earn what they have.</platformIssueLow>
 		<parents>

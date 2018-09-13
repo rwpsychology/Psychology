@@ -22,7 +22,10 @@ namespace Psychology
             float num = 0f;
             for (int i = 0; i < allNodes.Count(); i++)
             {
-                int category = Mathf.RoundToInt(6f*Mathf.InverseLerp(0.16f, 0.83f, allNodes[i].AdjustedRating));
+                float rating = allNodes[i].AdjustedRating;
+                float yAxis = 0.5f - rating;
+                float weight = Mathf.Sqrt(Mathf.Abs(rating - 0.5f))*(1/Mathf.Sqrt(0.5f));
+                int category = Mathf.RoundToInt((Categories/2) - (Categories * yAxis * weight));
                 if (/*!allNodes[i].Core && */category != 3)
                 {
                     string text = (NodeDescriptions[category] == "" ? "" : ("Psyche"+NodeDescriptions[category]).Translate());
@@ -41,9 +44,13 @@ namespace Psychology
                 float num4 = Mathf.Max(26f, Text.CalcHeight(first, width));
                 Rect rect2 = new Rect(10f, num3, width/3, num4);
                 Rect rect3 = new Rect(10f+width/3, num3, (2*width)/3, num4);
-                int category = Mathf.RoundToInt(6f*Mathf.InverseLerp(0.16f, 0.83f, allNodes[PsycheCardUtility.nodeStrings[j].Second].AdjustedRating));
+                float rating = node.AdjustedRating;
+                float yAxis = 0.5f - rating;
+                float weight = Mathf.Sqrt(Mathf.Abs(rating - 0.5f)) * (1 / Mathf.Sqrt(0.5f));
+                int category = Mathf.RoundToInt((Categories / 2) - (Categories * yAxis * weight));
                 GUI.color = NodeColors[category];
                 Widgets.Label(rect2, first.ToString());
+                TooltipHandler.TipRegion(rect2, delegate { return (100f * node.AdjustedRating)+"%"; }, 693261 + j * 310);
                 GUI.color = Color.white;
                 Widgets.DrawHighlightIfMouseover(rect3);
                 Widgets.Label(rect3, node.def.label.CapitalizeFirst());
@@ -173,6 +180,7 @@ namespace Psychology
         private static string[] NodeDescriptions = { "Not", "Slightly", "Less", "", "More", "Very", "Extremely" };
         private static Color[] NodeColors = { new Color(1f, 0.2f, 0.2f, 0.6f), new Color(1f, 0.4f, 0.4f, 0.4f), new Color(1f, 0.6f, 0.6f, 0.2f), Color.white, new Color(0.6f, 1f, 0.6f, 0.2f), new Color(0.4f, 1f, 0.4f, 0.4f), new Color(0.2f, 1f, 0.2f, 0.6f) };
         private static readonly Color HighlightColor = new Color(0.5f, 0.5f, 0.5f, 1f);
+        private static float Categories = 6f;
         private static Vector2 nodeScrollPosition = Vector2.zero;
         private static List<Pair<string, int>> nodeStrings = new List<Pair<string, int>>();
         private const float RowLeftRightPadding = 5f;
