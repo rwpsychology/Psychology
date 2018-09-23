@@ -50,7 +50,10 @@ namespace Psychology
                 int category = Mathf.RoundToInt((Categories / 2) - (Categories * yAxis * weight));
                 GUI.color = NodeColors[category];
                 Widgets.Label(rect2, first.ToString());
-                TooltipHandler.TipRegion(rect2, delegate { return (100f * node.AdjustedRating)+"%"; }, 693261 + j * 310);
+                if(Prefs.DevMode && Prefs.LogVerbose)
+                {
+                    TooltipHandler.TipRegion(rect2, delegate { return (100f * node.AdjustedRating) + "%"; }, 693261 + j * 310);
+                }
                 GUI.color = Color.white;
                 Widgets.DrawHighlightIfMouseover(rect3);
                 Widgets.Label(rect3, node.def.label.CapitalizeFirst());

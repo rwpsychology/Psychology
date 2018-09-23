@@ -45,7 +45,7 @@ namespace Psychology
                 this.pawn.health.RemoveHediff(this);
                 return;
             }
-            if ((this.pawn.Position - this.otherPawn.Position).LengthHorizontalSquared >= 54f || !GenSight.LineOfSight(this.pawn.Position, this.otherPawn.Position, this.pawn.Map, true))
+            if (this.pawn.Map != null && this.otherPawn.Map != null && ((this.pawn.Position - this.otherPawn.Position).LengthHorizontalSquared >= 54f || !GenSight.LineOfSight(this.pawn.Position, this.otherPawn.Position, this.pawn.Map, true)))
             {
                 this.pawn.health.RemoveHediff(this);
                 return;
