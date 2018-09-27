@@ -133,6 +133,7 @@
     <Compile Include="Main\Recruiting\LordToil_WardenTour.cs" />
     <Compile Include="Main\Recruiting\Pawn_TourMemories.cs" />
     <Compile Include="Main\Recruiting\RecruitingUtility.cs" />
+    <Compile Include="Main\ThoughtWorkers\ThoughtWorker_LDR.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_SurvivedTogether.cs" />
     <Compile Include="Main\ThoughtWorkers\ThoughtWorker_Sedentary.cs" />
     <Compile Include="Main\Thought_MemoryDynamic.cs" />

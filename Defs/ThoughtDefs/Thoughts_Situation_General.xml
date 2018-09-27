@@ -80,4 +80,39 @@
     </stages>
   </ThoughtDef>
   
+  <ThoughtDef>
+    <defName>LongDistance</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>Psychology.ThoughtWorker_LDR</workerClass>
+    <stages>
+      <li>
+        <label>long-distance relationship</label>
+        <baseOpinionOffset>-5</baseOpinionOffset>
+      </li>
+      <li>
+        <label>long-distance relationship</label>
+        <baseOpinionOffset>-10</baseOpinionOffset>
+      </li>
+      <li>
+        <label>long-distance relationship</label>
+        <baseOpinionOffset>-15</baseOpinionOffset>
+      </li>
+      <li>
+        <label>long-distance relationship</label>
+        <baseOpinionOffset>-20</baseOpinionOffset>
+      </li>
+      <li>
+        <label>long-distance relationship</label>
+        <baseOpinionOffset>-25</baseOpinionOffset>
+      </li>
+      <li>
+        <label>long-distance relationship</label>
+        <baseOpinionOffset>-30</baseOpinionOffset>
+      </li>
+      <li>
+        <label>long-distance relationship</label>
+        <baseOpinionOffset>-35</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
 </Defs>

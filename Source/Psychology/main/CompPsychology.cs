@@ -27,6 +27,7 @@ namespace Psychology
                 this.parent as Pawn
             });*/
             Scribe_Values.Look(ref this.beenBuried, "beenBuried");
+            Scribe_Values.Look(ref this.tickSinceLastSeenLover, "tickSinceLastSeenLover", Find.TickManager.TicksAbs);
         }
 
         public Pawn_SexualityTracker Sexuality
@@ -98,6 +99,18 @@ namespace Psychology
             }
         }
 
+        public int LDRTick
+        {
+            get
+            {
+                return tickSinceLastSeenLover;
+            }
+            set
+            {
+                tickSinceLastSeenLover = value;
+            }
+        }
+
         public bool isPsychologyPawn
         {
             get
@@ -110,5 +123,6 @@ namespace Psychology
         private Pawn_PsycheTracker psyche;
         //public Pawn_TourMemories recruiting;
         private bool beenBuried = false;
+        private int tickSinceLastSeenLover;
     }
 }
