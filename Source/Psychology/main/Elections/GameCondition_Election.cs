@@ -118,7 +118,7 @@ namespace Psychology
             string baseName = Find.WorldObjects.ObjectsAt(organizer.Map.Tile).OfType<SettlementBase>().First().Label;
             if (!RCellFinder.TryFindPartySpot(organizer, out intVec))
             {
-                Log.Message("Psychology :: Tried to start election, but couldn't find anywhere to hold it.");
+                Messages.Message("MessageElectionCancelled".Translate(baseName), MessageTypeDefOf.NegativeEvent);
                 return;
             }
             LordMaker.MakeNewLord(organizer.Faction, new LordJob_Joinable_Election(intVec, candidates, baseName, organizer.Map), organizer.Map, null);

@@ -3,6 +3,7 @@
 
   <TreatedTrait>{0} の {1} の治療は成功しました。</TreatedTrait>
 	<MessageElectionCalledOff>投票所にて異常が発生したため、{0} のリーダー選は中止となりました。</MessageElectionCalledOff>
+	<MessageElectionCancelled>The election at {0} has been cancelled because there were no suitable polling places.</MessageElectionCancelled>
 	<MessageFuneralCalledOff>コロニーで異常が発生しているため、お葬式は中止となりました。</MessageFuneralCalledOff>
 
 </LanguageData>

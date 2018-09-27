@@ -3,5 +3,7 @@
 
   <TreatedTrait>{0}s {1} wurden erfolgreich behandelt.</TreatedTrait>
   <MessageElectionCalledOff>Die Wahlen bei {0} wurden wegen den Zuständen am Wahllokal abgesagt.</MessageElectionCalledOff>
+	<MessageElectionCancelled>The election at {0} has been cancelled because there were no suitable polling places.</MessageElectionCancelled>
+	<MessageFuneralCalledOff>The funeral has been called off because of conditions at the colony.</MessageFuneralCalledOff>
 
 </LanguageData>

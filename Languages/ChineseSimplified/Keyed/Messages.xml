@@ -3,6 +3,7 @@
 
   <TreatedTrait>{0}的{1}已成功治疗。</TreatedTrait>
   <MessageElectionCalledOff>由于投票点的条件，在{0}的选举被取消了。</MessageElectionCalledOff>
+	<MessageElectionCancelled>The election at {0} has been cancelled because there were no suitable polling places.</MessageElectionCancelled>
   <MessageFuneralCalledOff>由于殖民地的条件，葬礼被取消了。</MessageFuneralCalledOff>
 
 </LanguageData>

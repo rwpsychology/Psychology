@@ -3,6 +3,7 @@
 
   <TreatedTrait>{0} {1} успешно вылечен.</TreatedTrait>
   <MessageElectionCalledOff>Выборы в {0} были отменены из-за условий на избирательном участке.</MessageElectionCalledOff>
+	<MessageElectionCancelled>The election at {0} has been cancelled because there were no suitable polling places.</MessageElectionCancelled>
   <MessageFuneralCalledOff>Похороны были отменены из-за условий в колонии.</MessageFuneralCalledOff>
 
 </LanguageData>
