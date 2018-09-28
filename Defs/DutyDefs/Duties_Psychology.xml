@@ -157,5 +157,15 @@
       </subNodes>
     </thinkNode>
   </DutyDef>
+  
+ <!-- <DutyDef>
+    <defName>WardenTour</defName>
+    <thinkNode Class="ThinkNode_Priority">
+		<subNodes>
+			<li Class="Psychology.JobGiver_WardenTour"/>
+			<li Class="Psychology.JobGiver_FollowWarden"/>
+		</subNodes>
+    </thinkNode>
+  </DutyDef> -->
 
 </Defs>

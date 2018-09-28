@@ -48,7 +48,7 @@ namespace Psychology
                 else
                     pawn.ClearAllReservations(false);
             }
-            if (((pawn.Position - friend.Position).LengthHorizontalSquared >= 54f || !GenSight.LineOfSight(pawn.Position, friend.Position, pawn.Map, true)))
+            if (((pawn.Position - friend.Position).LengthHorizontalSquared >= 54 || !GenSight.LineOfSight(pawn.Position, friend.Position, pawn.Map, true)))
             { /* Make sure they are close to each other if they're not actively doing a joy activity. */
               /* If the other pawn is already walking over, just hang around until they get there. */
                 if (friend.CurJob.def != JobDefOf.Goto)
@@ -63,19 +63,12 @@ namespace Psychology
             {
                 /* If they are already standing close enough, but can't do the joy activity together, then wander around. */
                 IntVec3 result;
-                IntVec3 cell = pawn.mindState.duty.focus.Cell;
                 /* Make sure they only wander within conversational distance. */
-                Predicate<IntVec3> validator = (IntVec3 x) => x.Standable(pawn.Map) && x.InAllowedArea(pawn) && !x.IsForbidden(pawn) && pawn.CanReserveAndReach(x, PathEndMode.OnCell, Danger.None, 1, -1, null, false) && (friend.Position - x).LengthHorizontalSquared < 40f && GenSight.LineOfSight(x, friend.Position, pawn.Map, true);
-                Room room = cell.GetRoom(pawn.Map, RegionType.Set_Passable);
-                if (cell.GetDoor(pawn.Map) != null)
+                Predicate<IntVec3> validator = (IntVec3 x) => x.Standable(pawn.Map) && x.InAllowedArea(pawn) && !x.IsForbidden(pawn) && pawn.CanReserveAndReach(x, PathEndMode.OnCell, Danger.None, 1, -1, null, false)
+                                                                && (x - friend.Position).LengthHorizontalSquared < 50 && GenSight.LineOfSight(x, friend.Position, pawn.Map, true) && x != friend.Position;
+                if (CellFinder.TryFindRandomReachableCellNear(pawn.Position, pawn.Map, 12f, TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false), (IntVec3 x) => validator(x), null, out result))
                 {
-                    room = room.Neighbors.RandomElement();
-                }
-                if ((from x in room.Cells
-                        where validator(x)
-                        select x).TryRandomElement(out result))
-                {
-                    if ((pawn.Position - friend.Position).LengthHorizontalSquared >= 5f || (LovePartnerRelationUtility.LovePartnerRelationExists(pawn, friend) && pawn.Position != friend.Position))
+                    if ((pawn.Position - friend.Position).LengthHorizontalSquared >= 5 || (LovePartnerRelationUtility.LovePartnerRelationExists(pawn, friend) && pawn.Position != friend.Position))
                     {
                         /* Sending them to goto a friend ends with them standing right next to/on top of them. So make them respect personal space a little more. */
                         pawn.mindState.nextMoveOrderIsWait = !pawn.mindState.nextMoveOrderIsWait;

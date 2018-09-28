@@ -74,7 +74,7 @@
         <baseOpinionOffset>15</baseOpinionOffset>
       </li>
       <li>
-        <label>survived together for over five years</label>
+        <label>survived together for more than five years</label>
         <baseOpinionOffset>20</baseOpinionOffset>
 	  </li>
     </stages>
