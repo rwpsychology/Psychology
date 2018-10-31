@@ -79,7 +79,7 @@ namespace Psychology
                 int hourDiscrepancy = GenDate.HourOfDay(day, Find.WorldGrid.LongLatOf(initiator.Map.Tile).x) - hour;
                 int accurateTime = day + (Math.Abs(hourDiscrepancy) * GenDate.TicksPerHour);
                 String dateTime = GenDate.QuadrumDateStringAt(accurateTime, Find.WorldGrid.LongLatOf(initiator.Map.Tile).x);
-                Letter dateLetter = LetterMaker.MakeLetter("LetterLabelDatePlanned".Translate(), "LetterDatePlanned".Translate(new object[] { initiator, recipient, dateTime, hour }), LetterDefOf.PositiveEvent);
+                Letter dateLetter = LetterMaker.MakeLetter("LetterLabelDatePlanned".Translate(), TranslatorFormattedStringExtensions.Translate("LetterDatePlanned", initiator, recipient, dateTime, hour), LetterDefOf.PositiveEvent);
                 Find.LetterStack.ReceiveLetter(dateLetter);
             }
         }

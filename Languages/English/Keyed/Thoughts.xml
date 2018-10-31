@@ -8,6 +8,6 @@
 	<VisitDesc>A visit from a constituent made me feel this way.</VisitDesc>
 	
 	<AttendedFuneralThought>attended the funeral of {0}</AttendedFuneralThought>
-	<AttendedFuneralDesc>I still can't believe [PAWN_pronoun]'s dead, but... I'm more at peace with it after the funeral.</AttendedFuneralDesc>
+	<AttendedFuneralDesc>I still can't believe {0_pronoun}'s dead, but... I'm more at peace with it after the funeral.</AttendedFuneralDesc>
 
 </LanguageData>

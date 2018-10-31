@@ -100,7 +100,7 @@
 			<li Class="JobGiver_StandAndBeSociallyActive">
 			  <ticksRange>
 				<min>250</min>
-				<max>500</max>
+				<max>750</max>
 			  </ticksRange>
 			</li>
 		</subNodes>

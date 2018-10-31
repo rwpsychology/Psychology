@@ -11,10 +11,10 @@
 
 <!-- Miscellaneous thought log text -->
 	<ConversationStage>conversation about</ConversationStage>
-	<ConversationEnd>[INITIATOR_nameDef] ended a conversation with [RECIPIENT_nameDef].</ConversationEnd>
+	<ConversationEnd>{0_labelShort} ended a conversation with {1_labelShort}.</ConversationEnd>
 	<ConversationEnded>ended conversation</ConversationEnded>
-	<Complained>[INITIATOR_nameDef] complained to the mayor, [RECIPIENT_nameDef].</Complained>
-	<Supported>[INITIATOR_nameDef] voiced [INITIATOR_possessive] support to the mayor, [RECIPIENT_nameDef].</Supported>
+	<Complained>{0_labelShort} complained to the mayor, {1_labelShort}.</Complained>
+	<Supported>{0_labelShort} voiced {0_possessive} support to the mayor, {1_labelShort}.</Supported>
 	
 <!-- Node descriptions -->
 	<PsycheNot>Not</PsycheNot>

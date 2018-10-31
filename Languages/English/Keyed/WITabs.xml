@@ -15,7 +15,7 @@
   
   <!-- Dialog text -->
   <EditPsyche>Dev edit</EditPsyche>
-  <PsycheEditor>Modifying the psyche of {0}:</PsycheEditor>
+  <PsycheEditor>Modifying the psyche of {0_labelShort}:</PsycheEditor>
   <PersonalityNodeWarning>You are editing the raw values of a pawn's personality. The actual stats will be adjusted by other factors.</PersonalityNodeWarning>
   <SexDrive>Sex drive:</SexDrive>
   <RomanticDrive>Romantic drive:</RomanticDrive>

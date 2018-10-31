@@ -13,7 +13,7 @@ using System.Reflection.Emit;
 namespace Psychology.Harmony
 {
     [HarmonyPatch(typeof(Pawn_StoryTracker))]
-    [HarmonyPatch(nameof(Pawn_StoryTracker.TitleShort), PropertyMethod.Getter)]
+    [HarmonyPatch(nameof(Pawn_StoryTracker.TitleShort), MethodType.Getter)]
     public static class Pawn_StoryTracker_MayorLabel
     {
         [LogPerformance]

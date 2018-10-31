@@ -34,15 +34,15 @@
 	<ParanoidRambling32>They drive us mad! Make us eat each other!</ParanoidRambling32>
 	<ParanoidRambling33>They want to keep us penned here like animals!</ParanoidRambling33>
 	
-	<FellMurmuring1>[PAWN_possessive] fault...</FellMurmuring1>
-	<FellMurmuring2>This is all [PAWN_possessive] fault...</FellMurmuring2>
-	<FellMurmuring3>I can't let [PAWN_objective] get away with it...</FellMurmuring3>
-	<FellMurmuring4>[PAWN_pronoun] thinks [PAWN_pronoun]'s smart, does [PAWN_pronoun]?</FellMurmuring4>
-	<FellMurmuring5>I'll show [PAWN_objective]...</FellMurmuring5>
+	<FellMurmuring1>{0_possessive} fault...</FellMurmuring1>
+	<FellMurmuring2>This is all {0_possessive} fault...</FellMurmuring2>
+	<FellMurmuring3>I can't let {0_objective} get away with it...</FellMurmuring3>
+	<FellMurmuring4>{0_pronoun} thinks {0_pronoun}'s smart, does {0_pronoun}?</FellMurmuring4>
+	<FellMurmuring5>I'll show {0_objective}...</FellMurmuring5>
 	<FellMurmuring6>Traitors... saboteurs... conspirators...</FellMurmuring6>
-	<FellMurmuring7>[PAWN_pronoun] mocks me...</FellMurmuring7>
-	<FellMurmuring8>How dare [PAWN_pronoun]...</FellMurmuring8>
-	<FellMurmuring9>[PAWN_pronoun] thinks I don't notice?</FellMurmuring9>
+	<FellMurmuring7>{0_pronoun} mocks me...</FellMurmuring7>
+	<FellMurmuring8>How dare {0_pronoun}...</FellMurmuring8>
+	<FellMurmuring9>{0_pronoun} thinks I don't notice?</FellMurmuring9>
 	<FellMurmuring10>I must do this myself... no one can be trusted.</FellMurmuring10>
 	<FellMurmuring11>For the good of us all...</FellMurmuring11>
 	<FellMurmuring12>I'll solve this problem myself...</FellMurmuring12>
@@ -58,7 +58,7 @@
 	<FellMurmuring22>Liar!</FellMurmuring22>
 	<FellMurmuring23>Behind my back... always behind my back...</FellMurmuring23>
 	<FellMurmuring24>The source of all our problems...</FellMurmuring24>
-	<FellMurmuring25>[PAWN_pronoun] will never see it coming...</FellMurmuring25>
+	<FellMurmuring25>{0_pronoun} will never see it coming...</FellMurmuring25>
 	<FellMurmuring26>I'll plan it all out...</FellMurmuring26>
 	<FellMurmuring27>I'll think of everything...</FellMurmuring27>
 	<FellMurmuring28>I'll wait until the time is right...</FellMurmuring28>
@@ -66,8 +66,8 @@
 	<FellMurmuring30>If no one else will do it, I will.</FellMurmuring30>
 	<FellMurmuring31>None of them see it... they're all so blind...</FellMurmuring31>
 	<FellMurmuring32>I can do this... I must do this...</FellMurmuring32>
-	<FellMurmuring33>Even now, [PAWN_pronoun] laughs at me...</FellMurmuring33>
-	<FellMurmuring34>Serves [PAWN_objective] right...</FellMurmuring34>
-	<FellMurmuring35>[PAWN_pronoun] will be the death of me...</FellMurmuring35>
+	<FellMurmuring33>Even now, {0_pronoun} laughs at me...</FellMurmuring33>
+	<FellMurmuring34>Serves {0_objective} right...</FellMurmuring34>
+	<FellMurmuring35>{0_pronoun} will be the death of me...</FellMurmuring35>
 	<FellMurmuring36>I should have done this long ago...</FellMurmuring36>
 </LanguageData>
