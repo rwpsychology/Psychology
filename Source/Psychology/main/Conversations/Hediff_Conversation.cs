@@ -163,7 +163,7 @@ namespace Psychology
                     RulePack goodbyeText = new RulePack();
                     FieldInfo RuleStrings = typeof(RulePack).GetField("rulesStrings", BindingFlags.Instance | BindingFlags.NonPublic);
                     List<string> text = new List<string>(1);
-                    text.Add("r_logentry->" + talkDesc.Translate(convoTopic));
+                    text.Add("r_logentry->" + talkDesc.Translate(convoTopic, pawn.Named("INITIATOR"), otherPawn.Named("RECIPIENT")));
                     RuleStrings.SetValue(goodbyeText, text);
                     endConversation.logRulesInitiator = goodbyeText;
                     FieldInfo Symbol = typeof(InteractionDef).GetField("symbol", BindingFlags.Instance | BindingFlags.NonPublic);

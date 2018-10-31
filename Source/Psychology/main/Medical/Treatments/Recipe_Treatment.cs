@@ -49,7 +49,7 @@ namespace Psychology
                 });
                 if (PawnUtility.ShouldSendNotificationAbout(pawn) || PawnUtility.ShouldSendNotificationAbout(billDoer))
                 {
-                    Messages.Message(TranslatorFormattedStringExtensions.Translate("TreatedTrait", pawn.LabelShort, traitName ), pawn, MessageTypeDefOf.PositiveEvent);
+                    Messages.Message("TreatedTrait".Translate(pawn, traitName), pawn, MessageTypeDefOf.PositiveEvent);
                 }
                 Hediff recover = HediffMaker.MakeHediff(hediffDef, pawn, pawn.health.hediffSet.GetBrain());
                 recover.Tended(1f);

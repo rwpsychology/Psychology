@@ -12,6 +12,7 @@ using UnityEngine;
 namespace Psychology.Harmony
 {
     [HarmonyPatch(typeof(InteractionWorker_RecruitAttempt), "DoRecruit")]
+    [HarmonyPatch(new Type[] { typeof(Pawn), typeof(Pawn), typeof(float), typeof(string), typeof(string), typeof(bool), typeof(bool) }, new ArgumentType[] { ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Normal, ArgumentType.Ref, ArgumentType.Ref, ArgumentType.Normal, ArgumentType.Normal })]
     public static class InteractionWorker_RecruitAttempt_DoRecruitPatch
     {
         [LogPerformance]

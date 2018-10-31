@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LanguageData>
-
-  <TreatedTrait>La/El {0} de {1} ha sido tratada/o con éxito.</TreatedTrait>
-  <MessageElectionCalledOff>La elección en {0} ha sido cancelada debido a las condiciones en el lugar de votación.</MessageElectionCalledOff>
-	<MessageElectionCancelled>The election at {0} has been cancelled because there were no suitable polling places.</MessageElectionCancelled>
-  <MessageFuneralCalledOff>El funeral ha sido cancelado debido a las condiciones en la colonia.</MessageFuneralCalledOff>
-
-</LanguageData>

@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LanguageData>
-
-  <KinseyDisable>檢測到有關浪漫和性方面的模組，禁用性行為相關功能。</KinseyDisable>
-  <KinseyDetourDisable>采用迂回的方法來保護一些特性的正常使用失敗。為了保證兼容性，請將這些特征的共性設置為零。</KinseyDetourDisable>
-  <MedicalDetourDisable>檢測到有關藥物和手術方面的模組，禁用醫療相關功能。這將導致有玻璃心特性的小人出現一些問題，除非這個模組不那麼武斷。 </MedicalDetourDisable>
-	<DuplicateDefLabel>在{0}上複製PersonalityNodeDef標籤。 請舉報，以便翻譯可以修復。</DuplicateDefLabel>
-
-</LanguageData>

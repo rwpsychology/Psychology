@@ -61,7 +61,7 @@ namespace Psychology
                 {
                     if(node.def.conversationTopics != null)
                     {
-                        return node.def.description + "\n\n" + TranslatorFormattedStringExtensions.Translate("ConversationTooltip", string.Join(", ", node.def.conversationTopics.Take(node.def.conversationTopics.Count-1).ToArray()) + "ConversationAnd".Translate() + node.def.conversationTopics.Last());
+                        return node.def.description + "\n\n" + "ConversationTooltip".Translate(string.Join(", ", node.def.conversationTopics.Take(node.def.conversationTopics.Count-1).ToArray()) + "ConversationAnd".Translate() + node.def.conversationTopics.Last());
                     }
                     return node.def.description;
                 };

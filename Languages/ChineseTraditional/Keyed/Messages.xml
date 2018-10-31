@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LanguageData>
-
-  <TreatedTrait>{0}的{1}已成功治療。</TreatedTrait>
-  <MessageElectionCalledOff>由於投票點的條件，在{0}的選舉被取消了。</MessageElectionCalledOff>
-	<MessageElectionCancelled>The election at {0} has been cancelled because there were no suitable polling places.</MessageElectionCancelled>
-  <MessageFuneralCalledOff>由於殖民地的條件，葬禮被取消了。</MessageFuneralCalledOff>
-
-</LanguageData>
