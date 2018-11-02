@@ -40,7 +40,7 @@ namespace Psychology.Harmony
                 {
                     Hediff newHediff = HediffMaker.MakeHediff(HediffDefOfPsychology.Anxiety, pawn, pawn.health.hediffSet.GetBrain());
                     newHediff.Severity = 0.75f - (intensity * 0.25f);
-                    Letter newAnxiety = LetterMaker.MakeLetter("LetterLabelPTSD".Translate(), "LetterPTSD".Translate().AdjustedFor(pawn), LetterDefOf.NegativeEvent, pawn);
+                    Letter newAnxiety = LetterMaker.MakeLetter("LetterLabelPTSD".Translate(), "LetterPTSD".Translate(pawn), LetterDefOf.NegativeEvent, pawn);
                     Find.LetterStack.ReceiveLetter(newAnxiety);
                     pawn.health.AddHediff(newHediff, null, null);
                 }

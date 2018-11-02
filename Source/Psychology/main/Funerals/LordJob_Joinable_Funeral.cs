@@ -76,7 +76,7 @@ namespace Psychology
                     ThoughtStage stage = new ThoughtStage();
                     stage.label = "AttendedFuneralThought".Translate(dead);
                     stage.baseMoodEffect = Mathf.RoundToInt((p.relations.OpinionOf(dead)/15f) * (0.33f + PsycheHelper.Comp(p).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Nostalgic)));
-                    stage.description = "AttendedFuneralDesc".Translate().AdjustedFor(dead);
+                    stage.description = "AttendedFuneralDesc".Translate(dead);
                     def.stages.Add(stage);
                     p.needs.mood.thoughts.memories.TryGainMemory(def);
                 }

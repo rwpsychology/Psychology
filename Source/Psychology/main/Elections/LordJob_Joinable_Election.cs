@@ -88,7 +88,7 @@ namespace Psychology
             Pair<Pawn, int> winningCandidate = orderedTally.First();
             if (orderedTally.Count() > 1 && orderedTally.First().Second == orderedTally.ElementAt(1).Second)
             {
-                Find.LetterStack.ReceiveLetter("LetterLabelTieSettled".Translate(winningCandidate.First.LabelShort), "LetterTieSettled".Translate(winningCandidate.First.LabelShort).AdjustedFor(winningCandidate.First), LetterDefOf.NeutralEvent, winningCandidate.First);
+                Find.LetterStack.ReceiveLetter("LetterLabelTieSettled".Translate(winningCandidate.First), "LetterTieSettled".Translate(winningCandidate.First), LetterDefOf.NeutralEvent, winningCandidate.First);
             }
             StringBuilder issuesString = new StringBuilder();
             for (int i = 0; i < candidates.Find(c => c.pawn == winningCandidate.First).nodes.Count; i++)
@@ -104,7 +104,7 @@ namespace Psychology
             (mayor as Hediff_Mayor).yearElected = GenLocalDate.Year(map);
             winningCandidate.First.health.AddHediff(mayor);
             winningCandidate.First.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOfPsychology.WonElection);
-            Find.LetterStack.ReceiveLetter("LetterLabelElectionWon".Translate(winningCandidate.First.LabelShort), "LetterElectionWon".Translate(winningCandidate.First.LabelShort, this.baseName, winningCandidate.Second, issuesString.ToString()).AdjustedFor(winningCandidate.First), LetterDefOf.NeutralEvent, winningCandidate.First);
+            Find.LetterStack.ReceiveLetter("LetterLabelElectionWon".Translate(winningCandidate.First), "LetterElectionWon".Translate(winningCandidate.First, this.baseName, winningCandidate.Second, issuesString.ToString()), LetterDefOf.NeutralEvent, winningCandidate.First);
         }
         
         public override string GetReport()

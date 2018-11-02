@@ -45,7 +45,7 @@ namespace Psychology
                 if(Rand.Value < 0.25f)
                 {
                     Vector3 pos = pawn.DrawPos + pawn.Drawer.renderer.BaseHeadOffsetAt(pawn.Rotation);
-                    MoteMaker.ThrowText(pos, pawn.Map, ("FellMurmuring" + Rand.RangeInclusive(1,36)).Translate().AdjustedFor(target), Color.grey, 2.5f);
+                    MoteMaker.ThrowText(pos, pawn.Map, ("FellMurmuring" + Rand.RangeInclusive(1,36)).Translate(target), Color.grey, 2.5f);
                 }
             }
         }

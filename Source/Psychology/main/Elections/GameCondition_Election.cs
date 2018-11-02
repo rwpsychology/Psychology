@@ -83,7 +83,7 @@ namespace Psychology
                 {
                     issuesString.AppendFormat("{0}) {1}{2}",i+1,PsycheHelper.Comp(candidate.pawn).Psyche.GetPersonalityNodeOfDef(candidate.nodes[i]).PlatformIssue,(i != candidate.nodes.Count-1 ? "\n" : ""));
                 }
-                Find.LetterStack.ReceiveLetter("LetterLabelElectionCandidate".Translate(candidate.pawn.LabelShort), "LetterElectionCandidate".Translate(candidate.pawn.LabelShort, Find.WorldObjects.ObjectsAt(candidate.pawn.Map.Tile).OfType<SettlementBase>().First().Label, issuesString.ToString()).AdjustedFor(candidate.pawn), LetterDefOf.NeutralEvent, candidate.pawn, null);
+                Find.LetterStack.ReceiveLetter("LetterLabelElectionCandidate".Translate(candidate.pawn), "LetterElectionCandidate".Translate(candidate.pawn, Find.WorldObjects.ObjectsAt(candidate.pawn.Map.Tile).OfType<SettlementBase>().First().Label, issuesString.ToString()), LetterDefOf.NeutralEvent, candidate.pawn, null);
             }
         }
 
