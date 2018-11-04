@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+    <Prude.degreeDatas.prude.label>prüde</Prude.degreeDatas.prude.label>
+    <Prude.degreeDatas.prude.description>[PAWN_nameDef] hasst den Anblick eines menschlichen Körpers. [PAWN_pronoun] wird extrem unglücklich, wenn man nackt ist, unzufriedener als üblich in zerlumpten oder abgenutzten Kleidungsstücken, und mag es nicht andere nackt zu sehen.</Prude.degreeDatas.prude.description>
+
+    <Insomniac.degreeDatas.insomniac.label>schlaflos</Insomniac.degreeDatas.insomniac.label>
+    <Insomniac.degreeDatas.insomniac.description>[PAWN_nameDef] findet es schwer in [PAWN_possessive] Zustand einzuschlafen. [PAWN_pronoun] wird länger wachbleiben und wahrscheinlich schneller müde werden.</Insomniac.degreeDatas.insomniac.description>
+
+    <BleedingHeart.degreeDatas.bleeding_heart.label>blutendes Herz</BleedingHeart.degreeDatas.bleeding_heart.label>
+    <BleedingHeart.degreeDatas.bleeding_heart.description>[PAWN_nameDef] hat ein großes Herz und wird sehr schnell emotional. [PAWN_pronoun] liebt es anderen zu helfen und verabscheucht Gewalt und Ungerechtigkeit. [PAWN_pronoun] ist mehr von diesen Sachen betroffen als andere.</BleedingHeart.degreeDatas.bleeding_heart.description>
+
+    <Gourmet.degreeDatas.gourmet.label>Gourmet</Gourmet.degreeDatas.gourmet.label>
+    <Gourmet.degreeDatas.gourmet.description>[PAWN_nameDef] ist sehr kritisch, wenn es ums Essen geht. [PAWN_pronoun] erwartet es gut gegessen zu haben und wird sich beschweren, wenn [PAWN_possessive] Essen nicht gut ist.</Gourmet.degreeDatas.gourmet.description>
+
+    <Unstable.degreeDatas.unstable.label>instabil</Unstable.degreeDatas.unstable.label>
+    <Unstable.degreeDatas.unstable.description>[PAWN_nameDef] ist anfälliger für zufällige Stimmungsschwankungen, die für andere schwerer als normal sein können.</Unstable.degreeDatas.unstable.description>
+
+    <Lecher.degreeDatas.lecher.label>Lüstling</Lecher.degreeDatas.lecher.label>
+    <Lecher.degreeDatas.lecher.description>[PAWN_nameDef] fühlt sich oft geil und ist ein gedankenloser Herzensbrecher. [PAWN_pronoun] wird sich mit jedem treffen, den [PAWN_pronoun] verlangt, ohne Rücksicht auf die Konsequenzen zu nehmen.</Lecher.degreeDatas.lecher.description>
+
+    <Codependent.degreeDatas.codependent.label>partnerabhängig</Codependent.degreeDatas.codependent.label>
+    <Codependent.degreeDatas.codependent.description>[PAWN_nameDef] ist von Beziehungen abhängig und wird nicht glücklich bis [PAWN_pronoun] in einer ist. Trennungen und Untreue werden verheerende Folgen für diese Person haben.</Codependent.degreeDatas.codependent.description>
+
+    <Outdoorsy.degreeDatas.outdoorsy.label>Naturliebhaber</Outdoorsy.degreeDatas.outdoorsy.label>
+    <Outdoorsy.degreeDatas.outdoorsy.description>[PAWN_nameDef] liebt es im Freien zu sein. [PAWN_pronoun] bekommt einen Stimmungsbonus, wenn kein Dach über [PAWN_possessive] Kopf ist.</Outdoorsy.degreeDatas.outdoorsy.description>
+
+    <Pluviophile.degreeDatas.pluviophile.label>pluviophil</Pluviophile.degreeDatas.pluviophile.label>
+    <Pluviophile.degreeDatas.pluviophile.description>[PAWN_nameDef] liebt den Regen. [PAWN_pronoun] bekommt einen Stimmungsbonus, wenn es regnet, vorallem dann, wenn [PAWN_pronoun] sich währenddessen draußen befindet.</Pluviophile.degreeDatas.pluviophile.description>
+
+    <Photosensitive.degreeDatas.photosensitive.label>lichtempfindlich</Photosensitive.degreeDatas.photosensitive.label>
+    <Photosensitive.degreeDatas.photosensitive.description>[PAWN_nameDef] hat Augen, die zum Beispiel durch Genmutation, überaus empfindlich gegenüber Licht sind. [PAWN_pronoun] findet helles Licht extrem schmerzvoll, auch die Zimmerbeleuchtung tut weh. Deshalb liebt diese Person die Dunkelheit.</Photosensitive.degreeDatas.photosensitive.description>
+
+    <Socialite.degreeDatas.socialite.label>Partylöwe</Socialite.degreeDatas.socialite.label>
+    <Socialite.degreeDatas.socialite.description>[PAWN_nameDef] liebt Partys! [PAWN_possessive] Präsenz fordert mehr Partys in der Kolonie, weil jeder es mag, wenn diese Person dabei ist.</Socialite.degreeDatas.socialite.description>
+
+    <Desensitized.degreeDatas.desensitized.label>desensibilisiert</Desensitized.degreeDatas.desensitized.label>
+    <Desensitized.degreeDatas.desensitized.description>[PAWN_nameDef] hat genug Gewalt und Tötungen gesehen, sodass diese Person davon nicht mehr geschockt wird, wie es andere werden.</Desensitized.degreeDatas.desensitized.description>
+
+    <HeavySleeper.degreeDatas.heavy_sleeper.label>Tiefschläfer</HeavySleeper.degreeDatas.heavy_sleeper.label>
+    <HeavySleeper.degreeDatas.heavy_sleeper.description>[PAWN_nameDef] schläft wie ein Stein, niemals werden dieser Person die Schlafbedingungen stören, jedoch wird es schwierig diese Person aufzuwecken.</HeavySleeper.degreeDatas.heavy_sleeper.description>
+
+    <Polygamous.degreeDatas.polyamorous.label>polyamorös</Polygamous.degreeDatas.polyamorous.label>
+    <Polygamous.degreeDatas.polyamorous.description>[PAWN_nameDef] sieht kein Problem darin, mehrere Partner gleichzeitig zu haben. [PAWN_pronoun] stört es nicht, wenn [PAWN_possessive] Partner mit anderen flirtet und mit ihnen Beziehungen eingeht. Solch eine Person wird in einer monogamischen Beziehung unglücklich.</Polygamous.degreeDatas.polyamorous.description>
+
+    <OpenMinded.degreeDatas.openminded.label>aufgeschlossen</OpenMinded.degreeDatas.openminded.label>
+    <OpenMinded.degreeDatas.openminded.description>[PAWN_nameDef] kümmert sich mehr um den Charakter der Menschen, als um deren Aussehen. [PAWN_pronoun] wird anderen Menschen ihres Aussehens wegen nicht niedermachen.</OpenMinded.degreeDatas.openminded.description>
+
+
+    <Sedentary.degreeDatas.sedentary.label>bewegungsfaul</Sedentary.degreeDatas.sedentary.label>
+    <Sedentary.degreeDatas.sedentary.description>[PAWN_nameDef] ist keine sehr aktive Person. [PAWN_pronoun] ist nicht sehr körperlich fit, aber [PAWN_pronoun] sitzt gerne den ganzen Tag herum und arbeitet an Dingen.</Sedentary.degreeDatas.sedentary.description>
+
+    <Chatty.degreeDatas.chatty.label>schwätzig</Chatty.degreeDatas.chatty.label>
+    <Chatty.degreeDatas.chatty.description>[PAWN_nameDef] redet und redet und redet ... und redet. [PAWN_pronoun] tendiert zu längeren Gesprächen als die meisten, da [PAWN_pronoun] sie scheinbar nicht beenden kann.</Chatty.degreeDatas.chatty.description>
+
+
+</LanguageData>

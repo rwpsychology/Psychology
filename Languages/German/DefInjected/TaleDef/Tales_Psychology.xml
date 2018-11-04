@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+    <TreatedPyromania.label>Pyromanie behandelt</TreatedPyromania.label>
+    <TreatedPyromania.rulePack.rulesStrings.0>tale_noun->[patient_nameShortDef] berät sich zu Pyromanie</TreatedPyromania.rulePack.rulesStrings.0>
+    <TreatedPyromania.rulePack.rulesStrings.1>image->[psychologist_nameFull] sitzt am Rande von [patient_nameFull]s Bett [circumstance_group]</TreatedPyromania.rulePack.rulesStrings.1>
+    <TreatedPyromania.rulePack.rulesStrings.2>image->[psychologist_nameFull] nickt ein, während [patient_nameFull] spricht [circumstance_group]</TreatedPyromania.rulePack.rulesStrings.2>
+    <TreatedPyromania.rulePack.rulesStrings.3>image->[psychologist_nameFull] diskutiert über [patient_nameFull]s Verlangen [circumstance_group]</TreatedPyromania.rulePack.rulesStrings.3>
+    <TreatedPyromania.rulePack.rulesStrings.4>circumstance_phrase->als [psychologist_nameShortDef] Notizien schreibt</TreatedPyromania.rulePack.rulesStrings.4>
+    <TreatedPyromania.rulePack.rulesStrings.5>circumstance_phrase->als [psychologist_nameShortDef] ein Rezept verordnet</TreatedPyromania.rulePack.rulesStrings.5>
+    <TreatedPyromania.rulePack.rulesStrings.6>circumstance_phrase->als ein Weg zur Erholung ausgelegt ist</TreatedPyromania.rulePack.rulesStrings.6>
+    <TreatedPyromania.rulePack.rulesStrings.7>circumstance_phrase->während [psychologist_possessive] verständnisvoll ausschaut</TreatedPyromania.rulePack.rulesStrings.7>
+    <TreatedPyromania.rulePack.rulesStrings.8>desc_sentence->[psychologist_nameShortDef] hat einen kenntnisreichen Gesichtsausdruck.</TreatedPyromania.rulePack.rulesStrings.8>
+    <TreatedPyromania.rulePack.rulesStrings.9>desc_sentence->[psychologist_nameShortDef] sieht sehr fokussiert auf die Aufgabe.</TreatedPyromania.rulePack.rulesStrings.9>
+    <TreatedPyromania.rulePack.rulesStrings.10>desc_sentence->[psychologist_nameShortDef] hat eine ernste, aber freundliche, Haltung.</TreatedPyromania.rulePack.rulesStrings.10>
+    <TreatedPyromania.rulePack.rulesStrings.11>desc_sentence->[patient_nameShortDef] lächelt.</TreatedPyromania.rulePack.rulesStrings.11>
+    <TreatedPyromania.rulePack.rulesStrings.12>desc_sentence->[patient_nameShortDef] sieht wie eine neue Person aus.</TreatedPyromania.rulePack.rulesStrings.12>
+
+    <TreatedDrugDesire.label>Drogenabhängigkeit behandelt</TreatedDrugDesire.label>
+    <TreatedDrugDesire.rulePack.rulesStrings.0>tale_noun->[patient_nameShortDef] berät sich zu Drogensucht</TreatedDrugDesire.rulePack.rulesStrings.0>
+    <TreatedDrugDesire.rulePack.rulesStrings.1>image->[psychologist_nameFull] sitzt am Rande von [patient_nameFull]s Bett [circumstance_group]</TreatedDrugDesire.rulePack.rulesStrings.1>
+    <TreatedDrugDesire.rulePack.rulesStrings.2>image->[psychologist_nameFull] nickt ein, während [patient_nameFull] spricht [circumstance_group]</TreatedDrugDesire.rulePack.rulesStrings.2>
+    <TreatedDrugDesire.rulePack.rulesStrings.3>image->[psychologist_nameFull] diskutiert über [patient_nameFull]s Verlangen [circumstance_group]</TreatedDrugDesire.rulePack.rulesStrings.3>
+    <TreatedDrugDesire.rulePack.rulesStrings.4>circumstance_phrase->als [psychologist_nameShortDef] Notizien schreibt</TreatedDrugDesire.rulePack.rulesStrings.4>
+    <TreatedDrugDesire.rulePack.rulesStrings.5>circumstance_phrase->als [psychologist_nameShortDef] ein Rezept verordnet</TreatedDrugDesire.rulePack.rulesStrings.5>
+    <TreatedDrugDesire.rulePack.rulesStrings.6>circumstance_phrase->als ein Weg zur Erholung ausgelegt ist</TreatedDrugDesire.rulePack.rulesStrings.6>
+    <TreatedDrugDesire.rulePack.rulesStrings.7>circumstance_phrase->während [psychologist_possessive] verständnisvoll ausschaut</TreatedDrugDesire.rulePack.rulesStrings.7>
+    <TreatedDrugDesire.rulePack.rulesStrings.8>desc_sentence->[psychologist_nameShortDef] hat einen kenntnisreichen Gesichtsausdruck.</TreatedDrugDesire.rulePack.rulesStrings.8>
+    <TreatedDrugDesire.rulePack.rulesStrings.9>desc_sentence->[psychologist_nameShortDef] sieht sehr fokussiert auf die Aufgabe.</TreatedDrugDesire.rulePack.rulesStrings.9>
+    <TreatedDrugDesire.rulePack.rulesStrings.10>desc_sentence->[psychologist_nameShortDef] hat eine ernste, aber freundliche, Haltung.</TreatedDrugDesire.rulePack.rulesStrings.10>
+    <TreatedDrugDesire.rulePack.rulesStrings.11>desc_sentence->[patient_nameShortDef] lächelt.</TreatedDrugDesire.rulePack.rulesStrings.11>
+    <TreatedDrugDesire.rulePack.rulesStrings.12>desc_sentence->[patient_nameShortDef] sieht wie eine neue Person aus.</TreatedDrugDesire.rulePack.rulesStrings.12>
+
+    <TreatedDepression.label>Depression behandelt</TreatedDepression.label>
+    <TreatedDepression.rulePack.rulesStrings.0>tale_noun->[patient_nameShortDef] berät sich zu Depression</TreatedDepression.rulePack.rulesStrings.0>
+    <TreatedDepression.rulePack.rulesStrings.1>image->[psychologist_nameFull] sitzt am Rande von [patient_nameFull]s Bett [circumstance_group]</TreatedDepression.rulePack.rulesStrings.1>
+    <TreatedDepression.rulePack.rulesStrings.2>image->[psychologist_nameFull] nickt ein, während [patient_nameFull] spricht [circumstance_group]</TreatedDepression.rulePack.rulesStrings.2>
+    <TreatedDepression.rulePack.rulesStrings.3>image->[psychologist_nameFull] diskutiert über [patient_nameFull]s Verlangen [circumstance_group]</TreatedDepression.rulePack.rulesStrings.3>
+    <TreatedDepression.rulePack.rulesStrings.4>circumstance_phrase->als [psychologist_nameShortDef] Notizien schreibt</TreatedDepression.rulePack.rulesStrings.4>
+    <TreatedDepression.rulePack.rulesStrings.5>circumstance_phrase->als [psychologist_nameShortDef] ein Rezept verordnet</TreatedDepression.rulePack.rulesStrings.5>
+    <TreatedDepression.rulePack.rulesStrings.6>circumstance_phrase->als ein Weg zur Erholung ausgelegt ist</TreatedDepression.rulePack.rulesStrings.6>
+    <TreatedDepression.rulePack.rulesStrings.7>circumstance_phrase->während [psychologist_possessive] verständnisvoll ausschaut</TreatedDepression.rulePack.rulesStrings.7>
+    <TreatedDepression.rulePack.rulesStrings.8>desc_sentence->[psychologist_nameShortDef] hat einen kenntnisreichen Gesichtsausdruck.</TreatedDepression.rulePack.rulesStrings.8>
+    <TreatedDepression.rulePack.rulesStrings.9>desc_sentence->[psychologist_nameShortDef] sieht sehr fokussiert auf die Aufgabe.</TreatedDepression.rulePack.rulesStrings.9>
+    <TreatedDepression.rulePack.rulesStrings.10>desc_sentence->[psychologist_nameShortDef] hat eine ernste, aber freundliche, Haltung.</TreatedDepression.rulePack.rulesStrings.10>
+    <TreatedDepression.rulePack.rulesStrings.11>desc_sentence->[patient_nameShortDef] lächelt.</TreatedDepression.rulePack.rulesStrings.11>
+    <TreatedDepression.rulePack.rulesStrings.12>desc_sentence->[patient_nameShortDef] sieht ein bisschen glücklicher aus.</TreatedDepression.rulePack.rulesStrings.12>
+
+    <TreatedInsomnia.label>Schlaflosigkeit behandelt</TreatedInsomnia.label>
+    <TreatedInsomnia.rulePack.rulesStrings.0>tale_noun->[patient_nameShortDef] berät sich zu Schlaflosigkeit</TreatedInsomnia.rulePack.rulesStrings.0>
+    <TreatedInsomnia.rulePack.rulesStrings.1>image->[patient_nameFull] sieht aus wie ein toter Zombie [circumstance_group]</TreatedInsomnia.rulePack.rulesStrings.1>
+    <TreatedInsomnia.rulePack.rulesStrings.2>image->[patient_nameFull] döst während einer Sitzung mit [psychologist_nameFull] ein</TreatedInsomnia.rulePack.rulesStrings.2>
+    <TreatedInsomnia.rulePack.rulesStrings.3>image->[psychologist_nameFull] bespricht [patient_nameFull]'s Schlafprobleme [circumstance_group]</TreatedInsomnia.rulePack.rulesStrings.3>
+    <TreatedInsomnia.rulePack.rulesStrings.4>circumstance_phrase->als [psychologist_nameShortDef] Notizien schreibt</TreatedInsomnia.rulePack.rulesStrings.4>
+    <TreatedInsomnia.rulePack.rulesStrings.5>circumstance_phrase->als [psychologist_nameShortDef] ein Rezept verordnet</TreatedInsomnia.rulePack.rulesStrings.5>
+    <TreatedInsomnia.rulePack.rulesStrings.6>circumstance_phrase->als [psychologist_nameShortDef] dem Patienten [patient_nameShortDef] eine Flasche Pillen gibt</TreatedInsomnia.rulePack.rulesStrings.6>
+    <TreatedInsomnia.rulePack.rulesStrings.7>circumstance_phrase->während Z's über [patient_possessive] Kopf fliegen</TreatedInsomnia.rulePack.rulesStrings.7>
+    <TreatedInsomnia.rulePack.rulesStrings.8>desc_sentence->[psychologist_nameShortDef] hat einen kenntnisreichen Gesichtsausdruck.</TreatedInsomnia.rulePack.rulesStrings.8>
+    <TreatedInsomnia.rulePack.rulesStrings.9>desc_sentence->[psychologist_nameShortDef] sieht sehr fokussiert auf die Aufgabe.</TreatedInsomnia.rulePack.rulesStrings.9>
+    <TreatedInsomnia.rulePack.rulesStrings.10>desc_sentence->[psychologist_nameShortDef] hat eine ernste, aber freundliche, Haltung.</TreatedInsomnia.rulePack.rulesStrings.10>
+    <TreatedInsomnia.rulePack.rulesStrings.11>desc_sentence->[patient_nameShortDef] bekommt endlich einen guten Schlaf.</TreatedInsomnia.rulePack.rulesStrings.11>
+    <TreatedInsomnia.rulePack.rulesStrings.12>desc_sentence->[patient_nameShortDef] scheint bestrebt zu Bett zu gehen.</TreatedInsomnia.rulePack.rulesStrings.12>
+
+    <CuredAnxiety.label>Angstzustände behandelt</CuredAnxiety.label>
+    <CuredAnxiety.rulePack.rulesStrings.0>tale_noun->[patient_nameShortDef] Behandlung von Angstzuständen</CuredAnxiety.rulePack.rulesStrings.0>
+    <CuredAnxiety.rulePack.rulesStrings.1>image->[doctor_nameFull] öffnet ein Glitterworld Medikamentenkoffer [circumstance_group]</CuredAnxiety.rulePack.rulesStrings.1>
+    <CuredAnxiety.rulePack.rulesStrings.2>image->[doctor_nameFull] basteln im Kopf von [patient_nameFull] herum [circumstance_group]</CuredAnxiety.rulePack.rulesStrings.2>
+    <CuredAnxiety.rulePack.rulesStrings.3>image->[patient_nameFull] schaut nervös auf eine Reihe von futuristischen medizinischen Werkzeugen [circumstance_group]</CuredAnxiety.rulePack.rulesStrings.3>
+    <CuredAnxiety.rulePack.rulesStrings.4>circumstance_phrase->wobei [patient_nameShortDef] ängstlicher erscheint als je zuvor</CuredAnxiety.rulePack.rulesStrings.4>
+    <CuredAnxiety.rulePack.rulesStrings.5>circumstance_phrase->als [doctor_nameShortDef] den Schwierigkeitsgrad der Behandlung kommentiert</CuredAnxiety.rulePack.rulesStrings.5>
+    <CuredAnxiety.rulePack.rulesStrings.6>circumstance_phrase->als [doctor_nameShortDef] die Fortschritte der Glitterworld-Therapie lobt</CuredAnxiety.rulePack.rulesStrings.6>
+    <CuredAnxiety.rulePack.rulesStrings.7>circumstance_phrase->während die persönlichen Dämonen von [patient_nameShortDef] symbolisch um den [patient_possessive] Kopf schweben</CuredAnxiety.rulePack.rulesStrings.7>
+    <CuredAnxiety.rulePack.rulesStrings.8>circumstance_phrase->während eine körperliche Manifestation der Angst hinter [patient_nameShortDef] schwebt</CuredAnxiety.rulePack.rulesStrings.8>
+    <CuredAnxiety.rulePack.rulesStrings.9>desc_sentence->[doctor_nameShortDef] hat ein kenntnisreiches Gesicht auf.</CuredAnxiety.rulePack.rulesStrings.9>
+    <CuredAnxiety.rulePack.rulesStrings.10>desc_sentence->[doctor_nameShortDef] beruhigt [patient_possessive].</CuredAnxiety.rulePack.rulesStrings.10>
+    <CuredAnxiety.rulePack.rulesStrings.11>desc_sentence->[patient_nameShortDef] hat Schwierigkeiten, sich ein Leben ohne Angst vorzustellen.</CuredAnxiety.rulePack.rulesStrings.11>
+    <CuredAnxiety.rulePack.rulesStrings.12>desc_sentence->[patient_nameShortDef] hat große Augen.</CuredAnxiety.rulePack.rulesStrings.12>
+    <CuredAnxiety.rulePack.rulesStrings.13>desc_sentence->[patient_nameShortDef]'s Angehörige sehen aus der Ferne zu.</CuredAnxiety.rulePack.rulesStrings.13>
+
+    <MentalStateTantrum.label>zerstörerische Wut behandelt</MentalStateTantrum.label>
+    <MentalStateTantrum.rulePack.rulesStrings.0>tale_noun->[pawn_nameShortDef] hat einen Wutanfall</MentalStateTantrum.rulePack.rulesStrings.0>
+    <MentalStateTantrum.rulePack.rulesStrings.1>image->[PAWN_nameFull] Gerät in zerstörerischer Wut [circumstance_group]</MentalStateTantrum.rulePack.rulesStrings.1>
+    <MentalStateTantrum.rulePack.rulesStrings.2>image->[PAWN_nameFull] lässt [PAWN_possessive] Wut an Möbel raus [circumstance_group]</MentalStateTantrum.rulePack.rulesStrings.2>
+    <MentalStateTantrum.rulePack.rulesStrings.3>image->[PAWN_nameFull] stolpert in ein Möbelstück mit einem psychotischen Gesichtsausdruck [circumstance_group]</MentalStateTantrum.rulePack.rulesStrings.3>
+    <MentalStateTantrum.rulePack.rulesStrings.4>circumstance_phrase->während verbal geflucht wird</MentalStateTantrum.rulePack.rulesStrings.4>
+    <MentalStateTantrum.rulePack.rulesStrings.5>circumstance_phrase->scheinbar ohne Grund</MentalStateTantrum.rulePack.rulesStrings.5>
+    <MentalStateTantrum.rulePack.rulesStrings.6>circumstance_phrase->als andere in Angst kauern</MentalStateTantrum.rulePack.rulesStrings.6>
+    <MentalStateTantrum.rulePack.rulesStrings.7>circumstance_phrase->als andere entsetzlich schauen</MentalStateTantrum.rulePack.rulesStrings.7>
+    <MentalStateTantrum.rulePack.rulesStrings.8>circumstance_phrase->wegen dem Stress</MentalStateTantrum.rulePack.rulesStrings.8>
+    <MentalStateTantrum.rulePack.rulesStrings.9>circumstance_phrase->während des schreiens</MentalStateTantrum.rulePack.rulesStrings.9>
+    <MentalStateTantrum.rulePack.rulesStrings.10>circumstance_phrase->während gezittert wird vor Wut</MentalStateTantrum.rulePack.rulesStrings.10>
+    <MentalStateTantrum.rulePack.rulesStrings.11>desc_sentence->[PAWN_pronoun] zittert mit unbezähmbarer Wut.</MentalStateTantrum.rulePack.rulesStrings.11>
+    <MentalStateTantrum.rulePack.rulesStrings.12>desc_sentence->[PAWN_possessive] Zähne sind in einem tödlichen Knurren entblößt.</MentalStateTantrum.rulePack.rulesStrings.12>
+    <MentalStateTantrum.rulePack.rulesStrings.13>desc_sentence->[PAWN_possessive] Augen streben nach Wahnsinn.</MentalStateTantrum.rulePack.rulesStrings.13>
+    <MentalStateTantrum.rulePack.rulesStrings.14>desc_sentence->[PAWN_pronoun] hat [PAWN_possessive] Fäuste eingequetscht.</MentalStateTantrum.rulePack.rulesStrings.14>
+    <MentalStateTantrum.rulePack.rulesStrings.15>desc_sentence->[PAWN_pronoun] schneidet Grimassen in Elend.</MentalStateTantrum.rulePack.rulesStrings.15>
+    <MentalStateTantrum.rulePack.rulesStrings.16>desc_sentence->[PAWN_pronoun] hält einen Stuhl über [PAWN_possessive] Kopf.</MentalStateTantrum.rulePack.rulesStrings.16>
+    <MentalStateTantrum.rulePack.rulesStrings.17>desc_sentence->[PAWN_possessive] ganzer Körper bebt voller Hass.</MentalStateTantrum.rulePack.rulesStrings.17>
+    <MentalStateTantrum.rulePack.rulesStrings.18>desc_sentence->Eine einzige Träne rollt [PAWN_possessive] Gesicht runter.</MentalStateTantrum.rulePack.rulesStrings.18>
+
+    <MentalStateSelfHarm.label>tiefe Depression</MentalStateSelfHarm.label>
+    <MentalStateSelfHarm.rulePack.rulesStrings.0>tale_noun->[pawn_nameShortDef] verletzt [PAWN_pronoun] selbst</MentalStateSelfHarm.rulePack.rulesStrings.0>
+    <MentalStateSelfHarm.rulePack.rulesStrings.1>image->[PAWN_nameFull] ritzt [PAWN_possessive] Handgelenke [circumstance_group]</MentalStateSelfHarm.rulePack.rulesStrings.1>
+    <MentalStateSelfHarm.rulePack.rulesStrings.2>image->[PAWN_nameFull] sitzt in einem Pool voller [PAWN_possessive] Blut [circumstance_group]</MentalStateSelfHarm.rulePack.rulesStrings.2>
+    <MentalStateSelfHarm.rulePack.rulesStrings.3>image->[PAWN_nameFull] starrt in die Ferne [circumstance_group]</MentalStateSelfHarm.rulePack.rulesStrings.3>
+    <MentalStateSelfHarm.rulePack.rulesStrings.4>circumstance_phrase->während des Wimmerns</MentalStateSelfHarm.rulePack.rulesStrings.4>
+    <MentalStateSelfHarm.rulePack.rulesStrings.5>circumstance_phrase->während des kauerns in [PAWN_possessive] Zimmer</MentalStateSelfHarm.rulePack.rulesStrings.5>
+    <MentalStateSelfHarm.rulePack.rulesStrings.6>circumstance_phrase->ohne ein Wort zu sagen</MentalStateSelfHarm.rulePack.rulesStrings.6>
+    <MentalStateSelfHarm.rulePack.rulesStrings.7>circumstance_phrase->während des weinens</MentalStateSelfHarm.rulePack.rulesStrings.7>
+    <MentalStateSelfHarm.rulePack.rulesStrings.8>desc_sentence->[PAWN_pronoun] sieht blass und krank aus.</MentalStateSelfHarm.rulePack.rulesStrings.8>
+    <MentalStateSelfHarm.rulePack.rulesStrings.9>desc_sentence->[PAWN_possessive] Arme sind schlaff.</MentalStateSelfHarm.rulePack.rulesStrings.9>
+    <MentalStateSelfHarm.rulePack.rulesStrings.10>desc_sentence->[PAWN_possessive] Kleidung ist befleckt mit Blut.</MentalStateSelfHarm.rulePack.rulesStrings.10>
+    <MentalStateSelfHarm.rulePack.rulesStrings.11>desc_sentence->[PAWN_pronoun] sitzt auf dem Boden, schaukelt hin und her.</MentalStateSelfHarm.rulePack.rulesStrings.11>
+    <MentalStateSelfHarm.rulePack.rulesStrings.12>desc_sentence->[PAWN_pronoun] hat einen leeren Gesichtsausdruck.</MentalStateSelfHarm.rulePack.rulesStrings.12>
+
+    <MentalStateApathy.label>Apathie</MentalStateApathy.label>
+    <MentalStateApathy.rulePack.rulesStrings.0>tale_noun->[pawn_nameShortDef] wandert apathisch herum</MentalStateApathy.rulePack.rulesStrings.0>
+    <MentalStateApathy.rulePack.rulesStrings.1>image->[PAWN_nameFull] wandert in der Kolonie apathisch herum [circumstance_group]</MentalStateApathy.rulePack.rulesStrings.1>
+    <MentalStateApathy.rulePack.rulesStrings.2>image->[PAWN_nameFull] sitzt lethargisch rum [circumstance_group]</MentalStateApathy.rulePack.rulesStrings.2>
+    <MentalStateApathy.rulePack.rulesStrings.3>image->[PAWN_nameFull] vermeidet [PAWN_possessive] Hausarbeiten zu verrichten [circumstance_group]</MentalStateApathy.rulePack.rulesStrings.3>
+    <MentalStateApathy.rulePack.rulesStrings.4>image->[PAWN_nameFull] verrichtet widerwillig [PAWN_possessive] Hausarbeiten [circumstance_group]</MentalStateApathy.rulePack.rulesStrings.4>
+    <MentalStateApathy.rulePack.rulesStrings.5>image->[PAWN_nameFull] lässt nach [circumstance_group]</MentalStateApathy.rulePack.rulesStrings.5>
+    <MentalStateApathy.rulePack.rulesStrings.6>circumstance_phrase->mit einem genervten Gesichtsausdruck</MentalStateApathy.rulePack.rulesStrings.6>
+    <MentalStateApathy.rulePack.rulesStrings.7>circumstance_phrase->während des schmollens</MentalStateApathy.rulePack.rulesStrings.7>
+    <MentalStateApathy.rulePack.rulesStrings.8>circumstance_phrase->während des murrens</MentalStateApathy.rulePack.rulesStrings.8>
+    <MentalStateApathy.rulePack.rulesStrings.9>circumstance_phrase->mit halb-geschlossenen Augen</MentalStateApathy.rulePack.rulesStrings.9>
+    <MentalStateApathy.rulePack.rulesStrings.10>desc_sentence->[PAWN_pronoun] sieht erschöpft aus.</MentalStateApathy.rulePack.rulesStrings.10>
+    <MentalStateApathy.rulePack.rulesStrings.11>desc_sentence->[PAWN_possessive] Arme sind über Kreuz.</MentalStateApathy.rulePack.rulesStrings.11>
+    <MentalStateApathy.rulePack.rulesStrings.12>desc_sentence->[PAWN_pronoun] sieht so aus, als würde [PAWN_pronoun] sich um nichts kümmern.</MentalStateApathy.rulePack.rulesStrings.12>
+
+    <MentalStateSadism.label>Sadismus</MentalStateSadism.label>
+    <MentalStateSadism.rulePack.rulesStrings.0>tale_noun->[pawn_nameShortDef] lacht sadistisch</MentalStateSadism.rulePack.rulesStrings.0>
+    <MentalStateSadism.rulePack.rulesStrings.1>image->[PAWN_nameFull] schwingt [PAWN_possessive] Waffe [circumstance_group]</MentalStateSadism.rulePack.rulesStrings.1>
+    <MentalStateSadism.rulePack.rulesStrings.2>image->[PAWN_nameFull] murmelt unter [PAWN_possessive] Atem [circumstance_group]</MentalStateSadism.rulePack.rulesStrings.2>
+    <MentalStateSadism.rulePack.rulesStrings.3>image->[PAWN_nameFull] hält Ausschau nach einem Opfer, um ihn brutal herzurichten [circumstance_group]</MentalStateSadism.rulePack.rulesStrings.3>
+    <MentalStateSadism.rulePack.rulesStrings.4>circumstance_phrase->während des wanderns</MentalStateSadism.rulePack.rulesStrings.4>
+    <MentalStateSadism.rulePack.rulesStrings.5>circumstance_phrase->während einem grausamen Lächeln</MentalStateSadism.rulePack.rulesStrings.5>
+    <MentalStateSadism.rulePack.rulesStrings.6>circumstance_phrase->während bedrohlich gelächelt wird</MentalStateSadism.rulePack.rulesStrings.6>
+    <MentalStateSadism.rulePack.rulesStrings.7>desc_sentence->[PAWN_pronoun] sieht danach aus, als würde [PAWN_pronoun] [PAWN_possessive] Verstand verlieren.</MentalStateSadism.rulePack.rulesStrings.7>
+    <MentalStateSadism.rulePack.rulesStrings.8>desc_sentence->[PAWN_possessive] linkes Auge zuckt.</MentalStateSadism.rulePack.rulesStrings.8>
+    <MentalStateSadism.rulePack.rulesStrings.9>desc_sentence->[PAWN_possessive] Hände zittern.</MentalStateSadism.rulePack.rulesStrings.9>
+
+    <MentalStateCompulsion.label>zwang</MentalStateCompulsion.label>
+    <MentalStateCompulsion.rulePack.rulesStrings.0>tale_noun->[pawn_nameShortDef] macht neurotisch sauber</MentalStateCompulsion.rulePack.rulesStrings.0>
+    <MentalStateCompulsion.rulePack.rulesStrings.1>image->[PAWN_nameFull] organisiert wie Besessen Ressourcen [circumstance_group]</MentalStateCompulsion.rulePack.rulesStrings.1>
+    <MentalStateCompulsion.rulePack.rulesStrings.2>image->[PAWN_nameFull] bedeckt durch Schmutz und Erde [circumstance_group]</MentalStateCompulsion.rulePack.rulesStrings.2>
+    <MentalStateCompulsion.rulePack.rulesStrings.3>image->[PAWN_nameFull] schrubbt die Fußböden obsessiv [circumstance_group]</MentalStateCompulsion.rulePack.rulesStrings.3>
+    <MentalStateCompulsion.rulePack.rulesStrings.4>circumstance_phrase->während des murmelns unter [PAWN_possessive] Atem</MentalStateCompulsion.rulePack.rulesStrings.4>
+    <MentalStateCompulsion.rulePack.rulesStrings.5>circumstance_phrase->während reichlichem Schwitzen</MentalStateCompulsion.rulePack.rulesStrings.5>
+    <MentalStateCompulsion.rulePack.rulesStrings.6>circumstance_phrase->während gekämpft wird, wach zu bleiben</MentalStateCompulsion.rulePack.rulesStrings.6>
+    <MentalStateCompulsion.rulePack.rulesStrings.7>desc_sentence->[PAWN_pronoun] sieht so aus, als wenn [PAWN_pronoun] Tage nicht geschlafen hätte.</MentalStateCompulsion.rulePack.rulesStrings.7>
+    <MentalStateCompulsion.rulePack.rulesStrings.8>desc_sentence->[PAWN_pronoun] sieht unterernährt und hungrig aus.</MentalStateCompulsion.rulePack.rulesStrings.8>
+    <MentalStateCompulsion.rulePack.rulesStrings.9>desc_sentence->[PAWN_pronoun] sieht entschlossen aus.</MentalStateCompulsion.rulePack.rulesStrings.9>
+    <MentalStateCompulsion.rulePack.rulesStrings.10>desc_sentence->[PAWN_possessive] Hände zittern.</MentalStateCompulsion.rulePack.rulesStrings.10>
+
+    <MentalStateAbuse.label>verbaler Missbrauch</MentalStateAbuse.label>
+    <MentalStateAbuse.rulePack.rulesStrings.0>tale_noun->[pawn_nameShortDef] schreit wütend</MentalStateAbuse.rulePack.rulesStrings.0>
+    <MentalStateAbuse.rulePack.rulesStrings.1>image->[PAWN_nameFull] bewegt sich hin und her [circumstance_group]</MentalStateAbuse.rulePack.rulesStrings.1>
+    <MentalStateAbuse.rulePack.rulesStrings.2>image->[PAWN_nameFull] stampft herum [circumstance_group]</MentalStateAbuse.rulePack.rulesStrings.2>
+    <MentalStateAbuse.rulePack.rulesStrings.3>image->[PAWN_nameFull] hält Ausschau, um mit jemanden zu diskutieren [circumstance_group]</MentalStateAbuse.rulePack.rulesStrings.3>
+    <MentalStateAbuse.rulePack.rulesStrings.4>image->[PAWN_nameFull] hält Ausschau, um jemanden zu beschimpfen [circumstance_group]</MentalStateAbuse.rulePack.rulesStrings.4>
+    <MentalStateAbuse.rulePack.rulesStrings.5>circumstance_phrase->während andere mißbilligend ansehen</MentalStateAbuse.rulePack.rulesStrings.5>
+    <MentalStateAbuse.rulePack.rulesStrings.6>circumstance_phrase->Während andere ihre Köpfe in Mißbilligung schütteln</MentalStateAbuse.rulePack.rulesStrings.6>
+    <MentalStateAbuse.rulePack.rulesStrings.7>circumstance_phrase->während andere Augenkontakt vermeiden</MentalStateAbuse.rulePack.rulesStrings.7>
+    <MentalStateAbuse.rulePack.rulesStrings.8>circumstance_phrase->während andere sich von [PAWN_pronoun] entfernen</MentalStateAbuse.rulePack.rulesStrings.8>
+    <MentalStateAbuse.rulePack.rulesStrings.9>circumstance_phrase->Mit verengten Augen und geballten Zähnen</MentalStateAbuse.rulePack.rulesStrings.9>
+    <MentalStateAbuse.rulePack.rulesStrings.10>desc_sentence->Speichel fliegt aus [PAWN_possessive] Mund.</MentalStateAbuse.rulePack.rulesStrings.10>
+    <MentalStateAbuse.rulePack.rulesStrings.11>desc_sentence->[PAWN_possessive] Gesicht ist blank-rot.</MentalStateAbuse.rulePack.rulesStrings.11>
+    <MentalStateAbuse.rulePack.rulesStrings.12>desc_sentence->[PAWN_possessive] ganzer Körper zittert vor Wut.</MentalStateAbuse.rulePack.rulesStrings.12>
+    <MentalStateAbuse.rulePack.rulesStrings.13>desc_sentence->[PAWN_possessive] Augen sind voller Hass.</MentalStateAbuse.rulePack.rulesStrings.13>
+
+    <MentalStateAntisocial.label>Antisozial</MentalStateAntisocial.label>
+    <MentalStateAntisocial.rulePack.rulesStrings.0>tale_noun->[pawn_nameShortDef] verlässt die Kolonie</MentalStateAntisocial.rulePack.rulesStrings.0>
+    <MentalStateAntisocial.rulePack.rulesStrings.1>image->[PAWN_nameFull] distanziert sich von der Kolonie [circumstance_group]</MentalStateAntisocial.rulePack.rulesStrings.1>
+    <MentalStateAntisocial.rulePack.rulesStrings.2>image->[PAWN_nameFull] vermeidet Kontakt mit anderen Kolonisten [circumstance_group]</MentalStateAntisocial.rulePack.rulesStrings.2>
+    <MentalStateAntisocial.rulePack.rulesStrings.3>image->[PAWN_nameFull] geht weg [circumstance_group]</MentalStateAntisocial.rulePack.rulesStrings.3>
+    <MentalStateAntisocial.rulePack.rulesStrings.4>image->[PAWN_nameFull] rennt weg [circumstance_group]</MentalStateAntisocial.rulePack.rulesStrings.4>
+    <MentalStateAntisocial.rulePack.rulesStrings.5>image->[PAWN_nameFull] geht in die Wildnis [circumstance_group]</MentalStateAntisocial.rulePack.rulesStrings.5>
+    <MentalStateAntisocial.rulePack.rulesStrings.6>image->[PAWN_nameFull] rennt in die Wildnis [circumstance_group]</MentalStateAntisocial.rulePack.rulesStrings.6>
+    <MentalStateAntisocial.rulePack.rulesStrings.7>circumstance_phrase->auf Grund von Stress</MentalStateAntisocial.rulePack.rulesStrings.7>
+    <MentalStateAntisocial.rulePack.rulesStrings.8>circumstance_phrase->mit einem emotionalen Gesichtsausdruck</MentalStateAntisocial.rulePack.rulesStrings.8>
+    <MentalStateAntisocial.rulePack.rulesStrings.9>circumstance_phrase->mit einem paranoiden Gesichtsausdruck</MentalStateAntisocial.rulePack.rulesStrings.9>
+    <MentalStateAntisocial.rulePack.rulesStrings.10>desc_sentence->[PAWN_pronoun] sieht erschöpft und müde aus.</MentalStateAntisocial.rulePack.rulesStrings.10>
+    <MentalStateAntisocial.rulePack.rulesStrings.11>desc_sentence->[PAWN_possessive] Gesicht ist blass.</MentalStateAntisocial.rulePack.rulesStrings.11>
+    <MentalStateAntisocial.rulePack.rulesStrings.12>desc_sentence->[PAWN_possessive] Kopf hängt tief runter.</MentalStateAntisocial.rulePack.rulesStrings.12>
+
+    <MentalStateHistrionic.label>Histrionic</MentalStateHistrionic.label>
+    <MentalStateHistrionic.rulePack.rulesStrings.0>tale_noun->[pawn_nameShortDef] sucht verzweilfelt Aufmerksamkeit</MentalStateHistrionic.rulePack.rulesStrings.0>
+    <MentalStateHistrionic.rulePack.rulesStrings.1>image->[PAWN_nameFull] folgt jemanden [circumstance_group]</MentalStateHistrionic.rulePack.rulesStrings.1>
+    <MentalStateHistrionic.rulePack.rulesStrings.2>image->[PAWN_nameFull] schlägt ungeschickt einem anderen Kolonisten vor [circumstance_group]</MentalStateHistrionic.rulePack.rulesStrings.2>
+    <MentalStateHistrionic.rulePack.rulesStrings.3>image->[PAWN_nameFull] macht eine Szene [circumstance_group]</MentalStateHistrionic.rulePack.rulesStrings.3>
+    <MentalStateHistrionic.rulePack.rulesStrings.4>image->[PAWN_nameFull] hält Ausschau, um mit jemanden zu reden [circumstance_group]</MentalStateHistrionic.rulePack.rulesStrings.4>
+    <MentalStateHistrionic.rulePack.rulesStrings.5>circumstance_phrase->mit einem manischen Gesichtsausdruck</MentalStateHistrionic.rulePack.rulesStrings.5>
+    <MentalStateHistrionic.rulePack.rulesStrings.6>circumstance_phrase->mit einem flehendes Gesichtsausdruck</MentalStateHistrionic.rulePack.rulesStrings.6>
+    <MentalStateHistrionic.rulePack.rulesStrings.7>circumstance_phrase->während anderen ihn besorgt anschauen</MentalStateHistrionic.rulePack.rulesStrings.7>
+    <MentalStateHistrionic.rulePack.rulesStrings.8>circumstance_phrase->mit einem völligen Mangel an Selbstbeherrschung</MentalStateHistrionic.rulePack.rulesStrings.8>
+    <MentalStateHistrionic.rulePack.rulesStrings.9>circumstance_phrase->mit überdimensionalem Flair</MentalStateHistrionic.rulePack.rulesStrings.9>
+    <MentalStateHistrionic.rulePack.rulesStrings.10>desc_sentence->Jeder vermeidet [PAWN_pronoun].</MentalStateHistrionic.rulePack.rulesStrings.10>
+    <MentalStateHistrionic.rulePack.rulesStrings.11>desc_sentence->[PAWN_pronoun] wringt [PAWN_possessive] Hände.</MentalStateHistrionic.rulePack.rulesStrings.11>
+    <MentalStateHistrionic.rulePack.rulesStrings.12>desc_sentence->[PAWN_pronoun] scheint ungeduldig.</MentalStateHistrionic.rulePack.rulesStrings.12>
+    <MentalStateHistrionic.rulePack.rulesStrings.13>desc_sentence->[PAWN_pronoun] versucht mit Leuten zu sprechen, aber sie vermeiden sie.</MentalStateHistrionic.rulePack.rulesStrings.13>
+    <MentalStateHistrionic.rulePack.rulesStrings.14>desc_sentence->[PAWN_pronoun] tritt auf alles, was sich bewegt.</MentalStateHistrionic.rulePack.rulesStrings.14>
+
+    <MentalStateFellPlotting.label>verrücktes Intrigieren</MentalStateFellPlotting.label>
+    <MentalStateFellPlotting.rulePack.rulesStrings.0>tale_noun->[pawn_nameShortDef] schmiedet einen verrückten Plan</MentalStateFellPlotting.rulePack.rulesStrings.0>
+    <MentalStateFellPlotting.rulePack.rulesStrings.1>image->[PAWN_nameFull] intrigiert in [PAWN_possessive] Zimmer [circumstance_group]</MentalStateFellPlotting.rulePack.rulesStrings.1>
+    <MentalStateFellPlotting.rulePack.rulesStrings.2>image->[PAWN_nameFull] beugt sich über eine Schreibfläche [circumstance_group]</MentalStateFellPlotting.rulePack.rulesStrings.2>
+    <MentalStateFellPlotting.rulePack.rulesStrings.3>image->[PAWN_nameFull] beugt hin und her [circumstance_group]</MentalStateFellPlotting.rulePack.rulesStrings.3>
+    <MentalStateFellPlotting.rulePack.rulesStrings.4>image->[PAWN_nameFull] kritzelt auf Papier [circumstance_group]</MentalStateFellPlotting.rulePack.rulesStrings.4>
+    <MentalStateFellPlotting.rulePack.rulesStrings.5>image->[PAWN_nameFull] schleicht durch den Flur mit einer Waffe [circumstance_group]</MentalStateFellPlotting.rulePack.rulesStrings.5>
+    <MentalStateFellPlotting.rulePack.rulesStrings.6>image->[PAWN_nameFull] steht im Hintergrund hinter einem Kolonisten</MentalStateFellPlotting.rulePack.rulesStrings.6>
+    <MentalStateFellPlotting.rulePack.rulesStrings.7>circumstance_phrase->während des murmelns unter [PAWN_possessive] Atem</MentalStateFellPlotting.rulePack.rulesStrings.7>
+    <MentalStateFellPlotting.rulePack.rulesStrings.8>circumstance_phrase->mit einem paranoiden Gesichtsausdruck</MentalStateFellPlotting.rulePack.rulesStrings.8>
+    <MentalStateFellPlotting.rulePack.rulesStrings.9>circumstance_phrase->mit einem besorgniserregenden Gesichtsausdruck</MentalStateFellPlotting.rulePack.rulesStrings.9>
+    <MentalStateFellPlotting.rulePack.rulesStrings.10>circumstance_phrase->mit einem grimmigen Gesichtsausdruck</MentalStateFellPlotting.rulePack.rulesStrings.10>
+    <MentalStateFellPlotting.rulePack.rulesStrings.11>circumstance_phrase->während zusammenhangslos gebrabbelt wird</MentalStateFellPlotting.rulePack.rulesStrings.11>
+    <MentalStateFellPlotting.rulePack.rulesStrings.12>circumstance_phrase->während wütend geflüstert wird</MentalStateFellPlotting.rulePack.rulesStrings.12>
+    <MentalStateFellPlotting.rulePack.rulesStrings.13>circumstance_phrase->während Selbstgespräche geführt werden</MentalStateFellPlotting.rulePack.rulesStrings.13>
+    <MentalStateFellPlotting.rulePack.rulesStrings.14>desc_sentence->[PAWN_pronoun] hält eine gestohlene Waffe.</MentalStateFellPlotting.rulePack.rulesStrings.14>
+    <MentalStateFellPlotting.rulePack.rulesStrings.15>desc_sentence->[PAWN_pronoun] hält [PAWN_possessive] Waffe fest in der Hand.</MentalStateFellPlotting.rulePack.rulesStrings.15>
+    <MentalStateFellPlotting.rulePack.rulesStrings.16>desc_sentence->[PAWN_pronoun] hat einen bösartigen Anblick</MentalStateFellPlotting.rulePack.rulesStrings.16>
+    <MentalStateFellPlotting.rulePack.rulesStrings.17>desc_sentence->[PAWN_pronoun] scheint entschlossen.</MentalStateFellPlotting.rulePack.rulesStrings.17>
+    <MentalStateFellPlotting.rulePack.rulesStrings.18>desc_sentence->[PAWN_pronoun] starrt den Betrachter direkt an.</MentalStateFellPlotting.rulePack.rulesStrings.18>
+
+    <MentalStateParanoia.label>Paranoia</MentalStateParanoia.label>
+    <MentalStateParanoia.rulePack.rulesStrings.0>tale_noun->[pawn_nameShortDef] wird von Paranoia übernommen</MentalStateParanoia.rulePack.rulesStrings.0>
+    <MentalStateParanoia.rulePack.rulesStrings.1>image->[PAWN_nameFull] absorbiert durch paranoides Plappern [circumstance_group]</MentalStateParanoia.rulePack.rulesStrings.1>
+    <MentalStateParanoia.rulePack.rulesStrings.2>image->[PAWN_nameFull] beruhigt einen anderen Kolonisten [circumstance_group]</MentalStateParanoia.rulePack.rulesStrings.2>
+    <MentalStateParanoia.rulePack.rulesStrings.3>image->[PAWN_nameFull] wandert sinnlos um die Kolonie herum [circumstance_group]</MentalStateParanoia.rulePack.rulesStrings.3>
+    <MentalStateParanoia.rulePack.rulesStrings.4>image->[PAWN_nameFull] schreit Warnungen an Passanten aus [circumstance_group]</MentalStateParanoia.rulePack.rulesStrings.4>
+    <MentalStateParanoia.rulePack.rulesStrings.5>image->[PAWN_nameFull] wälzt sich auf dem Boden vor und zurück [circumstance_group]</MentalStateParanoia.rulePack.rulesStrings.5>
+    <MentalStateParanoia.rulePack.rulesStrings.6>circumstance_phrase->mit einem verrückten Gesichtsausdruck</MentalStateParanoia.rulePack.rulesStrings.6>
+    <MentalStateParanoia.rulePack.rulesStrings.7>circumstance_phrase->mit einem sinnlosen Gesichtsausdruck</MentalStateParanoia.rulePack.rulesStrings.7>
+    <MentalStateParanoia.rulePack.rulesStrings.8>circumstance_phrase->mit einem erschrockenen Gesichtsausdruck</MentalStateParanoia.rulePack.rulesStrings.8>
+    <MentalStateParanoia.rulePack.rulesStrings.9>circumstance_phrase->und winkt [PAWN_possessive] Arme wild hin und her</MentalStateParanoia.rulePack.rulesStrings.9>
+    <MentalStateParanoia.rulePack.rulesStrings.10>circumstance_phrase->und gestikuliert wütend</MentalStateParanoia.rulePack.rulesStrings.10>
+    <MentalStateParanoia.rulePack.rulesStrings.11>circumstance_phrase->und argumentiert mit sich selbst</MentalStateParanoia.rulePack.rulesStrings.11>
+    <MentalStateParanoia.rulePack.rulesStrings.12>desc_sentence->[PAWN_pronoun] schreit und schluchzt.</MentalStateParanoia.rulePack.rulesStrings.12>
+    <MentalStateParanoia.rulePack.rulesStrings.13>desc_sentence->[PAWN_pronoun] schüttelt maßlos sein Kopf hin und her.</MentalStateParanoia.rulePack.rulesStrings.13>
+    <MentalStateParanoia.rulePack.rulesStrings.14>desc_sentence->[PAWN_pronoun] hat einen leeren Anblick.</MentalStateParanoia.rulePack.rulesStrings.14>
+
+    <MentalStateHuntingTrip.label>Rückzug in die Natur</MentalStateHuntingTrip.label>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.0>tale_noun->[PAWN_nameDef] zieht sich in die Natur zurück, um den Stress in der Kolonie zu entkommen</MentalStateHuntingTrip.rulePack.rulesStrings.0>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.1>tale_noun->[PAWN_nameDef] rennt von der Kolonie weg, um auf die Jagd zu gehen</MentalStateHuntingTrip.rulePack.rulesStrings.1>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.2>image->[PAWN_nameFull] verfolgt ein wildes Tier [circumstance_group]</MentalStateHuntingTrip.rulePack.rulesStrings.2>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.3>image->[PAWN_nameFull] streift durch die Wildnis [circumstance_group]</MentalStateHuntingTrip.rulePack.rulesStrings.3>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.4>image->[PAWN_nameFull] entspannt in der Natur [circumstance_group]</MentalStateHuntingTrip.rulePack.rulesStrings.4>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.5>image->[PAWN_nameFull] entfernt sich von Beobachtern, rückschauend, [circumstance_group]</MentalStateHuntingTrip.rulePack.rulesStrings.5>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.6>image->[PAWN_nameFull] verschwindet in die Wildnis [circumstance_group]</MentalStateHuntingTrip.rulePack.rulesStrings.6>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.7>circumstance_phrase->mit einem grimmigen Blick auf [PAWN_possessive] Gesicht</MentalStateHuntingTrip.rulePack.rulesStrings.7>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.8>circumstance_phrase->mit einem unerschütterlich Blick</MentalStateHuntingTrip.rulePack.rulesStrings.8>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.9>circumstance_phrase->mit einem leeren Blick auf [PAWN_possessive] Gesicht</MentalStateHuntingTrip.rulePack.rulesStrings.9>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.10>circumstance_phrase->und eine Waffe in [PAWN_possessive] Hände umklammern</MentalStateHuntingTrip.rulePack.rulesStrings.10>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.11>circumstance_phrase->mit ihrem Blick auf ein [Animal] gerichtet</MentalStateHuntingTrip.rulePack.rulesStrings.11>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.12>circumstance_phrase->mit niemandem in Sicht</MentalStateHuntingTrip.rulePack.rulesStrings.12>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.13>desc_sentence->[PAWN_pronoun] hält [PAWN_possessive] Waffe fest im Griff.</MentalStateHuntingTrip.rulePack.rulesStrings.13>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.14>desc_sentence->[PAWN_pronoun] scannt [PAWN_possessive] Umgebung sorgfältig.</MentalStateHuntingTrip.rulePack.rulesStrings.14>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.15>desc_sentence->[PAWN_pronoun] scheint erleichtert zu sein, von allem weg zu sein.</MentalStateHuntingTrip.rulePack.rulesStrings.15>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.16>desc_sentence->Ein [Animal] schleicht sich an ihm vorbei, während [PAWN_pronoun] abgelenkt ist.</MentalStateHuntingTrip.rulePack.rulesStrings.16>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.17>desc_sentence->[Animal] flankieren symbolisch beide Seiten von [PAWN_objective].</MentalStateHuntingTrip.rulePack.rulesStrings.17>
+    <MentalStateHuntingTrip.rulePack.rulesStrings.18>desc_sentence->Da befindet sich ein [TerrainFeature] im Hintergrund</MentalStateHuntingTrip.rulePack.rulesStrings.18>
+
+
+</LanguageData>

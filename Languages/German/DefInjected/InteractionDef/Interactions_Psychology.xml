@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Random social interactions -->
+
+  <PrudeSeen.label>nackt gesehen</PrudeSeen.label>
+  <PrudeSeen.logRulesInitiator.rulesStrings.0>r_logentry->[INITIATOR_nameDef] hat [RECIPIENT_nameDef] nackt gesehen.</PrudeSeen.logRulesInitiator.rulesStrings.0>
+
+  <Conversation.label>Konversation</Conversation.label>
+  <Conversation.logRulesInitiator.rulesStrings.0>r_logentry(p=4)->[INITIATOR_nameDef] [conversed] mit [RECIPIENT_nameDef].</Conversation.logRulesInitiator.rulesStrings.0>
+  <Conversation.logRulesInitiator.rulesStrings.1>r_logentry->[INITIATOR_nameDef] hat [RECIPIENT_nameDef] für ein Gespräch gerufen.</Conversation.logRulesInitiator.rulesStrings.1>
+  <Conversation.logRulesInitiator.rulesStrings.2>r_logentry->[INITIATOR_nameDef] hat ein Thema mit [RECIPIENT_nameDef] besprochen.</Conversation.logRulesInitiator.rulesStrings.2>
+  <Conversation.logRulesInitiator.rulesStrings.3>conversed(p=4)->Gespräch aufgenommen</Conversation.logRulesInitiator.rulesStrings.3>
+  <Conversation.logRulesInitiator.rulesStrings.4>conversed->fing an zu reden</Conversation.logRulesInitiator.rulesStrings.4>
+  <Conversation.logRulesInitiator.rulesStrings.5>conversed->kam in ein Gespräch</Conversation.logRulesInitiator.rulesStrings.5>
+  <Conversation.logRulesInitiator.rulesStrings.6>conversed->ein Thema angesprochen</Conversation.logRulesInitiator.rulesStrings.6>
+  <Conversation.logRulesInitiator.rulesStrings.7>conversed->fing an, etwas zu bereden</Conversation.logRulesInitiator.rulesStrings.7>
+
+  <EndConversation.label>beendete Konversation</EndConversation.label>
+  <EndConversation.logRulesInitiator.rulesStrings.0>r_logentry->[INITIATOR_nameDef] beendete eine Konversation mit [RECIPIENT_nameDef].</EndConversation.logRulesInitiator.rulesStrings.0>
+
+  <HangOut.label>rumhängen</HangOut.label>
+  <HangOut.logRulesInitiator.rulesStrings.0>r_logentry->[INITIATOR_nameDef] hat [RECIPIENT_nameDef] gefragt, mit [INITIATOR_objective] rumzuhängen.</HangOut.logRulesInitiator.rulesStrings.0>
+
+  <PlanDate.label>ein Verabredung planen</PlanDate.label>
+  <PlanDate.logRulesInitiator.rulesStrings.0>r_logentry->[INITIATOR_nameDef] plante eine Verabredung mit [RECIPIENT_nameDef].</PlanDate.logRulesInitiator.rulesStrings.0>
+
+
+</LanguageData>

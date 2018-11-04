@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<ParanoidRambling1>Ihr verdammten Idioten. Wir sind verdammt!</ParanoidRambling1>
+	<ParanoidRambling2>Sie kommen! Sie werden uns zerstören!</ParanoidRambling2>
+	<ParanoidRambling3>Dieser Ort ist verflucht!</ParanoidRambling3>
+	<ParanoidRambling4>Wir werden alle draufgehen!</ParanoidRambling4>
+	<ParanoidRambling5>Verflucht ist dieser Ort!</ParanoidRambling5>
+	<ParanoidRambling6>Unsere alten Leben sind weg. Wir sind Schatten der Toten!</ParanoidRambling6>
+	<ParanoidRambling7>Dieser elende Ort wird unser Grab!</ParanoidRambling7>
+	<ParanoidRambling8>Je schneller wir sterben, desto schneller findet das Leiden ein Ende!</ParanoidRambling8>
+	<ParanoidRambling9>Ihr Narren! Ihr seid wie Puppen an der Schnur!</ParanoidRambling9>
+	<ParanoidRambling10>Könnt ihr es nicht sehen? Wir sind bloß Spielzeuge!</ParanoidRambling10>
+	<ParanoidRambling11>Sie lachen über unsere Plagen! Sie kichern!</ParanoidRambling11>
+	<ParanoidRambling12>Seid ihr nun glücklich? Wir werden alle sterben!</ParanoidRambling12>
+	<ParanoidRambling13>Ihr seid nur einen Steinwurf von der Vergessenheit entfernt!</ParanoidRambling13>
+	<ParanoidRambling14>Das schlimmste wird noch kommen! Wir sind nicht vorbereitet!</ParanoidRambling14>
+	<ParanoidRambling15>Es ist alles aussichtslos! Wir verschwenden unsere Zeit!</ParanoidRambling15>
+	<ParanoidRambling16>Warum sind wir hier? Nur um zu leiden?</ParanoidRambling16>
+	<ParanoidRambling17>Unsere Gedanken sind nicht unsere eigenen!</ParanoidRambling17>
+	<ParanoidRambling18>Eure Torheit hat uns alle verurteilt!</ParanoidRambling18>
+	<ParanoidRambling19>Lauft, solange ihr noch könnt!</ParanoidRambling19>
+	<ParanoidRambling20>Dieses verfluchte Höllenloch wird unser Grab!</ParanoidRambling20>
+	<ParanoidRambling21>Wir sind bloß Menschen in der Hand des Schicksals!</ParanoidRambling21>
+	<ParanoidRambling22>Ich verschwende meine Zeit! Ihr seid alle taub und blind!</ParanoidRambling22>
+	<ParanoidRambling23>Es wird nie besser werden! Wir werden nie gerettet!</ParanoidRambling23>
+	<ParanoidRambling24>Wir waren noch nie so allein und unerwünscht wie jetzt!</ParanoidRambling24>
+	<ParanoidRambling25>Wir arbeiten, wir erkranken, wir sterben und für was?</ParanoidRambling25>
+	<ParanoidRambling26>Jeder von euch könnte in jedem Moment sterben!</ParanoidRambling26>
+	<ParanoidRambling27>Wir sind tot besser dran!</ParanoidRambling27>
+	<ParanoidRambling28>Es ist nur ein Traum, wir werden in jedem Moment aufwachen!</ParanoidRambling28>
+	<ParanoidRambling29>Jeder Atemzug verlängert die Qualen!</ParanoidRambling29>
+	<ParanoidRambling30>Wenn irgendeiner nach uns Ausschau halten würde, wären wir da in diesen Notlagen?</ParanoidRambling30>
+	<ParanoidRambling31>Sich bewusst zu sein, ist eine aufreißende Wunde!</ParanoidRambling31>
+	<ParanoidRambling32>Sie machen uns verrückt! Sie machen uns zu Kannibalen!</ParanoidRambling32>
+	<ParanoidRambling33>Sie wollen uns so eingesperrt sehen wie Tiere!</ParanoidRambling33>
+	
+	<FellMurmuring1>{0_possessive} schuld...</FellMurmuring1>
+	<FellMurmuring2>Es ist alles {0_possessive} schuld...</FellMurmuring2>
+	<FellMurmuring3>Ich kann {0_objective} damit nicht davonkommen lassen...</FellMurmuring3>
+	<FellMurmuring4>{0_pronoun} denkt {0_pronoun} sei schlau, oder nicht?</FellMurmuring4>
+	<FellMurmuring5>Ich werde es {0_objective} zeigen...</FellMurmuring5>
+	<FellMurmuring6>Verräter... Saboteure... Verschwörer...</FellMurmuring6>
+	<FellMurmuring7>{0_pronoun} verspottet mich...</FellMurmuring7>
+	<FellMurmuring8>Wie kann {0_pronoun} es wagen...</FellMurmuring8>
+	<FellMurmuring9>{0_pronoun} denkt, ich würde es nicht bemerken?</FellMurmuring9>
+	<FellMurmuring10>Ich muss es alleine machen... man kann keinem vertrauen.</FellMurmuring10>
+	<FellMurmuring11>Für das Gute von uns allen...</FellMurmuring11>
+	<FellMurmuring12>Ich werde das Problem alleine lösen...</FellMurmuring12>
+	<FellMurmuring13>[Gemurmel]</FellMurmuring13>
+	<FellMurmuring14>[knurrend]</FellMurmuring14>
+	<FellMurmuring15>[zischend]</FellMurmuring15>
+	<FellMurmuring16>[murmelnd]</FellMurmuring16>
+	<FellMurmuring17>[unverständliches Plappern]</FellMurmuring17>
+	<FellMurmuring18>Idiot!</FellMurmuring18>
+	<FellMurmuring19>Teufel!</FellMurmuring19>
+	<FellMurmuring20>Geier!</FellMurmuring20>
+	<FellMurmuring21>Monster!</FellMurmuring21>
+	<FellMurmuring22>Lügner!</FellMurmuring22>
+	<FellMurmuring23>Hinter meinem Rücken... immer hinter meinem Rücken...</FellMurmuring23>
+	<FellMurmuring24>Die Quelle all unserer Probleme...</FellMurmuring24>
+	<FellMurmuring25>{0_pronoun} wird es niemals kommen sehen...</FellMurmuring25>
+	<FellMurmuring26>Ich werde alles einplanen...</FellMurmuring26>
+	<FellMurmuring27>Ich werde an alles denken...</FellMurmuring27>
+	<FellMurmuring28>Ich werde warten bis die Zeit reif ist...</FellMurmuring28>
+	<FellMurmuring29>Ich werde diesen Ort von seinen Sünden befreien!</FellMurmuring29>
+	<FellMurmuring30>Wenn es niemand anderes machen will, dann werde ich es tun!</FellMurmuring30>
+	<FellMurmuring31>Niemand von denen sieht es... die sind alle so blind...</FellMurmuring31>
+	<FellMurmuring32>Ich kann es schaffen... ich werde es schaffen!</FellMurmuring32>
+	<FellMurmuring33>Sogar jetzt lacht {0_pronoun} über mich...</FellMurmuring33>
+	<FellMurmuring34>Geschieht {0_objective} recht...</FellMurmuring34>
+	<FellMurmuring35>{0_pronoun} wird der Tod für mich...</FellMurmuring35>
+	<FellMurmuring36>Ich sollte es schon vor langer Zeit gemacht haben...</FellMurmuring36>
+</LanguageData>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <HoldingConversation.label>Gespräch</HoldingConversation.label>
+  <HoldingConversation.stages.hidden.label>versteckt</HoldingConversation.stages.hidden.label>
+
+  <Mayor.label>Bürgermeister</Mayor.label>
+  <Mayor.stages.hidden.label>versteckt</Mayor.stages.hidden.label>
+
+  <PlannedDate.label>Verabredung</PlannedDate.label>
+  <PlannedDate.stages.hidden.label>versteckt</PlannedDate.stages.hidden.label>
+
+  <PlannedFuneral.label>geplante Beerdigung</PlannedFuneral.label>
+  <PlannedFuneral.stages.hidden.label>versteckt</PlannedFuneral.stages.hidden.label>
+
+</LanguageData>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Methadone.label>Methadon</Methadone.label>
+  <Methadone.description>Ein Opioid, um die Sucht zu behandeln. Vermeidet die negativen Effekte vom Entzug einer Droge, ausgenommen Luciferum. Die Sucht verursacht zwischendurch ein Gelage und verminderte Performance. Jeden Tag einnehmen. Erst mit der Einnahme aufhören, wenn der Entzug vollzogen wurde.</Methadone.description>
+  <Methadone.ingestible.ingestCommandString>Nimm {0}</Methadone.ingestible.ingestCommandString>
+  <Methadone.ingestible.ingestReportString>Nehme {0}.</Methadone.ingestible.ingestReportString>
+
+
+</LanguageData>

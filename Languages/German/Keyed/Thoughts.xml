@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<ComplaintLabel>beschwerte sich beim Bürgermeister</ComplaintLabel>
+	<ComplaintDesc>Dank der Beschwerde beim Bürgermeister fühle ich mich so.</ComplaintDesc>
+	
+	<VisitLabel>von einem Wähler besucht</VisitLabel>
+	<VisitDesc>Dank dem Besuch von einem Wähler fühle ich mich so.</VisitDesc>
+	
+	<AttendedFuneralThought>nahm an der Beerdigung von {0_pronoun} teil</AttendedFuneralThought>
+	<AttendedFuneralDesc>Ich kann immer noch nicht glauben, dass {0_pronoun} tot ist, aber ... nach der Beerdigung habe ich mehr Frieden damit.</AttendedFuneralDesc>
+
+</LanguageData>

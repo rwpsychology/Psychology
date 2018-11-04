@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FellPlotting.label>verrücktes intrigieren</FellPlotting.label>
+  <FellPlotting.baseInspectLine>Geisteszustand: Wahnsinniges Intrigieren</FellPlotting.baseInspectLine>
+  <FellPlotting.beginLetter>{0} zieht sich zu [PAWN_possessive] Zimmer zurück, um Pläne zu schmieden!</FellPlotting.beginLetter>
+  <FellPlotting.beginLetterLabel>Wahnsinniges Intrigieren</FellPlotting.beginLetterLabel>
+  <FellPlotting.recoveryMessage>{0}s intrigierendes Pläne Schmieden hat geendet.</FellPlotting.recoveryMessage>
+  
+  <SelfHarm.label>Selbstverletzung</SelfHarm.label>
+  <SelfHarm.baseInspectLine>Geisteszustand: Selbstverletzung</SelfHarm.baseInspectLine>
+  <SelfHarm.beginLetter>{0} ritzte in [PAWN_possessive] Handgelenk und versteckt sich in [PAWN_possessive] Zimmer.</SelfHarm.beginLetter>
+  <SelfHarm.beginLetterLabel>selbstverletzen</SelfHarm.beginLetterLabel>
+  <SelfHarm.recoveryMessage>{0} hört auf, sich selbst zu verletzen.</SelfHarm.recoveryMessage>
+
+  <Paranoia.label>plappern</Paranoia.label>
+  <Paranoia.baseInspectLine>Geisteszustand: Plappern</Paranoia.baseInspectLine>
+  <Paranoia.beginLetter>{0} fängt an, nur rumzuplappern.</Paranoia.beginLetter>
+  <Paranoia.beginLetterLabel>paranoia</Paranoia.beginLetterLabel>
+  <Paranoia.recoveryMessage>{0} hat aufgehört, jedem [PAWN_possessive] sinnloses Geschwafel anzutun.</Paranoia.recoveryMessage>
+  
+  <Abuse.label>schreiend</Abuse.label>
+  <Abuse.baseInspectLine>Geisteszustand: Beleidigend</Abuse.baseInspectLine>
+  <Abuse.beginLetter>{0} ist wütend geworden und beschimpft jeden in Sichtweite.</Abuse.beginLetter>
+  <Abuse.beginLetterLabel>verbales Beschimpfen</Abuse.beginLetterLabel>
+  <Abuse.recoveryMessage>{0} hat aufgehört, jeden zu beschimpfen.</Abuse.recoveryMessage>
+  
+  <Compulsion.label>zwanghaftes Putzen</Compulsion.label>
+  <Compulsion.baseInspectLine>Geisteszustand: Zwanghaftes Putzen</Compulsion.baseInspectLine>
+  <Compulsion.beginLetter>{0} putzt wie besessen [PAWN_possessive] Umgebung.</Compulsion.beginLetter>
+  <Compulsion.beginLetterLabel>zwang</Compulsion.beginLetterLabel>
+  <Compulsion.recoveryMessage>{0} hat aufgehört, zwanghaft [PAWN_possessive] Umgebung zu putzen.</Compulsion.recoveryMessage>
+  
+  <Antisocial.label>Vermeidet Menschen</Antisocial.label>
+  <Antisocial.baseInspectLine>Geisteszustand: Antisozial</Antisocial.baseInspectLine>
+  <Antisocial.beginLetter>{0} vermeidet [PAWN_possessive] geselligen Kolonisten.</Antisocial.beginLetter>
+  <Antisocial.beginLetterLabel>antisozial</Antisocial.beginLetterLabel>
+  <Antisocial.recoveryMessage>{0} hat aufgehört, anderen Menschen aus dem Weg zu gehen.</Antisocial.recoveryMessage>
+  
+  <Apathy.label>teilnahmslos</Apathy.label>
+  <Apathy.baseInspectLine>Geisteszustand: Apathie</Apathy.baseInspectLine>
+  <Apathy.beginLetter>{0} ist apathetisch geworden und wird wahrscheinlich [PAWN_possessive] Arbeit nicht nachgehen.</Apathy.beginLetter>
+  <Apathy.beginLetterLabel>Apathie</Apathy.beginLetterLabel>
+  <Apathy.recoveryMessage>{0} hat aufgehört apathetisch zu sein.</Apathy.recoveryMessage>
+  
+  <Histrionic.label>histrionisches Verhalten</Histrionic.label>
+  <Histrionic.baseInspectLine>Geisteszustand: Histrionisch</Histrionic.baseInspectLine>
+  <Histrionic.beginLetter>{0} verhält sich histrionisch und versucht verzweifelt, Aufmerksamkeit zu erlangen.</Histrionic.beginLetter>
+  <Histrionic.beginLetterLabel>histrionisch</Histrionic.beginLetterLabel>
+  <Histrionic.recoveryMessage>{0} hat aufgehört, sich histrionisch zu verhalten.</Histrionic.recoveryMessage>
+  
+  <HuntingTrip.label>Rückzug in die Natur</HuntingTrip.label>
+  <HuntingTrip.baseInspectLine>Geisteszustand: Rückzug in die Natur</HuntingTrip.baseInspectLine>
+  <HuntingTrip.beginLetter>{0} ist der Natur entkommen und findet bei der Jagd Erleichterung.</HuntingTrip.beginLetter>
+  <HuntingTrip.beginLetterLabel>Rückzug in die Natur</HuntingTrip.beginLetterLabel>
+  <HuntingTrip.recoveryMessage>{0} hat sich entschieden, von der Jagdreise zurückzukehren.</HuntingTrip.recoveryMessage>
+  
+
+
+</LanguageData>

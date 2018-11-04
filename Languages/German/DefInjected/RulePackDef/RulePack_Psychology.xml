@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+    <Sentence_SocialFightConvoInitiatorStarted.rulePack.rulesStrings.0>sent->Ihre Differenzen eskalierten, bis [INITIATOR_nameDef] einen Kampf begann!</Sentence_SocialFightConvoInitiatorStarted.rulePack.rulesStrings.0>
+    <Sentence_SocialFightConvoRecipientStarted.rulePack.rulesStrings.0>sent->Ihre Differenzen eskalierten, bis [RECIPIENT_nameDef] einen Kampf begann!</Sentence_SocialFightConvoRecipientStarted.rulePack.rulesStrings.0>
+
+</LanguageData>

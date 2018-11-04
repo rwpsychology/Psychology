@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <MethadoneHigh.label>Methadon</MethadoneHigh.label>
+
+
+  <!-- Methadone addiction -->
+  <MethadoneTolerance.label>Methadon-Toleranz</MethadoneTolerance.label>
+  <MethadoneTolerance.stages.small-0.label>kaum</MethadoneTolerance.stages.small-0.label>
+  <MethadoneTolerance.stages.small-1.label>gering</MethadoneTolerance.stages.small-1.label>
+  <MethadoneTolerance.stages.large.label>erhöht</MethadoneTolerance.stages.large.label>
+  <MethadoneTolerance.stages.massive.label>stark</MethadoneTolerance.stages.massive.label>
+
+  <MethadoneAddiction.label>Methadon-Sucht</MethadoneAddiction.label>
+  <MethadoneAddiction.stages.withdrawal.label>Entzug</MethadoneAddiction.stages.withdrawal.label>
+
+
+</LanguageData>

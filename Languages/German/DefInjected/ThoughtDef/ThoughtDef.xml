@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+    <Chitchat.stages.Smalltalk.label>Smalltalk</Chitchat.stages.Smalltalk.label>
+    <MoodOffsetDepressive.stages.depressive-1.label>Depressiv</MoodOffsetDepressive.stages.depressive-1.label>
+    <MoodOffsetDepressive.stages.depressive-1.description>Natürliche Strafe durch Merkmal 'Depressiv'.</MoodOffsetDepressive.stages.depressive-1.description>
+    <MethadoneWithdrawal.stages.methadone_withdrawal.label>Methadone Entzug</MethadoneWithdrawal.stages.methadone_withdrawal.label>
+    <MethadoneWithdrawal.stages.methadone_withdrawal.description>Ich fühle mich benommen und krank.</MethadoneWithdrawal.stages.methadone_withdrawal.description>
+    <AttendedFuneral.stages.attended_a_funeral.label>besuchte eine Beerdigung</AttendedFuneral.stages.attended_a_funeral.label>
+    <AttendedFuneral.stages.attended_a_funeral.description>Ich nahm an der Beerdigung eines Kolonisten teil. Ich fühle mich etwas besser dadurch.</AttendedFuneral.stages.attended_a_funeral.description>
+    <WitnessedDeathAllyBleedingHeart.stages.witnessed_allys_death.label>Sah Verbündeten sterben</WitnessedDeathAllyBleedingHeart.stages.witnessed_allys_death.label>
+    <WitnessedDeathAllyBleedingHeart.stages.witnessed_allys_death.description>Ich habe einen Verbündeten sterben sehen. Im einen Moment war er noch am Leben und im nächsten tot.</WitnessedDeathAllyBleedingHeart.stages.witnessed_allys_death.description>
+    <WitnessedDeathNonAllyBleedingHeart.stages.witnessed_outsiders_death.label>Sah Outsider sterben</WitnessedDeathNonAllyBleedingHeart.stages.witnessed_outsiders_death.label>
+    <WitnessedDeathNonAllyBleedingHeart.stages.witnessed_outsiders_death.description>Ich habe einen Outsider sterben sehen. Im einen Moment war er noch am Leben und im nächsten tot.</WitnessedDeathNonAllyBleedingHeart.stages.witnessed_outsiders_death.description>
+    <KnowGuestExecutedBleedingHeart.stages.justified_execution.label>Gerechtfertigte Exekution</KnowGuestExecutedBleedingHeart.stages.justified_execution.label>
+    <KnowGuestExecutedBleedingHeart.stages.justified_execution.description>Ein schuldiger Gefangener oder Gast wurde exekutiert. Es war gerechtfertigt, aber ich kann den Verlust des Lebens immer noch nicht ertragen.</KnowGuestExecutedBleedingHeart.stages.justified_execution.description>
+    <KnowGuestExecutedBleedingHeart.stages.someone_was_euthanized.label>Jemand wurde eingeschläfert</KnowGuestExecutedBleedingHeart.stages.someone_was_euthanized.label>
+    <KnowGuestExecutedBleedingHeart.stages.someone_was_euthanized.description>Ein Gefangener oder ein Gast wurde eingeschläfert. Es war menschlich, aber immer noch herzzerreißend.</KnowGuestExecutedBleedingHeart.stages.someone_was_euthanized.description>
+    <KnowGuestExecutedBleedingHeart.stages.someone_was_executed.label>Jemand wurde exekutiert</KnowGuestExecutedBleedingHeart.stages.someone_was_executed.label>
+    <KnowGuestExecutedBleedingHeart.stages.someone_was_executed.description>Ein Gefangener oder ein Gast wurde kaltblütig umgebracht. Diese Kolonie scheint jeden Tag schlimmer zu werden.</KnowGuestExecutedBleedingHeart.stages.someone_was_executed.description>
+    <KnowGuestExecutedBleedingHeart.stages.someone_killed_by_organ_harvest.label>Jemand wurde durch Organernte getötet</KnowGuestExecutedBleedingHeart.stages.someone_killed_by_organ_harvest.label>
+    <KnowGuestExecutedBleedingHeart.stages.someone_killed_by_organ_harvest.description>Ein Gefangener oder Gast starb, weil die Kolonie Körperteile von ihm genommen hatte. Ich bin wahnsinnig!</KnowGuestExecutedBleedingHeart.stages.someone_killed_by_organ_harvest.description>
+    <KnowColonistExecutedBleedingHeart.stages.justified_execution_of_colonist.label>Gerechtfertigte Exekution eines Kolonisten</KnowColonistExecutedBleedingHeart.stages.justified_execution_of_colonist.label>
+    <KnowColonistExecutedBleedingHeart.stages.justified_execution_of_colonist.description>Ein schuldiger Kolonist wurde exekutiert. Es war gerechtfertigt, aber ich kann den Verlust des Lebens immer noch nicht ertragen.</KnowColonistExecutedBleedingHeart.stages.justified_execution_of_colonist.description>
+    <KnowColonistExecutedBleedingHeart.stages.colonist_euthanized.label>Kolonist wurde eingeschläfert</KnowColonistExecutedBleedingHeart.stages.colonist_euthanized.label>
+    <KnowColonistExecutedBleedingHeart.stages.colonist_euthanized.description>Ein Kolonist wurde eingeschläfert. Es war menschlich, aber immer noch herzzerreißend.</KnowColonistExecutedBleedingHeart.stages.colonist_euthanized.description>
+    <KnowColonistExecutedBleedingHeart.stages.colonist_executed.label>Kolonist wurde exekutiert</KnowColonistExecutedBleedingHeart.stages.colonist_executed.label>
+    <KnowColonistExecutedBleedingHeart.stages.colonist_executed.description>Ein Kolonist wurde kaltblütig umgebracht. Diese Kolonie scheint jeden Tag schlimmer zu werden.</KnowColonistExecutedBleedingHeart.stages.colonist_executed.description>
+    <KnowColonistExecutedBleedingHeart.stages.colonist_killed_by_organ_harvest.label>Kolonist wurde durch Organernte getötet</KnowColonistExecutedBleedingHeart.stages.colonist_killed_by_organ_harvest.label>
+    <KnowColonistExecutedBleedingHeart.stages.colonist_killed_by_organ_harvest.description>Ein Kolonist starb, weil die Kolonie Körperteile von ihm genommen hatte. Ich bin wahnsinnig!</KnowColonistExecutedBleedingHeart.stages.colonist_killed_by_organ_harvest.description>
+    <KnowPrisonerDiedInnocentBleedingHeart.stages.innocent_prisoner_died.label>Unschuldiger Gefangener gestorben</KnowPrisonerDiedInnocentBleedingHeart.stages.innocent_prisoner_died.label>
+    <KnowPrisonerDiedInnocentBleedingHeart.stages.innocent_prisoner_died.description>Einer unserer Gefangenen ist gestorben, obwohl er isoliert war. Wir sollten in der Lage sein besser mit unseren Gefangenen umzugehen. Wenn wir sie tot sehen wollten, sollten wir ihnen wenigstens eine ordentliche Hinrichtung gewähren, statt dieser Barberei.</KnowPrisonerDiedInnocentBleedingHeart.stages.innocent_prisoner_died.description>
+    <KnowColonistDiedBleedingHeart.stages.colonist_died.label>Kolonist gestorben</KnowColonistDiedBleedingHeart.stages.colonist_died.label>
+    <KnowColonistDiedBleedingHeart.stages.colonist_died.description>Einer unserer Leute ist gestorben. Wir sollten in der Lage sein besser auf unsere Leute aufzupassen!</KnowColonistDiedBleedingHeart.stages.colonist_died.description>
+    <AteLavishMealPickyEater.stages.ate_lavish_meal.label>Hat eine üppige Mahlzeit gegessen</AteLavishMealPickyEater.stages.ate_lavish_meal.label>
+    <AteLavishMealPickyEater.stages.ate_lavish_meal.description>Diese Mahlzeit war sehr üppig und so lecker. Sie nährt meinen Körper und meine Seele.</AteLavishMealPickyEater.stages.ate_lavish_meal.description>
+    <AteFineMealPickyEater.stages.ate_fine_meal.label>Hat eine leckere Mahlzeit gegessen</AteFineMealPickyEater.stages.ate_fine_meal.label>
+    <AteFineMealPickyEater.stages.ate_fine_meal.description>Ich habe eine leckere Mahlzeit gegessen. Mmm, Yummy!</AteFineMealPickyEater.stages.ate_fine_meal.description>
+    <AteAwfulMealPickyEater.stages.ate_awful_meal.label>Hat eklige Nahrung gegessen</AteAwfulMealPickyEater.stages.ate_awful_meal.label>
+    <AteAwfulMealPickyEater.stages.ate_awful_meal.description>Ich musste eine eklige, geschmacklose Mahlzeit essen. Ich weiß es hält mich am Leben, aber niemand will diese Pampe wirklich essen.</AteAwfulMealPickyEater.stages.ate_awful_meal.description>
+    <AteRawFoodPickyEater.stages.ate_raw_food.label>Hat rohe Nahrung gegessen</AteRawFoodPickyEater.stages.ate_raw_food.label>
+    <AteRawFoodPickyEater.stages.ate_raw_food.description>Ich musste rohe Nahrung essen. Wir sollten so etwas erst einmal kochen bevor wir es essen. Wir sind doch keine Tiere.</AteRawFoodPickyEater.stages.ate_raw_food.description>
+    <AteNormalMealPickyEater.stages.ate_plain_meal.label>Hat eine Mahlzeit gegessen</AteNormalMealPickyEater.stages.ate_plain_meal.label>
+    <AteNormalMealPickyEater.stages.ate_plain_meal.description>Diese Mahlzeit entsprach nicht meinen Standards. Ich habe es nur gegessen, weil es nichts Besseres gab.</AteNormalMealPickyEater.stages.ate_plain_meal.description>
+    <AteInsectMeatAsIngredientPickyEater.stages.ate_cooked_insect_meat.label>Insektenfleisch gegessen (gekocht)</AteInsectMeatAsIngredientPickyEater.stages.ate_cooked_insect_meat.label>
+    <AteInsectMeatAsIngredientPickyEater.stages.ate_cooked_insect_meat.description>Ich habe ein Gericht aus Insektenfleisch gegessen. Die Soße hat teilweise den Geschmack überdeckt, aber da waren Drüsen und Bläschen voller Flüssigkeiten, die ich nicht identifizieren konnte.</AteInsectMeatAsIngredientPickyEater.stages.ate_cooked_insect_meat.description>
+    <AteInsectMeatDirectPickyEater.stages.ate_insect_meat.label>Insektenfleisch gegessen (roh)</AteInsectMeatDirectPickyEater.stages.ate_insect_meat.label>
+    <AteInsectMeatDirectPickyEater.stages.ate_insect_meat.description>Ich habe Insektenfleisch gegessen. Es war mit Abstand das Ekligste, das ich je gegessen habe.</AteInsectMeatDirectPickyEater.stages.ate_insect_meat.description>
+    <AteRottenFoodPickyEater.stages.ate_rotten_food.label>Schimmliges Essen gegessen</AteRottenFoodPickyEater.stages.ate_rotten_food.label>
+    <AteRottenFoodPickyEater.stages.ate_rotten_food.description>Ich habe ekliges, schimmliges Essen gegessen. Es zerlief richtig in meinem Mund. Aber nicht auf einer angenehmen Art und Weise!</AteRottenFoodPickyEater.stages.ate_rotten_food.description>
+    <Dynamic.stages.dynamic.label>dynamisch</Dynamic.stages.dynamic.label>
+    <MayorNoOffice.stages.no_mayoral_office.label>kein Bürgermeisterbüro</MayorNoOffice.stages.no_mayoral_office.label>
+    <MayorNoOffice.stages.no_mayoral_office.description>Ich musste ein Treffen mit einem Bürger in meinem Schlafzimmer vereinbaren. Ein Büro wäre etwas professioneller.</MayorNoOffice.stages.no_mayoral_office.description>
+    <MayorNoBedroom.stages.no_mayoral_office.label>kein Bürgermeisterbüro</MayorNoBedroom.stages.no_mayoral_office.label>
+    <MayorNoBedroom.stages.no_mayoral_office.description>Ich musste ein Treffen mit einem Kolonisten an einem öffentlichem Treffpunkt vereinbaren. Gib mir wenigstens ein Schlafzimmer, damit ich diese Meetings privat durchführen kann.</MayorNoBedroom.stages.no_mayoral_office.description>
+    <WonElection.stages.won_an_election.label>eine Wahl gewonnen</WonElection.stages.won_an_election.label>
+    <WonElection.stages.won_an_election.description>Ich habs geschafft! Ich bin jetzt Bürgermeister! Ich bin allen, die für mich gestimmt haben, sehr dankbar.</WonElection.stages.won_an_election.description>
+    <KilledHumanlikeEnemy.stages.adrenaline_rush.label>Adrenalinrausch</KilledHumanlikeEnemy.stages.adrenaline_rush.label>
+    <KilledHumanlikeEnemy.stages.adrenaline_rush.description>Ich habe jemanden getötet, der unsere Kolonie angriff. Meine Hände zittern immer noch ... Ich kann nicht glauben, dass ich überlebt habe.</KilledHumanlikeEnemy.stages.adrenaline_rush.description>
+    <KnowPrisonerSoldBleedingHeart.stages.a_prisoner_was_sold.label>Gefangener wurde verkauft</KnowPrisonerSoldBleedingHeart.stages.a_prisoner_was_sold.label>
+    <KnowPrisonerSoldBleedingHeart.stages.a_prisoner_was_sold.description>Diese Kolonie verkaufte einen Gefangenen in die Sklaverei. Ich kann nicht glauben, dass wir an dieser Barbarei teilnehmen.</KnowPrisonerSoldBleedingHeart.stages.a_prisoner_was_sold.description>
+    <KnowGuestOrganHarvestedBleedingHeart.stages.someones_organ_harvested.label>Jemandem Organe entnommen</KnowGuestOrganHarvestedBleedingHeart.stages.someones_organ_harvested.label>
+    <KnowGuestOrganHarvestedBleedingHeart.stages.someones_organ_harvested.description>Sie haben einem Gast oder einem Gefangenen einfach Organe entnommen. Es ist fürchterlich. Sie zerlegen einen in Einzelteile und derjenige hat gar keine Wahl.</KnowGuestOrganHarvestedBleedingHeart.stages.someones_organ_harvested.description>
+    <KnowColonistOrganHarvestedBleedingHeart.stages.colonists_organ_harvested.label>Kolonist Organe entnommen</KnowColonistOrganHarvestedBleedingHeart.stages.colonists_organ_harvested.label>
+    <KnowColonistOrganHarvestedBleedingHeart.stages.colonists_organ_harvested.description>Sie haben einem Kolonisten einfach Organe entnommen. Es ist fürchterlich. Sie zerlegen unsere eigenen Leute in Einzelteile und derjenige hat gar keine Wahl.</KnowColonistOrganHarvestedBleedingHeart.stages.colonists_organ_harvested.description>
+    <ReplacedPartBleedingHeart.stages.installed_an_organ_or_body_part.label>Organ oder Körperteil installiert</ReplacedPartBleedingHeart.stages.installed_an_organ_or_body_part.label>
+    <ReplacedPartBleedingHeart.stages.installed_an_organ_or_body_part.description>Ich habe jemandem ein neues Organ oder Körperteil gegeben. Ich habe wahrscheinlich ihre Lebensqualität verbessert! Ich bin so glücklich.</ReplacedPartBleedingHeart.stages.installed_an_organ_or_body_part.description>
+    <DoctorBleedingHeart.stages.helped_a_patient.label>half einem Patienten</DoctorBleedingHeart.stages.helped_a_patient.label>
+    <DoctorBleedingHeart.stages.helped_a_patient.description>Ich liebe Medizin. Es gibt so viele Möglichkeiten, Menschen zu helfen.</DoctorBleedingHeart.stages.helped_a_patient.description>
+    <RescuedBleedingHeart.stages.saved_someone.label>jemanden gerettet</RescuedBleedingHeart.stages.saved_someone.label>
+    <RescuedBleedingHeart.stages.saved_someone.description>Ich habe jemanden vor dem Tod gerettet. Kein Grund, mir zu danken, gute Taten sind ihre eigene Belohnung.</RescuedBleedingHeart.stages.saved_someone.description>
+    <CookedMealBleedingHeart.stages.cooked_a_meal.label>eine Mahlzeit gekocht</CookedMealBleedingHeart.stages.cooked_a_meal.label>
+    <CookedMealBleedingHeart.stages.cooked_a_meal.description>Ich liebe es zu kochen, ich fühle mich wie ich Menschen helfe. Ich halte diese Kolonie am Leben!</CookedMealBleedingHeart.stages.cooked_a_meal.description>
+    <FilledGraveBleedingHeart.stages.buried_someone.label>jemand begraben</FilledGraveBleedingHeart.stages.buried_someone.label>
+    <FilledGraveBleedingHeart.stages.buried_someone.description>Ich hoffe, dass sie Frieden finden.</FilledGraveBleedingHeart.stages.buried_someone.description>
+    <KilledPatientBleedingHeart.stages.killed_a_patient.label>einen Patienten getötet</KilledPatientBleedingHeart.stages.killed_a_patient.label>
+    <KilledPatientBleedingHeart.stages.killed_a_patient.description>Ich habe einen meiner Patienten in der Operation getötet. Es ist alles meine Schuld ... sie sollten noch am Leben sein.</KilledPatientBleedingHeart.stages.killed_a_patient.description>
+    <RecentlyDesensitized.stages.desensitized_to_violence.label>Gewaltdesensibilisierung</RecentlyDesensitized.stages.desensitized_to_violence.label>
+    <RecentlyDesensitized.stages.desensitized_to_violence.description>Ich habe den Tod gesehen und nichts gefühlt. Wie deprimierend ...</RecentlyDesensitized.stages.desensitized_to_violence.description>
+    <DreamGood.stages.had_a_good_dream.label>hatte einen guten Traum</DreamGood.stages.had_a_good_dream.label>
+    <DreamGood.stages.had_a_good_dream.description>Das war ein schöner Traum. Es gab mir Hoffnung.</DreamGood.stages.had_a_good_dream.description>
+    <DreamBad.stages.had_a_bad_dream.label>hatte einen schlechten Traum</DreamBad.stages.had_a_bad_dream.label>
+    <DreamBad.stages.had_a_bad_dream.description>Das war ein unangenehmer Traum. Es stört mich immer noch.</DreamBad.stages.had_a_bad_dream.description>
+    <DreamNightmare.stages.had_a_nightmare.label>hatte einen Albtraum</DreamNightmare.stages.had_a_nightmare.label>
+    <DreamNightmare.stages.had_a_nightmare.description>Gah! Was für ein schrecklicher Traum. Ich bin deprimiert, wenn ich nur daran denke.</DreamNightmare.stages.had_a_nightmare.description>
+    <TreatmentFailed.stages.treatment_failed.label>{0} Behandlung fehlgeschlagen</TreatmentFailed.stages.treatment_failed.label>
+    <TreatmentFailed.stages.treatment_failed.description>Der Arzt konnte meine psychische Krankheit nicht behandeln. Es fühlte sich einfach so an, als hätte er mich nicht verstanden.</TreatmentFailed.stages.treatment_failed.description>
+    <SuccessfulPlot.stages.fell_plot_succeeded.label>Verschwörungskomplott erfolgreich</SuccessfulPlot.stages.fell_plot_succeeded.label>
+    <SuccessfulPlot.stages.fell_plot_succeeded.description>Ich habe die Pest an diesem Ort zerstört. Wir sind jetzt in Sicherheit.</SuccessfulPlot.stages.fell_plot_succeeded.description>
+    <HeardParanoia.stages.exposed_to_paranoid_rambling.label>paranoidem fasseln ausgesetzt</HeardParanoia.stages.exposed_to_paranoid_rambling.label>
+    <HeardParanoia.stages.exposed_to_paranoid_rambling.description>Die Dinge, die ich gehört habe... können nicht wahr sein. Können Sie?</HeardParanoia.stages.exposed_to_paranoid_rambling.description>
+    <ColonistAbandonedBleedingHeart.stages.colonist_abandoned.label>Kolonist aufgegeben</ColonistAbandonedBleedingHeart.stages.colonist_abandoned.label>
+    <ColonistAbandonedBleedingHeart.stages.colonist_abandoned.description>Wir haben gerade jemanden zurückgelassen. Ich kann nicht aufhören darüber nachzudenken, was mit ihnen passieren könnte.</ColonistAbandonedBleedingHeart.stages.colonist_abandoned.description>
+    <ColonistAbandonedToDieBleedingHeart.stages.colonist_abandoned_to_die.label>Kolonist zum Sterben aufgegeben</ColonistAbandonedToDieBleedingHeart.stages.colonist_abandoned_to_die.label>
+    <ColonistAbandonedToDieBleedingHeart.stages.colonist_abandoned_to_die.description>Wir haben jemanden so zurückgelassen, dass er kaum überleben kann. Wie können wir?</ColonistAbandonedToDieBleedingHeart.stages.colonist_abandoned_to_die.description>
+    <PrisonerAbandonedToDieBleedingHeart.stages.prisoner_abandoned_to_die.label>Gefangener zum Sterben aufgegeben</PrisonerAbandonedToDieBleedingHeart.stages.prisoner_abandoned_to_die.label>
+    <PrisonerAbandonedToDieBleedingHeart.stages.prisoner_abandoned_to_die.description>Wir haben einen Häftling so zurückgelassen, dass er kaum überleben kann. Wir haben die Verantwortung, die inhaftierten Menschen zu schützen.</PrisonerAbandonedToDieBleedingHeart.stages.prisoner_abandoned_to_die.description>
+    <DateCancelled.stages.had_to_cancel_a_date.label>musste eine Verabredung absagen</DateCancelled.stages.had_to_cancel_a_date.label>
+    <DateCancelled.stages.had_to_cancel_a_date.description>Ich sollte mich mit meinem Partner verabreden, aber es kam etwas unerwartetes in der Kolonie und wir mussten absagen. Ich habe mich darauf gefreut...</DateCancelled.stages.had_to_cancel_a_date.description>
+    <WonFight.stages.won_a_social_fight.label>gewann einen sozialen Kampf</WonFight.stages.won_a_social_fight.label>
+    <WonFight.stages.won_a_social_fight.description>Das wird sie lehren, sich nicht mit mir anzulegen.</WonFight.stages.won_a_social_fight.description>
+    <PrudeSeen.stages.witnessed_the_human_form.label>Zeuge der menschlichen Form</PrudeSeen.stages.witnessed_the_human_form.label>
+    <PrudeSeen.stages.witnessed_the_human_form.description>War diese Person nackt? Lassen sie die Leute hier einfach ohne Kleidung herumlaufen? Widerlich.</PrudeSeen.stages.witnessed_the_human_form.description>
+    <DynamicSocial.stages.conversation.label>Gespräch</DynamicSocial.stages.conversation.label>
+    <BrokeUpWithMeCodependent.stages.codependent.label>abhängig</BrokeUpWithMeCodependent.stages.codependent.label>
+    <BrokeUpWithMeCodependentMood.stages.codependent_on.label>abhängig von {0}</BrokeUpWithMeCodependentMood.stages.codependent_on.label>
+    <BrokeUpWithMeCodependentMood.stages.codependent_on.description>Ich vermisse dich... bitte komm zurück.</BrokeUpWithMeCodependentMood.stages.codependent_on.description>
+    <CheatedOnMeCodependent.stages.cheated_on_me.label>hat mich betrogen</CheatedOnMeCodependent.stages.cheated_on_me.label>
+    <CheatedOnMeCodependentMood.stages.cheated_on_by.label>betrogen von {0}</CheatedOnMeCodependentMood.stages.cheated_on_by.label>
+    <CheatedOnMeCodependentMood.stages.cheated_on_by.description>Ich verstehe es nicht... ich muss etwas falsch gemacht haben.</CheatedOnMeCodependentMood.stages.cheated_on_by.description>
+    <RebuffedMyRomanceAttemptLecher.stages.rebuffed_me.label>wies mich ab</RebuffedMyRomanceAttemptLecher.stages.rebuffed_me.label>
+    <CapturedMe.stages.faction_imprisoned_me.label>Fraktion hat mich eingesperrt</CapturedMe.stages.faction_imprisoned_me.label>
+    <WentOnDate.stages.went_on_a_date.label>ging auf ein Date</WentOnDate.stages.went_on_a_date.label>
+    <HungOut.stages.hung_out_together.label>zusammen abgehangen</HungOut.stages.hung_out_together.label>
+    <MissedDate.stages.missed_our_date.label>verpasste unsere Verabredung</MissedDate.stages.missed_our_date.label>
+    <ApparelDamagedPrude.stages.wearing_wornout_apparel.label>trage abgenutzte Kleidung</ApparelDamagedPrude.stages.wearing_wornout_apparel.label>
+    <ApparelDamagedPrude.stages.wearing_wornout_apparel.description>Mein Outfit sieht ziemlich schlecht aus. Es wird enthüllend...</ApparelDamagedPrude.stages.wearing_wornout_apparel.description>
+    <ApparelDamagedPrude.stages.wearing_tattered_apparel.label>trage zerfetzt Kleidung</ApparelDamagedPrude.stages.wearing_tattered_apparel.label>
+    <ApparelDamagedPrude.stages.wearing_tattered_apparel.description>Ich trage ein zerfetztes Stück Müll. Jeder kann hindurchschauen!</ApparelDamagedPrude.stages.wearing_tattered_apparel.description>
+    <Individuality.stages.matching_apparel-0.label>ähnliches Outfit</Individuality.stages.matching_apparel-0.label>
+    <Individuality.stages.matching_apparel-0.description>Jemand anderes in der Kolonie ist von Kopf bis Fuß in einem ähnlichem Outfit wie ich gekleidet. Es ist irgendwie beunruhigend.</Individuality.stages.matching_apparel-0.description>
+    <Individuality.stages.matching_apparel-1.label>gleiches Outfit</Individuality.stages.matching_apparel-1.label>
+    <Individuality.stages.matching_apparel-1.description>Andere Leute in der Kolonie tragen das identische Outfits wie ich, von Kopf bis Fuß. Es ist verkehrt.</Individuality.stages.matching_apparel-1.description>
+    <Individuality.stages.stifled_individuality-0.label>erstickte Individualität</Individuality.stages.stifled_individuality-0.label>
+    <Individuality.stages.stifled_individuality-0.description>Der größte Teil der Kolonie sieht von Kopf bis Fuß genauso aus. Es ist unheimlich und ich möchte meine Individualität ausdrücken.</Individuality.stages.stifled_individuality-0.description>
+    <Individuality.stages.stifled_individuality-1.label>erstickte Individualität</Individuality.stages.stifled_individuality-1.label>
+    <Individuality.stages.stifled_individuality-1.description>Jeder hier sieht genauso aus, von Kopf bis Fuß! Es ist zutiefst beunruhigend und ich möchte meine Individualität zum Ausdruck bringen.</Individuality.stages.stifled_individuality-1.description>
+    <SurvivedTogether.stages.survived_together_for_a_year.label>ein Jahr lang zusammen überlebt</SurvivedTogether.stages.survived_together_for_a_year.label>
+    <SurvivedTogether.stages.survived_together_for_two_years.label>zwei Jahre lang zusammen überlebt</SurvivedTogether.stages.survived_together_for_two_years.label>
+    <SurvivedTogether.stages.survived_together_for_three_years.label>drei Jahre lang zusammen überlebt</SurvivedTogether.stages.survived_together_for_three_years.label>
+    <SurvivedTogether.stages.survived_together_for_four_years.label>vier Jahre lang zusammen überlebt</SurvivedTogether.stages.survived_together_for_four_years.label>
+    <SurvivedTogether.stages.survived_together_for_five_years.label>fünf Jahre lang zusammen überlebt</SurvivedTogether.stages.survived_together_for_five_years.label>
+    <SurvivedTogether.stages.survived_together_for_more_than_five_years.label>überlebten zusammen mehr als fünf Jahre</SurvivedTogether.stages.survived_together_for_more_than_five_years.label>
+    <LongDistance.stages.longdistance_relationship-0.label>Fernbeziehung</LongDistance.stages.longdistance_relationship-0.label>
+    <LongDistance.stages.longdistance_relationship-1.label>Fernbeziehung</LongDistance.stages.longdistance_relationship-1.label>
+    <LongDistance.stages.longdistance_relationship-2.label>Fernbeziehung</LongDistance.stages.longdistance_relationship-2.label>
+    <LongDistance.stages.longdistance_relationship-3.label>Fernbeziehung</LongDistance.stages.longdistance_relationship-3.label>
+    <LongDistance.stages.longdistance_relationship-4.label>Fernbeziehung</LongDistance.stages.longdistance_relationship-4.label>
+    <LongDistance.stages.longdistance_relationship-5.label>Fernbeziehung</LongDistance.stages.longdistance_relationship-5.label>
+    <LongDistance.stages.longdistance_relationship-6.label>Fernbeziehung</LongDistance.stages.longdistance_relationship-6.label>
+    <ColonistLeftUnburiedBleedingHeart.stages.colonist_left_unburied.label>Kolonist blieb unbestattet</ColonistLeftUnburiedBleedingHeart.stages.colonist_left_unburied.label>
+    <ColonistLeftUnburiedBleedingHeart.stages.colonist_left_unburied.description>Einer von uns ist gestorben und wir lassen sie nur im Freien liegen. Ich kann nicht aufhören darüber nachzudenken. Wie können wir ihnen erlauben, da draußen zu verrotten?</ColonistLeftUnburiedBleedingHeart.stages.colonist_left_unburied.description>
+    <NakedPrude.stages.naked.label>Nackt</NakedPrude.stages.naked.label>
+    <NakedPrude.stages.naked.description>Ich bin nackt. Jeder starrt mich an! BITTE GEBT MIR KLEIDUNG!</NakedPrude.stages.naked.description>
+    <PanicAttack.stages.having_a_panic_attack.label>eine Panikattacke</PanicAttack.stages.having_a_panic_attack.label>
+    <PanicAttack.stages.having_a_panic_attack.description>Geh weg von mir! Ich muss atmen!</PanicAttack.stages.having_a_panic_attack.description>
+    <FeelingRandomBipolar.stages.Feeling_manic.label>Manisch fühlen</FeelingRandomBipolar.stages.Feeling_manic.label>
+    <FeelingRandomBipolar.stages.Feeling_manic.description>Ohne ersichtlichen Grund fühle ich mich jetzt einfach fantastisch!</FeelingRandomBipolar.stages.Feeling_manic.description>
+    <FeelingRandomBipolar.stages.Feeling_great.label>Sich großartig fühlen</FeelingRandomBipolar.stages.Feeling_great.label>
+    <FeelingRandomBipolar.stages.Feeling_great.description>Ohne ersichtlichen Grund fühle ich mich gerade großartig.</FeelingRandomBipolar.stages.Feeling_great.description>
+    <FeelingRandomBipolar.stages.Feeling_good.label>Sich gut fühlen</FeelingRandomBipolar.stages.Feeling_good.label>
+    <FeelingRandomBipolar.stages.Feeling_good.description>Ohne ersichtlichen Grund fühle ich mich gerade gut.</FeelingRandomBipolar.stages.Feeling_good.description>
+    <FeelingRandomBipolar.stages.Feeling_bad.label>Sich schlecht fühlen</FeelingRandomBipolar.stages.Feeling_bad.label>
+    <FeelingRandomBipolar.stages.Feeling_bad.description>Ohne ersichtlichen Grund fühle ich mich gerade schlecht.</FeelingRandomBipolar.stages.Feeling_bad.description>
+    <FeelingRandomBipolar.stages.Feeling_terrible.label>Sich schrecklich fühlen</FeelingRandomBipolar.stages.Feeling_terrible.label>
+    <FeelingRandomBipolar.stages.Feeling_terrible.description>Ohne ersichtlichen Grund fühle ich mich gerade schrecklich.</FeelingRandomBipolar.stages.Feeling_terrible.description>
+    <FeelingRandomBipolar.stages.Feeling_depressive.label>Sich depressiv fühlen</FeelingRandomBipolar.stages.Feeling_depressive.label>
+    <FeelingRandomBipolar.stages.Feeling_depressive.description>Ohne ersichtlichen Grund fühle ich mich gerade jetzt total unglücklich...</FeelingRandomBipolar.stages.Feeling_depressive.description>
+    <Codependency.stages.feeling_alone.label>Sich alleine fühlen</Codependency.stages.feeling_alone.label>
+    <Codependency.stages.feeling_alone.description>Ich bin so einsam ... ich brauche einen Partner.</Codependency.stages.feeling_alone.description>
+    <Codependency.stages.in_a_codependent_relationship.label>in einer gleichgeschlechtlichen Beziehung</Codependency.stages.in_a_codependent_relationship.label>
+    <Codependency.stages.in_a_codependent_relationship.description>Ich liebe meinen Partner. Ich könnte nicht ohne sie leben.</Codependency.stages.in_a_codependent_relationship.description>
+    <Codependency.stages.in_a_codependent_marriage.label>in einer gleichgeschlechtlichen Ehe</Codependency.stages.in_a_codependent_marriage.label>
+    <Codependency.stages.in_a_codependent_marriage.description>Ich liebe meinen Gatten. Ich würde ohne sterben.</Codependency.stages.in_a_codependent_marriage.description>
+    <Codependency.stages.desolate.label>Liebeskummer</Codependency.stages.desolate.label>
+    <Codependency.stages.desolate.description>Mein Partner ist gegangen ... was mache ich jetzt?</Codependency.stages.desolate.description>
+    <Outdoorsy.stages.in_the_open-0.label>im Freien</Outdoorsy.stages.in_the_open-0.label>
+    <Outdoorsy.stages.in_the_open-0.description>Ich mag es, den Himmel über mir zu fühlen.</Outdoorsy.stages.in_the_open-0.description>
+    <Outdoorsy.stages.in_the_open-1.label>im Freien</Outdoorsy.stages.in_the_open-1.label>
+    <Outdoorsy.stages.in_the_open-1.description>Ahhh, die freie Natur!</Outdoorsy.stages.in_the_open-1.description>
+    <Pluviophile.stages.raining_outside.label>es regnet draußen</Pluviophile.stages.raining_outside.label>
+    <Pluviophile.stages.raining_outside.description>Ich mag das Geräusch des Regens, der über mir niederprasselt.</Pluviophile.stages.raining_outside.description>
+    <Pluviophile.stages.in_the_rain.label>im Regen</Pluviophile.stages.in_the_rain.label>
+    <Pluviophile.stages.in_the_rain.description>Der Regen ist so entspannend. Ich habe nichts dagegen nass zu werden.</Pluviophile.stages.in_the_rain.description>
+    <PolygamousRelationship.stages.in_a_monogamous_relationship.label>in einer monogamen Beziehung</PolygamousRelationship.stages.in_a_monogamous_relationship.label>
+    <PolygamousRelationship.stages.in_a_monogamous_relationship.description>Ich wünschte, meine Liebe musste nicht auf eine Person beschränkt sein.</PolygamousRelationship.stages.in_a_monogamous_relationship.description>
+    <EnvironmentDarkLightSensitive.stages.in_darkness.label>in Dunkelheit</EnvironmentDarkLightSensitive.stages.in_darkness.label>
+    <EnvironmentDarkLightSensitive.stages.in_darkness.description>Ah... der Trost der Dunkelheit.</EnvironmentDarkLightSensitive.stages.in_darkness.description>
+    <EnvironmentDarkLightSensitive.stages.in_the_light.label>im Licht</EnvironmentDarkLightSensitive.stages.in_the_light.label>
+    <EnvironmentDarkLightSensitive.stages.in_the_light.description>Autsch ... das brennt ein bisschen.</EnvironmentDarkLightSensitive.stages.in_the_light.description>
+    <EnvironmentDarkLightSensitive.stages.in_bright_light.label>im hellem Licht</EnvironmentDarkLightSensitive.stages.in_bright_light.label>
+    <EnvironmentDarkLightSensitive.stages.in_bright_light.description>Meine Augen! Es tut so weh!</EnvironmentDarkLightSensitive.stages.in_bright_light.description>
+    <Sedentary.stages.settled_in.label>eingelebt</Sedentary.stages.settled_in.label>
+    <Sedentary.stages.settled_in.description>Es ist schön, nicht so viel herumlaufen zu müssen.</Sedentary.stages.settled_in.description>
+    <Sedentary.stages.comfortably_settled_in.label>bequem angesiedelt</Sedentary.stages.comfortably_settled_in.label>
+    <Sedentary.stages.comfortably_settled_in.description>Ein schöner, komfortabler Ort, um sich eine Weile auszuruhen. Genau wie ich es mag.</Sedentary.stages.comfortably_settled_in.description>
+
+</LanguageData>

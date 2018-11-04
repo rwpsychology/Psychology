@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<KinseyDisable>Deaktiviere Kinsey-Skala auf Grund von Detektion einer anderen "romance/sexuality"-Mod.</KinseyDisable>
+	<KinseyDetourDisable>Änderungen an unerlässlichen Funktionalitäten von einigen Eigenschaften wurde deaktiviert, um die Kompatibilität beizubehalten. Betroffe Eigenschaften werden auf Null eingestellt.</KinseyDetourDisable>
+	<MedicalDetourDisable>Änderungen an der medizinischen Herangehensweise wurde auf Grund von Detektion einer anderen "medical/surgery"-Mod deaktiviert. Das wird einige Funktionalitäten von "Bleeding Heart"-Kolonisten deaktivieren, außer die gesuchte Mod ist "Less Arbitrary Surgery".</MedicalDetourDisable>
+	<DuplicateDefLabel>Doppeltes PersonalityNodeDef-Label auf {0}. Bitte melden Sie dies, damit die Übersetzung korrigiert werden kann.</DuplicateDefLabel>
+  
+</LanguageData>

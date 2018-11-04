@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<EmpathyChangesTitle>Erlaube Empathie-Änderungen</EmpathyChangesTitle>
+	<EmpathyChangesTooltip>Schalte das aus, um die Reaktion der Kolonisten auf normal (Standard) zu setzen, wenn schlimme Sachen anderen Menschen passieren. Die Änderungen werden die Schwierigkeit erhöhen; Menschen mit der "Bleeding Heart"-Eigenschaft sind nicht betroffen. Wenn deaktiviert: Spiel neustarten!</EmpathyChangesTooltip>
+	
+	<SexualityChangesTitle>Erlaube Sexualität-Änderungen</SexualityChangesTitle>
+	<SexualityChangesTooltip>Schalte das aus, um die Kinsey-Skala von Kolonisten zu deaktivieren. Somit werden die Standard-Eigenschaften geladen. NICHT bei laufendem Spiel ändern! Wenn deaktiviert: Spiel neustarten!</SexualityChangesTooltip>
+	
+	<KinseyModeTitle>Kinsey-Skala Formel</KinseyModeTitle>
+	<KinseyModeTooltip>Diese Einstellung bestimmt, welche Formel benutzt wird, um die Kinsey-Skala zu gewichten, wenn Kolonisten generiert werden.</KinseyModeTooltip>
+	<KinseyMode_Realistic>Standard</KinseyMode_Realistic>
+	<KinseyMode_Invisible>Zentriert</KinseyMode_Invisible>
+	<KinseyMode_Gaypocalypse>Umgekehrt</KinseyMode_Gaypocalypse>
+	<KinseyMode_Uniform>Gleichmäßige</KinseyMode_Uniform>
+	
+	<IndividualityTitle>Erlaube Individuelle Gedanken</IndividualityTitle>
+	<IndividualityTooltip>Schalte das aus, um die negativen Gedanken deiner Kolonisten zu entfernen, wenn sie identische Kleidung mit anderen Kolonisten tragen. Diese Änderung macht das Spiel schwieriger, es ist optional, aber empfohlen.</IndividualityTooltip>
+	
+	<ElectionsTitle>Erlaube Wahlen</ElectionsTitle>
+	<ElectionsTooltip>Schalte das aus, um deinen Kolonisten zu verbieten, jährlich eine Wahl zu halten. Es wird keine Wahl, die im Gange ist, abbrechen, und der jeweils gewählte Bürgermeister wird wieder zu einem "normalen" Kolonisten konvertiert. Diese Einstellung wird die Kompatibilität mit anderen Mods nicht beeinflussen.</ElectionsTooltip>
+	
+	<DurationTitle>Gesprächsdauer</DurationTitle>
+	<DurationTooltip>Lege fest, für wie lange sich die Kolonisten an Gespräche erinnern. Die Standardeinstellung beträgt 60 Tage, d.h. ein Jahr. Das Minimum beträgt 15 Tage oder ein Quadrum bis maximal 180 Tage oder drei Jahre. Eine niedrigere Einstellung macht die Interaktionen der Kolonisten miteinander flüchtiger, und eine höhere Einstellung macht sie dauerhafter.</DurationTooltip>
+	
+	<SendDateLettersTitle>Sende Nachricht</SendDateLettersTitle>
+	<SendDateLettersTooltip>Deaktivieren Sie diese Option, um den Empfang von Nachrichten zu deaktivieren, wenn Ihre Kolonisten eine Verabredung gemeinsam planen.</SendDateLettersTooltip>
+	
+	<BenchmarkingTitle>Aktiviert Leistungstests</BenchmarkingTitle>
+	<BenchmarkingTooltip>Aktiviere diese Option, um in der Konsole gelegentlich Leistungsberichte zu Psychology Mod zu erhalten. Sie können diesen Bericht kopieren und einfügen, um die Optimierung des Mod zu unterstützen. WARNUNG: Die Leistungstests haben ihre eigenen Auswirkungen auf die Leistung.\n\nDas Toggeln der Option sorgt für ein Neustart des Spiels.</BenchmarkingTooltip>
+  
+</LanguageData>
