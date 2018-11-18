@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<TreatedTrait>{0_labelShort}'s {1} wurden erfolgreich behandelt.</TreatedTrait>
+	<MessageElectionCalledOff>Die Wahl bei {0} wurde wegen den Zuständen am Wahllokal abgesagt.</MessageElectionCalledOff>
+	<MessageElectionCancelled>Die Wahl bei {0} wurde abgesagt, weil es keine geeigneten Wahllokale gab.</MessageElectionCancelled>
+	<MessageFuneralCalledOff>Die Beerdigung wurde wegen der Bedingungen in der Kolonie abgesagt.</MessageFuneralCalledOff>
+	
+</LanguageData>

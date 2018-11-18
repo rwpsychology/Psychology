@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Anxiety.label>Angst</Anxiety.label>
+  <Anxiety.stages.managed.label>bewältigt</Anxiety.stages.managed.label>
+  <Anxiety.stages.minor-0.label>kaum</Anxiety.stages.minor-0.label>
+  <Anxiety.stages.minor-1.label>gering</Anxiety.stages.minor-1.label>
+  <Anxiety.stages.severe-0.label>mäßig</Anxiety.stages.severe-0.label>
+  <Anxiety.stages.severe-1.label>schwer</Anxiety.stages.severe-1.label>
+  <Anxiety.stages.extreme.label>extrem</Anxiety.stages.extreme.label>
+
+  <RecoveringPyromaniac.label>erholender Pyromane</RecoveringPyromaniac.label>
+  <DrugFree.label>drogenfrei</DrugFree.label>
+  <Antidepressants.label>Antidepressiva</Antidepressants.label>
+  <SleepingPills.label>Beruhigungsmittel</SleepingPills.label>
+
+
+</LanguageData>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <!-- WITab titles -->
+  <TabPsyche>Psyche</TabPsyche>
+  
+  <!-- WITab text -->
+  <SexualityDisabledWarning>Psychologys Sexualitätssystem ist deaktiviert, entweder von dir oder von einer Mod, die Konflikte verursacht. Bitte deaktiviere jegliche Mod, die die Sexualität der Kolonisten ändert.</SexualityDisabledWarning>
+  <Sexuality>Sexualität</Sexuality>
+  <KinseyRating>Kinsey-Skala:</KinseyRating>
+  <Asexual>Asexuell</Asexual>
+  <AsexualDescription>Dieser Kolonist hat einen sehr niedrigen Sex-Drang. Diese werden nicht besonders sexuell angeregt und verzichten lieber auf intime Auseinandersetzungen.</AsexualDescription>
+  <Aromantic>Aromantisch</Aromantic>
+  <AromanticDescription>Dieser Kolonist hat einen sehr niedrigen romantischen Drang. Diese werden weniger romantische Schritte unternehmen und es ist sehr unwahrscheinlich, dass sie Heiratsanträge annehmen. Sie können destotrotz Liebhaber haben.</AromanticDescription>
+  
+  <!-- Dialog text -->
+  <EditPsyche>Entwickler-Modus</EditPsyche>
+  <PsycheEditor>Modifiziere die Psyche von {0_labelShort}:</PsycheEditor>
+  <PersonalityNodeWarning>Du editierst gerade die Grundwerte der Persönlichkeit eines Kolonisten. Die aktuellen Werte werden von anderen Faktoren angepasst.</PersonalityNodeWarning>
+  <SexDrive>Sexualtrieb:</SexDrive>
+  <RomanticDrive>Romantischer Trieb:</RomanticDrive>
+
+</LanguageData>

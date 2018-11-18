@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<LetterLabelNewElection>Die Wahlen finden statt in {0}</LetterLabelNewElection>
+	<LetterNewElection>Die Wahlen für einen Bürgermeister finden statt in {0}. Einige Kolonisten haben ihre Kandidatur bekanntgegeben.</LetterNewElection>
+	<LetterLabelElectionHeld>Die Wahl ist im Gange in {0}</LetterLabelElectionHeld>
+	<LetterElectionHeld>Die Wahl in {0} ist jetzt im Gange. Deine Kolonisten haben vor einem verfügbaren Versammlungsplatz einen Wahllokal eröffnet, wo sie nun hingehen und ihre Stimme abgeben.</LetterElectionHeld>
+	<LetterLabelElectionCandidate>Kandidat: {0_labelShort}</LetterLabelElectionCandidate>
+	<LetterElectionCandidate>{0_labelShort} ist ein Kandidat für den Bürgermeister-Posten von {1}. Das sind {0_possessive} Grundsätze:\n{2}</LetterElectionCandidate>
+	<LetterLabelTieSettled>Wahlkampf setzte sich für {0_labelShort}</LetterLabelTieSettled>
+	<LetterTieSettled>Die Bürgermeisterwahlen führten zu einem Unentschieden, und nach einer Weile war {0} die einzige Person, die bereit war, weiter zu kandidieren. Die anderen Kandidaten haben aufgegeben und haben {0_objective} den Sieg überlassen.</LetterTieSettled>
+	<LetterLabelElectionWon>{0_labelShort} hat die Wahl gewonnen.</LetterLabelElectionWon>
+	<LetterElectionWon>{0_labelShort} hat die Bürgermeister-Wahl gewonnen bei {1}. {0_pronoun} bekam {2} Stimmen.\n\nAls Erinnerung, das waren {0_possessive} Grundsätze:\n{3}\n\n{0_pronoun} wird nun Besuche von {0_possessive} Wählerschaft in {0_possessive} Zimmer bekommen, falls {0_pronoun} einen hat. Falls sie Beschwerden haben, dann werden sie sich besser fühlen, nachdem sie mit {0_objective} gesprochen haben, wenn {0_pronoun} gut im sozialen Umgang mit anderen ist. Währenddessen ein schönes Zimmer zu haben, wird allen auch nicht schaden.\n\nHalte jedoch ein Auge auf {0_objective}; {0_pronoun} kann sich nun bei niemanden beklagen, denn {0_pronoun} trägt die ganze Bürde der ganzen Kolonie auf {0_objective} Schultern. Das ist eine große Last, vor allem, wenn die Dinge nicht so laufen wie sie sollten.</LetterElectionWon>
+	<LetterLabelFuneralPlanned>Begräbnis geplant für {0}</LetterLabelFuneralPlanned>
+	<LetterFuneralPlanned>{0_labelShort} hat eine Beerdigung für {1_labelShort} geplant. Das Begräbnis wird am {2}, um {3} Uhr stattfinden.</LetterFuneralPlanned>
+	<LetterLabelFuneralStarted>Trauerfeier für {0}</LetterLabelFuneralStarted>
+	<LetterFuneralStarted>Die Beerdigung von {0_labelShort} ist im Gange. Ihre Kolonisten können je nach ihrer Beziehung zu {0} anwesend sein oder nicht.</LetterFuneralStarted>
+	<LetterLabelFuneralEnded>Beerdigung beendet</LetterLabelFuneralEnded>
+	<LetterFuneralEnded>Die Beerdigung für {0_labelShort} ist vorbei.\n\nDie folgenden Personen waren dort:\n{1}</LetterFuneralEnded>
+	<LetterLabelPTSD>Stresstrauma</LetterLabelPTSD>
+	<LetterPTSD>{0_labelShort} hat posttraumatische Angstzustände als Folge von {0_possessive} mentalem Bruch entwickelt. Angst ist eine permanente Erkrankung, die jedoch behandelt werden kann, um den Schweregrad langsam auf ein handhabbares Maß zu reduzieren und {0_possessive} normal funktionieren zu lassen. Weitere psychische Unterbrechungen werden die Angstzustände verschlimmern.\n\nGlitterworld-Ärzte werden angeblich psychische Erkrankungen wie Angstgefühle bei ihren Patienten geheilt. Wenn Sie Ultratech-Arzneimittel in die Hände bekommen, kann ein äußerst erfahrener Arzt die Angststörung von {0_labelShort} heilen.</LetterPTSD>
+	<LetterLabelDatePlanned>Verabredung</LetterLabelDatePlanned>
+	<LetterDatePlanned>{0_labelShort} hat eine Verabredung mit {1_labelShort} für den {2} um {3} Uhr.\n\Verabredungen können aus verschiedenen Gründen abgesagt werden, vor allem, wenn sie durch Verletzungen oder durch dringende Kolonialgeschäfte unfähig sind. \n\nWenn die Verabredung abgesagt wird, sind beide Kolonisten unzufrieden. Kolonisten können auch Termine verpassen, wenn sie durchschlafen. Dies wird den anderen Kolonisten aufregen, aber keinen negativen Gedanken hinterlassen.</LetterDatePlanned>
+	
+	<!-- Replaced vanilla letters -->
+	<LetterRejectedProposalPsychology>Abhängig von ihrer Persönlichkeit, wird ihre Stimmung und Beziehung beeinflusst.</LetterRejectedProposalPsychology>
+
+</LanguageData>

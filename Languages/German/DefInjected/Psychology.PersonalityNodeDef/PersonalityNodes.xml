@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+    <Confident.label>zuversichtlich</Confident.label>
+    <Confident.description>Eine zuversichtliche Person ist sehr selbstbewusst und hat ein hohes Selbstwertgefühl.</Confident.description>
+
+    <Experimental.label>experimentierfreudig</Experimental.label>
+    <Experimental.description>Ein experimentierfreudiger Mensch wird wahrscheinlich alles mindestens einmal versucht haben, er mag Überraschungen und will auf alles vorbereitet sein.</Experimental.description>
+
+    <Intelligent.label>intelligent</Intelligent.label>
+    <Intelligent.description>Intelligente Menschen besitzen die Fähigkeit, insbesondere durch abstraktes logisches Denken Probleme zu lösen und zweckmäßig zu handeln.</Intelligent.description>
+
+    <Extroverted.label>extrovertiert</Extroverted.label>
+    <Extroverted.description>Extrovertierte Personen lieben es raus zu gehen, sich in Menschenmengen aufzuhalten und so aktiv zu bleiben.</Extroverted.description>
+
+    <Emotional.label>emotional</Emotional.label>
+    <Emotional.description>Jemand emotionales hat eine hohe Kapazität, von Emotionen gelenkt zu werden.</Emotional.description>
+
+    <Independent.label>selbstständig</Independent.label>
+    <Independent.description>Eine selbstständige Person ist in der Lage autonom zu handeln, nur mit eigenem Wissen und ohne fremde Hilfe.</Independent.description>
+    <Independent.conversationTopics.3>harte Arbeit</Independent.conversationTopics.3>
+    <Independent.platformIssueHigh>Diese Kolonie wird durch Nehmer belastet.</Independent.platformIssueHigh>
+    <Independent.platformIssueLow>Wir sind stark, wenn wir vereint sind.</Independent.platformIssueLow>
+
+    <Aggressive.label>aggressiv</Aggressive.label>
+    <Aggressive.description>Ein aggressiver Mensch verhält sich meist feindselig gegenüber anderen Menschen, wenn sie nicht das bekommen, was sie wollen.</Aggressive.description>
+    <Aggressive.conversationTopics.0>eine Meinungsverschiedenheit zwischen ihnen</Aggressive.conversationTopics.0>
+    <Aggressive.conversationTopics.1>ein Konflikt zwischen ihnen</Aggressive.conversationTopics.1>
+    <Aggressive.conversationTopics.2>persönliche Grenzen</Aggressive.conversationTopics.2>
+    <Aggressive.conversationTopics.3>Konfliktlösung</Aggressive.conversationTopics.3>
+    <Aggressive.conversationTopics.5>sozialer Kampf</Aggressive.conversationTopics.5>
+    <Aggressive.conversationTopics.8>die Gefühle anderer Menschen</Aggressive.conversationTopics.8>
+    <Aggressive.platformIssueHigh>Wir brauchen mehr Unterstützung für die freie Meinungsäußerung.</Aggressive.platformIssueHigh>
+    <Aggressive.platformIssueLow>Wir müssen einander mehr bewusst sein.</Aggressive.platformIssueLow>
+
+    <Adventurous.label>abenteuerlustig</Adventurous.label>
+    <Adventurous.description>Eine abenteuerlustige Person fühlt sich wohl, neue Sachen auszuprobieren, ihren Horizont zu erweitern und liebt es, neue Orte zu erkunden.</Adventurous.description>
+    <Adventurous.conversationTopics.0>ihre Lebensziele</Adventurous.conversationTopics.0>
+    <Adventurous.conversationTopics.1>das Leben belohnt</Adventurous.conversationTopics.1>
+    <Adventurous.conversationTopics.2>raus und herum kommen</Adventurous.conversationTopics.2>
+    <Adventurous.conversationTopics.7>neue Forschung</Adventurous.conversationTopics.7>
+    <Adventurous.conversationTopics.8>exotische Lebensmittel</Adventurous.conversationTopics.8>
+    <Adventurous.conversationTopics.9>herumsitzen</Adventurous.conversationTopics.9>
+    <Adventurous.conversationTopics.10>Rückkehr zu den Sternen</Adventurous.conversationTopics.10>
+    <Adventurous.platformIssueHigh>Jeder sollte mehr Möglichkeiten haben.</Adventurous.platformIssueHigh>
+    <Adventurous.platformIssueLow>Unsere Kolonie hat alles was wir brauchen.</Adventurous.platformIssueLow>
+
+    <DrugFriendly.label>drogenfreundlich</DrugFriendly.label>
+    <DrugFriendly.description>Eine drogenfreundliche Person sieht keinen Grund darin, von Drogen abzusehen und wird auch nicht versuchen, ihnen aus dem Weg zu gehen.</DrugFriendly.description>
+    <DrugFriendly.conversationTopics.2>betrunken werden</DrugFriendly.conversationTopics.2>
+    <DrugFriendly.conversationTopics.3>high werden</DrugFriendly.conversationTopics.3>
+    <DrugFriendly.conversationTopics.10>psychoider Tee</DrugFriendly.conversationTopics.10>
+    <DrugFriendly.platformIssueHigh>Drogen können unser Leben einfacher und besser machen.</DrugFriendly.platformIssueHigh>
+    <DrugFriendly.platformIssueLow>Drogen haben keinen Platz in dieser Kolonie.</DrugFriendly.platformIssueLow>
+
+    <Spontaneous.label>spontan</Spontaneous.label>
+    <Spontaneous.description>Eine spontane Person ist sehr impulsiv und mag es, andere zu überraschen.</Spontaneous.description>
+    <Spontaneous.conversationTopics.0>Schabernack</Spontaneous.conversationTopics.0>
+    <Spontaneous.conversationTopics.3>vorausplanen</Spontaneous.conversationTopics.3>
+    <Spontaneous.conversationTopics.5>Überraschungspartys</Spontaneous.conversationTopics.5>
+    <Spontaneous.platformIssueHigh>Als Bürgermeister werde ich die Dinge erledigen.</Spontaneous.platformIssueHigh>
+    <Spontaneous.platformIssueLow>Als Bürgermeister werde ich unsere Probleme sorgfältig angehen.</Spontaneous.platformIssueLow>
+
+    <Rational.label>rational</Rational.label>
+    <Rational.description>Je rationaler jemand denkt, desto mehr ist diese Person einsichtig und von der Vernunft gesteuert.</Rational.description>
+    <Rational.conversationTopics.5>Voreingenommenheit</Rational.conversationTopics.5>
+    <Rational.conversationTopics.6>Glaubensausdauer</Rational.conversationTopics.6>
+    <Rational.platformIssueHigh>Wir brauchen eine faktenbasierte Herangehensweise an die Probleme.</Rational.platformIssueHigh>
+    <Rational.platformIssueLow>Die Geschichte wird von den Gewinnern geschrieben.</Rational.platformIssueLow>
+
+    <Logical.label>logisch</Logical.label>
+    <Logical.description>Ein logischer Mensch befasst sich mit der Logik und ihren Prinzipien, er ist in der Lage Ursache und Wirkung miteinander zu verbinden und ihre Konsequenzen hervorzusehen.</Logical.description>
+    <Logical.conversationTopics.0>Dinge erfinden</Logical.conversationTopics.0>
+    <Logical.conversationTopics.1>Verschwörungstheorien</Logical.conversationTopics.1>
+    <Logical.conversationTopics.2>logische Irrtümer</Logical.conversationTopics.2>
+    <Logical.conversationTopics.3>menschliche Grenzen</Logical.conversationTopics.3>
+    <Logical.platformIssueHigh>Unsere Probleme sind lösbar.</Logical.platformIssueHigh>
+    <Logical.platformIssueLow>Ich werde unsere Probleme lösen.</Logical.platformIssueLow>
+
+    <Creative.label>kreativ</Creative.label>
+    <Creative.description>Kreative Menschen sind voller neuer Ideen und fähig, diese umzusetzen. Sie können sich gewisse Sachen vorstellen, ohne dass sie jemals existiert haben.</Creative.description>
+    <Creative.conversationTopics.0>schreiben und zeichnen</Creative.conversationTopics.0>
+    <Creative.conversationTopics.4>Alien Kontakt</Creative.conversationTopics.4>
+    <Creative.conversationTopics.6>Geistergeschichten</Creative.conversationTopics.6>
+    <Creative.conversationTopics.8>ihre Lieblingsbücher</Creative.conversationTopics.8>
+    <Creative.conversationTopics.9>ihre Lieblingsfilme</Creative.conversationTopics.9>
+    <Creative.platformIssueHigh>Ich werde innovative Lösungen an den Tisch bringen.</Creative.platformIssueHigh>
+    <Creative.platformIssueLow>Wir müssen die Dinge so betrachten, wie sie sind.</Creative.platformIssueLow>
+
+    <Passionate.label>leidenschaftlich</Passionate.label>
+    <Passionate.description>Menschen, die leidenschaftlich sind, empfinden starke Gefühle für alles mögliche und sind sehr empathisch.</Passionate.description>
+    <Passionate.conversationTopics.0>ihre Vorlieben und Abneigungen</Passionate.conversationTopics.0>
+    <Passionate.conversationTopics.2>ihre Wünsche</Passionate.conversationTopics.2>
+    <Passionate.conversationTopics.4>anmaßend sein</Passionate.conversationTopics.4>
+    <Passionate.platformIssueHigh>Ich werde meine ganze Energie in den Job stecken.</Passionate.platformIssueHigh>
+    <Passionate.platformIssueLow>Ich werde tun, was getan werden muss.</Passionate.platformIssueLow>
+
+    <Nostalgic.label>nostalgisch</Nostalgic.label>
+    <Nostalgic.description>Nostalgische Menschen sind sehr mit ihrer Vergangenheit verbunden und sehnen sich nach diesen Zeiten.</Nostalgic.description>
+    <Nostalgic.conversationTopics.0>die alten Tage</Nostalgic.conversationTopics.0>
+    <Nostalgic.conversationTopics.3>alte Erde</Nostalgic.conversationTopics.3>
+    <Nostalgic.conversationTopics.4>ihre Herkunft</Nostalgic.conversationTopics.4>
+    <Nostalgic.conversationTopics.5>wie die Dinge mal waren</Nostalgic.conversationTopics.5>
+    <Nostalgic.platformIssueHigh>Die Dinge waren früher besser.</Nostalgic.platformIssueHigh>
+    <Nostalgic.platformIssueLow>Wir können eine glänzende Zukunft schaffen.</Nostalgic.platformIssueLow>
+
+    <Empathetic.label>empathisch</Empathetic.label>
+    <Empathetic.description>Eine empathische Person besitzt die Fähigkeit, sich in andere Menschen hineinversetzen zu können und so ihre Gefühle zu verstehen.</Empathetic.description>
+    <Empathetic.conversationTopics.2>sich gegenseitig verstehen</Empathetic.conversationTopics.2>
+    <Empathetic.conversationTopics.3>Sklaverei</Empathetic.conversationTopics.3>
+    <Empathetic.conversationTopics.7>Leben zu schonen</Empathetic.conversationTopics.7>
+    <Empathetic.platformIssueHigh>Der Bürgermeister sollte sicherstellen, dass für jeden Kolonisten gesorgt ist.</Empathetic.platformIssueHigh>
+    <Empathetic.platformIssueLow>Der Bürgermeister sollte sich nicht in die privaten Angelegenheiten der Kolonisten einmischen.</Empathetic.platformIssueLow>
+
+    <Competitive.label>wettbewerbsfähig</Competitive.label>
+    <Competitive.description>Für eine wettbewerbsfähige Person reicht es nicht aus, nur erfolgreich zu sein, andere müssen scheitern.</Competitive.description>
+    <Competitive.conversationTopics.2>sozialer Status</Competitive.conversationTopics.2>
+    <Competitive.conversationTopics.3>ihre Leistungen</Competitive.conversationTopics.3>
+    <Competitive.conversationTopics.5>andere Siedlungen</Competitive.conversationTopics.5>
+    <Competitive.conversationTopics.6>ihre Fähigkeiten</Competitive.conversationTopics.6>
+    <Competitive.platformIssueHigh>Unsere Kolonie sollte Innovatoren belohnen.</Competitive.platformIssueHigh>
+    <Competitive.platformIssueLow>Jeder in unserer Kolonie sollte Erfolg haben können.</Competitive.platformIssueLow>
+
+    <Polite.label>höflich</Polite.label>
+    <Polite.description>Eine höfliche Person ist gut erzogen und gibt sich Mühe, andere Menschen nicht verbal zu verletzen.</Polite.description>
+    <Polite.conversationTopics.5>die goldene Regel</Polite.conversationTopics.5>
+    <Polite.platformIssueHigh>Wir sollten diejenigen respektieren, die vor uns gekommen sind.</Polite.platformIssueHigh>
+    <Polite.platformIssueLow>Wir sollten nach unseren Verdiensten beurteilt werden.</Polite.platformIssueLow>
+
+    <Cool.label>cool</Cool.label>
+    <Cool.description>Jemand, der cool ist, wird von anderen mehr gemocht, weil sue interessant und einzigartig sind.</Cool.description>
+    <Cool.conversationTopics.0>Glitterworld Trends</Cool.conversationTopics.0>
+    <Cool.conversationTopics.4>Gesichtsbehaarung</Cool.conversationTopics.4>
+    <Cool.conversationTopics.6>der neueste Slang</Cool.conversationTopics.6>
+    <Cool.platformIssueHigh>Stimmen Sie für die Person, die Sie kennen und respektieren.</Cool.platformIssueHigh>
+    <Cool.platformIssueLow>Stimmen Sie für die Person, die den besten Job macht.</Cool.platformIssueLow>
+
+    <Romantic.label>romantisch</Romantic.label>
+    <Romantic.description>Ein romantischer Mensch mag lange, bedeutungsvolle Beziehungen, engagement und intime Spielchen.</Romantic.description>
+    <Romantic.conversationTopics.1>alte Flammen</Romantic.conversationTopics.1>
+    <Romantic.conversationTopics.3>Kinder haben</Romantic.conversationTopics.3>
+    <Romantic.platformIssueHigh>Ich werde die Position ernst nehmen.</Romantic.platformIssueHigh>
+    <Romantic.platformIssueLow>Dieser Job geht mir nicht auf den Kopf.</Romantic.platformIssueLow>
+
+    <Thoughtful.label>nachdenklich</Thoughtful.label>
+    <Thoughtful.description>Nachdenkliche Menschen bewerten kritisch und hinterfragen alles. Sie denken zuerst, bevor sie handeln.</Thoughtful.description>
+    <Thoughtful.conversationTopics.0>die Zukunft</Thoughtful.conversationTopics.0>
+    <Thoughtful.conversationTopics.1>Lebensziele</Thoughtful.conversationTopics.1>
+    <Thoughtful.platformIssueHigh>Wir brauchen Pläne für die Zukunft.</Thoughtful.platformIssueHigh>
+    <Thoughtful.platformIssueLow>Wir müssen uns darum kümmern, was in der Gegenwart passiert.</Thoughtful.platformIssueLow>
+
+    <Geeky.label>dämlich</Geeky.label>
+    <Geeky.description>Jemand dämliches ist intellektuell, exzentrisch und sozial ungeschickt.</Geeky.description>
+    <Geeky.conversationTopics.0>ihre Hobbys</Geeky.conversationTopics.0>
+    <Geeky.conversationTopics.1>selbstreplizierende Maschinen</Geeky.conversationTopics.1>
+    <Geeky.conversationTopics.2>Erzeugungsschiffe</Geeky.conversationTopics.2>
+    <Geeky.conversationTopics.3>Von Neumann geprüft</Geeky.conversationTopics.3>
+    <Geeky.conversationTopics.7>Kryptoschlafgräber</Geeky.conversationTopics.7>
+    <Geeky.conversationTopics.8>künstliche Intelligenz</Geeky.conversationTopics.8>
+    <Geeky.conversationTopics.9>die Johnson-Tanaka-Fahrt</Geeky.conversationTopics.9>
+    <Geeky.conversationTopics.10>der Ordo Historia</Geeky.conversationTopics.10>
+    <Geeky.conversationTopics.11>Computertechnologie</Geeky.conversationTopics.11>
+    <Geeky.conversationTopics.12>Waffentechnologie</Geeky.conversationTopics.12>
+    <Geeky.conversationTopics.13>KI Persönlichkeit</Geeky.conversationTopics.13>
+    <Geeky.platformIssueHigh>Denken Sie an die Möglichkeiten, die wir verfolgen können.</Geeky.platformIssueHigh>
+    <Geeky.platformIssueLow>Konzentrieren wir uns darauf, was praktisch ist.</Geeky.platformIssueLow>
+
+    <Cultured.label>kultiviert</Cultured.label>
+    <Cultured.description>Eine kultivierte Person ist gebildet und raffiniert.</Cultured.description>
+    <Cultured.conversationTopics.2>Bücher, die sie gelesen haben</Cultured.conversationTopics.2>
+    <Cultured.conversationTopics.3>Filme, die sie gesehen haben</Cultured.conversationTopics.3>
+    <Cultured.conversationTopics.5>Kunst und Literatur</Cultured.conversationTopics.5>
+    <Cultured.conversationTopics.6>Kunstgeschichte</Cultured.conversationTopics.6>
+    <Cultured.conversationTopics.7>die Legitimität der Kunst</Cultured.conversationTopics.7>
+    <Cultured.conversationTopics.10>alte Geschichte</Cultured.conversationTopics.10>
+    <Cultured.conversationTopics.11>Feinkost</Cultured.conversationTopics.11>
+    <Cultured.platformIssueHigh>Diejenigen, die Geschichte nicht lernen, sind dazu verdammt, sie zu wiederholen.</Cultured.platformIssueHigh>
+    <Cultured.platformIssueLow>Ich bin nur eine normale Person wie Sie alle.</Cultured.platformIssueLow>
+
+    <Organized.label>organisiert</Organized.label>
+    <Organized.description>Eine organisierte Person versucht, alles sauber zu halten, ist ordentlich und minimalistisch.</Organized.description>
+    <Organized.conversationTopics.5>Essen mit Tischen</Organized.conversationTopics.5>
+    <Organized.conversationTopics.7>exotische Tiere</Organized.conversationTopics.7>
+    <Organized.platformIssueHigh>Einfache Lösungen sind normalerweise am besten.</Organized.platformIssueHigh>
+    <Organized.platformIssueLow>Das Leben ist komplex und unsere Probleme auch.</Organized.platformIssueLow>
+
+    <Naive.label>naiv</Naive.label>
+    <Naive.description>Naive Menschen sind unerfahren, leichtgläubig und unschuldig.</Naive.description>
+    <Naive.conversationTopics.1>Leben nach dem Tod</Naive.conversationTopics.1>
+    <Naive.conversationTopics.9>Wahrsager</Naive.conversationTopics.9>
+    <Naive.platformIssueHigh>Mein Engagement für Ideale würde mich zu einem guten Bürgermeister machen.</Naive.platformIssueHigh>
+    <Naive.platformIssueLow>Meine Erfahrung und mein Know-how würden mich zu einem guten Bürgermeister machen.</Naive.platformIssueLow>
+
+    <Upbeat.label>fröhlich</Upbeat.label>
+    <Upbeat.description>Fröhliche Menschen sind sehr ausgelassen und vergnügt.</Upbeat.description>
+    <Upbeat.conversationTopics.3>Pet Peeve</Upbeat.conversationTopics.3>
+    <Upbeat.conversationTopics.4>die Ärgernisse des Lebens</Upbeat.conversationTopics.4>
+    <Upbeat.conversationTopics.5>sein Bestes geben</Upbeat.conversationTopics.5>
+    <Upbeat.conversationTopics.7>auf der hellen Seite des Lebens suchen</Upbeat.conversationTopics.7>
+    <Upbeat.platformIssueHigh>Diese Kolonie ist auf dem richtigen Weg.</Upbeat.platformIssueHigh>
+    <Upbeat.platformIssueLow>Diese Kolonie steht vor einer Katastrophe.</Upbeat.platformIssueLow>
+
+    <Outspoken.label>freimütig</Outspoken.label>
+    <Outspoken.description>Eine Person, die freimütig ist, hat eine sehr starke Meinung und versucht diese, mit anderen zu teilen.</Outspoken.description>
+    <Outspoken.conversationTopics.1>Rechtsstaatlichkeit</Outspoken.conversationTopics.1>
+    <Outspoken.conversationTopics.3>Bürgerrechte</Outspoken.conversationTopics.3>
+    <Outspoken.conversationTopics.6>politische Debatte</Outspoken.conversationTopics.6>
+    <Outspoken.conversationTopics.7>politische Meinungen</Outspoken.conversationTopics.7>
+    <Outspoken.conversationTopics.8>Verbrechen und Bestrafung</Outspoken.conversationTopics.8>
+    <Outspoken.conversationTopics.10>die Bürgermeister</Outspoken.conversationTopics.10>
+    <Outspoken.conversationTopics.11>über Dinge streiten</Outspoken.conversationTopics.11>
+    <Outspoken.conversationTopics.12>ihre Freunde</Outspoken.conversationTopics.12>
+    <Outspoken.platformIssueHigh>Diese Kolonie braucht einen starken Anführer.</Outspoken.platformIssueHigh>
+    <Outspoken.platformIssueLow>Wir brauchen einen Anführer, der auf unsere Anliegen hört.</Outspoken.platformIssueLow>
+
+    <Ambitious.label>ehrgeizig</Ambitious.label>
+    <Ambitious.description>Eine ehrgeizige Person setzt sich selbst hohe Ziele und versucht diese, zu erreichen, um erfolgreich zu sein.</Ambitious.description>
+    <Ambitious.conversationTopics.0>ihre Hoffnungen und Träume</Ambitious.conversationTopics.0>
+    <Ambitious.conversationTopics.1>ihre Ängste</Ambitious.conversationTopics.1>
+    <Ambitious.conversationTopics.2>Herausforderungen im Leben</Ambitious.conversationTopics.2>
+    <Ambitious.conversationTopics.4>an sich selbst glauben</Ambitious.conversationTopics.4>
+    <Ambitious.conversationTopics.5>reich werden</Ambitious.conversationTopics.5>
+    <Ambitious.conversationTopics.6>hohe Ziele</Ambitious.conversationTopics.6>
+    <Ambitious.platformIssueHigh>Wir müssen groß träumen.</Ambitious.platformIssueHigh>
+    <Ambitious.platformIssueLow>Lassen Sie uns in der Realität leben.</Ambitious.platformIssueLow>
+
+    <LaidBack.label>gelassen</LaidBack.label>
+    <LaidBack.description>gelassene Menschen sind vom Stress nicht so sehr betroffen wie andere und tendieren dazu, sich nicht darüber zu sorgen.</LaidBack.description>
+    <LaidBack.conversationTopics.2>ihre Stimmung</LaidBack.conversationTopics.2>
+    <LaidBack.conversationTopics.7>ihr perfekter Sonntag</LaidBack.conversationTopics.7>
+    <LaidBack.platformIssueHigh>Wir brauchen einen Anführer, der sich um Leistung kümmert.</LaidBack.platformIssueHigh>
+    <LaidBack.platformIssueLow>Wir brauchen einen Anführer, der den Stress ertragen kann.</LaidBack.platformIssueLow>
+
+    <Pure.label>rein</Pure.label>
+    <Pure.description>Reine Menschen sind keusch und zuträglich, sie folgen den traditionellen Werten in einer Gesellschaft.</Pure.description>
+    <Pure.conversationTopics.2>traditionelle Werte</Pure.conversationTopics.2>
+    <Pure.conversationTopics.3>sexuelle Moral</Pure.conversationTopics.3>
+    <Pure.conversationTopics.6>Geschlechterrollen</Pure.conversationTopics.6>
+    <Pure.platformIssueHigh>Traditionelle Werte sind unsere Werte.</Pure.platformIssueHigh>
+    <Pure.platformIssueLow>Wir müssen als Volk vorankommen.</Pure.platformIssueLow>
+
+    <Moralistic.label>moralisch</Moralistic.label>
+    <Moralistic.description>Eine moralische Person folgt dem Normen- und Wertesystem, das in einer Gesellschaft als Verhaltensmaßstab betrachtet wird.</Moralistic.description>
+    <Moralistic.conversationTopics.3>menschliche Leiden</Moralistic.conversationTopics.3>
+    <Moralistic.conversationTopics.4>Menschen schlachten</Moralistic.conversationTopics.4>
+    <Moralistic.conversationTopics.7>Organraub</Moralistic.conversationTopics.7>
+    <Moralistic.conversationTopics.8>Kriegsgefangene</Moralistic.conversationTopics.8>
+    <Moralistic.conversationTopics.9>Kriegsverbrechen</Moralistic.conversationTopics.9>
+    <Moralistic.conversationTopics.11>Menschenopfer</Moralistic.conversationTopics.11>
+    <Moralistic.platformIssueHigh>Es liegt in unserer Verantwortung, das Richtige zu tun.</Moralistic.platformIssueHigh>
+    <Moralistic.platformIssueLow>Wir können nur das tun, was für uns richtig ist.</Moralistic.platformIssueLow>
+
+    <Trusting.label>vertrauensvoll</Trusting.label>
+    <Trusting.description>Eine vertrauensvolle Person tendiert das Gute in Menschen zu sehen und schenkt ihnen so sehr schnell ihr Vertrauen.</Trusting.description>
+    <Trusting.conversationTopics.0>menschliche Natur</Trusting.conversationTopics.0>
+    <Trusting.conversationTopics.3>Hochstapler</Trusting.conversationTopics.3>
+    <Trusting.conversationTopics.4>Notlügen</Trusting.conversationTopics.4>
+    <Trusting.conversationTopics.8>neue Kolonisten</Trusting.conversationTopics.8>
+    <Trusting.platformIssueHigh>Menschen in dieser Kolonie kommen aus allen Gesellschaftsschichten.</Trusting.platformIssueHigh>
+    <Trusting.platformIssueLow>Nur gute Bürger verdienen es, Teil dieser Kolonie zu sein.</Trusting.platformIssueLow>
+
+    <Judgmental.label>beurteilend</Judgmental.label>
+    <Judgmental.description>Eine beurteilende Person formt sich sehr schnell ihre Meinung über andere Menschen, sie sind auch sehr vom Handeln anderer betroffen.</Judgmental.description>
+    <Judgmental.conversationTopics.0>der letzte Klatsch</Judgmental.conversationTopics.0>
+    <Judgmental.conversationTopics.1>das neueste Drama</Judgmental.conversationTopics.1>
+    <Judgmental.conversationTopics.6>Schönwetterfreunde</Judgmental.conversationTopics.6>
+    <Judgmental.conversationTopics.7>voreilige Schlüsse zu ziehen</Judgmental.conversationTopics.7>
+    <Judgmental.conversationTopics.8>vorschnelles Urteil</Judgmental.conversationTopics.8>
+    <Judgmental.conversationTopics.9>zweite Chance</Judgmental.conversationTopics.9>
+    <Judgmental.conversationTopics.10>ob sich Menschen ändern können</Judgmental.conversationTopics.10>
+    <Judgmental.platformIssueHigh>Niemand sonst kann diese Kolonie führen.</Judgmental.platformIssueHigh>
+    <Judgmental.platformIssueLow>Ich bin der fähigste, diese Kolonie zu führen.</Judgmental.platformIssueLow>
+
+    <Friendly.label>freundlich</Friendly.label>
+    <Friendly.description>Jemand freundliches sucht gerne Gespräche, ist aufmerksam und entgegenkommend.</Friendly.description>
+    <Friendly.conversationTopics.0>gegenseitig</Friendly.conversationTopics.0>
+    <Friendly.conversationTopics.1>Freunde finden</Friendly.conversationTopics.1>
+    <Friendly.conversationTopics.4>ihre Meinungen voneinander</Friendly.conversationTopics.4>
+    <Friendly.conversationTopics.6>was auch immer sie beschäftigt</Friendly.conversationTopics.6>
+    <Friendly.platformIssueHigh>Wir sind alle im selben Boot.</Friendly.platformIssueHigh>
+    <Friendly.platformIssueLow>Wir tun, was es braucht, um zu überleben.</Friendly.platformIssueLow>
+
+    <Optimistic.label>optimistisch</Optimistic.label>
+    <Optimistic.description>Optimistische Menschen sehen und erwarten nur das Gute im Leben.</Optimistic.description>
+    <Optimistic.conversationTopics.0>ihre Gefühle</Optimistic.conversationTopics.0>
+    <Optimistic.conversationTopics.1>der Sinn des Lebens</Optimistic.conversationTopics.1>
+    <Optimistic.conversationTopics.3>die Unvermeidlichkeit des Todes</Optimistic.conversationTopics.3>
+    <Optimistic.conversationTopics.6>den Tag durchstehen</Optimistic.conversationTopics.6>
+    <Optimistic.conversationTopics.7>was die Zukunft bringt</Optimistic.conversationTopics.7>
+    <Optimistic.conversationTopics.8>den Planeten verlassen</Optimistic.conversationTopics.8>
+    <Optimistic.platformIssueHigh>Die Dinge sind gut, aber wir könnten besser sein.</Optimistic.platformIssueHigh>
+    <Optimistic.platformIssueLow>Die Dinge sind schlecht, aber es wird schlimmer.</Optimistic.platformIssueLow>
+
+    <Compassionate.label>mitfühlend</Compassionate.label>
+    <Compassionate.description>Menschen, die mitfühlend sind, versuchen die Probleme anderer Menschen zu lösen und ihnen so zu helfen.</Compassionate.description>
+    <Compassionate.conversationTopics.0>die weniger Glück haben</Compassionate.conversationTopics.0>
+    <Compassionate.conversationTopics.1>die Unterdrückten unterstützen</Compassionate.conversationTopics.1>
+    <Compassionate.conversationTopics.2>den Kranken helfen</Compassionate.conversationTopics.2>
+    <Compassionate.conversationTopics.3>den Armen helfen</Compassionate.conversationTopics.3>
+    <Compassionate.conversationTopics.4>Menschenrechte</Compassionate.conversationTopics.4>
+    <Compassionate.conversationTopics.5>Menschen retten</Compassionate.conversationTopics.5>
+    <Compassionate.conversationTopics.6>die Probleme anderer Leute</Compassionate.conversationTopics.6>
+    <Compassionate.conversationTopics.8>Sorge für andere</Compassionate.conversationTopics.8>
+    <Compassionate.platformIssueHigh>Jede Gesellschaft wird danach beurteilt, wie sie ihre schwächsten Mitglieder behandelt.</Compassionate.platformIssueHigh>
+    <Compassionate.platformIssueLow>Eine Gesellschaft ist nur so stark wie ihre fähigsten Mitglieder.</Compassionate.platformIssueLow>
+
+    <Generous.label>großzügig</Generous.label>
+    <Generous.description>Großzügige Menschen halten sich nicht zurück, anderen etwas zu geben, auch wenn sie es selbst bräuchten.</Generous.description>
+    <Generous.conversationTopics.2>materieller Besitz</Generous.conversationTopics.2>
+    <Generous.conversationTopics.3>soziale Gerechtigkeit</Generous.conversationTopics.3>
+    <Generous.platformIssueHigh>Jeder sollte Zugang zu den gleichen Dingen haben.</Generous.platformIssueHigh>
+    <Generous.platformIssueLow>Jeder sollte verdienen, was er hat.</Generous.platformIssueLow>
+
+
+</LanguageData>

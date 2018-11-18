@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<BackstoryTranslations>
+  
+  <ChildSoldier79>
+    <title>Kindersoldat</title>
+    <titleShort>Späher</titleShort>
+    <desc>[PAWN_nameDef] wurde in eine diktatorische Provinz auf einer nahe gelegenen Randwelt hineingeboren. Ihr Hauptexport war Krieg, und [PAWN_pronoun] wurde in jungen Jahren vom Militär eingezogen, um als Späher aufgrund [PAWN_possessive] Schnelligkeit zu dienen. [PAWN_pronoun] lernte, wie man eine Waffe einsetzt, Wunden auf dem Schlachtfeld verbindet und mit dem [PAWN_possessive] Kader kommuniziert. Dort war [PAWN_pronoun] Spitzname [PAWN_possessive].</desc>
+  </ChildSoldier79>
+  
+  <MissingInAction28>
+    <title>Vermisst</title>
+    <titleShort>Ex-P.O.W.</titleShort>
+    <desc>[PAWN_pronoun] ist auf einer Mission von einem der vielen Feinde [PAWN_possessive] Fraktion gefangen genommen. [PAWN_pronoun] wurde zu Informationen gefoltert, deren Methoden [PAWN_pronoun] nie vergessen hat. Als sie aus [PAWN_objective] nichts mehr herausholen konnten, wurde [PAWN_pronoun] in ein Gefangenenlager geschickt, wo [PAWN_pronoun] jahrelang gearbeitet hatte, bevor er eine Flucht ins Land führte und in die Zivilisation floh.</desc>
+  </MissingInAction28>
+  
+  <BattlefieldMedic77>
+    <title>Schlachtfeld-Sanitäter</title>
+    <titleShort>Sanitäter</titleShort>
+    <desc>[PAWN_pronoun] diente weiterhin im Militär und wurde durch die Ränge befördert, da die Fähigkeit [PAWN_possessive] zunahm. [PAWN_pronoun] lernte, wie man ernstere Wunden behandelt, während die Rolle [PAWN_possessive] langsam vom Pfadfinder zum Sanitäter überging und wie man Armeerationen sinnvoll einsetzte. [PAWN_pronoun] hat als Ergebnis eine gute Verbindung mit dem [PAWN_possessive] Kader aufgebaut.</desc>
+  </BattlefieldMedic77>
+  
+</BackstoryTranslations>

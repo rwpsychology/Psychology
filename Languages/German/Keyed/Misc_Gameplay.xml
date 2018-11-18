@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<MayorTitle>Bürgermeister</MayorTitle>
+
+<!-- Lord job reports -->
+	<LordReportAttendingElection>Besucht Wahllokal</LordReportAttendingElection>
+	<LordReportVisitingMayor>Nimmt am Treffen teil</LordReportVisitingMayor>
+	<LordReportHangingOut>Hängt mit jemanden ab</LordReportHangingOut>
+	<LordReportDate>Auf einem Date</LordReportDate>
+	<LordReportAttendingFuneral>Teilnahme an der Beerdigung</LordReportAttendingFuneral>
+
+<!-- Miscellaneous thought log text -->
+	<ConversationStage>Gespräch über</ConversationStage>
+	<ConversationEnd>{0_labelShort} beendete eine Gespräch mit {1_labelShort}.</ConversationEnd>
+	<ConversationEnded>Gespräch beendet</ConversationEnded>
+	<Complained>{0_labelShort} beschwerte sich beim Bürgermeister, {1_labelShort}.</Complained>
+	<Supported>{0_labelShort} habe {0_possessive} Unterstützung dem Bürgermeister zugesprochen, {1_labelShort}.</Supported>
+	
+<!-- Node descriptions -->
+	<PsycheNot>Nicht</PsycheNot>
+	<PsycheSlightly>Kaum</PsycheSlightly>
+	<PsycheLess>Etwas</PsycheLess>
+	<PsycheMore>Mehr</PsycheMore>
+	<PsycheVery>Sehr</PsycheVery>
+	<PsycheExtremely>Äußerst</PsycheExtremely>
+	<ConversationTooltip>Die Leute werden über {0} sprechen, um dies miteinander zu besprechen.</ConversationTooltip>
+	
+<!-- Comp text -->
+	<CommandOfficeTableToggleLabel>Bürgermeisters Büro</CommandOfficeTableToggleLabel>
+	<CommandOfficeTableToggleDescActive>Dieses Zimmer ist als Bürgermeisters Büro gekennzeichnet. Wenn du einen Bürgermeister hast, dann werden hier die Treffen stattfinden.</CommandOfficeTableToggleDescActive>
+	<CommandOfficeTableToggleDescInactive>Du kannst dieses Zimmer als das Büro des Bürgermeisters festlegen, wenn du einen hast. Du kannst dem Bürgermeister nur ein Büro zuteilen.</CommandOfficeTableToggleDescInactive>
+
+</LanguageData>

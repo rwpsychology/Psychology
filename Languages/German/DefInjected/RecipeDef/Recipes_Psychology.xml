@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TreatPyromania.label>Pyromanie behandeln</TreatPyromania.label>
+  <TreatPyromania.description>Hilft einen Pyromanen sich zu erholen.</TreatPyromania.description>
+  <TreatPyromania.jobString>Pyromane wird behandelt.</TreatPyromania.jobString>
+
+  <TreatChemicalInterest.label>Chemie-Interesse behandeln</TreatChemicalInterest.label>
+  <TreatChemicalInterest.description>Hilft jemanden, der sehr an der Chemie interessiert ist, drogenfrei zu bleiben.</TreatChemicalInterest.description>
+  <TreatChemicalInterest.jobString>Chemie-Interesse wird behandelt.</TreatChemicalInterest.jobString>
+
+  <TreatChemicalFascination.label>Chemie-Faszination behandeln</TreatChemicalFascination.label>
+  <TreatChemicalFascination.description>Hilft jemanden, der sehr von der Chemie fasziniert ist, drogenfrei zu bleiben.</TreatChemicalFascination.description>
+  <TreatChemicalFascination.jobString>Chemie-Faszination wird behandelt.</TreatChemicalFascination.jobString>
+
+  <TreatDepression.label>Depression behandeln</TreatDepression.label>
+  <TreatDepression.description>Hilft jemanden, der depressiv ist, ihn bei Laune zu halten.</TreatDepression.description>
+  <TreatDepression.jobString>Depression wird behandelt.</TreatDepression.jobString>
+  
+  <TreatInsomnia.label>Schlaflosigkeit behandeln</TreatInsomnia.label>
+  <TreatInsomnia.description>Hilft jemandem mit Schlaflosigkeit wieder Schlaf zu finden.</TreatInsomnia.description>
+  <TreatInsomnia.jobString>Schlaflosigkeit wird behandelt.</TreatInsomnia.jobString>
+
+  <CureAnxiety.label>Angst heilen</CureAnxiety.label>
+  <CureAnxiety.description>Beseitigt dauerhaft die Angst durch die Kraft der Glitterworld-Therapie.</CureAnxiety.description>
+  <CureAnxiety.jobString>Angstzustände werden behandelt.</CureAnxiety.jobString>
+
+
+
+</LanguageData>
