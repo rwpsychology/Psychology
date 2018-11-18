@@ -125,6 +125,7 @@
     <Compile Include="Main\Funerals\LordToil_Funeral.cs" />
     <Compile Include="Main\Medical\Treatments\Recipe_TreatInsomnia.cs" />
     <Compile Include="Main\Medical\Treatments\Recipe_CureAnxiety.cs" />
+    <Compile Include="Main\MentalStates\Jobs\JobDriver_BreakHunt.cs" />
     <Compile Include="Main\MentalStates\Jobs\JobGiver_GoHunting.cs" />
     <Compile Include="Main\MentalStates\MentalState_HuntingTrip.cs" />
     <Compile Include="Main\MentalStates\Workers\MentalStateWorker_HuntingTrip.cs" />

@@ -8,5 +8,6 @@ namespace Psychology
     {
         public static JobDef Abuse;
         public static JobDef MakeAdvance;
+        public static JobDef BreakHunt;
     }
 }

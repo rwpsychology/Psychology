@@ -132,11 +132,11 @@ namespace Psychology
                     List<string> text = new List<string>(1);
                     if (complaint)
                     {
-                        text.Add("r_logentry->"+"Complained".Translate());
+                        text.Add("r_logentry->"+"Complained".Translate(constituent, mayor));
                     }
                     else
                     {
-                        text.Add("r_logentry->"+"Supported".Translate());
+                        text.Add("r_logentry->"+"Supported".Translate(constituent, mayor));
                     }
                     RuleStrings.SetValue(goodbyeTextInit, text);
                     endConversation.logRulesInitiator = goodbyeTextInit;

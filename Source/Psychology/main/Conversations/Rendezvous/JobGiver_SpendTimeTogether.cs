@@ -30,7 +30,7 @@ namespace Psychology
                 toil.ticksToNextJoy = Find.TickManager.TicksGame + Rand.RangeInclusive(GenDate.TicksPerHour, GenDate.TicksPerHour * 3);
             }
             /* If they need joy, go do the joy activity.*/
-            if (toil.hangOut != null && friend.needs.food.CurLevel > 0.33f && pawn.needs.joy.CurLevel < 0.8f)
+            if (toil.hangOut != null && friend.needs.food.CurLevel > 0.33f && pawn.needs.joy.CurLevel < 0.8f && Math.Abs(toil.tickSinceLastJobGiven - Find.TickManager.TicksGame) > 1)
             {
                 /* Sometimes the joy activity can't be reserved because it's for one person only. */
                 Job job = new Job(toil.hangOut.def);
@@ -44,7 +44,11 @@ namespace Psychology
                 job.expiryInterval = toil.hangOut.expiryInterval;
                 job.locomotionUrgency = toil.hangOut.locomotionUrgency;
                 if (job.TryMakePreToilReservations(pawn, false))
+                {
+                    /* We'll just straight-up prevent this JobGiver from giving 10 jobs in one tick. */
+                    toil.tickSinceLastJobGiven = Find.TickManager.TicksGame;
                     return job;
+                }
                 else
                     pawn.ClearAllReservations(false);
             }

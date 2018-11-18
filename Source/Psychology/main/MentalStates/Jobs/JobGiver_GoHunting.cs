@@ -43,18 +43,23 @@ namespace Psychology
                     }
                 }
             }
+            if(!(pawn.MentalState is MentalState_HuntingTrip))
+            {
+                return null;
+            }
+            Pawn assignedPrey = (pawn.MentalState as MentalState_HuntingTrip).prey;
+            if(assignedPrey != null && !assignedPrey.Dead)
+            {
+                return new Job(JobDefOfPsychology.BreakHunt, assignedPrey);
+            }
             IEnumerable<Pawn> wildlife = from p in Find.CurrentMap.mapPawns.AllPawns
                                          where p.Spawned && p.Faction == null && p.AnimalOrWildMan() && !p.Position.Fogged(p.Map) && pawn.CanReserve(p, 1, -1, null, true)
                                          select p;
             if (wildlife.Count() > 0)
             {
                 Pawn prey = wildlife.RandomElement();
-                if(pawn.Map.designationManager.DesignationOn(prey, DesignationDefOf.Hunt) == null)
-                {
-                    Designation hunt = new Designation(prey, DesignationDefOf.Hunt);
-                    prey.Map.designationManager.AddDesignation(hunt);
-                }
-                return new Job(JobDefOf.Hunt, prey);
+                (pawn.MentalState as MentalState_HuntingTrip).prey = prey;
+                return new Job(JobDefOfPsychology.BreakHunt, prey);
             }
             return null;
         }

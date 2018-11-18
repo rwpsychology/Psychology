@@ -236,9 +236,8 @@ namespace Psychology
 
                 IEnumerable<ThingDef> things = (
                     from def in DefDatabase<ThingDef>.AllDefs
-                    where typeof(Pawn).IsAssignableFrom(def.thingClass)
-                    && def.race?.intelligence == Intelligence.Humanlike
-                    && !def.defName.Contains("AIPawn")
+                    where def.race?.intelligence == Intelligence.Humanlike
+                    && !def.defName.Contains("AIPawn") && !def.defName.Contains("Android") && !def.defName.Contains("Robot")
                     && (zombieThinkTree == null || def.race.thinkTreeMain != zombieThinkTree)
                     select def
                 );
@@ -422,7 +421,7 @@ namespace Psychology
                             found = "bed";
                         }
                         if (PsycheHelper.PsychologyEnabled(potentialConstituent) && Rand.Chance((1f - PsycheHelper.Comp(potentialConstituent).Psyche.GetPersonalityRating(PersonalityNodeDefOf.Independent)) / 5f) && (found != null || RCellFinder.TryFindPartySpot(mayor, out gather))
-                            && (!mayor.Drafted && !mayor.Downed && mayor.health.summaryHealth.SummaryHealthPercent >= 1f && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Work && (mayor.CurJob == null || mayor.CurJob.def != JobDefOf.TendPatient)))
+                            && (!mayor.Drafted && !mayor.Downed && mayor.health.summaryHealth.SummaryHealthPercent >= 1f && mayor.GetTimeAssignment() != TimeAssignmentDefOf.Work && (mayor.CurJob == null || mayor.CurJob.def != JobDefOf.TendPatient || mayor.CurJob.RecipeDef.workerClass.IsAssignableFrom(typeof(Recipe_Surgery)))))
                         {
                             List<Pawn> pawns = new List<Pawn>();
                             pawns.Add(mayor);

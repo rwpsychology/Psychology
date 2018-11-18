@@ -59,12 +59,12 @@ namespace Psychology.Harmony
 				recipient
 			});
 			StringBuilder stringBuilder = new StringBuilder();
-			stringBuilder.AppendLine("LetterNoLongerLovers".Translate(initiator, recipient));
-			if (thought != null)
+			stringBuilder.AppendLine("LetterNoLongerLovers".Translate(initiator.LabelShort, recipient.LabelShort, initiator.Named("PAWN1"), recipient.Named("PAWN2")));
+            if (thought != null)
 			{
 				stringBuilder.AppendLine();
-				stringBuilder.AppendLine("FinalStraw".Translate(thought.CurStage.label));
-			}
+				stringBuilder.AppendLine("FinalStraw".Translate(thought.CurStage.label.CapitalizeFirst()));
+            }
 			if (PawnUtility.ShouldSendNotificationAbout(initiator) || PawnUtility.ShouldSendNotificationAbout(recipient))
 			{
 				Find.LetterStack.ReceiveLetter("LetterLabelBreakup".Translate(), stringBuilder.ToString(), LetterDefOf.NegativeEvent, initiator, null);

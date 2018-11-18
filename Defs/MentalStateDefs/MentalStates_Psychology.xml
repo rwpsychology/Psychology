@@ -469,7 +469,8 @@
   </MentalBreakDef>
   
   <MentalStateDef ParentName="BaseMentalState">
-    <minTicksBeforeRecovery>14000</minTicksBeforeRecovery>
+    <minTicksBeforeRecovery>9000</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>30000</maxTicksBeforeRecovery>
     <defName>HuntingTrip</defName>
 	<colonistsOnly>true</colonistsOnly>
     <stateClass>Psychology.MentalState_HuntingTrip</stateClass>

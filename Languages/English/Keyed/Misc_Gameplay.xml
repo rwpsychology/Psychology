@@ -11,7 +11,7 @@
 
 <!-- Miscellaneous thought log text -->
 	<ConversationStage>conversation about</ConversationStage>
-	<ConversationEnd>{0_labelShort} ended a conversation with {1_labelShort}.</ConversationEnd>
+	<ConversationEnd>[INITIATOR_nameDef] ended a conversation with [RECIPIENT_nameDef].</ConversationEnd>
 	<ConversationEnded>ended conversation</ConversationEnded>
 	<Complained>{0_labelShort} complained to the mayor, {1_labelShort}.</Complained>
 	<Supported>{0_labelShort} voiced {0_possessive} support to the mayor, {1_labelShort}.</Supported>

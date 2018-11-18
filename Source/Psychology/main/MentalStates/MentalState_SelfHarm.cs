@@ -20,7 +20,7 @@ namespace Psychology
             {
 
                 IEnumerable<BodyPartRecord> parts = (from b in pawn.health.hediffSet.GetNotMissingParts()
-                                              where b.def == BodyPartDefOf.Hand || b.def == BodyPartDefOf.Arm
+                                              where (b.def == BodyPartDefOf.Hand || b.def == BodyPartDefOf.Arm) && b.coverage > 0
                                               select b);
                 if (parts.Count() > 0 && pawn.IsHashIntervalTick(2000))
                 {

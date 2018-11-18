@@ -12,7 +12,7 @@ namespace Psychology
     {
         public override bool StateCanOccur(Pawn pawn)
         {
-            return pawn.Map != null && !pawn.story.WorkTagIsDisabled(WorkTags.Violent) && pawn.workSettings.WorkIsActive(WorkTypeDefOf.Hunting);
+            return pawn.Map != null && !pawn.IsPrisoner && !pawn.story.WorkTagIsDisabled(WorkTags.Violent) && pawn.workSettings.WorkIsActive(WorkTypeDefOf.Hunting);
         }
     }
 }
