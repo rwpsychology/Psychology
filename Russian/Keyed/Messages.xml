@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LanguageData>
-
-  <TreatedTrait>{1} {0_labelShort} была успешно вылечена.</TreatedTrait>
-  <MessageElectionCalledOff>Выборы в {0} были отменены из-за неподходящих условий в месте голосования.</MessageElectionCalledOff>
-  <MessageElectionCancelled>Выборы в {0} были отменены, так как не было найдено подходящих мест для голосования.</MessageElectionCancelled>
-  <MessageFuneralCalledOff>Похороны были отменены из-за неподходящих условий в поселении.</MessageFuneralCalledOff>
-
-</LanguageData>
