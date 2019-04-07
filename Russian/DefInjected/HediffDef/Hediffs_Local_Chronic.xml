@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Anxiety.label>тревожное расстройство</Anxiety.label>
+  <Anxiety.stages.0.label>медикаментозное лечение</Anxiety.stages.0.label>
+  <Anxiety.stages.1.label>лёгкое</Anxiety.stages.1.label>
+  <Anxiety.stages.2.label>лёгкое</Anxiety.stages.2.label>
+  <Anxiety.stages.3.label>среднее</Anxiety.stages.3.label>
+  <Anxiety.stages.4.label>среднее</Anxiety.stages.4.label>
+  <Anxiety.stages.5.label>тяжёлое</Anxiety.stages.5.label>
+
+  <RecoveringPyromaniac.label>выздоравливающий пироман</RecoveringPyromaniac.label>
+  <DrugFree.label>жизнь без наркотиков</DrugFree.label>
+  <Antidepressants.label>антидепрессанты</Antidepressants.label>
+  <SleepingPills.label>снотворное</SleepingPills.label>
+
+
+</LanguageData>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Dynamic.stages.0.label>dynamic</Dynamic.stages.0.label>
+
+  <MayorNoOffice.stages.0.label>нет офиса для мэра</MayorNoOffice.stages.0.label>
+  <MayorNoOffice.stages.0.description>Мне пришлось принимать посетителей у себя в спальне. Отдельный офис будет профессиональнее.</MayorNoOffice.stages.0.description>
+
+  <MayorNoBedroom.stages.0.label>нет офиса для мэра</MayorNoBedroom.stages.0.label>
+  <MayorNoBedroom.stages.0.description>Мне пришлось принимать посетителей в месте сбора. По крайней мере обеспечьте меня спальней, чтобы принимать их приватно</MayorNoBedroom.stages.0.description>
+
+  <WonElection.stages.0.label>победа на выборах</WonElection.stages.0.label>
+  <WonElection.stages.0.description>Да! Теперь я мэр. Меня переполняет благодарность к моим избирателям.</WonElection.stages.0.description>
+
+  <KilledHumanlikeEnemy.stages.0.label>выброс адреналина</KilledHumanlikeEnemy.stages.0.label>
+  <KilledHumanlikeEnemy.stages.0.description>Я убил(а) человека, напавшего на колонию. Руки всё ещё дрожат...не могу поверить, что смерть обошла меня</KilledHumanlikeEnemy.stages.0.description>
+
+  <KnowPrisonerSoldBleedingHeart.stages.0.label>продан пленник</KnowPrisonerSoldBleedingHeart.stages.0.label>
+  <KnowPrisonerSoldBleedingHeart.stages.0.description>Поселение продаёт пленных в рабство. Не могу поверить, что мы так по-варварски поступаем.</KnowPrisonerSoldBleedingHeart.stages.0.description>
+
+  <KnowGuestOrganHarvestedBleedingHeart.stages.0.label>вырезан чей-то орган</KnowGuestOrganHarvestedBleedingHeart.stages.0.label>
+  <KnowGuestOrganHarvestedBleedingHeart.stages.0.description>У гостя или пленника удалили орган. Это ужасно, резать людей на части без их согласия.</KnowGuestOrganHarvestedBleedingHeart.stages.0.description>
+
+  <KnowColonistOrganHarvestedBleedingHeart.stages.0.label>поселенцу вырезали орган</KnowColonistOrganHarvestedBleedingHeart.stages.0.label>
+  <KnowColonistOrganHarvestedBleedingHeart.stages.0.description>У поселенца удалили орган. Это ужасно, разбирать людей на части, когда у них нет выбора.</KnowColonistOrganHarvestedBleedingHeart.stages.0.description>
+
+  <ReplacedPartBleedingHeart.stages.0.label>пересадка органа или конечности</ReplacedPartBleedingHeart.stages.0.label>
+  <ReplacedPartBleedingHeart.stages.0.description>Я трансплантировал(а) орган или конечность пациенту. Наверняка это улучшит их жизнь! Меня переполняет счастье.</ReplacedPartBleedingHeart.stages.0.description>
+
+  <DoctorBleedingHeart.stages.0.label>помощь пациенту</DoctorBleedingHeart.stages.0.label>
+  <DoctorBleedingHeart.stages.0.description>Обожаю медицину. Даёт столько возможностей помочь людям.</DoctorBleedingHeart.stages.0.description>
+
+  <RescuedBleedingHeart.stages.0.label>спасение</RescuedBleedingHeart.stages.0.label>
+  <RescuedBleedingHeart.stages.0.description>Я спас(ла) человека от смерти. Нет нужды благодарить, добрые дела сами по себе награда.</RescuedBleedingHeart.stages.0.description>
+
+  <CookedMealBleedingHeart.stages.0.label>блюдо приготовлено</CookedMealBleedingHeart.stages.0.label>
+  <CookedMealBleedingHeart.stages.0.description>Люблю готовить. Чувствую, что помогаю людям. Я - жизненно необходимая часть колонии!</CookedMealBleedingHeart.stages.0.description>
+
+  <FilledGraveBleedingHeart.stages.0.label>похороны</FilledGraveBleedingHeart.stages.0.label>
+  <FilledGraveBleedingHeart.stages.0.description>Я надеюсь, мертвые обретут покой.</FilledGraveBleedingHeart.stages.0.description>
+
+  <KilledPatientBleedingHeart.stages.0.label>смерть пациента</KilledPatientBleedingHeart.stages.0.label>
+  <KilledPatientBleedingHeart.stages.0.description>Смерть пациента - это моих рук дело. Это моя вина.</KilledPatientBleedingHeart.stages.0.description>
+
+  <RecentlyDesensitized.stages.0.label>равнодушие к насилию</RecentlyDesensitized.stages.0.label>
+  <RecentlyDesensitized.stages.0.description>Видя смерть других, я больше ничего не чувствую. Как это грустно.</RecentlyDesensitized.stages.0.description>
+
+  <DreamGood.stages.0.label>хороший сон</DreamGood.stages.0.label>
+  <DreamGood.stages.0.description>Приятные сновидения наполняют желанием жить дальше.</DreamGood.stages.0.description>
+
+  <DreamBad.stages.0.label>плохой сон</DreamBad.stages.0.label>
+  <DreamBad.stages.0.description>Этот неприятный сон преследует меня даже после пробуждения</DreamBad.stages.0.description>
+
+  <DreamNightmare.stages.0.label>кошмар</DreamNightmare.stages.0.label>
+  <DreamNightmare.stages.0.description>Уф, ужасный сон. Не хочу даже думать о нём.</DreamNightmare.stages.0.description>
+
+  <TreatmentFailed.stages.0.label>{0} лечение не удалось</TreatmentFailed.stages.0.label>
+  <TreatmentFailed.stages.0.description>Доктор не сумел помочь мне...Мне кажется, он меня попросту не понимает.</TreatmentFailed.stages.0.description>
+
+  <SuccessfulPlot.stages.0.label>коварный план удался</SuccessfulPlot.stages.0.label>
+  <SuccessfulPlot.stages.0.description>Я уничтожил паразита. Теперь мы в безопасности.</SuccessfulPlot.stages.0.description>
+
+  <HeardParanoia.stages.0.label>слышит параноидальный бред</HeardParanoia.stages.0.label>
+  <HeardParanoia.stages.0.description>Эти слова...это ведь неправда, так ведь?</HeardParanoia.stages.0.description>
+
+
+  <!-- Abandoning pawns -->
+
+  <ColonistAbandonedBleedingHeart.stages.0.label>поселенца оставили одного</ColonistAbandonedBleedingHeart.stages.0.label>
+  <ColonistAbandonedBleedingHeart.stages.0.description>Мы только что бросили одного из наших поселенцев. Не могу перестать думать, что с ним случится.</ColonistAbandonedBleedingHeart.stages.0.description>
+
+  <ColonistAbandonedToDieBleedingHeart.stages.0.label>поселенца оставили умирать</ColonistAbandonedToDieBleedingHeart.stages.0.label>
+  <ColonistAbandonedToDieBleedingHeart.stages.0.description>Мы только что оставили нашего поселенца на произвол судьбы. Он не выживет в одиночку. Как мы могли?</ColonistAbandonedToDieBleedingHeart.stages.0.description>
+
+  <PrisonerAbandonedToDieBleedingHeart.stages.0.label>пленника оставили умирать</PrisonerAbandonedToDieBleedingHeart.stages.0.label>
+  <PrisonerAbandonedToDieBleedingHeart.stages.0.description>Мы только что оставили пленника на произвол судьбы. Он не выживет в одиночку. Мы должны нести ответственность за наших заключенных.</PrisonerAbandonedToDieBleedingHeart.stages.0.description>
+
+  <DateCancelled.stages.0.label>свидание отменено</DateCancelled.stages.0.label>
+  <DateCancelled.stages.0.description>Планировалось свидание, но по непредвиденным обстоятельствам его пришлось отменить. Это очень обидно.</DateCancelled.stages.0.description>
+
+  <WonFight.stages.0.label>победа в драке</WonFight.stages.0.label>
+  <WonFight.stages.0.description>Теперь будут знать!</WonFight.stages.0.description>
+
+
+</LanguageData>

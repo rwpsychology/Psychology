@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Random social interactions -->
+
+  <Sentence_SocialFightConvoInitiatorStarted.rulePack.rulesStrings.0>sent->Непримиримые разногласия привели к тому, что [INITIATOR_nameDef] полез в драку!</Sentence_SocialFightConvoInitiatorStarted.rulePack.rulesStrings.0>
+  <Sentence_SocialFightConvoRecipientStarted.rulePack.rulesStrings.0>sent->Непримиримые разногласия привели к тому, что [RECIPIENT_nameDef] полез в драку!</Sentence_SocialFightConvoRecipientStarted.rulePack.rulesStrings.0>
+
+
+</LanguageData>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Methadone addiction -->
+
+  <Chemical_Methadone.label>метадон</Chemical_Methadone.label>
+  <Chemical_Methadone.description>Этот человек зависим от метадона и, чтобы избежать ломки, должен принимать его регулярно.</Chemical_Methadone.description>
+
+
+</LanguageData>
