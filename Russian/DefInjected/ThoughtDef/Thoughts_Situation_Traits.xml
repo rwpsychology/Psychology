@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FeelingRandomBipolar.stages.0.label>великолепно себя чувствую</FeelingRandomBipolar.stages.0.label>
+  <FeelingRandomBipolar.stages.0.description>Без особой на то причины, я прекрасно себя чувствую!</FeelingRandomBipolar.stages.0.description>
+  <FeelingRandomBipolar.stages.1.label>отлично себя чувствую</FeelingRandomBipolar.stages.1.label>
+  <FeelingRandomBipolar.stages.1.description>Без особой на то причины, я отлично себя чувствую.</FeelingRandomBipolar.stages.1.description>
+  <FeelingRandomBipolar.stages.2.label>хорошо себя чувствую</FeelingRandomBipolar.stages.2.label>
+  <FeelingRandomBipolar.stages.2.description>Без особой на то причины, я хорошо себя чувствую.</FeelingRandomBipolar.stages.2.description>
+  <FeelingRandomBipolar.stages.3.label>плохо себя чувствую</FeelingRandomBipolar.stages.3.label>
+  <FeelingRandomBipolar.stages.3.description>Без особой на то причины, я плохо себя чувствую.</FeelingRandomBipolar.stages.3.description>
+  <FeelingRandomBipolar.stages.4.label>ужасно себя чувствую</FeelingRandomBipolar.stages.4.label>
+  <FeelingRandomBipolar.stages.4.description>Без особой на то причины, я ужасно себя чувствую.</FeelingRandomBipolar.stages.4.description>
+  <FeelingRandomBipolar.stages.5.label>отвратительно себя чувствую</FeelingRandomBipolar.stages.5.label>
+  <FeelingRandomBipolar.stages.5.description>Без особой на то причины, я чувствую себя абсолютно отвратительно...</FeelingRandomBipolar.stages.5.description>
+
+  <Codependency.stages.0.label>одиноко</Codependency.stages.0.label>
+  <Codependency.stages.0.description>Мне одиноко...Мне нужен партнёр.</Codependency.stages.0.description>
+  <Codependency.stages.1.label>в созависимых отношениях</Codependency.stages.1.label>
+  <Codependency.stages.1.description>Я люблю свою вторую половинку. Не могу жить без любви.</Codependency.stages.1.description>
+  <Codependency.stages.2.label>в созависимом браке</Codependency.stages.2.label>
+  <Codependency.stages.2.description>Не могу представить жизни без супруга(и)</Codependency.stages.2.description>
+  <Codependency.stages.3.label>неутешимость</Codependency.stages.3.label>
+  <Codependency.stages.3.description>Моей второй половинки больше нет...Что же мне делать?</Codependency.stages.3.description>
+
+  <Outdoorsy.stages.0.label>на открытом воздухе</Outdoorsy.stages.0.label>
+  <Outdoorsy.stages.0.description>Мне нравится, когда есть небо над головой.</Outdoorsy.stages.0.description>
+  <Outdoorsy.stages.1.label>на открытом воздухе</Outdoorsy.stages.1.label>
+  <Outdoorsy.stages.1.description>Ах, свежий воздух!</Outdoorsy.stages.1.description>
+
+  <Pluviophile.stages.0.label>на улице дождь</Pluviophile.stages.0.label>
+  <Pluviophile.stages.0.description>Мне нравится стук дождя по крыше дома.</Pluviophile.stages.0.description>
+  <Pluviophile.stages.1.label>под дождём</Pluviophile.stages.1.label>
+  <Pluviophile.stages.1.description>Дождь расслабляет. Я не против того, чтобы намокнуть.</Pluviophile.stages.1.description>
+
+  <PolygamousRelationship.stages.0.label>моногамные отношения</PolygamousRelationship.stages.0.label>
+  <PolygamousRelationship.stages.0.description>Меня не устраивает быть ограниченным одним партнёром.</PolygamousRelationship.stages.0.description>
+
+  <EnvironmentDarkLightSensitive.stages.0.label>в темноте</EnvironmentDarkLightSensitive.stages.0.label>
+  <EnvironmentDarkLightSensitive.stages.0.description>Ах...уютная темнота</EnvironmentDarkLightSensitive.stages.0.description>
+  <EnvironmentDarkLightSensitive.stages.1.label>на свету</EnvironmentDarkLightSensitive.stages.1.label>
+  <EnvironmentDarkLightSensitive.stages.1.description>Свет раздражает мои глаза</EnvironmentDarkLightSensitive.stages.1.description>
+  <EnvironmentDarkLightSensitive.stages.2.label>на ярком свету</EnvironmentDarkLightSensitive.stages.2.label>
+  <EnvironmentDarkLightSensitive.stages.2.description>Мои глаза! Мои бедные глаза!</EnvironmentDarkLightSensitive.stages.2.description>
+
+  <Sedentary.stages.0.label>не двигается</Sedentary.stages.0.label>
+  <Sedentary.stages.0.description>Мне нравится, что не нужно никуда бежать.</Sedentary.stages.0.description>
+  <Sedentary.stages.1.label>комфортное место</Sedentary.stages.1.label>
+  <Sedentary.stages.1.description>Уютное, комфортное место, прям как я люблю.</Sedentary.stages.1.description>
+
+
+</LanguageData>

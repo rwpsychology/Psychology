@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MayorTitle>mayor</MayorTitle>
+
+  <!-- Lord job reports -->
+  <LordReportAttendingElection>Голосует</LordReportAttendingElection>
+  <LordReportVisitingMayor>На встрече</LordReportVisitingMayor>
+  <LordReportHangingOut>Тусуется</LordReportHangingOut>
+  <LordReportDate>На свидании</LordReportDate>
+  <LordReportAttendingFuneral>На похоронах</LordReportAttendingFuneral>
+
+  <!-- Miscellaneous thought log text -->
+  <ConversationStage>разговор о</ConversationStage>
+  <ConversationEnd>[INITIATOR_nameDef] заканчивает разговор с [RECIPIENT_nameDef].</ConversationEnd>
+  <ConversationEnded>заканчивает разговор</ConversationEnded>
+  <Complained>{0_labelShort} жалуется мэру, {1_labelShort}.</Complained>
+  <Supported>{0_labelShort} выражает слова поддержки мэру, {1_labelShort}.</Supported>
+
+  <!-- Node descriptions -->
+  <PsycheNot>Не</PsycheNot>
+  <PsycheSlightly>Слегка</PsycheSlightly>
+  <PsycheLess>Немного</PsycheLess>
+  <PsycheMore>Довольно</PsycheMore>
+  <PsycheVery>Очень</PsycheVery>
+  <PsycheExtremely>Экстремально</PsycheExtremely>
+  <ConversationTooltip>Поселенцы поговорят о {0} чтобы обсудить между собой.</ConversationTooltip>
+
+  <!-- Comp text -->
+  <CommandOfficeTableToggleLabel>Офис мэра</CommandOfficeTableToggleLabel>
+  <CommandOfficeTableToggleDescActive>Эта комната назначена быть офисом мэра. Если у вас есть мэр, он будет проводить здесь встречи.</CommandOfficeTableToggleDescActive>
+  <CommandOfficeTableToggleDescInactive>Вы можете назначить эту комнату офисом мэра. Вы можете назначить только одну комнату офисом вашего мэра.</CommandOfficeTableToggleDescInactive>
+
+</LanguageData>

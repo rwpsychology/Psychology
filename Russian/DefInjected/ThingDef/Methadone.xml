@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Methadone.label>метадон</Methadone.label>
+  <Methadone.description>Опиат для лечения зависимостей. Предотвращает негативные психологические симптомы ломки у принимающего, за исключением люциферия. Принимать каждый день. Прекратить приём после исчезновения абстинентного синдрома. Зависимость от метадона приводит к снижению производительности и периодическому злоупотреблению наркотиками.</Methadone.description>
+  <Methadone.ingestible.ingestCommandString>Принять {0}</Methadone.ingestible.ingestCommandString>
+  <Methadone.ingestible.ingestReportString>Принимает {0}</Methadone.ingestible.ingestReportString>
+
+
+</LanguageData>

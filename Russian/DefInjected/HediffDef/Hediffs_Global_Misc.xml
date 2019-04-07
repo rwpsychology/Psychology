@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <HoldingConversation.label>беседа</HoldingConversation.label>
+  <HoldingConversation.stages.0.label>hidden</HoldingConversation.stages.0.label>
+
+  <Mayor.label>мэр</Mayor.label>
+  <Mayor.stages.0.label>hidden</Mayor.stages.0.label>
+
+  <PlannedDate.label>свидание</PlannedDate.label>
+  <PlannedDate.stages.0.label>hidden</PlannedDate.stages.0.label>
+
+  <PlannedFuneral.label>похороны</PlannedFuneral.label>
+  <PlannedFuneral.stages.0.label>hidden</PlannedFuneral.stages.0.label>
+
+
+</LanguageData>

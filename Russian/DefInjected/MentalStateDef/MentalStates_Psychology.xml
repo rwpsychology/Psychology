@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <FellPlotting.label>коварный план</FellPlotting.label>
+  <FellPlotting.beginLetter>{0} удаляется в свою комнату, чтобы продумать коварный план!</FellPlotting.beginLetter>
+  <FellPlotting.beginLetterLabel>замышляет недоброе</FellPlotting.beginLetterLabel>
+  <FellPlotting.recoveryMessage>{0}перестаёт замышлять недоброе.</FellPlotting.recoveryMessage>
+  <FellPlotting.baseInspectLine>Душевное состояние: замышляет недоброе</FellPlotting.baseInspectLine>
+
+  <SelfHarm.label>cамоповреждение</SelfHarm.label>
+  <SelfHarm.beginLetter>{0} режет запястья и прячется в своей комнате.</SelfHarm.beginLetter>
+  <SelfHarm.beginLetterLabel>cамоповреждение</SelfHarm.beginLetterLabel>
+  <SelfHarm.recoveryMessage>{0} перестаёт причинять себе вред.</SelfHarm.recoveryMessage>
+  <SelfHarm.baseInspectLine>Душевное состояние: самоповреждение</SelfHarm.baseInspectLine>
+
+  <Paranoia.label>бред</Paranoia.label>
+  <Paranoia.beginLetter>{0} в параноидальном бреду.</Paranoia.beginLetter>
+  <Paranoia.beginLetterLabel>паранойя</Paranoia.beginLetterLabel>
+  <Paranoia.recoveryMessage>{0} преодолевает свою паранойю.</Paranoia.recoveryMessage>
+  <Paranoia.baseInspectLine>Душевное состояние: паранойя</Paranoia.baseInspectLine>
+
+
+  <!-- major mental breaks -->
+
+  <Abuse.label>поток брани</Abuse.label>
+  <Abuse.beginLetter>{0} не может сдержать своих эмоций.\n\n[PAWN_pronoun] бесцельно бродит по поселению, осыпая всех оскорблениями.</Abuse.beginLetter>
+  <Abuse.beginLetterLabel>поток брани</Abuse.beginLetterLabel>
+  <Abuse.recoveryMessage>{0} перестаёт оскорблять людей.</Abuse.recoveryMessage>
+  <Abuse.baseInspectLine>Душевное состояние: поток брани</Abuse.baseInspectLine>
+
+  <Compulsion.label>мания чистоты</Compulsion.label>
+  <Compulsion.beginLetter>{0} компульсивно убирается, не обращая внимания на своё собственное состояние.</Compulsion.beginLetter>
+  <Compulsion.beginLetterLabel>компульсия</Compulsion.beginLetterLabel>
+  <Compulsion.recoveryMessage>{0} перестаёт компульсивно убираться в своём окружении.</Compulsion.recoveryMessage>
+  <Compulsion.baseInspectLine>Душевное состояние: компульсивно убирается</Compulsion.baseInspectLine>
+
+
+  <!-- minor mental breaks -->
+
+  <Antisocial.label>избегает людей</Antisocial.label>
+  <Antisocial.beginLetter>{0} избегает [PAWN_possessive] товарищей по колонии.</Antisocial.beginLetter>
+  <Antisocial.beginLetterLabel>антисоциальность</Antisocial.beginLetterLabel>
+  <Antisocial.recoveryMessage>{0} прекращает антисоциальное поведение.</Antisocial.recoveryMessage>
+  <Antisocial.baseInspectLine>Душевное состояние: антисоциальность</Antisocial.baseInspectLine>
+
+  <Apathy.label>ленность</Apathy.label>
+  <Apathy.beginLetter>{0} одолела апатия и [PAWN_pronoun] скорее всего не будет делать свою работу.</Apathy.beginLetter>
+  <Apathy.beginLetterLabel>апатия</Apathy.beginLetterLabel>
+  <Apathy.recoveryMessage>{0} больше не страдает от апатии.</Apathy.recoveryMessage>
+  <Apathy.baseInspectLine>Душевное состояние: апатия</Apathy.baseInspectLine>
+
+  <Histrionic.label>истерическое расстройство</Histrionic.label>
+  <Histrionic.beginLetter>{0} отчаянно пытается привлечь к себе внимание.</Histrionic.beginLetter>
+  <Histrionic.beginLetterLabel>истерическое расстройство</Histrionic.beginLetterLabel>
+  <Histrionic.recoveryMessage>{0} перестаёт истерить</Histrionic.recoveryMessage>
+  <Histrionic.baseInspectLine>Душевное состояние: истерическое расстройство</Histrionic.baseInspectLine>
+
+  <HuntingTrip.label>бегство к природе</HuntingTrip.label>
+  <HuntingTrip.beginLetter>{0} вырывается на природу, найдя утешение в охоте.</HuntingTrip.beginLetter>
+  <HuntingTrip.beginLetterLabel>бегство к природе</HuntingTrip.beginLetterLabel>
+  <HuntingTrip.recoveryMessage>{0} решает вернуться с охоты.</HuntingTrip.recoveryMessage>
+  <HuntingTrip.baseInspectLine>Душевное состояние: бегство к природе</HuntingTrip.baseInspectLine>
+
+
+</LanguageData>

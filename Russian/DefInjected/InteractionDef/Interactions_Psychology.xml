@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Random social interactions -->
+
+  <PrudeSeen.label>срам</PrudeSeen.label>
+  <PrudeSeen.logRulesInitiator.rulesStrings.0>r_logentry->[INITIATOR_nameDef] видит [RECIPIENT_nameDef] голышом.</PrudeSeen.logRulesInitiator.rulesStrings.0>
+
+  <Conversation.label>беседа</Conversation.label>
+  <Conversation.logRulesInitiator.rulesStrings.0>r_logentry(p=4)->[INITIATOR_nameDef] [conversed] с [RECIPIENT_nameDef].</Conversation.logRulesInitiator.rulesStrings.0>
+  <Conversation.logRulesInitiator.rulesStrings.1>r_logentry->[INITIATOR_nameDef] зовёт [RECIPIENT_nameDef] для разговора.</Conversation.logRulesInitiator.rulesStrings.1>
+  <Conversation.logRulesInitiator.rulesStrings.2>r_logentry->[INITIATOR_nameDef] поднимает тему с [RECIPIENT_nameDef].</Conversation.logRulesInitiator.rulesStrings.2>
+  <Conversation.logRulesInitiator.rulesStrings.3>conversed(p=4)->начинает беседу</Conversation.logRulesInitiator.rulesStrings.3>
+  <Conversation.logRulesInitiator.rulesStrings.4>conversed->начинает разговор</Conversation.logRulesInitiator.rulesStrings.4>
+  <Conversation.logRulesInitiator.rulesStrings.5>conversed->решает поболтать</Conversation.logRulesInitiator.rulesStrings.5>
+  <Conversation.logRulesInitiator.rulesStrings.6>conversed->поднимает тему</Conversation.logRulesInitiator.rulesStrings.6>
+  <Conversation.logRulesInitiator.rulesStrings.7>conversed->решает обсудить что-то</Conversation.logRulesInitiator.rulesStrings.7>
+
+  <EndConversation.label>заканчивает беседу</EndConversation.label>
+  <EndConversation.logRulesInitiator.rulesStrings.0>r_logentry->[INITIATOR_nameDef] заканчивает беседу с [RECIPIENT_nameDef].</EndConversation.logRulesInitiator.rulesStrings.0>
+
+  <HangOut.label>тусуется</HangOut.label>
+  <HangOut.logRulesInitiator.rulesStrings.0>r_logentry->[INITIATOR_nameDef] просит [RECIPIENT_nameDef] провести время вместе с [INITIATOR_objective].</HangOut.logRulesInitiator.rulesStrings.0>
+
+  <PlanDate.label>планирует свидание</PlanDate.label>
+  <PlanDate.logRulesInitiator.rulesStrings.0>r_logentry->[INITIATOR_nameDef] планирует свидание с [RECIPIENT_nameDef].</PlanDate.logRulesInitiator.rulesStrings.0>
+
+
+</LanguageData>
